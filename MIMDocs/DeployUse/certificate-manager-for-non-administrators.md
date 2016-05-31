@@ -44,7 +44,7 @@ Ha a felhasználó nem helyi rendszergazda, akkor alapesetben nem jogosult intel
 
 2.  **Módosítsa a konfigurációs fájlt.**
 
-    Nevezze át a CustomDataExample.xml fájlt custom.data névre. A Tanúsítványkezelő alkalmazás ezt a fájlnevet fogja keresni.
+    Nevezze át a fájlt nevű `CustomDataExample.xml custom.data`.. A Tanúsítványkezelő alkalmazás ezt a fájlnevet fogja keresni.
 
     A custom.data fájl szerkesztésével módosítsa a következőket:
 
