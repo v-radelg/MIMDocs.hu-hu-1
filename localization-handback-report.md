@@ -1,11 +1,39 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 0
+ Total Files | 2
 
 ## File List
+ Source File | Status | Details 
+ ----------- | ------ | ------- 
+ [MIMDocs\DeployUse\certificate-manager-for-non-administrators.md](https://github.com/Microsoft/MIMDocs-pr/blob/875ed6b96929822ac166a4a262cc8547a4ea3b2a/MIMDocs/DeployUse/certificate-manager-for-non-administrators.md) | InSyncHandedBackSuccess | [Details](#50c0edd60abfa6550cb5a873d32a842e8c0998116)
+ [MIMDocs\DeployUse\working-with-self-service-password-reset.md](https://github.com/Microsoft/MIMDocs-pr/blob/f9b01ac2cee2b96f64a9fda917f4f4146ca2eeda/MIMDocs/DeployUse/working-with-self-service-password-reset.md) | InSyncHandedBackSuccess | [Details](#3a4350e54383dc1098c778090bb29b435082045f75)
 
 ## Item Details
+##### <a name='50c0edd60abfa6550cb5a873d32a842e8c0998116'></a> Source: [MIMDocs\DeployUse\certificate-manager-for-non-administrators.md](https://github.com/Microsoft/MIMDocs-pr/blob/875ed6b96929822ac166a4a262cc8547a4ea3b2a/MIMDocs/DeployUse/certificate-manager-for-non-administrators.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [MIMDocs\DeployUse\certificate-manager-for-non-administrators.md](https://github.com/Microsoft/MIMDocs-pr.hu-hu/blob/02a383bae3a9313fb55dff7665adb2be3289453e/MIMDocs/DeployUse/certificate-manager-for-non-administrators.md)
+* Handoff File: [certificate-manager-for-non-administrators.2d024c7e4e9ca80f8293c9ea15d5d5fe93a207d7.hu-hu.xlf](https://github.com/Microsoft/EM.handoff/blob/209a81b43c20575347576117c42916717678adee/ol-handoff/Microsoft/MIMDocs-pr.hu-hu/master/certificate-manager-for-non-administrators.2d024c7e4e9ca80f8293c9ea15d5d5fe93a207d7.hu-hu.xlf)
+* Handoff Datetime: 2016-04-27 19:50:32
+* Handoff Reason: Include
+* Archive File: [certificate-manager-for-non-administrators.2d024c7e4e9ca80f8293c9ea15d5d5fe93a207d7.hu-hu.xlf](https://github.com/Microsoft/EM.handoff/blob/df866b9b87ed439bc8c065bdefe71d13368bdbc4/ol-handoff/Microsoft/MIMDocs-pr.hu-hu/master/archive/certificate-manager-for-non-administrators.2d024c7e4e9ca80f8293c9ea15d5d5fe93a207d7.hu-hu.xlf)
+* Archive Datetime: 2016-04-28 12:15:35
+* Handback File: [certificate-manager-for-non-administrators.2d024c7e4e9ca80f8293c9ea15d5d5fe93a207d7.hu-hu.xlf](https://github.com/Microsoft/EM.handback/blob/0566297192b5bd5bc030383eb8c49a6a463f3002/ol-handback/Microsoft/MIMDocs-pr.hu-hu/master/certificate-manager-for-non-administrators.2d024c7e4e9ca80f8293c9ea15d5d5fe93a207d7.hu-hu.xlf)
+* Handback Datetime: 2016-05-31 14:15:18
+* [Back to Top](#report-top)
+
+##### <a name='3a4350e54383dc1098c778090bb29b435082045f75'></a> Source: [MIMDocs\DeployUse\working-with-self-service-password-reset.md](https://github.com/Microsoft/MIMDocs-pr/blob/f9b01ac2cee2b96f64a9fda917f4f4146ca2eeda/MIMDocs/DeployUse/working-with-self-service-password-reset.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [MIMDocs\DeployUse\working-with-self-service-password-reset.md](https://github.com/Microsoft/MIMDocs-pr.hu-hu/blob/02a383bae3a9313fb55dff7665adb2be3289453e/MIMDocs/DeployUse/working-with-self-service-password-reset.md)
+* Handoff File: [working-with-self-service-password-reset.bcd57dd12a02054bccbba77422a81b03c5e3b624.hu-hu.xlf](https://github.com/Microsoft/EM.handoff/blob/209a81b43c20575347576117c42916717678adee/ol-handoff/Microsoft/MIMDocs-pr.hu-hu/master/working-with-self-service-password-reset.bcd57dd12a02054bccbba77422a81b03c5e3b624.hu-hu.xlf)
+* Handoff Datetime: 2016-04-27 19:50:32
+* Handoff Reason: Include
+* Archive File: [working-with-self-service-password-reset.bcd57dd12a02054bccbba77422a81b03c5e3b624.hu-hu.xlf](https://github.com/Microsoft/EM.handoff/blob/df866b9b87ed439bc8c065bdefe71d13368bdbc4/ol-handoff/Microsoft/MIMDocs-pr.hu-hu/master/archive/working-with-self-service-password-reset.bcd57dd12a02054bccbba77422a81b03c5e3b624.hu-hu.xlf)
+* Archive Datetime: 2016-04-28 12:15:35
+* Handback File: [working-with-self-service-password-reset.bcd57dd12a02054bccbba77422a81b03c5e3b624.hu-hu.xlf](https://github.com/Microsoft/EM.handback/blob/0566297192b5bd5bc030383eb8c49a6a463f3002/ol-handback/Microsoft/MIMDocs-pr.hu-hu/master/working-with-self-service-password-reset.bcd57dd12a02054bccbba77422a81b03c5e3b624.hu-hu.xlf)
+* Handback Datetime: 2016-05-31 14:15:18
+* [Back to Top](#report-top)
+
 
 ## Error Details
 
