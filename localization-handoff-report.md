@@ -1,11 +1,29 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 0
+ Total Files | 1
 
 ## File List
+ Source File | Status | Details 
+ ----------- | ------ | ------- 
+ [MIMDocs\DeployUse\install-mim-sync-ad-service.md](https://github.com/Microsoft/MIMDocs-pr/blob/8fd779bcc4d41b6e67d0fa31aa0f37c4ea2b410a/MIMDocs/DeployUse/install-mim-sync-ad-service.md) | OutofSyncHandedBackSuccess | [Details](#f4e94980c6a03b08221fd46e19c421cce226086d11)
 
 ## Item Details
+##### <a name='f4e94980c6a03b08221fd46e19c421cce226086d11'></a> Source: [MIMDocs\DeployUse\install-mim-sync-ad-service.md](https://github.com/Microsoft/MIMDocs-pr/blob/8fd779bcc4d41b6e67d0fa31aa0f37c4ea2b410a/MIMDocs/DeployUse/install-mim-sync-ad-service.md)
+* Status: OutofSyncHandedBackSuccess
+* Target File: 
+* Handoff File: [install-mim-sync-ad-service.2a07d4547ca2bf0ca43e7ed04fa3bf20de000a33.hu-hu.xlf](https://github.com/Microsoft/EM.handoff/blob/a4fcd194e7aeb10461815eaf51eabab088613ec1/ol-handoff/Microsoft/MIMDocs-pr.hu-hu/master/install-mim-sync-ad-service.2a07d4547ca2bf0ca43e7ed04fa3bf20de000a33.hu-hu.xlf)
+* Handoff Datetime: 2016-06-03 18:47:40
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [MIMDocs\DeployUse\install-mim-sync-ad-service.md](https://github.com/Microsoft/MIMDocs-pr.hu-hu/blob/3aa5708586aaa9a994c321cc947b049486f4b3a1/MIMDocs/DeployUse/install-mim-sync-ad-service.md)
+* Current Handback File: [install-mim-sync-ad-service.2a07d4547ca2bf0ca43e7ed04fa3bf20de000a33.hu-hu.xlf](https://github.com/Microsoft/EM.handback/blob/9a4924ca85491dedfd9bc5f988da4035416fe631/ol-handback/Microsoft/MIMDocs-pr.hu-hu/master/install-mim-sync-ad-service.2a07d4547ca2bf0ca43e7ed04fa3bf20de000a33.hu-hu.xlf)
+* Current Handback Datetime: 2016-05-21 22:13:04
+* [Back to Top](#report-top)
+
 
 ## Error Details
 
