@@ -6,7 +6,7 @@ description: Megtudhatja, hogyan frissítheti a FIM 2010 R2 összetevőit és ho
 keywords:
 author: kgremban
 manager: stevenpo
-ms.date: 04/28/2016
+ms.date: 05/13/2016
 ms.topic: article
 ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
@@ -25,22 +25,28 @@ ms.suite: ems
 
 ---
 
-# Frissítés a Forefront Identity Manager 2010 R2-ről a Microsoft Identity Manager 2016-ra
-Ez a szakasz egy meglévő tesztcélú FIM 2010 R2 rendszer MIM 2016-ra történő frissítését ismerteti. A frissítéshez ugyanazokat a telepítőcsomagokat kell használni, mint az új példányok üzembe helyezéséhez.
+# Frissítés a Forefront Identity Manager 2010 R2-ről
 
-A leírást azt feltételezi, hogy már rendelkezik egy tesztkörnyezetben üzembe helyezett FIM 2010 R2 megoldással. A kiszolgálókon Windows Server 2012, Windows Server 2012 R2 vagy Windows Server 2008 R2 fut, amelyek a FIM 2010 R2-kiszolgálók általános operációs rendszerei, és az összes helyi és környezeti előfeltétel (SQL Server, Exchange Server, SharePoint Services stb.) megfelelően van konfigurálva a FIM 2010 R2-höz.
+Ha Forefront Identity Manager (FIM) 2010 R2 környezettel rendelkezik, és ki szeretné próbálni a Microsoft Identity Manager (MIM) 2016-ot, akkor ezt a cikket használhatja útmutatóként. A frissítés három fázisból áll:
 
-1.  Először telepíteni kell a MIM Synchronization Service (Sync) szolgáltatást egy AD-tartományhoz csatlakoztatott kiszolgálóra a Sync szolgáltatás FIM 2010 R2-alapú példánya helyett.
+1.  A MIM Synchronization Service (Sync) telepítése egy olyan kiszolgálóra, amelynek a tartománya csatlakoztatva van az Ön Active Directory- (AD-) tartományához. Ez lecseréli a Sync FIM 2010 R2-es példányát.
 
-2.  Ezt követi a MIM szolgáltatás és -portál telepítése, igény szerint az önkiszolgáló jelszó-változtatási (SSPR) regisztrációs portállal és szolgáltatási portállal, a Privileged Access Management szolgáltatás nélkül.
+2.  A MIM szolgáltatás és -portál telepítése. Ezen a ponton úgy is dönthet, hogy az önkiszolgáló jelszó-visszaállítási (SSPR) regisztrációs portált és a szolgáltatási portált is telepíti, a Privileged Access Management szolgáltatáskészlet telepítését pedig kihagyja.
 
-3.  Ezután egy különálló ügyfélszámítógépen üzembe helyezhetők a MIM beépülő moduljai és bővítményei, a Windows-bejelentkezésbe integrált SSPR-ügyféllel együtt.
+3.  A MIM beépülő modulok és bővítmények telepítése egy különálló ügyfélszámítógépre. Ez magában foglalja az SSPR Windows bejelentkezési integrált ügyfelet is.
+
+
+Ez az útmutató feltételezi, hogy az alábbiak már be vannak állítva:
+- FIM 2010 R2, telepítve egy tesztkörnyezetben
+- Windows Server 2012, Windows Server 2012 R2 vagy Windows Server 2008 R2 rendszert futtató kiszolgálók
+- Helyi és környezeti előfeltételek (SQL Server, Exchange Server, SharePoint Services stb.), amelyek konfigurálva vannak a FIM 2010 R2-höz.
+
 
 ## Előkészítés
 
 1.  Készítsen biztonsági másolatot a FIM szolgáltatás adatbázisáról, a FIM Sync adatbázisáról, valamint a FIM Sync szolgáltatás konfigurációjáról és a szoftverről.
 
-2.  A Contoso\Rendszergazda fiókkal jelentkezzen be azokon a számítógépeken, ahol telepítve vannak a FIM 2010 R2 összetevői – például a *CORPIDM*. Az itt leírt üzembe helyezési példában a FIM 2010 R2 **MIM**-re való frissítéséhez rendszergazdai jogosultságok szükségesek..
+2.  A Contoso\Rendszergazda fiókkal jelentkezzen be azokon a számítógépeken, ahol telepítve vannak a FIM 2010 R2 összetevői – például a *CORPIDM*. Ezen telepítési példában rendszergazdai jogosultságok szükségesek a FIM 2010 R2 **MIM-re** való frissítéséhez.
 
 3.  Töltse le vagy csomagolja ki a MIM szoftvert.
 
@@ -58,11 +64,11 @@ A leírást azt feltételezi, hogy már rendelkezik egy tesztkörnyezetben üzem
 
 5.  Ha elfogadja a licencfeltételeket, kattintson a **Next** (Tovább) gombra a folytatáshoz.
 
-6.  Írja be a Sync által használt szolgáltatásfiók jelszavát, majd kattintson a **Next** (Tovább) gombra..
+6.  Adja meg a Sync által használt szolgáltatásfiók jelszavát, majd kattintson a **Tovább** gombra.
 
     ![Kép: A MIM Synchronization szolgáltatás fiókjának konfigurálása](media/MIM-UpgFIM3.png)
 
-7.  Ellenőrizze, hogy a biztonsági csoportok nevei megfelelők-e, majd kattintson a **Next** (Tovább) gombra..
+7.  Ellenőrizze a biztonsági csoportok nevét, majd kattintson a **Tovább** gombra.
 
     ![Kép: A MIM Synchronization szolgáltatás biztonsági csoportjainak konfigurálása](media/MIM-UpgFIM4.png)
 
@@ -76,7 +82,7 @@ A leírást azt feltételezi, hogy már rendelkezik egy tesztkörnyezetben üzem
 
 11. A frissítés közben megjelenik egy figyelmeztetés a Sync-adatbázis frissítéséről. Előzetesen érdemes biztonsági mentést készíteni az adatbázisról.
 
-12. Ha a frissítés sikeresen befejeződött, kattintson a **Finish** (Befejezés) gombra..
+12. Amikor a telepítés sikeresen befejeződött, kattintson a **Befejezés** gombra.
 
     ![Kép: A MIM Sync telepítése sikeresen befejeződött](media/MIM-UpgSP1.png)
 
@@ -122,7 +128,7 @@ A leírást azt feltételezi, hogy már rendelkezik egy tesztkörnyezetben üzem
 
     ![Kép: A szolgáltatás tanúsítványának konfigurálása](media/MIM-UpgSP7.png)
 
-    1.  Ha a helyi tanúsítványtárra vonatkozó beállítást választotta, kattintson a **Select Cert** (Tanúsítvány választása) gombra, és az előugró ablakban válasszon egy tanúsítványt a listából. Kattintson az **OK**, majd a **Next** (Tovább) gombra..
+    1.  Ha a helyi tanúsítványtárra vonatkozó beállítást választotta, kattintson a **Select Cert** (Tanúsítvány választása) gombra, és az előugró ablakban válasszon egy tanúsítványt a listából. Kattintson az **OK**, majd a **Tovább** gombra.
 
         ![Kép: A Select a Certificate (Tanúsítvány kiválasztása) előugró ablak](media/MIM-UpgSP8.PNG)
 
@@ -134,21 +140,21 @@ A leírást azt feltételezi, hogy már rendelkezik egy tesztkörnyezetben üzem
 
     ![Kép: A MIM szolgáltatás és -portál szinkronizálásának konfigurálása](media/MIM-UpgSP10.png)
 
-13. A MIM-portál telepítésekor adja meg a MIM szolgáltatás kiszolgálójának címét. Kattintson a **Next** (Tovább) gombra..
+13. A MIM-portál telepítésekor adja meg a MIM szolgáltatás kiszolgálójának címét. Kattintson a **Tovább**gombra.
 
-14. A MIM-portál telepítésekor adja meg annak a SharePoint-webhelycsoportnak az URL-címét, amelyben a FIM-portál jelenleg üzemel. Kattintson a **Next** (Tovább) gombra..
+14. A MIM-portál telepítésekor adja meg annak a SharePoint-webhelycsoportnak az URL-címét, amelyben a FIM-portál jelenleg üzemel. Kattintson a **Tovább**gombra.
 
 ## A MIM jelszó-regisztrálási portál telepítése
 
-1. A MIM jelszó-regisztrálási portál telepítésekor adja meg a kért URL-t a jelszó-regisztrációs portálhoz. Kattintson a **Next** (Tovább) gombra..
+1. A MIM jelszó-regisztrálási portál telepítésekor adja meg a kért URL-t a jelszó-regisztrációs portálhoz. Kattintson a **Tovább**gombra.
 
 2. Állítsa be, hogy az ügyfelek és a végfelhasználók használhassák a szolgáltatást és a portált.
 
-    1.  Jelölje be, hogy **meg szeretné-e nyitni az 5725-ös és az 5726-os portokat a tűzfalon**..
+    1.  Ellenőrizze, hogy **meg kívánja-e nyitni az 5725-ös és az 5726-os portot a tűzfalon**.
 
-    2.  Állítsa be, hogy szeretne-e **hozzáférést biztosítani a hitelesített felhasználók számára a MIM-portál webhelyéhez**..
+    2.  Adja meg, hogy **hozzáférést ad-e a hitelesített felhasználóknak a MIM-portál webhelyéhez**.
 
-    3.  Kattintson a **Next** (Tovább) gombra..
+    3.  Kattintson a **Tovább**gombra.
 
 3. Adja meg a hozzáféréshez szükséges adatokat és hitelesítő adatokat a MIM jelszó-regisztrálási portálhoz.
 
@@ -160,7 +166,7 @@ A leírást azt feltételezi, hogy már rendelkezik egy tesztkörnyezetben üzem
 
     3.  Jelölje be az **Open port in firewall** (Port nyitása a tűzfalon) négyzetet.
 
-    4.  Kattintson a **Next** (Tovább) gombra..
+    4.  Kattintson a **Tovább**gombra.
 
 4. A MIM jelszó-regisztrálási portál következő konfigurációs képernyőjén:
 
@@ -180,7 +186,7 @@ A leírást azt feltételezi, hogy már rendelkezik egy tesztkörnyezetben üzem
 
     3.  Jelölje be az **Open port in firewall** (Port nyitása a tűzfalon) négyzetet.
 
-    4.  Kattintson a **Next** (Tovább) gombra..
+    4.  Kattintson a **Tovább**gombra.
 
 2. A MIM jelszó-változtatási portál következő konfigurációs képernyőjén:
 
@@ -201,6 +207,6 @@ A leírást azt feltételezi, hogy már rendelkezik egy tesztkörnyezetben üzem
 Megjegyzés: Ha a FIM beépülő moduljai és bővítményei jelenleg telepítve vannak a felhasználók számítógépein az önkiszolgáló jelszó-változtatási (SSPR) szolgáltatáshoz, abban az esetben az új MFA telefonos jelszó-változtatási kapuk konfigurálásával várjon addig, amíg a FIM valamennyi beépülő modulját és bővítményét frissítette a MIM 2016-os verzióra.  A FIM 2010 és a FIM 2010 R2 beépülő moduljai és bővítményei nem ismerik fel az új kapukat, így hibaüzenetet fognak megjeleníteni, a felhasználók pedig nem fogják tudni megváltoztatni a jelszavukat.
 
 
-<!--HONumber=Apr16_HO4-->
+<!--HONumber=May16_HO3-->
 
 

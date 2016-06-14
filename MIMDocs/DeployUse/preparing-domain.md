@@ -30,9 +30,13 @@ ms.suite: ems
 >[!div class="step-by-step"]  
 [Windows Server 2012 R2 »](prepare-server-ws2012r2.md)
 
+A Microsoft Identity Manager (MIM) az Ön Active Directory- (AD-) tartományával együtt is használható. Az AD-nek már telepítve kell lennie, és győződjön meg arról is, hogy a környezetében rendelkezik egy tartományvezérlővel egy felügyelhető tartományhoz.
+
+Ez a cikk részletesen ismerteti a lépéseket, amelyekkel előkészítheti a tartományt a MIM-mel való működésre.
+
 ## Felhasználói fiókok és csoportok létrehozása
 
-A MIM működéséhez szükséges, hogy az Active Directory telepítve legyen. Győződjön meg arról, hogy van a környezetben olyan tartományhoz tartozó tartományvezérlő, amelynek a felügyeletére jogosult.
+A MIM-telepítés minden összetevőjének saját identitással kell rendelkeznie a tartományban. Ez vonatkozik az olyan MIM-összetevőkre is, mint a Service, a Sync, a SharePoint és az SQL.
 
 > [!NOTE]
 > Ez az útmutató egy Contoso nevű fiktív vállalat neveit és értékeit használja szemléltetésként. Ezeket helyettesítse a saját neveivel és értékeivel. Például:
@@ -40,7 +44,7 @@ A MIM működéséhez szükséges, hogy az Active Directory telepítve legyen. G
 > - Tartománynév – **contoso**
 > - Jelszó – **Pass@word1**
 
-1. Tartományi rendszergazdaként jelentkezzen be a tartományvezérlőre (*pl. Contoso\Rendszergazda*).).
+1. Jelentkezzen be a tartományvezérlőbe tartományi rendszergazdaként (*pl.: Contoso\Administrator*).
 
 2. Hozza létre a következő felhasználói fiókokat a MIM-szolgáltatásokhoz. Indítsa el a PowerShellt, és írja be a következő PowerShell-parancsprogramot a tartomány frissítéséhez.
 
@@ -95,6 +99,6 @@ A MIM működéséhez szükséges, hogy az Active Directory telepítve legyen. G
 [Windows Server 2012 R2 »](prepare-server-ws2012r2.md)
 
 
-<!--HONumber=Apr16_HO4-->
+<!--HONumber=May16_HO3-->
 
 

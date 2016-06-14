@@ -1,12 +1,12 @@
 ---
 # required metadata
 
-title: Hibrid Identity Manager-jelentések készítése az Azure-ban | Microsoft Identity Manager
+title: Hibrid identitáskezelési jelentések | Microsoft Identity Manager
 description: Az Azure Active Directory hibrid jelentéskészítési funkcióival felhőalapú és helyszíni eseményeket egyaránt tartalmazó egyéni jelentéseket készíthet.
 keywords:
 author: kgremban
 manager: stevenpo
-ms.date: 04/28/2016
+ms.date: 05/13/2016
 ms.topic: article
 ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
@@ -25,8 +25,8 @@ ms.suite: ems
 
 ---
 
-# Hibrid Identity Manager-jelentések készítése az Azure-ban
-Az Azure Active Directory (AD) segítségével összevont jelentést készíthet a helyszíni környezetben és a felhőben történt identitáskezelési tevékenységekről. Ez a jelentéskészítő funkció összevont helyet kínál az identitási és hozzáférési adatok kezeléséhez, emellett pedig csökkenti az általános költségeket.
+# Hibrid identitáskezelési jelentések az Azure-ban
+Az Azure Active Directory (AD) segítségével egyetlen jelentés létrehozásával nyomon követheti a helyszínen vagy a felhőben végzett identitáskezelési tevékenységeket. Ez a funkció lehetővé teszi, hogy az összes identitását egy helyen kezelje, és egy helyen férjen hozzá adataihoz, így időt takaríthat meg és csökkentheti a teljes költségeket.
 
 ## Mi az Azure AD hibrid jelentéskészítési funkciója?
 A hibrid jelentéskészítés segít a rendszergazdáknak az identitáskezeléshez kapcsolódó általános jelentéskészítési kihívások megoldásában.
@@ -39,7 +39,7 @@ A hibrid jelentéskészítés segít a rendszergazdáknak az identitáskezelésh
 
 ## Hogyan működik?
 
-A helyszíni adatok gyűjtéséhez először telepítenie kell egy jelentéskészítő ügynököt az Identity Manager-kiszolgálón. A jelentéskészítő ügynököt a [klasszikus Azure-portálon](https://manage.windowsazure.com/) a saját könyvtár konfigurálási oldaláról töltheti le..
+A helyszíni adatok gyűjtéséhez először telepítenie kell egy jelentéskészítő ügynököt az Identity Manager-kiszolgálón. A jelentéskészítő ügynök a [Klasszikus Azure portálon](https://manage.windowsazure.com/) a saját könyvtára Konfigurálás oldaláról tölthető le.
 
 A hibrid jelentéskészítés folyamata a következő lépésekből áll:
 1. A jelentéskészítő ügynök a telepítést követően az Identity Manager-tevékenységek adatait a Windows Eseménynaplóba exportálja.
@@ -52,6 +52,6 @@ A hibrid jelentéskészítés folyamata a következő lépésekből áll:
 - További részletek: [A hibrid jelentéskészítés kezelése az Identity Managerben](/microsoft-identity-manager/deploy-use/working-with-identity-manager-hybrid-reporting)
 
 
-<!--HONumber=Apr16_HO4-->
+<!--HONumber=May16_HO3-->
 
 
