@@ -21,29 +21,29 @@ ms.assetid: 90d66a75-a7ec-4fa1-911c-cce683908838
     <section id="hero-content">
       <h1>A Microsoft Identity Manager dokumentációja</h1>
       <h2>A Microsoft Identity Manager (MIM) helyszíni identitás- és hozzáférés-kezelési képességeket biztosít, például identitásszinkronizálási, identitás-lopásgátlási és egyéb funkciókat.</h2>
-      <h3>Most ismerkedik a MIM-mel? <a href="http://www.microsoft.com/en-us/server-cloud/products/microsoft-identity-manager/" target="_blank">Keresse fel a termék oldalát &rarr;</a></h3>
+      <h3>Most ismerkedik a MIM-mel? <a href="http://www.microsoft.com/en-us/server-cloud/products/microsoft-identity-manager/" target="\_blank">Keresse fel a termék oldalát &rarr;</a></h3>     
     </section>
-
     <aside class="alert section-border">
-      <p>Ready to get hands-on?</p>
+      <p>Készen áll a kezdésre?</p>
       <ol class="action-list">
-        <li><a href="https://www.microsoft.com/en-us/evalcenter/evaluate-microsoft-identity-manager-2016" target="_blank" class="button-bordered button-translucent">Try Now</a></li>
+        <li><a href="https://www.microsoft.com/evalcenter/evaluate-microsoft-identity-manager-2016" target="\_blank" class="button-bordered button-translucent">Ingyenes próbaverzió elindítása</a></li>
+      </ol>
+      <ol class="action-list">
+        <li><a href="http://connect.microsoft.com/site1164/Downloads/DownloadDetails.aspx?DownloadID=61395" target="\_blank" class="button-bordered button-translucent">Előzetes a közeljövőben megjelenő funkciókról</a></li>
       </ol>
     </aside>
-
     <section id="featured" class="container">
-      <h2 class="section-heading"><span class="icon icon-warning"></span> Featured Content</h2>
+      <h2 class="section-heading"><span class="icon icon-warning"></span> Kiemelt tartalom</h2>
       <div class="features row">
         <ul class="column column-half">
-          <li><a href="/microsoft-identity-manager/understand-explore/microsoft-identity-manager-2016">What is Microsoft Identity Manager?</a></li>
-          <li><a href="/microsoft-identity-manager/reference/privileged-access-management-rest-api-reference">Privileged Identity Management REST API Reference</a></li>
+          <li><a href="/microsoft-identity-manager/understand-explore/microsoft-identity-manager-2016">Mi az a Microsoft Identity Manager?</a></li>
+          <li><a href="/microsoft-identity-manager/reference/privileged-access-management-rest-api-reference">Privileged Identity Management REST API-referencia</a></li>
         </ul>
         <ul class="column column-half">
-          <li><a href="/microsoft-identity-manager/deploy-use/microsoft-identity-manager-deploy">Deploy MIM software on a Fresh Server</a></li>
+          <li><a href="/microsoft-identity-manager/deploy-use/microsoft-identity-manager-deploy">A MIM szoftver üzembe helyezése új kiszolgálón</a></li>
         </ul>
       </div>
     </section>
-
     <div id="journeys">
       <section class="container">
         <ul class="journeys-list">
@@ -52,9 +52,9 @@ ms.assetid: 90d66a75-a7ec-4fa1-911c-cce683908838
               <a href="/microsoft-identity-manager/understand-explore/microsoft-identity-manager-2016">
                 <div class="title column-third">
                   <span class="step-number">1</span>
-                  <p>Understand &amp; Explore</p>
+                  <p>Ismertetés és felfedezés</p>
                 </div>
-                <p class="description column-two-thirds">Learn the high-level concepts, features, and capabilities of Microsoft Identity Manager.
+                <p class="description column-two-thirds">Ismerje meg a Microsoft Identity Manager magas szintű koncepcióit, funkcióit és képességeit.
                 </p>
               </a>
             </header>
@@ -62,20 +62,20 @@ ms.assetid: 90d66a75-a7ec-4fa1-911c-cce683908838
               <ul class="row">
                 <li class="column-third">
                   <a href="/microsoft-identity-manager/understand-explore/microsoft-identity-manager-2016">
-                    <h3>What is MIM 2016?</h3>
-                    <p>Learn how MIM 2016 provides on-premises &amp; hybrid identity and access management capabilities.</p>
+                    <h3>Mi az a MIM 2016?</h3>
+                    <p>Megtudhatja, hogyan biztosítja a MIM 2016 a helyszíni és hibrid identitás- és hozzáférés-felügyeleti képességeket.</p>
                   </a>
                 </li>
                 <li class="column-third">
                   <a href="/microsoft-identity-manager/understand-explore/identity-manager-hybrid-reporting-azure">
-                    <h3>Hybrid Reporting in Azure</h3>
-                    <p>Create a single report of events that occur on-premises and in the cloud.</p>
+                    <h3>Hibrid jelentéskészítés az Azure-ban</h3>
+                    <p>Egyetlen jelentést hozhat létre a helyszínen és a felhőben bekövetkező eseményekről.</p>
                   </a>
                 </li>
                 <li class="column-third">
                   <a href="/microsoft-identity-manager/plan-design/microsoft-identity-manager-2016-supported-platforms">
-                    <h3>Supported Platforms</h3>
-                    <p>The list of platforms, servers, and applications supported by MIM.</p>
+                    <h3>Támogatott platformok</h3>
+                    <p>a MIM által támogatott platformok, kiszolgálók és alkalmazások listája.</p>
                   </a>
                 </li>
               </ul>
@@ -86,9 +86,9 @@ ms.assetid: 90d66a75-a7ec-4fa1-911c-cce683908838
               <a href="/microsoft-identity-manager/deploy-use/microsoft-identity-manager-deploy">
                 <div class="title column-third">
                   <span class="step-number">2</span>
-                  <p>Deploy &amp; Use</p>
+                  <p>Üzembe helyezés és használat</p>
                 </div>
-                <p class="description column-two-thirds">Deploy and use MIM.
+                <p class="description column-two-thirds">A MIM üzembe helyezése és használata.
                 </p>
               </a>
             </header>
@@ -96,20 +96,20 @@ ms.assetid: 90d66a75-a7ec-4fa1-911c-cce683908838
               <ul class="row">
                 <li class="column-third">
                   <a href="/microsoft-identity-manager/deploy-use/microsoft-identity-manager-deploy">
-                    <h3>First Time Deployment</h3>
-                    <p>Deploy MIM on a fresh server that has not previously had FIM or MIM.</p>
+                    <h3>Első üzembe helyezés</h3>
+                    <p>A MIM telepítése olyan új kiszolgálón, amelyen korábban még nem volt telepítve a FIM vagy a MIM.</p>
                   </a>
                 </li>
                 <li class="column-third">
                   <a href="/microsoft-identity-manager/deploy-use/microsoft-identity-manager-2016-upgrade-from-fim-2010-R2">
-                    <h3>Upgrading from FIM 2010 R2</h3>
-                    <p>Upgrade an existing FIM 2010 R2 test system to MIM 2016.</p>
+                    <h3>Az FIM 2010 R2 frissítése</h3>
+                    <p>Meglévő FIM 2010 R2 tesztrendszer frissítése a MIM 2016-ra.</p>
                   </a>
                 </li>
                 <li class="column-third">
                   <a href="/microsoft-identity-manager/deploy-use/deploying-mim-password-change-notification-service-on-domain-controller">
-                    <h3>Password Change Notification Service</h3>
-                    <p>Install PCNS on each domain controller server to enable password synchronization.</p>
+                    <h3>A jelszóváltozás-értesítési szolgáltatás</h3>
+                    <p>Telepítse a jelszóváltozás-értesítési szolgáltatást minden egyes tartományvezérlő kiszolgálón a jelszó-szinkronizálás engedélyezéséhez.</p>
                   </a>
                 </li>
               </ul>
@@ -118,30 +118,28 @@ ms.assetid: 90d66a75-a7ec-4fa1-911c-cce683908838
         </ul>
       </section>
     </div>
-
     <div class="section-border">
       <section class="resources container">
-        <h2 class="section-heading"><span class="icon icon-options"></span> Developer Reference</h2>
+        <h2 class="section-heading"><span class="icon icon-options"></span> Fejlesztői leírás</h2>
         <div class="resource-list row">
           <ul class="column-half">
-            <li><a href="/microsoft-identity-manager/reference/privileged-access-management-rest-api-reference">Privileged Access Management REST API Reference</a></li>
+            <li><a href="/microsoft-identity-manager/reference/privileged-access-management-rest-api-reference">Privileged Access Management REST API-referencia</a></li>
           </ul>
           <ul class="column-half">
-            <li><a href="/microsoft-identity-manager/reference/certificate-management-rest-api-reference">Certificate Management REST API Reference</a></li>
+            <li><a href="/microsoft-identity-manager/reference/certificate-management-rest-api-reference">Tanúsítványkezelő REST API-referencia</a></li>
           </ul>
         </div>
       </section>
     </div>
-
     <aside class="alert alert-social">
-      <p>Keep up with MIM support news</p>
+      <p>Legyen naprakész a MIM támogatási híreivel kapcsolatban</p>
       <ol class="action-list">
-        <li><a href="https://blogs.technet.microsoft.com/iamsupport/" target="_blank" class="button-bordered button-translucent">official support blog</a></li>
+        <li><a href="https://blogs.technet.microsoft.com/iamsupport/" target="\_blank" class="button-bordered button-translucent">hivatalos támogatási blog</a></li>
       </ol>
     </aside>
 </article>
 
 
-<!--HONumber=Apr16_HO4-->
+<!--HONumber=Jun16_HO1-->
 
 
