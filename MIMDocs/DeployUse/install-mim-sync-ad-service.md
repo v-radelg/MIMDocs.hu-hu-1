@@ -27,8 +27,7 @@ ms.suite: ems
 
 # A MIM 2016 telepítése: Az Active Directory és a MIM szolgáltatás szinkronizálása
 
->[!div class="step-by-step"]
-[« MIM szolgáltatás és -portál](install-mim-service-portal.md)
+>[!div class="step-by-step"] [« MIM szolgáltatás és -portál](install-mim-service-portal.md)
 
 > [!NOTE]
 > Ez az útmutató egy Contoso nevű fiktív vállalat neveit és értékeit használja szemléltetésként. Ezeket helyettesítse a saját neveivel és értékeivel. Például:
@@ -43,16 +42,15 @@ A MIM-kezelőügynök (MA) összekötőként funkcionál a MIM Sync és a MIM sz
 
 A MIM-kezelőügynök konfigurálásához meg kell adnia egy felhasználói fiókot. A dokumentumban erre a fiókra **MIMMA** néven hivatkozunk.
 
-> [!NOTE]
-> A MIM-kezelőügynökhöz használt fióknak azonosnak kell lennie a MIM szolgáltatás telepítésekor megadott fiókkal.
+> [!NOTE]A MIM-kezelőügynökhöz használt fióknak azonosnak kell lennie a MIM szolgáltatás telepítésekor megadott fiókkal.
 
 ###A MIM-kezelőügynök létrehozása
 
 1.  Indítsa el a Synchronization Service Managert.
 
-2.  A Create Management Agent (Kezelőügynök létrehozása) varázsló megnyitásához válassza az **Actions** (Műveletek) menü **Create** (Létrehozás) parancsát..
+2.  A Create Management Agent (Kezelőügynök létrehozása) varázsló megnyitásához válassza az **Actions** (Műveletek) menü **Create** (Létrehozás) parancsát.
 
-3.  A **Create Management Agent** (Kezelőügynök létrehozása) oldalon adja meg a következő beállításokat, majd kattintson a **Next** (Tovább) gombra..
+3.  A **Create Management Agent** (Kezelőügynök létrehozása) oldalon adja meg a következő beállításokat, majd kattintson a **Next** (Tovább) gombra.
 
     -   Management agent for (Felügyeleti ügynök a következőhöz): MIM Service management agent (A MIM szolgáltatás felügyeleti ügynöke)
 
@@ -84,11 +82,11 @@ A MIM-kezelőügynök konfigurálásához meg kell adnia egy felhasználói fió
 
     -   Person
 
-    -   Group
+    -   Csoport
 
-6.  A **Selected Attributes** (Kijelölt attribútumok) lapon ellenőrizze, hogy a feltüntetett attribútumok mind ki vannak-e jelölve, majd kattintson a **Next** (Tovább) gombra..
+6.  A **Selected Attributes** (Kijelölt attribútumok) lapon ellenőrizze, hogy a feltüntetett attribútumok mind ki vannak-e jelölve, majd kattintson a **Next** (Tovább) gombra.
 
-7.  A **Configure Connector Filter** (Összekötőszűrő konfigurálása) lapon kattintson a **Next** (Tovább) gombra..
+7.  A **Configure Connector Filter** (Összekötőszűrő konfigurálása) lapon kattintson a **Next** (Tovább) gombra.
 
 8.  A **Configure Object Type Mappings** (Objektumtípus-hozzárendelések konfigurálása) lapon állítsa be a következő hozzárendelést, majd kattintson a **Next** (Tovább) gombra.
 
@@ -99,78 +97,78 @@ A MIM-kezelőügynök konfigurálásához meg kell adnia egy felhasználói fió
 
 9.  A **Configure Attribute Flow** (Attribútumfolyam konfigurálása) lapon alkalmazza a következő attribútumfolyam-megfeleltetéseket, majd kattintson a **Next** (Tovább) gombra.
 
-    | **Folyamat iránya** | **Adatforrás-attribútum** | **Metaverzum-attribútum** |
+    | **Adatforrás-attribútum** | **Folyamat iránya** | **Metaverzum-attribútum** |
     |-|-|-|
-    |Importálás|Importálás|accountName|
-    |Importálás|Importálás|company|
-    |Importálás|Importálás|displayName|
-    |Importálás|Importálás|employeeID|
-    |Importálás|Importálás|employeeType|
-    |Importálás|Importálás|firstName|
-    |Importálás|Importálás|lastName|
-    |Importálás|Importálás|Manager|
-    |Importálás|Importálás|objectSid|
-    |Exportálás|Exportálás|accountName|
-    |Exportálás|Exportálás|company|
-    |Exportálás|Exportálás|displayName|
-    |Exportálás|Exportálás|domain|
-    |Exportálás|Exportálás|employeeID|
-    |Exportálás|Exportálás|employeeType|
-    |Exportálás|Exportálás|firstName|
-    |Exportálás|Exportálás|lastName|
-    |Exportálás|Exportálás|manager|
-    |Exportálás|Exportálás|objectSid|
+    | AccountName | Exportálás | accountName |
+    | DisplayName | Exportálás | displayName |
+    | Domain | Exportálás | domain |
+    | EmployeeID | Exportálás | employeeID |
+    | EmployeeType | Exportálás | employeeType |
+    | E-mail | Exportálás | Levelezés |
+    | FirstName | Exportálás | firstName |
+    | LastName | Exportálás | lastName |
+    | ObjectSID | Exportálás | objectSid |
 
 10.  A Data source object type (Adatforrás objektumtípusa) beállításnál válassza a **Person** (Személy) lehetőséget.
 
-    -   Select **Person** as the Metaverse object type.
+    -   A Metaverse object type (Metaverzum-objektum típusa) beállításnál válassza a **Person** (Személy) lehetőséget.
 
-    -   Select **Direct** as the Mapping Type.
+    -   Válassza a **Direct** (Közvetlen) leképezéstípust.
 
-    -   For each row in the previous table, complete the following steps:
+    -   Az előbbi táblázatban szereplő minden sornál végezze el a következő lépéseket:
 
-        -   Select the **Flow direction** shown for that row in the table.
+        -   Válassza ki a táblázatban a sorhoz látható **Flow direction** (Folyamat iránya) beállítást.
 
-        -   Select the **Data source attribute** shown for that row in the table.
+        -   Válassza ki a táblázatban a sorhoz látható **Data source attribute** (Adatforrás-attribútum) beállítást.
 
-        -   Select the **Metaverse attribute** shown for that row in the table.
+        -   Válassza ki a táblázatban a sorhoz látható **Metaverse attribute** (Metaverzum-attribútum) beállítást.
 
-        -   To apply the flow mapping, click **New**.
+        -   A folyamat leképezésének alkalmazásához kattintson a **New** (Új) elemre.
 
-    -   Select **Group** as the data source type and as the metaverse object type.
+    -   Válassza ki **Group** (Csoport) lehetőséget az adatforrás típusaként és a metaverzum-objektum típusaként.
 
-    -   Select **Direct** as the Mapping Type.
+    -   Válassza a **Direct** (Közvetlen) leképezéstípust.
 
-    -   For each row in the following table, complete these steps:
+    -   A következő táblázatban szereplő minden sornál végezze el az alábbi lépéseket:
 
-        -   Select the **Flow direction** shown for that row in the table.
+        -   Válassza ki a táblázatban a sorhoz látható **Flow direction** (Folyamat iránya) beállítást.
 
-        -   Select the **Data source attribute** shown for that row in the table.
+        -   Válassza ki a táblázatban a sorhoz látható **Data source attribute** (Adatforrás-attribútum) beállítást.
 
-        -   Select the **Metaverse attribute** shown for that row in the table.
+        -   Válassza ki a táblázatban a sorhoz látható **Metaverse attribute** (Metaverzum-attribútum) beállítást.
 
-        -   To apply the flow mapping, click **New**.
+        -   A folyamat leképezésének alkalmazásához kattintson a **New** (Új) elemre.
 
-    | Flow Direction | Data Source Attribute | Metaverse Attribute |
+    | **Adatforrás-attribútum** | **Folyamat iránya** | **Metaverzum-attribútum** |
     |-|-|-|
-    | Export | AccountName | accountName |
-    | Export | DisplayName | displayName |
-    | Export | Domain | domain |
-    | Export | Scope | scope |
-    | Export | Type | type |
-    | Export | Member | member |
-    | Export | MembershipLocked | membershipLocked |
-    | Export | MembershipAddWorkflow | membershipAddWorkflow |
-    | Export | Manager | manager |
+    | AccountName | Exportálás | accountName |
+    | DisplayName | Exportálás | displayName |
+    | Domain | Exportálás | domain |
+    | E-mail | Exportálás | Levelezés |
+    | MailNickName | Exportálás | mailNickName |
+    | Tag | Exportálás | tag |
+    | ObjectSID | Exportálás | objectSid |
+    | Hatókör | Exportálás | hatókör |
+    | Típus | Exportálás | típus |
+    | MembershipAddWorkflow | Exportálás | membershipAddWorkflow |
+    | MembershipLocked | Exportálás | membershipLocked |
+    | DisplayName | Importálás | displayName |
+    | Hatókör | Importálás | hatókör |
+    | Típus | Importálás | típus |
+    | Tag | Importálás | tag |
+    | AccountName | Importálás | accountName |
+    | DisplayedOwner | Importálás | displayedOwner |
+    | MailNickName | Importálás | mailNickName |
+
 
 11.  A **Configure Deprovisioning** (Megszüntetés konfigurálása) lapon kattintson a **Next** (Tovább) gombra.
 
-12.  A kezelőügynök létrehozásához a **Configure Extensions** (Bővítmények konfigurálása) lapon kattintson a **Finish** (Befejezés) gombra..
+12.  A kezelőügynök létrehozásához a **Configure Extensions** (Bővítmények konfigurálása) lapon kattintson a **Finish** (Befejezés) gombra.
 
 ## Az AD-kezelőügynök létrehozása
 Az Active Directory-kezelőügynök összekötőként szolgál az AD tartományi szolgáltatásokhoz. Az összekötő a Create Management Agent (Kezelőügynök létrehozása) varázslóval hozható létre.
 
-1. A Create Management Agent (Kezelőügynök létrehozása) varázsló megnyitásához válassza az **Actions** (Műveletek) menü **Create** (Létrehozás) parancsát..
+1. A Create Management Agent (Kezelőügynök létrehozása) varázsló megnyitásához válassza az **Actions** (Műveletek) menü **Create** (Létrehozás) parancsát.
 
 2. A **Create Management Agent** (Kezelőügynök létrehozása) oldalon adja meg a következő beállításokat, majd kattintson a **Next** (Tovább) gombra.
 
@@ -186,23 +184,23 @@ Az Active Directory-kezelőügynök összekötőként szolgál az AD tartományi
 
 4. A **Configure Directory Partitions** (Címtárpartíciók konfigurálása) lapon adja meg a következő beállításokat, majd kattintson a **Next** (Tovább) gombra:
 
-    - A **Select directory partitions** (Címtárpartíciók választása) listában válassza a **DC=CONTOSO, DC=local** elemet..
+    - A **Select directory partitions** (Címtárpartíciók választása) listában válassza a **DC=CONTOSO, DC=local** elemet.
 
-    - Kattintson a **Containers** (Tárolók) elemre a Select Containers (Tárolók kiválasztása) párbeszédpanel megnyitásához..
+    - Kattintson a **Containers** (Tárolók) elemre a Select Containers (Tárolók kiválasztása) párbeszédpanel megnyitásához.
 
     - Ha úgy szeretné módosítani a tárolót, hogy csak a MIM kezelje az adott tároló objektumait, kattintson a **DC=CONTOSO,DC=local** csomópontra, majd kattintson a kívánt tároló csomópontjára.
 
-    - Kattintson az **OK** gombra a Select Containers (Tárolók kiválasztása) párbeszédpanel bezárásához..
+    - Kattintson az **OK** gombra a Select Containers (Tárolók kiválasztása) párbeszédpanel bezárásához.
 
-5. A **Configure Provisioning Hierarchy** (Kiépítési hierarchia konfigurálása) lapon kattintson a **Next** (Tovább) gombra..
+5. A **Configure Provisioning Hierarchy** (Kiépítési hierarchia konfigurálása) lapon kattintson a **Next** (Tovább) gombra.
 
 6. A **Select Object Types** (Objektumtípusok választása) lapon adja meg a következő beállításokat, majd kattintson a **Next** (Tovább) gombra:
 
-    - Az **Object types** (Objektumtípusok) listában jelölje ki a **user** (felhasználó) és a **group** (csoport) típust..
+    - Az **Object types** (Objektumtípusok) listában jelölje ki a **user** (felhasználó) és a **group** (csoport) típust.
 
 7. A **Select Attributes** (Attribútumok kijelölése) lapon adja meg a következő beállításokat, majd kattintson a **Next** (Tovább) gombra:
 
-    - Válassza a **Show All** (Az összes megjelenítése) elemet..
+    - Válassza a **Show All** (Az összes megjelenítése) elemet.
 
 8. Az **Attributes** (Attribútumok) listában jelölje ki a következő attribútumokat:
 
@@ -222,15 +220,15 @@ Az Active Directory-kezelőügynök összekötőként szolgál az AD tartományi
     -   unicodePwd
     -   userAccountControl
 
-9. A **Configure Connector Filter** (Összekötőszűrő konfigurálása) lapon kattintson a **Next** (Tovább) gombra..
+9. A **Configure Connector Filter** (Összekötőszűrő konfigurálása) lapon kattintson a **Next** (Tovább) gombra.
 
-10. A**Configure Join and Projection Rules** (Csatlakozási és leképezési szabályok konfigurálása) lapon kattintson a **Next** (Tovább) gombra..
+10. A**Configure Join and Projection Rules** (Csatlakozási és leképezési szabályok konfigurálása) lapon kattintson a **Next** (Tovább) gombra.
 
-11. A **Configure Attribute Flow** (Attribútumfolyam konfigurálása) lapon kattintson a **Next** (Tovább) gombra..
+11. A **Configure Attribute Flow** (Attribútumfolyam konfigurálása) lapon kattintson a **Next** (Tovább) gombra.
 
-12. A **Configure Deprovisioning** (Megszüntetés konfigurálása) lapon kattintson a **Next** (Tovább) gombra..
+12. A **Configure Deprovisioning** (Megszüntetés konfigurálása) lapon kattintson a **Next** (Tovább) gombra.
 
-13. A **Configure Extensions** (Bővítmények konfigurálása) lapon kattintson a **Finish** (Befejezés) gombra..
+13. A **Configure Extensions** (Bővítmények konfigurálása) lapon kattintson a **Finish** (Befejezés) gombra.
 
 
 ## Futtatási profilok létrehozása
@@ -251,23 +249,23 @@ Az alábbi táblázatban az ADMA összekötőhöz létrehozandó öt futtatási 
 
 Futtatási profilok létrehozása az ADMA összekötőhöz:
 
-1. Indítsa el a Synchronization Service Managert, majd a **Tools** (Eszközök) menüben kattintson a **Management Agents** (Kezelőügynökök) elemre..
+1. Indítsa el a Synchronization Service Managert, majd a **Tools** (Eszközök) menüben kattintson a **Management Agents** (Kezelőügynökök) elemre.
 
-2. A **Management Agents** (Kezelőügynökök) listában válassza az **ADMA** lehetőséget..
+2. A **Management Agents** (Kezelőügynökök) listában válassza az **ADMA** lehetőséget.
 
-3. A Configure Run Profiles for (Futtatási profilok konfigurálása) párbeszédpanel megnyitásához válassza az**Actions** (Műveletek) menü **Configure Run Profiles** (Futtatási profilok konfigurálása) parancsát..
+3. A Configure Run Profiles for (Futtatási profilok konfigurálása) párbeszédpanel megnyitásához válassza az**Actions** (Műveletek) menü **Configure Run Profiles** (Futtatási profilok konfigurálása) parancsát.
 
 4. A táblázatban szereplő minden futtatási profilnál végezze el a következő lépéseket:
 
-    - A Configure Run Profile (Futtatási profil konfigurálása) varázsló megnyitásához kattintson a **New Profile** (Új profil) lehetőségre..
+    - A Configure Run Profile (Futtatási profil konfigurálása) varázsló megnyitásához kattintson a **New Profile** (Új profil) lehetőségre.
 
-    - A **Name** (Név) mezőbe írja be a profil nevét a táblázatból, majd kattintson a **Next** (Tovább) gombra..
+    - A **Name** (Név) mezőbe írja be a profil nevét a táblázatból, majd kattintson a **Next** (Tovább) gombra.
 
-    - A **Type** (Típus) listában válassza ki a lépés típusát a táblázatból, majd kattintson a **Next** (Tovább) gombra..
+    - A **Type** (Típus) listában válassza ki a lépés típusát a táblázatból, majd kattintson a **Next** (Tovább) gombra.
 
     - A futtatási profil létrehozásához kattintson a **Finish** (Befejezés) gombra.
 
-5. Kattintson az **OK** gombra a Configure Run Profiles (Futtatási profilok konfigurálása) párbeszédpanel bezárásához..
+5. Kattintson az **OK** gombra a Configure Run Profiles (Futtatási profilok konfigurálása) párbeszédpanel bezárásához.
 
 ### Futtatási profilok létrehozása a MIMMA összekötőhöz
 
@@ -283,23 +281,23 @@ Az alábbi táblázatban a MIMMA összekötőhöz tartozó öt kapcsolódó futt
 
 Futtatási profilok létrehozása a MIMMA összekötőhöz:
 
-1. Indítsa el a Synchronization Service Managert, majd a **Tools** (Eszközök) menüben kattintson a **Management Agents** (Kezelőügynökök) elemre..
+1. Indítsa el a Synchronization Service Managert, majd a **Tools** (Eszközök) menüben kattintson a **Management Agents** (Kezelőügynökök) elemre.
 
-2. A **Management Agents** (Kezelőügynökök) listában válassza a **MIMMA** lehetőséget..
+2. A **Management Agents** (Kezelőügynökök) listában válassza a **MIMMA** lehetőséget.
 
-3. A Configure Run Profiles for (Futtatási profilok konfigurálása) párbeszédpanel megnyitásához válassza az**Actions** (Műveletek) menü **Configure Run Profiles** (Futtatási profilok konfigurálása) parancsát..
+3. A Configure Run Profiles for (Futtatási profilok konfigurálása) párbeszédpanel megnyitásához válassza az**Actions** (Műveletek) menü **Configure Run Profiles** (Futtatási profilok konfigurálása) parancsát.
 
 4. A táblázatban szereplő minden futtatási profilnál végezze el a következő lépéseket:
 
-    - A Configure Run Profile (Futtatási profil konfigurálása) varázsló megnyitásához kattintson a **New Profile** (Új profil) lehetőségre..
+    - A Configure Run Profile (Futtatási profil konfigurálása) varázsló megnyitásához kattintson a **New Profile** (Új profil) lehetőségre.
 
-    - A **Name** (Név) mezőbe írja be a profil nevét a táblázatból, majd kattintson a **Next** (Tovább) gombra..
+    - A **Name** (Név) mezőbe írja be a profil nevét a táblázatból, majd kattintson a **Next** (Tovább) gombra.
 
-    - A **Type** (Típus) listában válassza ki a lépés típusát a táblázatból, majd kattintson a **Next** (Tovább) gombra..
+    - A **Type** (Típus) listában válassza ki a lépés típusát a táblázatból, majd kattintson a **Next** (Tovább) gombra.
 
     - A futtatási profil létrehozásához kattintson a **Finish** (Befejezés) gombra.
 
-5. Kattintson az **OK** gombra a Configure Run Profiles (Futtatási profilok konfigurálása) párbeszédpanel bezárásához..
+5. Kattintson az **OK** gombra a Configure Run Profiles (Futtatási profilok konfigurálása) párbeszédpanel bezárásához.
 
 ## A MIM szolgáltatás konfigurálása
 
@@ -307,11 +305,11 @@ Az AD által a MIM szolgáltatás esetében a felhasználók bejövő szinkroniz
 
 Az AD felhasználókra vonatkozó bejövő szinkronizálási szabályának létrehozása:
 
-1. A MIM-portál kezdőlapján a navigációs sávon kattintson az **Administration** (Adminisztráció) elemre..
+1. A MIM-portál kezdőlapján a navigációs sávon kattintson az **Administration** (Adminisztráció) elemre.
 
-2. A Synchronization Rules (Szinkronizálási szabályok) lap megnyitásához kattintson a **Synchronization Rules** (Szinkronizálási szabályok) lehetőségre..
+2. A Synchronization Rules (Szinkronizálási szabályok) lap megnyitásához kattintson a **Synchronization Rules** (Szinkronizálási szabályok) lehetőségre.
 
-3. A Create Synchronization Rule (Szinkronizálási szabály létrehozása) varázsló megnyitásához kattintson a **New** (Új) gombra az eszköztáron..
+3. A Create Synchronization Rule (Szinkronizálási szabály létrehozása) varázsló megnyitásához kattintson a **New** (Új) gombra az eszköztáron.
 
 4. A **General** (Általános) lapon adja meg a következő információkat, majd kattintson a **Next** (Tovább) gombra:
 
@@ -328,7 +326,7 @@ Az AD felhasználókra vonatkozó bejövő szinkronizálási szabályának létr
 
     -   A Relationship Criteria (Kapcsolati feltételek) konfigurálásához válassza az **ObjectSID** elemet a MetaverseObject:person(Attribute) és a ConnectedSystemObject:person(Attribute) listából.
 
-    -   Válassza a **Create Resource in MIM** (Erőforrás létrehozása a MIM-ben) lehetőséget..
+    -   Válassza a **Create Resource in MIM** (Erőforrás létrehozása a MIM-ben) lehetőséget.
 
 7. A **Inbound Attribute Flow** (Bejövő attribútumfolyam) lapon adja meg a következő információkat, majd kattintson a **Next** (Tovább) gombra:
 
@@ -345,15 +343,15 @@ Az AD felhasználókra vonatkozó bejövő szinkronizálási szabályának létr
 
     A táblázatban minden egyes sorhoz kapcsolódóan végezze el a következő lépéseket:
 
-    - Az Flow Definition (Adatfolyam definiálása) párbeszédpanelen kattintson a **New Attribute Flow** (Új attribútumfolyam) lehetőségre..
+    - Az Flow Definition (Adatfolyam definiálása) párbeszédpanelen kattintson a **New Attribute Flow** (Új attribútumfolyam) lehetőségre.
 
     - A **Source** (Forrás) lapon válassza a táblázatban az adott sorhoz feltüntetett attribútumot.
 
     - A **Destination** (Cél) lapon válassza a táblázatban az adott sorhoz feltüntetett attribútumot.
 
-    - Az attribútumfolyam konfigurációjának alkalmazásához kattintson az **OK** gombra..
+    - Az attribútumfolyam konfigurációjának alkalmazásához kattintson az **OK** gombra.
 
-8. A **Summary** (Összegzés) lapon kattintson a **Submit** (Küldés) gombra..
+8. A **Summary** (Összegzés) lapon kattintson a **Submit** (Küldés) gombra.
 
 ## A tesztkörnyezet inicializálása
 A MIM-konfiguráció AD-ből származó adatokkal való teszteléséhez a következő négy lépést kell elvégeznie:
@@ -364,9 +362,9 @@ A MIM-konfiguráció AD-ből származó adatokkal való teszteléséhez a követ
 
 2. Válassza a **Tools** (Eszközök) menü **Options** (Beállítások) elemét az Options (Beállítások) párbeszédpanel megnyitásához.
 
-3. Válassza az **Enable Synchronization Rule Provisioning** (Szinkronizálási szabályok létrehozásának engedélyezése) lehetőséget..
+3. Válassza az **Enable Synchronization Rule Provisioning** (Szinkronizálási szabályok létrehozásának engedélyezése) lehetőséget.
 
-4. Kattintson az **OK** gombra az Options (Beállítások) párbeszédpanel bezárásához..
+4. Kattintson az **OK** gombra az Options (Beállítások) párbeszédpanel bezárásához.
 
 ### A MIMMA inicializálása
 
@@ -379,19 +377,19 @@ Futtasson egy teljes szinkronizálási ciklust ezen az összekötőn. A teljes c
 
 A négy futtatási profil végrehajtásához kövesse az alábbi lépéseket.
 
-1. Indítsa el a Synchronization Service Managert, majd a **Tools** (Eszközök) menüben kattintson a **Management Agents** (Kezelőügynökök) elemre..
+1. Indítsa el a Synchronization Service Managert, majd a **Tools** (Eszközök) menüben kattintson a **Management Agents** (Kezelőügynökök) elemre.
 
-2. A **Management Agents** (Kezelőügynökök) listában válassza a **MIMMA** lehetőséget..
+2. A **Management Agents** (Kezelőügynökök) listában válassza a **MIMMA** lehetőséget.
 
-3. A Run Management Agent (Kezelőügynök futtatása) párbeszédpanel megnyitásához válassza az **Actions** (Műveletek) menü **Run** (Futtatás) parancsát..
+3. A Run Management Agent (Kezelőügynök futtatása) párbeszédpanel megnyitásához válassza az **Actions** (Műveletek) menü **Run** (Futtatás) parancsát.
 
 4. A fent felsorolt minden egyes futtatási profilnál végezze el a következő lépéseket:
 
-    - A Run Management Agent (Kezelőügynök futtatása) párbeszédpanel megnyitásához válassza az **Actions** (Műveletek) menü **Run** (Futtatás) parancsát..
+    - A Run Management Agent (Kezelőügynök futtatása) párbeszédpanel megnyitásához válassza az **Actions** (Műveletek) menü **Run** (Futtatás) parancsát.
 
     - A **Run profiles** (Futtatási profilok) listában jelölje ki a futtatni kívánt futtatási profilokat.
 
-    - A futtatási profil elindításához kattintson az **OK** gombra..
+    - A futtatási profil elindításához kattintson az **OK** gombra.
 
 #### Az attribútumfolyam precedenciájának konfigurálása
 
@@ -403,19 +401,19 @@ A MIM-összekötő inicializálása során a rendszer a beállított szinkroniz�
 
 Az Active Directory-összekötő inicializálásához teljes importálást kell futtatnia, és teljes szinkronizálást kell végrehajtania az importált adatokon. A teljes importálás során az AD-ből a meglévő objektumokat a kapcsolódási térbe kerülnek. A teljes szinkronizálás során a szinkronizálási szabályok a MIM-összekötő szabályainak megfelelően módosulnak.
 
-1. Indítsa el a Synchronization Service Managert, majd a **Tools** (Eszközök) menüben kattintson a **Management Agents** (Kezelőügynökök) elemre..
+1. Indítsa el a Synchronization Service Managert, majd a **Tools** (Eszközök) menüben kattintson a **Management Agents** (Kezelőügynökök) elemre.
 
-2. A **Management Agents** (Kezelőügynökök) listában válassza az **ADMA** lehetőséget..
+2. A **Management Agents** (Kezelőügynökök) listában válassza az **ADMA** lehetőséget.
 
-3. A Run Management Agent (Kezelőügynök futtatása) párbeszédpanel megnyitásához válassza az **Actions** (Műveletek) menü **Run** (Futtatás) parancsát..
+3. A Run Management Agent (Kezelőügynök futtatása) párbeszédpanel megnyitásához válassza az **Actions** (Műveletek) menü **Run** (Futtatás) parancsát.
 
 4. A fent felsorolt minden egyes futtatási profilnál végezze el a következő lépéseket:
 
-    - A Run Management Agent (Kezelőügynök futtatása) párbeszédpanel megnyitásához válassza az **Actions** (Műveletek) menü **Run** (Futtatás) parancsát..
+    - A Run Management Agent (Kezelőügynök futtatása) párbeszédpanel megnyitásához válassza az **Actions** (Műveletek) menü **Run** (Futtatás) parancsát.
 
     - A **Run profiles** (Futtatási profilok) listában jelölje ki a futtatni kívánt futtatási profilokat.
 
-    - A futtatási profil elindításához kattintson az **OK** gombra..
+    - A futtatási profil elindításához kattintson az **OK** gombra.
 
 ### A MIM szolgáltatás adatbázisának feltöltése
 
@@ -439,10 +437,9 @@ A három futtatási profil végrehajtásához kövesse az alábbi lépéseket.
     - A **Run profiles** (Futtatási profilok) listában jelölje ki a futtatni kívánt futtatási profilokat.
     - A futtatási profil elindításához kattintson az **OK** gombra.
 
->[!div class="step-by-step"]
-[« MIM szolgáltatás és -portál](install-mim-service-portal.md)
+>[!div class="step-by-step"] [« MIM szolgáltatás és -portál](install-mim-service-portal.md)
 
 
-<!--HONumber=Apr16_HO4-->
+<!--HONumber=Jun16_HO1-->
 
 
