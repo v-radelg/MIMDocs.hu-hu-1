@@ -21,7 +21,7 @@ ms.assetid: 90d66a75-a7ec-4fa1-911c-cce683908838
     <section id="hero-content">
       <h1>A Microsoft Identity Manager dokumentációja</h1>
       <h2>A Microsoft Identity Manager (MIM) helyszíni identitás- és hozzáférés-kezelési képességeket biztosít, például identitásszinkronizálási, identitás-lopásgátlási és egyéb funkciókat.</h2>
-      <h3>Most ismerkedik a MIM-mel? <a href="http://www.microsoft.com/en-us/server-cloud/products/microsoft-identity-manager/" target="\_blank">Keresse fel a termék oldalát &rarr;</a></h3>     
+      <h3>Most ismerkedik a MIM-mel? <a href="http://go.microsoft.com/fwlink/?LinkId=816853" target="\_blank">Keresse fel a termék oldalát &rarr;</a></h3>     
     </section>
     <aside class="alert section-border">
       <p>Készen áll a kezdésre?</p>
@@ -40,7 +40,7 @@ ms.assetid: 90d66a75-a7ec-4fa1-911c-cce683908838
           <li><a href="/microsoft-identity-manager/reference/privileged-access-management-rest-api-reference">Privileged Identity Management REST API-referencia</a></li>
         </ul>
         <ul class="column column-half">
-          <li><a href="/microsoft-identity-manager/deploy-use/microsoft-identity-manager-deploy">A MIM szoftver üzembe helyezése új kiszolgálón</a></li>
+          <li><a href="/microsoft-identity-manager/deploy-use/microsoft-identity-manager-deploy">A MIM szoftver telepítése friss kiszolgálóra</a></li>
         </ul>
       </div>
     </section>
@@ -52,9 +52,9 @@ ms.assetid: 90d66a75-a7ec-4fa1-911c-cce683908838
               <a href="/microsoft-identity-manager/understand-explore/microsoft-identity-manager-2016">
                 <div class="title column-third">
                   <span class="step-number">1</span>
-                  <p>Ismertetés és felfedezés</p>
+                  <p>Megismerés és felfedezés</p>
                 </div>
-                <p class="description column-two-thirds">Ismerje meg a Microsoft Identity Manager magas szintű koncepcióit, funkcióit és képességeit.
+                <p class="description column-two-thirds">Sajátítsa el a Microsoft Identity Manager alapvető fogalmait, funkcióit és képességeit.
                 </p>
               </a>
             </header>
@@ -63,19 +63,19 @@ ms.assetid: 90d66a75-a7ec-4fa1-911c-cce683908838
                 <li class="column-third">
                   <a href="/microsoft-identity-manager/understand-explore/microsoft-identity-manager-2016">
                     <h3>Mi az a MIM 2016?</h3>
-                    <p>Megtudhatja, hogyan biztosítja a MIM 2016 a helyszíni és hibrid identitás- és hozzáférés-felügyeleti képességeket.</p>
+                    <p>Ismerje meg, hogyan biztosít a MIM 2016 helyszíni és hibrid identitás- és hozzáférés-kezelési képességeket.</p>
                   </a>
                 </li>
                 <li class="column-third">
                   <a href="/microsoft-identity-manager/understand-explore/identity-manager-hybrid-reporting-azure">
                     <h3>Hibrid jelentéskészítés az Azure-ban</h3>
-                    <p>Egyetlen jelentést hozhat létre a helyszínen és a felhőben bekövetkező eseményekről.</p>
+                    <p>Egyetlen jelentést készíthet a helyszínen és a felhőben bekövetkező eseményekről.</p>
                   </a>
                 </li>
                 <li class="column-third">
                   <a href="/microsoft-identity-manager/plan-design/microsoft-identity-manager-2016-supported-platforms">
                     <h3>Támogatott platformok</h3>
-                    <p>a MIM által támogatott platformok, kiszolgálók és alkalmazások listája.</p>
+                    <p>A MIM által támogatott platformok, kiszolgálók és alkalmazások listája.</p>
                   </a>
                 </li>
               </ul>
@@ -97,19 +97,19 @@ ms.assetid: 90d66a75-a7ec-4fa1-911c-cce683908838
                 <li class="column-third">
                   <a href="/microsoft-identity-manager/deploy-use/microsoft-identity-manager-deploy">
                     <h3>Első üzembe helyezés</h3>
-                    <p>A MIM telepítése olyan új kiszolgálón, amelyen korábban még nem volt telepítve a FIM vagy a MIM.</p>
+                    <p>A MIM telepítése olyan friss kiszolgálóra, amely előzőleg nem rendelkezett FIM vagy MIM szoftverrel.</p>
                   </a>
                 </li>
                 <li class="column-third">
                   <a href="/microsoft-identity-manager/deploy-use/microsoft-identity-manager-2016-upgrade-from-fim-2010-R2">
-                    <h3>Az FIM 2010 R2 frissítése</h3>
-                    <p>Meglévő FIM 2010 R2 tesztrendszer frissítése a MIM 2016-ra.</p>
+                    <h3>Frissítés a FIM 2010 R2-ről</h3>
+                    <p>Frissítés meglévő FIM 2010 R2 tesztrendszerről MIM 2016-ra.</p>
                   </a>
                 </li>
                 <li class="column-third">
                   <a href="/microsoft-identity-manager/deploy-use/deploying-mim-password-change-notification-service-on-domain-controller">
                     <h3>A jelszóváltozás-értesítési szolgáltatás</h3>
-                    <p>Telepítse a jelszóváltozás-értesítési szolgáltatást minden egyes tartományvezérlő kiszolgálón a jelszó-szinkronizálás engedélyezéséhez.</p>
+                    <p>A jelszó-szinkronizálás engedélyezéséhez telepítse a PCNS-t mindegyik tartományvezérlő kiszolgálóra.</p>
                   </a>
                 </li>
               </ul>
@@ -140,6 +140,6 @@ ms.assetid: 90d66a75-a7ec-4fa1-911c-cce683908838
 </article>
 
 
-<!--HONumber=Jun16_HO1-->
+<!--HONumber=Jun16_HO4-->
 
 
