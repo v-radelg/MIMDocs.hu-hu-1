@@ -1,8 +1,8 @@
 ---
 # required metadata
 
-title: Identitáskezelési kiszolgáló beállítása: SharePoint | Microsoft Identity Manager
-description: A SharePoint Foundation telepítése és konfigurálása a MIM-portál oldalának üzemeltetéséhez.
+title: "Identitáskezelési kiszolgáló beállítása: SharePoint | Microsoft Identity Manager"
+description: "A SharePoint Foundation telepítése és konfigurálása a MIM-portál oldalának üzemeltetéséhez."
 keywords:
 author: kgremban
 manager: stevenpo

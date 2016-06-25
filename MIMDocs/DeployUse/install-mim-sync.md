@@ -1,8 +1,8 @@
 ---
 # required metadata
 
-title: A MIM 2016 telepítése: A MIM Synchronization Service | Microsoft Identity Manager
-description: Első lépések a MIM 2016 összetevői kapcsán – a Synchronization Service telepítése és konfigurálása
+title: "A MIM 2016 telepítése: A MIM Synchronization Service | Microsoft Identity Manager"
+description: "Első lépések a MIM 2016 összetevői kapcsán – a Synchronization Service telepítése és konfigurálása"
 keywords:
 author: kgremban
 manager: stevenpo

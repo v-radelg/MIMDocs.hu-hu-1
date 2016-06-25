@@ -1,8 +1,8 @@
 ---
 # required metadata
 
-title: A MIM 2016 telepítése: A MIM szolgáltatás és -portál | Microsoft Identity Manager
-description: Itt olvashatók a Microsoft Identity Manager 2016 rendszerhez tartozó MIM szolgáltatás és -portál telepítési és konfigurálási lépései.
+title: "A MIM 2016 telepítése: A MIM szolgáltatás és -portál | Microsoft Identity Manager"
+description: "Itt olvashatók a Microsoft Identity Manager 2016 rendszerhez tartozó MIM szolgáltatás és -portál telepítési és konfigurálási lépései."
 keywords:
 author: kgremban
 manager: stevenpo

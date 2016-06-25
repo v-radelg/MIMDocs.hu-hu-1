@@ -1,8 +1,8 @@
 ---
 # required metadata
 
-title: Identitáskezelési kiszolgáló beállítása: Windows Server 2012 R2 | Microsoft Identity Manager
-description: A Windows Server 2012 R2 és a MIM 2016 együttműködésének előkészítési lépései és minimumkövetelményei
+title: "Identitáskezelési kiszolgáló beállítása: Windows Server 2012 R2 | Microsoft Identity Manager"
+description: "A Windows Server 2012 R2 és a MIM 2016 együttműködésének előkészítési lépései és minimumkövetelményei"
 keywords:
 author: kgremban
 manager: stevenpo

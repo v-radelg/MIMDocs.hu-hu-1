@@ -1,8 +1,8 @@
 ---
 # required metadata
 
-title: Identitáskezelési kiszolgáló beállítása: Exchange | Microsoft Identity Manager
-description: Igény szerint telepítheti az Exchange Servert is, amivel lehetővé teheti a MIM 2016 számára e-mailek küldését és postaládák létrehozását.
+title: "Identitáskezelési kiszolgáló beállítása: Exchange | Microsoft Identity Manager"
+description: "Igény szerint telepítheti az Exchange Servert is, amivel lehetővé teheti a MIM 2016 számára e-mailek küldését és postaládák létrehozását."
 keywords:
 author: kgremban
 manager: stevenpo

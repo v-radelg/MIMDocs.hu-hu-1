@@ -1,8 +1,8 @@
 ---
 # required metadata
 
-title: Identitáskezelési kiszolgáló beállítása: SQL Server 2014 | Microsoft Identity Manager
-description: Az SQL Server 2014 telepítése a MIM 2016 üzembe helyezésének előkészületeként.
+title: "Identitáskezelési kiszolgáló beállítása: SQL Server 2014 | Microsoft Identity Manager"
+description: "Az SQL Server 2014 telepítése a MIM 2016 üzembe helyezésének előkészületeként."
 keywords:
 author: kgremban
 manager: stevenpo

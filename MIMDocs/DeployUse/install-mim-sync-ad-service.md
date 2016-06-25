@@ -1,8 +1,8 @@
 ---
 # required metadata
 
-title: A MIM 2016 telepítése: Az Active Directory és a MIM szolgáltatás szinkronizálása | Microsoft Identity Manager
-description: Az Active Directory és a MIM-adatbázisok szinkronizálása kezelőügynökök és a MIM Sync szolgáltatás segítségével.
+title: "A MIM 2016 telepítése: Az Active Directory és a MIM szolgáltatás szinkronizálása | Microsoft Identity Manager"
+description: "Az Active Directory és a MIM-adatbázisok szinkronizálása kezelőügynökök és a MIM Sync szolgáltatás segítségével."
 keywords:
 author: kgremban
 manager: stevenpo
