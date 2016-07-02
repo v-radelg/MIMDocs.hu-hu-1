@@ -1,9 +1,7 @@
 ---
-# required metadata
-
-title: Frissítés a Forefront Identity Manager 2010 R2-ről | Microsoft Identity Manager
-description: Megtudhatja, hogyan frissítheti a FIM 2010 R2 összetevőit és hogyan telepítheti a MIM 2016 új összetevőit.
-keywords:
+title: "Frissítés a Forefront Identity Manager 2010 R2-ről | Microsoft Identity Manager"
+description: "Megtudhatja, hogyan frissítheti a FIM 2010 R2 összetevőit és hogyan telepítheti a MIM 2016 új összetevőit."
+keywords: 
 author: kgremban
 manager: stevenpo
 ms.date: 05/13/2016
@@ -12,16 +10,12 @@ ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 9471ccc1-bafe-46ee-b169-1464262380e1
-
-# optional metadata
-
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer: mwahl
 ms.suite: ems
-#ms.tgt_pltfrm:
-#ms.custom:
+translationtype: Human Translation
+ms.sourcegitcommit: 7e61e201b277a2e8ec9fee785e9e34fca3b1cb29
+ms.openlocfilehash: 24a7bf5bfb0a7450becd08be6743ed7ab1755559
+
 
 ---
 
@@ -207,6 +201,7 @@ Ez az útmutató feltételezi, hogy az alábbiak már be vannak állítva:
 Megjegyzés: Ha a FIM beépülő moduljai és bővítményei jelenleg telepítve vannak a felhasználók számítógépein az önkiszolgáló jelszó-változtatási (SSPR) szolgáltatáshoz, abban az esetben az új MFA telefonos jelszó-változtatási kapuk konfigurálásával várjon addig, amíg a FIM valamennyi beépülő modulját és bővítményét frissítette a MIM 2016-os verzióra.  A FIM 2010 és a FIM 2010 R2 beépülő moduljai és bővítményei nem ismerik fel az új kapukat, így hibaüzenetet fognak megjeleníteni, a felhasználók pedig nem fogják tudni megváltoztatni a jelszavukat.
 
 
-<!--HONumber=May16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

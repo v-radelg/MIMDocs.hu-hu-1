@@ -1,9 +1,7 @@
 ---
-# required metadata
-
-title: A MIM 2016 kibocsátási megjegyzései | Microsoft Identity Manager
-description:
-keywords:
+title: "A MIM 2016 kibocsátási megjegyzései | Microsoft Identity Manager"
+description: 
+keywords: 
 author: kgremban
 manager: stevenpo
 ms.date: 04/28/2016
@@ -12,22 +10,19 @@ ms.prod: microsoft-identity-manager
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
 ms.assetid: 297e25a5-668b-45a4-b2de-7767ebc59100
-
-# optional metadata
-
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer: mwahl
 ms.suite: ems
-#ms.tgt_pltfrm:
-#ms.custom:
+translationtype: Human Translation
+ms.sourcegitcommit: 62108908497d1dcf69579ba144545346b6a42266
+ms.openlocfilehash: 12f245624e644b12825239e378a26752f7a86846
+
 
 ---
 
 # A MIM 2016 kibocsátási megjegyzései
 Egyelőre nincsenek kibocsátási megjegyzések.
 
-<!--HONumber=Apr16_HO4-->
+
+<!--HONumber=Jun16_HO4-->
 
 
