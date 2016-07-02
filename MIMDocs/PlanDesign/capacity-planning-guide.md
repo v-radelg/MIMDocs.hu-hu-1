@@ -1,9 +1,7 @@
 ---
-# required metadata
-
-title: Kapacitástervezési útmutató | Microsoft Identity Manager
-description: Az útmutató azokat a tényezőket ismerteti, amelyeket célszerű figyelembe venni a MIM 2016 üzembe helyezése előtt – ilyenek például a terhelésszintek és a szabályozási döntések.
-keywords:
+title: "Kapacitástervezési útmutató | Microsoft Identity Manager"
+description: "Az útmutató azokat a tényezőket ismerteti, amelyeket célszerű figyelembe venni a MIM 2016 üzembe helyezése előtt – ilyenek például a terhelésszintek és a szabályozási döntések."
+keywords: 
 author: kgremban
 manager: stevenpo
 ms.date: 05/13/2016
@@ -12,16 +10,12 @@ ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 3ac5b990-1678-4996-996d-cbd84b8426b4
-
-# optional metadata
-
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer: mwahl
 ms.suite: ems
-#ms.tgt_pltfrm:
-#ms.custom:
+translationtype: Human Translation
+ms.sourcegitcommit: 0ea8b3d9032a01bd6a6b1faad8ea27d2cb889fc6
+ms.openlocfilehash: 323a875aba14a238aa7cb3a0e6df192729ce53d6
+
 
 ---
 
@@ -100,6 +94,7 @@ A MIM házirend-konfigurációjában emellett a környezet kiépítési tevéken
 - A letölthető [Forefront Identity Manager (FIM) 2010 kapacitástervezési útmutatóban](http://go.microsoft.com/fwlink/?LinkId=200180) részletes információkat olvashat egy tesztkörnyezetről és a kapcsolódó teljesítménytesztelési eredményekről.
 
 
-<!--HONumber=May16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 
