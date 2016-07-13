@@ -1,6 +1,6 @@
 {
   "LastProcessedCommit": "e0261b00d5df35458d2b1bfc54e9481c5778bfdd",
-  "LastTranslatedCommit": "16e6193282a81a5392a1302b97fdd5c3129be070",
+  "LastTranslatedCommit": "3fbbdb3b998e367804331a5321331cb11fd9914b",
   "Items": {
     "50c0edd60abfa6550cb5a873d32a842e8c099811": {
       "FileHash": "50c0edd60abfa6550cb5a873d32a842e8c099811",
@@ -2921,7 +2921,7 @@
       "TargetFilePath": "MIMDocs\\DeployUse\\install-mim-sync-ad-service.md",
       "HandbackFilePath": "ol-handback\\Microsoft\\MIMDocs-pr.hu-hu\\master\\install-mim-sync-ad-service.2a07d4547ca2bf0ca43e7ed04fa3bf20de000a33.hu-hu.xlf",
       "HandbackFileCommit": "838c10cec9407505af2ef72f841c5a21e7949dc6",
-      "HandbackDateTime": "2016-07-13T08:50:01.0998032Z",
+      "HandbackDateTime": "2016-07-13T08:59:31.3087994Z",
       "HandbackException": {
         "internal_error_code": "handback_transform_failed",
         "internal_error_message": "Handback file: C:\\ol\\master\\EM.handback\\e189a7\\ol-handback\\Microsoft\\MIMDocs-pr.hu-hu\\master\\install-mim-sync-ad-service.2a07d4547ca2bf0ca43e7ed04fa3bf20de000a33.hu-hu.xlf failed.",
@@ -2931,7 +2931,7 @@
         "stack_trace": "   at Microsoft.OpenLocalization.Transformer.TransformerClient.XliffToMarkdown(Stream xliffStream, Stream skeletonStream, Stream targetStream) in C:\\Jenkins\\workspace\\OpenLocalization-Prod\\src\\OpenLocalization.Transformer.Core\\TransformerClient.cs:line 119\r\n   at Microsoft.OpenLocalization.Helper.XliffTransformUtil.XliffToMarkdown(String skeletonFile, String xliffFile, String mdfile, Boolean useJavascriptTransformer) in C:\\Jenkins\\workspace\\OpenLocalization-Prod\\src\\OpenLocalization\\Helper\\XliffTransformUtil.cs:line 92\r\n   at Microsoft.OpenLocalization.Localization.LocalizationCore.<>c__DisplayClass5_0.<GetHandbackFiles>b__0(String file) in C:\\Jenkins\\workspace\\OpenLocalization-Prod\\src\\OpenLocalization\\Localization\\HandbackCore.cs:line 406",
         "extended_information": null
       },
-      "HandbackFailureTimes": 2,
+      "HandbackFailureTimes": 3,
       "UpdatedDateTime": "2016-06-25T16:44:45.3895659Z",
       "ArchiveFilePath": "ol-handoff\\Microsoft\\MIMDocs-pr.hu-hu\\master\\archive\\install-mim-sync-ad-service.2a07d4547ca2bf0ca43e7ed04fa3bf20de000a33.hu-hu.xlf",
       "ArchiveFileCommit": "3d281b6b445e7897227c2906284a4a7b9a9dbacd",
