@@ -18,7 +18,7 @@
 * Archive File: [install-mim-sync-ad-service.2a07d4547ca2bf0ca43e7ed04fa3bf20de000a33.hu-hu.xlf](https://github.com/Microsoft/EM.handoff/blob/3d281b6b445e7897227c2906284a4a7b9a9dbacd/ol-handoff/Microsoft/MIMDocs-pr.hu-hu/master/archive/install-mim-sync-ad-service.2a07d4547ca2bf0ca43e7ed04fa3bf20de000a33.hu-hu.xlf)
 * Archive Datetime: 2016-07-01 23:30:42
 * Handback File: [install-mim-sync-ad-service.2a07d4547ca2bf0ca43e7ed04fa3bf20de000a33.hu-hu.xlf](https://github.com/Microsoft/EM.handback/blob/838c10cec9407505af2ef72f841c5a21e7949dc6/ol-handback/Microsoft/MIMDocs-pr.hu-hu/master/install-mim-sync-ad-service.2a07d4547ca2bf0ca43e7ed04fa3bf20de000a33.hu-hu.xlf)
-* Handback Datetime: 2016-07-13 08:59:31
+* Handback Datetime: 2016-07-13 09:23:57
 * Handback Error: [handback_transform_failed](#f4e94980c6a03b08221fd46e19c421cce226086d10handback_transform_failed)
 * [Back to Top](#report-top)
 
