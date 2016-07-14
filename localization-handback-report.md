@@ -1,11 +1,26 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 0
+ Total Files | 1
 
 ## File List
+ Source File | Status | Details 
+ ----------- | ------ | ------- 
+ [MIMDocs\PlanDesign\TOC.md](https://github.com/Microsoft/MIMDocs-pr/blob/5fa6f8f60d3ca99bc16333406663bd82ac4ec2e6/MIMDocs/PlanDesign/TOC.md) | InSyncHandedBackSuccess | [Details](#4cb419fa58037307e1352dd813e5f9b1767cfac5248)
 
 ## Item Details
+##### <a name='4cb419fa58037307e1352dd813e5f9b1767cfac5248'></a> Source: [MIMDocs\PlanDesign\TOC.md](https://github.com/Microsoft/MIMDocs-pr/blob/5fa6f8f60d3ca99bc16333406663bd82ac4ec2e6/MIMDocs/PlanDesign/TOC.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [MIMDocs\PlanDesign\TOC.md](https://github.com/Microsoft/MIMDocs-pr.hu-hu/blob/b72a7d1019fc1581fa4bbb589b5e856f00f6e56e/MIMDocs/PlanDesign/TOC.md)
+* Handoff File: [TOC.4ef4520be73ef9e7aa69c2f08e700c80a68a239d.hu-hu.xlf](https://github.com/Microsoft/EM.handoff/blob/3268a307ae62157c0abf0166028b11eb622ce50d/ol-handoff/Microsoft/MIMDocs-pr.hu-hu/master/TOC.4ef4520be73ef9e7aa69c2f08e700c80a68a239d.hu-hu.xlf)
+* Handoff Datetime: 2016-07-06 22:24:13
+* Handoff Reason: Include
+* Archive File: [TOC.4ef4520be73ef9e7aa69c2f08e700c80a68a239d.hu-hu.xlf](https://github.com/Microsoft/EM.handoff/blob/690e74ba4a3c5c5ebd2f1488397a53c21e223c46/ol-handoff/Microsoft/MIMDocs-pr.hu-hu/master/archive/TOC.4ef4520be73ef9e7aa69c2f08e700c80a68a239d.hu-hu.xlf)
+* Archive Datetime: 2016-07-08 23:18:48
+* Handback File: [TOC.4ef4520be73ef9e7aa69c2f08e700c80a68a239d.hu-hu.xlf](https://github.com/Microsoft/EM.handback/blob/d143fe223cd8d9c93ad99a2d5af700d3eda0e617/ol-handback/Microsoft/MIMDocs-pr.hu-hu/master/TOC.4ef4520be73ef9e7aa69c2f08e700c80a68a239d.hu-hu.xlf)
+* Handback Datetime: 2016-07-14 13:43:53
+* [Back to Top](#report-top)
+
 
 ## Error Details
 
