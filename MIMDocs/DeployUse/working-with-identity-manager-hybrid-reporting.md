@@ -1,9 +1,7 @@
 ---
-# required metadata
-
-title: A hibrid jelentéskészítés kezelése az Identity Managerben | Microsoft Identity Manager
-description: Itt tájékozódhat arról, hogyan kombinálhatja a helyszíni és a felhőalapú adatokat hibrid jelentések formájában az Azure-ban, és hogyan kezelheti és jelenítheti meg ezeket a jelentéseket.
-keywords:
+title: "A hibrid jelentéskészítés kezelése az Identity Managerben | Microsoft Identity Manager"
+description: "Itt tájékozódhat arról, hogyan kombinálhatja a helyszíni és a felhőalapú adatokat hibrid jelentések formájában az Azure-ban, és hogyan kezelheti és jelenítheti meg ezeket a jelentéseket."
+keywords: 
 author: kgremban
 manager: stevenpo
 ms.date: 04/28/2016
@@ -12,30 +10,26 @@ ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 68df2817-2040-407d-b6d2-f46b9a9a3dbb
-
-# optional metadata
-
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer: mwahl
 ms.suite: ems
-#ms.tgt_pltfrm:
-#ms.custom:
+translationtype: Human Translation
+ms.sourcegitcommit: f9b01ac2cee2b96f64a9fda917f4f4146ca2eeda
+ms.openlocfilehash: e2d0bd6120628d4fd2a14718fc205cde976c7785
+
 
 ---
 
 # A hibrid jelentéskészítés kezelése az Identity Managerben
 
 ## Rendelkezésre álló hibrid jelentések
-Az Azure AD-ben elérhető első három Microsoft Identity Manager- (MIM-) jelentés a **Password reset activity** (Jelszó-átállítási tevékenység), a **Password reset registration** (Jelszó-átállítás regisztrációja) és a **Self-service groups activity** (Önkiszolgáló csoportok tevékenysége)..
+Az Azure AD-ben elérhető első három Microsoft Identity Manager- (MIM-) jelentés a **Password reset activity** (Jelszó-átállítási tevékenység), a **Password reset registration** (Jelszó-átállítás regisztrációja) és a **Self-service groups activity** (Önkiszolgáló csoportok tevékenysége).
 
 -   A jelszó-átállítási tevékenységről szóló jelentés az összes olyan esetet megjeleníti, amelyben egy felhasználó az önkiszolgáló jelszó-változtatási portállal (SSPR) megváltoztatta a jelszavát, és a hitelesítéshez használt átjárókat vagy **módszereket** is feltünteti.
 
     ![Kép: Azure hibrid jelentések – jelszó-átállítási tevékenységek](media/MIM-Hybrid-passwordreset.jpg)
 
 -   A jelszó-átállítási regisztrációk jelentése az összes olyan esetet megjeleníti, amikor a felhasználó regisztrál az önkiszolgáló jelszó-változtatási portálra (SSPR), és feltünteti a hitelesítéshez használt **módszereket** is – ilyen lehet például a mobiltelefonszám vagy a kérdések-válaszok.
-    Vegye figyelembe, hogy a jelszó-átállítási regisztrációk jelentése nem tesz különbséget az SMS és az MFA típusú átjárók között – mindkettő **Mobile Phone** (Mobiltelefonos) típusú átjárónak minősül..
+    Vegye figyelembe, hogy a jelszóátállítási regisztrációk jelentése nem tesz különbséget az SMS és az MFA típusú átjárók között – mindkettő **Mobile Phone** (Mobiltelefonos) típusú átjárónak minősül.
 
 -   Az önkiszolgáló csoportok tevékenységéről szóló jelentés az összes olyan kísérletet megjeleníti, melynek során valaki megpróbálta felvenni magát egy csoportba, törölni magát egy csoportból, vagy csoportot próbált létrehozni.
 
@@ -89,7 +83,7 @@ A jelentéskészítő ügynök a telepítést követően a Microsoft Identity Ma
 
 3.  Jelölje ki a bérlő címtárát az előfizetéssel elérhető címtárak listájából.
 
-4.  Kattintson a **Reports** (Jelentések), majd a **Password Reset Activity** (Jelszó-átállítási tevékenység) lehetőségre..
+4.  Kattintson a **Reports** (Jelentések), majd a **Password Reset Activity** (Jelszóátállítási tevékenység) lehetőségre.
 
 5.  A források legördülő menüjéből válassza az **Identity Manager** elemet.
 
@@ -108,6 +102,7 @@ A Microsoft Identity Manager által generált eseményeket a Windows Eseménynap
 |Információ|4137|A 4121-es számú MIM-esemény bővítménye arra az esetre, ha egy adott eseményhez túl sok adat tartozik. Az esemény fejlécének formátuma: `"Request: <GUID> , message <xxx> out of <xxx>`|
 
 
-<!--HONumber=Apr16_HO4-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -17,9 +17,10 @@
 ## [MIM Tanúsítványkezelő](working-with-mim-certificate-manager.md)
 ### [Intelligens kártyák regisztrálása](certificate-manager-for-non-administrators.md)
 ### [Szoftvertanúsítványok létrehozása](certificate-manager-for-software-certificates.md)
+# [A Privileged Access Management használata](/microsoft-identity-manager/pam/privileged-identity-management-for-active-directory-domain-services)
 # [Fejlesztői leírás](/microsoft-identity-manager/reference/microsoft-identity-manager-2016-developer-reference)
 
 
-<!--HONumber=Apr16_HO4-->
+<!--HONumber=Jun16_HO3-->
 
 

@@ -1,9 +1,7 @@
 ---
-# required metadata
-
-title: Intelligens kártyák regisztrálása nem rendszergazdák számára | Microsoft Identity Manager
-description: Megtudhatja, hogyan regisztrálhat intelligens kártyákat a számítógépükhöz rendszergazdai hozzáféréssel nem rendelkező felhasználók számára, hogy használhassák a Tanúsítványkezelőt.
-keywords:
+title: "Intelligens kártyák regisztrálása nem rendszergazdák számára | Microsoft Identity Manager"
+description: "Megtudhatja, hogyan regisztrálhat intelligens kártyákat a számítógépükhöz rendszergazdai hozzáféréssel nem rendelkező felhasználók számára, hogy használhassák a Tanúsítványkezelőt."
+keywords: 
 author: kgremban
 manager: stevenpo
 ms.date: 04/28/2016
@@ -12,16 +10,12 @@ ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: bfabc562-a2f0-4cff-ac31-36927f41e102
-
-# optional metadata
-
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer: mwahl
 ms.suite: ems
-#ms.tgt_pltfrm:
-#ms.custom:
+translationtype: Human Translation
+ms.sourcegitcommit: 875ed6b96929822ac166a4a262cc8547a4ea3b2a
+ms.openlocfilehash: 50c0edd60abfa6550cb5a873d32a842e8c099811
+
 
 ---
 
@@ -78,13 +72,13 @@ Ha a felhasználó nem helyi rendszergazda, akkor alapesetben nem jogosult intel
 
     2.  Lépjen az **Administration (Felügyelet) ** &gt; ** Manage Profile Templates (Profilsablonok kezelése)** területre, és győződjön meg arról, hogy a létrehozott profil melletti négyzet be van jelölve, majd kattintson a Copy a selected profile template (Kijelölt profilsablon másolása) lehetőségre.
 
-    3.  Írja be a profilsablon nevét, adja hozzá a „nonAdmin” elemet, majd kattintson az **OK** gombra..
+    3.  Írja be a profilsablon nevét, adja hozzá a „nonAdmin” elemet, majd kattintson az **OK** gombra.
 
-    4.  Amikor a profilsablon általános beállításai megjelennek, görgessen teljesen le, majd a **Smart card Configuration** (Intelligens kártya konfigurációja) területen kattintson a **Change Settings** (Beállítások módosítása) lehetőségre..
+    4.  Amikor a profilsablon általános beállításai megjelennek, görgessen teljesen le, majd a **Smart card Configuration** (Intelligens kártya konfigurációja) területen kattintson a **Change Settings** (Beállítások módosítása) lehetőségre.
 
     5.  Az **Admin key initial value (hex)** (Adminisztrációs kulcs kezdeti értéke [hex]) mezőbe írja be az alapértelmezett adminisztrációs kulcsot: „010203040506070801020304050607080102030405060708”.
 
-    6.  Görgessen le, majd kattintson az **OK** gombra..
+    6.  Görgessen le, majd kattintson az **OK** gombra.
 
 5.  **Hozzon létre egy nem rendszergazdai fiókot az ügyfélszámítógépen.**
 
@@ -101,6 +95,7 @@ Ha a felhasználó nem helyi rendszergazda, akkor alapesetben nem jogosult intel
 8.  **Indítsa el a Tanúsítványkezelőt, és regisztráljon egy virtuális intelligens kártyát.**
 
 
-<!--HONumber=Apr16_HO4-->
+
+<!--HONumber=Jun16_HO4-->
 
 

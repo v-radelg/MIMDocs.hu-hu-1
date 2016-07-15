@@ -1,27 +1,21 @@
 ---
-# required metadata
-
 title: Microsoft Identity Manager 2016 | Microsoft Identity Manager
-description: Ismerje meg, hogy a MIM 2016 hogyan működik, és hogyan kínál biztonságosabb és kényelmesebb identitáskezelési környezetet a felhőben és helyszíni környezetben egyaránt.
-keywords:
+description: "Ismerje meg, hogy a MIM 2016 hogyan működik, és hogyan kínál biztonságosabb és kényelmesebb identitáskezelési környezetet a felhőben és helyszíni környezetben egyaránt."
+keywords: 
 author: kgremban
-manager: stevenpo
-ms.date: 04/28/2016
+manager: femila
+ms.date: 06/27/2016
 ms.topic: article
 ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: ccdd8a9f-02da-440a-81a8-354800dcd2a8
-
-# optional metadata
-
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer: mwahl
 ms.suite: ems
-#ms.tgt_pltfrm:
-#ms.custom:
+translationtype: Human Translation
+ms.sourcegitcommit: 9e5f51d5ca731b3564b8262db0f4cddeb850231a
+ms.openlocfilehash: 5247cce895344ac6148b735fe550eb16c39103c7
+
 
 ---
 
@@ -36,21 +30,10 @@ A Microsoft Identity Manager 2016 az Azure-ral együttműködve a teljes környe
 ## Privileged Identity Management
 A Privileged Identity Management a bizalmas erőforrások ideiglenes, feladatalapú elérhetőségének biztosításával segíti a rendszergazdai hozzáférés szabályozását és kezelését. Ez azt jelenti, hogy épp csak a szükséges mértékű engedélyeket adhat a felhasználóknak, ami csökkenti a veszélyét annak, hogy egy kibertámadó esetlegesen teljes rendszergazdai hozzáféréshez jusson. A Privileged Identity Management emellett képes kinyerni és elkülöníteni a rendszergazdai fiókokat a meglévő Active Directory-erdőkből.
 
-## Támogatott platformok
-
-A MIM az elődjénél több terméket és platformot támogat, többek között a legújabb Microsoft-platformokat, Office- és kiszolgálói csomagokat, a Windows ügyféloldali és a Windows Server operációs rendszereket, a SharePointot, az SQL-t és az Outlookot – egészen pontosan a következő verziókat:
-
--   Windows 8.1 vagy újabb Internet Explorer 8 böngészővel
-
--   Windows Server 2012 R2
-
--   SQL 2014
-
--   Outlook 2013
-
--   System Center Service Manager 2012 és 2012 R2
+A MIM támogat egy helyszíni Privileged Identity Management megoldást az Active Directoryk kezeléséhez. Bevezető útmutatóját [A Privileged Access Management használata](/microsoft-identity-manager/pam/privileged-identity-management-for-active-directory-domain-services) című cikk tartalmazza.
 
 
-<!--HONumber=Apr16_HO4-->
+
+<!--HONumber=Jun16_HO5-->
 
 

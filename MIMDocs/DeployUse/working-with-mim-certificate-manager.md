@@ -1,9 +1,7 @@
 ---
-# required metadata
-
-title: A MIM Tanúsítványkezelő használata | Microsoft Identity Manager
-description: Tájékozódjon arról, hogyan helyezheti üzembe a Tanúsítványkezelő alkalmazást, amely lehetővé teszi a felhasználók számára saját hozzáférési jogosultságaik kezelését. 
-keywords:
+title: "A MIM Tanúsítványkezelő használata | Microsoft Identity Manager"
+description: "Tájékozódjon arról, hogyan helyezheti üzembe a Tanúsítványkezelő alkalmazást, amely lehetővé teszi a felhasználók számára saját hozzáférési jogosultságaik kezelését."
+keywords: 
 author: kgremban
 manager: stevenpo
 ms.date: 04/28/2016
@@ -12,16 +10,12 @@ ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 66060045-d0be-4874-914b-5926fd924ede
-
-# optional metadata
-
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer: mwahl
 ms.suite: ems
-#ms.tgt_pltfrm:
-#ms.custom:
+translationtype: Human Translation
+ms.sourcegitcommit: f9b01ac2cee2b96f64a9fda917f4f4146ca2eeda
+ms.openlocfilehash: 3e0e6cea0b268836bb6347e81694deec93320ce3
+
 
 ---
 
@@ -43,22 +37,22 @@ A Tanúsítványkezelő alkalmazáshoz a szokásos módon hozhat létre tanúsí
 
 2.  Indítsa el az MMC-t.
 
-3.  Kattintson a **Fájl &gt; Beépülő modul hozzáadása/eltávolítása** elemre..;
+3.  Kattintson a **Fájl &gt; Beépülő modul hozzáadása/eltávolítása** elemre.
 
-4.  Az Elérhető beépülő modulok listában kattintson a **Tanúsítványsablonok** lehetőségre, majd a **Hozzáadás** gombra..
+4.  Az Elérhető beépülő modulok listában kattintson a **Tanúsítványsablonok** lehetőségre, majd a **Hozzáadás** gombra.
 
 5.  Ekkor az MMC-ben a **Konzolgyökér** területen megjelenik a **Tanúsítványsablonok** lehetőség. A rendelkezésre álló tanúsítványsablonok megtekintéséhez kattintson rá duplán.
 
-6.  Jobb gombbal kattintson a **Bejelentkezés intelligens kártyával** sablonra, majd kattintson a **Sablon duplikálása** parancsra..
+6.  Kattintson a jobb gombbal a **Bejelentkezés intelligens kártyával** sablonra, majd kattintson a **Sablon duplikálása** parancsra.
 
 7.  A Kompatibilitás lapon a Hitelesítésszolgáltató területen válassza a Windows Server 2008 lehetőséget, majd a Tanúsítvány kedvezményezettje területen válassza a Windows 8.1/Windows Server 2012 R2 beállítást.
     Ez a lépés kritikus fontosságú, ez biztosítja ugyanis, hogy 3-as (vagy magasabb) verziójú tanúsítványsablonnal rendelkezzen, amely kompatibilis a tanúsítványkezelő alkalmazással. Mivel a verziót a rendszer akkor állítja be, amikor először létrehozza és menti a tanúsítványsablont, ezért a másképpen létrehozott tanúsítványsablon már nem módosítható a megfelelő verzióra, tehát a folytatáshoz újat kell létrehoznia.
 
-8.  Az **Általános** lapon a **Megjelenített név** mezőbe írja be az alkalmazás kezelőfelületén megjeleníteni kívánt nevet; például: **Bejelentkezés virtuális intelligens kártyával**..
+8.  Az **Általános** lap **Megjelenített név** mezőjébe írja be az alkalmazás kezelőfelületén megjeleníteni kívánt nevet; például: **Bejelentkezés virtuális intelligens kártyával**.
 
-9. A **Kérelmek kezelése** lapon állítsa a **Felhasználási cél** beállítást **Aláírás és titkosítás** értékre, majd **A következő történjen...** beállításnál válassza a **Felhasználó értesítése az igénylés alatt** lehetőséget..
+9. A **Kérelmek kezelése** lapon állítsa a **Felhasználási cél** beállítást **Aláírás és titkosítás** értékre, majd **A következő történjen...** beállításnál válassza a **Felhasználó értesítése az igénylés alatt** lehetőséget.
 
-10. A **Szolgáltató besorolása** területen a **Titkosítás** lapon válassza **A kérelmekhez a tulajdonos számítógépén rendelkezésre álló bármely szolgáltató használható** beállítást..
+10. A **Szolgáltató besorolása** területen, a **Titkosítás** lapon válassza **A kérelmekhez a tulajdonos számítógépén rendelkezésre álló bármely szolgáltató használható** beállítást.
 
     > [!NOTE]
     > A Kulcstároló-szolgáltató beállítás csak akkor jelenik meg, ha a sablon 3-as verziójú. Ha nem látható, akkor valószínűleg nem megfelelő verziójú tanúsítványsablont hozott létre. Kezdje újra a fenti 5. lépéssel.
@@ -67,13 +61,13 @@ A Tanúsítványkezelő alkalmazáshoz a szokásos módon hozhat létre tanúsí
 
 12. A módosítások véglegesítéséhez és az új sablon létrehozásához kattintson az **OK** gombra. Az új sablonnak ekkor meg kell jelennie a tanúsítványsablonok listájában.
 
-13. A Hitelesítésszolgáltató beépülő modul MMC-konzolra való felvételéhez válassza a **Fájl** menü **Beépülő modul hozzáadása/eltávolítása** elemét. Amikor a rendszer arra kéri, hogy válassza ki a kezelni kívánt számítógépet, válassza a **Helyi számítógép** lehetőséget..
+13. A Hitelesítésszolgáltató beépülő modul MMC-konzolra való felvételéhez válassza a **Fájl** menü **Beépülő modul hozzáadása/eltávolítása** elemét. Amikor a rendszer arra kéri, hogy válassza ki a kezelni kívánt számítógépet, válassza a **Helyi számítógép** lehetőséget.
 
 14. Az MMC bal oldali panelén bontsa ki a **Hitelesítésszolgáltató (helyi)** csomópontot, majd a hitelesítésszolgáltatók listájában bontsa ki a saját hitelesítésszolgáltató csomópontját.
 
 15. Kattintson jobb gombbal a **Tanúsítványsablonok** elemre, majd az **Új &gt; Kiállítandó tanúsítványsablon** lehetőségre.
 
-16. A listáról válassza ki az újonnan létrehozott sablont, majd kattintson az **OK** gombra..
+16. A listáról válassza ki az újonnan létrehozott sablont, majd kattintson az **OK** gombra.
 
 ## Profilsablon létrehozása
 Amikor létrehozza a profilsablont, állítsa be a virtuális intelligens kártya létrehozását/megsemmisítését és az adatgyűjtemény eltávolítását. A Tanúsítványkezelő alkalmazás nem képes az összegyűjtött adatok kezelésére, ezért ezt a funkciót a következő módon le kell tiltani.
@@ -82,23 +76,23 @@ Amikor létrehozza a profilsablont, állítsa be a virtuális intelligens kárty
 
 2.  Lépjen az Administration (Felügyelet) &gt; Manage Profile Templates (Profilsablonok kezelése) területre, és győződjön meg arról, hogy a MIM CM Sample Smart Card Logon Profile Template (MIM Tanúsítványkezelő intelligens kártyás bejelentkezési profilsablon – minta) melletti négyzet be van jelölve, majd kattintson a Copy a selected profile template (Kijelölt profilsablon másolása) lehetőségre.
 
-3.  Írja be a profilsablon nevét, majd kattintson az **OK** gombra..
+3.  Írja be a profilsablon nevét, majd kattintson az **OK** gombra.
 
 4.  A következő képernyőn kattintson az **Add new certificate template** (Új tanúsítványsablon hozzáadása) elemre, és jelölje be a hitelesítésszolgáltató neve melletti négyzetet.
 
-5.  Jelölje be a **Logon** (Bejelentkezés) profilsablon neve melletti négyzetet, majd kattintson az **Add** (Hozzáadás) gombra..
+5.  Jelölje be a **Logon** (Bejelentkezés) profilsablon neve melletti négyzetet, majd kattintson az **Add** (Hozzáadás) gombra.
 
-6.  A SmartCardLogon sablon eltávolításához jelölje be a mellette található négyzetet, kattintson a **Delete selected certificate templates** (Kijelölt tanúsítványsablonok törlése) parancsra, majd az **OK** gombra..
+6.  A SmartCardLogon sablon eltávolításához jelölje be a mellette található négyzetet, kattintson a **Delete selected certificate templates** (Kijelölt tanúsítványsablonok törlése) parancsra, majd az **OK** gombra.
 
-7.  Görgessen le a képernyő aljára, és kattintson a **Change settings** (Beállítások módosítása) elemre..
+7.  Görgessen le a képernyő aljára, és kattintson a **Change settings** (Beállítások módosítása) elemre.
 
-8.  Jelölje be a **Create/Destroy virtual smart card** (Virtuális intelligens kártya létrehozása/megsemmisítése) és a **Diversify Admin Key** (Adminisztrációs kulcs diverzifikálása) négyzeteket..
+8.  Jelölje be a **Create/Destroy virtual smart card** (Virtuális intelligens kártya létrehozása/megsemmisítése) és a **Diversify Admin Key** (Adminisztrációs kulcs diverzifikálása) négyzetet.
 
-9. A **User PIN Policy** (Felhasználói PIN-házirend) területen válassza a **User Provided** (Felhasználó által megadott) lehetőséget..
+9. A **User PIN Policy** (Felhasználói PIN-házirend) területen válassza a **User Provided** (Felhasználó által megadott) lehetőséget.
 
-10. A bal oldali panelen kattintson a **Renew Policy (Házirend megújítása) &gt; Change general settings (Általános beállítások módosítása)** parancsra. Válassza a **Reuse card on renew** (Kártya újrafelhasználása megújításkor) elemet, majd kattintson az **OK** gombra..
+10. A bal oldali panelen kattintson a **Renew Policy (Házirend megújítása) &gt; Change general settings (Általános beállítások módosítása)** parancsra. Válassza a **Reuse card on renew** (Kártya újrafelhasználása megújításkor) elemet, majd kattintson az **OK** gombra.
 
-11. Minden házirendnél le kell tiltania az adatgyűjtő elemeket. Ehhez kattintson a házirendre a bal oldali panelen, jelölje be a **Sample data item** (Mintaadatelem) melletti négyzetet, majd kattintson az **Delete data collection items** (Adatgyűjtési elemek törlése) parancsra. Ezután kattintson az **OK** gombra..
+11. Minden házirendnél le kell tiltania az adatgyűjtő elemeket. Ehhez kattintson a házirendre a bal oldali panelen, jelölje be a **Sample data item** (Mintaadatelem) melletti négyzetet, majd kattintson az **Delete data collection items** (Adatgyűjtési elemek törlése) parancsra. Ezután kattintson az **OK** gombra.
 
 ## A Tanúsítványkezelő alkalmazás üzembe helyezésének előkészítése
 
@@ -261,6 +255,7 @@ Amikor létrehozza a profilsablont, állítsa be a virtuális intelligens kárty
 A Tanúsítványkezelő alkalmazás telepítésekor a Letöltőközpontból töltse le a MIMDMModernApp_&lt;verziószám&gt;_AnyCPU_Test.zip fájlt, és bontsa ki a teljes tartalmát. A telepítő az .appx fájl. Az alkalmazás a Windows áruházbeli alkalmazásoknál megszokott módszerekkel telepíthető, például [System Center Configuration Managerrel](https://technet.microsoft.com/library/dn613840.aspx) vagy [Intune-nal](https://technet.microsoft.com/library/dn613839.aspx) is közvetlen telepítéssel – a felhasználóknak tehát a Vállalati portálon kell elérniük azt, vagy leküldéssel is telepíthető közvetlenül a számítógépükre.
 
 
-<!--HONumber=Apr16_HO4-->
+
+<!--HONumber=Jun16_HO4-->
 
 
