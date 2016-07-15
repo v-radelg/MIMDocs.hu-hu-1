@@ -1,9 +1,7 @@
 ---
-# required metadata
-
-title: Az önkiszolgáló jelszóváltoztatás kezelése | Microsoft Identity Manager
-description: Ismerje meg, hogy milyen újdonságokat kínál a MIM 2016 önkiszolgáló jelszó-változtatási összetevője, például hogy miként képes együttműködni a többtényezős hitelesítéssel. 
-keywords:
+title: "Az önkiszolgáló jelszóváltoztatás kezelése | Microsoft Identity Manager"
+description: "Ismerje meg, hogy milyen újdonságokat kínál a MIM 2016 önkiszolgáló jelszó-változtatási összetevője, például hogy miként képes együttműködni a többtényezős hitelesítéssel."
+keywords: 
 author: kgremban
 manager: stevenpo
 ms.date: 04/28/2016
@@ -12,16 +10,12 @@ ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 94a74f1c-2192-4748-9a25-62a526295338
-
-# optional metadata
-
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer: mwahl
 ms.suite: ems
-#ms.tgt_pltfrm:
-#ms.custom:
+translationtype: Human Translation
+ms.sourcegitcommit: f9b01ac2cee2b96f64a9fda917f4f4146ca2eeda
+ms.openlocfilehash: 3a4350e54383dc1098c778090bb29b435082045f
+
 
 ---
 
@@ -71,13 +65,13 @@ A következő szakaszban az Azure MFA szolgáltató Microsoft Azure Active Direc
 
 1.  Lépjen a [klasszikus Azure-portálra](http://manage.windowsazure.com), és jelentkezzen be Azure előfizetés-adminisztrátorként.
 
-2.  A bal alsó sarokban kattintson a **New** (Új) gombra..
+2.  A bal alsó sarokban kattintson a **New** (Új) gombra.
 
-3.  Válassza az **App Services &gt; Active Directory &gt; Multi-Factor Auth Provider &gt; Quick Create** (Alkalmazásszolgáltatások > Active Directory > Többtényezős hitelesítési szolgáltató > Gyors létrehozás) lehetőséget..
+3.  Válassza az **App Services &gt; Active Directory &gt; Multi-Factor Auth Provider &gt; Quick Create** (Alkalmazásszolgáltatások > Active Directory > Többtényezős hitelesítési szolgáltató > Gyors létrehozás) lehetőséget.
 
 ![Kép: Többtényezős hitelesítési szolgáltató gyors létrehozása az Azure-portálon](media/MIM-SSPR-Azureportal.png)
 
-4.  A **Name** (Név) mezőbe írja be, hogy **SSPRMFA**, majd kattintson a **Create** (Létrehozás) gombra..
+4.  A **Name** (Név) mezőbe írja be, hogy **SSPRMFA**, majd kattintson a **Create** (Létrehozás) gombra.
 
 ![Kép: Többtényezős hitelesítési szolgáltató az Azure-portálon](media/MIM-SSPR-Azureportal-2.png)
 
@@ -87,13 +81,13 @@ A következő szakaszban az Azure MFA szolgáltató Microsoft Azure Active Direc
 
     ![Ikon: A Manage gomb az Azure-portálon](media/MIM-SSPR-ManageButton.png)
 
-7.  Az új ablakban a **Configure** (Konfigurálás) felirat alatti bal oldali panelen kattintson a **Settings** (Beállítások) lehetőségre..
+7.  Az új ablakban a **Configure** (Konfigurálás) felirat alatti bal oldali panelen kattintson a **Settings** (Beállítások) lehetőségre.
 
 8.  A **Fraud Alert** (Visszaélési riasztás) területen törölje a **Block user when fraud is reported** (Felhasználó blokkolása visszaélés jelentésekor) négyzet jelölését. Ennek a célja megakadályozni adott esetben a teljes szolgáltatás letiltását.
 
 9. A megjelenő **Azure Multi-Factor Authentication** (Azure többtényezős hitelesítés) ablakban a bal oldali menüben kattintson az **SDK** elemre a **Downloads** (Letöltések) területen.
 
-10. Kattintson a **Download** (Letöltés) hivatkozásra az **SDK for ASP.net 2.0 C#** nyelvű fájl ZIP oszlopában..
+10. Kattintson a **Download** (Letöltés) hivatkozásra az **SDK for ASP.net 2.0 C#** nyelvű fájl ZIP oszlopában.
 
     ![Kép: Azure MFA ZIP-fájl letöltése](media/MIM-SSPR-Azure-MFA.png)
 
@@ -103,11 +97,11 @@ A következő szakaszban az Azure MFA szolgáltató Microsoft Azure Active Direc
 
 1. A MIM-et telepítő felhasználói fiókkal jelentkezzen be arra a számítógépre, ahol a MIM szolgáltatás telepítve van.
 
-2. Hozzon létre egy új könyvtárat a MIM szolgáltatás telepítési mappájában, például: **C:\Program Files\Microsoft Forefront Identity Manager\2010\Service\MfaCerts**..
+2. Hozzon létre egy új könyvtárat a MIM szolgáltatás telepítési mappájában, például: **C:\Program Files\Microsoft Forefront Identity Manager\2010\Service\MfaCerts**.
 
 3. A Windows Intézővel keresse meg a **\pf\certs** mappát az előző szakaszban letöltött ZIP-fájlban, és másolja a **cert_key.p12** fájlt az új mappába.
 
-4.  Az SDK ZIP-fájlban a **\pf** mappában nyissa meg a **pf_auth.cs** fájlt..
+4.  Az SDK ZIP-fájlban a **\pf** mappában nyissa meg a **pf_auth.cs** fájlt.
 
 5.  Keresse meg a következő három paramétert: `LICENSE_KEY, GROUP_KEY, CERT_PASSWORD`.
 
@@ -131,13 +125,13 @@ A következő szakaszban az Azure MFA szolgáltató Microsoft Azure Active Direc
 
     ![Kép: Navigáció a MIM-portálon](media/MIM-SSPR-workflow.jpg)
 
-2.  Jelölje be a **Password Reset AuthN Workflow** (Jelszó-változtatási hitelesítési munkafolyamat) négyzetet..
+2.  Jelölje be a **Password Reset AuthN Workflow** (Jelszó-változtatási hitelesítési munkafolyamat) négyzetet.
 
     ![Kép: Munkafolyamatok a MIM-portálon](media/MIM-SSPR-PwdResetAuthNworkflow.jpg)
 
-3.  Kattintson az **Activities** (Tevékenységek) lapra, majd görgessen le az **Add Activity** (Tevékenység felvétele) elemhez..
+3.  Kattintson az **Activities** (Tevékenységek) lapra, majd görgessen le az **Add Activity** (Tevékenység felvétele) elemhez.
 
-4.  Válassza a **Phone Gate** (Telefonos kapu) vagy a **One-Time Password SMS Gate** (Egyszeri SMS-jelszavas kapu) elemet, majd kattintson a **Select** (Kiválasztás) lehetőségre, végül pedig az **OK** gombra..
+4.  Válassza a **Phone Gate** (Telefonos kapu) vagy a **One-Time Password SMS Gate** (Egyszeri SMS-jelszavas kapu) elemet, majd kattintson a **Select** (Kiválasztás) lehetőségre, végül pedig az **OK** gombra.
 
 A szervezeti felhasználók ezután már regisztrálhatnak a jelszóváltoztatásra.  A folyamat során meg kell adniuk munkahelyi vagy mobiltelefonszámukat, hogy a rendszer tudja, hol keresheti őket (vagy küldhet nekik SMS-t).
 
@@ -147,7 +141,7 @@ A szervezeti felhasználók ezután már regisztrálhatnak a jelszóváltoztatá
 
     Be kell lépnie a jelszó-regisztrálási portálra, és hitelesítenie kell magát a felhasználónevével és jelszavával.
 
-2.  A **Phone Number** (Telefonszám) vagy a **Mobile Phone** (Mobiltelefonszám) mezőben meg kell adnia az országkódot, majd egy szóközzel elválasztva a telefonszámot, majd a **Next** (Tovább) gombra kell kattintania..
+2.  A **Phone Number** (Telefonszám) vagy a **Mobile Phone** (Mobiltelefonszám) mezőben meg kell adnia az országkódot, majd egy szóközzel elválasztva a telefonszámot, majd a **Next** (Tovább) gombra kell kattintania.
 
     ![Kép: Telefonszám ellenőrzése a MIM-ben](media/MIM-SSPR-PhoneVerification.JPG)
 
@@ -187,7 +181,7 @@ Ha a MIM beépülő moduljait és bővítményeit olyan tartományhoz csatlakozt
 
 #### Elérés az önkiszolgáló portálról
 
-1.  A felhasználó böngészőben a **jelszó-változtatási portálra** lép, megadja a felhasználónevét, majd a **Next** (Tovább) gombra kattint..
+1.  A felhasználó böngészőben a **jelszó-változtatási portálra** lép, megadja a felhasználónevét, majd a **Next** (Tovább) gombra kattint.
 
     Ha a többtényezős hitelesítés be lett állítva, a felhasználó telefonhívást kap. Ebben az esetben az Azure MFA szolgáltatás a háttérben felhívja azt a telefonszámot, amelyet a felhasználó megadott, amikor a szolgáltatásra regisztrált.
 
@@ -211,6 +205,7 @@ Ha a MIM beépülő moduljait és bővítményeit olyan tartományhoz csatlakozt
     ![Kép: Jelszóváltoztatás a MIM Bejelentkezési segéddel](media/MIM-SSPR-PR1.JPG)
 
 
-<!--HONumber=Apr16_HO4-->
+
+<!--HONumber=Jun16_HO4-->
 
 
