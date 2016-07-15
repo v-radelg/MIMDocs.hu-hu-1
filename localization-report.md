@@ -463,7 +463,7 @@
 * Archive File: [install-mim-service-portal.bc0a636322f2b40d28e326917fd5d60c15ff855e.hu-hu.xlf](https://github.com/Microsoft/EM.handoff/blob/3d281b6b445e7897227c2906284a4a7b9a9dbacd/ol-handoff/Microsoft/MIMDocs-pr.hu-hu/master/archive/install-mim-service-portal.bc0a636322f2b40d28e326917fd5d60c15ff855e.hu-hu.xlf)
 * Archive Datetime: 2016-07-01 23:30:42
 * Handback File: [install-mim-service-portal.bc0a636322f2b40d28e326917fd5d60c15ff855e.hu-hu.xlf](https://github.com/Microsoft/EM.handback/blob/838c10cec9407505af2ef72f841c5a21e7949dc6/ol-handback/Microsoft/MIMDocs-pr.hu-hu/master/install-mim-service-portal.bc0a636322f2b40d28e326917fd5d60c15ff855e.hu-hu.xlf)
-* Handback Datetime: 2016-07-15 14:25:35
+* Handback Datetime: 2016-07-15 14:57:51
 * Handback Error: [handback_transform_failed](#eb2af412d9638035de591197fa191e990ade0ca19handback_transform_failed)
 * [Back to Top](#report-top)
 
@@ -476,7 +476,7 @@
 * Archive File: [install-mim-sync.187fbc84d7198ab90d1445b38ea0a3044b228547.hu-hu.xlf](https://github.com/Microsoft/EM.handoff/blob/3d281b6b445e7897227c2906284a4a7b9a9dbacd/ol-handoff/Microsoft/MIMDocs-pr.hu-hu/master/archive/install-mim-sync.187fbc84d7198ab90d1445b38ea0a3044b228547.hu-hu.xlf)
 * Archive Datetime: 2016-07-01 23:30:42
 * Handback File: [install-mim-sync.187fbc84d7198ab90d1445b38ea0a3044b228547.hu-hu.xlf](https://github.com/Microsoft/EM.handback/blob/838c10cec9407505af2ef72f841c5a21e7949dc6/ol-handback/Microsoft/MIMDocs-pr.hu-hu/master/install-mim-sync.187fbc84d7198ab90d1445b38ea0a3044b228547.hu-hu.xlf)
-* Handback Datetime: 2016-07-15 14:25:35
+* Handback Datetime: 2016-07-15 14:57:51
 * Handback Error: [handback_transform_failed](#8a99b3a291d2b145f453732a72244c43f9c535d611handback_transform_failed)
 * [Back to Top](#report-top)
 
@@ -1199,7 +1199,7 @@
 * Archive File: [prepare-server-exchange.62b650aec624862b1ad85b574bfdb8525ebc36e5.hu-hu.xlf](https://github.com/Microsoft/EM.handoff/blob/3d281b6b445e7897227c2906284a4a7b9a9dbacd/ol-handoff/Microsoft/MIMDocs-pr.hu-hu/master/archive/prepare-server-exchange.62b650aec624862b1ad85b574bfdb8525ebc36e5.hu-hu.xlf)
 * Archive Datetime: 2016-07-01 23:30:42
 * Handback File: [prepare-server-exchange.62b650aec624862b1ad85b574bfdb8525ebc36e5.hu-hu.xlf](https://github.com/Microsoft/EM.handback/blob/838c10cec9407505af2ef72f841c5a21e7949dc6/ol-handback/Microsoft/MIMDocs-pr.hu-hu/master/prepare-server-exchange.62b650aec624862b1ad85b574bfdb8525ebc36e5.hu-hu.xlf)
-* Handback Datetime: 2016-07-15 14:25:35
+* Handback Datetime: 2016-07-15 14:57:51
 * Handback Error: [handback_transform_failed](#b69ea20f375869d4ad08987a08aba05913fd1db166handback_transform_failed)
 * [Back to Top](#report-top)
 
@@ -1225,7 +1225,7 @@
 * Archive File: [prepare-server-sql2014.908ce04c42d7be500304a71be06bc4b1acfdd6b7.hu-hu.xlf](https://github.com/Microsoft/EM.handoff/blob/3d281b6b445e7897227c2906284a4a7b9a9dbacd/ol-handoff/Microsoft/MIMDocs-pr.hu-hu/master/archive/prepare-server-sql2014.908ce04c42d7be500304a71be06bc4b1acfdd6b7.hu-hu.xlf)
 * Archive Datetime: 2016-07-01 23:30:42
 * Handback File: [prepare-server-sql2014.908ce04c42d7be500304a71be06bc4b1acfdd6b7.hu-hu.xlf](https://github.com/Microsoft/EM.handback/blob/838c10cec9407505af2ef72f841c5a21e7949dc6/ol-handback/Microsoft/MIMDocs-pr.hu-hu/master/prepare-server-sql2014.908ce04c42d7be500304a71be06bc4b1acfdd6b7.hu-hu.xlf)
-* Handback Datetime: 2016-07-15 14:25:35
+* Handback Datetime: 2016-07-15 14:57:51
 * Handback Error: [handback_transform_failed](#2c0ff0bdbba4bcf979def8d5c7aa381947d6cc8768handback_transform_failed)
 * [Back to Top](#report-top)
 
@@ -1238,7 +1238,7 @@
 * Archive File: [prepare-server-ws2012r2.da656f0c9d903e4ab85b248548bd985fcaa0c74a.hu-hu.xlf](https://github.com/Microsoft/EM.handoff/blob/3d281b6b445e7897227c2906284a4a7b9a9dbacd/ol-handoff/Microsoft/MIMDocs-pr.hu-hu/master/archive/prepare-server-ws2012r2.da656f0c9d903e4ab85b248548bd985fcaa0c74a.hu-hu.xlf)
 * Archive Datetime: 2016-07-01 23:30:42
 * Handback File: [prepare-server-ws2012r2.da656f0c9d903e4ab85b248548bd985fcaa0c74a.hu-hu.xlf](https://github.com/Microsoft/EM.handback/blob/838c10cec9407505af2ef72f841c5a21e7949dc6/ol-handback/Microsoft/MIMDocs-pr.hu-hu/master/prepare-server-ws2012r2.da656f0c9d903e4ab85b248548bd985fcaa0c74a.hu-hu.xlf)
-* Handback Datetime: 2016-07-15 14:25:35
+* Handback Datetime: 2016-07-15 14:57:51
 * Handback Error: [handback_transform_failed](#cd4ac84af4e5416512cf546a5d23b342ebe13c3969handback_transform_failed)
 * [Back to Top](#report-top)
 
