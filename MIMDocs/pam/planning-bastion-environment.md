@@ -12,6 +12,7 @@ ms.technology: active-directory-domain-services
 ms.assetid: bfc7cb64-60c7-4e35-b36a-bbe73b99444b
 ms.reviewer: mwahl
 ms.suite: ems
+translationtype: Human Translation
 ms.sourcegitcommit: b8af77d2354428da19d91d5f02b490012835f544
 ms.openlocfilehash: 0ed48d43825e1a876c4d96cafcb6c17cac26610f
 
@@ -186,7 +187,7 @@ A tartományvezérlő naplózásra vonatkozó csoportházirend-beállításainak
 
     ![Csoportházirendkezelés-szerkesztő – képernyőkép](media/pam-group-policy-management-editor.jpg)
 
-5. A részletek ablaktábláján kattintson a jobb gombbal a **Fiókkezelés naplózása** elemre, és válassza a **Tulajdonságok** parancsot. Válassza ki **A következő házirend-beállítások megadása** lehetőséget, jelölbe be a **Siker** jelölőnégyzetet, jelölje be a **Hiba** jelölőnégyzetet, és kattintson az **Alkalmaz**, majd az **OK** gombra.
+5. A részletek ablaktábláján kattintson a jobb gombbal a **Fiókkezelés naplózása** elemre, és válassza a **Tulajdonságok** parancsot. Válassza ki **A következő házirend-beállítások megadása** lehetőséget, jelölje be a **Sikeres** és a **Sikertelen** beállítást, majd kattintson az **Alkalmaz** és az **OK** gombra.
 
 6. A részletek ablaktáblájában kattintson a jobb gombbal a **Címtárszolgáltatás-hozzáférés naplózása** elemre, és válassza a **Tulajdonságok** parancsot. Válassza ki **A következő házirend-beállítások megadása** lehetőséget, jelölje be a **Siker** jelölőnégyzetet, jelölje be a **Hiba** jelölőnégyzetet, és kattintson az **Alkalmaz**, majd az **OK** gombra.
 
@@ -252,6 +253,6 @@ A következő lépése a PAM-szerepkörök konfigurálása, valamint azon felhas
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jul16_HO3-->
 
 
