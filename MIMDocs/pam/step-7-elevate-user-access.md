@@ -1,10 +1,10 @@
 ---
-title: "7. lépés – Felhasználó jogosultságszintjének emelése | Microsoft Identity Manager"
-description: 
+title: "A PAM üzembe helyezése, 7. lépés – felhasználói hozzáférés | Microsoft Identity Manager"
+description: "Utolsó lépésként biztosítson ideiglenes rendszerjogosultságot egy felhasználónak, hogy tesztelhesse, sikeres volt-e a Privileged Access Management üzembe helyezése."
 keywords: 
 author: kgremban
 manager: femila
-ms.date: 06/16/2016
+ms.date: 07/15/2016
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.service: microsoft-identity-manager
@@ -13,8 +13,8 @@ ms.assetid: 5325fce2-ae35-45b0-9c1a-ad8b592fcd07
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 9e5f51d5ca731b3564b8262db0f4cddeb850231a
-ms.openlocfilehash: ee47c69788a98075372ca62943e0c4b101c5354f
+ms.sourcegitcommit: ae4c40c73dd9d5860f42e00765a7e34e8ca397a9
+ms.openlocfilehash: b4b3f4c0605fabc7166e8ff8309078f80461301e
 
 
 ---
@@ -46,7 +46,7 @@ Emelt szintű jogosultságok nélkül Ilona nem férhet hozzá a CORP erdőben t
 2. Amikor a rendszer kéri, írja be a PRIV.Ilona fiók jelszavát. Megnyílik egy új parancssori ablak.
 3. A PowerShell-ablak megjelenésekor írja be a következő parancsokat.
 
-    > [!NOTE] 
+    > [!NOTE]
     > Miután futtatta ezeket a parancsokat, az alábbi lépések mindegyike időérzékennyé válik.
 
     ```
@@ -92,7 +92,7 @@ Aktiválja a szerepkört a PAM-mintaportálon keresztüli emelt szintű hozzáf�
 7. Zárja be az **Internetbeállítások** párbeszédpanelt.
 8. A bal oldali lapon kattintson az **Aktiválás** elemre. Válassza ki a **PAM-szerepkör** lehetőséget, majd kattintson az **Aktiválás** elemre.
 
-> [!Note] 
+> [!Note]
 > Ebben a környezetben megismerkedhet a [Privileged Access Management REST API-referencia](/microsoft-identity-manager/reference/privileged-access-management-rest-api-reference.md) témakörben ismertetett PAM REST API-t használó alkalmazások fejlesztésével.
 
 ## Összefoglalás
@@ -103,6 +103,6 @@ Az útmutató lépéseinek végrehajtását követően egy olyan Privileged Acce
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO3-->
 
 

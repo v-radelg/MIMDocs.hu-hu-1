@@ -1,27 +1,21 @@
 ---
-# required metadata
-
-title: "A MIM 2016 telepítése: A MIM szolgáltatás és -portál | Microsoft Identity Manager"
+title: "A MIM szolgáltatás és -portál telepítése | Microsoft Identity Manager"
 description: "Itt olvashatók a Microsoft Identity Manager 2016 rendszerhez tartozó MIM szolgáltatás és -portál telepítési és konfigurálási lépései."
-keywords:
+keywords: 
 author: kgremban
-manager: stevenpo
-ms.date: 04/28/2016
+manager: femila
+ms.date: 07/21/2016
 ms.topic: get-started-article
 ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: b0b39631-66df-4c5f-80c9-a1774346f816
-
-# optional metadata
-
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer: mwahl
 ms.suite: ems
-#ms.tgt_pltfrm:
-#ms.custom:
+translationtype: Human Translation
+ms.sourcegitcommit: b3ab1b9376c9b613739d87c812f4b16a4e17e6de
+ms.openlocfilehash: c18ea7b0390ca11c213ed66bfd1476454cf86951
+
 
 ---
 
@@ -45,31 +39,31 @@ Ha a legutóbbi lépésben nem telepítette a MIM telepítőcsomagját, akkor a 
 
 1. Futtassa a **MIM szolgáltatás és -portál telepítőjét** a kicsomagolt **Service and Portal** almappából.
 
-2. Az üdvözlőképernyőn kattintson a **Next** (Tovább) gombra..
+2. Az üdvözlőképernyőn kattintson a **Next** (Tovább) gombra.
 
 3. Olvassa el a végfelhasználói licencszerződést, és ha elfogadja, kattintson a **Next** (Tovább) gombra.
 
-4. A **MIM Customer Experience Improvement Program** (A MIM Felhasználói élmény fokozása programja) képernyőn kattintson a **Next** (Tovább) gombra a folytatáshoz..
+4. A **MIM Customer Experience Improvement Program** (A MIM Felhasználói élmény fokozása programja) képernyőn kattintson a **Next** (Tovább) gombra a folytatáshoz.
 
 5. A telepíteni kívánt összetevők közül mindenképpen jelölje ki a MIM Service szolgáltatást (a MIM Reporting nélkül), valamint a MIM Portal (MIM-portál) komponenst. Igény szerint kiválaszthatja a MIM Password Reset Portal jelszó-változtatási portált és a MIM Password Change Notification Service jelszóváltozás-értesítési szolgáltatást is.
 
-6. A **Configure the MIM database connection** (A MIM-adatbázis kapcsolatának konfigurálása) lapon válassza a **Create a new database** (Új adatbázis létrehozása) beállítást..
+6. A **Configure the MIM database connection** (A MIM-adatbázis kapcsolatának konfigurálása) lapon válassza a **Create a new database** (Új adatbázis létrehozása) beállítást.
 
     ![Kép: A MIM-adatbázis kapcsolatának konfigurálása](media/MIM-Install10.png)
 
-7. A **Configure mail server connection** (Levelezőkiszolgáló-kapcsolat konfigurálása) párbeszédpanelen a **Mail Server** (Levelezőkiszolgáló) mezőben adja meg az Exchange Server-kiszolgáló nevét. Ha nincs levelezőkiszolgáló konfigurálva, akkor a **localhost** nevet adja meg, és törölje a felső két négyzet jelölését. Kattintson a **Next** (Tovább) gombra..
+7. A **Configure mail server connection** (Levelezőkiszolgáló-kapcsolat konfigurálása) párbeszédpanelen a **Mail Server** (Levelezőkiszolgáló) mezőben adja meg az Exchange Server-kiszolgáló nevét. Ha nincs levelezőkiszolgáló konfigurálva, akkor a **localhost** nevet adja meg, és törölje a felső két négyzet jelölését. Kattintson a **Tovább**gombra.
 
     ![Kép: A levelezőkiszolgálóval való kapcsolat beállítása](media/MIM-Install11.png)
 
 8. Adja meg, hogy új önaláírt tanúsítványt szeretne-e generálni, vagy válassza ki a megfelelő tanúsítványt.
 
-9. A Service Account Name mezőben adja meg a használni kívánt szolgáltatásfiók nevét – például *MIMService* –, a Service Account Password mezőben a szolgáltatásfiók jelszavát – például *Jel@szo1*, a Service Account Domain mezőben a szolgáltatásfiók tartományát – például *contoso*, a Service Email Account mezőben pedig az e-mail fiókot, például *MIMService@contoso.com*..
+9. A Service Account Name mezőben adja meg a használni kívánt szolgáltatásfiók nevét – például *MIMService* –, a Service Account Password mezőben a szolgáltatásfiók jelszavát – például *1Pass@word*, a Service Account Domain mezőben a szolgáltatásfiók tartományát – például *contoso*, a Service Email Account mezőben pedig az e-mail fiókot, például *MIMService@contoso.com*.
 
     ![Kép: A MIM szolgáltatás fiókjának konfigurálása](media/MIM-Install12.png)
 
 10. Elképzelhető, hogy megjelenik egy üzenet, amely arra figyelmeztet, hogy a szolgáltatásfiók aktuális konfigurációja nem biztonságos.
 
-11. A Synchronization Server (Szinkronizálási kiszolgáló) helyeként fogadja el az alapértelmezett értéket, a MIM Management Agent Account (MIM-kezelőügynök fiókja) mezőben pedig adja meg a *contoso\MIMsync* fiókot..
+11. A Synchronization Server (Szinkronizálási kiszolgáló) helyeként fogadja el az alapértelmezett értéket, a MIM Management Agent Account (MIM-kezelőügynök fiókja) mezőben pedig adja meg a *contoso\MIMsync* fiókot.
 
     ![Kép: A MIM szolgáltatás és -portál konfigurálása](media/MIM-Install13.png)
 
@@ -85,25 +79,25 @@ Ha a legutóbbi lépésben nem telepítette a MIM telepítőcsomagját, akkor a 
 
 ## A MIM jelszó-regisztrálási portál konfigurálása
 
-1.  Az önkiszolgáló jelszó-regisztrálási szolgáltatáshoz (SSPR) állítsa be a *contoso\MIMSSPR* fióknevet és a *Pass@word1* jelszót..
+1.  Az önkiszolgáló jelszó-regisztrálási szolgáltatáshoz (SSPR) állítsa be a *contoso\MIMSSPR* fióknevet és a *1Pass@word* jelszót.
 
 2.  A MIM jelszó-regisztráláshoz a Host Name mezőben adja meg a *CORPIDM* gazdagépnevet, és állítsa be a **8080**-as portot. Jelölje be az **Open port in firewall** (Port nyitása a tűzfalon) négyzetet.
 
     ![Kép: Az IIS által használt konfigurációs információk megadása](media/MIM-Install14.png)
 
-3.  Megjelenik egy figyelmeztető üzenet – olvassa el, majd kattintson a **Next** (Tovább) gombra..
+3.  Megjelenik egy figyelmeztető üzenet – olvassa el, majd kattintson a **Next** (Tovább) gombra.
 
 4. A MIM jelszó-regisztrálási portál következő konfigurációs képernyőjén a MIM szolgáltatás kiszolgálójának címeként adja meg a *http://CorpIDM.contoso.local* címet a jelszó-regisztrálási portálhoz.
 
 ## A MIM jelszó-változtatási portál konfigurálása
 
-1.  Az önkiszolgáló jelszó-regisztrálási szolgáltatáshoz (SSPR) állítsa be a *Contoso\MIMSSPRService* fióknevet és a *Pass@word1* jelszót..
+1.  Az önkiszolgáló jelszó-regisztrálási szolgáltatáshoz (SSPR) állítsa be a *Contoso\MIMSSPRService* fióknevet és a *Pass@word1* jelszót.
 
 2.  A MIM jelszó-regisztráláshoz a Host Name mezőben adja meg a *CORPIDM* gazdagépnevet, és állítsa be a **8080**-as portot. Jelölje be az **Open port in firewall** (Port nyitása a tűzfalon) négyzetet.
 
     ![Kép: Az IIS által használt konfigurációs információk megadása](media/MIM-Install15.png)
 
-3.  Megjelenik egy figyelmeztető üzenet – olvassa el, majd kattintson a **Next** (Tovább) gombra..
+3.  Megjelenik egy figyelmeztető üzenet – olvassa el, majd kattintson a **Next** (Tovább) gombra.
 
 4. A MIM jelszó-regisztrálási portál következő konfigurációs képernyőjén a MIM szolgáltatás kiszolgálójának címeként adja meg a *http://CorpIDname.domain.local* címet a jelszó-változtatási portálhoz.
 
@@ -121,19 +115,19 @@ A telepítést követően győződjön meg arról, hogy a MIM-portál aktív.
 
 3. Engedélyezze a felhasználóknak saját bejegyzéseik megtekintését a MIM-ben.
 
-    1.  Az Internet Explorerben a **MIM-portálon** kattintson a **Management Policy Rules** (Felügyeleti házirendszabályok) elemre..
+    1.  Az Internet Explorerben a **MIM-portálon** kattintson a **Management Policy Rules** (Felügyeleti házirendszabályok) elemre.
 
-    2.  Keresse meg a **User management: Users can read attributes of their own** (Felhasználók felügyelete: A felhasználók olvashatják a saját attribútumaikat) felügyeleti házirendszabályt..
+    2.  Keresse meg a **User management: Users can read attributes of their own** (Felhasználók felügyelete: A felhasználók olvashatják a saját attribútumaikat) felügyeleti házirendszabályt.
 
-    3.  Jelölje ki ezt a felügyeleti házirendszabályt, majd törölje a **Policy is disabled** (A házirend le van tiltva) négyzet jelölését..
+    3.  Jelölje ki ezt a felügyeleti házirendszabályt, majd törölje a **Policy is disabled** (A házirend le van tiltva) négyzet jelölését.
 
-    4.  Kattintson az **OK**, majd a **Submit** (Küldés) gombra..
+    4.  Kattintson az **OK**, majd a **Submit** (Küldés) gombra.
 
 4.  Ellenőrizze, hogy a tűzfal engedélyezi-e a bejövő kapcsolatokat az 5725-ös és 5726-os TCP-portokon.
 
-    1.  Nyissa meg a **Felügyeleti eszközöket**, majd válassza a **Fokozott biztonságú Windows tűzfal** lehetőséget..
+    1.  Nyissa meg a **Felügyeleti eszközöket**, majd válassza a **Fokozott biztonságú Windows tűzfal** lehetőséget.
 
-    2.  Kattintson a **Bejövő szabályok** elemre..
+    2.  Kattintson a **Bejövő szabályok** elemre.
 
     3.  Győződjön meg arról, hogy a következő két szabály szerepel a listában:
 
@@ -143,11 +137,11 @@ A telepítést követően győződjön meg arról, hogy a MIM-portál aktív.
 
     4.  Végezze el a varázsló lépéseit, majd zárja be a **Windows tűzfalat**.
 
-    5.  Válassza a **Vezérlőpult » Hálózat és internet » Hálózati állapot és hálózati feladatok megjelenítése** elemet..
+    5.  Válassza a **Vezérlőpult » Hálózat és internet » Hálózati állapot és hálózati feladatok megjelenítése** elemet.
 
     6.  Győződjön meg arról, hogy a listában szerepel egy contoso.local nevű aktív hálózat, tartományi hálózatként.
 
-    7.  Zárja be a **Vezérlőpultot**..
+    7.  Zárja be a **Vezérlőpultot**.
 
 > [!NOTE]
 > Nem kötelező: Ezek után igény szerint telepítheti a MIM beépülő moduljait és bővítményeit.
@@ -157,6 +151,7 @@ A telepítést követően győződjön meg arról, hogy a MIM-portál aktív.
 [Adatbázisok szinkronizálása »](install-mim-sync-ad-service.md)
 
 
-<!--HONumber=Apr16_HO4-->
+
+<!--HONumber=Jul16_HO3-->
 
 

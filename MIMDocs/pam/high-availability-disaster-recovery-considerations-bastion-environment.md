@@ -1,10 +1,10 @@
 ---
-title: "A magas rendelkezésre állással és a vészhelyreállítással kapcsolatos szempontok a megerősített környezet esetében | Microsoft Identity Manager"
-description: 
+title: "PAM vészhelyreállítás | Microsoft Identity Manager"
+description: "Információk a Privileged Access Management konfigurálásáról magas rendelkezésre álláshoz és vészhelyreállításhoz."
 keywords: 
 author: kgremban
 manager: femila
-ms.date: 06/17/2016
+ms.date: 07/15/2016
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.service: microsoft-identity-manager
@@ -13,8 +13,8 @@ ms.assetid: 03e521cd-cbf0-49f8-9797-dbc284c63018
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 9e5f51d5ca731b3564b8262db0f4cddeb850231a
-ms.openlocfilehash: 1d9e005bfb3e26f9a2b818667f14acd3e5239523
+ms.sourcegitcommit: ae4c40c73dd9d5860f42e00765a7e34e8ca397a9
+ms.openlocfilehash: 9164e48bf10fa27ff6c87ba3816b586a940dda69
 
 
 ---
@@ -161,7 +161,7 @@ Az emelt szintű hozzáférések felügyeletének tipikus éles környezetbeli t
 
 A további tartományvezérlő hozzáadásának műveletét a [Replika Windows Server 2012 tartományvezérlő telepítése meglévő tartományban (200. szint)](https://technet.microsoft.com/library/jj574134.aspx) című cikk ismerteti.  
 
->[!NOTE] 
+>[!NOTE]
 > Ha a tartományvezérlőt virtualizációs platformon fogja üzemeltetni, például a Hyper-V platformon, akkor olvassa el [A virtualizált tartományvezérlő központi telepítése és konfigurálása](https://technet.microsoft.com/library/jj574223.aspx) című cikkben található figyelmeztetéseket.
 
 #### Helyreállítás
@@ -199,7 +199,7 @@ A magas rendelkezésre állással kapcsolatos tudnivalókért olvassa el a Windo
 
 Éles környezetben, több kiszolgálóra végrehajtott telepítés esetén a hálózati terheléselosztás (NLB) segítségével osztható el a feldolgozási terhelés.  Érdemes csak egy aliast (például A vagy CNAME) használnia, hogy a felhasználó csak egy általános nevet lásson.
 
->[!IMPORTANT] 
+>[!IMPORTANT]
 > Ha használ terheléselosztási technológiát, de az nem a Windows Server 2012 R2 által tartalmazott NLB szolgáltatás, akkor győződjön meg arról, hogy az Ön által használt megoldás az adott munkamenetet ugyanarra a kiszolgálóra irányítja át, és nem egy véletlenszerűen választott kiszolgálóra.
 
 A MIM többkiszolgálós telepítése esetén mindegyik MIM szolgáltatáshoz tartozik egy külső állomásnév, egy szolgáltatásnév és egy szolgáltatáspartíció neve.  A szolgáltatásnév alapértelmezett értéke a számítógép neve, a külső állomásnév és a szolgáltatáspartíció nevének alapértelmezett értéke pedig a MIM szolgáltatás telepítésekor adható meg a MIM szolgáltatás kiszolgálójának címét kérő képernyőn. Ezeket a neveket a %ProgramFiles%\Microsoft Forefront Identity Manager\Service\Microsoft.ResourceManagementService.exe.config fájl tárolja a `resourceManagementService` konfigurációs csomópont `externalHostName`, `serviceName` és `servicePartitionName` attribútumaként.  
@@ -224,6 +224,6 @@ Ha a megerősített környezet erdőjének működési szintje Windows Server 20
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO3-->
 
 

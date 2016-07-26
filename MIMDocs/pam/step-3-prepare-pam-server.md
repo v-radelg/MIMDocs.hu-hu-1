@@ -1,10 +1,10 @@
 ---
-title: "3. lépés – PAM-kiszolgáló előkészítése |Microsoft Identity Manager"
-description: 
+title: "A PAM üzembe helyezése, 3. lépés – PAM-kiszolgáló | Microsoft Identity Manager"
+description: "Készítsen elő a Privileged Access Management számára egy PAM-kiszolgálót mind az SQL, mind a SharePoint üzemeltetéséhez."
 keywords: 
-author: 
+author: kgremban
 manager: femila
-ms.date: 06/17/2016
+ms.date: 07/15/2016
 ms.topic: article
 ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
@@ -14,8 +14,8 @@ ROBOTS: noindex,nofollow
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 9e5f51d5ca731b3564b8262db0f4cddeb850231a
-ms.openlocfilehash: ec65078cea33b73aa9482e831a1870df477c6581
+ms.sourcegitcommit: ae4c40c73dd9d5860f42e00765a7e34e8ca397a9
+ms.openlocfilehash: 1a21399df9528f689b811400a660543853d88472
 
 
 ---
@@ -118,7 +118,7 @@ Ha az SQL Server még nincs jelen a megerősített környezetben, telepítse az 
 
 Telepítse a SharePoint szoftver-előfeltételeit a PAMSRV kiszolgálóra a SharePoint Foundation 2013 SP1 szervizcsomagot is tartalmazó telepítőjével.
 
-> [!NOTE] 
+> [!NOTE]
 > Az előfeltételek letöltéséhez a telepítőnek internetkapcsolatra van szüksége. A telepítés után a kiszolgáló újraindul.
 
 1. Kattintson jobb gombbal a PowerShellre, és válassza a **Futtatás rendszergazdaként** elemet.  
@@ -158,7 +158,7 @@ A varázslók befejezése után a PowerShell segítségével hozza létre a Shar
 
 2. Ekkor megjelenik egy figyelmeztető üzenet arról, hogy a rendszer klasszikus Windows-hitelesítést használ, és több percig is eltarthat, míg a záró parancs sikeresen lefut.  Ha a parancs futása befejeződött, a kimenetben megjelenik az új portál URL-címe.
 
-> [!NOTE] 
+> [!NOTE]
 > Ne zárja be a SharePoint 2013 felügyeleti rendszerhéj ablakát, mivel a következő lépésben szükség lesz rá.
 
 ## SharePoint-webhelycsoport létrehozása
@@ -212,6 +212,6 @@ A 4. lépésben hozzákezdhet a MIM-összetevőknek a PAM-kiszolgálóra való t
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO3-->
 
 
