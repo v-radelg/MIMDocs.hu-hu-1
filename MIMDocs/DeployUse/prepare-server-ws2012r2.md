@@ -1,27 +1,21 @@
 ---
-# required metadata
-
-title: "Identitáskezelési kiszolgáló beállítása: Windows Server 2012 R2 | Microsoft Identity Manager"
+title: "A Windows Server konfigurálása | Microsoft Identity Manager"
 description: "A Windows Server 2012 R2 és a MIM 2016 együttműködésének előkészítési lépései és minimumkövetelményei"
-keywords:
+keywords: 
 author: kgremban
-manager: stevenpo
-ms.date: 04/28/2016
+manager: femila
+ms.date: 07/21/2016
 ms.topic: get-started-article
 ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 51507d0a-2aeb-4cfd-a642-7c71e666d6cd
-
-# optional metadata
-
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer: mwahl
 ms.suite: ems
-#ms.tgt_pltfrm:
-#ms.custom:
+translationtype: Human Translation
+ms.sourcegitcommit: b3ab1b9376c9b613739d87c812f4b16a4e17e6de
+ms.openlocfilehash: e1d69eb7946f9adfdfa7c55cecd3fa1d799a2cd3
+
 
 ---
 
@@ -47,7 +41,7 @@ Készítsen elő egy Windows Server 2012 R2 rendszerű számítógépet legaláb
 
 3. Nyissa meg a Vezérlőpultot, és csatlakoztassa a számítógépet a legutóbbi lépésben konfigurált *contoso.local* tartományhoz.  Ehhez meg kell adnia a tartományi rendszergazdai fiók – például *Contoso\Rendszergazda* felhasználónevét és hitelesítő adatait.  Miután az üdvözlő üzenet megjelenik, zárja be a párbeszédpanelt, és még egyszer indítsa újra a kiszolgálót.
 
-4. Jelentkezzen be a *CorpIDM* számítógépre tartományi rendszergazdaként, például a *Contoso\Rendszergazda* fiókkal..
+4. Jelentkezzen be a *CorpIDM* számítógépre tartományi rendszergazdaként, például a *Contoso\Rendszergazda* fiókkal.
 
 5. Rendszergazdaként nyisson meg egy PowerShell-ablakot, és írja be a következő parancsot a számítógép frissítéséhez a csoportházirend-beállításokkal.
 
@@ -57,11 +51,11 @@ Készítsen elő egy Windows Server 2012 R2 rendszerű számítógépet legaláb
 
     A folyamat egy percen belül befejeződik, és a következő üzenet jelenik meg: „A számítógép-házirend frissítése sikeresen befejeződött.”
 
-6. Vegye fel a **Webkiszolgáló (IIS)** és az **Alkalmazáskiszolgáló** szerepköröket, a **.NET-keretrendszer** 3.5, 4.0 és 4.5 funkcióit és az **Active Directory-modult a Windows PowerShell környezethez**..
+6. Vegye fel a **Webkiszolgáló (IIS)** és az **Alkalmazáskiszolgáló** szerepköröket, a **.NET-keretrendszer** 3.5, 4.0 és 4.5 funkcióit és az **Active Directory-modult a Windows PowerShell környezethez**.
 
     ![Kép: PowerShell-funkciók](media/MIM-DeployWS2.png)
 
-7. A PowerShell-ablakba írja be következő parancsokat: Elképzelhető, hogy a **.NET-keretrendszer** 3.5 funkcióhoz tartozó forrásfájlokhoz más helyet kell megadni. Ezek a funkciók általában nem érhetők el a Windows Server telepítésekor, csak a következő mappában az operációs rendszer telepítésére szolgáló lemezen, pl.: „d:\Sources\SxS\*”.
+7. A PowerShell-ablakba írja be következő parancsokat: Elképzelhető, hogy a **.NET-keretrendszer** 3.5 funkcióhoz tartozó forrásfájlokhoz más helyet kell megadni. Ezek a funkciók általában nem érhetők el a Windows Server telepítésekor, csak a következő mappában az operációs rendszer telepítésére szolgáló lemezen, pl.: „*d:\Sources\SxS\*”.
 
     ```
     import-module ServerManager
@@ -74,25 +68,25 @@ A kiszolgálói biztonsági házirendben engedélyezze az újonnan létrehozott 
 
 1. A Helyi biztonsági házirend program elindítása
 
-2. Keresse meg a **Helyi házirend > Felhasználói jogok kiosztása** csomópontot..
+2. Keresse meg a **Helyi házirend > Felhasználói jogok kiosztása** csomópontot.
 
-3. A Részletek panelen jobb gombbal kattintson a **Bejelentkezés szolgáltatásként** lehetőségre, majd válassza a **Tulajdonságok** pontot..
+3. A Részletek panelen kattintson a jobb gombbal a **Bejelentkezés szolgáltatásként** lehetőségre, majd válassza a **Tulajdonságok** pontot.
 
     ![Kép: Helyi biztonsági házirend](media/MIM-DeployWS3.png)
 
-4. Kattintson a **Felhasználó vagy csoport hozzáadása** gombra, a szövegmezőbe írja be a következőt: `contoso\mimsync; contoso\mimma; contoso\MIMService; contoso\SharePoint; contoso\SqlServer; contoso\mimsspr`, kattintson a **Névellenőrzés** lehetőségre, majd az **OK** gombra..
+4. Kattintson a **Felhasználó vagy csoport hozzáadása** gombra, a szövegmezőbe írja be a következőt: `contoso\mimsync; contoso\mimma; contoso\MIMService; contoso\SharePoint; contoso\SqlServer; contoso\mimsspr`, kattintson a **Névellenőrzés** lehetőségre, majd az **OK** gombra.
 
 5. Kattintson az **OK** gombra a **Bejelentkezés szolgáltatásként – tulajdonságok** ablak bezárásához.
 
-6.  A részletező panelen jobb gombbal kattintson **A számítógép hálózati elérésének megtagadása** elemre, majd a **Tulajdonságok** pontra..
+6.  A részletező panelen jobb gombbal kattintson **A számítógép hálózati elérésének megtagadása** elemre, majd a **Tulajdonságok** pontra.
 
-7. Kattintson a **Felhasználó vagy csoport hozzáadása** gombra, a szövegmezőbe írja be a következőt: `contoso\MIMSync; contoso\MIMService`, majd kattintson az **OK** gombra..
+7. Kattintson a **Felhasználó vagy csoport hozzáadása** gombra, a szövegmezőbe írja be a következőt: `contoso\MIMSync; contoso\MIMService`, majd kattintson az **OK** gombra.
 
 8. Az **OK** gombbal zárja be **A számítógép hálózati elérésének megtagadása – tulajdonságok** ablakot.
 
-9. A részletező panelen jobb gombbal kattintson a **Helyi bejelentkezés megtagadása** elemre, majd a **Tulajdonságok** pontra..
+9. A Részletek panelen kattintson a jobb gombbal a **Helyi bejelentkezés megtagadása** elemre, majd a **Tulajdonságok** pontra.
 
-10. Kattintson a **Felhasználó vagy csoport hozzáadása** gombra, a szövegmezőbe írja be a következőt: `contoso\MIMSync; contoso\MIMService`, majd kattintson az **OK** gombra..
+10. Kattintson a **Felhasználó vagy csoport hozzáadása** gombra, a szövegmezőbe írja be a következőt: `contoso\MIMSync; contoso\MIMService`, majd kattintson az **OK** gombra.
 
 11. Kattintson az **OK** gombra a **Helyi bejelentkezés megtagadása – tulajdonságok** ablak bezárásához.
 
@@ -116,6 +110,7 @@ A kiszolgálói biztonsági házirendben engedélyezze az újonnan létrehozott 
 [SQL Server 2014 »](prepare-server-sql2014.md)
 
 
-<!--HONumber=Apr16_HO4-->
+
+<!--HONumber=Jul16_HO3-->
 
 
