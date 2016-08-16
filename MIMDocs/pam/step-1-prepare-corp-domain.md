@@ -1,10 +1,10 @@
 ---
-title: "1. lépés – A gazdagép és a CORP tartomány előkészítése | Microsoft Identity Manager"
-description: 
+title: "A PAM üzembe helyezése, 1. lépés - CORP tartomány | Microsoft Identity Manager"
+description: "CORP tartomány előkészítése létező vagy új identitásokkal a Privileged Identity Manager számára"
 keywords: 
 author: kgremban
 manager: femila
-ms.date: 06/10/2016
+ms.date: 07/15/2016
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.service: microsoft-identity-manager
@@ -13,8 +13,8 @@ ms.assetid: 4b524ae7-6610-40a0-8127-de5a08988a8a
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 9e5f51d5ca731b3564b8262db0f4cddeb850231a
-ms.openlocfilehash: 7d6888ad4d694ad0ed746598563de32d7c363936
+ms.sourcegitcommit: ae4c40c73dd9d5860f42e00765a7e34e8ca397a9
+ms.openlocfilehash: 9a2fafa86c5c928339ff8d7ad1593472046ccb98
 
 
 ---
@@ -94,7 +94,7 @@ Bizonyos esetekben előfordulhat, hogy a csoport már létezik – ami normális
 
 Ha létrehozott egy új CORP tartományt, további felhasználókat és csoportokat kell létrehoznia a PAM-forgatókönyv bemutatásához. A bemutatási célokra használt felhasználók és csoportok nem lehetnek tartományi rendszergazdák, és nem szabályozhatják őket az AD adminSDHolder beállításai.
 
-> [!NOTE] 
+> [!NOTE]
 > Ha már van olyan tartománya, amelyet CORP tartományként kíván használni, és abban található olyan felhasználó vagy csoport, amelyet bemutatási célokra használhat, ugorjon a [Naplózás konfigurálása](#configure-auditing) című részhez.
 
 Létre fogjuk hozni a *CorpAdmins* nevű biztonsági csoportot és a *Ilona* nevű felhasználót. Tetszés szerint más neveket is választhat.
@@ -135,7 +135,7 @@ Minden tartományban jelentkezzen be egy tartományvezérlőre tartományi rends
 
 5. A részletek ablaktábláján kattintson a jobb gombbal a **Fiókkezelés naplózása** elemre, és válassza a **Tulajdonságok** parancsot. Válassza ki **A következő házirend-beállítások megadása** lehetőséget, jelölje be a **Sikeres** és a **Sikertelen** beállítást, majd kattintson az **Alkalmaz** és az **OK** gombra.
 
-6. A részletek ablaktábláján kattintson a jobb gombbal a **Címtárszolgáltatás-hozzáférés naplózása** elemre, és válassza a **Tulajdonságok** parancsot. Válassza ki **A következő házirend-beállítások megadása** lehetőséget, jelölje be a **Sikeres** és a **Sikertelen** beállítást, majd kattintson az **Alkalmaz** és az **OK** gombra.
+6. A részletek ablaktáblájában kattintson a jobb gombbal a **Címtárszolgáltatás-hozzáférés naplózása** elemre, és válassza a **Tulajdonságok** parancsot. Válassza ki **A következő házirend-beállítások megadása** lehetőséget, jelölje be a **Sikeres** és a **Sikertelen** beállítást, majd kattintson az **Alkalmaz** és az **OK** gombra.
 
 7. Zárja be a Csoportházirendkezelés-szerkesztő ablakát és a Csoportházirend kezelése ablakot.
 
@@ -167,7 +167,7 @@ Ez újraindítja a tartományvezérlőt, a CORPDC gépet. Ezzel a beállításje
 
 Ha még nincs csatlakoztatva munkaállomás a tartományhoz, készítse elő a számítógépet az alábbi lépésekkel.  
 
-> [!NOTE] 
+> [!NOTE]
 > Ha a tartományhoz már csatlakoztatott egy munkaállomást, ugorjon az [Erőforrás létrehozása bemutató céljára](#create-a-resource-for-demonstration-purposes) című részhez.
 
 ### A Windows 8.1 vagy a Windows 10 Enterprise telepítése virtuális gépként
@@ -215,6 +215,6 @@ A következő lépésben a PRIV tartományvezérlő előkészítésével foglalk
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO3-->
 
 

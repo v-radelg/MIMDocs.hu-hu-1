@@ -1,10 +1,10 @@
 ---
-title: "6. lépés – Csoport áthelyezése a Privileged Access Management szolgáltatásba | Microsoft Identity Manager"
-description: 
+title: "A PAM üzembe helyezése, 6. lépés – Csoport áthelyezése | Microsoft Identity Manager"
+description: "Telepítse át a csoportot a PRIV erdőbe, hogy a Privilege Access Management által kezelhető legyen."
 keywords: 
-author: 
+author: kgremban
 manager: femila
-ms.date: 06/16/2016
+ms.date: 07/15/2016
 ms.topic: article
 ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
@@ -12,15 +12,17 @@ ms.technology: active-directory-domain-services
 ms.assetid: 7b689eff-3a10-4f51-97b2-cb1b4827b63c
 ms.reviewer: mwahl
 ms.suite: ems
-ms.sourcegitcommit: 01470689e862b47625346d5d5bc6bc7def11da9c
-ms.openlocfilehash: b21e2fed4588572fd1b793c4942860871ae9a51c
+translationtype: Human Translation
+ms.sourcegitcommit: ae4c40c73dd9d5860f42e00765a7e34e8ca397a9
+ms.openlocfilehash: 603e5e28f0eee0f648ef7e00ef137f5a08b2ba34
 
 
 ---
 
 # 6. lépés – Csoport áthelyezése a Privileged Access Management szolgáltatásba
 
->[!div class="step-by-step"] [« 5. lépés](step-5-establish-trust-between-priv-corp-forests.md)
+>[!div class="step-by-step"]
+[« 5. lépés ](step-5-establish-trust-between-priv-corp-forests.md)
 [7. lépés »](step-7-elevate-user-access.md)
 
 A rendszerjogosultságú fiókok a PRIV erdőben PowerShell-parancsmagokkal hozhatók létre. Ezek a parancsmagok a következő feladatokat végzik el:
@@ -82,11 +84,12 @@ A parancsmagokat minden csoportban, illetve a csoport minden tagjánál egyszer 
 
 Ha azt szeretné bemutatni, hogy az erdők közötti hozzáférési jogok vannak érvényben a felhasználók rendszergazdai fiókjai esetében, folytassa a következő lépéssel.
 
->[!div class="step-by-step"] [« 5. lépés](step-5-establish-trust-between-priv-corp-forests.md)
+>[!div class="step-by-step"]
+[« 5. lépés ](step-5-establish-trust-between-priv-corp-forests.md)
 [7. lépés »](step-7-elevate-user-access.md)
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jul16_HO3-->
 
 

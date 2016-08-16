@@ -1,10 +1,10 @@
 ---
-title: "Aktiválás az Azure MFA használatával | Microsoft Identity Manager"
-description: 
+title: "Az Azure MFA használata a PAM aktiválásához | Microsoft Identity Manager"
+description: "Állítsa be az Azure MFA-t második biztonsági szintként, ha a felhasználók szerepköröket aktiválnak a Privileged Access Managementben."
 keywords: 
 author: kgremban
 manager: femila
-ms.date: 06/17/2016
+ms.date: 07/15/2016
 ms.topic: article
 ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
@@ -13,8 +13,8 @@ ms.assetid: 5134a112-f73f-41d0-a5a5-a89f285e1f73
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 9e5f51d5ca731b3564b8262db0f4cddeb850231a
-ms.openlocfilehash: d6f6927eec479c705fd9ef7f33fafdeec05857e0
+ms.sourcegitcommit: ae4c40c73dd9d5860f42e00765a7e34e8ca397a9
+ms.openlocfilehash: 518a7e165946049745c8eea15ecb61866d6f9c04
 
 
 ---
@@ -70,7 +70,7 @@ A következő lépésben létre fog hozni egy fájlt, amely tartalmazza a PAM-ne
 
 7.  A letöltött ZIP-fájlt másolja minden rendszerre, ahol a MIM szolgáltatás telepítve van. 
 
->[!NOTE] 
+>[!NOTE]
 > A ZIP-fájl az Azure MFA szolgáltatással való hitelesítésre szolgáló kulcsanyagokat tartalmazza.
 
 ## A MIM szolgáltatás konfigurálása az Azure MFA használatára
@@ -99,7 +99,7 @@ A következő lépésben létre fog hozni egy fájlt, amely tartalmazza a PAM-ne
 
 11.  Mentse és írja felül az **MfaSettings.xml** fájlt a MIM szolgáltatás mappában (`C:\\Program Files\\Microsoft Forefront Identity Manager\\2010\\Service`). 
 
-> [!NOTE] 
+> [!NOTE]
 > A folyamat végén győződjön meg róla, hogy az **MfaSettings.xml** fájl, illetve annak minden példánya, valamint a ZIP-fájl nyilvánosan nem olvasható.
 
 ## PAM-felhasználók konfigurálása az Azure MFA számára
@@ -151,6 +151,6 @@ A sikertelen telefonhívások okára (101-es esemény) vonatkozó további infor
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO3-->
 
 

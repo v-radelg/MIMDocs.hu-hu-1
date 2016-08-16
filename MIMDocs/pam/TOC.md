@@ -11,7 +11,7 @@
 ### [Szerepkörök definiálása](defining-roles-for-pam.md)
 ### [Magas rendelkezésre állás és vészhelyreállítás](high-availability-disaster-recovery-considerations-bastion-environment.md)
 ### [Hardver- és szoftverkövetelmények](hardware-software-requirements.md)
-## [Szerepkörök definiálása a Privileged Access Management megoldáshoz](configuring-mim-environment-for-pam.md)
+## [A MIM konfigurálása a Privileged Access Management szolgáltatáshoz](configuring-mim-environment-for-pam.md)
 ### [1. lépés – A CORP tartomány](step-1-prepare-corp-domain.md)
 ### [2. lépés – A PRIV tartományvezérlő](step-2-prepare-priv-domain-controller.md)
 ### [3. lépés – A PAM-kiszolgáló](step-3-prepare-pam-server.md)
@@ -23,6 +23,6 @@
 # [Fejlesztői leírás](/microsoft-identity-manager/reference/microsoft-identity-manager-2016-developer-reference)
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jul16_HO3-->
 
 

@@ -1,33 +1,28 @@
 ---
-# required metadata
-
-title: "A MIM 2016 telepítése: Az Active Directory és a MIM szolgáltatás szinkronizálása | Microsoft Identity Manager"
+title: "Az AD és a MIM szolgáltatás szinkronizálása | Microsoft Identity Manager"
 description: "Az Active Directory és a MIM-adatbázisok szinkronizálása kezelőügynökök és a MIM Sync szolgáltatás segítségével."
-keywords:
+keywords: 
 author: kgremban
-manager: stevenpo
-ms.date: 04/28/2016
+manager: femila
+ms.date: 07/21/2016
 ms.topic: get-started-article
 ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 5e532b67-64a6-4af6-a806-980a6c11a82d
-
-# optional metadata
-
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer: mwahl
 ms.suite: ems
-#ms.tgt_pltfrm:
-#ms.custom:
+translationtype: Human Translation
+ms.sourcegitcommit: b3ab1b9376c9b613739d87c812f4b16a4e17e6de
+ms.openlocfilehash: f17f256653936ffd06da9fae87dccfbf1c12a553
+
 
 ---
 
 # A MIM 2016 telepítése: Az Active Directory és a MIM szolgáltatás szinkronizálása
 
->[!div class="step-by-step"] [« MIM szolgáltatás és -portál](install-mim-service-portal.md)
+>[!div class="step-by-step"]
+[« MIM szolgáltatás és -portál](install-mim-service-portal.md)
 
 > [!NOTE]
 > Ez az útmutató egy Contoso nevű fiktív vállalat neveit és értékeit használja szemléltetésként. Ezeket helyettesítse a saját neveivel és értékeivel. Például:
@@ -42,7 +37,8 @@ A MIM-kezelőügynök (MA) összekötőként funkcionál a MIM Sync és a MIM sz
 
 A MIM-kezelőügynök konfigurálásához meg kell adnia egy felhasználói fiókot. A dokumentumban erre a fiókra **MIMMA** néven hivatkozunk.
 
-> [!NOTE]A MIM-kezelőügynökhöz használt fióknak azonosnak kell lennie a MIM szolgáltatás telepítésekor megadott fiókkal.
+> [!NOTE]
+> A MIM-kezelőügynökhöz használt fióknak azonosnak kell lennie a MIM szolgáltatás telepítésekor megadott fiókkal.
 
 ###A MIM-kezelőügynök létrehozása
 
@@ -320,7 +316,7 @@ Az AD felhasználókra vonatkozó bejövő szinkronizálási szabályának létr
 
     -   Metaverse Resource Type (Metaverzum erőforrástípusa): person (személy)
     -   External System (Külső rendszer): ADMA
-    -   External System Resource Type (Külső rendszer erőforrástípusa): person (személy)
+    -   External System Resource Type (Külső rendszer erőforrástípusa): user (felhasználó)
 
 6. A **Relationship** (Kapcsolat) lapon adja meg a következő információkat, majd kattintson a **Next** (Tovább) gombra:
 
@@ -332,10 +328,10 @@ Az AD felhasználókra vonatkozó bejövő szinkronizálási szabályának létr
 
     | Folyamatszabály | Forrás | Cél |
     |-|-|-|
-    |1. szabály|samAccountName|f|
+    |1. szabály|samAccountName|accountName|
     |2. szabály|displayName|displayName|
-    |3. szabály|EmployeeType|EmployeeType|
-    |4. szabály|givenName|givenName|
+    |3. szabály|EmployeeType|employeeType|
+    |4. szabály|givenName|firstName|
     |5. szabály|sn|lastName|
     |6. szabály|Manager|manager|
     |7. szabály|objectSID|ObjectSID|
@@ -437,9 +433,11 @@ A három futtatási profil végrehajtásához kövesse az alábbi lépéseket.
     - A **Run profiles** (Futtatási profilok) listában jelölje ki a futtatni kívánt futtatási profilokat.
     - A futtatási profil elindításához kattintson az **OK** gombra.
 
->[!div class="step-by-step"] [« MIM szolgáltatás és -portál](install-mim-service-portal.md)
+>[!div class="step-by-step"]
+[« MIM szolgáltatás és -portál](install-mim-service-portal.md)
 
 
-<!--HONumber=Jun16_HO1-->
+
+<!--HONumber=Jul16_HO3-->
 
 

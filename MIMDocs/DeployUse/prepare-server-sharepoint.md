@@ -1,27 +1,21 @@
 ---
-# required metadata
-
-title: "Identitáskezelési kiszolgáló beállítása: SharePoint | Microsoft Identity Manager"
+title: "A SharePoint konfigurálása | Microsoft Identity Manager"
 description: "A SharePoint Foundation telepítése és konfigurálása a MIM-portál oldalának üzemeltetéséhez."
-keywords:
+keywords: 
 author: kgremban
-manager: stevenpo
-ms.date: 04/28/2016
+manager: femila
+ms.date: 07/21/2016
 ms.topic: get-started-article
 ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: c01487f2-3de6-4fc4-8c3a-7d62f7c2496c
-
-# optional metadata
-
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer: mwahl
 ms.suite: ems
-#ms.tgt_pltfrm:
-#ms.custom:
+translationtype: Human Translation
+ms.sourcegitcommit: b3ab1b9376c9b613739d87c812f4b16a4e17e6de
+ms.openlocfilehash: 9885579d9fb72dd4e73ec5a8a359b35c49d10440
+
 
 ---
 
@@ -81,16 +75,16 @@ A SharePoint és a MIM együttműködésének konfigurálásához kövesse a **S
 
 6. A SharePoint-farm konfigurálásához indítsa el a varázslót (a webalkalmazáson belül).
 
-7. Jelölje be a meglévő felügyelt fiók (*Contoso\SharePoint*) használatára vonatkozó beállítást, majd kattintson a **Tovább** gombra..
+7. Jelölje be a meglévő felügyelt fiók (*Contoso\SharePoint*) használatára vonatkozó beállítást, majd kattintson a **Tovább** gombra.
 
-8. A **Webhelycsoport létrehozása** ablakban kattintson a **Kihagyás** gombra.  Ezután kattintson a **Befejezés** gombra..
+8. A **Webhelycsoport létrehozása** ablakban kattintson a **Kihagyás** gombra.  Ezután kattintson a **Befejezés** gombra.
 
 ## A SharePoint előkészítése a MIM-portál futtatására
 
 > [!NOTE]
 > Az SSL-t a rendszer nem konfigurálja előre. A portálhoz való hozzáférés engedélyezése előtt konfiguráljon SSL vagy azzal egyenértékű protokollt.
 
-1. Indítsa el a **SharePoint 2013 felügyeleti rendszerhéjat**, és a következő PowerShell-parancsprogrammal hozzon létre egy **SharePoint Foundation 2013-webalkalmazást**:.
+1. Indítsa el a **SharePoint 2013 felügyeleti rendszerhéjat**, és a következő PowerShell-parancsprogrammal hozzon létre egy **SharePoint Foundation 2013-webalkalmazást**.
 
     ```
     $dbManagedAccount = Get-SPManagedAccount -Identity contoso\SharePoint
@@ -98,7 +92,8 @@ A SharePoint és a MIM együttműködésének konfigurálásához kövesse a **S
     -ApplicationPoolAccount $dbManagedAccount -AuthenticationMethod "Kerberos" -Port 82 -URL http://corpidm.contoso.local
     ```
 
-    > [!NOTE] Ekkor megjelenik egy figyelmeztető üzenet arról, hogy a rendszer klasszikus Windows-hitelesítést használ, és több percig is eltarthat, míg a záró parancs sikeresen lefut. Ha a parancs futása befejeződött, a kimenetben megjelenik az új portál URL-címe. Ne zárja be a **SharePoint 2013 felügyeleti rendszerhéjat**, később ugyanis szükség lehet az itt szereplő információkra.
+    > [!NOTE]
+    > Ekkor megjelenik egy figyelmeztető üzenet arról, hogy a rendszer klasszikus Windows-hitelesítést használ, és több percig is eltarthat, míg a záró parancs sikeresen lefut. Ha a parancs futása befejeződött, a kimenetben megjelenik az új portál URL-címe. Ne zárja be a **SharePoint 2013 felügyeleti rendszerhéjat**, később ugyanis szükség lehet az itt szereplő információkra.
 
 2. Indítsa el a SharePoint 2013 felügyeleti rendszerhéjat, és a következő PowerShell-parancsprogrammal hozzon létre egy **SharePoint-webhelycsoportot** az imént készített webalkalmazáshoz:
 
@@ -112,7 +107,8 @@ A SharePoint és a MIM együttműködésének konfigurálásához kövesse a **S
   $s.CompatibilityLevel
   ```
 
-  > [!NOTE] Győződjön meg arról, hogy a *CompatibilityLevel* (Kompatibilitási szint) változó eredménye „14”. Ha az eredmény 15, akkor a webhelycsoportot nem a 2010-es verzióhoz hozták létre. Ebben az esetben törölje, majd hozza létre újra a webhelycsoportot.
+  > [!NOTE]
+  > Győződjön meg arról, hogy a *CompatibilityLevel* (Kompatibilitási szint) változó eredménye „14”. Ha az eredmény 15, akkor a webhelycsoportot nem a 2010-es verzióhoz hozták létre. Ebben az esetben törölje, majd hozza létre újra a webhelycsoportot.
 
 3. Futtassa a következő PowerShell-parancsokat a **SharePoint 2013 felügyeleti rendszerhéjban** a **SharePoint Server-oldali Viewstate** és az „Állapotelemzési feladat (Óránként, A Microsoft SharePoint Foundation időzítő szolgáltatása, Minden kiszolgáló)” letiltásához:
 
@@ -127,7 +123,7 @@ A SharePoint és a MIM együttműködésének konfigurálásához kövesse a **S
 
     ![Kép: MIM-portál a http://localhost:82 címen](media/MIM-DeploySP1.png)
 
-5. Másolja az URL-t, majd az Internet Explorerben nyissa meg az **Internetbeállításokat**, lépjen a **Biztonság** lapra, válassza a **Helyi intranet** zónát, majd kattintson a **Helyek** gombra..
+5. Másolja az URL-t, majd az Internet Explorerben nyissa meg az **Internetbeállításokat**, lépjen a **Biztonság** lapra, válassza a **Helyi intranet** zónát, majd kattintson a **Helyek** gombra.
 
     ![Kép: Internetbeállítások](media/MIM-DeploySP2.png)
 
@@ -140,6 +136,7 @@ A SharePoint és a MIM együttműködésének konfigurálásához kövesse a **S
 [Exchange Server »](prepare-server-exchange.md)
 
 
-<!--HONumber=Apr16_HO4-->
+
+<!--HONumber=Jul16_HO3-->
 
 

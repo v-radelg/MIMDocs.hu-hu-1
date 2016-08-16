@@ -12,18 +12,19 @@ ms.technology: active-directory-domain-services
 ms.assetid: cf3796f7-bc68-4cf7-b887-c5b14e855297
 ms.reviewer: mwahl
 ms.suite: ems
-experimental: true
 experiment_id: kgremban_images
 translationtype: Human Translation
 ms.sourcegitcommit: e695dd47e4bd31c4004c7d0d9ec76498d52fb56a
-ms.openlocfilehash: b46c2b50873023d504fb7b440a1d4e40e8fa3ac7
+ms.openlocfilehash: 82c97351f66558c3270821f786560ef4b3e0c473
 
 ---
 
 # Privileged Access Management az Active Directory tartományi szolgáltatásokhoz
-A Privileged Access Management (PAM) olyan megoldás, amely segít a szervezeteknek a meglévő Active Directory-környezetükben korlátozni a rendszerjogosultságú hozzáférést.
+A Privileged Access Management (PAM) segít a szervezeteknek a meglévő Active Directory-környezetükben korlátozni a rendszerjogosultságú hozzáférést.
 
-A Privileged Access Management két célt ér el:
+![A PAM lépései: előkészítés, védelem, működtetés, figyelés – ábra](media/MIM_PIM_SetupProcess.png)
+
+A környezet előkészítési, védelmi és figyelési ciklusára összpontosító Privileged Access Management az alábbi két célt éri el:
 
 - Visszaszerzi a felügyeletet a sérült biztonságú Active Directory-környezetek fölött: különálló megerősített környezetet működtet, amelyet biztosan nem érintettek a rosszindulatú támadások.  
 - Elszigeteli a rendszerjogosultságú fiókok használatát, hogy mérsékelje az ilyen hitelesítő adatok ellopásának kockázatát.
@@ -43,7 +44,6 @@ A PAM a szükséges időben (just-in-time) történő felügyelet elvére épül
 
 A PAM üzembe helyezése és működtetése négy lépésből áll.
 
-![A PAM lépései: előkészítés, védelem, működtetés, figyelés – ábra](media/MIM_PIM_SetupProcess.png)
 
 1.  **Előkészítés**: Azonosítsa azokat a csoportokat, amelyek magas jogosultságszinttel rendelkeznek a meglévő erdőn belül. Hozza létre ezeket a csoportokat tagok nélkül a megerősített erdőben.
 

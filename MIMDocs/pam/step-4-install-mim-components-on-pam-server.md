@@ -1,10 +1,10 @@
 ---
-title: "4. lépés – MIM-összetevők telepítése PAM-kiszolgálóra és -munkaállomásra | Microsoft Identity Manager"
-description: 
+title: "A PAM üzembe helyezése, 4. lépés – A MIM telepítése | Microsoft Identity Manager"
+description: "A MIM szolgáltatás és -portál telepítése és konfigurálása saját Privileged Access Management-kiszolgálón és munkaállomásokon."
 keywords: 
 author: kgremban
 manager: femila
-ms.date: 06/16/2016
+ms.date: 07/15/2016
 ms.topic: article
 ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
@@ -14,8 +14,8 @@ ROBOTS: noindex,nofollow
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 9e5f51d5ca731b3564b8262db0f4cddeb850231a
-ms.openlocfilehash: 4e0298099dad9b11812d533e23101fb995fe33d5
+ms.sourcegitcommit: ae4c40c73dd9d5860f42e00765a7e34e8ca397a9
+ms.openlocfilehash: 92939d32da25896d07bec61e4633f58230a78181
 
 
 ---
@@ -29,7 +29,7 @@ ms.openlocfilehash: 4e0298099dad9b11812d533e23101fb995fe33d5
 
 A MIM szolgáltatásnak és portálnak, illetve a mintaportál webalkalmazásának telepítéséhez a PAMSRV kiszolgálón PRIV\Rendszergazda jogosultsággal kell bejelentkeznie.
 
-  > [!NOTE] 
+  > [!NOTE]
   > Tartományi rendszergazdai jogosultsággal kell rendelkeznie. Ha az alábbi parancsokat nem tartományi rendszergazdaként futtatja, a következő lépésben nem tudja végrehajtani a megbízhatósági ellenőrzéseket.
 
 Ha letöltötte a MIM szolgáltatást, bontsa ki a tömörített MIM-telepítőcsomagot egy új mappába.
@@ -44,7 +44,7 @@ Az útmutatást követve végezze el a telepítést.
 
 2.  A közös szolgáltatások és a MIM-adatbázis kapcsolatának konfigurálásakor válassza a **Create a new database** (Új adatbázis létrehozása) beállítást.
 
-    > [!NOTE] 
+    > [!NOTE]
     > Ha a MIM szolgáltatást többször, magas rendelkezésre állás céljából telepíti, minden további telepítésnél a **Use an existing database** (Meglévő adatbázis használata) lehetőséget állítsa be.
 
 3.  Levelezőkiszolgálóval való kapcsolat konfigurálásakor a levelezőkiszolgálónál adja meg egy Exchange- vagy SMTP-kiszolgáló állomásnevét a CORP környezethez (ha nem rendelkezik levelezési kiszolgálóval, használja a corpdc.contoso.local nevet), és törölje a jelet a **Use SSL** (SSL használata), illetve a **Mail Server is Exchange Server 2007 or Exchange Server 2010** (A levelezési kiszolgáló az Exchange Server 2007 vagy az Exchange Server 2010) jelölőnégyzetből.
@@ -193,6 +193,6 @@ A következő lépésben a PRIV és a CORP tartomány erdői közötti megbízha
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO3-->
 
 

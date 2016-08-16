@@ -1,10 +1,10 @@
 ---
-title: "5. lépés – A CORP és a PRIV erdő közötti megbízhatósági kapcsolat létrehozása | Microsoft Identity Manager"
-description: 
+title: "A PAM üzembe helyezése, 5. lépés - Erdőkapcsolat | Microsoft Identity Manager"
+description: "Megbízhatósági kapcsolat létrehozása a PRIV és CORP erdők között, hogy a PRIV rendszerjogosultságú felhasználói a CORP erőforrásaihoz is hozzáférjenek."
 keywords: 
-author: 
+author: kgremban
 manager: femila
-ms.date: 06/16/2016
+ms.date: 07/15/2016
 ms.topic: article
 ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
@@ -12,15 +12,17 @@ ms.technology: active-directory-domain-services
 ms.assetid: eef248c4-b3b6-4b28-9dd0-ae2f0b552425
 ms.reviewer: mwahl
 ms.suite: ems
-ms.sourcegitcommit: 06319438d93d8d92edc833e2d0bf6492dd5919a6
-ms.openlocfilehash: 1260b4e1792bf43a7288866cf3afa41fabe79fe9
+translationtype: Human Translation
+ms.sourcegitcommit: ae4c40c73dd9d5860f42e00765a7e34e8ca397a9
+ms.openlocfilehash: 3a7039f5d7c950cd0d4c8ab713a7beacc5c45526
 
 
 ---
 
 # 5. lépés – A CORP és a PRIV erdő közötti megbízhatósági kapcsolat létrehozása
 
->[!div class="step-by-step"] [« 4. lépés](step-4-install-mim-components-on-pam-server.md)
+>[!div class="step-by-step"]
+[« 4. lépés](step-4-install-mim-components-on-pam-server.md)
 [6. lépés »](step-6-transition-group-to-pam.md)
 
 
@@ -104,11 +106,12 @@ A PRIV rendszergazdákon és a figyelőszolgáltatáson keresztül minden meglé
 
 A következő lépésben a csoportoknak a PAM szolgáltatásba való áthelyezésével ismerkedhet meg.
 
->[!div class="step-by-step"] [« 4. lépés](step-4-install-mim-components-on-pam-server.md)
+>[!div class="step-by-step"]
+[« 4. lépés](step-4-install-mim-components-on-pam-server.md)
 [6. lépés »](step-6-transition-group-to-pam.md)
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jul16_HO3-->
 
 

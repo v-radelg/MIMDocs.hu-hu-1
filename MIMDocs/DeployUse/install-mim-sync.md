@@ -1,27 +1,21 @@
 ---
-# required metadata
-
-title: "A MIM 2016 telepítése: A MIM Synchronization Service | Microsoft Identity Manager"
+title: "Az MIM Sync Service telepítése | Microsoft Identity Manager"
 description: "Első lépések a MIM 2016 összetevői kapcsán – a Synchronization Service telepítése és konfigurálása"
-keywords:
+keywords: 
 author: kgremban
-manager: stevenpo
-ms.date: 04/28/2016
+manager: femila
+ms.date: 07/21/2016
 ms.topic: get-started-article
 ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 2585e9c5-ce34-46c7-bdcf-8c08773901dc
-
-# optional metadata
-
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer: mwahl
 ms.suite: ems
-#ms.tgt_pltfrm:
-#ms.custom:
+translationtype: Human Translation
+ms.sourcegitcommit: b3ab1b9376c9b613739d87c812f4b16a4e17e6de
+ms.openlocfilehash: 2dfc89d32ef3b615201f1eb57ed3b8f5daed513e
+
 
 ---
 
@@ -49,13 +43,13 @@ A Microsoft Identity Manager 2016 összetevőinek telepítéséhez először ké
 
 2. Indítsa el a **MIM Synchronization Service telepítőjét**. Az útmutatást követve végezze el a telepítést.
 
-3. Az üdvözlőképernyőn kattintson a **Next** (Tovább) gombra..
+3. Az üdvözlőképernyőn kattintson a **Next** (Tovább) gombra.
 
     ![Kép: A MIM-telepítővarázsló üdvözlőképernyője](media/MIM-Install1.png)
 
 4. Olvassa el és a **Next** (Tovább) gombbal fogadja el a licencfeltételeket.
 
-5. A **Custom Setup** (Egyéni telepítés) képernyőn kattintson a **Next** (Tovább) gombra..
+5. A **Custom Setup** (Egyéni telepítés) képernyőn kattintson a **Next** (Tovább) gombra.
 
     ![Kép: Egyéni telepítés](media/MIM-Install2.png)
 
@@ -91,11 +85,11 @@ A Microsoft Identity Manager 2016 összetevőinek telepítéséhez először ké
 
     ![Kép: Biztonsági csoportok](media/MIM-Install5.png)
 
-9. A biztonsági beállítások képernyőjén jelölje be az **Enable firewall rules for inbound RPC communications** (Tűzfalszabályok engedélyezése a bejövő RPC-kommunikációhoz) négyzetet, majd kattintson a **Next** (Tovább) gombra..
+9. A biztonsági beállítások képernyőjén jelölje be az **Enable firewall rules for inbound RPC communications** (Tűzfalszabályok engedélyezése a bejövő RPC-kommunikációhoz) négyzetet, majd kattintson a **Next** (Tovább) gombra.
 
 10. A MIM Sync telepítésének elindításához kattintson az **Install** (Telepítés) gombra.
 
-    1. Elképzelhető, hogy megjelenik egy figyelmeztetés a MIM Sync szolgáltatásfiókjáról – ebben az esetben kattintson az **OK** gombra..
+    1. Elképzelhető, hogy megjelenik egy figyelmeztetés a MIM Sync szolgáltatásfiókjáról – ebben az esetben kattintson az **OK** gombra.
 
     2. A MIM Sync telepítése megkezdődik.
 
@@ -103,7 +97,7 @@ A Microsoft Identity Manager 2016 összetevőinek telepítéséhez először ké
 
         ![Kép: Üzenet a MIM Sync titkosítási kulcsának biztonsági mentéséről](media/MIM-Install7.png)
 
-    4. Ha a telepítés sikeresen befejeződött, kattintson a **Finish** (Befejezés) gombra..
+    4. Ha a telepítés sikeresen befejeződött, kattintson a **Finish** (Befejezés) gombra.
 
     5. A csoporttagsági változások életbelépéséhez ki kell jelentkeznie, majd újra be kell jelentkeznie. A kijelentkezéshez kattintson a **Yes** (Igen) gombra.
 
@@ -112,6 +106,7 @@ A Microsoft Identity Manager 2016 összetevőinek telepítéséhez először ké
 [MIM szolgáltatás és -portál »](install-mim-service-portal.md)
 
 
-<!--HONumber=Apr16_HO4-->
+
+<!--HONumber=Jul16_HO3-->
 
 
