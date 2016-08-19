@@ -4,7 +4,7 @@ description: "A MIM 2016 összetevői által támogatott termékek és termékve
 keywords: 
 author: kgremban
 manager: femila
-ms.date: 07/21/2016
+ms.date: 08/18/2016
 ms.topic: article
 ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
@@ -13,8 +13,8 @@ ms.assetid: 4978f60d-044d-4e84-8d93-65801fce1144
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: b3ab1b9376c9b613739d87c812f4b16a4e17e6de
-ms.openlocfilehash: b276b1970796f3769006e2f2ef229cdb616e0675
+ms.sourcegitcommit: b4527c61dcdbef21c46414e190e0f0d0852e3aa3
+ms.openlocfilehash: d3995474ac91f109052c004ec9b84ac66efafbc7
 
 
 ---
@@ -23,17 +23,17 @@ ms.openlocfilehash: b276b1970796f3769006e2f2ef229cdb616e0675
 
 | **MIM-összetevő** | **Platform** | **Verzió** |
 |-------------------|--------------|-------------|
-|**MIM Sync**|Windows Server | Windows Server 2008 R2 SP1<br/>Windows Server 2012<br/>Windows Server 2012 R2|
+|**MIM Sync**|Windows Server | Windows Server 2008 R2 SP1<br/>Windows Server 2012<br/>Windows Server 2012 R2|
 ||MIM Sync-adatbázis |SQL Server 2008 R2 SP3<br/>SQL Server 2012 SP2<br/>SQL Server 2014 SP1 |
 ||Active Directory a felhasználók átadásához, a jelszóváltozás-értesítési szolgáltatáshoz és a globális címlista szinkronizálásához (opcionális)|Windows Server 2008 R2 SP1<br/>Windows Server 2012<br/>Windows Server 2012 R2 |
 ||Exchange a postaládák létrehozásához és a globális címlista szinkronizálásához (opcionális)|Exchange Server 2007 SP3<br/>Exchange Server 2010 SP3<br/>Exchange Server 2013 SP1 |
 || Fejlesztői környezet (opcionális) | Visual Studio 2012<br/>Visual Studio 2013 |
 || További csatlakoztatott rendszer (opcionális) | Active Directory tartományi szolgáltatások<br/>Active Directory<br/>Lightweight Directory-szolgáltatások<br/>SQL Server 2000 vagy újabb<br/>SharePoint Server 2013<br/>Egyéb külső termékek |
-| **MIM szolgáltatás** (kivéve PAM esetén) | Windows Server | Windows Server 2008 R2 SP1<br/>Windows Server 2012<br/>Windows Server 2012 R2 |
+| **MIM szolgáltatás** (kivéve PAM esetén) | Windows Server | Windows Server 2008 R2 SP1<br/>Windows Server 2012<br/>Windows Server 2012 R2 |
 || MIM szolgáltatás adatbázisa | SQL Server 2008 R2 SP3<br/>SQL Server 2012 SP2<br/>SQL Server 2014 SP1 |
 || Exchange a MIM szolgáltatás jóváhagyási és csoportkezelési e-mailjeihez (opcionális) | Exchange Server 2007 SP3 (telepített Exchange felügyeleti konzollal)<br/>Exchange Server 2010 SP3<br/>Exchange Server 2013 SP1 |
-| **MIM szolgáltatás és portál** (csak PAM esetén)| Windows Server | Windows Server 2012<br/>Windows Server 2012 R2 |
-|| Active Directory bástyakörnyezeti PAM-erdőhöz | Windows Server 2012 R2 |
+| **MIM szolgáltatás és portál** (csak PAM esetén)| Windows Server | Windows Server 2012<br/>Windows Server 2012 R2 |
+|| Active Directory bástyakörnyezeti PAM-erdőhöz | Windows Server 2012 R2 |
 || Active Directory meglévő erdőkhöz | Windows Server 2008 vagy újabb |
 || MIM szolgáltatás adatbázisa | SQL Server 2008 R2 SP3<br/>SQL Server 2012 SP2<br/>SQL Server 2014 SP1 |
 || SharePoint | SharePoint Foundation 2010<br/>SharePoint Foundation 2013 SP1 |
@@ -42,23 +42,23 @@ ms.openlocfilehash: b276b1970796f3769006e2f2ef229cdb616e0675
 | **Jelentéskészítés a MIM szolgáltatással** | Windows Server | Windows Server 2012 |
 || Adatraktár | System Center 2012 Service Manager SP1 |
 || Adatraktár-adatbázis | SQL Server 2008 R2 SP3<br/>SQL Server 2012 SP2 |
-| **MIM jelszó-változtatási és -regisztrálási portálok** | Windows Server | Windows Server 2008 R2 SP1<br/>Windows Server 2012<br/>Windows Server 2012 R2 |
+| **MIM jelszó-változtatási és -regisztrálási portálok** | Windows Server | Windows Server 2008 R2 SP1<br/>Windows Server 2012<br/>Windows Server 2012 R2 |
 || Webböngésző | Internet Explorer 7, 8, 9, 10 vagy 11<br/>Más webböngészők |
-| **A MIM beépülő moduljai és bővítményei** | Windows | Windows 7<br/>Windows 8<br/>Windows 8.1<br/>Windows 10 |
+| **A MIM beépülő moduljai és bővítményei** | Windows | Windows 7<br/>Windows 8<br/>Windows 8.1<br/>Windows 10 |
 || Outlook-integráció (opcionális) | Outlook 2007 SP2<br/>Outlook 2010<br/>Outlook 2013 |
-|| A PAM PowerShell-kérelmező parancsmagjai (opcionális) | Windows 8.1<br/>Windows 10 |
-| **MIM Tanúsítványkezelő** (kiszolgáló és hitelesítésszolgáltató integrációja) | Windows Server | Windows Server 2008 R2 SP1<br/>Windows Server 2012 R2 |
-|| Hitelesítésszolgáltató | Windows Server 2008 R2 SP1<br/>Windows Server 2012<br/>Windows Server 2012 R2 |
-|| A MIM Tanúsítványkezelő adatbázisa | Windows Server 2008 R2 SP1<br/>Windows Server 2012<br/>Windows Server 2012 R2 |
-| **MIM Tanúsítványkezelő** (alkalmazás) | Windows | Windows 8<br/>Windows 8.1<br/>Windows 10 |
+|| A PAM PowerShell-kérelmező parancsmagjai (opcionális) | Windows 8.1<br/>Windows 10 |
+| **MIM Tanúsítványkezelő** (kiszolgáló és hitelesítésszolgáltató integrációja) | Windows Server | Windows Server 2008 R2 SP1<br/>Windows Server 2012 R2 |
+|| Hitelesítésszolgáltató | Windows Server 2008 R2 SP1<br/>Windows Server 2012<br/>Windows Server 2012 R2 |
+|| A MIM Tanúsítványkezelő adatbázisa | SQL Server 2008 R2 SP3<br/>SQL Server 2012 SP2<br/>SQL Server 2014 SP1 |
+| **MIM Tanúsítványkezelő** (alkalmazás) | Windows | Windows 8<br/>Windows 8.1<br/>Windows 10 |
 | **MIM Tanúsítványkezelő** (ügyfél és csoportos ügyfél) | Windows | Windows 7 |
-| **MIM BHOLD Suite** | Windows Server | Windows Server 2008 R2 SP1<br/>Windows Server 2012 R2 |
+| **MIM BHOLD Suite** | Windows Server | Windows Server 2008 R2 SP1<br/>Windows Server 2012 R2 |
 || BHOLD-adatbázis | SQL Server 2008 R2 SP3<br/>SQL Server 2012 SP2 |
 || Levelezőkiszolgáló (opcionális) | Exchange Server 2007 SP3<br/>Exchange Server 2010 SP3<br/>Exchange Server 2013 SP1 |
 || Webböngésző | Internet Explorer 7, 8, 9, 10 vagy 11 Silverlighttal |
 
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Aug16_HO3-->
 
 
