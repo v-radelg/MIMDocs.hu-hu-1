@@ -4,7 +4,7 @@ description: "Ismerje meg, hogy a MIM 2016 hogyan működik, és hogyan kínál 
 keywords: 
 author: kgremban
 manager: femila
-ms.date: 06/27/2016
+ms.date: 08/11/2016
 ms.topic: article
 ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
@@ -13,14 +13,14 @@ ms.assetid: ccdd8a9f-02da-440a-81a8-354800dcd2a8
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 9e5f51d5ca731b3564b8262db0f4cddeb850231a
-ms.openlocfilehash: 5247cce895344ac6148b735fe550eb16c39103c7
+ms.sourcegitcommit: 00e11bca207529820eb7b52ab9887a5c3da9db19
+ms.openlocfilehash: 9121f6f7a11dc483763ac594dafae6d8df21c135
 
 
 ---
 
 # Microsoft Identity Manager 2016
-A Microsoft Identity Manager (MIM) 2016 a FIM 2010 R2 identitás- és hozzáférés-kezelési képességeire építkezik. Elődjéhez hasonlóan a MIM a szervezeti felhasználók, hitelesítő adatok, házirendek és hozzáférési jogosultságok kezelésében nyújt segítséget.  A MIM 2016 emellett hibrid funkciókat és az emelt szintű hozzáférések felügyeletére szolgáló képességeket biztosít, és új platformokat is támogat.
+A Microsoft Identity Manager (MIM) 2016 a [FIM 2010 R2](https://technet.microsoft.com/library/jj133885.aspx) identitás- és hozzáférés-kezelési képességeire építkezik. Elődjéhez hasonlóan a MIM a szervezeti felhasználók, hitelesítő adatok, házirendek és hozzáférési jogosultságok kezelésében nyújt segítséget.  A MIM 2016 emellett hibrid funkciókat és az emelt szintű hozzáférések felügyeletére szolgáló képességeket biztosít, és új platformokat is támogat.
 
 A Microsoft Identity Manager jelen verziója olyan új funkciókat biztosít, mint például a Privileged Identity Manager vagy a REST API-alapú hozzáférés támogatása a Tanúsítványkezelőben. A Tanúsítványkezelő már támogatja a többerdős topológiákat, megújult eseményeket és hibaelhárítási képességeket kínál, a Windows Áruházból pedig letölthető egy alkalmazás a virtuális intelligens kártyák és a tanúsítványok életciklusának kezelésére. Az önkiszolgáló funkciók között már elérhető a fiókok zárolásának feloldása, valamint egy többtényezős hitelesítési kapu is a jelszóváltoztatáshoz.
 
@@ -32,8 +32,11 @@ A Privileged Identity Management a bizalmas erőforrások ideiglenes, feladatala
 
 A MIM támogat egy helyszíni Privileged Identity Management megoldást az Active Directoryk kezeléséhez. Bevezető útmutatóját [A Privileged Access Management használata](/microsoft-identity-manager/pam/privileged-identity-management-for-active-directory-domain-services) című cikk tartalmazza.
 
+## Kapcsolódó témakörök
+A Microsoft Identity Manager számos közös vonást mutat elődjével, a Forefront Identity Managerrel. Ha még FIM-et használ, vagy ha további dokumentációra van szüksége, tekintse meg a [FIM 2010 R2 dokumentáció - áttekintés](https://technet.microsoft.com/library/jj133885.aspx) című oldalt.
 
 
-<!--HONumber=Jul16_HO3-->
+
+<!--HONumber=Aug16_HO2-->
 
 
