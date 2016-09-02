@@ -4,7 +4,7 @@ description: "Első lépések a MIM 2016 összetevői kapcsán – a Synchroniza
 keywords: 
 author: kgremban
 manager: femila
-ms.date: 07/21/2016
+ms.date: 08/11/2016
 ms.topic: get-started-article
 ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
@@ -13,8 +13,8 @@ ms.assetid: 2585e9c5-ce34-46c7-bdcf-8c08773901dc
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: b3ab1b9376c9b613739d87c812f4b16a4e17e6de
-ms.openlocfilehash: 2dfc89d32ef3b615201f1eb57ed3b8f5daed513e
+ms.sourcegitcommit: 739797502e09c2b92e35767e2c943308cd1de5c9
+ms.openlocfilehash: ba399da1431ea1d2d1633d0469e054ffd89f1d34
 
 
 ---
@@ -26,7 +26,7 @@ ms.openlocfilehash: 2dfc89d32ef3b615201f1eb57ed3b8f5daed513e
 [MIM szolgáltatás és -portál »](install-mim-service-portal.md)
 
 > [!NOTE]
-> Ez az útmutató egy Contoso nevű fiktív vállalat neveit és értékeit használja szemléltetésként. Ezeket helyettesítse a saját neveivel és értékeivel. Például:
+> Ez az útmutató egy Contoso nevű fiktív vállalat neveit és értékeit használja szemléltetésként. Ezeket helyettesítse a saját neveivel és értékeivel. Példa:
 > - Tartományvezérlő neve – **mimservername**
 > - Tartománynév – **contoso**
 > - Jelszó – **Pass@word1**
@@ -53,7 +53,7 @@ A Microsoft Identity Manager 2016 összetevőinek telepítéséhez először ké
 
     ![Kép: Egyéni telepítés](media/MIM-Install2.png)
 
-6.  A Sync-adatbázis konfigurálására szolgáló képernyőn válassza a következő beállításokat:
+6.  A Sync Service adatbázis-konfigurálási képernyőjén válassza a következő beállításokat:
 
     1.  SQL Server is located on (SQL Server helye):**This computer** (Ez a számítógép).
 
@@ -71,7 +71,7 @@ A Microsoft Identity Manager 2016 összetevőinek telepítéséhez először ké
 
     ![Kép: Szolgáltatásfiók](media/MIM-Install4.png)
 
-8.  Adja meg a MIM Sync telepítőjében a megfelelő biztonsági csoportokat:
+8.  Adja meg a MIM Sync Service telepítőjében a megfelelő biztonsági csoportokat:
 
     1. Administrator (Rendszergazda) = *contoso\MIMSyncAdmins*
 
@@ -87,11 +87,11 @@ A Microsoft Identity Manager 2016 összetevőinek telepítéséhez először ké
 
 9. A biztonsági beállítások képernyőjén jelölje be az **Enable firewall rules for inbound RPC communications** (Tűzfalszabályok engedélyezése a bejövő RPC-kommunikációhoz) négyzetet, majd kattintson a **Next** (Tovább) gombra.
 
-10. A MIM Sync telepítésének elindításához kattintson az **Install** (Telepítés) gombra.
+10. A MIM Sync Service telepítésének elindításához kattintson az **Install** (Telepítés) gombra.
 
     1. Elképzelhető, hogy megjelenik egy figyelmeztetés a MIM Sync szolgáltatásfiókjáról – ebben az esetben kattintson az **OK** gombra.
 
-    2. A MIM Sync telepítése megkezdődik.
+    2. A MIM Sync Service telepítése megkezdődik.
 
     3. Megjelenik egy üzenet arról, hogy készítsen biztonsági másolatot a titkosítási kulcsról. Kattintson az **OK** gombra, majd válasszon egy mappát a titkosítási kulcs biztonsági másolatának tárolásához.
 
@@ -107,6 +107,6 @@ A Microsoft Identity Manager 2016 összetevőinek telepítéséhez először ké
 
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Aug16_HO2-->
 
 

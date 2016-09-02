@@ -4,7 +4,7 @@ description: "Itt olvashatók a Microsoft Identity Manager 2016 rendszerhez tart
 keywords: 
 author: kgremban
 manager: femila
-ms.date: 07/21/2016
+ms.date: 08/11/2016
 ms.topic: get-started-article
 ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
@@ -13,8 +13,8 @@ ms.assetid: b0b39631-66df-4c5f-80c9-a1774346f816
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: b3ab1b9376c9b613739d87c812f4b16a4e17e6de
-ms.openlocfilehash: c18ea7b0390ca11c213ed66bfd1476454cf86951
+ms.sourcegitcommit: 739797502e09c2b92e35767e2c943308cd1de5c9
+ms.openlocfilehash: 438754773057043b8560562bab0ae260fb3a4bc2
 
 
 ---
@@ -26,7 +26,7 @@ ms.openlocfilehash: c18ea7b0390ca11c213ed66bfd1476454cf86951
 [Adatbázisok szinkronizálása »](install-mim-sync-ad-service.md)
 
 > [!NOTE]
-> Ez az útmutató egy Contoso nevű fiktív vállalat neveit és értékeit használja szemléltetésként. Ezeket helyettesítse a saját neveivel és értékeivel. Például:
+> Ez az útmutató egy Contoso nevű fiktív vállalat neveit és értékeit használja szemléltetésként. Ezeket helyettesítse a saját neveivel és értékeivel. Példa:
 > - Tartományvezérlő neve – **mimservername**
 > - Tartománynév – **contoso**
 > - Jelszó – **Pass@word1**
@@ -93,7 +93,7 @@ Ha a legutóbbi lépésben nem telepítette a MIM telepítőcsomagját, akkor a 
 
 1.  Az önkiszolgáló jelszó-regisztrálási szolgáltatáshoz (SSPR) állítsa be a *Contoso\MIMSSPRService* fióknevet és a *Pass@word1* jelszót.
 
-2.  A MIM jelszó-regisztráláshoz a Host Name mezőben adja meg a *CORPIDM* gazdagépnevet, és állítsa be a **8080**-as portot. Jelölje be az **Open port in firewall** (Port nyitása a tűzfalon) négyzetet.
+2.  A MIM jelszó-változtatási portál Host Name értékeként adja meg a *CORPIDM* gazdagépnevet, és állítsa be a **8088**-as portot. Jelölje be az **Open port in firewall** (Port nyitása a tűzfalon) négyzetet.
 
     ![Kép: Az IIS által használt konfigurációs információk megadása](media/MIM-Install15.png)
 
@@ -152,6 +152,6 @@ A telepítést követően győződjön meg arról, hogy a MIM-portál aktív.
 
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Aug16_HO2-->
 
 
