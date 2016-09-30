@@ -4,7 +4,7 @@ description:
 keywords: 
 author: kgremban
 manager: femila
-ms.date: 06/14/2016
+ms.date: 09/16/2016
 ms.topic: article
 ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
@@ -13,8 +13,8 @@ ms.assetid: bfc7cb64-60c7-4e35-b36a-bbe73b99444b
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: b8af77d2354428da19d91d5f02b490012835f544
-ms.openlocfilehash: 0ed48d43825e1a876c4d96cafcb6c17cac26610f
+ms.sourcegitcommit: 9eefdf21d0cab3f7c488a66cbb3984d40498f4ef
+ms.openlocfilehash: fc4161f98d4367a2124e6253fe11dd1f2712d614
 
 
 ---
@@ -43,7 +43,7 @@ A rendszergazdai jogosultságok felosztásának [rétegmodellje](tier-model-for-
 
 Az éles környezet *CORP* erdőjének megbízhatónak kell tekintenie a felügyeleti *PRIV* erdőt, de ez megfordítva már nem érvényes. Ez lehet tartományi megbízhatóság vagy erdőszintű megbízhatóság. A felügyeleti erdő tartományának nem kell megbízhatónak tekintenie a felügyelt tartományokat és erdőket az Active Directory felügyeletéhez, bár előfordulhat, hogy egyes alkalmazások kétirányú megbízhatósági kapcsolatot, biztonsági ellenőrzést és tesztelést igényelnek.
 
-Szelektív hitelesítés használatával kell biztosítani, hogy a felügyeleti erdőben lévő fiókok csak a megfelelő gazdagépeket használják az éles környezetben. A tartományvezérlők karbantartásához és a jogosultságoknak az Active Directoryban történő delegálásához ez általában a tartományvezérlők „Bejelentkezés engedélyezett” jogosultságának megadását igényli a felügyeleti erdőben lévő 0. rétegbeli rendszergazdai fiókok számra. További információ: [A szelektív hitelesítés beállításainak konfigurálása](http://technet.microsoft.com/library/cc755844.aspx).
+Szelektív hitelesítés használatával kell biztosítani, hogy a felügyeleti erdőben lévő fiókok csak a megfelelő gazdagépeket használják az éles környezetben. A tartományvezérlők karbantartásához és a jogosultságoknak az Active Directoryban történő delegálásához ez általában a tartományvezérlők „Bejelentkezés engedélyezett” jogosultságának megadását igényli a felügyeleti erdőben lévő 0. rétegbeli rendszergazdai fiókok számra. További információt a [Configuring Selective Authentication Settings (A szelektív hitelesítés beállításainak konfigurálása)](http://technet.microsoft.com/library/cc816580.aspx) című cikkben talál.
 
 ## Logikai elkülönítés alkalmazása
 
@@ -149,7 +149,7 @@ A MIM a PowerShell-parancsmagok használatával létesít megbízhatósági kapc
 
 Amikor a meglévő Active Directory-topológia megváltozik, a `Test-PAMTrust`, a `Test-PAMDomainConfiguration`, a `Remove-PAMTrust` és a `Remove-PAMDomainConfiguration` parancsmag használható a megbízhatósági kapcsolatok frissítésére.
 
-### Megbízhatósági kapcsolat létrehozása az egyes erdőkhöz
+## Megbízhatósági kapcsolat létrehozása az egyes erdőkhöz
 
 A `New-PAMTrust` parancsmagot le kell futtatni egyszer minden meglévő erdő esetében. A parancsmagot a MIM szolgáltatást tartalmazó számítógépen kell elindítani a felügyeleti tartományban. A parancs paraméterei a következők: a meglévő erdő legfelső szintű tartományának neve, valamint az adott tartomány rendszergazdájának hitelesítő adatai.
 
@@ -159,11 +159,11 @@ New-PAMTrust -SourceForest "contoso.local" -Credentials (get-credential)
 
 A megbízhatósági kapcsolat létrehozása után konfigurálja az egyes tartományokat úgy, hogy engedélyezzék a megerősített környezet általi felügyeletet (ennek leírását lásd a következő szakaszban).
 
-### A tartományok felügyeletének engedélyezése
+## A tartományok felügyeletének engedélyezése
 
 A meglévő tartományok felügyeletének engedélyezésére hét követelmény vonatkozik.
 
-#### 1. Biztonsági csoport a helyi tartományban
+### 1. Biztonsági csoport a helyi tartományban
 
 A meglévő tartományban kell lennie egy csoportnak, amelynek neve megegyezik a tartomány NetBIOS-nevével és három dollárjel szerepel a végén, például *CONTOSO$$$*. A csoport hatókörének *tartományi helyi csoportnak*, a típusának pedig *Biztonság* értékűnek kell lennie. Ez az olyan csoportok esetében szükséges, amelyek a dedikált felügyeleti erdőben lesznek létrehozva a tartomány csoportjainak biztonsági azonosítójával megegyező azonosítóval. Ez a csoport a következő PowerShell-paranccsal hozható létre úgy, hogy a parancsot a meglévő tartomány rendszergazdája futtatja a meglévő tartományhoz csatlakoztatott munkaállomáson:
 
@@ -171,7 +171,7 @@ A meglévő tartományban kell lennie egy csoportnak, amelynek neve megegyezik a
 New-ADGroup -name 'CONTOSO$$$' -GroupCategory Security -GroupScope DomainLocal -SamAccountName 'CONTOSO$$$'
 ```
 
-#### 2. Sikeres és sikertelen események naplózása
+### 2. Sikeres és sikertelen események naplózása
 
 A tartományvezérlő naplózásra vonatkozó csoportházirend-beállításainak tartalmazniuk kell a fiókkezelés naplózásának és a címtárszolgáltatás-hozzáférés naplózásának sikeres és a sikertelen eseményeit is. Ez a Csoportházirend kezelése konzolon hajtható végre úgy, hogy a műveletet a meglévő tartomány rendszergazdája végzi el a meglévő tartományhoz csatlakoztatott munkaállomáson:
 
@@ -201,7 +201,7 @@ A tartományvezérlő naplózásra vonatkozó csoportházirend-beállításainak
 
 Néhány perc elteltével „A számítógép-házirend frissítése sikeresen befejeződött” üzenetnek kell megjelennie.
 
-#### 3. A helyi biztonsági szervezethez való csatlakozás engedélyezése
+### 3. A helyi biztonsági szervezethez való csatlakozás engedélyezése
 
 A tartományvezérlőknek engedélyezniük kell a TCP/IP feletti RCP-kapcsolatokat a helyi biztonsági szervezet (LSA) számára a megerősített környezetből. A Windows Server korábbi verziói esetében a beállításjegyzékben kell engedélyezni az LSA TCP/IP-támogatását:
 
@@ -209,7 +209,7 @@ A tartományvezérlőknek engedélyezniük kell a TCP/IP feletti RCP-kapcsolatok
 New-ItemProperty -Path HKLM:SYSTEM\\CurrentControlSet\\Control\\Lsa -Name TcpipClientSupport -PropertyType DWORD -Value 1
 ```
 
-#### 4. A PAM tartománykonfigurációjának létrehozása
+### 4. A PAM tartománykonfigurációjának létrehozása
 
 A `New-PAMDomainConfiguration` parancsmagot a MIM szolgáltatást tartalmazó számítógépen kell futtatni, a felügyeleti tartományban. A parancs paraméterei a következők: a meglévő tartomány neve, valamint az adott tartomány rendszergazdájának hitelesítő adatai.
 
@@ -217,7 +217,7 @@ A `New-PAMDomainConfiguration` parancsmagot a MIM szolgáltatást tartalmazó sz
  New-PAMDomainConfiguration -SourceDomain "contoso" -Credentials (get-credential)
 ```
 
-#### 5. Olvasási engedélyek hozzárendelése a fiókokhoz
+### 5. Olvasási engedélyek hozzárendelése a fiókokhoz
 
 A megerősített erdőben a szerepkörök létrehozására használt fiókoknak (a `New-PAMUser` és a `New-PAMGroup` parancsmagot használó rendszergazdáknak), valamint a MIM figyelő szolgáltatása által használt fióknak olvasási engedélyekkel kell rendelkeznie az adott tartományban.
 
@@ -239,11 +239,11 @@ A következő lépések véghajtásával adhat meg olvasási hozzáférést a *P
 
 18. Zárja be az Active Directory – felhasználók és számítógépek beépülő modult.
 
-#### 6. Vészhelyzeti fiók
+### 6. Vészhelyzeti fiók
 
 Ha a rendszerjogosultságú hozzáférések felügyeletére irányuló projektnek az a célja, hogy csökkentse a tartományhoz tartósan hozzárendelt, tartományi rendszergazdai jogosultságokkal rendelkező fiókok számát, akkor a tartományban létre kell hozni egy *vészhelyzeti fiókot* arra az esetre, ha a későbbiekben probléma adódna a megbízhatósági kapcsolattal. Minden tartományban léteznie kell az éles környezetben működő erdőhöz vészhelyzeti hozzáféréssel rendelkező fióknak, és úgy kell beállítani ezeket a fiókokat, hogy csak a tartományvezérlőkre tudjanak bejelentkezni. A több hellyel rendelkező szervezetek esetében további fiókokra lehet szükség a redundancia biztosításához.
 
-#### 7. Az engedélyek frissítése a megerősített környezetben
+### 7. Az engedélyek frissítése a megerősített környezetben
 
 Tekintse át az adott tartomány Rendszer tárolójában található *AdminSDHolder* objektum engedélyeit. Az *AdminSDHolder* objektumhoz egyedi hozzáférés-vezérlési lista (ACL) tartozik. Ennek használatával felügyelhetők azoknak a rendszerbiztonsági tagoknak az engedélyei, akik a magas jogosultsági szintű, beépített Active Directory-csoportok tagjai. Vegye figyelembe, hogy az alapértelmezett engedélyeknek a tartomány rendszergazdai jogosultságokkal rendelkező felhasználóit érintő bármilyen módosítása esetén ezek az engedélyek nem lesznek érvényesek azokra a felhasználókra, akiknek fiókja a megerősített környezetben található.
 
@@ -253,6 +253,6 @@ A következő lépése a PAM-szerepkörök konfigurálása, valamint azon felhas
 
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Sep16_HO3-->
 
 
