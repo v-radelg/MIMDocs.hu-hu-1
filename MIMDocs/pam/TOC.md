@@ -20,9 +20,19 @@
 ### [6. lépés – Rendszerjogosultságú fiókok létrehozása](step-6-transition-group-to-pam.md)
 ### [7. lépés – Felhasználó jogosultságszintjének emelése](step-7-elevate-user-access.md)
 ### [Az Azure MFA beállítása](use-azure-mfa-for-activation.md)
+## [A PAM konfigurálása szkriptek használatával](sp1-pam-configure-using-scripts.md)
+### [1. lépés: A PRIV-tartomány konfigurálása](sp1-step1-configuring-priv-domain.md)
+### [2. lépés: A CORP-tartomány konfigurálása](sp1-step2-configuring-corp-domain.md)
+### [3. lépés: Az SQL konfigurálása](sp1-step3-installing-configuring-sql.md)
+### [4. lépés: A SharePoint konfigurálása](sp1-step4-configuring-sharepoiint.md)
+### [5. lépés: PAM telepítése/konfigurálása](sp1-step5-configuring-pam.md)
+### [6. lépés: PAM bizalmi kapcsolat beállítása](sp1-step6-setup-pam-trust.md)
+### [7. lépés: SID-előzmények/SID-szűrés beállítása](sp1-step7-setup-sidhistory-sidfiltering.md)
+### [8. lépés: A PAM üzembe helyezésének ellenőrzése](sp1-step8-pam-deployment-verification.md)
+### [Kiegészítés](sp1-pam-deployment-addendum.md)
 # [Fejlesztői leírás](/microsoft-identity-manager/reference/microsoft-identity-manager-2016-developer-reference)
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Sep16_HO4-->
 
 
