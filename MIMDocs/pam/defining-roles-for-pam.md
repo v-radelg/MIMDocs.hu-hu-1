@@ -39,7 +39,7 @@ Kezdje a PAM használatával felügyelni kívánt szerepkörök meghatározásá
 
 A megfelelő szerepkörök meghatározásához vegye figyelembe a felügyelet hatókörébe eső egyes alkalmazásokat:
 
-- Az alkalmazás a 0. rétegbe, az 1. rétegbe vagy 2. rétegbe tartozik?  
+- Az alkalmazás a nulladik rétegbe, az első rétegbe vagy a második rétegbe tartozik?  
 - Melyik jogosultságok vannak hatással az alkalmazás titkosítására, integritására vagy rendelkezésre állására?  
 - Függ az alkalmazás a rendszer más összetevőitől, például az adatbázisoktól, a hálózati vagy a biztonsági infrastruktúrától, a virtualizálási vagy az üzemeltetési platformtól?
 
@@ -128,12 +128,12 @@ A következő táblázat példákat mutat be azokra engedélyekre, amelyeket meg
 
 | Szerepkör | Leírás |
 | ---- | ---- |
-| 1. rétegbeli rendszergazdai szervezeti egység módosítása                 | 1. rétegbe tartozó rendszergazdai objektumokat tartalmazó szervezeti egységek módosítása az Active Directory-ban. |
-| 2. rétegbeli rendszergazdai szervezeti objektum módosítása                 | 2. rétegbe tartozó rendszergazdai objektumokat tartalmazó szervezeti egységek módosítása az Active Directory-ban. |
+| Első rétegbeli rendszergazdai szervezeti egység módosítása                 | Első rétegbe tartozó rendszergazdai objektumokat tartalmazó szervezeti egységek módosítása az Active Directory-ban |
+| 2. rétegbeli rendszergazdai szervezeti objektum módosítása                 | 2. rétegbe tartozó rendszergazdai objektumokat tartalmazó szervezeti egységek módosítása az Active Directory-ban |
 | Fiókkezelés: létrehozás/törlés/áthelyezés | Általános jogú felhasználói fiókok módosítása.                                      |
 | Fiókkezelés: alaphelyzetbe állítás és feloldás       | Jelszavak alaphelyzetbe állítása és fiókok zárolásának feloldása.                                  |
 | Biztonsági csoport: létrehozás és módosítás          | Biztonsági csoportok létrehozása és módosítása az Active Directoryban              |
-| Biztonsági csoport: törlés                 | Biztonsági csoportok törlése az Active Directory-ban.                         |
+| Biztonsági csoport: törlés                 | Biztonsági csoportok törlése az Active Directory-ban                         |
 | Csoportházirend-objektumok kezelése                         | A tartományban/erdőben lévő összes olyan csoportházirend-objektum kezelése, amelynek nincs hatása a 0. rétegbeli kiszolgálókra.             |
 | Csatlakozás számítógéphez/helyi rendszergazda                    | Helyi rendszergazdai jogosultságok az összes munkaállomásnak.                               |
 | Csatlakozás kiszolgálóhoz/helyi rendszergazda                   | Helyi rendszergazdai jogosultságok az összes kiszolgálónak.                                    |
@@ -170,20 +170,20 @@ A 0. rétegbeli éles környezetben működő erdő fiókjainak és erőforrása
 - 0. réteg biztonsági mentési rendszergazdái
 - 0. rétegbeli gazdagépekhez csatlakozó sávon kívüli és alaplapi felügyeleti vezérlők (KVM vagy Lights-Out felügyelethez) felhasználói
 
-### 1. réteg
+### Első réteg
 
-Az 1. rétegben található kiszolgálók felügyeletéhez és biztonsági mentéséhez tartozó szerepkörök a következők lehetnek:
+Az első rétegben található kiszolgálók felügyeletéhez és biztonsági mentéséhez tartozó szerepkörök a következők lehetnek:
 
 - Kiszolgáló karbantartása
-- 1. rétegbeli kiszolgálók virtualizációs rendszergazdái
+- Első rétegbeli kiszolgálók virtualizációs rendszergazdái
 - Biztonsági ellenőrzőeszköz fiókja
-- 1. rétegbeli kiszolgálók kártevők elleni védelmének rendszergazdái
-- 1. rétegbeli SCCM SCCM-rendszergazdái
-- 1. rétegbeli SCOM SCOM-rendszergazdái
-- 1. rétegbeli kiszolgálók biztonsági mentési rendszergazdái
-- 1. rétegbeli gazdagépekhez csatlakozó sávon kívüli és alaplapi felügyeleti vezérlők (KVM vagy Lights-Out felügyelethez) felhasználói
+- Első rétegbeli kiszolgálók kártevők elleni védelmének rendszergazdái
+- Első rétegbeli SCCM SCCM-rendszergazdái
+- Első rétegbeli SCOM SCOM-rendszergazdái
+- Első rétegbeli kiszolgálók biztonsági mentési rendszergazdái
+- Első rétegbeli gazdagépekhez csatlakozó sávon kívüli és alaplapi felügyeleti vezérlők (KVM vagy Lights-Out felügyelethez) felhasználói
 
-Az 1. rétegbeli vállalati alkalmazások kezelésére a következő szerepkörök is alkalmasak lehetnek:
+Az első rétegbeli vállalati alkalmazások kezelésére a következő szerepkörök is alkalmasak lehetnek:
 
 - DHCP-rendszergazdák
 - Exchange-rendszergazdák
