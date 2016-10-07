@@ -6,7 +6,7 @@ description: "Technikai dokumentáció a Microsoft Identity Manager dokumentáci
 keywords: "identitáskezelési dokumentáció, Microsoft Identity Manager, MIM"
 author: kgremban
 manager: femila
-ms.date: 07/21/2016
+ms.date: 09/25/2016
 ms.topic: hubpage
 ms.prod: microsoft-identity-manager
 ms.service: microsoft-identity-manager
@@ -14,8 +14,8 @@ ms.technology: security
 ms.suite: ems
 ms.assetid: 90d66a75-a7ec-4fa1-911c-cce683908838
 translationtype: Human Translation
-ms.sourcegitcommit: 455a24d3008a2ef54e1229100e7150a1090c9b2e
-ms.openlocfilehash: 0ccbac817271b01e38bfb3e84fa5fc7ece787299
+ms.sourcegitcommit: 75b316ef30d16eee573f40e2ddcd9390dd5c695f
+ms.openlocfilehash: 1bf743563c2e61463071ac26ccf8bfe92d946a2d
 
 
 ---
@@ -27,24 +27,21 @@ ms.openlocfilehash: 0ccbac817271b01e38bfb3e84fa5fc7ece787299
       <h3>Most ismerkedik a MIM-mel? <a href="http://go.microsoft.com/fwlink/?LinkId=816853" target="\_blank">Keresse fel a termék oldalát &rarr;</a></h3>     
     </section>
     <aside class="alert section-border">
-      <p>Készen áll a kezdésre?</p>
+      <p>Készen áll rá, hogy gyakorlati tapasztalatokra tegyen szert?</p>
       <ol class="action-list">
         <li><a href="https://www.microsoft.com/evalcenter/evaluate-microsoft-identity-manager-2016" target="\_blank" class="button-bordered button-translucent">Ingyenes próbaverzió elindítása</a></li>
-      </ol>
-      <ol class="action-list">
-        <li><a href="http://connect.microsoft.com/site1164/Downloads/DownloadDetails.aspx?DownloadID=61395" target="\_blank" class="button-bordered button-translucent">Előzetes a közeljövőben megjelenő funkciókról</a></li>
       </ol>
     </aside>
     <section id="featured" class="container">
       <h2 class="section-heading"><span class="icon icon-warning"></span> Kiemelt tartalom</h2>
       <div class="features row">
         <ul class="column column-half">
-          <li><a href="/microsoft-identity-manager/understand-explore/microsoft-identity-manager-2016">Mi az a Microsoft Identity Manager?</a></li>
-          <li><a href="/microsoft-identity-manager/reference/privileged-access-management-rest-api-reference">Privileged Identity Management REST API-referencia</a></li>
+          <li><mark><b>ÚJ</b></mark><a href="/microsoft-identity-manager/understand-explore/microsoft-identity-manager-2016-sp1-release-notes">Microsoft Identity Manager 2016 Service Pack 1</a></li>
+          <li><a href="/microsoft-identity-manager/deploy-use/microsoft-identity-manager-deploy">A MIM szoftver telepítése friss kiszolgálóra</a></li>
         </ul>
         <ul class="column column-half">
-          <li><a href="/microsoft-identity-manager/deploy-use/microsoft-identity-manager-deploy">A MIM szoftver telepítése friss kiszolgálóra</a></li>
-          <li><a href="/microsoft-identity-manager/pam/privileged-identity-management-for-active-directory-domain-services">A Privileged Access Management bemutatása</a></li>
+          <li><a href="/microsoft-identity-manager/reference/privileged-access-management-rest-api-reference">Privileged Identity Management REST API-referencia</a></li>
+          <li><a href="/microsoft-identity-manager/understand-explore/microsoft-identity-manager-2016">A MIM 2016 áttekintése</a></li>
         </ul>
       </div>
     </section>
@@ -56,7 +53,7 @@ ms.openlocfilehash: 0ccbac817271b01e38bfb3e84fa5fc7ece787299
               <a href="/microsoft-identity-manager/understand-explore/microsoft-identity-manager-2016">
                 <div class="title column-third">
                   <span class="step-number">1</span>
-                  <p>Megismerés és felfedezés</p>
+                  <p>Megismerés &amp; felfedezés</p>
                 </div>
                 <p class="description column-two-thirds">Sajátítsa el a Microsoft Identity Manager alapvető fogalmait, funkcióit és képességeit.
                 </p>
@@ -145,6 +142,6 @@ ms.openlocfilehash: 0ccbac817271b01e38bfb3e84fa5fc7ece787299
 
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Sep16_HO4-->
 
 
