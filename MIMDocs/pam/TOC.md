@@ -24,7 +24,7 @@
 ### [1. lépés: A PRIV-tartomány konfigurálása](sp1-step1-configuring-priv-domain.md)
 ### [2. lépés: A CORP-tartomány konfigurálása](sp1-step2-configuring-corp-domain.md)
 ### [3. lépés: Az SQL konfigurálása](sp1-step3-installing-configuring-sql.md)
-### [4. lépés: A SharePoint konfigurálása](sp1-step4-configuring-sharepoiint.md)
+### [4. lépés: A SharePoint konfigurálása](sp1-step4-configuring-sharepoint.md)
 ### [5. lépés: PAM telepítése/konfigurálása](sp1-step5-configuring-pam.md)
 ### [6. lépés: PAM bizalmi kapcsolat beállítása](sp1-step6-setup-pam-trust.md)
 ### [7. lépés: SID-előzmények/SID-szűrés beállítása](sp1-step7-setup-sidhistory-sidfiltering.md)
