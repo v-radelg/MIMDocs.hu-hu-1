@@ -51,7 +51,7 @@ Vegye fel a Webkiszolgáló (IIS) és az Alkalmazáskiszolgáló szerepkört, a 
 
 1.  Jelentkezzen be PRIV tartományi rendszergazdaként (PRIV\Rendszergazda), és indítsa el a PowerShellt.
 
-2.  Írja be a következő parancsokat: A .NET-keretrendszer 3.5 forrásfájljainak helye eltérő lehet, ez esetben azt kell megadni. Ezek a funkciók általában nem érhetők el a Windows Server telepítésekor, csak a következő mappában, az operációs rendszer telepítésére szolgáló lemezen, például: d:\Sources\SxS\.
+2.  Írja be a következő parancsokat: A .NET-keretrendszer 3.5 forrásfájljainak helye eltérő lehet, ez esetben azt kell megadni. Ezek a funkciók általában nem érhetők el a Windows Server telepítésekor, csak a következő mappában az operációs rendszer telepítésére szolgáló lemezen, pl.: „*d:\Sources\SxS”.
 
     ```
     import-module ServerManager
@@ -212,6 +212,6 @@ A 4. lépésben hozzákezdhet a MIM-összetevőknek a PAM-kiszolgálóra való t
 
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Oct16_HO2-->
 
 

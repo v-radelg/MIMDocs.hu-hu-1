@@ -69,7 +69,8 @@ A frissített platformtámogatási információk megtalálhatók a [MIM 2016 ál
 
 A Microsoft Identity Manager 2016 Service Pack 1-re áttérő ügyfeleknek ajánlott követni az alábbi útmutatót a környezetben használt összes szolgáltatásnál.
 
->[!Note] A Forefront Identity Manager 2010 R2 SP1 vagy korábbi verziót használó felhasználónak először frissíteniük kell a környezetüket a 2015 augusztusában megjelent Microsoft Identity Manager 2016-ra, majd követni az alábbi lépéseket.
+>[!Note]
+>A Forefront Identity Manager 2010 R2 SP1 vagy korábbi verziót használó felhasználónak először frissíteniük kell a környezetüket a 2015 augusztusában megjelent Microsoft Identity Manager 2016-ra, majd követni az alábbi lépéseket.
 
 Előkészületek
 
