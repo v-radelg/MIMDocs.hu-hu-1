@@ -120,7 +120,7 @@ A következő táblázat példákat mutat be az engedélyekre, amelyeket meg kel
 | Helyek, alhálózatok és a replikáció kezelése | Az Active Directory replikációs topológiájához tartozó objektumok kezelése, beleértve a helyek, az alhálózatok és a helyhivatkozási objektumok módosítását, valamint a replikálási műveletek elindítását. |
 | Csoportházirend-objektumok kezelése | Csoportházirend-objektumok létrehozása, törlése és módosítása a tartományban. |
 | Zónák kezelése | DNS-zónák és objektumok létrehozása, törlése és módosítása az Active Directory-ban. |
-| 0. rétegbeli szervezeti egységek módosítása | A 0. rétegbe tartozó szervezeti egységek és a tárolt objektumok módosítása az Active Directoryban |
+| Nulladik rétegbeli szervezeti egységek módosítása | Nulladik rétegbe tartozó szervezeti egységek és a tárolt objektumok módosítása az Active Directoryban |
 
 ### Adatkezelési engedélyek
 
@@ -129,12 +129,12 @@ A következő táblázat példákat mutat be azokra engedélyekre, amelyeket meg
 | Szerepkör | Leírás |
 | ---- | ---- |
 | Első rétegbeli rendszergazdai szervezeti egység módosítása                 | Első rétegbe tartozó rendszergazdai objektumokat tartalmazó szervezeti egységek módosítása az Active Directory-ban |
-| 2. rétegbeli rendszergazdai szervezeti objektum módosítása                 | 2. rétegbe tartozó rendszergazdai objektumokat tartalmazó szervezeti egységek módosítása az Active Directory-ban |
+| Második rétegbeli rendszergazdai szervezeti objektum módosítása                 | Második rétegbe tartozó rendszergazdai objektumokat tartalmazó szervezeti egységek módosítása az Active Directory-ban |
 | Fiókkezelés: létrehozás/törlés/áthelyezés | Általános jogú felhasználói fiókok módosítása.                                      |
 | Fiókkezelés: alaphelyzetbe állítás és feloldás       | Jelszavak alaphelyzetbe állítása és fiókok zárolásának feloldása.                                  |
 | Biztonsági csoport: létrehozás és módosítás          | Biztonsági csoportok létrehozása és módosítása az Active Directoryban              |
 | Biztonsági csoport: törlés                 | Biztonsági csoportok törlése az Active Directory-ban                         |
-| Csoportházirend-objektumok kezelése                         | A tartományban/erdőben lévő összes olyan csoportházirend-objektum kezelése, amelynek nincs hatása a 0. rétegbeli kiszolgálókra.             |
+| Csoportházirend-objektumok kezelése                         | A tartományban/erdőben lévő összes olyan csoportházirend-objektum kezelése, amelynek nincs hatása a nulladik rétegbeli kiszolgálókra             |
 | Csatlakozás számítógéphez/helyi rendszergazda                    | Helyi rendszergazdai jogosultságok az összes munkaállomásnak.                               |
 | Csatlakozás kiszolgálóhoz/helyi rendszergazda                   | Helyi rendszergazdai jogosultságok az összes kiszolgálónak.                                    |
 
@@ -144,7 +144,7 @@ A szerepkör-definíciók kiválasztása a rendszerjogosultságú fiókokkal fel
 
 A következő szakaszok példákat mutatnak be a jellemző vállalati forgatókönyvekre.
 
-### 0. réteg: Felügyeleti erdő
+### Nulladik réteg: Felügyeleti erdő
 
 A megerősített környezetben lévő fiókokhoz megfelelő szerepkörök a következők lehetnek:
 
@@ -153,22 +153,22 @@ A megerősített környezetben lévő fiókokhoz megfelelő szerepkörök a köv
 - Azok a felhasználók, akik az éles környezetben működő erdő rendszergazdái
 - Azok a felhasználók, akiknek korlátozott felügyeleti jogosultságokat delegáltak az éles környezetben működő erdőben található alkalmazásokhoz
 
-### 0. réteg: Vállalati éles környezetben működő erdő
+### Nulladik réteg: Vállalati éles környezetben működő erdő
 
-A 0. rétegbeli éles környezetben működő erdő fiókjainak és erőforrásainak felügyeletére alkalmas szerepkörök következők lehetnek:
+Nulladik rétegbeli éles környezetben működő erdő fiókjainak és erőforrásainak felügyeletére alkalmas szerepkörök következők lehetnek:
 
 - Vészhelyzeti hozzáférés az éles környezetben működő erdőhöz
 - Csoportházirendek rendszergazdái
 - DNS-rendszergazdák
 - PKI-rendszergazdák
 - AD-topológia és -replikáció rendszergazdái
-- 0. rétegbeli kiszolgálók virtualizációs rendszergazdái
+- Nulladik rétegbeli kiszolgálók virtualizációs rendszergazdái
 - Tárhelyek rendszergazdái
-- 0. rétegbeli kiszolgálók kártevők elleni védelmének rendszergazdái
-- 0. rétegbeli SCCM SCCM-rendszergazdái
-- 0. rétegbeli SCOM SCOM-rendszergazdái
-- 0. réteg biztonsági mentési rendszergazdái
-- 0. rétegbeli gazdagépekhez csatlakozó sávon kívüli és alaplapi felügyeleti vezérlők (KVM vagy Lights-Out felügyelethez) felhasználói
+- Nulladik rétegbeli kiszolgálók kártevők elleni védelmének rendszergazdái
+- Nulladik rétegbeli SCCM SCCM-rendszergazdái
+- Nulladik rétegbeli SCOM SCOM-rendszergazdái
+- Nulladik réteg biztonsági mentési rendszergazdái
+- Nulladik rétegbeli gazdagépekhez csatlakozó sávon kívüli és alaplapi felügyeleti vezérlők (KVM vagy Lights-Out felügyelethez) felhasználói
 
 ### Első réteg
 
@@ -192,7 +192,7 @@ Az első rétegbeli vállalati alkalmazások kezelésére a következő szerepk�
 - Felhőalapú szolgáltatások, például a vállalati webhelyek vagy a nyilvános DNS rendszergazdái
 - HCM, pénzügyi vagy jogi rendszerek rendszergazdái
 
-### 2. réteg
+### Második réteg
 
 A nem rendszergazda jogosultságú felhasználók és számítógépek felügyeletének szerepkörei a következők lehetnek:
 
