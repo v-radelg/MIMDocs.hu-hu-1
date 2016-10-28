@@ -13,15 +13,15 @@ ms.assetid: 50345fda-56d7-4b6e-a861-f49ff90a8376
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: b3ab1b9376c9b613739d87c812f4b16a4e17e6de
-ms.openlocfilehash: 9c029a9edee015f8843f6001d23c72e3ef98b5af
+ms.sourcegitcommit: 80fde32862a322a7a067982d0b02c99a8b43063e
+ms.openlocfilehash: 4ee1742e388da1ccb973b64316629debe570add0
 
 
 ---
 
 # Tartomány beállítása
 
->[!div class="step-by-step"]  
+>[!div class="step-by-step"]
 [Windows Server 2012 R2 »](prepare-server-ws2012r2.md)
 
 A Microsoft Identity Manager (MIM) az Ön Active Directory- (AD-) tartományával együtt is használható. Az AD-nek már telepítve kell lennie, és győződjön meg arról is, hogy a környezetében rendelkezik egy tartományvezérlővel egy felügyelhető tartományhoz.
@@ -33,7 +33,7 @@ Ez a cikk részletesen ismerteti a lépéseket, amelyekkel előkészítheti a ta
 A MIM-telepítés minden összetevőjének saját identitással kell rendelkeznie a tartományban. Ez vonatkozik az olyan MIM-összetevőkre is, mint a Service, a Sync, a SharePoint és az SQL.
 
 > [!NOTE]
-> Ez az útmutató egy Contoso nevű fiktív vállalat neveit és értékeit használja szemléltetésként. Ezeket helyettesítse a saját neveivel és értékeivel. Például:
+> Ez az útmutató egy Contoso nevű fiktív vállalat neveit és értékeit használja szemléltetésként. Ezeket helyettesítse a saját neveivel és értékeivel. Példa:
 > - Tartományvezérlő neve – **mimservername**
 > - Tartománynév – **contoso**
 > - Jelszó – **Pass@word1**
@@ -68,7 +68,7 @@ A MIM-telepítés minden összetevőjének saját identitással kell rendelkezni
     Set-ADUser –identity BackupAdmin –Enabled 1 -PasswordNeverExpires 1
     ```
 
-2.  Hozzon létre biztonsági csoportokat az összes csoporthoz.
+3.  Hozzon létre biztonsági csoportokat az összes csoporthoz.
 
     ```
     New-ADGroup –name MIMSyncAdmins –GroupCategory Security –GroupScope Global      –SamAccountName MIMSyncAdmins
@@ -80,20 +80,20 @@ A MIM-telepítés minden összetevőjének saját identitással kell rendelkezni
     Add-ADGroupmember -identity MIMSyncAdmins -Members MIMService
     ```
 
-3.  Állítson be egyszerű szolgáltatásneveket (SPN), amivel lehetővé válik a Kerberos hitelesítés használata a szolgáltatásfiókokhoz.
+4.  Állítson be egyszerű szolgáltatásneveket (SPN), amivel lehetővé válik a Kerberos hitelesítés használata a szolgáltatásfiókokhoz.
 
     ```
     setspn -S http/mimservername.contoso.local Contoso\SharePoint
     setspn -S http/mimservername Contoso\SharePoint
-    setspn -S MIMService/mimservername.contoso.local Contoso\MIMService
-    setspn -S MIMSync/mimservername.contoso.local Contoso\MIMSync
+    setspn -S FIMService/mimservername.contoso.local Contoso\MIMService
+    setspn -S FIMSynchronizationService/mimservername.contoso.local Contoso\MIMSync
     ```
 
->[!div class="step-by-step"]  
+>[!div class="step-by-step"]
 [Windows Server 2012 R2 »](prepare-server-ws2012r2.md)
 
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Oct16_HO3-->
 
 
