@@ -6,7 +6,6 @@ author: barclayn
 manager: mbaldwin
 ms.date: 09/28/2016
 ms.topic: article
-ms.prod: identity-manager-2016
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: ccdd8a9f-02da-440a-81a8-354800dcd2a8
@@ -18,7 +17,7 @@ ms.openlocfilehash: b791b18fa3775295e9c199086aa11a0d6c6a55e7
 
 
 ---
-# A Microsoft Identity Manager 2016 Service Pack 1 újdonságai #
+# <a name="whats-new-for-microsoft-identity-manager-2016-service-pack-1"></a>A Microsoft Identity Manager 2016 Service Pack 1 újdonságai #
 
 A Microsoft Identity Manager karbantartásához és frissítéséhez tartozó kiadási ciklus részeként örömmel jelentjük be a [Microsoft Identity Manager (MIM) 2016 Service Pack 1 (SP1)](https://msdn.microsoft.com/subscriptions/downloads/?fileid=70212#searchTerm=&Languages=en&PageSize=10&PageIndex=0&FileId=70212) megjelenését. Ez a dokumentum az ebben a kiadásban található frissítéseket, fejlesztéseket, funkciókat és módosításokat ismerteti.
 
@@ -28,9 +27,9 @@ Szívesen meghallgatnánk a véleményét is! Ha visszajelzése vagy megjegyzés
 
 
 
-## A szervizcsomag frissítései #
+## <a name="updates-in-this-service-pack"></a>A szervizcsomag frissítései #
 
-### MIM
+### <a name="mim"></a>MIM
 
 - **A MIM-portál böngészőkompatibilitása végfelhasználók önkiszolgáló munkafolyamataihoz:** Ebben a szervizcsomagban támogatást biztosítunk a legtöbb ismert böngészőhöz. A felhasználók mostantól elérhetik és használhatják a MIM-portált önkiszolgáló csoportok és profilok kezelésére az Edge, Chrome és Safari böngészőből.
 
@@ -38,7 +37,7 @@ Szívesen meghallgatnánk a véleményét is! Ha visszajelzése vagy megjegyzés
 
 - **Kép fájlformátumának érvényesítése feltöltéskor:** A MIM-mel már lehetséges a képek fájlformátumának érvényesítése a portálra történő feltöltés közben.
 
-### Privileged Access Management (PAM)
+### <a name="privileged-access-managementpam"></a>Privileged Access Management (PAM)
 
 - **PAM „PRIV” (bástya) erdőtámogatás Windows Server 2016 működési szinthez:** A MIM PAM szolgáltatás konfigurálható olyan tartományvezérlőkkel rendelkező környezetben, amely a Windows Server 2016 Active Directory Domain Services-erdő működési szintjén fut. A konfigurálás után a felhasználók Kerberos-jegye időkorlátossá válik a szerepkör-aktiválásban megmaradt időre.
 
@@ -55,17 +54,17 @@ Szívesen meghallgatnánk a véleményét is! Ha visszajelzése vagy megjegyzés
     Ezek a parancsmagok automatikusan lefutnak az üzembehelyezési szkriptek részeként.
 
 
-## Platformtámogatás
+## <a name="platform-support"></a>Platformtámogatás
 A frissített platformtámogatási információk megtalálhatók a [MIM 2016 által támogatott platformok](/microsoft-identity-manager/plan-design/microsoft-identity-manager-2016-supported-platforms) című dokumentumban.  Az ebben a szervizcsomagban támogatott új platformok közé tartozik az SQL Server 2016 és a SharePoint 2016.
 
-## A MIM 2016 általános rendelkezésre állási hibáinak javításai ebben a kiadásban
+## <a name="issues-fixed-in-this-release-from-mim-2016-general-availability"></a>A MIM 2016 általános rendelkezésre állási hibáinak javításai ebben a kiadásban
 
-### PAM
+### <a name="pam"></a>PAM
 - Új – A PAMGroup nem hoz létre MIM-objektumokat tartományi helyi csoportokhoz a PRIV-erdőben.
 - Új – A PAMDomainConfiguration sikertelen eredményt adna vissza „netdom” hibaüzenettel.
 - A PAM figyelőszolgáltatása által naplózott figyelmeztetések csoportoknak a PRIV-erdőben.
 
-## Frissítés a Service Pack 1 verzióra
+## <a name="how-to-upgrade-to-service-pack-1"></a>Frissítés a Service Pack 1 verzióra
 
 A Microsoft Identity Manager 2016 Service Pack 1-re áttérő ügyfeleknek ajánlott követni az alábbi útmutatót a környezetben használt összes szolgáltatásnál.
 
