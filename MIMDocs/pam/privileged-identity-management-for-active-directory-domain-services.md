@@ -1,12 +1,12 @@
 ---
-title: Mi az a PAM az ADDS-hez? | Microsoft Identity Manager
+title: Mi az a PAM az ADDS-hez? | Microsoft Docs
 description: "További információk a Privileged Access Managementről, valamint az Active Directory-környezet kezelésében és védelmében elfoglalt szerepéről."
 keywords: 
 author: kgremban
+ms.author: kgremban
 manager: femila
-ms.date: 07/27/2016
+ms.date: 10/25/2016
 ms.topic: article
-ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
 ms.assetid: cf3796f7-bc68-4cf7-b887-c5b14e855297
@@ -15,12 +15,12 @@ ms.suite: ems
 experimental: true
 experiment_id: kgremban_images
 translationtype: Human Translation
-ms.sourcegitcommit: e695dd47e4bd31c4004c7d0d9ec76498d52fb56a
-ms.openlocfilehash: b46c2b50873023d504fb7b440a1d4e40e8fa3ac7
+ms.sourcegitcommit: 1f545bfb2da0f65c335e37fb9de9c9522bf57f25
+ms.openlocfilehash: 4b3779f33a8bbd2ad62c88343ef3611b17fc81a2
 
 ---
 
-# Privileged Access Management az Active Directory tartományi szolgáltatásokhoz
+# <a name="privileged-access-management-for-active-directory-domain-services"></a>Privileged Access Management az Active Directory Domain Serviceshez
 A Privileged Access Management (PAM) olyan megoldás, amely segít a szervezeteknek a meglévő Active Directory-környezetükben korlátozni a rendszerjogosultságú hozzáférést.
 
 A Privileged Access Management két célt ér el:
@@ -31,14 +31,14 @@ A Privileged Access Management két célt ér el:
 > [!NOTE]
 > A PAM a [Privileged Identity Management](https://azure.microsoft.com/documentation/articles/active-directory-privileged-identity-management-configure/) (PIM) egy példánya, amely a Microsoft Identity Manager (MIM) segítségével van megvalósítva.
 
-## Milyen problémákat segít a PAM megoldani?
+## <a name="what-problems-does-pam-help-solve"></a>Milyen problémákat segít a PAM megoldani?
 Napjaink vállalatai számára komoly aggályokat vet fel az Active Directory-környezeten belüli erőforrások elérése. Különösen aggasztóak azok a híradások, amelyek biztonsági résekről, a jogosultságok illetéktelenek általi megemeléséről és más típusú jogosulatlan hozzáférésekről (pass-the-hash (kivonatátadás), pass-the-ticket (jegyátadás), spear phishing (személy nevében történő adathalászat) és Kerberos-biztonsági problémák) szólnak.
 
 Napjainkban a támadók nagyon könnyen megszerezhetik a tartományi rendszergazdák fiókjának hitelesítő adatait, az ilyen támadásokat azonban nagyon nehéz felderíteni, ha már bekövetkeztek. A PAM célja, hogy a rosszindulatú felhasználók kisebb eséllyel szerezhessenek hozzáférést, Ön pedig nagyobb mértékben kontrollálhassa és felügyelhesse környezetét.
 
 A PAM megnehezíti a támadók számára, hogy behatoljanak a hálózatokra, és rendszerjogosultságú fiókot használjanak. A PAM további védelemmel óvja a rendszerjogosultságú csoportokat, amelyek szabályozzák a hozzáférést sok, a tartományhoz csatlakoztatott számítógéphez és rajtuk futó alkalmazáshoz. Bővíti ezenkívül a figyelési lehetőségek körét, javítja a láthatóságot, és részletesebb szabályozást tesz lehetővé, hogy a szervezetek ellenőrizni tudják, kik a rendszerjogosultságú rendszergazdáik, és mit csinálnak. A PAM révén a szervezetek jobban tájékozódhatnak arról, hogy milyen műveletekre kerül sor a környezetükben a rendszergazdai fiókok használatával.
 
-## A PAM bevezetése
+## <a name="how-is-pam-set-up"></a>A PAM bevezetése
 A PAM a szükséges időben (just-in-time) történő felügyelet elvére épül, amely összefügg az [éppen elég felügyelettel (just enough administration, JEA)](http://channel9.msdn.com/Events/TechEd/NorthAmerica/2014/DCIM-B362). A JEA egy Windows PowerShell-eszközkészlet, amely definiálja a magas jogosultságszintet igénylő tevékenységek elvégzésére szolgáló parancsok egy halmazát, valamint egy végpontot, ahol a rendszergazdák engedélyt szerezhetnek ezeknek a parancsoknak a futtatására. A JEA-ban egy rendszergazda dönti el, hogy milyen jogosultságra van szükségük a felhasználóknak ahhoz, hogy elvégezzenek egy feladatot. Minden alkalommal, amikor egy jogosult felhasználónak el kell végeznie ezt a feladatot, aktiválják ezt az engedélyt. Meghatározott idő elteltével az engedélyek lejárnak, hogy egy rosszindulatú felhasználó el ne lophassa a hozzáférési jogosultságot.
 
 A PAM üzembe helyezése és működtetése négy lépésből áll.
@@ -53,7 +53,7 @@ A PAM üzembe helyezése és működtetése négy lépésből áll.
 
 4.  **Figyelés**: A PAM segítségével naplózhatók a magas jogosultságszint iránti kérések, riasztások köthetők hozzájuk, valamint jelentések készíthetők róluk. Megtekinthető, hogy mikor fért hozzá valaki emelt szintű jogosultságokkal a rendszerhez, és ki végzett egy adott tevékenységet. Megállapítható, hogy a tevékenység megfelel-e a szabályoknak, és könnyen felismerhetők a jogosulatlan tevékenységek (ha például valaki megpróbál közvetlenül hozzáadni egy felhasználót az eredeti erdő valamelyik rendszerjogosultságú csoportjához). Ez a lépés nemcsak a kártékony szoftverek azonosítást segíti, hanem a „belső” támadók figyelését is.
 
-## Hogyan működik a PAM?
+## <a name="how-does-pam-work"></a>Hogyan működik a PAM?
 A PAM az AD DS új képességein alapul, különösen a tartományi fiókok hitelesítésének és engedélyezésének új lehetőségein, valamint a Microsoft Identity Manager új funkcióin. A PAM leválasztja a rendszerjogosultságú fiókokat a meglévő Active Directory-környezettől. Ha egy rendszerjogosultságú fiókot kell használni, akkor ezt először kérelmezni kell, majd jóvá kell hagyni. A jóváhagyást követően a rendszerjogosultságú fiók nem a felhasználó vagy az alkalmazás aktuális erdejében kap engedélyt, hanem egy új megerősített erdő külső rendszercsoportjának tagjaként. A megerősített erdő használata szélesebb körű szabályozást tesz lehetővé a szervezet számára, például arra vonatkozóan, hogy mikor lehet egy felhasználó tagja egy rendszerjogosultságú fióknak, és hogy a felhasználónak hogyan kell hitelesítenie magát.
 
 Az Active Directory, a MIM szolgáltatás és ennek a megoldásnak az egyéb részei magas rendelkezésre állású konfigurációban is üzembe helyezhetők.
@@ -76,13 +76,15 @@ A PAM a következő előnyöket nyújtja:
 
 -   **Testre szabható munkafolyamat**: A MIM munkafolyamatai különböző helyzetek kezelésére konfigurálhatók, és többféle munkafolyamat is használható, a kérelmező felhasználó vagy a kért szerepkörök alapján.
 
-## Hogyan kérik a felhasználók a rendszerjogosultságú hozzáférést?
+## <a name="how-do-users-request-privileged-access"></a>Hogyan kérik a felhasználók a rendszerjogosultságú hozzáférést?
 A felhasználók a következő felületeken küldhetik be a kéréseket:  
 - A MIM szolgáltatások webszolgáltatási API-ja  
 - REST-végpont  
 - Windows PowerShell (`New-PAMRequest`)
 
-## Milyen munkafolyamatok és figyelési lehetőségek érhetők el?
+Megismerheti az [Emelt szintű hozzáférések felügyeletének parancsmagjai](https://technet.microsoft.com/library/mt604080.aspx) című témakör részleteit.
+
+## <a name="what-workflows-and-monitoring-options-are-available"></a>Milyen munkafolyamatok és figyelési lehetőségek érhetők el?
 Tegyük fel például, hogy egy felhasználó tagja volt egy rendszergazdai csoportnak még a PIM telepítése előtt. A PIM telepítésének részeként a felhasználó törlődik a rendszergazdai csoportból, és egy szabályzat jön létre az MIM-ben. A szabályzat előírja, hogy ha egy felhasználó rendszergazdai jogosultságokat kér, és egy MFA hitelesíti, akkor a kérés jóváhagyást kap, és a rendszer felvesz egy külön fiókot a felhasználónak a megerősített erdő rendszerjogosultságú fiókjába.
 
 Ha a kérés jóváhagyást nyer, a munkafolyamat közvetlen kommunikációra lép a megerősített erdő Active Directoryjával, hogy az vegye fel a felhasználót egy csoportba. Ha például Ilona engedélyt kér a személyzeti adatbázis felügyeletére, Ilona rendszergazdai fiókja másodperceken belül bekerül a megerősített erdő rendszerjogosultságú csoportjába. Amikor eltelik a megadott időkorlát, rendszergazdai fiókjának tagsága megszűnik abban a csoportban. A Windows Server Technical Preview rendszerben az Active Directoryban párosul időkorlát ehhez a tagsághoz. A Windows Server 2012 R2 verzióban a MIM tartatja be ezt az időkorlátot a megerősített erdőben.
@@ -96,6 +98,6 @@ Ez a munkafolyamat kifejezetten az ilyen rendszergazdai fiókok számára kész�
 
 
 
-<!--HONumber=Jul16_HO4-->
+<!--HONumber=Nov16_HO2-->
 
 

@@ -1,12 +1,12 @@
 ---
-title: "A PAM üzembe helyezése, 4. lépés – A MIM telepítése | Microsoft Identity Manager"
+title: "A PAM üzembe helyezése, 4. lépés – A MIM telepítése | Microsoft Docs"
 description: "A MIM szolgáltatás és -portál telepítése és konfigurálása saját Privileged Access Management-kiszolgálón és munkaállomásokon."
 keywords: 
 author: kgremban
+ms.author: kgremban
 manager: femila
 ms.date: 07/15/2016
 ms.topic: article
-ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
 ms.assetid: ef605496-7ed7-40f4-9475-5e4db4857b4f
@@ -14,13 +14,13 @@ ROBOTS: noindex,nofollow
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: ae4c40c73dd9d5860f42e00765a7e34e8ca397a9
-ms.openlocfilehash: 92939d32da25896d07bec61e4633f58230a78181
+ms.sourcegitcommit: 1f545bfb2da0f65c335e37fb9de9c9522bf57f25
+ms.openlocfilehash: 5b9653cb8de9e9fc788685ba027f84a795467cf6
 
 
 ---
 
-# 4. lépés – MIM-összetevők telepítése PAM-kiszolgálóra és -munkaállomásra
+# <a name="step-4-install-mim-components-on-pam-server-and-workstation"></a>4. lépés – MIM-összetevők telepítése PAM-kiszolgálóra és -munkaállomásra
 
 >[!div class="step-by-step"]
 [« 3. lépés](step-3-prepare-pam-server.md)
@@ -34,7 +34,7 @@ A MIM szolgáltatásnak és portálnak, illetve a mintaportál webalkalmazásán
 
 Ha letöltötte a MIM szolgáltatást, bontsa ki a tömörített MIM-telepítőcsomagot egy új mappába.
 
-##  Indítsa el a Service and Portal (Szolgáltatás és portál) telepítőprogramot.  
+##  <a name="run-the-service-and-portal-install-program"></a>Indítsa el a Service and Portal (Szolgáltatás és portál) telepítőprogramot.  
 
 Az útmutatást követve végezze el a telepítést.
 
@@ -55,7 +55,7 @@ Az útmutatást követve végezze el a telepítést.
     - Service Account Name (Szolgáltatásfiók neve) – *MIMService*  
     - Service Account Password (Szolgáltatásfiók jelszava): *Pass@word1* (vagy a 2. lépésben létrehozott jelszó)  
     - Service Account Domain (Szolgáltatásfiók-tartomány): *PRIV*  
-    - Service Email Account (Szolgáltatás e-mail fiókja): *MIMService@priv.contoso.local*  
+    - Szolgáltatás e-mail-fiókja: *MIMService@priv.contoso.local*  
 
 6.  A szinkronizálási kiszolgáló állomásnevénél fogadja el az alapértelmezett beállításokat, a MIM Management Agent Account (MIM-kezelőügynök fiókja) mezőben pedig adja meg a *PRIV\MIMMA* fiókot. Egy megjelenő üzenet arra figyelmezteti, hogy a MIM szinkronizálási szolgáltatása nem létezik. Ez nem probléma, mivel ebben az esetben a MIM-szinkronizálási szolgáltatást nem használjuk.
 
@@ -98,7 +98,7 @@ Az útmutatást követve végezze el a telepítést.
 
 A telepítés befejezése után a kiszolgáló újraindul, majd ellenőrzi, hogy aktív-e a MIM portál, illetve engedélyezi, hogy a felhasználók megtekinthessék a MIM-ben a saját objektum-erőforrásaikat.
 
-## A MIM portál felügyeleti házirendszabályainak beállítása
+## <a name="set-up-mim-portal-management-policy-rules"></a>A MIM portál felügyeleti házirendszabályainak beállítása
 
 1. Miután a PAMSRV újraindult, jelentkezzen be PRIV\Rendszergazda jogosultsággal.
 
@@ -114,7 +114,7 @@ A telepítés befejezése után a kiszolgáló újraindul, majd ellenőrzi, hogy
 
 7. Jelölje ki ezt a felügyeleti házirendszabályt, majd törölje a jelet a **Policy is disabled** (A házirend le van tiltva) négyzetből, kattintson az **OK**, majd a **Submit** (Küldés) gombra.
 
-## A tűzfalkapcsolatok ellenőrzése
+## <a name="verify-the-firewall-connections"></a>A tűzfalkapcsolatok ellenőrzése
 
 A tűzfalnak engedélyeznie kell a bejövő kapcsolatokat az 5725-ös, az 5726-os, a 8086-os és a 8090-es TCP-porton.
 
@@ -131,7 +131,7 @@ A tűzfalnak engedélyeznie kell a bejövő kapcsolatokat az 5725-ös, az 5726-o
 8.  Győződjön meg arról, hogy a listában szerepel egy priv.contoso.local nevű aktív hálózat, tartományi hálózatként.  
 9. Zárja be a **Vezérlőpultot**.
 
-## A minta webalkalmazás beállítása
+## <a name="set-up-the-sample-web-application"></a>A minta webalkalmazás beállítása
 
 Az útmutató ezen szakasza a MIM PAM REST API minta webalkalmazásának telepítéséhez és konfigurálásához nyújt segítséget.
 
@@ -167,7 +167,7 @@ Az útmutató ezen szakasza a MIM PAM REST API minta webalkalmazásának telepí
 
 7.  (Nem kötelező.) Győződjön meg arról, hogy a felhasználó hitelesíthető a REST API-val. Nyisson meg egy webböngészőt a PAMSRV rendszergazdájaként.  Lépjen a http://pamsrv.priv.contoso.local:8086/api/pamresources/pamroles/ URL-címen található webhelyre, szükség esetén végezze el a hitelesítést, és győződjön meg arról, hogy a letöltés megtörténik.
 
-## A MIM PAM-kérelmező parancsmagjainak telepítése
+## <a name="install-the-mim-pam-requestor-cmdlets"></a>A MIM PAM-kérelmező parancsmagjainak telepítése
 
 Telepítse a MIM PAM-kérelmező parancsmagjait az 1. lépésben beállított munkaállomáson.
 
@@ -193,6 +193,6 @@ A következő lépésben a PRIV és a CORP tartomány erdői közötti megbízha
 
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Nov16_HO2-->
 
 

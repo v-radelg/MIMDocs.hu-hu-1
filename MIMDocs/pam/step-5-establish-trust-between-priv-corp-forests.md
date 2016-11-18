@@ -1,25 +1,25 @@
 ---
-title: "A PAM üzembe helyezése, 5. lépés - Erdőkapcsolat | Microsoft Identity Manager"
+title: "A PAM üzembe helyezése, 5. lépés – Erdőkapcsolat | Microsoft Docs"
 description: "Megbízhatósági kapcsolat létrehozása a PRIV és CORP erdők között, hogy a PRIV rendszerjogosultságú felhasználói a CORP erőforrásaihoz is hozzáférjenek."
 keywords: 
 author: kgremban
+ms.author: kgremban
 manager: femila
 ms.date: 07/15/2016
 ms.topic: article
-ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
 ms.assetid: eef248c4-b3b6-4b28-9dd0-ae2f0b552425
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: ae4c40c73dd9d5860f42e00765a7e34e8ca397a9
-ms.openlocfilehash: 3a7039f5d7c950cd0d4c8ab713a7beacc5c45526
+ms.sourcegitcommit: 1f545bfb2da0f65c335e37fb9de9c9522bf57f25
+ms.openlocfilehash: 16208efe08c5a2c0f63ee121c64c45cad5a73909
 
 
 ---
 
-# 5. lépés – A CORP és a PRIV erdő közötti megbízhatósági kapcsolat létrehozása
+# <a name="step-5-establish-trust-between-priv-and-corp-forests"></a>5. lépés – A CORP és a PRIV erdő közötti megbízhatósági kapcsolat létrehozása
 
 >[!div class="step-by-step"]
 [« 4. lépés](step-4-install-mim-components-on-pam-server.md)
@@ -28,7 +28,7 @@ ms.openlocfilehash: 3a7039f5d7c950cd0d4c8ab713a7beacc5c45526
 
 Minden CORP tartománynál, így például a contoso.local tartomány esetében is, a PRIV és a CONTOSO tartományvezérlők között megbízhatósági kapcsolatnak kell fennállnia. Ez teszi lehetővé, hogy a PRIV tartomány felhasználói hozzáférhessenek a CORP tartományban lévő erőforrásokhoz.
 
-## Az egyes tartományvezérlők csatlakoztatása a párjukhoz
+## <a name="connect-each-domain-controller-to-its-counterpart"></a>Az egyes tartományvezérlők csatlakoztatása a párjukhoz
 
 A megbízható kapcsolat kialakítása előtt minden tartományvezérlőn be kell állítani a párjuk DNS-nevének feloldását, a másik tartományvezérlő/DNS-kiszolgáló IP-címe alapján.
 
@@ -46,7 +46,7 @@ A megbízható kapcsolat kialakítása előtt minden tartományvezérlőn be kel
 
     ![a priv kulcsot tartalmazó fájlstruktúra – képernyőkép](./media/PAM_GS_DNS_Manager.png)
 
-## Megbízhatósági kapcsolat létrehozása a PAMSRV kiszolgálón
+## <a name="establish-trust-on-pamsrv"></a>Megbízhatósági kapcsolat létrehozása a PAMSRV kiszolgálón
 
 A PAMSRV kiszolgálón hozzon létre egy egyirányú megbízhatósági kapcsolatot minden tartományhoz, például a CORPDC-hez úgy, hogy a bizalom a CORP tartományvezérlők felől a PRIV erdő felé irányuljon.
 
@@ -68,7 +68,7 @@ A PAMSRV kiszolgálón hozzon létre egy egyirányú megbízhatósági kapcsolat
     New-PAMDomainConfiguration -SourceDomain "contoso" -Credentials $ca
     ```
 
-## Az erdők Active Directoryhoz való olvasási hozzáférésének megadása
+## <a name="give-forests-read-access-to-active-directory"></a>Az erdők Active Directoryhoz való olvasási hozzáférésének megadása
 
 A PRIV rendszergazdákon és a figyelőszolgáltatáson keresztül minden meglévő erdő számára olvasási hozzáférést biztosíthat az Active Directoryhoz.
 
@@ -82,7 +82,7 @@ A PRIV rendszergazdákon és a figyelőszolgáltatáson keresztül minden meglé
 8.  Zárja be az Active Directory – felhasználók és számítógépek beépülő modult.
 
 9.  Indítson el egy PowerShell-ablakot.  
-10.  Használja a `netdom` parancsot a SID-előzmények engedélyezéséhez, illetve a SID-szűrés letiltásához. Írja be:  
+10.  Használja a `netdom` parancsot a SID-előzmények engedélyezéséhez, illetve a SID-szűrés letiltásához. Írja be ezt a parancsot:  
     ```
     netdom trust contoso.local /quarantine /domain priv.contoso.local
     netdom trust /enablesidhistory:yes /domain priv.contoso.local
@@ -91,7 +91,7 @@ A PRIV rendszergazdákon és a figyelőszolgáltatáson keresztül minden meglé
 
     A kimenetnek **A biztonsági azonosítók szűrése nem engedélyezett ebben a megbízhatósági kapcsolatban** szöveget is tartalmaznia kell. További információkért tekintse meg a [Disable SID filter quarantining](http://technet.microsoft.com/library/cc772816.aspx) (A SID-szűrők általi karanténba helyezés letiltása) című témakört.
 
-## A figyelőszolgáltatás és a komponensszolgáltatás elindítása
+## <a name="start-the-monitoring-and-component-services"></a>A figyelőszolgáltatás és a komponensszolgáltatás elindítása
 
 1.  Jelentkezzen be PRIV tartományi rendszergazdaként (PRIV\Rendszergazda) a PAMSRV kiszolgálóra.
 
@@ -112,6 +112,6 @@ A következő lépésben a csoportoknak a PAM szolgáltatásba való áthelyezé
 
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Nov16_HO2-->
 
 

@@ -1,25 +1,25 @@
 ---
-title: "A PAM üzembe helyezése, 6. lépés – Csoport áthelyezése | Microsoft Identity Manager"
+title: "A PAM üzembe helyezése, 6. lépés – Csoport áthelyezése | Microsoft Docs"
 description: "Telepítse át a csoportot a PRIV erdőbe, hogy a Privilege Access Management által kezelhető legyen."
 keywords: 
 author: kgremban
+ms.author: kgremban
 manager: femila
 ms.date: 07/15/2016
 ms.topic: article
-ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
 ms.assetid: 7b689eff-3a10-4f51-97b2-cb1b4827b63c
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: ae4c40c73dd9d5860f42e00765a7e34e8ca397a9
-ms.openlocfilehash: 603e5e28f0eee0f648ef7e00ef137f5a08b2ba34
+ms.sourcegitcommit: 1f545bfb2da0f65c335e37fb9de9c9522bf57f25
+ms.openlocfilehash: 9e70bdd3c586a16a9a55c91bd0e099a500950a64
 
 
 ---
 
-# 6. lépés – Csoport áthelyezése a Privileged Access Management szolgáltatásba
+# <a name="step-6-transition-a-group-to-privileged-access-management"></a>6. lépés – Csoport áthelyezése a Privileged Access Management szolgáltatásba
 
 >[!div class="step-by-step"]
 [« 5. lépés ](step-5-establish-trust-between-priv-corp-forests.md)
@@ -45,7 +45,7 @@ A parancsmagokat minden csoportban, illetve a csoport minden tagjánál egyszer 
 
 3.  Hozzon létre egy meglévő erdőben megtalálható felhasználói fiókhoz kapcsolódó felhasználói fiókot a PRIV tartományban, bemutatási céllal.
 
-    Írja be következő parancsokat a PowerShell-ablakba.  Ha nem az *Ilona* nevet használta korábban a contoso.local tartománybeli felhasználó létrehozásakor, akkor szükség szerint módosítsa a parancs paramétereit. A „Pass@word1” jelszó csak egy példa, egy egyedi jelszót kell ide behelyettesítenie.
+    Írja be következő parancsokat a PowerShell-ablakba.  Ha nem az *Ilona* nevet használta korábban a contoso.local tartománybeli felhasználó létrehozásakor, akkor szükség szerint módosítsa a parancs paramétereit. A 'Pass@word1' jelszó csak példaként szolgál, használjon egy egyedi jelszót helyette.
 
     ```
     $sj = New-PAMUser –SourceDomain CONTOSO.local –SourceAccountName Jen
@@ -90,6 +90,6 @@ Ha azt szeretné bemutatni, hogy az erdők közötti hozzáférési jogok vannak
 
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Nov16_HO2-->
 
 

@@ -1,42 +1,42 @@
 ---
-title: Microsoft Identity Manager 2016 | Microsoft Identity Manager
+title: Microsoft Identity Manager 2016 | Microsoft Docs
 description: "Ismerje meg, hogy a MIM 2016 hogyan működik, és hogyan kínál biztonságosabb és kényelmesebb identitáskezelési környezetet a felhőben és helyszíni környezetben egyaránt."
 keywords: 
 author: kgremban
+ms.author: kgremban
 manager: femila
 ms.date: 08/11/2016
 ms.topic: article
-ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: ccdd8a9f-02da-440a-81a8-354800dcd2a8
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 00e11bca207529820eb7b52ab9887a5c3da9db19
-ms.openlocfilehash: 9121f6f7a11dc483763ac594dafae6d8df21c135
+ms.sourcegitcommit: 1f545bfb2da0f65c335e37fb9de9c9522bf57f25
+ms.openlocfilehash: 74d93047ad30d81546940fc4ece3d892fe6df2f8
 
 
 ---
 
-# Microsoft Identity Manager 2016
+# <a name="microsoft-identity-manager-2016"></a>Microsoft Identity Manager 2016
 A Microsoft Identity Manager (MIM) 2016 a [FIM 2010 R2](https://technet.microsoft.com/library/jj133885.aspx) identitás- és hozzáférés-kezelési képességeire építkezik. Elődjéhez hasonlóan a MIM a szervezeti felhasználók, hitelesítő adatok, házirendek és hozzáférési jogosultságok kezelésében nyújt segítséget.  A MIM 2016 emellett hibrid funkciókat és az emelt szintű hozzáférések felügyeletére szolgáló képességeket biztosít, és új platformokat is támogat.
 
 A Microsoft Identity Manager jelen verziója olyan új funkciókat biztosít, mint például a Privileged Identity Manager vagy a REST API-alapú hozzáférés támogatása a Tanúsítványkezelőben. A Tanúsítványkezelő már támogatja a többerdős topológiákat, megújult eseményeket és hibaelhárítási képességeket kínál, a Windows Áruházból pedig letölthető egy alkalmazás a virtuális intelligens kártyák és a tanúsítványok életciklusának kezelésére. Az önkiszolgáló funkciók között már elérhető a fiókok zárolásának feloldása, valamint egy többtényezős hitelesítési kapu is a jelszóváltoztatáshoz.
 
-## Hibrid környezet
+## <a name="hybrid-experience"></a>Hibrid környezet
 A Microsoft Identity Manager 2016 az Azure-ral együttműködve a teljes környezet felett ellenőrzést biztosít. Az Azure hibrid jelentéskészítési funkciói révén a felhőbeli és a helyszíni adatok egy helyen jeleníthetők meg. Emellett az önkiszolgáló jelszó-változtatási portál már támogatja az Azure Multi-Factor Authentication (MFA) többtényezős hitelesítési szolgáltatást is.
 
-## Privileged Identity Management
+## <a name="privileged-identity-management"></a>Privileged Identity Management
 A Privileged Identity Management a bizalmas erőforrások ideiglenes, feladatalapú elérhetőségének biztosításával segíti a rendszergazdai hozzáférés szabályozását és kezelését. Ez azt jelenti, hogy épp csak a szükséges mértékű engedélyeket adhat a felhasználóknak, ami csökkenti a veszélyét annak, hogy egy kibertámadó esetlegesen teljes rendszergazdai hozzáféréshez jusson. A Privileged Identity Management emellett képes kinyerni és elkülöníteni a rendszergazdai fiókokat a meglévő Active Directory-erdőkből.
 
 A MIM támogat egy helyszíni Privileged Identity Management megoldást az Active Directoryk kezeléséhez. Bevezető útmutatóját [A Privileged Access Management használata](/microsoft-identity-manager/pam/privileged-identity-management-for-active-directory-domain-services) című cikk tartalmazza.
 
-## Kapcsolódó témakörök
+## <a name="related-topics"></a>Kapcsolódó témakörök
 A Microsoft Identity Manager számos közös vonást mutat elődjével, a Forefront Identity Managerrel. Ha még FIM-et használ, vagy ha további dokumentációra van szüksége, tekintse meg a [FIM 2010 R2 dokumentáció - áttekintés](https://technet.microsoft.com/library/jj133885.aspx) című oldalt.
 
 
 
-<!--HONumber=Aug16_HO2-->
+<!--HONumber=Nov16_HO2-->
 
 
