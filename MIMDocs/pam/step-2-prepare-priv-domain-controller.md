@@ -1,25 +1,25 @@
 ---
-title: "A PAM üzembe helyezése, 2. lépés - PRIV DC | Microsoft Identity Manager"
+title: "A PAM üzembe helyezése, 2. lépés – PRIV DC | Microsoft Docs"
 description: "A PRIV tartományvezérlő előkészítése, amely olyan megerősített környezetet biztosít, amelyben a Privileged Access Management elkülönítve szerepel."
 keywords: 
 author: kgremban
+ms.author: kgremban
 manager: femila
 ms.date: 07/15/2016
 ms.topic: article
-ms.prod: microsoft-identity-manager
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
 ms.assetid: 0e9993a0-b8ae-40e2-8228-040256adb7e2
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: ae4c40c73dd9d5860f42e00765a7e34e8ca397a9
-ms.openlocfilehash: 048a17c6b8150501185b7a13c3d2cb292791c9e8
+ms.sourcegitcommit: 1f545bfb2da0f65c335e37fb9de9c9522bf57f25
+ms.openlocfilehash: f84229908f31242b6d2f7636a7c67ca669de45b3
 
 
 ---
 
-# 2. lépés: A PRIV tartományvezérlő előkészítése
+# <a name="step-2-prepare-the-first-priv-domain-controller"></a>2. lépés: A PRIV tartományvezérlő előkészítése
 
 >[!div class="step-by-step"]
 [« 1. lépés](step-1-prepare-corp-domain.md)
@@ -27,11 +27,11 @@ ms.openlocfilehash: 048a17c6b8150501185b7a13c3d2cb292791c9e8
 
 Ebben a lépésben egy új tartományt fog létrehozni, amely megerősített környezetet biztosít a rendszergazdai hitelesítéshez.  Ebben az erdőben szükség lesz legalább egy tartományvezérlőre és legalább egy tagkiszolgálóra. A tagkiszolgálót a következő lépésben fogja konfigurálni.
 
-## Új Privileged Access Management-tartományvezérlő létrehozása
+## <a name="create-a-new-privileged-access-management-domain-controller"></a>Új Privileged Access Management-tartományvezérlő létrehozása
 
 Ebben a szakaszban egy virtuális gépet fog beállítani egy új erdő tartományvezérlőjeként.
 
-### A Windows Server 2012 R2 telepítése
+### <a name="install-windows-server-2012-r2"></a>A Windows Server 2012 R2 telepítése
 Egy „PRIVDC” számítógép létrehozásához telepítse a Windows Server 2012 R2 rendszert egy másik új virtuális gépre, amelyen nincs telepített szoftver.
 
 1. Válassza a Windows Server egyéni (nem frissítő) telepítését. A telepítéskor válassza a **Windows Server 2012 R2 Standard (kiszolgáló grafikus felhasználói felülettel) x64** kiadást. _Ne válassza az_ **Adatközpont vagy Server Core** lehetőséget.
@@ -44,7 +44,7 @@ Egy „PRIVDC” számítógép létrehozásához telepítse a Windows Server 20
 
 5. A kiszolgáló újraindítása után jelentkezzen be rendszergazdaként. A Vezérlőpulton állítsa be a számítógépet a frissítések keresésére, és telepítse a szükséges frissítéseket. Ehhez a kiszolgáló újraindítására lehet szükség.
 
-### Szerepkörök hozzáadása
+### <a name="add-roles"></a>Szerepkörök hozzáadása
 Vegye fel az Active Directory tartományi szolgáltatásokat (AD DS) és a DNS-kiszolgálói szerepkört.
 
 1. Indítsa el a PowerShellt rendszergazdaként.
@@ -57,7 +57,7 @@ Vegye fel az Active Directory tartományi szolgáltatásokat (AD DS) és a DNS-
   Install-WindowsFeature AD-Domain-Services,DNS –restart –IncludeAllSubFeature -IncludeManagementTools
   ```
 
-### A beállításjegyzék beállításainak megadása a SID-előzmények áttelepítéséhez
+### <a name="configure-registry-settings-for-sid-history-migration"></a>A beállításjegyzék beállításainak megadása a SID-előzmények áttelepítéséhez
 
 Indítsa el a PowerShellt, és írja be a következő parancsot, amellyel beállíthatja, hogy a forrástartomány engedélyezze a távoli eljáráshívás (RPC) hozzáférését a biztonsági fiókkezelő (SAM) adatbázisához.
 
@@ -65,13 +65,13 @@ Indítsa el a PowerShellt, és írja be a következő parancsot, amellyel beáll
 New-ItemProperty –Path HKLM:SYSTEM\CurrentControlSet\Control\Lsa –Name TcpipClientSupport –PropertyType DWORD –Value 1
 ```
 
-## Új Privileged Access Management erdő létrehozása
+## <a name="create-a-new-privileged-access-management-forest"></a>Új Privileged Access Management erdő létrehozása
 
 Ezután léptesse elő a kiszolgálót egy új erdő tartományvezérlőjévé.
 
 A jelen dokumentumban a priv.contoso.local név az új erdő tartományneve.  Az erdő nevének nincs nagy jelentősége, és nem szükséges, hogy a szervezet meglévő erdőnevének alárendeltje legyen. Az új erdő tartománynevének és NetBIOS-nevének azonban egyedinek kell lennie, és különböznie kell a szervezetben található más tartományok nevétől.  
 
-### Tartomány és erdő létrehozása
+### <a name="create-a-domain-and-forest"></a>Tartomány és erdő létrehozása
 
 1. Az új tartomány létrehozásához írja be a következő parancsokat a PowerShell ablakban.  Ez egy DNS-delegálást is létrehoz az előző lépésben létrehozott felső szintű tartományban (contoso.local).  Ha azt tervezi, hogy később konfigurálja a DNS-t, akkor ne adja meg a következő paramétereket: `CreateDNSDelegation -DNSDelegationCredential $ca`.
 
@@ -87,12 +87,12 @@ A jelen dokumentumban a priv.contoso.local név az új erdő tartományneve.  Az
 
 Az erdő létrehozásának befejezése után a kiszolgáló automatikusan újraindul.
 
-### Felhasználói és szolgáltatásfiókok létrehozása
+### <a name="create-user-and-service-accounts"></a>Felhasználói és szolgáltatásfiókok létrehozása
 Hozzon létre felhasználói és szolgáltatásfiókokat a MIM szolgáltatás és a portál beállításához. Ezek a fiókok a priv.contoso.local tartomány Felhasználók tárolójába kerülnek.
 
 1. A kiszolgáló újraindítása után jelentkezzen be a PRIVDC számítógépre tartományi rendszergazdaként (PRIV\\Rendszergazda).
 
-2. Indítsa el a PowerShellt, és írja be következő parancsokat. A „Pass@word1” jelszó csak példa, más jelszót kell használnia a fiókokhoz.
+2. Indítsa el a PowerShellt, és írja be következő parancsokat. A 'Pass@word1' jelszó csak példaként szolgál, a fiókokhoz használjon más jelszót.
 
   ```
   import-module activedirectory
@@ -158,7 +158,7 @@ Hozzon létre felhasználói és szolgáltatásfiókokat a MIM szolgáltatás é
   Add-ADGroupMember "Domain Admins" MIMService
   ```
 
-### Naplózási és a bejelentkezési jogok konfigurálása
+### <a name="configure-auditing-and-logon-rights"></a>Naplózási és a bejelentkezési jogok konfigurálása
 
 Be kell állítania a naplózást ahhoz, hogy létre lehessen hozni a PAM konfigurációját az erdőkre vonatkozóan.  
 
@@ -207,7 +207,7 @@ Be kell állítania a naplózást ahhoz, hogy létre lehessen hozni a PAM konfig
   Egy perc elteltével a következő üzenet jelenik meg: „A számítógép-házirend frissítése sikeresen befejeződött.”
 
 
-### A DNS-névátirányítás konfigurálása a PRIVDC számítógépen
+### <a name="configure-dns-name-forwarding-on-privdc"></a>A DNS-névátirányítás konfigurálása a PRIVDC számítógépen
 
 A PRIVDC számítógépen a PowerShell használatával konfigurálja a DNS-névátirányítást, hogy a PRIVDC tartomány felismerje a többi meglévő erdőt.
 
@@ -224,7 +224,7 @@ A PRIVDC számítógépen a PowerShell használatával konfigurálja a DNS-név�
 > [!NOTE]
 > A többi erdőnek is képesnek kell lennie arra, hogy a PRIV erdő DNS-kéréseit átirányítsa erre a tartományvezérlőre.  Több meglévő Active Directory-erdő esetén mindegyik erdőbe fel kell vennie egy feltételes DNS-továbbítót is.
 
-### A Kerberos konfigurálása
+### <a name="configure-kerberos"></a>A Kerberos konfigurálása
 
 1. A PowerShell használatával vegyen fel egyszerű szolgáltatásneveket (SPN), hogy a SharePoint, a PAM REST API és a MIM szolgáltatás használni tudja a Kerberos-hitelesítést.
 
@@ -238,7 +238,7 @@ A PRIVDC számítógépen a PowerShell használatával konfigurálja a DNS-név�
 > [!NOTE]
 > A dokumentumban található következő lépések bemutatják, hogyan telepítheti a MIM 2016 kiszolgálói összetevőit egyetlen számítógépre. Ha a magas rendelkezésre állás érdekében további kiszolgáló hozzáadását tervezi, akkor a Kerberos további konfigurálására lesz szükség a [FIM 2010: A Kerberos-hitelesítés beállítása](http://social.technet.microsoft.com/wiki/contents/articles/3385.fim-2010-kerberos-authentication-setup.aspx) című témakörben leírtak szerint.
 
-### Delegálás konfigurálása a MIM szolgáltatásfiókok hozzáférésének megadásához
+### <a name="configure-delegation-to-give-mim-service-accounts-access"></a>Delegálás konfigurálása a MIM szolgáltatásfiókok hozzáférésének megadásához
 
 Végezze el a következő lépéseket a PRIVDC számítógépen tartományi rendszergazdaként.
 
@@ -259,7 +259,7 @@ Végezze el a következő lépéseket a PRIVDC számítógépen tartományi rend
   - **Az összes gyermekobjektum törlése**  
   - **Az összes tulajdonság olvasása**  
   - **Az összes tulajdonság írása**  
-  - **Biztonsági azonosító előzményeinek áttelepítése**  
+  - **SID-előzmények áttelepítése**  
   Kattintson a **Tovább**, majd a **Befejezés** gombra.
 
 11. Kattintson ismét a jobb gombbal a **priv.contoso.local** tartományra, és válassza a **Vezérlés delegálása** parancsot.  
@@ -271,21 +271,21 @@ Végezze el a következő lépéseket a PRIVDC számítógépen tartományi rend
 
 17. Nyisson meg egy parancssort.  
 18. Ellenőrizze az Admin SD Holder objektum hozzáférés-vezérlési listáját a PRIV tartományokban. Ha a tartomány például „priv.contoso.local” volt, írja be a következő parancsot:  
-  ```  
-  dsacls "cn=adminsdholder,cn=system,dc=priv,dc=contoso,dc=local"  
-  ```  
+  ```
+  dsacls "cn=adminsdholder,cn=system,dc=priv,dc=contoso,dc=local"
+  ```
 19. Ha szükséges, módosítsa a hozzáférés-vezérlési listát úgy, hogy a MIM szolgáltatás és a MIM összetevő frissíteni tudja az adott hozzáférés-vezérlési lista által védett csoportok tagságát.  Írja be a következő parancsot:  
-  ```  
+  ```
   dsacls "cn=adminsdholder,cn=system,dc=priv,dc=contoso,dc=local" /G priv\mimservice:WP;"member"  
-  dsacls "cn=adminsdholder,cn=system,dc=priv,dc=contoso,dc=local" /G priv\mimcomponent:WP;"member"  
-  ```  
+  dsacls "cn=adminsdholder,cn=system,dc=priv,dc=contoso,dc=local" /G priv\mimcomponent:WP;"member"
+  ```
 20. Indítsa újra a PRIVDC kiszolgálót, hogy a változtatások érvénybe lépjenek.
 
-## PRIV munkaállomás előkészítése
+## <a name="prepare-a-priv-workstation"></a>PRIV munkaállomás előkészítése
 
 Ha még nem rendelkezik munkaállomással, amely a PRIV tartományhoz fog tartozni a PRIV erőforrások (például a MIM) karbantartásának végrehajtásához, akkor kövesse az alábbi utasításokat a munkaállomás előkészítéséhez.  
 
-### A Windows 8.1 vagy a Windows 10 Enterprise telepítése
+### <a name="install-windows-81-or-windows-10-enterprise"></a>A Windows 8.1 vagy a Windows 10 Enterprise telepítése
 
 Egy új virtuális gépen, amelyen még nincs telepített szoftver, telepítse a Windows 8.1 Enterprise vagy a Windows 10 Enterprise verziót. Ez lesz a *„PRIVWKSTN”* számítógép.
 
@@ -307,6 +307,6 @@ A következő lépésben egy PAM-kiszolgáló előkészítésével foglalkozunk.
 
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Nov16_HO2-->
 
 

@@ -1,28 +1,28 @@
 ---
-title: "Szoftvertanúsítványok létrehozása | Microsoft Identity Manager"
+title: "Szoftvertanúsítványok létrehozása | Microsoft Docs"
 description: "Megtudhatja, hogyan hozhat létre és újíthat meg szoftvertanúsítványokat a Tanúsítványkezelőben profilsablonok segítségével."
 keywords: 
 author: kgremban
+ms.author: kgremban
 manager: femila
 ms.date: 07/21/2016
 ms.topic: article
-ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: fed5ada9-d80f-4825-aad7-4172ac5d71d3
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: b3ab1b9376c9b613739d87c812f4b16a4e17e6de
-ms.openlocfilehash: d5c8fc4f9a3eaab95441f7a915f7e02d55042ae9
+ms.sourcegitcommit: 1f545bfb2da0f65c335e37fb9de9c9522bf57f25
+ms.openlocfilehash: 31385a18c0b93e5ceaf78a2b6b8d5bed5aac224a
 
 
 ---
 
-# Szoftvertanúsítványok létrehozása a Tanúsítványkezelővel
+# <a name="create-software-certificates-with-certificate-manager"></a>Szoftvertanúsítványok létrehozása a Tanúsítványkezelővel
 A szoftvertanúsítványok regisztrálásához és megújításához nem kell rendszergazdának lennie, és virtuális intelligens kártyára sincs szükség. A rendszer valamikor egy tanúsítványművelet engedélyezésére fogja kérni. Ez normális.
 
-## Szoftvertanúsítvány-profilsablon létrehozása a MIM 2016 Tanúsítványkezelőben
+## <a name="create-a-software-certificate-profile-template-in-mim-2016-certificate-manager"></a>Szoftvertanúsítvány-profilsablon létrehozása a MIM 2016 Tanúsítványkezelőben
 
 1.  Hozzon létre egy sablont ahhoz a tanúsítványhoz, amelyet a virtuális intelligens kártyához fog igényelni. Indítsa el az MMC-t.
 
@@ -72,7 +72,7 @@ A szoftvertanúsítványok regisztrálásához és megújításához nem kell re
 
     10. A listáról válassza ki az újonnan létrehozott sablont (**Archivált tanúsítványsablon**), majd kattintson az **OK** gombra.
 
-## A profilsablon létrehozása
+## <a name="create-the-profile-template"></a>A profilsablon létrehozása
 
 1.  Rendszergazdai jogosultsággal jelentkezzen be a Tanúsítványkezelő portálra.
 
@@ -98,6 +98,6 @@ A szoftvertanúsítványok regisztrálásához és megújításához nem kell re
 
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Nov16_HO2-->
 
 

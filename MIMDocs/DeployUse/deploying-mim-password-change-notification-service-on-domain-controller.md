@@ -1,27 +1,27 @@
 ---
-title: "Jelszóváltozás-értesítések | Microsoft Identity Manager"
+title: "Jelszóváltozás-értesítések | Microsoft Docs"
 description: "Ezekkel a lépésekkel telepítheti és konfigurálhatja a MIM jelszóváltozás-értesítési szolgáltatást a tartományvezérlőn."
 keywords: 
 author: kgremban
+ms.author: kgremban
 manager: femila
 ms.date: 07/21/2016
 ms.topic: article
-ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 97edae12-6f86-4f9f-8620-a95a096e482a
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: b3ab1b9376c9b613739d87c812f4b16a4e17e6de
-ms.openlocfilehash: e25f4b3a60f2c432cd33c8f84c750110cbe605ee
+ms.sourcegitcommit: 1f545bfb2da0f65c335e37fb9de9c9522bf57f25
+ms.openlocfilehash: c608fabc662c74e560878773842e0236c9824daa
 
 
 ---
 
-# A MIM jelszóváltozás-értesítési szolgáltatás üzembe helyezése tartományvezérlőn
+# <a name="deploy-the-mim-password-change-notification-service-on-a-domain-controller"></a>A MIM jelszóváltozás-értesítési szolgáltatás üzembe helyezése tartományvezérlőn
 
-## A jelszóváltozás-értesítési szolgáltatás telepítése
+## <a name="install-the-password-change-notification-service"></a>A jelszóváltozás-értesítési szolgáltatás telepítése
 A tartományvezérlőkre telepíthető jelszóváltozás-értesítési szolgáltatás lehetővé teszi a jelszavak szinkronizálását a MIM által más rendszerekre, például más gyártó által készített címtárkiszolgálóra. A jelszó-szinkronizáláshoz telepítse a jelszóváltozás-értesítési szolgáltatást minden egyes tartományvezérlő kiszolgálón.
 
 1.  Tartományi rendszergazdaként jelentkezzen be egy Active Directory tartományi szolgáltatások szerepkörben működő Windows Server-alapú kiszolgálóra.
@@ -56,11 +56,11 @@ A tartományvezérlőkre telepíthető jelszóváltozás-értesítési szolgált
 
 14. A MIM jelszóváltozás-értesítési szolgáltatást érintő konfigurációs módosítások érvénybe lépéséhez indítsa újra a számítógépet. Ezt megteheti a megjelenő ablakban a **Yes** (Igen) gombra kattintva, de később is újraindíthatja a rendszert.
 
-## A jelszóváltozás-értesítési szolgáltatás konfigurálása
+## <a name="configuring-the-password-change-notification-service"></a>A jelszóváltozás-értesítési szolgáltatás konfigurálása
 Miután tartományi rendszergazdaként újra csatlakozott a tartományvezérlő kiszolgálóhoz, nyissa meg a *C:\Program Files\Microsoft Password Change Notification* mappát. Futtassa a *pcnscfg.exe* fájlt.
 
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Nov16_HO2-->
 
 

@@ -1,38 +1,38 @@
 ---
-title: "Az AD és a MIM szolgáltatás szinkronizálása | Microsoft Identity Manager"
+title: "Az AD és a MIM szolgáltatás szinkronizálása | Microsoft Docs"
 description: "Az Active Directory és a MIM-adatbázisok szinkronizálása kezelőügynökök és a MIM Sync szolgáltatás segítségével."
 keywords: 
 author: kgremban
+ms.author: kgremban
 manager: femila
 ms.date: 07/21/2016
 ms.topic: get-started-article
-ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 5e532b67-64a6-4af6-a806-980a6c11a82d
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: b3ab1b9376c9b613739d87c812f4b16a4e17e6de
-ms.openlocfilehash: f17f256653936ffd06da9fae87dccfbf1c12a553
+ms.sourcegitcommit: 1f545bfb2da0f65c335e37fb9de9c9522bf57f25
+ms.openlocfilehash: 59e050c8ccd811586e2da8476f842b853d37f2f1
 
 
 ---
 
-# A MIM 2016 telepítése: Az Active Directory és a MIM szolgáltatás szinkronizálása
+# <a name="install-mim-2016-synchronize-active-directory-and-mim-service"></a>A MIM 2016 telepítése: Az Active Directory és a MIM szolgáltatás szinkronizálása
 
 >[!div class="step-by-step"]
 [« MIM szolgáltatás és -portál](install-mim-service-portal.md)
 
 > [!NOTE]
-> Ez az útmutató egy Contoso nevű fiktív vállalat neveit és értékeit használja szemléltetésként. Ezeket helyettesítse a saját neveivel és értékeivel. Például:
+> Ez az útmutató egy Contoso nevű fiktív vállalat neveit és értékeit használja szemléltetésként. Ezeket helyettesítse a saját neveivel és értékeivel. Példa:
 > - Tartományvezérlő neve – **mimservername**
 > - Tartománynév – **contoso**
 > - Jelszó – **Pass@word1**
 
 Alapértelmezés szerint a MIM Synchronization Service (MIM Sync) szolgáltatáshoz nincs összekötő konfigurálva.  Az első lépés általában a MIM szolgáltatás adatbázisának feltöltése a meglévő Active Directory-fiókokkal a MIM Sync szolgáltatás használatával. Ehhez a MIM Sync Service alkalmazást kell használni.
 
-## A MIM-kezelőügynök létrehozása
+## <a name="create-the-mim-management-agent"></a>A MIM-kezelőügynök létrehozása
 A MIM-kezelőügynök (MA) összekötőként funkcionál a MIM Sync és a MIM szolgáltatás között. Az összekötő a Create Management Agent (Kezelőügynök létrehozása) varázslóval hozható létre.
 
 A MIM-kezelőügynök konfigurálásához meg kell adnia egy felhasználói fiókot. A dokumentumban erre a fiókra **MIMMA** néven hivatkozunk.
@@ -40,15 +40,15 @@ A MIM-kezelőügynök konfigurálásához meg kell adnia egy felhasználói fió
 > [!NOTE]
 > A MIM-kezelőügynökhöz használt fióknak azonosnak kell lennie a MIM szolgáltatás telepítésekor megadott fiókkal.
 
-###A MIM-kezelőügynök létrehozása
+###<a name="to-create-the-mim-ma"></a>A MIM-kezelőügynök létrehozása
 
 1.  Indítsa el a Synchronization Service Managert.
 
-2.  A Create Management Agent (Kezelőügynök létrehozása) varázsló megnyitásához válassza az **Actions** (Műveletek) menü **Create** (Létrehozás) parancsát.
+2.  A Create Management Agent (Kezelőügynök létrehozása) varázsló megnyitásához váltson a **Managment Actions** (Felügyeleti műveletek) lapra, majd válassza az **Actions** (Műveletek) menü **Create** (Létrehozás) parancsát.
 
 3.  A **Create Management Agent** (Kezelőügynök létrehozása) oldalon adja meg a következő beállításokat, majd kattintson a **Next** (Tovább) gombra.
 
-    -   Management agent for (Felügyeleti ügynök a következőhöz): MIM Service management agent (A MIM szolgáltatás felügyeleti ügynöke)
+    -   Management agent for (Felügyeleti ügynök a következőhöz): FIM Service management agent (A FIM szolgáltatás felügyeleti ügynöke)
 
     -   Name (Név): MIMMA
 
@@ -56,7 +56,7 @@ A MIM-kezelőügynök konfigurálásához meg kell adnia egy felhasználói fió
 
     -   Server (Kiszolgáló): localhost
 
-    -   Database (Adatbázis): MIMService
+    -   Database (Adatbázis): FIMService
 
     -   MIM Service base address (MIM szolgáltatás alapcíme): http://localhost:5725
 
@@ -64,23 +64,23 @@ A MIM-kezelőügynök konfigurálásához meg kell adnia egy felhasználói fió
 
     -   User name (Felhasználónév): mimma
 
-    -   Password (Jelszó): Pass@word
+    -   Jelszó: Pass@word
 
     -   Domain (Tartomány): contoso
 
 5.  A **Selected Object Types** (Kijelölt objektumtípusok) lapon győződjön meg arról, hogy az alábbiakban feltüntetett objektumtípusok ki vannak jelölve, majd kattintson a **Next** (Tovább) gombra.
 
-    -   ExpectedRuleEntry
-
     -   DetectedRuleEntry
 
-    -   SynchronizationRule
-
-    -   Person
+    -   ExpectedRuleEntry
 
     -   Csoport
 
-6.  A **Selected Attributes** (Kijelölt attribútumok) lapon ellenőrizze, hogy a feltüntetett attribútumok mind ki vannak-e jelölve, majd kattintson a **Next** (Tovább) gombra.
+    -   Person
+
+    -   SynchronizationRule
+
+6.  A **Selected Attributes** (Kijelölt attribútumok) lapon jelölje be a **Show All** (Összes megjelenítése) jelölőnégyzetet, ellenőrizze, hogy a feltüntetett attribútumok mind ki vannak-e jelölve, majd kattintson a **Next** (Tovább) gombra.
 
 7.  A **Configure Connector Filter** (Összekötőszűrő konfigurálása) lapon kattintson a **Next** (Tovább) gombra.
 
@@ -90,28 +90,18 @@ A MIM-kezelőügynök konfigurálásához meg kell adnia egy felhasználói fió
     - Kattintson az **Add Mapping** (Megfeleltetés hozzáadása) elemre a Mapping (Megfeleltetés) párbeszédpanel megnyitásához.
     - A **Metaverse object type** (Metaverzum-objektum típusa) listában válassza a **person** (személy) elemet.
     - A Mapping (Megfeleltetés) párbeszédpanel bezárásához kattintson az **OK** gombra.
+    - A **Data Source Object Type** (Adatforrás-objektum típusa) listában válassza a **Group** (Csoport) elemet.
+    - Kattintson az **Add Mapping** (Megfeleltetés hozzáadása) elemre a Mapping (Megfeleltetés) párbeszédpanel megnyitásához.
+    - A **Metaverse object type** (Metaverzum-objektum típusa) listában válassza a **group** (csoport) elemet.
+    - A Mapping (Megfeleltetés) párbeszédpanel bezárásához kattintson az **OK** gombra.
 
-9.  A **Configure Attribute Flow** (Attribútumfolyam konfigurálása) lapon alkalmazza a következő attribútumfolyam-megfeleltetéseket, majd kattintson a **Next** (Tovább) gombra.
+9.  A **Configure Attribute Flow** (Attribútumfolyam konfigurálása) lapon hozza létre az alábbiakban látható attribútumfolyam-megfeleltetéseket, majd kattintson a **Next** (Tovább) gombra.
 
-    | **Adatforrás-attribútum** | **Folyamat iránya** | **Metaverzum-attribútum** |
-    |-|-|-|
-    | AccountName | Exportálás | accountName |
-    | DisplayName | Exportálás | displayName |
-    | Domain | Exportálás | domain |
-    | EmployeeID | Exportálás | employeeID |
-    | EmployeeType | Exportálás | employeeType |
-    | E-mail | Exportálás | Levelezés |
-    | FirstName | Exportálás | firstName |
-    | LastName | Exportálás | lastName |
-    | ObjectSID | Exportálás | objectSid |
-
-10.  A Data source object type (Adatforrás objektumtípusa) beállításnál válassza a **Person** (Személy) lehetőséget.
-
-    -   A Metaverse object type (Metaverzum-objektum típusa) beállításnál válassza a **Person** (Személy) lehetőséget.
+    -   A Data source object type (Adatforrás objektumtípusa) és a Metaverse object type (Metaverzum objektumtípusa) beállításnál válassza a **Person** (Személy) lehetőséget.
 
     -   Válassza a **Direct** (Közvetlen) leképezéstípust.
 
-    -   Az előbbi táblázatban szereplő minden sornál végezze el a következő lépéseket:
+    -   A következő táblázatban szereplő minden sornál végezze el az alábbi lépéseket:
 
         -   Válassza ki a táblázatban a sorhoz látható **Flow direction** (Folyamat iránya) beállítást.
 
@@ -120,6 +110,18 @@ A MIM-kezelőügynök konfigurálásához meg kell adnia egy felhasználói fió
         -   Válassza ki a táblázatban a sorhoz látható **Metaverse attribute** (Metaverzum-attribútum) beállítást.
 
         -   A folyamat leképezésének alkalmazásához kattintson a **New** (Új) elemre.
+
+    | **Adatforrás-attribútum** | **Folyamat iránya** | **Metaverzum-attribútum** |
+    |-|-|-|
+    | AccountName | Exportálás | accountName |
+    | DisplayName | Exportálás | displayName |
+    | Domain | Exportálás | domain |
+    | E-mail | Exportálás | Levelezés |
+    | EmployeeID | Exportálás | employeeID |
+    | EmployeeType | Exportálás | employeeType |
+    | FirstName | Exportálás | firstName |
+    | LastName | Exportálás | lastName |
+    | ObjectSID | Exportálás | objectSid |
 
     -   Válassza ki **Group** (Csoport) lehetőséget az adatforrás típusaként és a metaverzum-objektum típusaként.
 
@@ -142,26 +144,25 @@ A MIM-kezelőügynök konfigurálásához meg kell adnia egy felhasználói fió
     | Domain | Exportálás | domain |
     | E-mail | Exportálás | Levelezés |
     | MailNickName | Exportálás | mailNickName |
-    | Tag | Exportálás | tag |
+    | Tag | Exportálás | member |
     | ObjectSID | Exportálás | objectSid |
     | Hatókör | Exportálás | hatókör |
     | Típus | Exportálás | típus |
     | MembershipAddWorkflow | Exportálás | membershipAddWorkflow |
     | MembershipLocked | Exportálás | membershipLocked |
-    | DisplayName | Importálás | displayName |
-    | Hatókör | Importálás | hatókör |
-    | Típus | Importálás | típus |
-    | Tag | Importálás | tag |
     | AccountName | Importálás | accountName |
     | DisplayedOwner | Importálás | displayedOwner |
+    | DisplayName | Importálás | displayName |
     | MailNickName | Importálás | mailNickName |
+    | Tag | Importálás | member |
+    | Hatókör | Importálás | hatókör |
+    | Típus | Importálás | típus |
 
+10.  A **Configure Deprovisioning** (Megszüntetés konfigurálása) lapon kattintson a **Next** (Tovább) gombra.
 
-11.  A **Configure Deprovisioning** (Megszüntetés konfigurálása) lapon kattintson a **Next** (Tovább) gombra.
+11.  A kezelőügynök létrehozásához a **Configure Extensions** (Bővítmények konfigurálása) lapon kattintson a **Finish** (Befejezés) gombra.
 
-12.  A kezelőügynök létrehozásához a **Configure Extensions** (Bővítmények konfigurálása) lapon kattintson a **Finish** (Befejezés) gombra.
-
-## Az AD-kezelőügynök létrehozása
+## <a name="create-the-ad-management-agent"></a>Az AD-kezelőügynök létrehozása
 Az Active Directory-kezelőügynök összekötőként szolgál az AD tartományi szolgáltatásokhoz. Az összekötő a Create Management Agent (Kezelőügynök létrehozása) varázslóval hozható létre.
 
 1. A Create Management Agent (Kezelőügynök létrehozása) varázsló megnyitásához válassza az **Actions** (Műveletek) menü **Create** (Létrehozás) parancsát.
@@ -194,11 +195,7 @@ Az Active Directory-kezelőügynök összekötőként szolgál az AD tartományi
 
     - Az **Object types** (Objektumtípusok) listában jelölje ki a **user** (felhasználó) és a **group** (csoport) típust.
 
-7. A **Select Attributes** (Attribútumok kijelölése) lapon adja meg a következő beállításokat, majd kattintson a **Next** (Tovább) gombra:
-
-    - Válassza a **Show All** (Az összes megjelenítése) elemet.
-
-8. Az **Attributes** (Attribútumok) listában jelölje ki a következő attribútumokat:
+7. A **Select Attributes** (Attribútumok kiválasztása) lapon kattintson a **Show ALL** (Az ÖSSZES megjelenítése) elemre, válassza ki a következő attribútumokat, majd kattintson a **Next** (Tovább) gombra:
 
     -   company
     -   displayName
@@ -206,8 +203,8 @@ Az Active Directory-kezelőügynök összekötőként szolgál az AD tartományi
     -   employeeType
     -   givenName
     -   groupType
-    -   manager
     -   managedBy
+    -   manager
     -   member
     -   objectSid
     -   sAMAccountName
@@ -216,22 +213,22 @@ Az Active Directory-kezelőügynök összekötőként szolgál az AD tartományi
     -   unicodePwd
     -   userAccountControl
 
-9. A **Configure Connector Filter** (Összekötőszűrő konfigurálása) lapon kattintson a **Next** (Tovább) gombra.
+8. A **Configure Connector Filter** (Összekötőszűrő konfigurálása) lapon kattintson a **Next** (Tovább) gombra.
 
-10. A**Configure Join and Projection Rules** (Csatlakozási és leképezési szabályok konfigurálása) lapon kattintson a **Next** (Tovább) gombra.
+9. A**Configure Join and Projection Rules** (Csatlakozási és leképezési szabályok konfigurálása) lapon kattintson a **Next** (Tovább) gombra.
 
-11. A **Configure Attribute Flow** (Attribútumfolyam konfigurálása) lapon kattintson a **Next** (Tovább) gombra.
+10. A **Configure Attribute Flow** (Attribútumfolyam konfigurálása) lapon kattintson a **Next** (Tovább) gombra.
 
-12. A **Configure Deprovisioning** (Megszüntetés konfigurálása) lapon kattintson a **Next** (Tovább) gombra.
+11. A **Configure Deprovisioning** (Megszüntetés konfigurálása) lapon kattintson a **Next** (Tovább) gombra.
 
-13. A **Configure Extensions** (Bővítmények konfigurálása) lapon kattintson a **Finish** (Befejezés) gombra.
+12. A **Configure Extensions** (Bővítmények konfigurálása) lapon kattintson a **Finish** (Befejezés) gombra.
 
 
-## Futtatási profilok létrehozása
+## <a name="create-run-profiles"></a>Futtatási profilok létrehozása
 
 Hozzon létre futtatási profilokat az ADMA és a MIMMA összekötőkhöz.
 
-### Futtatási profilok létrehozása az ADMA összekötőhöz
+### <a name="create-run-profiles-for-the-adma-connector"></a>Futtatási profilok létrehozása az ADMA összekötőhöz
 
 Az alábbi táblázatban az ADMA összekötőhöz létrehozandó öt futtatási profil szerepel:
 
@@ -263,7 +260,7 @@ Futtatási profilok létrehozása az ADMA összekötőhöz:
 
 5. Kattintson az **OK** gombra a Configure Run Profiles (Futtatási profilok konfigurálása) párbeszédpanel bezárásához.
 
-### Futtatási profilok létrehozása a MIMMA összekötőhöz
+### <a name="create-run-profiles-for-the-mimma-connector"></a>Futtatási profilok létrehozása a MIMMA összekötőhöz
 
 Az alábbi táblázatban a MIMMA összekötőhöz tartozó öt kapcsolódó futtatási profil szerepel:
 
@@ -295,7 +292,7 @@ Futtatási profilok létrehozása a MIMMA összekötőhöz:
 
 5. Kattintson az **OK** gombra a Configure Run Profiles (Futtatási profilok konfigurálása) párbeszédpanel bezárásához.
 
-## A MIM szolgáltatás konfigurálása
+## <a name="configure-the-mim-service"></a>A MIM szolgáltatás konfigurálása
 
 Az AD által a MIM szolgáltatás esetében a felhasználók bejövő szinkronizálásához használt szabály a MIM-portál segítségével hozható létre.
 
@@ -322,7 +319,7 @@ Az AD felhasználókra vonatkozó bejövő szinkronizálási szabályának létr
 
     -   A Relationship Criteria (Kapcsolati feltételek) konfigurálásához válassza az **ObjectSID** elemet a MetaverseObject:person(Attribute) és a ConnectedSystemObject:person(Attribute) listából.
 
-    -   Válassza a **Create Resource in MIM** (Erőforrás létrehozása a MIM-ben) lehetőséget.
+    -   Válassza a **Create Resource in FIM** (Erőforrás létrehozása a FIM-ben) lehetőséget.
 
 7. A **Inbound Attribute Flow** (Bejövő attribútumfolyam) lapon adja meg a következő információkat, majd kattintson a **Next** (Tovább) gombra:
 
@@ -349,10 +346,10 @@ Az AD felhasználókra vonatkozó bejövő szinkronizálási szabályának létr
 
 8. A **Summary** (Összegzés) lapon kattintson a **Submit** (Küldés) gombra.
 
-## A tesztkörnyezet inicializálása
+## <a name="initialize-the-testing-environment"></a>A tesztkörnyezet inicializálása
 A MIM-konfiguráció AD-ből származó adatokkal való teszteléséhez a következő négy lépést kell elvégeznie:
 
-### Kiépítés engedélyezése
+### <a name="enable-provisioning"></a>Kiépítés engedélyezése
 
 1. Indítsa el a Synchronization Service Managert.
 
@@ -362,7 +359,7 @@ A MIM-konfiguráció AD-ből származó adatokkal való teszteléséhez a követ
 
 4. Kattintson az **OK** gombra az Options (Beállítások) párbeszédpanel bezárásához.
 
-### A MIMMA inicializálása
+### <a name="initialize-the-mimma"></a>A MIMMA inicializálása
 
 Futtasson egy teljes szinkronizálási ciklust ezen az összekötőn. A teljes ciklus a következő futtatási profilokból tevődik össze:
 
@@ -387,13 +384,13 @@ A négy futtatási profil végrehajtásához kövesse az alábbi lépéseket.
 
     - A futtatási profil elindításához kattintson az **OK** gombra.
 
-#### Az attribútumfolyam precedenciájának konfigurálása
+#### <a name="configure-attribute-flow-precedence"></a>Az attribútumfolyam precedenciájának konfigurálása
 
 A MIM-összekötő inicializálása során a rendszer a beállított szinkronizálási szabályokat beemelte a metaverzumba.
 
 Úgy állítsa be az összekötő által szolgáltatott attribútumok attribútumfolyam-precedenciáját, hogy az AD már meglévő attribútumai bekerülhessenek a metaverzumba, később pedig a MIM szolgáltatás adatbázisába is.
 
-### Az ADMA inicializálása
+### <a name="initialize-the-adma"></a>Az ADMA inicializálása
 
 Az Active Directory-összekötő inicializálásához teljes importálást kell futtatnia, és teljes szinkronizálást kell végrehajtania az importált adatokon. A teljes importálás során az AD-ből a meglévő objektumokat a kapcsolódási térbe kerülnek. A teljes szinkronizálás során a szinkronizálási szabályok a MIM-összekötő szabályainak megfelelően módosulnak.
 
@@ -411,7 +408,7 @@ Az Active Directory-összekötő inicializálásához teljes importálást kell 
 
     - A futtatási profil elindításához kattintson az **OK** gombra.
 
-### A MIM szolgáltatás adatbázisának feltöltése
+### <a name="populate-the-mim-service-database"></a>A MIM szolgáltatás adatbázisának feltöltése
 
 A MIM szolgáltatás adatbázisának objektumokkal való feltöltéséhez szinkronizálási ciklust kell futtatnia a MIMMA összekötőn. Ez a ciklus a következő szakaszokból áll:
 
@@ -438,6 +435,6 @@ A három futtatási profil végrehajtásához kövesse az alábbi lépéseket.
 
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Nov16_HO2-->
 
 

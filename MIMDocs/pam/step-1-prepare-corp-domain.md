@@ -1,25 +1,25 @@
 ---
-title: "A PAM üzembe helyezése, 1. lépés - CORP tartomány | Microsoft Identity Manager"
+title: "A PAM üzembe helyezése, 1. lépés – CORP tartomány | Microsoft Docs"
 description: "CORP tartomány előkészítése létező vagy új identitásokkal a Privileged Identity Manager számára"
 keywords: 
 author: kgremban
+ms.author: kgremban
 manager: femila
 ms.date: 07/15/2016
 ms.topic: article
-ms.prod: microsoft-identity-manager
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
 ms.assetid: 4b524ae7-6610-40a0-8127-de5a08988a8a
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: ae4c40c73dd9d5860f42e00765a7e34e8ca397a9
-ms.openlocfilehash: 9a2fafa86c5c928339ff8d7ad1593472046ccb98
+ms.sourcegitcommit: 1f545bfb2da0f65c335e37fb9de9c9522bf57f25
+ms.openlocfilehash: 127d368c15cce125ba7f69302cfa329b600d9498
 
 
 ---
 
-# 1. lépés – A gazdagép és a CORP tartomány előkészítése
+# <a name="step-1-prepare-the-host-and-the-corp-domain"></a>1. lépés – A gazdagép és a CORP tartomány előkészítése
 
 >[!div class="step-by-step"]
 [2. lépés »](step-2-prepare-priv-domain-controller.md)
@@ -29,11 +29,11 @@ Ebben a lépésben előkészíti a gazdagépet a megerősített környezet szám
 
 Ha már van olyan meglévő Active Directory- (AD-) tartománya, melynek tartományvezérlőjén a Windows Server 2012 R2 vagy későbbi rendszert fut, illetve ahol Ön a tartományi rendszergazda, azt a tartományt is használhatja.  
 
-## A CORP-tartományvezérlő előkészítése
+## <a name="prepare-the-corp-domain-controller"></a>A CORP-tartományvezérlő előkészítése
 
 Ez a szakasz ismerteti, hogyan állíthat be tartományvezérlőt egy CORP tartományhoz. A CORP tartományon belül a rendszergazda felhasználókat a megerősített környezet felügyeli. Ebben a példában *contoso.local* lesz a CORP tartomány DNS-neve.
 
-### A Windows Server telepítése
+### <a name="install-windows-server"></a>A Windows Server telepítése
 
 Telepítse a Windows Server 2012 R2 vagy a Windows Server 2016 Technical Preview 4 vagy újabb verzióját egy virtuális gépre a *CORPDC* elnevezésű számítógép létrehozásához.
 
@@ -47,7 +47,7 @@ Telepítse a Windows Server 2012 R2 vagy a Windows Server 2016 Technical Preview
 
 5. A kiszolgáló újraindítása után jelentkezzen be rendszergazdaként. Nyissa meg a Vezérlőpultot. Állítsa be a számítógépet a frissítések keresésére, és telepítse a szükséges frissítéseket. Indítsa újra a kiszolgálót.
 
-### Szerepkörök beállítása tartományvezérlő létrehozásához
+### <a name="add-roles-to-establish-a-domain-controller"></a>Szerepkörök beállítása tartományvezérlő létrehozásához
 
 Ebben a szakaszban be fogja állítani az Active Directory tartományi szolgáltatások (AD DS), a DNS-kiszolgáló, illetve a (Fájl- és adattárolási szolgáltatások szerepkör részét képező) Fájlkiszolgáló szerepkört, majd ezt a kiszolgálót egy új, contoso.local nevű erdő tartományvezérlőjévé lépteti elő.
 
@@ -72,7 +72,7 @@ Ebben a szakaszban be fogja állítani az Active Directory tartományi szolgált
 
 4. A kiszolgáló újraindítása után jelentkezzen be a CORPDC számítógépre tartományi rendszergazdaként. Ez általában a CONTOSO\\Rendszergazda nevű felhasználó, aki ismeri a Windowsnak a CORPDC számítógépre történő telepítésekor megadott jelszót.
 
-### Csoport létrehozása
+### <a name="create-a-group"></a>Csoport létrehozása
 
 Hozzon létre egy csoportot az Active Directory naplózási céljaira, feltéve, hogy még nincs ilyen csoport. A csoport nevének a NetBIOS-tartománynévnek kell lennie, melyet három dollárjel követ, például: *CONTOSO$$$*.
 
@@ -90,7 +90,7 @@ Minden tartományban jelentkezzen be egy tartományvezérlőre tartományi rends
 
 Bizonyos esetekben előfordulhat, hogy a csoport már létezik – ami normális, ha a tartományt az AD áttelepítési forgatókönyveihez is használják.
 
-### További felhasználók és csoportok létrehozása bemutatóhoz
+### <a name="create-additional-users-and-groups-for-demonstration-purposes"></a>További felhasználók és csoportok létrehozása bemutatóhoz
 
 Ha létrehozott egy új CORP tartományt, további felhasználókat és csoportokat kell létrehoznia a PAM-forgatókönyv bemutatásához. A bemutatási célokra használt felhasználók és csoportok nem lehetnek tartományi rendszergazdák, és nem szabályozhatják őket az AD adminSDHolder beállításai.
 
@@ -101,7 +101,7 @@ Létre fogjuk hozni a *CorpAdmins* nevű biztonsági csoportot és a *Ilona* nev
 
 1. Indítsa el a PowerShellt.
 
-2. Írja be a következő parancsokat: A „Pass@word1” jelszót helyettesítse egy másik jelszóval.
+2. Írja be a következő parancsokat: A 'Pass@word1' jelszót helyettesítse egy másik jelszóval.
 
   ```
   import-module activedirectory
@@ -119,7 +119,7 @@ Létre fogjuk hozni a *CorpAdmins* nevű biztonsági csoportot és a *Ilona* nev
   Set-ADUser –identity Jen –Enabled 1 -DisplayName "Jen"
   ```
 
-### Naplózás konfigurálása
+### <a name="configure-auditing"></a>Naplózás konfigurálása
 
 A meglévő erdőkben be kell állítania a naplózást ahhoz, hogy létre lehessen hozni a PAM konfigurációját ezekre az erdőkre vonatkozóan.  
 
@@ -147,7 +147,7 @@ Minden tartományban jelentkezzen be egy tartományvezérlőre tartományi rends
 
 Néhány perc elteltével **A számítógép-házirend frissítése sikeresen befejeződött** üzenetnek kell megjelennie.
 
-### Beállításjegyzék-beállítások konfigurálása
+### <a name="configure-registry-settings"></a>Beállításjegyzék-beállítások konfigurálása
 
 Ebben a szakaszban konfigurálni fogja az SID-előzmények áttelepítéséhez szükséges beállításjegyzék beállításait. Ezekre a Privileged Access Management-csoportok létrehozásához lesz szükség.
 
@@ -163,14 +163,14 @@ Ebben a szakaszban konfigurálni fogja az SID-előzmények áttelepítéséhez s
 
 Ez újraindítja a tartományvezérlőt, a CORPDC gépet. Ezzel a beállításjegyzék-beállítással kapcsolatban bővebben lásd: [How to troubleshoot inter-forest sIDHistory migration with ADMTv2 ](http://support.microsoft.com/kb/322970) (A SID-előzmények erdők között, ADMTv2-vel végzett áttelepítésekor jelentkező hibák elhárítása).
 
-## CORP-munkaállomás és -erőforrás előkészítése
+## <a name="prepare-a-corp-workstation-and-resource"></a>CORP-munkaállomás és -erőforrás előkészítése
 
 Ha még nincs csatlakoztatva munkaállomás a tartományhoz, készítse elő a számítógépet az alábbi lépésekkel.  
 
 > [!NOTE]
 > Ha a tartományhoz már csatlakoztatott egy munkaállomást, ugorjon az [Erőforrás létrehozása bemutató céljára](#create-a-resource-for-demonstration-purposes) című részhez.
 
-### A Windows 8.1 vagy a Windows 10 Enterprise telepítése virtuális gépként
+### <a name="install-windows-81-or-windows-10-enterprise-as-a-vm"></a>A Windows 8.1 vagy a Windows 10 Enterprise telepítése virtuális gépként
 
 Egy új virtuális gépre, amelyre még nincs telepítve szoftver, telepítse a Windows 8.1 Enterprise vagy a Windows 10 Enterprise verziót. Ez lesz a *CORPWKSTN* számítógép.
 
@@ -182,7 +182,7 @@ Egy új virtuális gépre, amelyre még nincs telepítve szoftver, telepítse a 
 
 4. A Vezérlőpulton csatlakoztassa a CORPWKSTN számítógépet a contoso.local tartományhoz. Meg kell adnia a Contoso tartomány rendszergazdai hitelesítő adatait. Amikor ezzel elkészült, indítsa újra a CORPWKSTN számítógépet.
 
-### Erőforrás létrehozása bemutató céljára
+### <a name="create-a-resource-for-demonstration-purposes"></a>Erőforrás létrehozása bemutató céljára
 
 A PAM és a biztonságicsoport-alapú hozzáférés-vezérlés bemutatásához szüksége lesz egy erőforrásra.  Ha még nincs ilyen erőforrása, bemutató céljából használhat fájlmappát is.  Ez a contoso.local tartományban létrehozott „Ilona” és „CorpAdmins” nevű AD-objektumot fogja használni.
 
@@ -215,6 +215,6 @@ A következő lépésben a PRIV tartományvezérlő előkészítésével foglalk
 
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Nov16_HO2-->
 
 

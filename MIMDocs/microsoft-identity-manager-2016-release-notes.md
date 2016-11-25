@@ -1,8 +1,9 @@
 ---
-title: "A MIM 2016 kibocsátási megjegyzései | Microsoft Identity Manager"
+title: "A MIM 2016 kibocsátási megjegyzései | Microsoft Docs"
 description: "Információkat tartalmaz a legújabb MIM-kiadásokról."
 keywords: 
 author: kgremban
+ms.author: kgremban
 manager: femila
 ms.date: 07/21/2016
 ms.topic: article
@@ -13,17 +14,17 @@ ms.assetid: 297e25a5-668b-45a4-b2de-7767ebc59100
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: b3ab1b9376c9b613739d87c812f4b16a4e17e6de
-ms.openlocfilehash: ee44489d6b45746bacb4d273754735ef7dd69b6a
+ms.sourcegitcommit: 1f545bfb2da0f65c335e37fb9de9c9522bf57f25
+ms.openlocfilehash: 22982f6bf5d925d7c0ca0d83157bd93f8808783a
 
 
 ---
 
-# A MIM 2016 kibocsátási megjegyzései
+# <a name="release-notes-for-mim-2016"></a>A MIM 2016 kibocsátási megjegyzései
 Egyelőre nincsenek kibocsátási megjegyzések.
 
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Nov16_HO2-->
 
 

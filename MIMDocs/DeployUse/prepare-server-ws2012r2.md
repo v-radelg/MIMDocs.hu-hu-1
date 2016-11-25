@@ -1,25 +1,25 @@
 ---
-title: "A Windows Server konfigurálása | Microsoft Identity Manager"
+title: "A Windows Server konfigurálása | Microsoft Docs"
 description: "A Windows Server 2012 R2 és a MIM 2016 együttműködésének előkészítési lépései és minimumkövetelményei"
 keywords: 
 author: kgremban
+ms.author: kgremban
 manager: femila
 ms.date: 08/11/2016
 ms.topic: get-started-article
-ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 51507d0a-2aeb-4cfd-a642-7c71e666d6cd
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 739797502e09c2b92e35767e2c943308cd1de5c9
-ms.openlocfilehash: bdf1f4b7c5762095f4986506f9e17369dadea011
+ms.sourcegitcommit: 1f545bfb2da0f65c335e37fb9de9c9522bf57f25
+ms.openlocfilehash: 06d2365808858dc09d04ab37eafa9d6e3212cbcf
 
 
 ---
 
-# Identitáskezelési kiszolgáló beállítása: Windows Server 2012 R2
+# <a name="set-up-an-identity-management-server-windows-server-2012-r2"></a>Identitáskezelési kiszolgáló beállítása: Windows Server 2012 R2
 
 >[!div class="step-by-step"]
 [« Tartomány előkészítése](preparing-domain.md)
@@ -31,7 +31,7 @@ ms.openlocfilehash: bdf1f4b7c5762095f4986506f9e17369dadea011
 > - Tartománynév – **contoso**
 > - Jelszó – **Pass@word1**
 
-## A Windows Server 2012 R2 csatlakoztatása a tartományhoz
+## <a name="join-windows-server-2012-r2-to-your-domain"></a>A Windows Server 2012 R2 csatlakoztatása a tartományhoz
 
 Készítsen elő egy Windows Server 2012 R2 rendszerű számítógépet legalább 8 GB RAM-mal. A telepítéskor válassza a „Windows Server 2012 R2 Standard (kiszolgáló grafikus felhasználói felülettel) x64” kiadást.
 
@@ -62,7 +62,7 @@ Készítsen elő egy Windows Server 2012 R2 rendszerű számítógépet legaláb
     Install-WindowsFeature Web-WebServer, Net-Framework-Features,rsat-ad-powershell,Web-Mgmt-Tools,Application-Server,Windows-Identity-Foundation,Server-Media-Foundation,Xps-Viewer –includeallsubfeature -restart -source d:\sources\SxS
     ```
 
-## A kiszolgálói biztonsági házirend konfigurálása
+## <a name="configure-the-server-security-policy"></a>A kiszolgálói biztonsági házirend konfigurálása
 
 A kiszolgálói biztonsági házirendben engedélyezze az újonnan létrehozott fiókok szolgáltatásként történő futtatását.
 
@@ -93,7 +93,7 @@ A kiszolgálói biztonsági házirendben engedélyezze az újonnan létrehozott 
 12. Zárja be a Helyi biztonsági házirend ablakot.
 
 
-## Az IIS Windows-hitelesítés üzemmód módosítása
+## <a name="change-the-iis-windows-authentication-mode"></a>Az IIS Windows-hitelesítés üzemmód módosítása
 
 1.  Indítson el egy PowerShell-ablakot.
 
@@ -111,6 +111,6 @@ A kiszolgálói biztonsági házirendben engedélyezze az újonnan létrehozott 
 
 
 
-<!--HONumber=Aug16_HO2-->
+<!--HONumber=Nov16_HO2-->
 
 
