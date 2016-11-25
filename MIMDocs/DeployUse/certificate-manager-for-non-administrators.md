@@ -1,30 +1,30 @@
 ---
-title: "Intelligens kártyák önkiszolgáló megújítása | Microsoft Identity Manager"
+title: "Intelligens kártyák önkiszolgáló megújítása | Microsoft Docs"
 description: "Megtudhatja, hogyan regisztrálhat intelligens kártyákat a számítógépükhöz rendszergazdai hozzáféréssel nem rendelkező felhasználók számára, hogy használhassák a Tanúsítványkezelőt."
 keywords: 
 author: kgremban
+ms.author: kgremban
 manager: femila
 ms.date: 07/21/2016
 ms.topic: article
-ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: bfabc562-a2f0-4cff-ac31-36927f41e102
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: b3ab1b9376c9b613739d87c812f4b16a4e17e6de
-ms.openlocfilehash: 2fddede481b5ba677d0d463be4b14cda4b463865
+ms.sourcegitcommit: 1f545bfb2da0f65c335e37fb9de9c9522bf57f25
+ms.openlocfilehash: 76d72211e1dbddb2647729c796ac19eb82a3b2c6
 
 
 ---
 
-# Intelligens kártyák regisztrálása nem rendszergazdák számára
+# <a name="enroll-smart-cards-for-nonadministrators"></a>Intelligens kártyák regisztrálása nem rendszergazdák számára
 Ha a felhasználó nem helyi rendszergazda, akkor alapesetben nem jogosult intelligens kártyát regisztrálni a saját számítógépén. A következő folyamat bemutatja, miként lehet áthidalni ezt a korlátozást.
 
-## Intelligens kártya megújításának engedélyezése nem rendszergazda felhasználók számára az MIM 2016 Tanúsítványkezelőben
+## <a name="enabling-smart-card-renewal-for-nonadmins-in-mim-2016-certificate-manager"></a>Intelligens kártya megújításának engedélyezése nem rendszergazda felhasználók számára az MIM 2016 Tanúsítványkezelőben
 
-1.  **Csomagolja ki az appx-fájlt.**
+1.  **Csomagolja ki az appx-fájlt**
 
     Igényeljen aláíró tanúsítványt. Kövesse a következő leírást: [Sign Windows 8 applications using an internal PKI](http://blogs.technet.com/b/deploymentguys/archive/2013/06/14/signing-windows-8-applications-using-an-internal-pki.aspx) (Windows 8-alkalmazások aláírása belső nyilvános kulcsú infrastruktúrával). A „Sign the Application” (Az alkalmazás aláírása) lépésnél álljon meg. Nevezze el az exportált PFX-fájlt. Exportáljon egy CER-fájlba is, majd importálja az ügyfélre az új aláíró tanúsítvány CER-fájljával.
 
@@ -36,7 +36,7 @@ Ha a felhasználó nem helyi rendszergazda, akkor alapesetben nem jogosult intel
 
     `cd appx`
 
-2.  **Módosítsa a konfigurációs fájlt.**
+2.  **Módosítsa a konfigurációs fájlt**
 
     Nevezze át a fájlt nevű `CustomDataExample.xml custom.data`.. A Tanúsítványkezelő alkalmazás ezt a fájlnevet fogja keresni.
 
@@ -80,22 +80,22 @@ Ha a felhasználó nem helyi rendszergazda, akkor alapesetben nem jogosult intel
 
     6.  Görgessen le, majd kattintson az **OK** gombra.
 
-5.  **Hozzon létre egy nem rendszergazdai fiókot az ügyfélszámítógépen.**
+5.  **Hozzon létre egy nem rendszergazdai fiókot az ügyfélszámítógépen**
 
     A nem rendszergazda felhasználók nem hozhatják létre a virtuális intelligens kártyát a TPM-modulon, ezért létre kell hoznia azt számukra.
 
-6.  **Hozzon létre egy virtuális intelligens kártyát a TpmVscMgr paranccsal.**
+6.  **Hozzon létre egy virtuális intelligens kártyát a TpmVscMgr paranccsal**
 
     Továbbra is rendszergazdaként az alábbi parancs futtatásával hozzon létre egy üres virtuális intelligens kártyát a kívánt számítógépen. Ez az Intune-ban, az SCCM-ben vagy csoportházirendekkel is lehetséges.
 
     `TpmVscMgr create /name MyVSC /pin default /adminkey default /generate`
 
-7.  **Telepítse a Tanúsítványkezelő alkalmazást a nem rendszergazdai fiókban.**
+7.  **Telepítse a Tanúsítványkezelő alkalmazást a nem rendszergazdai fiókban**
 
-8.  **Indítsa el a Tanúsítványkezelőt, és regisztráljon egy virtuális intelligens kártyát.**
+8.  **Indítsa el a Tanúsítványkezelőt, és regisztráljon egy virtuális intelligens kártyát**
 
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Nov16_HO2-->
 
 

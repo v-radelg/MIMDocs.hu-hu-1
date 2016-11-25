@@ -1,35 +1,35 @@
 ---
-title: "Rétegmodell PAM-környezetben | Microsoft Identity Manager"
+title: "Rétegmodell PAM-környezetben | Microsoft Docs"
 description: "Információk a rétegmodellről, amely a biztonsági kockázat alapján különíti el a rendszert."
 keywords: 
 author: kgremban
+ms.author: kgremban
 manager: femila
 ms.date: 07/15/2016
 ms.topic: article
-ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
 ms.assetid: c6e3cd02-1e32-4194-a8ed-3a0b3d022a43
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: ae4c40c73dd9d5860f42e00765a7e34e8ca397a9
-ms.openlocfilehash: 1a750bedee2aac667c84113d2d08daa20428c260
+ms.sourcegitcommit: 1f545bfb2da0f65c335e37fb9de9c9522bf57f25
+ms.openlocfilehash: 659a9d8ff53372300c0e52432116c7c295d59a4b
 
 
 ---
 
-# A rendszergazdai jogosultságok felosztásának rétegmodellje
+# <a name="tier-model-for-partitioning-administrative-privileges"></a>A rendszergazdai jogosultságok felosztásának rétegmodellje
 
 Napjaink fenyegetésekkel teli világában nem az a kérdés, hogy egy támadó hozzáfér-e a rendszeréhez, hanem az, hogy mikor. Ez azt jelenti, hogy a belső biztonság éppen olyan fontos, mint az erős külső védelem. Ebben a cikkben egy olyan biztonsági modellel ismerkedhet meg, amely a jogok kiterjesztéséből adódó támadásokkal szembeni védelmet a magas szintű jogosultságokat igénylő tevékenységek és a nagy kockázatú zónák elkülönítésével biztosítja. Ez a modell úgy tartja fenn a jó felhasználói élményt, hogy közben alkalmazza az ajánlott eljárásokat és biztonsági alapelveket.
 
-## A jogok kiterjesztése az Active Directory-erdőkben
+## <a name="elevation-of-privilege-in-active-directory-forests"></a>A jogok kiterjesztése az Active Directory-erdőkben
 
 A Windows Server Active Directory- (AD-) erdőkhöz állandó rendszergazdai jogosultságokkal rendelkező felhasználók, szolgáltatások és alkalmazások fiókjai komoly kockázatot jelentenek a szervezet céljaira és üzleti tevékenységeire nézve. Ezek a fiókok gyakran válnak a támadók célpontjaivá, mert ha sérül a biztonságuk, a támadó jogosultságot szerez a tartomány más kiszolgálóihoz vagy alkalmazásaihoz való kapcsolódáshoz.
 
 A rétegmodell annak alapján választja szét egymástól a rendszergazdákat, hogy milyen erőforrásokat kezelnek. A felhasználói munkaállomások felett irányítással rendelkező rendszergazdák elkülönülnek azoktól, akik alkalmazásokat vagy vállalati identitásokat kezelnek. A modellel kapcsolatos további tudnivalók a [Securing privileged access reference material](http://aka.ms/tiermodel) (A rendszerjogosultságú hozzáférés biztonságossá tételének referenciaanyagai) című témakörben olvashatók.
 
-## Hitelesítő adatok veszélyeztetettségének korlátozása bejelentkezési korlátozásokkal
+## <a name="restricting-credential-exposure-with-logon-restrictions"></a>Hitelesítő adatok veszélyeztetettségének korlátozása bejelentkezési korlátozásokkal
 
 A rendszergazdai fiókokhoz tartozó hitelesítő adatok ellopásának kockázata általában a rendszergazdák munkamódszereinek átalakításával csökkenthető, ezáltal korlátozható a támadóknak való kiszolgáltatottság. Első lépésként az alábbi intézkedéseket javasoljuk a szervezeteknek:
 
@@ -62,6 +62,6 @@ A következő, a [Megerősített környezet tervezése](planning-bastion-environ
 
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Nov16_HO2-->
 
 

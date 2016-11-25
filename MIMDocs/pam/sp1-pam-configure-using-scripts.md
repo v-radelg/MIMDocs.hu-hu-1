@@ -3,23 +3,23 @@ title: "A PAM konfigurálása szkriptek használatával"
 description: "A CORP-tartomány előkészítése a Privileged Identity Manager által szkriptek útján kezelt meglévő vagy új identitásokkal"
 keywords: 
 author: barclayn
+ms.author: barclayn
 manager: MBaldwin
-ms.date: 09/26/2016
+ms.date: 10/04/2016
 ms.topic: article
-ms.prod: microsoft-identity-manager
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
 ms.assetid: 4b524ae7-6610-40a0-8127-de5a08988a8a
 ms.reviewer: 
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 96c734ade75f5c206858387cf45106761bc0a881
-ms.openlocfilehash: a1e4e5561bf8d38c56c3d27249d94f4bf7103b8c
+ms.sourcegitcommit: 365989693f844f117f76ee2b69db85df82f06f35
+ms.openlocfilehash: 3aca2fb513280f118e760bdbc2ba471151c41b17
 
 
 ---
 
-# A PAM konfigurálása szkriptek használatával
+# <a name="configure-pam-using-scripts"></a>A PAM konfigurálása szkriptek használatával
 
 Ha külön kiszolgálón telepíti az SQL- és SharePoint-szolgáltatásokat, az alábbi utasítások szerint kell konfigurálnia őket. Ha az SQL-, SharePoint- és a PAM-összetevők ugyanazon a gépen vannak telepítve, az alábbi lépéseket kell futtatni arról a gépről.
 
@@ -39,11 +39,11 @@ lépések:
 5. Másolja ugyanazt a PAMDeploymentConfig.xml fájlt minden gép, CORPDC-, PRIVDC-, PAM Server, SQL Server és SharePoint-kiszolgáló %SYSTEMDRIVE%\PAM mappájába.
 
 
-## Üzembehelyezési munkalap
+## <a name="deployment-worksheet"></a>Üzembehelyezési munkalap
 
 Folytatás előtt frissítse a PAMDeploymentConfig.xml fájlt, és másolja a frissített fájlt minden gépre.
 
-### Setup
+### <a name="setup"></a>Setup
 
 |Machine   | Futtatás más nevében   |Parancsok   |
 |---|---|---|
@@ -55,7 +55,7 @@ Folytatás előtt frissítse a PAMDeploymentConfig.xml fájlt, és másolja a fr
 | PAMServer  | Helyi rendszergazda (MIM-rendszergazda a tartomány csatlakoztatása után)  | .\PAMDeployment.ps1 Az 5. menüelem kiválasztása (MIM PAM beállítása)   |
 |  PAMServer |MIMAdmin   | .\PAMDeployment.ps1 A 6. menüelem kiválasztása (PAM bizalmi kapcsolat beállítása) .\PAMDeployment.ps1 A 6. menüelem kiválasztása (PAM bizalmi kapcsolat beállítása) |
 
-### Érvényesítés
+### <a name="validation"></a>Érvényesítés
 
 |  Machine | Futtatás más nevében   | Parancsok   |
 |---|---|---|
@@ -66,7 +66,11 @@ Folytatás előtt frissítse a PAMDeploymentConfig.xml fájlt, és másolja a fr
 |  CORPClient | <PRIV>\PRIV.pamRequestor felhasználó, valamint PRIVOnly esetében: <CORP>\pamrequestor   | Import-module .\PAMValidation.psm1 ; Test-PAMValidationScenarioNoApprovalRequest  |
 
 
+>[!div class="step-by-step"]
+[Indítás »](sp1-step1-configuring-priv-domain.md)
 
-<!--HONumber=Sep16_HO4-->
+
+
+<!--HONumber=Nov16_HO2-->
 
 

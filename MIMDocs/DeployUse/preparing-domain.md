@@ -1,34 +1,34 @@
 ---
-title: "Tartomány beállítása | Microsoft Identity Manager"
+title: "Tartomány beállítása | Microsoft Docs"
 description: "Active Directory-tartományvezérlő létrehozása a MIM 2016 telepítése előtt"
 keywords: 
 author: kgremban
+ms.author: kgremban
 manager: femila
 ms.date: 07/21/2016
 ms.topic: get-started-article
-ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 50345fda-56d7-4b6e-a861-f49ff90a8376
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 80fde32862a322a7a067982d0b02c99a8b43063e
-ms.openlocfilehash: 4ee1742e388da1ccb973b64316629debe570add0
+ms.sourcegitcommit: 1f545bfb2da0f65c335e37fb9de9c9522bf57f25
+ms.openlocfilehash: aa110cc31896ac08aa3f84fa48858d978efe0c63
 
 
 ---
 
-# Tartomány beállítása
+# <a name="set-up-a-domain"></a>Tartomány beállítása
 
 >[!div class="step-by-step"]
-[Windows Server 2012 R2 »](prepare-server-ws2012r2.md)
+[Windows Server 2012 R2»](prepare-server-ws2012r2.md)
 
 A Microsoft Identity Manager (MIM) az Ön Active Directory- (AD-) tartományával együtt is használható. Az AD-nek már telepítve kell lennie, és győződjön meg arról is, hogy a környezetében rendelkezik egy tartományvezérlővel egy felügyelhető tartományhoz.
 
 Ez a cikk részletesen ismerteti a lépéseket, amelyekkel előkészítheti a tartományt a MIM-mel való működésre.
 
-## Felhasználói fiókok és csoportok létrehozása
+## <a name="create-user-accounts-and-groups"></a>Felhasználói fiókok és csoportok létrehozása
 
 A MIM-telepítés minden összetevőjének saját identitással kell rendelkeznie a tartományban. Ez vonatkozik az olyan MIM-összetevőkre is, mint a Service, a Sync, a SharePoint és az SQL.
 
@@ -71,11 +71,11 @@ A MIM-telepítés minden összetevőjének saját identitással kell rendelkezni
 3.  Hozzon létre biztonsági csoportokat az összes csoporthoz.
 
     ```
-    New-ADGroup –name MIMSyncAdmins –GroupCategory Security –GroupScope Global      –SamAccountName MIMSyncAdmins
-    New-ADGroup –name MIMSyncOperators –GroupCategory Security –GroupScope Global       –SamAccountName MIMSyncOperators
-    New-ADGroup –name MIMSyncJoiners –GroupCategory Security –GroupScope Global         –SamAccountName MIMSyncJoiners
-    New-ADGroup –name MIMSyncBrowse –GroupCategory Security –GroupScope Global      –SamAccountName MIMSyncBrowse
-    New-ADGroup –name MIMSyncPasswordReset –GroupCategory Security –GroupScope Global          –SamAccountName MIMSyncPasswordReset
+    New-ADGroup –name MIMSyncAdmins –GroupCategory Security –GroupScope Global –SamAccountName MIMSyncAdmins
+    New-ADGroup –name MIMSyncOperators –GroupCategory Security –GroupScope Global –SamAccountName MIMSyncOperators
+    New-ADGroup –name MIMSyncJoiners –GroupCategory Security –GroupScope Global –SamAccountName MIMSyncJoiners
+    New-ADGroup –name MIMSyncBrowse –GroupCategory Security –GroupScope Global –SamAccountName MIMSyncBrowse
+    New-ADGroup –name MIMSyncPasswordReset –GroupCategory Security –GroupScope Global –SamAccountName MIMSyncPasswordReset
     Add-ADGroupMember -identity MIMSyncAdmins -Members Administrator
     Add-ADGroupmember -identity MIMSyncAdmins -Members MIMService
     ```
@@ -90,10 +90,10 @@ A MIM-telepítés minden összetevőjének saját identitással kell rendelkezni
     ```
 
 >[!div class="step-by-step"]
-[Windows Server 2012 R2 »](prepare-server-ws2012r2.md)
+[Windows Server 2012 R2»](prepare-server-ws2012r2.md)
 
 
 
-<!--HONumber=Oct16_HO3-->
+<!--HONumber=Nov16_HO2-->
 
 

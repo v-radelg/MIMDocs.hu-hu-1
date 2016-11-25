@@ -1,30 +1,30 @@
 ---
-title: "PAM vészhelyreállítás | Microsoft Identity Manager"
+title: "PAM vészhelyreállítás | Microsoft Docs"
 description: "Információk a Privileged Access Management konfigurálásáról magas rendelkezésre álláshoz és vészhelyreállításhoz."
 keywords: 
 author: kgremban
+ms.author: kgremban
 manager: femila
 ms.date: 07/15/2016
 ms.topic: article
-ms.prod: microsoft-identity-manager
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
 ms.assetid: 03e521cd-cbf0-49f8-9797-dbc284c63018
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: ae4c40c73dd9d5860f42e00765a7e34e8ca397a9
-ms.openlocfilehash: 9164e48bf10fa27ff6c87ba3816b586a940dda69
+ms.sourcegitcommit: 1f545bfb2da0f65c335e37fb9de9c9522bf57f25
+ms.openlocfilehash: a61d0bf5aaa263aff28a253e54e721f168ce337c
 
 
 ---
 
-# A magas rendelkezésre állással és a vészhelyreállítással kapcsolatos szempontok a megerősített környezet esetében
+# <a name="high-availability-and-disaster-recovery-considerations-for-the-bastion-environment"></a>A magas rendelkezésre állással és a vészhelyreállítással kapcsolatos szempontok a megerősített környezet esetében
 Ez a cikk a magas rendelkezésre állással és a vészhelyreállítással kapcsolatos szempontokat ismerteti az Active Directory tartományi szolgáltatásoknak (AD DS) és a Microsoft Identity Manager 2016 (MIM) verziónak a Privileged Access Management (PAM) megoldáshoz történő telepítése esetében.
 
 A vállalatok a magas rendelkezésre állásra és a vészhelyreállításra összepontosítanak a Windows Server, az SQL Server és az Active Directory munkaterheléseivel kapcsolatban. Fontos azonban a Privileged Access Management megoldás megerősített környezetének megbízható rendelkezésre állása is. A megerősített környezet a szervezet informatikai infrastruktúrájának kritikus fontosságú része, mivel a felhasználók az ehhez tartozó összetevőket használják a rendszergazdai szerepkörükhöz kapcsolódó tevékenységek végrehajtásakor. Ha részletes tájékoztatásra van szüksége a magas rendelkezésre állás általános szempontjaival kapcsolatban, töltse le [Microsoft High Availability Overview](http://download.microsoft.com/download/3/B/5/3B51A025-7522-4686-AA16-8AE2E536034D/Microsoft%20High%20Availability%20Strategy%20White%20Paper.doc) (A Microsoft magas rendelkezésre állása – áttekintés) című tanulmányt.
 
-## Magas rendelkezésre állási és vészhelyreállítási forgatókönyvek
+## <a name="high-availability-and-disaster-recovery-scenarios"></a>Magas rendelkezésre állási és vészhelyreállítási forgatókönyvek
 
 A magas rendelkezésre állás és a vészhelyreállítás tervezésekor gondolja át a következő kérdéseket:
 
@@ -45,42 +45,42 @@ A felsorolt szempontok hatóköre befolyásolja a telepítési és az üzemeltet
 
 A következőkben áttekintjük a megerősített erdő fent felsorolt funkcióit.
 
-### Megbízhatósági kapcsolat kialakítása
+### <a name="trust-establishment"></a>Megbízhatósági kapcsolat kialakítása
 
 A megerősített környezet erdeje és a meglévő erdő tartományai között erdőszintű megbízhatóságnak kell lennie. Ez azért szükséges, hogy a megerősített környezetben hitelesített felhasználók felügyelhessék a meglévő erdőkben található erőforrásokat. További konfigurációra lehet szükség például a Windows Server korábbi verzióin működő tartományokban található felhasználók áttelepítésének engedélyezéséhez.
 
 A megbízhatóság létrehozásához az szükséges, hogy a meglévő erdő tartományvezérlői, valamint a megerősített környezet MIM és AD összetevői online állapotúak legyenek.  Ha ezek bármelyikénél kimaradás lép fel a megbízhatóság létrehozása közben, a kimaradást okozó probléma megoldása után a rendszergazda ismét megpróbálhatja végrehajtani a műveletet.  Arra az esetre, ha a meglévő erdő tartományvezérlői vagy a megerősített környezet helyre lett állítva egy kimaradást követően, a MIM PowerShell-parancsmagokat – `Test-PAMTrust` és `Test-PAMDomainConfiguration` – is tartalmaz, amelyekkel ellenőrizhető, hogy a megbízhatóság továbbra is fennáll-e.
 
-### Felhasználók és csoportok áttelepítése
+### <a name="user-and-group-migration"></a>Felhasználók és csoportok áttelepítése
 
 A megbízhatóság létrehozása után árnyékcsoportok hozhatók létre a megerősített környezetben, valamint felhasználói fiókok ezen csoportok tagjainak és a jóváhagyóknak. Ez lehetővé teszi, hogy ezek a felhasználók aktiválják az emelt szintű szerepköröket, és visszaszerezzék az érvényes csoporttagságukat.
 
 A felhasználók és a csoportok áttelepítéséhez az szükséges, hogy a meglévő erdő tartományvezérlői, valamint a megerősített környezet MIM és AD összetevői online állapotúak legyenek.   Ha a meglévő erdő tartományvezérlői nem érhetők el, akkor nem vehetők fel további felhasználók és csoportok a megerősített környezetbe, de a meglévő felhasználókra és csoportokra ez nincs hatással. Ha az összetevők bármelyikénél kimaradás lép fel az áttelepítés során, a kimaradást okozó probléma megoldása után a rendszergazda ismét megpróbálhatja végrehajtani a műveletet.
 
-### A MIM felügyelete
+### <a name="mim-administration"></a>A MIM felügyelete
 Miután megtörtént a felhasználók és a csoportok áttelepítése, a rendszergazdák a MIM-ben tovább konfigurálhatják a szerepkör-hozzárendeléseket a szerepkörökhöz aktiválandó felhasználók csatolásával.  Ezenkívül konfigurálhatják a jóváhagyásra és az Azure MFA használatára vonatkozó MIM-szabályzatokat.  
 
 A MIM felügyelete megköveteli, hogy a megerősített környezet MIM és AD összetevői online állapotúak legyenek.
 
-### Rendszerjogosultságú szerepkör aktiválása
+### <a name="privileged-role-activation"></a>Rendszerjogosultságú szerepkör aktiválása
 Amikor egy felhasználó rendszerjogosultságú szerepkört kíván aktiválni, hitelesítenie kell magát a megerősített környezet tartományában, és kérelmet kell küldenie a MIM számára.  A MIM tartalmazza a SOAP és a REST API-t, valamint felhasználói felületeket a PowerShellben és egy weblapon.
 
 Az emelt szintű szerepkörök aktiválása megköveteli, hogy a megerősített környezet MIM és AD összetevői online állapotúak legyenek.  Ha pedig a MIM az [Azure MFA](use-azure-mfa-for-activation.md) használatára van beállítva a kiválasztott szerepkör aktiválásához, akkor internet-hozzáférésre van szükség az Azure MFA szolgáltatáshoz való csatlakozáshoz.
 
-### Erőforrás-kezelés
+### <a name="resource-management"></a>Erőforrás-kezelés
 Miután a felhasználó aktiválása megtörtént a szerepkörhöz, a tartományvezérlő létrehozhat számára egy Kerberos-jegyet, amelyet a meglévő tartományokban található tartományvezérlők használhatnak, és így felismerhetők lesznek a felhasználó új ideiglenes csoporttagságai.
 
 Az erőforrás-kezelés megköveteli, hogy az erőforrás tartományának tartományvezérlője, valamint a megerősített környezetben lévő tartományvezérlő online állapotú legyen.  Miután megtörtént a felhasználó aktiválása, a Kerberos-jegyének kiállításához nem szükséges, hogy a MIM vagy az SQL online állapotú legyen a megerősített környezetben.  (Vegye figyelembe, hogy a megerősített környezet Windows Server 2012 R2 működési szintje esetén az ideiglenes csoporttagság megszüntetéséhez az szükséges, hogy a MIM online állapotú legyen.)
 
-### A meglévő erdőben található felhasználók és csoportok figyelése
+### <a name="monitoring-of-users-and-groups-in-the-existing-forest"></a>A meglévő erdőben található felhasználók és csoportok figyelése
 A MIM tartalmaz egy PAM-figyelőszolgáltatást is, amely rendszeresen ellenőrzi a felhasználókat és csoportokat a meglévő tartományokban, és megfelelően frissíti a MIM-adatbázist és az AD-t.  Ennek a szolgáltatásnak nem kell online állapotúnak lennie a szerepkörök aktiválásához vagy az erőforrások kezelése során.
 
 A figyeléshez az szükséges, hogy a meglévő erdő tartományvezérlői, valamint a megerősített környezet MIM és AD összetevői online állapotúak legyenek.  
 
-## Telepítési lehetőségek
+## <a name="deployment-options"></a>Telepítési lehetőségek
 [A környezet áttekintése](environment-overview.md) című cikk egy alapszintű topológiát mutat be, amely a nem magas rendelkezésre állásra szánt technológia megismerésére alkalmas. Ez a szakasz leírja, hogyan bővíthető ez a topológia a magas rendelkezésre állás biztosítása érdekében az egy helyet és a több helyet használó szervezeteknél.
 
-### Hálózat
+### <a name="networking"></a>Hálózat
 
 A megerősített környezetben lévő számítógépek közötti hálózati forgalmat el kell különíteni a meglévő hálózatoktól, például más fizikai vagy virtuális hálózat használatával.  A megerősített környezetre vonatkozó kockázatoktól függően szükség lehet független fizikai összeköttetések használatára a számítógépek között.  A feladatátvevő fürtök bizonyos technológiái további követelményeket támasztanak a hálózati adapterekre vonatkozóan.
 
@@ -91,7 +91,7 @@ Az Active Directory tartományi szolgáltatásokat és a megerősített környez
 - A meglévő erdőben lévő tartományok figyelése a MIM használatával
 - E-mailek küldése a MIM használatával a meglévő erdőben található e-mail-kiszolgálón keresztül
 
-### Minimális magas rendelkezésre állású topológiák
+### <a name="minimal-high-availability-topologies"></a>Minimális magas rendelkezésre állású topológiák
 A szervezetek kiválaszthatják, hogy a megerősített környezetükben melyik funkciók igényelnek magas rendelkezésre állást. Néhány korlátozást azonban figyelembe kell venni:
 
 - A megerősített környezet által biztosított minden funkció esetében legalább két tartományvezérlő szükséges a magas rendelkezésre álláshoz.  
@@ -109,7 +109,7 @@ A következő ábra egy lehetséges architektúrát szemléltet:
 
 Mindegyik funkcióhoz további kiszolgálók konfigurálhatók, hogy nagyobb teljesítményt biztosítsanak nagyobb munkaterhelés esetére, illetve a földrajzi redundancia céljából, amint azt alább ismertetjük.
 
-### Több helyet támogató központi telepítések
+### <a name="deployments-supporting-multiple-sites"></a>Több helyet támogató központi telepítések
 A több helyre telepített erőforrások esetén megfelelő telepítési topológia kiválasztásánál három tényezőt kell figyelembe venni:  
 - A magas rendelkezésre állás és a vészhelyreállítás céljai és kockázatai  
 - A megerősített környezet üzemeltetéséhez szükséges hardver jellemzői  
@@ -135,7 +135,7 @@ Ha mindegyik hely különálló felügyeleti határt jelent, akkor több függet
 
 ![A többhelyes topológia összetett megerősített környezetei – ábra](media/bastion6.png)
 
-### Más helyen üzemeltetett megerősített környezet
+### <a name="hosted-bastion-environment"></a>Más helyen üzemeltetett megerősített környezet
 Egyes szervezetek olyan megoldást alkalmaznak, amelyben a megerősített környezetet a meglévő helyektől elkülönítve alakítják ki. A megerősített környezet szoftvere üzemeltethető virtuális platformon, a szervezet hálózatán belül vagy külső szolgáltatónál.  E megoldás kiértékelésekor a következőket kell figyelembe venni:
 
 - A meglévő tartományokra irányuló támadások elleni védekezésképpen a megerősített környezet felügyeletét el kell különíteni a meglévő tartomány rendszergazdai fiókjaitól.
@@ -143,20 +143,20 @@ Egyes szervezetek olyan megoldást alkalmaznak, amelyben a megerősített körny
 - Az Active Directory tartományi szolgáltatások virtualizált telepítése meghatározott funkciókat igényel a virtualizációs platformról [A virtualizált tartományvezérlő központi telepítése és konfigurálása](https://technet.microsoft.com/library/jj574223.aspx) című cikkben leírtak szerint.
 - Az SQL Servernek a MIM szolgáltatáshoz történő magas rendelkezésre állású telepítése egy speciális tárolási konfigurációt igényel, amelynek leírása az [SQL Server database storage](#sql-server-database-storage) (Az SQL Server adatbázistára) című cikkben olvasható.  Jelenleg nem minden üzemeltetési szolgáltató kínálatában szerepel a Windows Servernek az SQL Server feladatátvevő fürtjeihez alkalmas lemezkonfigurációkkal valóüzemeltetése.
 
-## A telepítés és a helyreállítási eljárások elkészítése
+## <a name="deployment-preparation-and-recovery-procedures"></a>A telepítés és a helyreállítási eljárások elkészítése
 A megerősített környezet magas rendelkezésre állású vagy vészhelyreállításra alkalmas telepítésének előkészítésekor meg kell fontolni, hogyan történjen a Windows Server Active Directorynak, az SQL Servernek és a megosztott tárolón található adatbázisának, valamint a MIM szolgáltatásnak és a PAM-összetevőinek a telepítése.
 
-### Windows Server
+### <a name="windows-server"></a>Windows Server
 A Windows Server tartalmaz egy beépített funkciót a magas rendelkezésre álláshoz, amely lehetővé teszi, hogy több számítógép működjön együtt feladatátvevő fürtként. A fürtözött kiszolgálókat fizikai kábelek és szoftverek kötik össze. Ha a fürtcsomópontok közül egy vagy több meghibásodik, más csomópontok veszik át a szolgáltatást (ez a feladatátvételi folyamat).   További részleteket a [Feladatátvételi fürtszolgáltatás – áttekintés](https://technet.microsoft.com/library/hh831579.aspx) című cikkben talál.
 
 Győződjön meg arról, hogy a megerősített környezetben található operációs rendszer és alkalmazások fogadják a biztonsági frissítéseket. Egyes frissítések telepítése után szükség lehet a kiszolgáló újraindítására, ezért a hosszabb kimaradások elkerülése érdekében a frissítést olyan időpontra ütemezze, amikor a frissítések minden kiszolgálóra alkalmazhatók. Ennek egyik módszere a [fürttámogató frissítés](https://technet.microsoft.com/library/hh831694.aspx) használata a Windows Server rendszerű feladatátvevő fürtökben.
 
 A megerősített környezetben lévő kiszolgálók tartományhoz lesznek csatlakoztatva, és a tartományi szolgáltatásoktól fognak függeni. Győződjön meg arról, hogy a kiszolgálók nincsenek véletlenül beállítva a szolgáltatások egy meghatározott tartományvezérlőjétől, például a DNS-től való függőségre.
 
-### Az Active Directory megerősített környezete
+### <a name="bastion-environment-active-directory"></a>Az Active Directory megerősített környezete
 A Windows Server Active Directory tartományi szolgáltatások natív módon támogatják a magas rendelkezésre állást és a vészhelyreállítást.
 
-#### Előkészítés
+#### <a name="preparation"></a>Előkészítés
 Az emelt szintű hozzáférések felügyeletének tipikus éles környezetbeli telepítése legalább két tartományvezérlőt tartalmaz a megerősített környezetben. A megerősített környezetben található első tartományvezérlő beállításával kapcsolatos útmutatás a telepítéssel foglalkozó [A PRIV tartományvezérlő előkészítése](step-2-prepare-priv-domain-controller.md) című cikk 2. lépésben található.
 
 A további tartományvezérlő hozzáadásának műveletét a [Replika Windows Server 2012 tartományvezérlő telepítése meglévő tartományban (200. szint)](https://technet.microsoft.com/library/jj574134.aspx) című cikk ismerteti.  
@@ -164,7 +164,7 @@ A további tartományvezérlő hozzáadásának műveletét a [Replika Windows S
 >[!NOTE]
 > Ha a tartományvezérlőt virtualizációs platformon fogja üzemeltetni, például a Hyper-V platformon, akkor olvassa el [A virtualizált tartományvezérlő központi telepítése és konfigurálása](https://technet.microsoft.com/library/jj574223.aspx) című cikkben található figyelmeztetéseket.
 
-#### Helyreállítás
+#### <a name="recovery"></a>Helyreállítás
 Ha kimaradás fordul elő, a megszűnése után és a kiszolgálók újraindítása előtt győződjön meg arról, hogy legalább egy tartományvezérlő elérhető a megerősített környezetben.
 
 A tartományon belül az Active Directory elosztja a műveleti főkiszolgáló (FSMO) szerepköreit [How Operations Masters Work](https://technet.microsoft.com/library/cc780487.aspx) (A műveleti főkiszolgálók működése) című cikkben leírtaknak megfelelően.  Ha egy tartományvezérlő sikertelen volt, szükség lehet egy vagy több olyan [tartományvezérlői szerepkör](https://technet.microsoft.com/library/cc786438.aspx) átvitelére, amelyhez az adott tartományvezérlő hozzá volt rendelve.
@@ -173,27 +173,27 @@ Ha azt állapítja meg, hogy a tartományvezérlő nem állítható vissza az é
 
 Célszerű ellenőrizni a megerősített környezethez csatlakoztatott számítógépek DNS-beállításait, valamint a CORP tartományokban található tartományvezérlőket, amelyek megbízhatósági kapcsolattal rendelkeznek az adott tartományvezérlőhöz annak biztosításához, hogy egyiknél se legyen az adott tartományvezérlő számítógépének IP-címétől való függőség.
 
-### Az SQL Server adatbázistára
+### <a name="sql-server-database-storage"></a>Az SQL Server adatbázistára
 A magas rendelkezésre állású telepítéshez SQL Server feladatátvevő fürtök szükségesek, és az SQL Server feladatátvevő fürt példányainak az összes csomópont között megosztott tárolót kell használniuk az adatbázis és a naplók tárolásához. A megosztott tárolás történhet Windows Server feladatátvételi fürtszolgáltatási fürtlemezeken, tárolóhálózaton (SAN) lévő lemezeken vagy SMB-kiszolgálón található fájlmegosztások formájában.  Fontos, hogy ezeket a megerősített környezetben kell kijelölnie; a tárhelynek a megerősített környezeten kívüli egyéb munkaterhelésekkel való megosztása nem ajánlott, mivel ez veszélyeztetheti a megerősített környezet sértetlenségét.
 
-### SQL-kiszolgáló
+### <a name="sql-server"></a>SQL-kiszolgáló
 A MIM szolgáltatás az SQL Server telepítését igényli a megerősített környezetben.   A magas rendelkezésre álláshoz az SQL telepíthető feladatátvevőfürt-példány (FCI) használatával. A különálló példányoktól eltérően az FCI-kben az SQL Server magas rendelkezésre állását az FCI-ben jelen lévő redundáns csomópontok biztosítják. Hiba vagy tervezett frissítés esetén az erőforráscsoport tulajdonjogát átveszi a Windows Server feladatátvevő fürt egy másik csomópontja.
 
 Ha csak a vészhelyreállításra vonatkozó támogatásra van szüksége (és a magas rendelkezésre állásra vonatkozóan nincs), akkor a feladatátvevő fürtök helyett használhat naplóküldést, tranzakcióreplikációt, pillanatkép-replikációt vagy adatbázis-tükrözést.   
 
-#### Előkészítés
+#### <a name="preparation"></a>Előkészítés
 Amikor az SQL Servert telepíti a megerősített környezetben, annak függetlennek kell lennie a CORP erdőkben már meglévő összes SQL Servertől.  Ezenkívül ajánlott az SQL Servert egy dedikált kiszolgálóra telepíteni, amely nem azonos a tartományvezérlővel.
 További információ a SQL Server dokumentációjának [AlwaysOn Failover Cluster Instances](https://msdn.microsoft.com/library/ms189134.aspx) (AlwaysOn feladatátvevőfürt-példányok) című útmutatójában található.
 
-#### Helyreállítás
+#### <a name="recovery"></a>Helyreállítás
 Ha az SQL Server a naplóküldést használó vészhelyreállításra volt konfigurálva, a helyreállítás során az SQL Servert frissíteni kell.  Ezenkívül újra kell indítani a MIM szolgáltatás minden példányát.
 
 Ha hiba történt az SQL Serveren, vagy megszakadt a kapcsolat az SQL Server és a MIM szolgáltatás között, akkor az SQL Server helyreállítása után ajánlott újraindítani minden MIM szolgáltatást.  Ez biztosítja, hogy MIM szolgáltatás újból létrehozza a kapcsolatát az SQL Serverrel.
 
-### MIM szolgáltatás
+### <a name="mim-service"></a>MIM szolgáltatás
 A MIM szolgáltatás az aktiválási kérelmek feldolgozásához szükséges.  Ahhoz, hogy a MIM szolgáltatást futtató számítógépet le lehessen állítani karbantartásra, miközben továbbra is érkeznek aktiválási kérelmek, a MIM szolgáltatás több számítógépre is telepíthető.  Vegye figyelembe, hogy a MIM szolgáltatás nem vesz részt a Kerberos műveleteiben, miután a felhasználó hozzá lett adva egy csoporthoz.  
 
-#### Előkészítés
+#### <a name="preparation"></a>Előkészítés
 A MIM szolgáltatást több, a PRIV tartományhoz csatlakozó kiszolgálóra célszerű telepíteni.
 A magas rendelkezésre állással kapcsolatos tudnivalókért olvassa el a Windows Server dokumentációjában található következő cikkeket: [A Feladatátvételi fürtszolgáltatás hardverkövetelményei és tárolási beállításai](https://technet.microsoft.com/library/jj612869.aspx) és [Creating a Windows Server 2012 Failover Cluster](http://blogs.msdn.com/b/clustering/archive/2012/05/01/10299698.aspx) (Windows Server 2012 feladatátvevő fürt létrehozása).
 
@@ -206,24 +206,24 @@ A MIM többkiszolgálós telepítése esetén mindegyik MIM szolgáltatáshoz ta
 
 Amikor a MIM szolgáltatás kérelmet kap, a szolgáltatáspartíció neve az adott kérelem attribútumaként lesz tárolva.   Ezt követően csak a MIM szolgáltatás azonos szolgáltatáspartíció-nevű más telepítései használhatják az adott kérelmet.  Ha a PAM forgatókönyve manuális jóváhagyásokat vagy más hosszú élettartamú kérelemfeldolgozást tartalmaz, akkor ügyeljen arra, hogy mindegyik MIM szolgáltatáshoz azonos `servicePartitionName` attribútum tartozzon a konfigurációs fájlban.
 
-#### Helyreállítás
+#### <a name="recovery"></a>Helyreállítás
 Kimaradás után a MIM szolgáltatás újraindítása előtt győződjön meg arról, hogy legalább egy Active Directory tartományvezérlő és egy SQL Server elérhető a megerősített környezetben.  
 
 A munkafolyamat-példányok csak a MIM szolgáltatás azon kiszolgálójával fejezhetők be, amelynek szolgáltatáspartíció-neve és szolgáltatásneve megegyezik a munkafolyamat-példányt elindító MIM szolgáltatás kiszolgálójának ilyen neveivel.  Ha egy adott számítógépen hiba történik a kérelmet feldolgozó MIM szolgáltatás futtatása közben, és az adott számítógép működése nem állítható vissza, akkor a MIM szolgáltatást egy új számítógépre kell telepíteni. A telepítés után az új MIM szolgáltatásban módosítsa a *resourcemanagementservice.exe.config* fájlt, és az új MIM telepítés `serviceName` és `servicePartitionName` attribútumát állítsa be úgy, hogy azonos legyen a meghibásodott számítógép állomásnevével és szolgáltatáspartíció-nevével.
 
-### A MIM PAM-összetevői
+### <a name="mim-pam-components"></a>A MIM PAM-összetevői
 A MIM szolgáltatás és -portál telepítője is tartalmaz PAM-összetevőket, például a PowerShell-modulokat és két szolgáltatást.
 
-#### Előkészítés
+#### <a name="preparation"></a>Előkészítés
 Az emelt szintű hozzáférések felügyeletének összetevőit telepíteni kell a megerősített környezetben lévő minden olyan számítógépre, amelyre a MIM szolgáltatást telepíti.  Ezek nem adhatók hozzá a későbbiekben.
 
-#### Helyreállítás
+#### <a name="recovery"></a>Helyreállítás
 A kimaradás utáni helyreállítást követően győződjön meg arról, hogy a MIM szolgáltatás fut legalább egy kiszolgálón.  Ezután a `net start "PAM Monitoring service"` parancs használatával ellenőrizze, hogy a MIM PAM-figyelési szolgáltatása is fut-e az adott kiszolgálón.
 
 Ha a megerősített környezet erdőjének működési szintje Windows Server 2012 R2, a `net start "PAM Component service"` parancs használatával ellenőrizze, hogy a MIM PAM-összetevőjének szolgáltatása is fut-e az adott kiszolgálón.
 
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Nov16_HO2-->
 
 
