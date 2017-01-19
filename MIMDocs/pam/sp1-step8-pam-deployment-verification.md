@@ -1,5 +1,5 @@
 ---
-title: "8. lépés: A PAM üzembe helyezésének ellenőrzése"
+title: "Nyolcadik lépés: A PAM üzembe helyezésének ellenőrzése"
 description: "A PAM parancsfájlokkal történő üzembe helyezéséhez szükséges csomag ellenőrzési parancsfájlokat is tartalmaz, amelyekkel végrehajtható egy PAM-forgatókönyv, így ellenőrizhető, hogy a PAM-környezet a vártnak megfelelően működik-e."
 keywords: 
 author: barclayn
@@ -19,7 +19,7 @@ ms.openlocfilehash: 2f4306dc50ecb869a3c917dfaf320ad80dddedd1
 
 ---
 
-# <a name="step-8-pam-deployment-verification"></a>8. lépés: A PAM üzembe helyezésének ellenőrzése
+# <a name="step-8-pam-deployment-verification"></a>Nyolcadik lépés: A PAM üzembe helyezésének ellenőrzése
 
 >[!div class="step-by-step"]
 [« 7. lépés](sp1-step7-setup-sidhistory-sidfiltering.md)
@@ -34,7 +34,7 @@ Az üzembe helyezés ellenőrzéséhez módosítsa a PAMDeploymentConfig.xml <Pa
 Az ügyfélgép nevét frissíteni kell a PAMDeploymentConfig.xml <PAMValidationClient/> címkéjével. A(z) <PAMValidation/> csomópontban lévő többi adatot csak akkor kell szerkeszteni, ha ütköznek a meglévő felhasználókkal/csoportokkal, mivel ez az érvényesítés megkísérli létrehozni őket.
 Alkalmazza a következő lépéseket az érvényesítés végrehajtásához:
 
-1. lépés:
+Első lépés:
 
 1. Bejelentkezés a CORPDC tartományvezérlőre CORP-tartományi rendszergazdaként
 2. A PowerShell futtatása rendszergazdaként
@@ -44,7 +44,7 @@ Alkalmazza a következő lépéseket az érvényesítés végrehajtásához:
 
 Ezzel létrehozza az érvényesítéshez szükséges csoportokat és felhasználókat.
 
-2. lépés:
+Második lépés:
 
 1. Bejelentkezés a PAM-kiszolgálóra MIMAdmin jogosultsággal
 2. A PowerShell futtatása rendszergazdaként
@@ -54,7 +54,7 @@ Ezzel létrehozza az érvényesítéshez szükséges csoportokat és felhasznál
 
 Ez a lépés áttelepíti a felhasználókat és csoportokat a PAM-környezetbe.
 
-3. lépés:
+Harmadik lépés:
 
 1. Bejelentkezés a CORP-ügyfélre helyi rendszergazdaként
 2. A PowerShell futtatása rendszergazdaként
