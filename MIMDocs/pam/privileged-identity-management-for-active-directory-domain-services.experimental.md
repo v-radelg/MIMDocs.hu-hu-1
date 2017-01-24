@@ -1,11 +1,11 @@
 ---
 title: Mi az a PAM az ADDS-hez? | Microsoft Docs
-description: "További információk a Privileged Access Managementről, valamint az Active Directory-környezet kezelésében és védelmében elfoglalt szerepéről."
+description: "A Privileged Access Management (PAM) segít a szervezeteknek a meglévő Active Directory-környezetükben korlátozni a rendszerjogosultságú hozzáférést."
 keywords: 
 author: kgremban
 ms.author: kgremban
 manager: femila
-ms.date: 07/27/2016
+ms.date: 01/10/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
@@ -14,12 +14,12 @@ ms.reviewer: mwahl
 ms.suite: ems
 experiment_id: kgremban_images
 translationtype: Human Translation
-ms.sourcegitcommit: 1f545bfb2da0f65c335e37fb9de9c9522bf57f25
-ms.openlocfilehash: 7751722f4f75dcdd4af5f578060b4e1b144073ef
+ms.sourcegitcommit: f0947f186b5206d06a67140706ada33a5bc0e016
+ms.openlocfilehash: 9a047644d07e3ee3c2d1abfde7753849b5ddc63b
 
 ---
 
-# <a name="privileged-access-management-for-active-directory-domain-services"></a>Privileged Access Management az Active Directory tartományi szolgáltatásokhoz
+# <a name="privileged-access-management-for-active-directory-domain-services"></a>Privileged Access Management az Active Directory Domain Serviceshez
 A Privileged Access Management (PAM) segít a szervezeteknek a meglévő Active Directory-környezetükben korlátozni a rendszerjogosultságú hozzáférést.
 
 ![A PAM lépései: előkészítés, védelem, működtetés, figyelés – ábra](media/MIM_PIM_SetupProcess.png)
@@ -96,6 +96,6 @@ Ez a munkafolyamat kifejezetten az ilyen rendszergazdai fiókok számára kész�
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Jan17_HO2-->
 
 
