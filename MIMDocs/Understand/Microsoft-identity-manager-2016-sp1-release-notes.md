@@ -1,11 +1,11 @@
 ---
-title: Microsoft Identity Manager 2016 | Microsoft Docs
+title: Microsoft Identity Manager 2016 Service Pack 1 | Microsoft Docs
 description: "Ismerje meg, hogy a MIM 2016 hogyan működik, és hogyan kínál biztonságosabb és kényelmesebb identitáskezelési környezetet a felhőben és helyszíni környezetben egyaránt."
 keywords: 
 author: barclayn
 ms.author: barclayn
 manager: mbaldwin
-ms.date: 09/28/2016
+ms.date: 01/10/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: security
@@ -13,8 +13,8 @@ ms.assetid: ccdd8a9f-02da-440a-81a8-354800dcd2a8
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 1f545bfb2da0f65c335e37fb9de9c9522bf57f25
-ms.openlocfilehash: ed477de53abbf646f47efb90e617b04184bc29a9
+ms.sourcegitcommit: f0947f186b5206d06a67140706ada33a5bc0e016
+ms.openlocfilehash: 4f293a349916ae1a55d8551ef949758cab851b74
 
 
 ---
@@ -24,7 +24,7 @@ A Microsoft Identity Manager karbantartásához és frissítéséhez tartozó ki
 
 Ha problémát észlel a MIM SP1 éles üzembe helyezése közben, lépjen kapcsolatba a Microsoft ügyfélszolgálatával.
 
-Szívesen meghallgatnánk a véleményét is! Ha visszajelzése vagy megjegyzése van, esetleg problémát észlel, jelezze a termékcsoport felé a [mim2016@microsoft.com.](mailto:mim2016@microsoft.com) e-mail-címen.
+Szívesen meghallgatnánk a véleményét is! Ha visszajelzése vagy megjegyzése van, esetleg problémát észlel, jelezze a termékcsoport felé a következő e-mail-címen: [mim2016@microsoft.com.](mailto:mim2016@microsoft.com)
 
 
 
@@ -85,6 +85,6 @@ Biztonsági másolat készítése szükséges a MIMService és MIM Sync adatbáz
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Jan17_HO2-->
 
 

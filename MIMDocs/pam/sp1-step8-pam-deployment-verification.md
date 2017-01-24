@@ -1,11 +1,11 @@
 ---
-title: "8. lépés: A PAM üzembe helyezésének ellenőrzése"
-description: "A CORP-tartomány előkészítése a Privileged Identity Manager által szkriptek útján kezelt meglévő vagy új identitásokkal"
+title: "Nyolcadik lépés: A PAM üzembe helyezésének ellenőrzése"
+description: "A PAM parancsfájlokkal történő üzembe helyezéséhez szükséges csomag ellenőrzési parancsfájlokat is tartalmaz, amelyekkel végrehajtható egy PAM-forgatókönyv, így ellenőrizhető, hogy a PAM-környezet a vártnak megfelelően működik-e."
 keywords: 
 author: barclayn
 ms.author: barclayn
 manager: MBaldwin
-ms.date: 10/25/2016
+ms.date: 01/10/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
@@ -13,13 +13,13 @@ ms.assetid: 4b524ae7-6610-40a0-8127-de5a08988a8a
 ms.reviewer: 
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 365989693f844f117f76ee2b69db85df82f06f35
-ms.openlocfilehash: 7709b4df5bb196aba6abf056830bc73e024174ef
+ms.sourcegitcommit: f08b0197341351bd5f33552f26b96132b1356239
+ms.openlocfilehash: 2f4306dc50ecb869a3c917dfaf320ad80dddedd1
 
 
 ---
 
-# <a name="step-8-pam-deployment-verification"></a>8. lépés: A PAM üzembe helyezésének ellenőrzése
+# <a name="step-8-pam-deployment-verification"></a>Nyolcadik lépés: A PAM üzembe helyezésének ellenőrzése
 
 >[!div class="step-by-step"]
 [« 7. lépés](sp1-step7-setup-sidhistory-sidfiltering.md)
@@ -34,7 +34,7 @@ Az üzembe helyezés ellenőrzéséhez módosítsa a PAMDeploymentConfig.xml <Pa
 Az ügyfélgép nevét frissíteni kell a PAMDeploymentConfig.xml <PAMValidationClient/> címkéjével. A(z) <PAMValidation/> csomópontban lévő többi adatot csak akkor kell szerkeszteni, ha ütköznek a meglévő felhasználókkal/csoportokkal, mivel ez az érvényesítés megkísérli létrehozni őket.
 Alkalmazza a következő lépéseket az érvényesítés végrehajtásához:
 
-1. lépés:
+Első lépés:
 
 1. Bejelentkezés a CORPDC tartományvezérlőre CORP-tartományi rendszergazdaként
 2. A PowerShell futtatása rendszergazdaként
@@ -44,7 +44,7 @@ Alkalmazza a következő lépéseket az érvényesítés végrehajtásához:
 
 Ezzel létrehozza az érvényesítéshez szükséges csoportokat és felhasználókat.
 
-2. lépés:
+Második lépés:
 
 1. Bejelentkezés a PAM-kiszolgálóra MIMAdmin jogosultsággal
 2. A PowerShell futtatása rendszergazdaként
@@ -54,7 +54,7 @@ Ezzel létrehozza az érvényesítéshez szükséges csoportokat és felhasznál
 
 Ez a lépés áttelepíti a felhasználókat és csoportokat a PAM-környezetbe.
 
-3. lépés:
+Harmadik lépés:
 
 1. Bejelentkezés a CORP-ügyfélre helyi rendszergazdaként
 2. A PowerShell futtatása rendszergazdaként
@@ -83,6 +83,6 @@ A PowerShell ablakban írja be a következőt:
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Jan17_HO2-->
 
 

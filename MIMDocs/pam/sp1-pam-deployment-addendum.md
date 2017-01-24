@@ -1,26 +1,26 @@
 ---
 title: "Kiegészítés"
-description: "A CORP-tartomány előkészítése a Privileged Identity Manager által szkriptek útján kezelt meglévő vagy új identitásokkal"
+description: "Ez a PAM parancsfájlokkal történő üzembe helyezését ismertető dokumentumok kiegészítése. Ismerteti a PRIV- és CORP-tartományok konfigurálását valamint egy, az érvényesítést végző ügyfélprogram beállítását. Információt nyújt a segítségkérés módjáról is."
 keywords: 
 author: barclayn
+ms.author: barclayn
 manager: MBaldwin
-ms.date: 09/27/2016
+ms.date: 01/10/2017
 ms.topic: article
-ms.prod: microsoft-identity-manager
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
 ms.assetid: 4b524ae7-6610-40a0-8127-de5a08988a8a
 ms.reviewer: 
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 689c2ef0e4e4a681a398ba7e94fb3def525937ea
-ms.openlocfilehash: 482cfbbac3ea668ca4bf9d8a4a45469e61634f98
+ms.sourcegitcommit: f08b0197341351bd5f33552f26b96132b1356239
+ms.openlocfilehash: f69fe68dc63323c0945a4902e34ea8153f938c02
 
 
 ---
-# Kiegészítés:
+# <a name="pam-deployment-scripts-addendum"></a>PAM üzembehelyezési szkriptek, kiegészítés:
 
-## 1. kiegészítés: A PRIV-tartomány beállítása
+## <a name="addendum-1-setting-up-the-priv-domain"></a>1. kiegészítés: A PRIV-tartomány beállítása
 
 Miután kicsomagolta a tömörített fájlt az $env:SYSTEMDRIVE\PAM mappába, a PAMDeploymentConfig.xml fájl szerkesztésével adja meg a PRIV-erdő adatait. Frissítse a DNSName, a NetbiosName, a tartományvezérlő-név, az Adatbázis/napló elérési útja és a Sysvol elérési útja értéket. Frissítse továbbá a DomainMode és a ForestMode értéket. Amennyiben a Windows Server Technical Preview 5-ös verzióját teszteli, a DomainMode és a ForestMode értéket állítsa WinThreshold értékre.
 
@@ -38,7 +38,7 @@ A befejezést követően a tartományvezérlő automatikusan újraindul. A címt
   * A jelszó legalább egy NAGYBETŰS karaktert tartalmaz
   * A jelszó legalább egy számjegyet vagy speciális karaktert tartalmaz
 
-## 2. kiegészítés: A CORP-tartomány beállítása
+## <a name="addendum-2-setting-up-the-corp-domain"></a>2. kiegészítés: A CORP-tartomány beállítása
 
 Ha induláskor PAM rendszer áll rendelkezésre, és szeretne telepíteni egy tesztkörnyezetet, a szkript lehetővé teszi egy CORP-tartomány konfigurálását is. Miután kicsomagolta a tömörített fájlt az $env:SYSTEMDRIVE\PAM mappába, a PAMDeploymentConfig.xml fájlt kiegészítve adja meg a CORP-erdő adatait. Frissítse a DNSName, a NetbiosName, a tartományvezérlő-név, az Adatbázis/napló elérési útja és a Sysvol elérési útja értéket. A működési szint legalább Windows Server 2012 R2 rendszerű kell legyen.
 
@@ -50,7 +50,7 @@ Ha induláskor PAM rendszer áll rendelkezésre, és szeretne telepíteni egy te
 
 A befejezést követően a tartományvezérlő automatikusan újraindul.
 
-## 3. kiegészítés: CORP-ügyfél beállítása az érvényesítés végrehajtására
+## <a name="addendum-3-setting-up-a-corp-client-to-do-the-validation"></a>3. kiegészítés: CORP-ügyfél beállítása az érvényesítés végrehajtására
 
 A konfigurációs fájlban a ClientBinaryLocation arra a helyre kell mutasson, ahol a setup.exe található.
 Jelentkezzen be az ügyfélre helyi rendszergazdaként, és futtassa a következő parancsokat egy emelt szintű PowerShell-ablakban:
@@ -68,12 +68,12 @@ Ha a gép nincs csatlakoztatva a tartományhoz, a rendszer kéri a rendszergazda
 
 Folytassa a fentebb ismertetett 8. lépéssel.
 
-## 4. kiegészítés: Ha valami probléma merül fel
+## <a name="addendum-4-if-something-goes-wrong"></a>4. kiegészítés: Ha valami probléma merül fel
 
-A szkriptek naplói mind az %AppData%\MIMPAMInstall helyen vannak tárolva. Tömörítse a mappát egy Zip-fájlba, és küldje el e-mailben a [mim2016@microsoft.com](mim2016@microsoft.com) címre a művelet és a hiba részleteivel együtt.
+A szkriptek naplói mind az %AppData%\MIMPAMInstall helyen vannak tárolva. Tömörítse a mappát egy Zip-fájlba, és küldje el e-mailben a [mim2016@microsoft.com](mailto:mim2016@microsoft.com) címre a művelet és a hiba részleteivel együtt.
 
 
 
-<!--HONumber=Sep16_HO4-->
+<!--HONumber=Jan17_HO2-->
 
 
