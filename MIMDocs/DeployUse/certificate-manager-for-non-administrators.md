@@ -19,10 +19,10 @@ ms.openlocfilehash: 76d72211e1dbddb2647729c796ac19eb82a3b2c6
 
 ---
 
-# <a name="enroll-smart-cards-for-nonadministrators"></a>Intelligens kártyák regisztrálása nem rendszergazdák számára
+# <a name="enroll-smart-cards-for-non-administrators"></a>Intelligens kártyák regisztrálása nem rendszergazdák számára
 Ha a felhasználó nem helyi rendszergazda, akkor alapesetben nem jogosult intelligens kártyát regisztrálni a saját számítógépén. A következő folyamat bemutatja, miként lehet áthidalni ezt a korlátozást.
 
-## <a name="enabling-smart-card-renewal-for-nonadmins-in-mim-2016-certificate-manager"></a>Intelligens kártya megújításának engedélyezése nem rendszergazda felhasználók számára az MIM 2016 Tanúsítványkezelőben
+## <a name="enabling-smart-card-renewal-for-non-admins-in-mim-2016-certificate-manager"></a>Intelligens kártya megújításának engedélyezése nem rendszergazda felhasználók számára az MIM 2016 Tanúsítványkezelőben
 
 1.  **Csomagolja ki az appx-fájlt**
 
@@ -38,7 +38,7 @@ Ha a felhasználó nem helyi rendszergazda, akkor alapesetben nem jogosult intel
 
 2.  **Módosítsa a konfigurációs fájlt**
 
-    Nevezze át a fájlt nevű `CustomDataExample.xml custom.data`.. A Tanúsítványkezelő alkalmazás ezt a fájlnevet fogja keresni.
+    Nevezze át a fájlt nevű `CustomDataExample.xml custom.data` A Tanúsítványkezelő alkalmazás ezt a fájlnevet fogja keresni.
 
     A custom.data fájl szerkesztésével módosítsa a következőket:
 
