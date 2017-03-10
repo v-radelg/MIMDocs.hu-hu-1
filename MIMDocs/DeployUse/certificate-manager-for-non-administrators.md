@@ -1,11 +1,11 @@
 ---
-title: "Intelligens kártyák önkiszolgáló megújítása | Microsoft Docs"
+title: "Az intelligens kártyák önkiszolgáló megújítása rendszergazdai hozzáférés nélkül a Microsoft Identity Managerben | Microsoft Docs"
 description: "Megtudhatja, hogyan regisztrálhat intelligens kártyákat a számítógépükhöz rendszergazdai hozzáféréssel nem rendelkező felhasználók számára, hogy használhassák a Tanúsítványkezelőt."
 keywords: 
 author: kgremban
 ms.author: kgremban
 manager: femila
-ms.date: 07/21/2016
+ms.date: 01/23/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: security
@@ -13,16 +13,16 @@ ms.assetid: bfabc562-a2f0-4cff-ac31-36927f41e102
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 1f545bfb2da0f65c335e37fb9de9c9522bf57f25
-ms.openlocfilehash: 76d72211e1dbddb2647729c796ac19eb82a3b2c6
+ms.sourcegitcommit: 54d03fbd03f6c44298139324ea2dc7d945f008bc
+ms.openlocfilehash: 89e095cff66984140cdcef3617dd0ccc3d3714d8
 
 
 ---
 
-# <a name="enroll-smart-cards-for-nonadministrators"></a>Intelligens kártyák regisztrálása nem rendszergazdák számára
+# <a name="enroll-smart-cards-for-non-administrators"></a>Intelligens kártyák regisztrálása nem rendszergazdák számára
 Ha a felhasználó nem helyi rendszergazda, akkor alapesetben nem jogosult intelligens kártyát regisztrálni a saját számítógépén. A következő folyamat bemutatja, miként lehet áthidalni ezt a korlátozást.
 
-## <a name="enabling-smart-card-renewal-for-nonadmins-in-mim-2016-certificate-manager"></a>Intelligens kártya megújításának engedélyezése nem rendszergazda felhasználók számára az MIM 2016 Tanúsítványkezelőben
+## <a name="enabling-smart-card-renewal-for-non-admins-in-mim-2016-certificate-manager"></a>Intelligens kártya megújításának engedélyezése nem rendszergazda felhasználók számára az MIM 2016 Tanúsítványkezelőben
 
 1.  **Csomagolja ki az appx-fájlt**
 
@@ -38,7 +38,7 @@ Ha a felhasználó nem helyi rendszergazda, akkor alapesetben nem jogosult intel
 
 2.  **Módosítsa a konfigurációs fájlt**
 
-    Nevezze át a fájlt nevű `CustomDataExample.xml custom.data`.. A Tanúsítványkezelő alkalmazás ezt a fájlnevet fogja keresni.
+    Nevezze át a fájlt nevű `CustomDataExample.xml custom.data`. A Tanúsítványkezelő alkalmazás ezt a fájlnevet fogja keresni.
 
     A custom.data fájl szerkesztésével módosítsa a következőket:
 
@@ -96,6 +96,6 @@ Ha a felhasználó nem helyi rendszergazda, akkor alapesetben nem jogosult intel
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Feb17_HO1-->
 
 

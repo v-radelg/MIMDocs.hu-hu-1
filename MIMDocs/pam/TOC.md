@@ -19,6 +19,7 @@
 ### [5. lépés – A CORP és a PRIV közötti megbízhatósági kapcsolat létrehozása](step-5-establish-trust-between-priv-corp-forests.md)
 ### [6. lépés – Rendszerjogosultságú fiókok létrehozása](step-6-transition-group-to-pam.md)
 ### [7. lépés – Felhasználó jogosultságszintjének emelése](step-7-elevate-user-access.md)
+### [A MIM PAM telepítése a Windows Server 2016-tal](deploy-pam-with-windows-server-2016.md)
 ### [Az Azure MFA beállítása](use-azure-mfa-for-activation.md)
 ## [A PAM konfigurálása szkriptek használatával](sp1-pam-configure-using-scripts.md)
 ### [1. lépés: A PRIV-tartomány konfigurálása](sp1-step1-configuring-priv-domain.md)
@@ -33,6 +34,6 @@
 # [Fejlesztői leírás](/microsoft-identity-manager/reference/microsoft-identity-manager-2016-developer-reference)
 
 
-<!--HONumber=Jan17_HO1-->
+<!--HONumber=Feb17_HO3-->
 
 
