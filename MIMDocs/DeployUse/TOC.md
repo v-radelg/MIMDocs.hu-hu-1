@@ -11,7 +11,7 @@
 ### [A MIM telepítése: Szolgáltatás és portál](install-mim-service-portal.md)
 ### [A MIM telepítése: Adatbázisok szinkronizálása](install-mim-sync-ad-service.md)
 ## [Frissítés a Forefront Identity Manager 2010 R2-ről](microsoft-identity-manager-2016-upgrade-from-fim-2010-R2.md)
-## [A jelszóváltozás-értesítési szolgáltatás](deploying-mim-password-change-notification-service-on-domain-controller.md)
+## [Jelszóváltozás-értesítési szolgáltatás](deploying-mim-password-change-notification-service-on-domain-controller.md)
 ## [Hibrid jelentéskészítés az Identity Managerben](working-with-identity-manager-hybrid-reporting.md)
 ## [Önkiszolgáló jelszóváltoztatás](working-with-self-service-password-reset.md)
 ## [MIM Tanúsítványkezelő](working-with-mim-certificate-manager.md)
@@ -19,8 +19,3 @@
 ### [Szoftvertanúsítványok létrehozása](certificate-manager-for-software-certificates.md)
 # [A Privileged Access Management használata](/microsoft-identity-manager/pam/privileged-identity-management-for-active-directory-domain-services)
 # [Fejlesztői leírás](/microsoft-identity-manager/reference/microsoft-identity-manager-2016-developer-reference)
-
-
-<!--HONumber=Jul16_HO3-->
-
-
