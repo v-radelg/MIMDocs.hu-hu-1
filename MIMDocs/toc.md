@@ -1,5 +1,5 @@
-# [Ismertetés és felfedezés](/microsoft-identity-manager/understand-explore/microsoft-identity-manager-2016)
-## [A Microsoft Identity Manager bemutatása](/microsoft-identity-manager/understand-explore/microsoft-identity-manager-2016.md)
+# Ismertetés és felfedezés
+## [A Microsoft Identity Manager 2016 bemutatása](understand-explore/microsoft-identity-manager-2016.md)
 ## [Telepítés előtti lépések és a topológia konfigurálása](https://technet.microsoft.com/library/ff602886)
 ## Alapvető jellemzők
 ### Synchronization Service
@@ -13,33 +13,34 @@
 #### [Bevezetés a szinkronizálási házirend alapú kimenő szinkronizálásba](https://technet.microsoft.com/library/jj150433)
 ### Tanúsítványkezelés
 ### BHOLD
-### [Privileged Access Management](/microsoft-identity-manager/pam/privileged-identity-management-for-active-directory-domain-services.md)
-#### [A Privileged Access Management összetevőinek ismertetése](/microsoft-identity-manager/pam/principles-of-operation.md)
+### [Privileged Access Management](pam/privileged-identity-management-for-active-directory-domain-services.md)
+#### [A Privileged Access Management összetevőinek ismertetése](pam/principles-of-operation.md)
 ### Jelentéskészítés
 ### Összekötők
-#### [ Connector verziókiadásai](/azure/active-directory/connect/active-directory-aadconnectsync-connector-version-history.md)
+#### [ Connector verziókiadásai](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-version-history)
 ### [Jelszóváltozás-értesítési szolgáltatás](https://technet.microsoft.com/en-us/library/839a9291-a78f-4959-8e6a-3bf68bf62700)
-# [Tervezés és kialakítás](/microsoft-identity-manager/plan-design/microsoft-identity-manager-2016-supported-platforms)
-## [A Microsoft Identity Manager 2016 által támogatott platformok](/microsoft-identity-manager/PlanDesign/microsoft-identity-manager-2016-supported-platforms.md)
-## [Kapacitástervezési útmutató](/microsoft-identity-manager/PlanDesign/capacity-planning-guide.md)
-## [Topológiai szempontok](/microsoft-identity-manager/PlanDesign/topology-considerations.md)
+# Tervezés és kialakítás
+## [A Microsoft Identity Manager 2016 által támogatott platformok](plan-design/microsoft-identity-manager-2016-supported-platforms.md)
+## [Kapacitástervezési útmutató](plan-design/capacity-planning-guide.md)
+## [Topológiai szempontok](plan-design/topology-considerations.md)
 ## Synchronization Service
-### [Csatlakozás a címtárakhoz](/microsoft-identity-manager/plan-design/supported-management-agents.md)
+### [Csatlakozás a címtárakhoz](plan-design/supported-management-agents.md)
 ## Szolgáltatás és portál
 ### [Gyakorlati tanácsok](https://technet.microsoft.com/library/ff608274)
 ### [FIM 2010 biztonsági mentési és visszaállítási útmutató](https://technet.microsoft.com/library/fim-2010-backup-and-restore-guide)
-### [Üzleti szabályok tervezése]
-##  [Privileged Access Management](/microsoft-identity-manager/pam/environment-overview.md)
-### [Többrétegű modell](/microsoft-identity-manager/pam/tier-model-for-partitioning-administrative-privileges.md)
-### [Megerősített környezet megtervezése](/microsoft-identity-manager/pam/planning-bastion-environment.md)
-### [Szerepkörök definiálása](/microsoft-identity-manager/pam/defining-roles-for-pam.md)
-### [Magas rendelkezésre állás és vészhelyreállítás](/microsoft-identity-manager/pam/high-availability-disaster-recovery-considerations-bastion-environment.md)
-### [Hardver- és szoftverkövetelmények](/microsoft-identity-manager/pam/hardware-software-requirements.md)
+### Üzleti szabályok tervezése
+##  [Privileged Access Management](pam/environment-overview.md)
+### [Többrétegű modell](pam/tier-model-for-partitioning-administrative-privileges.md)
+### [Megerősített környezet megtervezése](pam/planning-bastion-environment.md)
+### [Szerepkörök definiálása](pam/defining-roles-for-pam.md)
+### [Magas rendelkezésre állás és vészhelyreállítás](pam/high-availability-disaster-recovery-considerations-bastion-environment.md)
+### [Hardver- és szoftverkövetelmények](pam/hardware-software-requirements.md)
 ## [Önkiszolgáló jelszóváltoztatás](https://technet.microsoft.com/library/jj134278)
 ## [Jelentéskészítés](https://technet.microsoft.com/library/jj133851)
-# [Üzembe helyezés és használat](/microsoft-identity-manager/deploy-use/microsoft-identity-manager-deploy)
+# Üzembe helyezés és használat
+## [A MIM 2016 üzembe helyezéséhez szükséges lépések](deploy-use/microsoft-identity-manager-deploy.md)
 ## Az Identity Manager telepítése
-## [Frissítés a Forefront Identity Manager 2012 R2-ről](/microsoft-identity-manager/deploy-use/microsoft-identity-manager-2016-upgrade-from-fim-2010-r2.md)
+## [Frissítés a Forefront Identity Manager 2012 R2-ről](deploy-use/microsoft-identity-manager-2016-upgrade-from-fim-2010-r2.md)
 ## Szolgáltatás és portál
 ### [FIM 2010 Kerberos-beállítások](https://technet.microsoft.com/library/jj134299)
 ### [FIM 2010 R2 közös felhasználó és csoport konfigurálása](https://technet.microsoft.com/library/jj150431)
@@ -52,17 +53,17 @@
 ### [Az FIM-portál konfigurálása és testreszabása](https://technet.microsoft.com/library/ff393653)
 ### [Az egyéni erőforrás- és attribútumfelügyelet ismertetése](https://technet.microsoft.com/library/ff519007)
 ### [A várt állapot észlelésének ismertetése](https://technet.microsoft.com/library/ff608269)
-## [Önkiszolgáló jelszóváltoztatás](/microsoft-identity-manager/deploy-use/working-with-self-service-password-reset.md)
+## [Önkiszolgáló jelszóváltoztatás](deploy-use/working-with-self-service-password-reset.md)
 ### [A jelszó alaphelyzetbe állításának ismertetése](https://technet.microsoft.com/library/gg214071)
 ### [A jelszóregisztrálási és -visszaállítási portál testreszabása](https://technet.microsoft.com/library/hh877809)
 ### [Jelszó alaphelyzetbe állításának központi telepítése a Forefront Identity Manager 2010-zel](https://technet.microsoft.com/video/video/password-reset-deployment-with-forefront-identity-manager-fim-2010)
 ### [A Kerberos és az önkiszolgáló jelszóváltoztatás](https://technet.microsoft.com/library/jj134304)
 ### [A Forefront Identity Manager 2010 R2 - Önkiszolgáló jelszóváltoztatás karbantartása](https://technet.microsoft.com/library/jj134290)
 ## A jelszóváltozás-értesítési szolgáltatás
-### [A MIM jelszóváltozás-értesítési szolgáltatás üzembe helyezése tartományvezérlőn](/microsoft-identity-manager/deploy-use/deploying-mim-password-change-notification-service-on-domain-controller.md)
+### [A MIM jelszóváltozás-értesítési szolgáltatás üzembe helyezése tartományvezérlőn](deploy-use/deploying-mim-password-change-notification-service-on-domain-controller.md)
 ### [A jelszóváltozás-értesítés letöltése](https://www.microsoft.com/download/details.aspx?id=19495)
 ## Jelentéskészítés
-###[Hibrid jelentéskészítés az Identity Managerben](/microsoft-identity-manager/deploy-use/working-with-identity-manager-hybrid-reporting.md)
+###[Hibrid jelentéskészítés az Identity Managerben](deploy-use/working-with-identity-manager-hybrid-reporting.md)
 ###[A System Center Service Manager jelentéskészítésének integrációja](https://technet.microsoft.com/library/jj133845)
 ## Synchronization Service
 ### [Bemutató – útmutatók (GalSync, jelszókezelés)](https://technet.microsoft.com/library/cc720550)
@@ -72,12 +73,12 @@
 
 ### Jelszó alaphelyzetbe állításának telepítési útmutatója
 ## Tanúsítványkezelő
-### [Intelligens kártyák regisztrálása nem rendszergazdák számára](/microsoft-identity-manager/deploy-use/certificate-manager-for-non-administrators.md)
-### [Szoftvertanúsítványok létrehozása a Tanúsítványkezelővel](/microsoft-identity-manager/deploy-use/certificate-manager-for-software-certificates.md)
+### [Intelligens kártyák regisztrálása nem rendszergazdák számára](deploy-use/certificate-manager-for-non-administrators.md)
+### [Szoftvertanúsítványok létrehozása a Tanúsítványkezelővel](deploy-use/certificate-manager-for-software-certificates.md)
 ## az emelt szintű hozzáférések felügyeletével
-### [A MIM-környezet konfigurálása a Privileged Access Management szolgáltatáshoz](/microsoft-identity-manager/pam/configuring-mim-environment-for-pam.md)
-### [A PAM konfigurálása szkriptek használatával](/microsoft-identity-manager/pam/sp1-pam-configure-using-scripts.md)
-### [Aktiválás az Azure MFA használatával](/microsoft-identity-manager/pam/use-azure-mfa-for-activation.md)
+### [A MIM-környezet konfigurálása a Privileged Access Management szolgáltatáshoz](pam/configuring-mim-environment-for-pam.md)
+### [A PAM konfigurálása szkriptek használatával](pam/sp1-pam-configure-using-scripts.md)
+### [Aktiválás az Azure MFA használatával](pam/use-azure-mfa-for-activation.md)
 # Infrastruktúra felügyelete
 ## [Ajánlott eljárásokat elemző eszköz az Identity Managerhez](https://technet.microsoft.com/library/jj203402)
 ## Synchronization Service
@@ -94,7 +95,7 @@
 ## BHOLD
 ## Szolgáltatás és portál
 ### [Kerberos](https://technet.microsoft.com/library/jj134299)
-### [Dinamikus naplózás](/microsoft-identity-manager/infrastructure/mim-service-dynamic-logging.md)
+### [Dinamikus naplózás](infrastructure/mim-service-dynamic-logging.md)
 ### [Exportálási teljesítmény-útmutató](https://technet.microsoft.com/library/hh322883)
 ## az emelt szintű hozzáférések felügyeletével
 ## [Jelentéskészítés](https://technet.microsoft.com/library/jj133848)
@@ -118,21 +119,21 @@
 ### [Példa: szabálykiterjesztés létrehozása több forrásból](https://msdn.microsoft.com/en-us/library/ms696018)
 ### [Tanácsok és tippek szabálykiterjesztések összeállításához](https://technet.microsoft.com/library/cc708673)
 ## Tanúsítványkezelés
-### [Tanúsítványkezelő – REST API-referencia](/microsoft-identity-manager/reference/certificate-management-rest-api-reference.md)
+### [Tanúsítványkezelő – REST API-referencia](reference/certificate-management-rest-api-reference.md)
 ### [CM értesítési API – áttekintés](https://msdn.microsoft.com/library/bb468066)
 ### [CM kiépítési API – áttekintés](https://msdn.microsoft.com/library/bb468046)
 ### [CM SQL API – áttekintés](https://msdn.microsoft.com/library/bb468093)
 ### [CM testreszabható felületek – áttekintés](https://msdn.microsoft.com/library/bb468076)
 ## [BHOLD](https://msdn.microsoft.com/library/jj853041)
 ## az emelt szintű hozzáférések felügyeletével
-### [Privileged Access Management REST API-referencia](/microsoft-identity-manager/reference/privileged-access-management-rest-api-reference.md)
+### [Privileged Access Management REST API-referencia](reference/privileged-access-management-rest-api-reference.md)
 ## Jelentéskészítés
 ## Összekötők
-### [Általános LDAP-összekötő – műszaki útmutató](/azure/active-directory/connect/active-directory-aadconnectsync-connector-genericldap.md)
-### [Általános SQL-összekötő](/azure/active-directory/connect/active-directory-aadconnectsync-connector-genericsql.md)
+### [Általános LDAP-összekötő – műszaki útmutató](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnectsync-connector-genericldap)
+### [Általános SQL-összekötő](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnectsync-connector-genericsql)
 ### [Web Services-összekötő](https://www.microsoft.com/download/details.aspx?id=29943)
-### [Műszaki útmutató a Windows PowerShell-összekötőhöz](/azure/active-directory/connect/active-directory-aadconnectsync-connector-powershell.md)
-### [Lotus Domino összekötő műszaki útmutatója](/azure/active-directory/connect/active-directory-aadconnectsync-connector-domino.md)
+### [Műszaki útmutató a Windows PowerShell-összekötőhöz](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnectsync-connector-powershell)
+### [Lotus Domino összekötő műszaki útmutatója](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnectsync-connector-domino)
 ## Szolgáltatás
 ## Technikai útmutató
 ### [FIM 2010-funkciók dokumentációja](https://technet.microsoft.com/library/ff800820)
