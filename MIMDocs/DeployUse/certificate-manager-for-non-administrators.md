@@ -15,6 +15,7 @@ ms.suite: ems
 translationtype: Human Translation
 ms.sourcegitcommit: 54d03fbd03f6c44298139324ea2dc7d945f008bc
 ms.openlocfilehash: 89e095cff66984140cdcef3617dd0ccc3d3714d8
+ms.lasthandoff: 02/07/2017
 
 
 ---
@@ -70,7 +71,7 @@ Ha a felhasználó nem helyi rendszergazda, akkor alapesetben nem jogosult intel
 
     1.  Rendszergazdai jogosultsággal jelentkezzen be a Tanúsítványkezelő portálra.
 
-    2.  Lépjen az **Administration (Felügyelet) ** &gt; ** Manage Profile Templates (Profilsablonok kezelése)** területre, és győződjön meg arról, hogy a létrehozott profil melletti négyzet be van jelölve, majd kattintson a Copy a selected profile template (Kijelölt profilsablon másolása) lehetőségre.
+    2.  Lépjen az **Administration (Felügyelet)** &gt; **Manage Profile Templates (Profilsablonok kezelése)** területre, és győződjön meg arról, hogy a létrehozott profil melletti négyzet be van jelölve, majd kattintson a Copy a selected profile template (Kijelölt profilsablon másolása) lehetőségre.
 
     3.  Írja be a profilsablon nevét, adja hozzá a „nonAdmin” elemet, majd kattintson az **OK** gombra.
 
@@ -93,9 +94,4 @@ Ha a felhasználó nem helyi rendszergazda, akkor alapesetben nem jogosult intel
 7.  **Telepítse a Tanúsítványkezelő alkalmazást a nem rendszergazdai fiókban**
 
 8.  **Indítsa el a Tanúsítványkezelőt, és regisztráljon egy virtuális intelligens kártyát**
-
-
-
-<!--HONumber=Feb17_HO1-->
-
 
