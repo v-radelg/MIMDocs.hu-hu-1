@@ -11,9 +11,9 @@ ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
 ms.assetid: 
 translationtype: Human Translation
-ms.sourcegitcommit: 90a0f144b7674bbfaf13138dfd926dbfc3c74f28
-ms.openlocfilehash: ddd707210d5cd6b618709a477d40e7771d73cfa1
-ms.lasthandoff: 03/27/2017
+ms.sourcegitcommit: 1ff73d0bdfcbcb4ab79d0d81feca9abdc33f9213
+ms.openlocfilehash: 1e2fb9a9ae508ab601ebad1dec7acc21dc44d13e
+ms.lasthandoff: 04/04/2017
 
 
 
@@ -27,7 +27,7 @@ A telepítés után a  Microsoft.ResourceManagement.Service.exe.config fájlban 
 *    8. sor: ``<dynamicLogging mode="true" loggingLevel="Verbose" />``
 *    266. sor: ``</system.diagnostics> ``
 
-![Az új, dinamikus naplózási bejegyzéseket mutató kiemelt szakaszok](/media/mim-service-dynamic-logging/screen01.png)
+![Az új, dinamikus naplózási bejegyzéseket mutató kiemelt szakaszok](media/mim-service-dynamic-logging/screen01.png)
 
 A dinamikus naplózás szintjeit [itt](https://msdn.microsoft.com/library/ms733025(v=vs.110).aspx#Anchor_3) soroljuk fel.
 
@@ -36,11 +36,11 @@ A dinamikus naplózás szintjeit [itt](https://msdn.microsoft.com/library/ms7330
 
 A dinamikus naplózás konfigurációja a 266. sorban: Microsoft.ResourceManagement.Service.exe.config
 
-![A különféle elérhető naplózási területeket mutató kiemelt szakaszok](/media/mim-service-dynamic-logging/screen02.png)
+![A különféle elérhető naplózási területeket mutató kiemelt szakaszok](media/mim-service-dynamic-logging/screen02.png)
 
 A naplózás alapértelmezett helye a **C:\Program Files\Microsoft Forefront Identity Manager\2010\Service** mappa. A dinamikus napló létrehozásához a FIM-szolgáltatásfióknak írási engedélyt kell adni erre a helyre.
 
-![A naplókat tároló mappa](/media/mim-service-dynamic-logging/screen03.png)
+![A naplókat tároló mappa](media/mim-service-dynamic-logging/screen03.png)
 
  >[!NOTE]
  Nem várt hibák (például a Microsoft.ResourceManagement.Service.exe.config fájlbeli szintaxishibák) esetében a vonatkozó hibaüzenet a Microsoft.ResourceManagement.Service.exe_Emergency.log fájlba kerül, a %TMP%, a %TEMP% vagy a %USERPROFILE% mappába (a felsoroltak közül az első létezőbe).  
@@ -50,5 +50,5 @@ A naplózás alapértelmezett helye a **C:\Program Files\Microsoft Forefront Ide
 
 A kivonatot a [Service Trace Viewer eszközzel](https://msdn.microsoft.com//library/aa751795(v=vs.110).aspx) nézheti meg
 
- ![A Service Trace Viewer képernyőképe](/media/mim-service-dynamic-logging/screen04.png)
+ ![A Service Trace Viewer képernyőképe](media/mim-service-dynamic-logging/screen04.png)
 
