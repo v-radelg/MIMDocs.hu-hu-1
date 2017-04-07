@@ -16,11 +16,12 @@ ms.suite: ems
 translationtype: Human Translation
 ms.sourcegitcommit: 1f545bfb2da0f65c335e37fb9de9c9522bf57f25
 ms.openlocfilehash: 618b834452aa07a9f31582994fe32129a49f4249
+ms.lasthandoff: 11/10/2016
 
 
 ---
 
-# <a name="step-3-prepare-a-pam-server"></a>3. lépés – PAM-kiszolgáló előkészítése
+# <a name="step-3--prepare-a-pam-server"></a>3. lépés – PAM-kiszolgáló előkészítése
 
 >[!div class="step-by-step"]
 [« 2. lépés](step-2-prepare-priv-domain-controller.md)
@@ -209,9 +210,4 @@ A 4. lépésben hozzákezdhet a MIM-összetevőknek a PAM-kiszolgálóra való t
 >[!div class="step-by-step"]
 [« 2. lépés](step-2-prepare-priv-domain-controller.md)
 [4. lépés »](step-4-install-mim-components-on-pam-server.md)
-
-
-
-<!--HONumber=Nov16_HO2-->
-
 
