@@ -3,9 +3,9 @@ layout: LandingPage
 title: "A Microsoft Identity Manager dokumentációja | Microsoft Docs"
 description: "A Microsoft Identity Manager használatának ismertetése."
 translationtype: Human Translation
-ms.sourcegitcommit: 89c49c8d979247b3b888570eabfb57398038934c
-ms.openlocfilehash: 090dd1377ba5afe5162d327569f4af6163e72a18
-ms.lasthandoff: 04/21/2017
+ms.sourcegitcommit: 2b336fead118a1517287a50e6d300bb09f535bf0
+ms.openlocfilehash: 96a5ae76e5e44ae1bed16e96b22d4efc6bfdc305
+ms.lasthandoff: 05/01/2017
 
 ---
 # <a name="microsoft-identity-manager-documentation"></a>A Microsoft Identity Manager dokumentációja
@@ -32,7 +32,7 @@ A Microsoft Identity Manager 2016 több helyszíni hitelesítési tároló – p
         </a>
     </li>
     <li>
--        <a href="/microsoft-identity-manager/understand-explore/microsoft-identity-manager-2016">
+        <a href="/microsoft-identity-manager/understand-explore/microsoft-identity-manager-2016">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
@@ -71,7 +71,7 @@ A Microsoft Identity Manager 2016 több helyszíni hitelesítési tároló – p
 ---
 <br>
 >[!Warning]
-A Forefront Identity Manager (FIM) alapvető technikai támogatása 2017. október 10-én megszűnik. Kérjük, [frissítsen](deploy-use/microsoft-identity-manager-2016-upgrade-from-fim-2010-r2.md) a Microsoft Identity Manager 2016-ra. További információk: </br>  – A FIM életciklus-információja [itt](https://support.microsoft.com/lifecycle/search?alpha=Microsoft%20Forefront%20Identity%20Manager%202010%20R2%20Service%20Pack%201,Microsoft%20Identity%20Manager%202016,Microsoft%20Forefront%20Identity%20Manager%202010) érhető el </br> – Az identitástermékek nyilvános kibocsátásáról a [Microsoft Identity Software: Public Release Build Versions](https://blogs.technet.microsoft.com/iamsupport/idmbuildversions/) (A Microsoft identitásszoftverei: nyilvános megjelenések és buildszámok) című blogbejegyzésben talál információkat
+A Forefront Identity Manager (FIM) alapvető technikai támogatása 2017. október 10-én megszűnik. Kérjük, [frissítsen](DeployUse/microsoft-identity-manager-2016-upgrade-from-fim-2010-r2.md) a Microsoft Identity Manager 2016-ra. További információk: </br>  – A FIM életciklus-információja [itt](https://support.microsoft.com/lifecycle/search?alpha=Microsoft%20Forefront%20Identity%20Manager%202010%20R2%20Service%20Pack%201,Microsoft%20Identity%20Manager%202016,Microsoft%20Forefront%20Identity%20Manager%202010) érhető el </br> – Az identitástermékek nyilvános kibocsátásáról a [Microsoft Identity Software: Public Release Build Versions](https://blogs.technet.microsoft.com/iamsupport/idmbuildversions/) (A Microsoft identitásszoftverei: nyilvános megjelenések és buildszámok) című blogbejegyzésben talál információkat
 
 <h2>Hivatkozás</h2>
 <ul class="panelContent cardsFTitle">
