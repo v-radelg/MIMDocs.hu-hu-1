@@ -2,10 +2,10 @@
 title: "Az Önkiszolgáló jelszóváltoztatás portál kezelése | Microsoft Docs"
 description: "Ismerje meg, hogy milyen újdonságokat kínál a MIM 2016 önkiszolgáló jelszó-változtatási összetevője, például hogy miként képes együttműködni a többtényezős hitelesítéssel."
 keywords: 
-author: kgremban
-ms.author: kgremban
+author: billmath
+ms.author: billmath
 manager: femila
-ms.date: 01/23/2017
+ms.date: 03/23/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: security
@@ -15,6 +15,7 @@ ms.suite: ems
 translationtype: Human Translation
 ms.sourcegitcommit: 3623bffb099a83d0eba47ba25e9777c3d590e529
 ms.openlocfilehash: 72c773601cd722290b6e7a9d5d13458f0409cfdc
+ms.lasthandoff: 01/24/2017
 
 
 ---
@@ -203,9 +204,4 @@ Ha a MIM beépülő moduljait és bővítményeit olyan tartományhoz csatlakozt
 6.  Ha a felhasználó úgy dönt, hogy megváltoztatja a jelszavát, a módosításhoz kétszer be kell írnia az új jelszót, majd a **Next** (Tovább) gombra kell kattintania.
 
     ![Kép: Jelszóváltoztatás a MIM Bejelentkezési segéddel](media/MIM-SSPR-PR1.JPG)
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

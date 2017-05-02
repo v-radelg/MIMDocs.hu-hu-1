@@ -2,10 +2,10 @@
 title: "Tanúsítványok kérése a Tanúsítványkezelőben sablonokkal | Microsoft Docs"
 description: "Megtudhatja, hogyan hozhat létre és újíthat meg szoftvertanúsítványokat a Tanúsítványkezelőben profilsablonok segítségével."
 keywords: 
-author: kgremban
-ms.author: kgremban
+author: billmath
+ms.author: billmath
 manager: femila
-ms.date: 01/23/2017
+ms.date: 03/23/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: security
@@ -15,6 +15,7 @@ ms.suite: ems
 translationtype: Human Translation
 ms.sourcegitcommit: 54d03fbd03f6c44298139324ea2dc7d945f008bc
 ms.openlocfilehash: 23cfb1134d1cbf2cf838354cb7d915084803cd41
+ms.lasthandoff: 01/24/2017
 
 
 ---
@@ -38,7 +39,7 @@ A szoftvertanúsítványok regisztrálásához és megújításához nem kell re
 
     1.  Az **Általános** lapon a Megjelenített név mezőbe írja be a következőt: **Archivált tanúsítványsablon**.
 
-    2.  b.  A **Kérelmek kezelése** lapon
+    2.  b.    A **Kérelmek kezelése** lapon
 
         1.  A **Felhasználási cél** értékét állítsa Aláírás és titkosítás értékre.
 
@@ -95,9 +96,4 @@ A szoftvertanúsítványok regisztrálásához és megújításához nem kell re
 10. Ha szeretné újra kiadni az archivált tanúsítványokat, jelölje be a **Reissue archived certificates** (Archivált tanúsítványok újrakiadása) elemtől balra lévő négyzeteket, majd kattintson az **OK** gombra.
 
 11. A Virtual Smart Card Tanúsítványkezelő használata esetén le kell tiltania az adatgyűjtő elemeket, az összetevő ugyanis aktív adatgyűjtés mellett nem működik. Tiltsa le az adatgyűjtő elemeket minden házirendnél. Ehhez kattintson a házirendre a bal oldali panelen, törölje a **Sample data item** (Mintaadatelem) melletti négyzet jelölését, majd kattintson a **Delete data collection items** (Adatgyűjtési elemek törlése) parancsra. Ezután kattintson az **OK** gombra.
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

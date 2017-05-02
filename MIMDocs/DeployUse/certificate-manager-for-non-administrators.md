@@ -2,10 +2,10 @@
 title: "Az intelligens kártyák önkiszolgáló megújítása rendszergazdai hozzáférés nélkül a Microsoft Identity Managerben | Microsoft Docs"
 description: "Megtudhatja, hogyan regisztrálhat intelligens kártyákat a számítógépükhöz rendszergazdai hozzáféréssel nem rendelkező felhasználók számára, hogy használhassák a Tanúsítványkezelőt."
 keywords: 
-author: kgremban
-ms.author: kgremban
+author: billmath
+ms.author: billmath
 manager: femila
-ms.date: 01/23/2017
+ms.date: 03/23/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: security

@@ -2,10 +2,10 @@
 title: "A MIM Tanúsítványkezelő Windows-alkalmazásának telepítése | Microsoft Docs"
 description: "Tájékozódjon arról, hogyan helyezheti üzembe a Tanúsítványkezelő alkalmazást, amely lehetővé teszi a felhasználók számára saját hozzáférési jogosultságaik kezelését."
 keywords: 
-author: kgremban
-ms.author: kgremban
+author: billmath
+ms.author: billmath
 manager: femila
-ms.date: 01/23/2017
+ms.date: 03/23/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: security
@@ -15,6 +15,7 @@ ms.suite: ems
 translationtype: Human Translation
 ms.sourcegitcommit: 3623bffb099a83d0eba47ba25e9777c3d590e529
 ms.openlocfilehash: d714a58796d3a86fc82ed1eb6dc29bdc45920933
+ms.lasthandoff: 01/24/2017
 
 
 ---
@@ -253,9 +254,4 @@ Amikor létrehozza a profilsablont, állítsa be a virtuális intelligens kárty
 
 ## <a name="deploy-the-app"></a>Az alkalmazás üzembe helyezése
 A Tanúsítványkezelő alkalmazás telepítésekor a Letöltőközpontból töltse le a MIMDMModernApp_&lt;verziószám&gt;_AnyCPU_Test.zip fájlt, és bontsa ki a teljes tartalmát. A telepítő az .appx fájl. Az alkalmazás a Windows áruházbeli alkalmazásoknál megszokott módszerekkel telepíthető, például [System Center Configuration Managerrel](https://technet.microsoft.com/library/dn613840.aspx) vagy [Intune-nal](https://technet.microsoft.com/library/dn613839.aspx) is közvetlen telepítéssel – a felhasználóknak tehát a Vállalati portálon kell elérniük azt, vagy leküldéssel is telepíthető közvetlenül a számítógépükre.
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

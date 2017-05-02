@@ -2,8 +2,8 @@
 title: "Támogatott szoftverplatformok | Microsoft Docs"
 description: "A MIM 2016 összetevői által támogatott termékek és termékverziók"
 keywords: 
-author: kgremban
-ms.author: kgremban
+author: billmath
+ms.author: billmath
 manager: femila
 ms.date: 03/28/2017
 ms.topic: article
