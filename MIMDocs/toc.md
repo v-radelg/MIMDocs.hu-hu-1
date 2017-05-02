@@ -112,3 +112,5 @@
 #### [Függőben lévő PAM-kérések lekérése](/microsoft-identity-manager/reference/privileged-access-management-get-pending-requests)
 #### [Függőben lévő PAM-kérelmek jóváhagyása vagy elutasítása](/microsoft-identity-manager/reference/privileged-access-management-approve-reject-pending-request)
 #### [PAM-munkamenetadatok lekérése](/microsoft-identity-manager/reference/privileged-access-management-get-session-info)
+## [Technikai útmutató]
+### [Erőforrás-vezérlési konfiguráció megjelenítésének XML-hivatkozása](/microsoft-identity-manager/reference/rcd-configuration-xml-reference)
