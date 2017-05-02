@@ -2,10 +2,10 @@
 title: "A jelszóváltozás-értesítési szolgáltatás üzembe helyezése | Microsoft Docs"
 description: "Ezekkel a lépésekkel telepítheti és konfigurálhatja a MIM jelszóváltozás-értesítési szolgáltatást a tartományvezérlőn."
 keywords: 
-author: kgremban
-ms.author: kgremban
+author: billmath
+ms.author: billmath
 manager: femila
-ms.date: 01/23/2017
+ms.date: 03/23/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: security
@@ -15,6 +15,7 @@ ms.suite: ems
 translationtype: Human Translation
 ms.sourcegitcommit: 54d03fbd03f6c44298139324ea2dc7d945f008bc
 ms.openlocfilehash: 1929703baffad4177ea7ea058cb07f44a9c71667
+ms.lasthandoff: 01/24/2017
 
 
 ---
@@ -58,9 +59,4 @@ A tartományvezérlőkre telepíthető jelszóváltozás-értesítési szolgált
 
 ## <a name="configuring-the-password-change-notification-service"></a>A jelszóváltozás-értesítési szolgáltatás konfigurálása
 Miután tartományi rendszergazdaként újra csatlakozott a tartományvezérlő kiszolgálóhoz, nyissa meg a *C:\Program Files\Microsoft Password Change Notification* mappát. Futtassa a *pcnscfg.exe* fájlt.
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

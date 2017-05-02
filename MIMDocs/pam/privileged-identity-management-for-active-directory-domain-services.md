@@ -2,10 +2,10 @@
 title: Privileged Access Management az Active Directory Domain Serviceshez | Microsoft Docs
 description: "További információk a Privileged Access Managementről, valamint az Active Directory-környezet kezelésében és védelmében elfoglalt szerepéről."
 keywords: 
-author: kgremban
-ms.author: kgremban
+author: billmath
+ms.author: billmath
 manager: femila
-ms.date: 01/10/2017
+ms.date: 03/10/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
@@ -17,6 +17,7 @@ experiment_id: kgremban_images
 translationtype: Human Translation
 ms.sourcegitcommit: f0947f186b5206d06a67140706ada33a5bc0e016
 ms.openlocfilehash: cea5a2fc162870c1125b35b75376881eb15cd2e9
+ms.lasthandoff: 01/11/2017
 
 ---
 
@@ -95,9 +96,4 @@ Ha a kérés jóváhagyást nyer, a munkafolyamat közvetlen kommunikációra l�
 > Ezzel szemben a lejárt hivatkozást valós időben értékeli ki a biztonsági fiókkezelő (SAM). Még ha a csoporttag felvételét replikálnia is kell annak a tartományvezérlőnek, amely megkapja a kérést, a csoporttag eltávolítását azonnal kiértékeli minden tartományvezérlő.
 
 Ez a munkafolyamat kifejezetten az ilyen rendszergazdai fiókok számára készült. A rendszerjogosultságú fiókokhoz csak alkalmi hozzáférést igénylő rendszergazdák (sőt akár szkriptek is) pontosan ilyen hozzáférést kérelmezhetnek. Az MIM naplózza a kérést és az Active Directoryban bekövetkező változásokat, Ön pedig megtekinthető őket az Eseménynaplóban, vagy elküldheti az adatokat vállalati figyelési megoldásoknak (például a System Center 2012 – Operations Manager naplózási szolgáltatásának (ACS) vagy más külső gyártású eszközöknek).
-
-
-
-<!--HONumber=Jan17_HO2-->
-
 
