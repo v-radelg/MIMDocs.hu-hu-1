@@ -2,10 +2,10 @@
 title: "Az Azure MFA használata a PAM aktiválásához | Microsoft Docs"
 description: "Állítsa be az Azure MFA-t második biztonsági szintként, ha a felhasználók szerepköröket aktiválnak a Privileged Access Managementben."
 keywords: 
-author: kgremban
-ms.author: kgremban
+author: billmath
+ms.author: billmath
 manager: femila
-ms.date: 07/15/2016
+ms.date: 03/15/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
@@ -13,8 +13,9 @@ ms.assetid: 5134a112-f73f-41d0-a5a5-a89f285e1f73
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 1f545bfb2da0f65c335e37fb9de9c9522bf57f25
-ms.openlocfilehash: fa6d69038e5b2f0b933773381661929159198242
+ms.sourcegitcommit: bfc73723bdd3a49529522f78ac056939bb8025a3
+ms.openlocfilehash: b937b30da2dff9bbfeabf7dceb43fcaca99a1b63
+ms.lasthandoff: 05/02/2017
 
 
 ---
@@ -148,9 +149,4 @@ A sikertelen telefonhívások okára (101-es esemény) vonatkozó további infor
 5.  Válassza ki az időtartományt, és jelölje be a jelölőnégyzetet a **Name** (Név) pont mellett, a további jelentések oszlopában. Kattintson az **Exportálás CSV-fájlba** elemre.
 
 6.  A jelentést a létrehozását követően megtekintheti a portálon, illetve, ha az MFA-jelentés túl hosszú, letöltheti CSV-fájlként. Az **AUTH TYPE** oszlopban található **SDK**-értékek jelölik azokat a sorokat, amelyek a PAM-aktivációs kérésekhez kapcsolódnak: ezek a MIM-től vagy más helyszíni szoftvertől származó események. A **USERNAME** mező a MIM szolgáltatás adatbázisában található felhasználóobjektum GUID-azonosítója. Ha egy hívás sikertelen volt, az **AUTHD** oszlop értéke **No** lesz, a **CALL RESULT** oszlop pedig tartalmazza a hiba okát, és annak részleteit.
-
-
-
-<!--HONumber=Nov16_HO2-->
-
 

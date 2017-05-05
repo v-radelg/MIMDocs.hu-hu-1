@@ -2,10 +2,10 @@
 title: "Rendszerjogosultságú szerepkörök definiálása a PAM számára | Microsoft Docs"
 description: "Határozza meg, mely rendszerjogosultságú szerepköröket kell kezelni, és alakítsa ki mindegyik számára a kezelési házirendet."
 keywords: 
-author: kgremban
-ms.author: kgremban
+author: billmath
+ms.author: billmath
 manager: femila
-ms.date: 07/15/2016
+ms.date: 03/15/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
@@ -13,8 +13,9 @@ ms.assetid: 1a368e8e-68e1-4f40-a279-916e605581bc
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 1f545bfb2da0f65c335e37fb9de9c9522bf57f25
-ms.openlocfilehash: ae582e6aff2449aeee8b68ebe90b22b18e5a67d2
+ms.sourcegitcommit: bfc73723bdd3a49529522f78ac056939bb8025a3
+ms.openlocfilehash: 807ee44c23f367c33b820251012008324bb2c005
+ms.lasthandoff: 05/02/2017
 
 
 ---
@@ -144,7 +145,7 @@ A szerepkör-definíciók kiválasztása a rendszerjogosultságú fiókokkal fel
 
 A következő szakaszok példákat mutatnak be a jellemző vállalati forgatókönyvekre.
 
-### <a name="tier-0-administrative-forest"></a>Nulladik réteg: Felügyeleti erdő
+### <a name="tier-0---administrative-forest"></a>Nulladik réteg: Felügyeleti erdő
 
 A megerősített környezetben lévő fiókokhoz megfelelő szerepkörök a következők lehetnek:
 
@@ -153,7 +154,7 @@ A megerősített környezetben lévő fiókokhoz megfelelő szerepkörök a köv
 - Azok a felhasználók, akik az éles környezetben működő erdő rendszergazdái
 - Azok a felhasználók, akiknek korlátozott felügyeleti jogosultságokat delegáltak az éles környezetben működő erdőben található alkalmazásokhoz
 
-### <a name="tier-0-enterprise-production-forest"></a>Nulladik réteg: Vállalati éles környezetben működő erdő
+### <a name="tier-0---enterprise-production-forest"></a>Nulladik réteg: Vállalati éles környezetben működő erdő
 
 Nulladik rétegbeli éles környezetben működő erdő fiókjainak és erőforrásainak felügyeletére alkalmas szerepkörök következők lehetnek:
 
@@ -200,9 +201,4 @@ A nem rendszergazda jogosultságú felhasználók és számítógépek felügyel
 - Segélyszolgálat
 - Biztonsági csoportok rendszergazdái
 - Munkaállomások helyszíni támogatása
-
-
-
-<!--HONumber=Nov16_HO2-->
-
 
