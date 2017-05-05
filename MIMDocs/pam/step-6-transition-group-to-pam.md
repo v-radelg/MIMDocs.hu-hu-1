@@ -2,10 +2,10 @@
 title: "A PAM üzembe helyezése, 6. lépés – Csoport áthelyezése | Microsoft Docs"
 description: "Telepítse át a csoportot a PRIV erdőbe, hogy a Privilege Access Management által kezelhető legyen."
 keywords: 
-author: kgremban
-ms.author: kgremban
+author: billmath
+ms.author: billmath
 manager: femila
-ms.date: 07/15/2016
+ms.date: 03/15/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
@@ -13,13 +13,14 @@ ms.assetid: 7b689eff-3a10-4f51-97b2-cb1b4827b63c
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 1f545bfb2da0f65c335e37fb9de9c9522bf57f25
-ms.openlocfilehash: 9e70bdd3c586a16a9a55c91bd0e099a500950a64
+ms.sourcegitcommit: bfc73723bdd3a49529522f78ac056939bb8025a3
+ms.openlocfilehash: aeffca2c4e5467ec039c2077a88f36a652493e90
+ms.lasthandoff: 05/02/2017
 
 
 ---
 
-# <a name="step-6-transition-a-group-to-privileged-access-management"></a>6. lépés – Csoport áthelyezése a Privileged Access Management szolgáltatásba
+# <a name="step-6--transition-a-group-to-privileged-access-management"></a>6. lépés – Csoport áthelyezése a Privileged Access Management szolgáltatásba
 
 >[!div class="step-by-step"]
 [« 5. lépés ](step-5-establish-trust-between-priv-corp-forests.md)
@@ -87,9 +88,4 @@ Ha azt szeretné bemutatni, hogy az erdők közötti hozzáférési jogok vannak
 >[!div class="step-by-step"]
 [« 5. lépés ](step-5-establish-trust-between-priv-corp-forests.md)
 [7. lépés »](step-7-elevate-user-access.md)
-
-
-
-<!--HONumber=Nov16_HO2-->
-
 

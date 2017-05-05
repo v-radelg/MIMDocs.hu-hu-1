@@ -2,10 +2,10 @@
 title: "A PAM-környezet áttekintése | Microsoft Docs"
 description: "A virtuális gépek száma és konfigurációs adatai, amelyek a Privileged Access Management sikeres üzembe helyezéséhez szükségesek"
 keywords: 
-author: kgremban
-ms.author: kgremban
+author: billmath
+ms.author: billmath
 manager: femila
-ms.date: 07/15/2016
+ms.date: 03/15/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
@@ -13,8 +13,9 @@ ms.assetid: 479db14c-1bfb-4d7c-a344-cd718a01f328
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 1f545bfb2da0f65c335e37fb9de9c9522bf57f25
-ms.openlocfilehash: 750ba152813b4c03c913453c42e0e503e90b883b
+ms.sourcegitcommit: bfc73723bdd3a49529522f78ac056939bb8025a3
+ms.openlocfilehash: 3e6c5a70c6b9ed140a56135676bbd14a84504317
+ms.lasthandoff: 05/02/2017
 
 
 ---
@@ -31,9 +32,4 @@ A virtuális gépek lemezképeit tároló meghajtókon legalább 120 GB szabad l
 
 > [!NOTE]
 > Az aktuális MIM-ügyfél technikai előzetese (CTP) nem kompatibilis az előző CTP-ből származó adatbázis vagy a könyvtár tartalmával. Ha a MIM-et korábban már kipróbálta a PAM-re vagy más forgatókönyvekre vonatkozóan, készítsen biztonsági másolatot, illetve archiválja a teszteléshez használt virtuális gépeket, majd indítsa el a központi telepítést új, MIM-forgatókönyvekhez korábban még nem használt virtuális gépek lemezképeivel.
-
-
-
-<!--HONumber=Nov16_HO2-->
-
 

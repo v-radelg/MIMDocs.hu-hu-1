@@ -2,10 +2,10 @@
 title: "A PAM üzembe helyezése, 2. lépés – PRIV DC | Microsoft Docs"
 description: "A PRIV tartományvezérlő előkészítése, amely olyan megerősített környezetet biztosít, amelyben a Privileged Access Management elkülönítve szerepel."
 keywords: 
-author: kgremban
-ms.author: kgremban
+author: billmath
+ms.author: billmath
 manager: femila
-ms.date: 07/15/2016
+ms.date: 03/15/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
@@ -13,13 +13,14 @@ ms.assetid: 0e9993a0-b8ae-40e2-8228-040256adb7e2
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 1f545bfb2da0f65c335e37fb9de9c9522bf57f25
-ms.openlocfilehash: f84229908f31242b6d2f7636a7c67ca669de45b3
+ms.sourcegitcommit: bfc73723bdd3a49529522f78ac056939bb8025a3
+ms.openlocfilehash: edc15b41d4248887f4a93217f68d8125f6500585
+ms.lasthandoff: 05/02/2017
 
 
 ---
 
-# <a name="step-2-prepare-the-first-priv-domain-controller"></a>2. lépés: A PRIV tartományvezérlő előkészítése
+# <a name="step-2---prepare-the-first-priv-domain-controller"></a>2. lépés: A PRIV tartományvezérlő előkészítése
 
 >[!div class="step-by-step"]
 [« 1. lépés](step-1-prepare-corp-domain.md)
@@ -269,12 +270,12 @@ Végezze el a következő lépéseket a PRIVDC számítógépen tartományi rend
 15. Az engedélyek listájában válassza a **Jelszó módosítása** és a **Jelszó alaphelyzetbe állítása** elemet. Kattintson a **Tovább**, majd a **Befejezés** gombra.  
 16. Zárja be az Active Directory – felhasználók és számítógépek beépülő modult.
 
-17. Nyisson meg egy parancssort.  
-18. Ellenőrizze az Admin SD Holder objektum hozzáférés-vezérlési listáját a PRIV tartományokban. Ha a tartomány például „priv.contoso.local” volt, írja be a következő parancsot:  
+17.    Nyisson meg egy parancssort.  
+18.    Ellenőrizze az Admin SD Holder objektum hozzáférés-vezérlési listáját a PRIV tartományokban. Ha a tartomány például „priv.contoso.local” volt, írja be a következő parancsot:  
   ```
   dsacls "cn=adminsdholder,cn=system,dc=priv,dc=contoso,dc=local"
   ```
-19. Ha szükséges, módosítsa a hozzáférés-vezérlési listát úgy, hogy a MIM szolgáltatás és a MIM összetevő frissíteni tudja az adott hozzáférés-vezérlési lista által védett csoportok tagságát.  Írja be a következő parancsot:  
+19.    Ha szükséges, módosítsa a hozzáférés-vezérlési listát úgy, hogy a MIM szolgáltatás és a MIM összetevő frissíteni tudja az adott hozzáférés-vezérlési lista által védett csoportok tagságát.  Írja be a következő parancsot:  
   ```
   dsacls "cn=adminsdholder,cn=system,dc=priv,dc=contoso,dc=local" /G priv\mimservice:WP;"member"  
   dsacls "cn=adminsdholder,cn=system,dc=priv,dc=contoso,dc=local" /G priv\mimcomponent:WP;"member"
@@ -304,9 +305,4 @@ A következő lépésben egy PAM-kiszolgáló előkészítésével foglalkozunk.
 >[!div class="step-by-step"]
 [« 1. lépés](step-1-prepare-corp-domain.md)
 [3. lépés »](step-3-prepare-pam-server.md)
-
-
-
-<!--HONumber=Nov16_HO2-->
-
 

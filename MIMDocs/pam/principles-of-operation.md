@@ -2,10 +2,10 @@
 title: "A PAM-összetevők ismertetése | Microsoft Docs"
 description: "A Privileged Access Management rendelkezik saját összetevőkkel is, de bizonyos összetevői megegyeznek a MIM összetevőivel. Ismerje meg, ezek hogyan működnek együtt."
 keywords: 
-author: kgremban
-ms.author: kgremban
+author: billmath
+ms.author: billmath
 manager: femila
-ms.date: 07/15/2016
+ms.date: 03/15/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
@@ -13,8 +13,9 @@ ms.assetid: 6498f68f-36d3-448c-8fe6-649ad5a7f97d
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 1f545bfb2da0f65c335e37fb9de9c9522bf57f25
-ms.openlocfilehash: 043d617bcd2addf7c6dc7ecd210790fc55f12c28
+ms.sourcegitcommit: bfc73723bdd3a49529522f78ac056939bb8025a3
+ms.openlocfilehash: 53fe79f251c3b18426f16b4007cda49e67d7b028
+ms.lasthandoff: 05/02/2017
 
 
 ---
@@ -40,9 +41,4 @@ A telepítést és a konfigurálást követően minden, a PRIV erdőben az átte
 Emiatt, amikor egy felhasználó a PowerShell-parancsmagok használatával jogosultságszint-emelést kér, és a kérelmet jóváhagyja a rendszer, a MIM szolgáltatás a felhasználó fiókját hozzáadja a PRIV erdő egyik csoportjához. Amikor a felhasználó bejelentkezik az emelt jogosultságú fiókkal, a felhasználó Kerberos-jogkivonata tartalmazni fog egy biztonsági azonosítót (SID), mely megegyezik a CORP erdőbeli csoport biztonsági azonosítójával. Mivel a CORP és a PRIV erdő között megbízhatósági kapcsolat van beállítva, a CORP erdőben lévő erőforrások eléréséhez használt rendszerjogosultságú fiók – a Kerberos-csoporttagságot ellenőrző erőforrás szempontjából – az adott erőforrás biztonsági csoportjának tagjává válik. Ezt a Kerberos erdők közötti hitelesítése biztosítja.
 
 Mindemellett ezek a tagságok időkorlátosak, így az előre beállított idő elteltével a felhasználó rendszergazdai fiókja már nem lesz tagja a továbbiakban a PRIV erdőbeli csoportnak. Ennek eredményeképpen a fiók nem használható többé a további erőforrások eléréséhez.
-
-
-
-<!--HONumber=Nov16_HO2-->
-
 
