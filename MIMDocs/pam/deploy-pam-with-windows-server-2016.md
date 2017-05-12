@@ -5,15 +5,16 @@ keywords:
 author: barclayn
 ms.author: barclayn
 manager: mbaldwin
-ms.date: 03/24/2017
+ms.date: 05/08/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
 ms.assetid: 
-translationtype: Human Translation
-ms.sourcegitcommit: 77ecdb91ccfdb1afec830e9662163ab9a7ef250c
-ms.openlocfilehash: dc68c4dcf2ae2d347e10930613bd32ca02031f8b
-ms.lasthandoff: 03/24/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 3797f5789bb4e48836eb21776dafd5a2e0e11613
+ms.openlocfilehash: fbdebd59249667a0e60d3a248f183bcb6a75085a
+ms.contentlocale: hu-hu
+ms.lasthandoff: 05/09/2017
 
 
 ---
@@ -40,9 +41,9 @@ A tesztkörnyezetben legalább két virtuális gép szükséges:
 Ha még nincs „CORP” tartomány a tesztkörnyezetben, szükséges egy további tartományvezérlő ahhoz a tartományhoz. A „CORP” tartományvezérlő Windows Server 2016 és Windows Server 2012 R2 rendszerű is lehet.
 
 
-Végezze el a telepítést az [Útmutató az első lépésekhez](/microsoft-identity-manager/pam/privileged-identity-management-for-active-directory-domain-services.md) szerint, **az alábbi eltérésekkel**:
+Végezze el a telepítést az [Útmutató az első lépésekhez](privileged-identity-management-for-active-directory-domain-services.md) szerint, **az alábbi eltérésekkel**:
 
--   Ha új CORP tartományt hoz létre, akkor az [1. lépés – A CORP tartományvezérlő előkészítése](/microsoft-identity-manager/pam/step-1-prepare-corp-domain.md) című rész útmutatásának végrehajtása közben választhatja, hogy a CORP tartomány a Windows Server 2016 működési szintjén legyen. **Ha ezt a beállítást választja, végezze el a következő módosításokat**:
+-   Ha új CORP tartományt hoz létre, akkor az [1. lépés – A CORP tartományvezérlő előkészítése](step-1-prepare-corp-domain.md) című rész útmutatásának végrehajtása közben választhatja, hogy a CORP tartomány a Windows Server 2016 működési szintjén legyen. **Ha ezt a beállítást választja, végezze el a következő módosításokat**:
 
     -   Ha a Windows Server 2016 adathordozójáról futtatja a telepítőt, akkor a telepítési lehetőség neve Windows Server 2016 (Server with Desktop Experience) (Windows Server 2016 (Kiszolgáló asztali felülettel)) lesz.
 
@@ -56,7 +57,7 @@ Végezze el a telepítést az [Útmutató az első lépésekhez](/microsoft-iden
 
 -   Ha a Windows Server 2012 R2-t használja a CORPDC tartományvezérlő operációs rendszereként, akkor telepítenie kell a 2919442-es és a 2919355-es gyorsjavítást, [valamint a 3155495-es frissítést](http://support.microsoft.com/kb/3156418) a CORPDC számítógépre.
 
--   Kövesse a [2. lépés – A PRIV tartományvezérlő előkészítése](/microsoft-identity-manager/pam/step-2-prepare-priv-domain-controller.md) című szakasz útmutatását, de a következő módosításokkal:
+-   Kövesse a [2. lépés – A PRIV tartományvezérlő előkészítése](step-2-prepare-priv-domain-controller.md) című szakasz útmutatását, de a következő módosításokkal:
 
     -   Végezze a telepítést a Windows Server 2016 adathordozójáról. A telepítési lehetőség neve Windows Server 2016 (Server with Desktop Experience) (Windows Server 2016 (Kiszolgáló asztali felülettel)) lesz.
 
@@ -115,19 +116,19 @@ Végezze el a telepítést az [Útmutató az első lépésekhez](/microsoft-iden
     ```
 
 
--   Kövesse a [3. lépés – PAM-kiszolgáló előkészítése](/microsoft-identity-manager/pam/step-3-prepare-pam-server.md) című szakasz útmutatását a következő eltérésekkel.
+-   Kövesse a [3. lépés – PAM-kiszolgáló előkészítése](step-3-prepare-pam-server.md) című szakasz útmutatását a következő eltérésekkel.
 
     -   Ha a Windows Server 2016-ra telepít, ne feledje, hogy az „ApplicationServer” szerepkör nem érhető el.
 
     -   Ha a Windows Server 2016-ra telepít, **nem lehet telepíteni a SharePoint 2013-at**.
 
--   Kövesse a [4. lépés – MIM-összetevők telepítése PAM-kiszolgálóra és -munkaállomásra](/microsoft-identity-manager/pam/step-4-install-mim-components-on-pam-server.md) című szakasz útmutatását a következő eltérésekkel.
+-   Kövesse a [4. lépés – MIM-összetevők telepítése PAM-kiszolgálóra és -munkaállomásra](step-4-install-mim-components-on-pam-server.md) című szakasz útmutatását a következő eltérésekkel.
 
     -   A MIM szolgáltatást és a PAM összetevőt telepítő felhasználónak **írási joggal kell rendelkeznie a PRIV tartományhoz az Active Directoryban**, mert a MIM telepítése létrehoz egy új, „PAM objects” nevű szervezeti egységet.
 
     -   Ha nincs telepítve a SharePoint, ne telepítse a MIM-portált.
 
--   Kövesse az [5. lépés – Megbízhatósági kapcsolat létrehozása](/microsoft-identity-manager/pam/step-5-establish-trust-between-priv-corp-forests.md) című szakasz útmutatását a következő eltérésekkel:
+-   Kövesse az [5. lépés – Megbízhatósági kapcsolat létrehozása](step-5-establish-trust-between-priv-corp-forests.md) című szakasz útmutatását a következő eltérésekkel:
 
     -   Az egyirányú megbízhatóság kialakításakor csak az első két PowerShell-parancsot hajtsa végre (get-credential és New-PAMTrust), **a New-PAMDomainConfiguration parancsot ne adja ki**.
 
@@ -147,7 +148,7 @@ Végezze el a telepítést az [Útmutató az első lépésekhez](/microsoft-iden
 
 ## <a name="more-information"></a>További információ
 
-- [Privileged Access Management az Active Directory Domain Serviceshez](/microsoft-identity-manager/pam/privileged-identity-management-for-active-directory-domain-services.md)
-- [A MIM-környezet konfigurálása a Privileged Access Management szolgáltatáshoz](/microsoft-identity-manager/pam/configuring-mim-environment-for-pam.md)
-- [A PAM konfigurálása szkriptek használatával](/microsoft-identity-manager/pam/sp1-pam-configure-using-scripts.md)
+- [Privileged Access Management az Active Directory Domain Serviceshez](privileged-identity-management-for-active-directory-domain-services.md)
+- [A MIM-környezet konfigurálása a Privileged Access Management szolgáltatáshoz](configuring-mim-environment-for-pam.md)
+- [A PAM konfigurálása szkriptek használatával](sp1-pam-configure-using-scripts.md)
 
