@@ -34,7 +34,7 @@ Szívesen meghallgatnánk a véleményét is! Ha visszajelzése vagy megjegyzés
 
 ### <a name="mim"></a>MIM
 
-- **A MIM-portál böngészőkompatibilitása végfelhasználók önkiszolgáló munkafolyamataihoz:** Ebben a szervizcsomagban támogatást biztosítunk a legtöbb ismert böngészőhöz. A felhasználók mostantól elérhetik és használhatják a MIM-portált önkiszolgáló csoportok és profilok kezelésére az Edge, Chrome és Safari böngészőből.
+- **A MIM-portál böngészőkompatibilitása végfelhasználók önkiszolgáló munkafolyamataihoz:** Ebben a szervizcsomagban támogatást biztosítunk a legtöbb ismert böngészőhöz. A felhasználók mostantól elérhetik és használhatják a MIM-portált önkiszolgáló csoportok és profilok kezelésére a Microsoft Edge, a Chrome és a Safari böngészőből.
 
 - **MIM szolgáltatás támogatása Exchange Online-hoz:** A MIM szolgáltatás régóta támogatja e-mailek küldését és fogadását jóváhagyáskor és értesítéskor. Az SP1 előtt a MIM csak az Exchange Server vagy az SMTP szolgáltatást támogatta. Az 1. szervizcsomag megjelenésétől kezdve a MIM szolgáltatás küldhet és fogadhat kéréseket is, csakúgy, mint e-mailes értesítéseket egy Office365 Exchange online fiók használatával.
 
