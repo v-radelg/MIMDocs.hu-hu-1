@@ -10,9 +10,10 @@ ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
 ms.assetid: 
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 1ff73d0bdfcbcb4ab79d0d81feca9abdc33f9213
 ms.openlocfilehash: 1e2fb9a9ae508ab601ebad1dec7acc21dc44d13e
+ms.contentlocale: hu-hu
 ms.lasthandoff: 04/04/2017
 
 
@@ -23,9 +24,9 @@ A 4.4.1436.0-s verzióban új naplózási funkció mutatkozott be, amellyel a re
 
 A telepítés után a  Microsoft.ResourceManagement.Service.exe.config fájlban a következő új sorok lesznek láthatóak:
 
-*    6. sor: ``<section name="dynamicLogging" type="Microsoft.ResourceManagement.Utilities.DynamicLoggingSection, Microsoft.ResourceManagement.Service" />``
-*    8. sor: ``<dynamicLogging mode="true" loggingLevel="Verbose" />``
-*    266. sor: ``</system.diagnostics> ``
+*    Sor 6: ``<section name="dynamicLogging" type="Microsoft.ResourceManagement.Utilities.DynamicLoggingSection, Microsoft.ResourceManagement.Service" />``
+*    Sor 8:  ``<dynamicLogging mode="true" loggingLevel="Verbose" />``
+*    Sor 266 ``</system.diagnostics> ``
 
 ![Az új, dinamikus naplózási bejegyzéseket mutató kiemelt szakaszok](media/mim-service-dynamic-logging/screen01.png)
 
