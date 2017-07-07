@@ -40,8 +40,3 @@
 #### [Függőben lévő PAM-kérések lekérése](privileged-access-management-get-pending-requests.md)
 #### [Függőben lévő PAM-kérelmek jóváhagyása vagy elutasítása](privileged-access-management-approve-reject-pending-request.md)
 #### [PAM-munkamenetadatok lekérése](privileged-access-management-get-session-info.md)
-
-
-<!--HONumber=Jan17_HO3-->
-
-
