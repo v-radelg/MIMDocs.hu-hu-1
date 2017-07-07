@@ -32,8 +32,3 @@
 ### [8. lépés: A PAM üzembe helyezésének ellenőrzése](sp1-step8-pam-deployment-verification.md)
 ### [Kiegészítés](sp1-pam-deployment-addendum.md)
 # [Fejlesztői leírás](/microsoft-identity-manager/reference/microsoft-identity-manager-2016-developer-reference)
-
-
-<!--HONumber=Feb17_HO3-->
-
-
