@@ -1,116 +1,232 @@
+
 # [Ismertetés és felfedezés](microsoft-identity-manager-2016.md)
+
 ## [Mi az a MIM 2016?](microsoft-identity-manager-2016.md)
+
 ## [A Service Pack 1 újdonságai](Microsoft-identity-manager-2016-sp1-release-notes.md)
+
 ### [MIM2016 SP1 PAM üzembe helyezési szkriptek](sp1-deployment-scripts.md)
+
 ## [Hibrid jelentéskészítés az Azure-ban](identity-manager-hybrid-reporting-azure.md)
+
 # [Tervezés és kialakítás](microsoft-identity-manager-2016-supported-platforms.md)
+
 ## [Támogatott platformok](microsoft-identity-manager-2016-supported-platforms.md)
+
 ## [Csatlakozás címtárakhoz](supported-management-agents.md)
+
 ## [Kapacitástervezés](capacity-planning-guide.md)
+
 ## [Üzembe helyezési topológia](topology-considerations.md)
+
 # [Üzembe helyezés és használat](microsoft-identity-manager-deploy.md)
+
 ## [Első üzembe helyezés](microsoft-identity-manager-deploy.md)
+
 ### [Tartomány beállítása](preparing-domain.md)
+
 ### [Kiszolgáló beállítása: Windows Server](prepare-server-ws2012r2.md)
+
 ### [Kiszolgáló beállítása: SQL](prepare-server-sql2014.md)
+
 ### [Kiszolgáló beállítása: SharePoint](prepare-server-sharepoint.md)
+
 ### [Kiszolgáló beállítása: Exchange](prepare-server-exchange.md)
+
 ### [A MIM telepítése: Szinkronizálás](install-mim-sync.md)
+
 ### [A MIM telepítése: Szolgáltatás és portál](install-mim-service-portal.md)
+
 ### [A MIM telepítése: Adatbázisok szinkronizálása](install-mim-sync-ad-service.md)
+
 ## [Frissítés a Forefront Identity Manager 2010 R2-ről](microsoft-identity-manager-2016-upgrade-from-fim-2010-R2.md)
+
 ## [Jelszóváltozás-értesítési szolgáltatás](deploying-mim-password-change-notification-service-on-domain-controller.md)
+
 ## [Hibrid jelentéskészítés az Identity Managerben](working-with-identity-manager-hybrid-reporting.md)
+
 ## [Önkiszolgáló jelszóváltoztatás](working-with-self-service-password-reset.md)
+
 ## [MIM Tanúsítványkezelő](working-with-mim-certificate-manager.md)
+
 ### [Intelligens kártyák regisztrálása](certificate-manager-for-non-administrators.md)
+
 ### [Szoftvertanúsítványok létrehozása](certificate-manager-for-software-certificates.md)
+
 # [A Privileged Access Management használata](./pam/privileged-identity-management-for-active-directory-domain-services.md)
+
 ## [A PAM megismerése](./pam/privileged-identity-management-for-active-directory-domain-services.md)
+
 ### [Az összetevők megismerése](./pam/principles-of-operation.md)
+
 ## [A PAM bevezetésének megtervezése](./pam/environment-overview.md)
+
 ### [A környezet áttekintése](./pam/environment-overview.md)
+
 ### [Többrétegű modell](./pam/tier-model-for-partitioning-administrative-privileges.md)
+
 ### [Megerősített környezet megtervezése](./pam/planning-bastion-environment.md)
+
 ### [Szerepkörök definiálása](./pam/defining-roles-for-pam.md)
+
 ### [Magas rendelkezésre állás és vészhelyreállítás](./pam/high-availability-disaster-recovery-considerations-bastion-environment.md)
+
 ### [Hardver- és szoftverkövetelmények](./pam/hardware-software-requirements.md)
+
 ## [A MIM konfigurálása a Privileged Access Management szolgáltatáshoz](./pam/configuring-mim-environment-for-pam.md)
+
 ### [1. lépés – A CORP tartomány](./pam/step-1-prepare-corp-domain.md)
+
 ### [2. lépés – A PRIV tartományvezérlő](./pam/step-2-prepare-priv-domain-controller.md)
+
 ### [3. lépés – A PAM-kiszolgáló](./pam/step-3-prepare-pam-server.md)
+
 ### [4. lépés – A MIM telepítése a PAM kiszolgálóra](./pam/step-4-install-mim-components-on-pam-server.md)
+
 ### [5. lépés – A CORP és a PRIV közötti megbízhatósági kapcsolat létrehozása](./pam/step-5-establish-trust-between-priv-corp-forests.md)
+
 ### [6. lépés – Rendszerjogosultságú fiókok létrehozása](./pam/step-6-transition-group-to-pam.md)
+
 ### [7. lépés – Felhasználó jogosultságszintjének emelése](./pam/step-7-elevate-user-access.md)
+
 ### [A MIM PAM telepítése a Windows Server 2016-tal](./pam/deploy-pam-with-windows-server-2016.md)
+
 ### [Az Azure MFA beállítása](./pam/use-azure-mfa-for-activation.md)
+
 ## [A PAM konfigurálása szkriptek használatával](./pam/sp1-pam-configure-using-scripts.md)
+
 ### [1. lépés: A PRIV-tartomány konfigurálása](./pam/sp1-step1-configuring-priv-domain.md)
+
 ### [2. lépés: A CORP-tartomány konfigurálása](./pam/sp1-step2-configuring-corp-domain.md)
+
 ### [3. lépés: Az SQL konfigurálása](./pam/sp1-step3-installing-configuring-sql.md)
+
 ### [4. lépés: A SharePoint konfigurálása](./pam/sp1-step4-configuring-sharepoint.md)
+
 ### [5. lépés: PAM telepítése/konfigurálása](./pam/sp1-step5-configuring-pam.md)
+
 ### [6. lépés: PAM bizalmi kapcsolat beállítása](./pam/sp1-step6-setup-pam-trust.md)
+
 ### [7. lépés: SID-előzmények/SID-szűrés beállítása](./pam/sp1-step7-setup-sidhistory-sidfiltering.md)
+
 ### [8. lépés: A PAM üzembe helyezésének ellenőrzése](./pam/sp1-step8-pam-deployment-verification.md)
+
 ### [Kiegészítés](./pam/sp1-pam-deployment-addendum.md)
+
 # Infrastruktúra felügyelete
+
 ## [Ajánlott eljárásokat elemző eszköz az Identity Managerhez](https://technet.microsoft.com/library/jj203402)
+
 ## [Jelszóváltozás-értesítési szolgáltatás](https://technet.microsoft.com/library/e27c0bc6-c808-4fdb-9e59-58feeb419308)
+
 ## Tanúsítványkezelés
+
 ### [CLMUtil parancssori eszköz](https://technet.microsoft.com/library/cc720647)
+
 ### [Konfigurációsprofil-sablonok](https://technet.microsoft.com/library/cc708656)
+
 ### [A tanúsítványfelügyeleti webhely használata](https://technet.microsoft.com/library/cc720560)
+
 ### [Intelligenskártya-alkalmazások kezelése](https://technet.microsoft.com/library/cc708681)
+
 ### [Biztonsági mentés és helyreállítás](https://technet.microsoft.com/library/dd883245)
+
 ## Önkiszolgáló jelszóváltoztatás
+
 ### [Programozott felhasználóregisztráció](https://technet.microsoft.com/library/jj134294)
+
 ### [Testreszabások](https://technet.microsoft.com/library/jj134312)
+
 ## Szolgáltatás és portál
+
 ### [Kerberos](https://technet.microsoft.com/library/jj134299)
+
 ### [Dinamikus naplózás](./infrastructure/mim-service-dynamic-logging.md)
+
 ### [Exportálási teljesítmény-útmutató](https://technet.microsoft.com/library/hh322883)
+
 ## Jelentéskészítés
+
 ### [Jelentéskészítés – egyéni jelentések és bővíthetőség](https://technet.microsoft.com/library/jj133861)
+
 ## [A Microsoft identitásszoftverei: nyilvános megjelenések és buildszámok](https://blogs.technet.microsoft.com/iamsupport/idmbuildversions/)
+
 # [Fejlesztői leírás](./reference/microsoft-identity-manager-2016-developer-reference.md)
+
 ## [Microsoft Identity Manager 2016 – fejlesztői leírás](./reference/microsoft-identity-manager-2016-developer-reference.md)
+
 ### [Tanúsítványkezelő – REST API-referencia](./reference/certificate-management-rest-api-reference.md)
+
 #### [CM REST API – a szolgáltatás részletei](./reference/certificate-management-rest-api-service-details.md)
+
 #### [Minta beléptetési forgatókönyv](./reference/sample-enrollment-walkthrough.md)
+
 #### [Profilsablonok lekérése](./reference/get-profile-templates.md)
+
 #### [Szabályzat-műveletek](./reference/policy-operations.md)
+
 ##### [Munkafolyamat-szabályzat lekérése](./reference/get-workflow-policy.md)
+
 ##### [Intelligenskártya-szabályzat lekérése](./reference/get-smartcard-policy.md)
+
 #### [Kérési műveletek](./reference/request-operations.md)
+
 ##### [Kérelem létrehozása](./reference/create-request.md)
+
 ##### [Kérelem lekérése](./reference/get-request.md)
+
 ##### [Kérelem érvénytelenítése, megszakítása vagy teljesítése](./reference/cancel-abandon-complete-request.md)
+
 #### [Tanúsítványkérési műveletek](./reference/certificate-request-operations.md)
+
 ##### [Tanúsítványkérelem-létrehozási beállítások lekérése](./reference/get-certificate-request-generation-options.md)
+
 ##### [Tanúsítványválaszok lekérése](./reference/get-certificate-responses.md)
+
 #### [Intelligenskártya-műveletek](./reference/smartcard-operations.md)
+
 ##### [Intelligens kártya kérelemhez rendelése](./reference/assign-smartcard-to-request.md)
+
 ##### [Intelligenskártya-adatok beolvasása](./reference/get-smartcard-data.md)
+
 ##### [Intelligens kártyás hitelesítési válasz](./reference/get-smartcard-authentication-response.md)
+
 ##### [Intelligens kártya vegyes adminisztrátori kulcsának beolvasása](./reference/get-smartcard-diversified-admin-key.md)
+
 ##### [Intelligens kártya javasolt PIN-kódjának beolvasása](./reference/get-smartcard-proposed-pin.md)
+
 ##### [Intelligens kártya állapotának frissítése](./reference/update-smartcard-status.md)
+
 #### [Profilműveletek](./reference/profile-operations.md)
+
 ##### [Profiladatok beolvasása](./reference/get-profile-data.md)
+
 ##### [Profilállapot-műveletek lekérése](./reference/get-profile-state-operations.md)
+
 #### [Tanúsítványműveletek](./reference/certificate-operations.md)
+
 ##### [Intelligenskártya- vagy profiltanúsítványok lekérése](./reference/get-smartcard-profile-certificates.md)
+
 ##### [Felhasználói tanúsítványok lekérése](./reference/get-user-certificates.md)
+
 ### [Privileged Access Management REST API-referencia](./reference/privileged-access-management-rest-api-reference.md)
+
 #### [PAM REST API – a szolgáltatás részletei](./reference/privileged-access-management-rest-api-service-details.md)
+
 #### [PAM-szerepkörök lekérése](./reference/privileged-access-management-get-roles.md)
+
 #### [PAM-kérelem létrehozása](./reference/privileged-access-management-create-request.md)
+
 #### [PAM-kérések lekérése](./reference/privileged-access-management-get-requests.md)
+
 #### [PAM-kérelmek lezárása](./reference/privileged-access-management-close-request.md)
+
 #### [Függőben lévő PAM-kérések lekérése](./reference/privileged-access-management-get-pending-requests.md)
+
 #### [Függőben lévő PAM-kérelmek jóváhagyása vagy elutasítása](./reference/privileged-access-management-approve-reject-pending-request.md)
+
 #### [PAM-munkamenetadatok lekérése](./reference/privileged-access-management-get-session-info.md)
+
 ## [Technikai útmutató]
+
 ### [Erőforrás-vezérlési konfiguráció megjelenítésének XML-hivatkozása](./reference/rcd-configuration-xml-reference.md)
