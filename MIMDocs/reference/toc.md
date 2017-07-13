@@ -1,84 +1,42 @@
-
 # [Ismertetés és felfedezés](/microsoft-identity-manager/understand-explore/microsoft-identity-manager-2016)
-
 # [Tervezés és kialakítás](/microsoft-identity-manager/plan-design/microsoft-identity-manager-2016-supported-platforms)
-
 # [Üzembe helyezés és használat](/microsoft-identity-manager/deploy-use/microsoft-identity-manager-deploy)
-
 # [A Privileged Access Management használata](/microsoft-identity-manager/pam/privileged-identity-management-for-active-directory-domain-services)
-
 # [Fejlesztői leírás](microsoft-identity-manager-2016-developer-reference.md)
-
 ## [Microsoft Identity Manager 2016 – fejlesztői leírás](microsoft-identity-manager-2016-developer-reference.md)
-
 ### [Tanúsítványkezelő – REST API-referencia](certificate-management-rest-api-reference.md)
-
 #### [CM REST API – a szolgáltatás részletei](certificate-management-rest-api-service-details.md)
-
 #### [Minta beléptetési forgatókönyv](sample-enrollment-walkthrough.md)
-
 #### [Profilsablonok lekérése](get-profile-templates.md)
-
 #### [Szabályzat-műveletek](policy-operations.md)
-
 ##### [Munkafolyamat-szabályzat lekérése](get-workflow-policy.md)
-
 ##### [Intelligenskártya-szabályzat lekérése](get-smartcard-policy.md)
-
 #### [Kérési műveletek](request-operations.md)
-
 ##### [Kérelem létrehozása](create-request.md)
-
 ##### [Kérelem lekérése](get-request.md)
-
 ##### [Kérelem érvénytelenítése, megszakítása vagy teljesítése](cancel-abandon-complete-request.md)
-
 #### [Tanúsítványkérési műveletek](certificate-request-operations.md)
-
 ##### [Tanúsítványkérelem-létrehozási beállítások lekérése](get-certificate-request-generation-options.md)
-
 ##### [Tanúsítványválaszok lekérése](get-certificate-responses.md)
-
 #### [Intelligenskártya-műveletek](smartcard-operations.md)
-
 ##### [Intelligens kártya kérelemhez rendelése](assign-smartcard-to-request.md)
-
 ##### [Intelligenskártya-adatok beolvasása](get-smartcard-data.md)
-
 ##### [Intelligens kártyás hitelesítési válasz](get-smartcard-authentication-response.md)
-
 ##### [Intelligens kártya vegyes adminisztrátori kulcsának beolvasása](get-smartcard-diversified-admin-key.md)
-
 ##### [Intelligens kártya javasolt PIN-kódjának beolvasása](get-smartcard-proposed-pin.md)
-
 ##### [Intelligens kártya állapotának frissítése](update-smartcard-status.md)
-
 #### [Profilműveletek](profile-operations.md)
-
 ##### [Profiladatok beolvasása](get-profile-data.md)
-
 ##### [Profilállapot-műveletek lekérése](get-profile-state-operations.md)
-
 #### [Tanúsítványműveletek](certificate-operations.md)
-
 ##### [Intelligenskártya- vagy profiltanúsítványok lekérése](get-smartcard-profile-certificates.md)
-
 ##### [Felhasználói tanúsítványok lekérése](get-user-certificates.md)
-
 ### [Privileged Access Management REST API-referencia](privileged-access-management-rest-api-reference.md)
-
 #### [PAM REST API – a szolgáltatás részletei](privileged-access-management-rest-api-service-details.md)
-
 #### [PAM-szerepkörök lekérése](privileged-access-management-get-roles.md)
-
 #### [PAM-kérelem létrehozása](privileged-access-management-create-request.md)
-
 #### [PAM-kérések lekérése](privileged-access-management-get-requests.md)
-
 #### [PAM-kérelmek lezárása](privileged-access-management-close-request.md)
-
 #### [Függőben lévő PAM-kérések lekérése](privileged-access-management-get-pending-requests.md)
-
 #### [Függőben lévő PAM-kérelmek jóváhagyása vagy elutasítása](privileged-access-management-approve-reject-pending-request.md)
-
 #### [PAM-munkamenetadatok lekérése](privileged-access-management-get-session-info.md)
