@@ -13,15 +13,17 @@ ms.assetid: ef605496-7ed7-40f4-9475-5e4db4857b4f
 ROBOTS: noindex,nofollow
 ms.reviewer: mwahl
 ms.suite: ems
-translationtype: Human Translation
+ms.translationtype: MT
 ms.sourcegitcommit: bfc73723bdd3a49529522f78ac056939bb8025a3
 ms.openlocfilehash: 3a1ec9db6da0a77f963dde76a3efe8d92f89078d
-ms.lasthandoff: 05/02/2017
+ms.contentlocale: hu-hu
+ms.lasthandoff: 07/10/2017
 
 
 ---
 
-# <a name="step-4--install-mim-components-on-pam-server-and-workstation"></a>4. lépés – MIM-összetevők telepítése PAM-kiszolgálóra és -munkaállomásra
+# 4. lépés – MIM-összetevők telepítése PAM-kiszolgálóra és -munkaállomásra
+<a id="step-4--install-mim-components-on-pam-server-and-workstation" class="xliff"></a>
 
 >[!div class="step-by-step"]
 [« 3. lépés](step-3-prepare-pam-server.md)
@@ -35,7 +37,8 @@ A MIM szolgáltatásnak és portálnak, illetve a mintaportál webalkalmazásán
 
 Ha letöltötte a MIM szolgáltatást, bontsa ki a tömörített MIM-telepítőcsomagot egy új mappába.
 
-##  <a name="run-the-service-and-portal-install-program"></a>Indítsa el a Service and Portal (Szolgáltatás és portál) telepítőprogramot.  
+##  Indítsa el a Service and Portal (Szolgáltatás és portál) telepítőprogramot.
+<a id="run-the-service-and-portal-install-program" class="xliff"></a>  
 
 Az útmutatást követve végezze el a telepítést.
 
@@ -99,7 +102,8 @@ Az útmutatást követve végezze el a telepítést.
 
 A telepítés befejezése után a kiszolgáló újraindul, majd ellenőrzi, hogy aktív-e a MIM portál, illetve engedélyezi, hogy a felhasználók megtekinthessék a MIM-ben a saját objektum-erőforrásaikat.
 
-## <a name="set-up-mim-portal-management-policy-rules"></a>A MIM portál felügyeleti házirendszabályainak beállítása
+## A MIM portál felügyeleti házirendszabályainak beállítása
+<a id="set-up-mim-portal-management-policy-rules" class="xliff"></a>
 
 1. Miután a PAMSRV újraindult, jelentkezzen be PRIV\Rendszergazda jogosultsággal.
 
@@ -115,7 +119,8 @@ A telepítés befejezése után a kiszolgáló újraindul, majd ellenőrzi, hogy
 
 7. Jelölje ki ezt a felügyeleti házirendszabályt, majd törölje a jelet a **Policy is disabled** (A házirend le van tiltva) négyzetből, kattintson az **OK**, majd a **Submit** (Küldés) gombra.
 
-## <a name="verify-the-firewall-connections"></a>A tűzfalkapcsolatok ellenőrzése
+## A tűzfalkapcsolatok ellenőrzése
+<a id="verify-the-firewall-connections" class="xliff"></a>
 
 A tűzfalnak engedélyeznie kell a bejövő kapcsolatokat az 5725-ös, az 5726-os, a 8086-os és a 8090-es TCP-porton.
 
@@ -132,7 +137,8 @@ A tűzfalnak engedélyeznie kell a bejövő kapcsolatokat az 5725-ös, az 5726-o
 8.  Győződjön meg arról, hogy a listában szerepel egy priv.contoso.local nevű aktív hálózat, tartományi hálózatként.  
 9. Zárja be a **Vezérlőpultot**.
 
-## <a name="set-up-the-sample-web-application"></a>A minta webalkalmazás beállítása
+## A minta webalkalmazás beállítása
+<a id="set-up-the-sample-web-application" class="xliff"></a>
 
 Az útmutató ezen szakasza a MIM PAM REST API minta webalkalmazásának telepítéséhez és konfigurálásához nyújt segítséget.
 
@@ -168,7 +174,8 @@ Az útmutató ezen szakasza a MIM PAM REST API minta webalkalmazásának telepí
 
 7.  (Nem kötelező.) Győződjön meg arról, hogy a felhasználó hitelesíthető a REST API-val. Nyisson meg egy webböngészőt a PAMSRV rendszergazdájaként.  Lépjen a http://pamsrv.priv.contoso.local:8086/api/pamresources/pamroles/ URL-címen található webhelyre, szükség esetén végezze el a hitelesítést, és győződjön meg arról, hogy a letöltés megtörténik.
 
-## <a name="install-the-mim-pam-requestor-cmdlets"></a>A MIM PAM-kérelmező parancsmagjainak telepítése
+## A MIM PAM-kérelmező parancsmagjainak telepítése
+<a id="install-the-mim-pam-requestor-cmdlets" class="xliff"></a>
 
 Telepítse a MIM PAM-kérelmező parancsmagjait az 1. lépésben beállított munkaállomáson.
 

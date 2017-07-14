@@ -12,14 +12,17 @@ ms.technology: security
 ms.assetid: 9471ccc1-bafe-46ee-b169-1464262380e1
 ms.reviewer: mwahl
 ms.suite: ems
-translationtype: Human Translation
-ms.sourcegitcommit: 2d3092d7d41090e4e03b971fb62ca896cc8db282
+ms.translationtype: MT
+ms.sourcegitcommit: 7f16c3a054f0a2c59f118ba33bf64fca10034690
 ms.openlocfilehash: 20e733f17d6ed590844c526888b649eb6bf5f322
+ms.contentlocale: hu-hu
+ms.lasthandoff: 07/10/2017
 
 
 ---
 
-# <a name="upgrade-from-forefront-identity-manager-2010-r2"></a>Frissítés a Forefront Identity Manager 2010 R2-ről
+# Frissítés a Forefront Identity Manager 2010 R2-ről
+<a id="upgrade-from-forefront-identity-manager-2010-r2" class="xliff"></a>
 
 Ha Forefront Identity Manager (FIM) 2010 R2 környezettel rendelkezik, és ki szeretné próbálni a Microsoft Identity Manager (MIM) 2016-ot, akkor ezt a cikket használhatja útmutatóként. A frissítés három fázisból áll:
 
@@ -36,7 +39,8 @@ Ez az útmutató feltételezi, hogy az alábbiak már be vannak állítva:
 - Helyi és környezeti előfeltételek (SQL Server, Exchange Server, SharePoint Services stb.), amelyek konfigurálva vannak a FIM 2010 R2-höz.
 
 
-## <a name="preparation"></a>Előkészítés
+## Előkészítés
+<a id="preparation" class="xliff"></a>
 
 1.  Készítsen biztonsági másolatot a FIM szolgáltatás adatbázisáról, a FIM Sync adatbázisáról, valamint a FIM Sync szolgáltatás konfigurációjáról és a szoftverről.
 
@@ -44,7 +48,8 @@ Ez az útmutató feltételezi, hogy az alábbiak már be vannak állítva:
 
 3.  Töltse le vagy csomagolja ki a MIM szoftvert.
 
-## <a name="upgrade-the-synchronization-service"></a>A Synchronization Service frissítése
+## A Synchronization Service frissítése
+<a id="upgrade-the-synchronization-service" class="xliff"></a>
 
 1.  Jelentkezzen be rendszergazdaként egy kiszolgálóra, amelyen üzembe van helyezve a FIM 2010 R2 Synchronization Service („Sync”).
 
@@ -82,7 +87,8 @@ Ez az útmutató feltételezi, hogy az alábbiak már be vannak állítva:
 
 13. A **Synchronization Service** szolgáltatás újraindult.
 
-## <a name="upgrade-the-service-and-portal"></a>A szolgáltatás és a portál frissítése
+## A szolgáltatás és a portál frissítése
+<a id="upgrade-the-service-and-portal" class="xliff"></a>
 
 1.  Jelentkezzen be rendszergazdaként egy kiszolgálóra, amelyen üzembe van helyezve a FIM 2010 R2 szolgáltatás és -portál.
 
@@ -138,7 +144,8 @@ Ez az útmutató feltételezi, hogy az alábbiak már be vannak állítva:
 
 14. A MIM-portál telepítésekor adja meg annak a SharePoint-webhelycsoportnak az URL-címét, amelyben a FIM-portál jelenleg üzemel. Kattintson a **Tovább**gombra.
 
-## <a name="install-the-mim-password-registration-portal"></a>A MIM jelszó-regisztrálási portál telepítése
+## A MIM jelszó-regisztrálási portál telepítése
+<a id="install-the-mim-password-registration-portal" class="xliff"></a>
 
 1. A MIM jelszó-regisztrálási portál telepítésekor adja meg a kért URL-t a jelszó-regisztrációs portálhoz. Kattintson a **Tovább**gombra.
 
@@ -168,7 +175,8 @@ Ez az útmutató feltételezi, hogy az alábbiak már be vannak állítva:
 
     2.  Állítsa be, hogy a portál az extranetes és intranetes felhasználók számára, vagy csak az intranetes felhasználók számára legyen-e elérhető a FIM jelszó-regisztrálási szolgáltatás korábbi konfigurációjának megfelelően.
 
-## <a name="install-the-mim-password-reset-portal"></a>A MIM jelszó-változtatási portál telepítése
+## A MIM jelszó-változtatási portál telepítése
+<a id="install-the-mim-password-reset-portal" class="xliff"></a>
 
 1. A MIM jelszó-változtatási portál telepítésekor adja meg a hozzáféréshez szükséges adatokat és hitelesítő adatokat.
 
@@ -188,7 +196,8 @@ Ez az útmutató feltételezi, hogy az alábbiak már be vannak állítva:
 
     2.  Állítsa be, hogy a portál az extranetes és intranetes felhasználók számára, vagy csak az intranetes felhasználók számára legyen-e elérhető.
 
-## <a name="finish-installation-and-upgrade"></a>A telepítés és frissítés befejezése
+## A telepítés és frissítés befejezése
+<a id="finish-installation-and-upgrade" class="xliff"></a>
 
 1. Ha az összes konfigurációs beállítást sikeresen megadta, megjelenik a telepítési oldal. Kattintson az **Install** (Telepítés) gombra a MIM szolgáltatás és -portál telepítésének és frissítésének megkezdéséhez.
 
@@ -201,9 +210,4 @@ Ez az útmutató feltételezi, hogy az alábbiak már be vannak állítva:
 Megjegyzés: Ha a FIM beépülő moduljai és bővítményei jelenleg telepítve vannak a felhasználók számítógépein az önkiszolgáló jelszó-változtatási (SSPR) szolgáltatáshoz, abban az esetben az új MFA telefonos jelszó-változtatási kapuk konfigurálásával várjon addig, amíg a FIM valamennyi beépülő modulját és bővítményét frissítette a MIM 2016-os verzióra.  A FIM 2010 és a FIM 2010 R2 beépülő moduljai és bővítményei nem ismerik fel az új kapukat, így hibaüzenetet fognak megjeleníteni, a felhasználók pedig nem fogják tudni megváltoztatni a jelszavukat.
 
 A Microsoft Identity Manager 2016 SP1 frissítési útmutatása a [Microsoft Identity Manager 2016 Service Pack 1 frissítési csomagban található](https://blogs.technet.microsoft.com/iamsupport/2016/11/08/microsoft-identity-manager-2016-service-pack-1-update-package/)
-
-
-
-<!--HONumber=Feb17_HO2-->
-
 

@@ -12,14 +12,17 @@ ms.technology: active-directory-domain-services
 ms.assetid: 4b524ae7-6610-40a0-8127-de5a08988a8a
 ms.reviewer: 
 ms.suite: ems
-translationtype: Human Translation
+ms.translationtype: MT
 ms.sourcegitcommit: f08b0197341351bd5f33552f26b96132b1356239
 ms.openlocfilehash: 12eb9a00584f72b9c628e870562a743fb603d4a3
+ms.contentlocale: hu-hu
+ms.lasthandoff: 07/10/2017
 
 
 ---
 
-# <a name="step-4-configuring-sharepoint"></a>4. lépés: A SharePoint konfigurálása
+# 4. lépés: A SharePoint konfigurálása
+<a id="step-4-configuring-sharepoint" class="xliff"></a>
 
 >[!div class="step-by-step"]
 [« 3. lépés](sp1-step3-installing-configuring-sql.md)
@@ -55,9 +58,4 @@ A részletek a [3. lépés: A PAM-kiszolgáló előkészítése](/microsoft-iden
 >[!div class="step-by-step"]
 [« 3. lépés](sp1-step3-installing-configuring-sql.md)
 [5. lépés »](sp1-step5-configuring-pam.md)
-
-
-
-<!--HONumber=Jan17_HO2-->
-
 

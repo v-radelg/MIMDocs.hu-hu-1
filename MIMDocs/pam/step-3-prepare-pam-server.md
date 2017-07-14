@@ -13,21 +13,24 @@ ms.assetid: 68ec2145-6faa-485e-b79f-2b0c4ce9eff7
 ROBOTS: noindex,nofollow
 ms.reviewer: mwahl
 ms.suite: ems
-translationtype: Human Translation
+ms.translationtype: MT
 ms.sourcegitcommit: bfc73723bdd3a49529522f78ac056939bb8025a3
 ms.openlocfilehash: 9a262a256062688542040827653a7df8d82e1044
-ms.lasthandoff: 05/02/2017
+ms.contentlocale: hu-hu
+ms.lasthandoff: 07/10/2017
 
 
 ---
 
-# <a name="step-3--prepare-a-pam-server"></a>3. lépés – PAM-kiszolgáló előkészítése
+# 3. lépés – PAM-kiszolgáló előkészítése
+<a id="step-3--prepare-a-pam-server" class="xliff"></a>
 
 >[!div class="step-by-step"]
 [« 2. lépés](step-2-prepare-priv-domain-controller.md)
 [4. lépés »](step-4-install-mim-components-on-pam-server.md)
 
-## <a name="install-windows-server-2012-r2"></a>A Windows Server 2012 R2 telepítése
+## A Windows Server 2012 R2 telepítése
+<a id="install-windows-server-2012-r2" class="xliff"></a>
 Egy harmadik, virtuális gépen telepítse a Windows Server 2012 R2-t, konkrétabban a Windows Server 2012 R2 Standard (kiszolgáló grafikus felhasználói felülettel) x 64 kiadást a *PAMSRV* létrehozásához. Mivel az SQL Servert és a SharePoint 2013-at is erre a számítógépre telepíti, legalább 8 GB RAM-ra lesz szüksége.
 
 1. Válassza a **Windows Server 2012 R2 Standard (kiszolgáló grafikus felhasználói felülettel) x64** kiadást.
@@ -47,7 +50,8 @@ Egy harmadik, virtuális gépen telepítse a Windows Server 2012 R2-t, konkréta
 7.  A kiszolgáló újraindítása után jelentkezzen be rendszergazdaként, nyissa meg a Vezérlőpultot, és csatlakoztassa a PAMSRV kiszolgálót a PRIV tartományhoz (priv.contoso.local).  Ehhez meg kell adnia egy PRIV tartományi rendszergazda (PRIV\Rendszergazda) felhasználónevét és hitelesítő adatait. Miután az üdvözlő üzenet megjelenik, zárja be a párbeszédpanelt, és indítsa újra a kiszolgálót.
 
 
-### <a name="add-the-web-server-iis-and-application-server-roles"></a>A webkiszolgálói (IIS) és az alkalmazáskiszolgálói szerepkörök beállítása
+### A webkiszolgálói (IIS) és az alkalmazáskiszolgálói szerepkörök beállítása
+<a id="add-the-web-server-iis-and-application-server-roles" class="xliff"></a>
 Vegye fel a Webkiszolgáló (IIS) és az Alkalmazáskiszolgáló szerepkört, a .NET-keretrendszer 3.5 funkcióit, a Windows PowerShellhez készült Microsoft Azure Active Directory-modult, illetve a SharePointhoz szükséges egyéb funkciókat
 
 1.  Jelentkezzen be PRIV tartományi rendszergazdaként (PRIV\Rendszergazda), és indítsa el a PowerShellt.
@@ -62,7 +66,8 @@ Vegye fel a Webkiszolgáló (IIS) és az Alkalmazáskiszolgáló szerepkört, a 
     Xps-Viewer –includeallsubfeature -restart -source d:\sources\SxS
     ```
 
-### <a name="configure-the-server-security-policy"></a>A kiszolgálói biztonsági házirend konfigurálása
+### A kiszolgálói biztonsági házirend konfigurálása
+<a id="configure-the-server-security-policy" class="xliff"></a>
 A kiszolgálói biztonsági házirendben engedélyezze az újonnan létrehozott fiókok szolgáltatásként történő futtatását.
 
 1.  Indítsa el a **Helyi biztonsági házirend** programot.   
@@ -86,7 +91,8 @@ A kiszolgálói biztonsági házirendben engedélyezze az újonnan létrehozott 
 16. Kattintson a **Hozzáadás** elemre, adja meg a *PRIV* tartomány *SharePoint* felhasználóját, és a következő képernyőn, a varázslóban, kattintson az **Add this user as an Administrator** (A felhasználó hozzáadása rendszergazdaként) lehetőségre.  
 17. Zárja be a Vezérlőpultot.  
 
-### <a name="change-the-iis-configuration"></a>Az IIS konfigurációjának módosítása
+### Az IIS konfigurációjának módosítása
+<a id="change-the-iis-configuration" class="xliff"></a>
 Ahhoz, hogy az alkalmazások számára engedélyezhesse a Windows-hitelesítési mód használatát, az IIS-konfigurációt kétféleképpen módosíthatja. Győződjön meg róla, hogy MIMAdmin néven jelentkezett be, és kövesse az alábbi lehetőségek egyikét.
 
 Ha a PowerShellt szeretné használni:
@@ -104,7 +110,8 @@ Ha szövegszerkesztőt, például a Jegyzettömböt szeretné használni:
 3. Módosítsa az **overrideModeDefault** értékét az *Allow* értékre.  
 4. Mentse a fájlt, és indítsa újra az IIS-t az `iisreset /START` PowerShell-paranccsal.
 
-## <a name="install-sql-server"></a>Az SQL Server telepítése
+## Az SQL Server telepítése
+<a id="install-sql-server" class="xliff"></a>
 Ha az SQL Server még nincs jelen a megerősített környezetben, telepítse az SQL Server 2012 (Service Pack 1 vagy újabb) vagy az SQL Server 2014 verziót. A következő lépések az SQL 2014 használatát feltételezik.
 
 1. Győződjön meg róla, hogy MIMAdmin néven van bejelentkezve.
@@ -115,7 +122,8 @@ Ha az SQL Server még nincs jelen a megerősített környezetben, telepítse az 
     .\setup.exe /Q /IACCEPTSQLSERVERLICENSETERMS /ACTION=install /FEATURES=SQL,SSMS /INSTANCENAME=MSSQLSERVER /SQLSVCACCOUNT="PRIV\SqlServer" /SQLSVCPASSWORD="Pass@word1" /AGTSVCSTARTUPTYPE=Automatic /AGTSVCACCOUNT="NT AUTHORITY\Network Service" /SQLSYSADMINACCOUNTS="PRIV\MIMAdmin"
     ```
 
-## <a name="install-sharepoint-foundation-2013"></a>A SharePoint Foundation 2013 telepítése
+## A SharePoint Foundation 2013 telepítése
+<a id="install-sharepoint-foundation-2013" class="xliff"></a>
 
 Telepítse a SharePoint szoftver-előfeltételeit a PAMSRV kiszolgálóra a SharePoint Foundation 2013 SP1 szervizcsomagot is tartalmazó telepítőjével.
 
@@ -134,7 +142,8 @@ A SharePoint előfeltételeinek telepítését követően telepítse a SharePoin
 4.  Válassza a **teljes kiszolgáló** típust.  
 5.  A telepítés befejezése után futtassa a varázslót.  
 
-### <a name="configure-sharepoint"></a>A SharePoint konfigurálása
+### A SharePoint konfigurálása
+<a id="configure-sharepoint" class="xliff"></a>
 A SharePoint konfigurálásához futtassa a SharePoint termékek konfigurálása varázslót.
 
 1.  A Csatlakozás kiszolgálófarmhoz lapon adja meg, hogy **új kiszolgálófarmot szeretne kialakítani**.  
@@ -147,7 +156,8 @@ A SharePoint konfigurálásához futtassa a SharePoint termékek konfigurálása
 8.  Válassza ki a meglévő felügyelt fiók használatát (PRIV\SharePoint), törölje a jeleket a választható szolgáltatások letiltásához, majd kattintson a **Tovább** gombra.  
 9. Ha a Webhelycsoport létrehozása ablak megjelenik, kattintson a **Kihagyás**, majd a **Befejezés** gombra.  
 
-## <a name="create-a-sharepoint-foundation-2013-web-application"></a>SharePoint Foundation 2013-webalkalmazás létrehozása
+## SharePoint Foundation 2013-webalkalmazás létrehozása
+<a id="create-a-sharepoint-foundation-2013-web-application" class="xliff"></a>
 A varázslók befejezése után a PowerShell segítségével hozza létre a SharePoint Foundation 2013-webalkalmazást a MIM portál futtatásához. Mivel ez az útmutató bemutatásra szolgál, nem engedélyezzük az SSL-t.
 
 1.  Kattintson jobb gombbal a SharePoint 2013 – felügyeleti rendszerhéj elemre, válassza a **Futtatás rendszergazdaként** lehetőséget, és futtassa a következő PowerShell-parancsfájlt:
@@ -162,7 +172,8 @@ A varázslók befejezése után a PowerShell segítségével hozza létre a Shar
 > [!NOTE]
 > Ne zárja be a SharePoint 2013 felügyeleti rendszerhéj ablakát, mivel a következő lépésben szükség lesz rá.
 
-## <a name="create-a-sharepoint-site-collection"></a>SharePoint-webhelycsoport létrehozása
+## SharePoint-webhelycsoport létrehozása
+<a id="create-a-sharepoint-site-collection" class="xliff"></a>
 Most hozzon létre egy SharePoint-webhelycsoportot az imént készített webalkalmazáshoz, mely a MIM portált üzemelteti.
 
 1.  Nyissa meg a **SharePoint 2013 – felügyeleti rendszerhéj** ablakot, ha még nincs megnyitva, és futtassa a következő PowerShell-parancsfájlt
@@ -187,13 +198,15 @@ Most hozzon létre egy SharePoint-webhelycsoportot az imént készített webalka
     Get-SPTimerJob hourly-all-sptimerservice-health-analysis-job | disable-SPTimerJob
     ```
 
-## <a name="change-update-settings"></a>Frissítési beállítások módosítása
+## Frissítési beállítások módosítása
+<a id="change-update-settings" class="xliff"></a>
 
 1. Nyissa meg a Vezérlőpultot, lépjen a **Windows Update** pontra, és kattintson a **Beállítások módosítása** lehetőségre.  
 2. Módosítsa úgy a beállításokat, hogy megkapja a frissítéseket a Windows Update szolgáltatástól, illetve a Microsoft Updates többi termékétől.  
 3. Keressen új frissítéseket, és a folytatás előtt mindenképpen telepítsen minden fontos, függőben lévő frissítést.
 
-## <a name="set-the-website-as-the-local-intranet"></a>A webhely beállítása helyi intranetként
+## A webhely beállítása helyi intranetként
+<a id="set-the-website-as-the-local-intranet" class="xliff"></a>
 
 1. Indítsa el az Internet Explorert, és nyisson meg egy új böngészőlapot
 2. Nyissa meg a http://pamsrv.priv.contoso.local:82/ webhelyet, és jelentkezzen be PRIV\MIMAdmin felhasználóként.  Ekkor megjelenik egy üres SharePoint-webhely, „MIM Portal” néven.  
@@ -201,7 +214,8 @@ Most hozzon létre egy SharePoint-webhelycsoportot az imént készített webalka
 
 Ha a bejelentkezés sikertelen, előfordulhat, hogy a [2. lépésben](step-2-prepare-priv-domain-controller.md) korábban létrehozott Kerberos SPN-eket frissíteni kell.
 
-## <a name="start-the-sharepoint-administration-service"></a>A SharePoint felügyeleti szolgáltatás elindítása
+## A SharePoint felügyeleti szolgáltatás elindítása
+<a id="start-the-sharepoint-administration-service" class="xliff"></a>
 
 A **Szolgáltatások** eszköz segítségével (mely a Felügyeleti eszközök között található), indítsa el a **SharePoint felügyeleti szolgáltatást**, ha még nem fut.
 

@@ -12,22 +12,26 @@ ms.technology: security
 ms.assetid: 735dc357-dfba-4f68-a5b3-d66d6c018803
 ms.reviewer: mwahl
 ms.suite: ems
-translationtype: Human Translation
-ms.sourcegitcommit: bfc73723bdd3a49529522f78ac056939bb8025a3
+ms.translationtype: MT
+ms.sourcegitcommit: 7f16c3a054f0a2c59f118ba33bf64fca10034690
 ms.openlocfilehash: f7e4dc737444df70de3a8a78eb518e9e6f26aadc
-ms.lasthandoff: 05/02/2017
+ms.contentlocale: hu-hu
+ms.lasthandoff: 07/10/2017
 
 
 ---
 
 
-# <a name="topology-considerations"></a>Topológiai szempontok
+# Topológiai szempontok
+<a id="topology-considerations" class="xliff"></a>
 A Microsoft Identity Manager (MIM) összetevőit ugyanarra a kiszolgálóra, vagy több különböző konfigurációjú kiszolgálóra is telepítheti. Az üzembe helyezéshez választott topológia hatással van a MIM-mel elérhető teljesítményre. Ez a cikk több lehetséges üzembe helyezési topológiát mutat be.
 
-## <a name="mim-components"></a>A MIM összetevői
+## A MIM összetevői
+<a id="mim-components" class="xliff"></a>
 Az üzembe helyezési topológia megtervezéséhez fontos tudni, hogy melyik összetevő mire alkalmas, és milyen kapcsolatban állnak egymással.
 
-- <a name="mim-portal---an-interface-for-password-resets-group-management-and-administrative-operations"></a>**MIM-portál** – jelszó-átállításra, valamint csoportkezelési és felügyeleti feladatokra szolgáló felület.
+- **MIM-portál** – jelszó-átállításra, valamint csoportkezelési és felügyeleti feladatokra szolgáló felület.
+<a id="mim-portal---an-interface-for-password-resets-group-management-and-administrative-operations" class="xliff"></a>
     -
 - **MIM szolgáltatás** – a MIM 2016 identitáskezelési funkcióit megvalósító webes szolgáltatás.
 - **MIM Synchronization Service** – adatokat szinkronizál más identitáskezelő rendszerekkel.
@@ -43,7 +47,8 @@ A következő táblázat ismerteti a lehetőségeket a MIM egyes összetevőinek
 | Kiszolgálófürt | | | | Igen |
 
 
-## <a name="multitier-topology"></a>Többrétegű topológia
+## Többrétegű topológia
+<a id="multitier-topology" class="xliff"></a>
 A többrétegű a leggyakrabban használt topológia, amely a legnagyobb rugalmasságot kínálja. A MIM-portál, a MIM szolgáltatás és az adatbázisok külön rétegekben működnek, és különböző számítógépeken vannak telepítve. Ez a topológia rugalmasságot biztosít a különböző MIM-összetevők méretezéséhez. A MIM-portál például egy hálózati terheléselosztási fürt keretében további kiszolgálók hozzáadásával horizontálisan méretezhető. Ehhez hasonlóan a MIM szolgáltatás is skálázható hálózati terheléselosztási fürttel, illetve a fürtben működő számítógépek (csomópontok) számának igény szerinti növelésével.
 
 Többrétegű topológiában minden SQL-adatbázist – egy a MIM szolgáltatáshoz, egy pedig a MIM Synchronization Service-hez – külön számítógép működtet. Az SQL-adatbázisokat üzemeltető számítógépek teljesítményének méretezhetősége a hardvereszközök bővítésével vagy fejlesztésével növelhető, például a processzorok fejlesztésével, további processzorok telepítésével, a RAM növelésével vagy fejlesztésével, illetve a merevlemez-konfigurációk fejlesztésével az olvasási és írási sebesség növelése és a késés csökkentése érdekében.
@@ -53,7 +58,8 @@ Többrétegű topológiában minden SQL-adatbázist – egy a MIM szolgáltatás
 Ebben a konfigurációban a MIM Synchronization Service és az adatbázisa ugyanazon a számítógépen fut. Hasonló teljesítmény érhető el ugyanakkor a MIM Synchronization Service és a kapcsolódó adatbázis külön számítógépen való üzemeltetése esetén is, ha egy gigabites dedikált hálózati kapcsolat van a számítógépek között.
 
 
-## <a name="multitier-topology-with-multiple-mim-services"></a>Többrétegű topológia több MIM szolgáltatással
+## Többrétegű topológia több MIM szolgáltatással
+<a id="multitier-topology-with-multiple-mim-services" class="xliff"></a>
 Az adatok külső rendszerekkel való szinkronizálása hosszú időt vehet igénybe, és jelentős terhelést helyez a rendszerre az adott időszakban. Ha a szinkronizálási konfiguráció munkafolyamatos házirendek aktiválását eredményezi, akkor ezek a házirendek a végfelhasználói munkafolyamatokkal „versenyeznek” az erőforrásokért. Ezek a problémák hangsúlyozottan jelentkezhetnek a hitelesítési munkafolyamatok, például jelszó-átállítási feladatok esetén, amelyeknél a végfelhasználónak valós időben kell várnia, hogy a folyamat befejeződjön. Ha külön példányt biztosít a MIM szolgáltatásnak a végfelhasználói műveletekhez, és külön portált az adminisztratív adatszinkronizálási feladatokhoz, azzal fokozhatja a végfelhasználói műveletek válaszképességét.
 
 ![A többszörös többrétegű MIM-topológia ábrája](media/MIM-topo-multitier-multiservice.png)
@@ -62,6 +68,7 @@ A hagyományos többrétegű topológiához hasonlóan a MIM-portál teljesítm�
 
 A MIM Synchronization Service és a MIM szolgáltatás adatbázisainak üzemeltetésére szolgáló SQL Servert futtató számítógépek drámai módon befolyásolják a MIM-környezet általános teljesítményét. Ennek megfelelően az adatbázisok teljesítményének optimalizálásához kövesse az SQL Server dokumentációjában foglalt javaslatokat. További tudnivalókért lásd a következő dokumentumokat:
 
-## <a name="see-also"></a>További információ
+## További információ
+<a id="see-also" class="xliff"></a>
 - A letölthető [Forefront Identity Manager (FIM) 2010 kapacitástervezési útmutatóban](http://go.microsoft.com/fwlink/?LinkId=200180) részletes információkat olvashat egy tesztkörnyezetről és a kapcsolódó teljesítménytesztelési eredményekről.
 

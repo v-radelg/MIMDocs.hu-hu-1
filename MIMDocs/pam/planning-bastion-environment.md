@@ -12,15 +12,17 @@ ms.technology: active-directory-domain-services
 ms.assetid: bfc7cb64-60c7-4e35-b36a-bbe73b99444b
 ms.reviewer: mwahl
 ms.suite: ems
-translationtype: Human Translation
+ms.translationtype: MT
 ms.sourcegitcommit: bfc73723bdd3a49529522f78ac056939bb8025a3
 ms.openlocfilehash: b459906f0c8d2c631e9b63813e208c9098ea5a4e
-ms.lasthandoff: 05/02/2017
+ms.contentlocale: hu-hu
+ms.lasthandoff: 07/10/2017
 
 
 ---
 
-# <a name="planning-a-bastion-environment"></a>Megerősített környezet tervezése
+# Megerősített környezet tervezése
+<a id="planning-a-bastion-environment" class="xliff"></a>
 
 A dedikált felügyeleti erdővel rendelkező megerősített környezetnek az Active Directory-hoz való hozzáadása lehetővé teszi a szervezetek számára a rendszergazdai fiókok, a munkaállomások és a csoportok egyszerű kezelését olyan környezetben, amely erősebb biztonsági rendszabályokat alkalmaz, mint a meglévő éles környezetük.
 
@@ -28,25 +30,29 @@ Ez az architektúra lehetővé teszi számos olyan rendszabály használatát, a
 
 A dedikált felügyeleti erdő mellett további technikák is használhatók. Ezek közé tartozik annak korlátozása, hogy hol jelennek meg a rendszergazdai hitelesítő adatok, az adott erdőben található felhasználók szerepkör-jogosultságainak korlátozása, valamint annak biztosítása, hogy a felügyeleti feladatok végrehajtása ne a szokásos felhasználói tevékenységekhez (például a levelezéshez és a webböngészéshez) használt gazdagépeken történjen.
 
-## <a name="best-practice-considerations"></a>Az ajánlott eljárásokkal kapcsolatos szempontok
+## Az ajánlott eljárásokkal kapcsolatos szempontok
+<a id="best-practice-considerations" class="xliff"></a>
 
 A dedikált felügyeleti erdő az Active Directory felügyeletéhez használt szabványos egytartományos Active Directory-erdő. A felügyeleti erdők és tartományok használatának az az előnye, hogy a korlátozott felhasználási eseteik következtében több biztonsági intézkedést alkalmazhatnak, mint az éles környezetben működő erdők. További előny, hogy ez egy elkülönített erdő, amely nem tekinti megbízhatónak a szervezet meglévő erdőit, ezért a többi erdőben felmerülő biztonsági sérülés nem terjed ki erre a dedikált erdőre.
 
 A felügyeleti erdőt a következő szempontok alapján kell megtervezni:
 
-### <a name="limited-scope"></a>Korlátozott hatókör
+### Korlátozott hatókör
+<a id="limited-scope" class="xliff"></a>
 
 A felügyeleti erdő értéke a magas szintű biztonság és a kisebb támadási felület. Az erdő további felügyeleti funkciókat és alkalmazásokat is tartalmazhat, de a hatókör növelése minden alkalommal növeli az erdő és az erőforrásainak támadási felületét. A cél az erdő funkcióinak korlátozása úgy, hogy a támadási felület minimális méretű maradjon.
 
 A rendszergazdai jogosultságok felosztásának [rétegmodellje](tier-model-for-partitioning-administrative-privileges.md) szerint a dedikált felügyeleti erdőben lévő fiókoknak egy rétegben, jellemzően a 0. vagy az 1. rétegben kell lenniük. Az 1. rétegbeli erdőt célszerű egy meghatározott alkalmazási körre (például pénzügyi alkalmazásokra) vagy felhasználói közösségre (például kiszervezett informatikai szállítókra) korlátozni.
 
-### <a name="restricted-trust"></a>Korlátozott megbízhatóság
+### Korlátozott megbízhatóság
+<a id="restricted-trust" class="xliff"></a>
 
 Az éles környezet *CORP* erdőjének megbízhatónak kell tekintenie a felügyeleti *PRIV* erdőt, de ez megfordítva már nem érvényes. Ez lehet tartományi megbízhatóság vagy erdőszintű megbízhatóság. A felügyeleti erdő tartományának nem kell megbízhatónak tekintenie a felügyelt tartományokat és erdőket az Active Directory felügyeletéhez, bár előfordulhat, hogy egyes alkalmazások kétirányú megbízhatósági kapcsolatot, biztonsági ellenőrzést és tesztelést igényelnek.
 
 Szelektív hitelesítés használatával kell biztosítani, hogy a felügyeleti erdőben lévő fiókok csak a megfelelő gazdagépeket használják az éles környezetben. A tartományvezérlők karbantartásához és a jogosultságoknak az Active Directoryban történő delegálásához ez általában a tartományvezérlők „Bejelentkezés engedélyezett” jogosultságának megadását igényli a felügyeleti erdőben lévő 0. rétegbeli rendszergazdai fiókok számra. További információt a [Configuring Selective Authentication Settings (A szelektív hitelesítés beállításainak konfigurálása)](http://technet.microsoft.com/library/cc816580.aspx) című cikkben talál.
 
-## <a name="maintain-logical-separation"></a>Logikai elkülönítés alkalmazása
+## Logikai elkülönítés alkalmazása
+<a id="maintain-logical-separation" class="xliff"></a>
 
 A következő irányelveket kell követni a megerősített környezet rendszereinek előkészítésekor ahhoz, hogy a szervezeti Active Directory fennálló vagy jövőbeli biztonsági incidensei ne legyenek hatással a megerősített környezetre:
 
@@ -62,7 +68,8 @@ A következő irányelveket kell követni a megerősített környezet rendszerei
 
 - A megerősített környezet kiszolgálóit kezelő felhasználóknak olyan munkaállomásokról kell bejelentkezniük, amelyek nem érhetők el a meglévő környezetben lévő rendszergazdák számára, hogy ne szivárogjanak ki a megerősített környezet hitelesítő adatai.
 
-## <a name="ensure-availability-of-administration-services"></a>A felügyeleti szolgáltatások rendelkezésre állásának biztosítása
+## A felügyeleti szolgáltatások rendelkezésre állásának biztosítása
+<a id="ensure-availability-of-administration-services" class="xliff"></a>
 
 Mivel az alkalmazások felügyelete átkerül a megerősített környezetbe, vegye figyelembe, hogyan lehet biztosítani a rendelkezésre állást ezen alkalmazások követelményeinek megfelelően. Ennek technikái a következők:
 
@@ -74,7 +81,8 @@ Mivel az alkalmazások felügyelete átkerül a megerősített környezetbe, veg
 
 - Készítse el az AD és az SQL biztonsági másolatát a dedikált felügyeleti erdőben lévő felhasználók vagy szerepkör-definíciók minden módosításakor.
 
-## <a name="configure-appropriate-active-directory-permissions"></a>Megfelelő Active Directory-engedélyek konfigurálása
+## Megfelelő Active Directory-engedélyek konfigurálása
+<a id="configure-appropriate-active-directory-permissions" class="xliff"></a>
 
 A felügyeleti erdőt a legkevesebb szükséges jogosultsággal kell konfigurálni az Active Directory felügyeleti követelményeinek megfelelően.
 
@@ -92,7 +100,8 @@ A megerősített környezet létrehozásakor a Microsoft Identity Manager telep�
 
 - **Szolgáltatásfiókok** a Microsoft Identity Managerhez, az SQL Serverhez és az egyéb szoftverekhez.
 
-## <a name="harden-the-hosts"></a>A gazdagépek megerősítése
+## A gazdagépek megerősítése
+<a id="harden-the-hosts" class="xliff"></a>
 
 A felügyeleti erdőhöz csatlakoztatott összes gazdagépre, beleértve a tartományvezérlőket, a kiszolgálókat és a munkaállomásokat, a legújabb verziójú operációs rendszert és szervizcsomagokat kell telepíteni, és naprakészen kell tartani őket.
 
@@ -100,7 +109,8 @@ A felügyeleti erdőhöz csatlakoztatott összes gazdagépre, beleértve a tarto
 
 - A felügyeleti erdő gazdagépeit automatikusan frissíteni kell a biztonsági frissítésekkel. Bár ez azzal a veszéllyel járhat, hogy megszakadnak a tartományvezérlő karbantartási műveletei, mégis jelentős mértékben csökkenti a nem javított biztonsági rések kockázatait.
 
-### <a name="identify-administrative-hosts"></a>A felügyeleti gazdagépek azonosítása
+### A felügyeleti gazdagépek azonosítása
+<a id="identify-administrative-hosts" class="xliff"></a>
 
 A rendszerek vagy a munkaállomások kockázatának meghatározásakor az azokon végzett legnagyobb kockázatú tevékenységet kell figyelembe venni, ilyen lehet például az internet böngészése, az e-mailek küldése és fogadása, illetve az olyan alkalmazások használata, amelyek ismeretlen vagy nem megbízható tartalmakat dolgoznak fel.
 
@@ -114,7 +124,8 @@ A felügyeleti gazdagépek közé a következő számítógépek tartoznak:
 
 - Kiszolgálók, amelyek a felügyelendő alkalmazásokat futtatják, és amelyeket nem kell elérni a korlátozott felügyeleti üzemmódú RDP vagy a Windows PowerShell távoli eljáráshívásának használatával.
 
-### <a name="deploy-dedicated-administrative-workstations"></a>Dedikált felügyeleti munkaállomások telepítése
+### Dedikált felügyeleti munkaállomások telepítése
+<a id="deploy-dedicated-administrative-workstations" class="xliff"></a>
 
 Bár kényelmetlen lehet, különítse el a felhasználók számára kijelölt megerősített munkaállomásokat, amelyekhez nagy hatású rendszergazdai hitelesítő adatok lehetnek szükségesek. Fontos, hogy olyan biztonsági szintet adjon meg a gazdagépeknek, amely megegyezik a hitelesítő adatokhoz tartozó jogosultságok szintjével, vagy magasabb annál. A további védelem érdekében vegye fontolóra a következő intézkedéseket:
 
@@ -144,13 +155,15 @@ Bár kényelmetlen lehet, különítse el a felhasználók számára kijelölt m
 
 Egyes intézkedések extrémnek tűnhetnek, de az elmúlt években nyilvánosságra kerülő esetek jól szemléltetik, hogy a képzett támadók milyen komoly fegyverzetet tudnak bevetni a kiszemelt céljaik ellen.
 
-## <a name="prepare-existing-domains-to-be-managed-by-the-bastion-environment"></a>A meglévő tartományok előkészítése a megerősített környezet általi felügyeletre
+## A meglévő tartományok előkészítése a megerősített környezet általi felügyeletre
+<a id="prepare-existing-domains-to-be-managed-by-the-bastion-environment" class="xliff"></a>
 
 A MIM a PowerShell-parancsmagok használatával létesít megbízhatósági kapcsolatot a meglévő AD-tartományok és a dedikált felügyeleti erdők között a megerősített környezetben. A megerősített környezet telepítését követően, de még a felhasználók és a csoportok igény szerintire való átalakítása előtt a `New-PAMTrust` és a `New-PAMDomainConfiguration` parancsmag frissíti a tartományi megbízhatósági kapcsolatokat, és létrehozza az AD és a MIM számára szükséges összetevőket.
 
 Amikor a meglévő Active Directory-topológia megváltozik, a `Test-PAMTrust`, a `Test-PAMDomainConfiguration`, a `Remove-PAMTrust` és a `Remove-PAMDomainConfiguration` parancsmag használható a megbízhatósági kapcsolatok frissítésére.
 
-## <a name="establish-trust-for-each-forest"></a>Megbízhatósági kapcsolat létrehozása az egyes erdőkhöz
+## Megbízhatósági kapcsolat létrehozása az egyes erdőkhöz
+<a id="establish-trust-for-each-forest" class="xliff"></a>
 
 A `New-PAMTrust` parancsmagot le kell futtatni egyszer minden meglévő erdő esetében. A parancsmagot a MIM szolgáltatást tartalmazó számítógépen kell elindítani a felügyeleti tartományban. A parancs paraméterei a következők: a meglévő erdő legfelső szintű tartományának neve, valamint az adott tartomány rendszergazdájának hitelesítő adatai.
 
@@ -160,11 +173,13 @@ New-PAMTrust -SourceForest "contoso.local" -Credentials (get-credential)
 
 A megbízhatósági kapcsolat létrehozása után konfigurálja az egyes tartományokat úgy, hogy engedélyezzék a megerősített környezet általi felügyeletet (ennek leírását lásd a következő szakaszban).
 
-## <a name="enable-management-of-each-domain"></a>A tartományok felügyeletének engedélyezése
+## A tartományok felügyeletének engedélyezése
+<a id="enable-management-of-each-domain" class="xliff"></a>
 
 A meglévő tartományok felügyeletének engedélyezésére hét követelmény vonatkozik.
 
-### <a name="1-a-security-group-on-the-local-domain"></a>1. Biztonsági csoport a helyi tartományban
+### 1. Biztonsági csoport a helyi tartományban
+<a id="1-a-security-group-on-the-local-domain" class="xliff"></a>
 
 A meglévő tartományban kell lennie egy csoportnak, amelynek neve megegyezik a tartomány NetBIOS-nevével és három dollárjel szerepel a végén, például *CONTOSO$$$*. A csoport hatókörének *tartományi helyi csoportnak*, a típusának pedig *Biztonság* értékűnek kell lennie. Ez az olyan csoportok esetében szükséges, amelyek a dedikált felügyeleti erdőben lesznek létrehozva a tartomány csoportjainak biztonsági azonosítójával megegyező azonosítóval. Ez a csoport a következő PowerShell-paranccsal hozható létre úgy, hogy a parancsot a meglévő tartomány rendszergazdája futtatja a meglévő tartományhoz csatlakoztatott munkaállomáson:
 
@@ -172,7 +187,8 @@ A meglévő tartományban kell lennie egy csoportnak, amelynek neve megegyezik a
 New-ADGroup -name 'CONTOSO$$$' -GroupCategory Security -GroupScope DomainLocal -SamAccountName 'CONTOSO$$$'
 ```
 
-### <a name="2-success-and-failure-auditing"></a>2. Sikeres és sikertelen események naplózása
+### 2. Sikeres és sikertelen események naplózása
+<a id="2-success-and-failure-auditing" class="xliff"></a>
 
 A tartományvezérlő naplózásra vonatkozó csoportházirend-beállításainak tartalmazniuk kell a fiókkezelés naplózásának és a címtárszolgáltatás-hozzáférés naplózásának sikeres és a sikertelen eseményeit is. Ez a Csoportházirend kezelése konzolon hajtható végre úgy, hogy a műveletet a meglévő tartomány rendszergazdája végzi el a meglévő tartományhoz csatlakoztatott munkaállomáson:
 
@@ -202,7 +218,8 @@ A tartományvezérlő naplózásra vonatkozó csoportházirend-beállításainak
 
 Néhány perc elteltével „A számítógép-házirend frissítése sikeresen befejeződött” üzenetnek kell megjelennie.
 
-### <a name="3-allow-connections-to-the-local-security-authority"></a>3. A helyi biztonsági szervezethez való csatlakozás engedélyezése
+### 3. A helyi biztonsági szervezethez való csatlakozás engedélyezése
+<a id="3-allow-connections-to-the-local-security-authority" class="xliff"></a>
 
 A tartományvezérlőknek engedélyezniük kell a TCP/IP feletti RCP-kapcsolatokat a helyi biztonsági szervezet (LSA) számára a megerősített környezetből. A Windows Server korábbi verziói esetében a beállításjegyzékben kell engedélyezni az LSA TCP/IP-támogatását:
 
@@ -210,7 +227,8 @@ A tartományvezérlőknek engedélyezniük kell a TCP/IP feletti RCP-kapcsolatok
 New-ItemProperty -Path HKLM:SYSTEM\\CurrentControlSet\\Control\\Lsa -Name TcpipClientSupport -PropertyType DWORD -Value 1
 ```
 
-### <a name="4-create-the-pam-domain-configuration"></a>4. A PAM tartománykonfigurációjának létrehozása
+### 4. A PAM tartománykonfigurációjának létrehozása
+<a id="4-create-the-pam-domain-configuration" class="xliff"></a>
 
 A `New-PAMDomainConfiguration` parancsmagot a MIM szolgáltatást tartalmazó számítógépen kell futtatni, a felügyeleti tartományban. A parancs paraméterei a következők: a meglévő tartomány neve, valamint az adott tartomány rendszergazdájának hitelesítő adatai.
 
@@ -218,7 +236,8 @@ A `New-PAMDomainConfiguration` parancsmagot a MIM szolgáltatást tartalmazó sz
  New-PAMDomainConfiguration -SourceDomain "contoso" -Credentials (get-credential)
 ```
 
-### <a name="5-give-read-permissions-to-accounts"></a>5. Olvasási engedélyek hozzárendelése a fiókokhoz
+### 5. Olvasási engedélyek hozzárendelése a fiókokhoz
+<a id="5-give-read-permissions-to-accounts" class="xliff"></a>
 
 A megerősített erdőben a szerepkörök létrehozására használt fiókoknak (a `New-PAMUser` és a `New-PAMGroup` parancsmagot használó rendszergazdáknak), valamint a MIM figyelő szolgáltatása által használt fióknak olvasási engedélyekkel kell rendelkeznie az adott tartományban.
 
@@ -240,15 +259,18 @@ A következő lépések véghajtásával adhat meg olvasási hozzáférést a *P
 
 18. Zárja be az Active Directory – felhasználók és számítógépek beépülő modult.
 
-### <a name="6-a-break-glass-account"></a>6. Vészhelyzeti fiók
+### 6. Vészhelyzeti fiók
+<a id="6-a-break-glass-account" class="xliff"></a>
 
 Ha a rendszerjogosultságú hozzáférések felügyeletére irányuló projektnek az a célja, hogy csökkentse a tartományhoz tartósan hozzárendelt, tartományi rendszergazdai jogosultságokkal rendelkező fiókok számát, akkor a tartományban létre kell hozni egy *vészhelyzeti fiókot* arra az esetre, ha a későbbiekben probléma adódna a megbízhatósági kapcsolattal. Minden tartományban léteznie kell az éles környezetben működő erdőhöz vészhelyzeti hozzáféréssel rendelkező fióknak, és úgy kell beállítani ezeket a fiókokat, hogy csak a tartományvezérlőkre tudjanak bejelentkezni. A több hellyel rendelkező szervezetek esetében további fiókokra lehet szükség a redundancia biztosításához.
 
-### <a name="7-update-permissions-in-the-bastion-environment"></a>7. Az engedélyek frissítése a megerősített környezetben
+### 7. Az engedélyek frissítése a megerősített környezetben
+<a id="7-update-permissions-in-the-bastion-environment" class="xliff"></a>
 
 Tekintse át az adott tartomány Rendszer tárolójában található *AdminSDHolder* objektum engedélyeit. Az *AdminSDHolder* objektumhoz egyedi hozzáférés-vezérlési lista (ACL) tartozik. Ennek használatával felügyelhetők azoknak a rendszerbiztonsági tagoknak az engedélyei, akik a magas jogosultsági szintű, beépített Active Directory-csoportok tagjai. Vegye figyelembe, hogy az alapértelmezett engedélyeknek a tartomány rendszergazdai jogosultságokkal rendelkező felhasználóit érintő bármilyen módosítása esetén ezek az engedélyek nem lesznek érvényesek azokra a felhasználókra, akiknek fiókja a megerősített környezetben található.
 
-## <a name="select-users-and-groups-for-inclusion"></a>A felhasználók és a csoportok kiválasztása
+## A felhasználók és a csoportok kiválasztása
+<a id="select-users-and-groups-for-inclusion" class="xliff"></a>
 
 A következő lépése a PAM-szerepkörök konfigurálása, valamint azon felhasználók és csoportok hozzárendelése, amelyekhez a szerepköröknek hozzá kell férniük. Ez általában a megerősített környezetben felügyelt réteg felhasználóinak és csoportjainak részhalmaza lesz. További információ: [Szerepkörök definiálása az emelt szintű hozzáférések felügyeletéhez](defining-roles-for-pam.md).
 

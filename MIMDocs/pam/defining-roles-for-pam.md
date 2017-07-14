@@ -12,15 +12,17 @@ ms.technology: active-directory-domain-services
 ms.assetid: 1a368e8e-68e1-4f40-a279-916e605581bc
 ms.reviewer: mwahl
 ms.suite: ems
-translationtype: Human Translation
+ms.translationtype: MT
 ms.sourcegitcommit: bfc73723bdd3a49529522f78ac056939bb8025a3
 ms.openlocfilehash: 807ee44c23f367c33b820251012008324bb2c005
-ms.lasthandoff: 05/02/2017
+ms.contentlocale: hu-hu
+ms.lasthandoff: 07/10/2017
 
 
 ---
 
-# <a name="define-roles-for-privileged-access-management"></a>Szerepkörök definiálása a Privileged Access Management megoldáshoz
+# Szerepkörök definiálása a Privileged Access Management megoldáshoz
+<a id="define-roles-for-privileged-access-management" class="xliff"></a>
 
 A Privileged Access Management megoldással felhasználókat rendelhet a rendszerjogosultságú szerepkörökhöz, amelyeket a felhasználók szükség szerint aktiválhatnak a csak a szükséges időben (just-in-time) működő hozzáféréshez. Ezeket a szerepköröket kézzel kell megadni és létrehozni a megerősített környezetben. Ez a cikk bemutatja, hogyan választhatja ki a PAM használatával felügyelendő szerepköröket, és hogyan adhat meg hozzájuk megfelelő engedélyeket és korlátozásokat.
 
@@ -34,7 +36,8 @@ A szerepkörengedélyek a felügyelt alkalmazásoktól függnek. Ebben a cikkben
 
 - Az Active Directory-ban tárolt adatok (például felhasználók és csoportok) felügyeletéhez szükséges engedélyek.
 
-## <a name="identify-roles"></a>A szerepkörök meghatározása
+## A szerepkörök meghatározása
+<a id="identify-roles" class="xliff"></a>
 
 Kezdje a PAM használatával felügyelni kívánt szerepkörök meghatározásával. A táblázatban minden lehetséges szerepkör külön sorban szerepeljen.
 
@@ -58,7 +61,8 @@ A szerepkörök hatókörének meghatározásánál egyéb szempontok is felmer�
 
 - Elkülöníthető a felügyelet és a naplózás, hogy a felügyeleti szerepkörű felhasználók ne tudják törölni az általuk végzett műveletekről készült naplónyilvántartásokat?
 
-## <a name="establish-role-governance-requirements"></a>A szerepkörökre vonatkozó cégirányítási követelmények meghatározása
+## A szerepkörökre vonatkozó cégirányítási követelmények meghatározása
+<a id="establish-role-governance-requirements" class="xliff"></a>
 
 A létrehozandó szerepkörök meghatározása után kezdje el kitölteni a táblázatot. Hozzon létre oszlopokat a szervezethez kapcsolódó követelmények számára. A követelmények például a következők lehetnek:
 
@@ -80,7 +84,8 @@ A létrehozandó szerepkörök meghatározása után kezdje el kitölteni a táb
 
 - Milyen alkalmazásengedélyek (lásd például alább az Active Directory listáját) vannak társítva ehhez a szerepkörhöz?
 
-## <a name="select-an-access-method"></a>Hozzáférési módszer választása
+## Hozzáférési módszer választása
+<a id="select-an-access-method" class="xliff"></a>
 
 A rendszerjogosultságú hozzáférések felügyeleti rendszerében lehet több olyan szerepkör is, amelyhez ugyanazok az engedélyek tartoznak, ha a különböző felhasználói közösségekre különböző hozzáférés-irányítási követelmények vonatkoznak. Például egy szervezet különböző szabályzatokat alkalmazhat a teljes munkaidős dolgozóira és egy másik vállalat kiszervezett informatikai dolgozóira.
 
@@ -96,7 +101,8 @@ Bizonyos esetekben előfordulhat, hogy egy felhasználóhoz tartósan hozzá leh
 
 A hitelesítő adataik ellopása vagy illetéktelen használata miatt aggódó szervezetek [Az Azure MFA használata az aktiváláshoz](use-azure-mfa-for-activation.md) útmutató alapján végezhetik el a MIM konfigurálását, hogy egy sávon kívüli további ellenőrzést írhassanak elő a szerepkör aktiválása esetére.
 
-## <a name="delegate-active-directory-permissions"></a>Az Active Directory engedélyeinek delegálása
+## Az Active Directory engedélyeinek delegálása
+<a id="delegate-active-directory-permissions" class="xliff"></a>
 
 A Windows Server az új tartományok létrehozásakor automatikusan létrehozza az alapértelmezett csoportokat, például a „Tartományi rendszergazdák” csoportot. Ezek a csoportok leegyszerűsítik a kezdeti lépéseket, és alkalmasak lehetnek a kisebb szervezetek számára. A nagyobb szervezeteknek, illetve a felügyeleti jogosultságokat jobban elkülöníteni kívánó szervezeteknek azonban ki kell üríteniük az olyan csoportokat, mint a Tartományi rendszergazdák, és olyan csoportokra kell lecserélniük azokat, amelyek részletesen meghatározott engedélyeket biztosítanak.
 
@@ -107,7 +113,8 @@ A Tartományi rendszergazdák csoport egyik korlátozása, hogy nem lehetnek kü
 
 Alapértelmezett csoportok, például a Tartományi rendszergazdák csoport helyett hozzon létre új biztonsági csoportokat, amelyek csak a szükséges engedélyeket biztosítják, és a MIM használatával dinamikusan adjon meg rendszergazdai fiókokat ezekkel a csoporttagságokkal.
 
-### <a name="service-management-permissions"></a>A szolgáltatásfelügyelet engedélyei
+### A szolgáltatásfelügyelet engedélyei
+<a id="service-management-permissions" class="xliff"></a>
 
 A következő táblázat példákat mutat be az engedélyekre, amelyeket meg kell adni a szerepkörökben az AD felügyeletéhez.
 
@@ -123,7 +130,8 @@ A következő táblázat példákat mutat be az engedélyekre, amelyeket meg kel
 | Zónák kezelése | DNS-zónák és objektumok létrehozása, törlése és módosítása az Active Directory-ban. |
 | Nulladik rétegbeli szervezeti egységek módosítása | Nulladik rétegbe tartozó szervezeti egységek és a tárolt objektumok módosítása az Active Directoryban |
 
-### <a name="data-management-permissions"></a>Adatkezelési engedélyek
+### Adatkezelési engedélyek
+<a id="data-management-permissions" class="xliff"></a>
 
 A következő táblázat példákat mutat be azokra engedélyekre, amelyeket meg kell adni a szerepkörökben az AD-ban tárolt adatok kezeléséhez vagy használatához.
 
@@ -139,13 +147,15 @@ A következő táblázat példákat mutat be azokra engedélyekre, amelyeket meg
 | Csatlakozás számítógéphez/helyi rendszergazda                    | Helyi rendszergazdai jogosultságok az összes munkaállomásnak.                               |
 | Csatlakozás kiszolgálóhoz/helyi rendszergazda                   | Helyi rendszergazdai jogosultságok az összes kiszolgálónak.                                    |
 
-## <a name="example-role-definitions"></a>A szerepkör-definíciókat bemutató példák
+## A szerepkör-definíciókat bemutató példák
+<a id="example-role-definitions" class="xliff"></a>
 
 A szerepkör-definíciók kiválasztása a rendszerjogosultságú fiókokkal felügyelt kiszolgálók rétegétől függ. Ezenkívül a felügyelt alkalmazásoktól is függ, mivel az alkalmazások, például az Exchange vagy a harmadik féltől származó vállalati termékek, mint az SAP, gyakran saját szerepkör-definíciókat tartalmaznak a delegált felügyelethez.
 
 A következő szakaszok példákat mutatnak be a jellemző vállalati forgatókönyvekre.
 
-### <a name="tier-0---administrative-forest"></a>Nulladik réteg: Felügyeleti erdő
+### Nulladik réteg: Felügyeleti erdő
+<a id="tier-0---administrative-forest" class="xliff"></a>
 
 A megerősített környezetben lévő fiókokhoz megfelelő szerepkörök a következők lehetnek:
 
@@ -154,7 +164,8 @@ A megerősített környezetben lévő fiókokhoz megfelelő szerepkörök a köv
 - Azok a felhasználók, akik az éles környezetben működő erdő rendszergazdái
 - Azok a felhasználók, akiknek korlátozott felügyeleti jogosultságokat delegáltak az éles környezetben működő erdőben található alkalmazásokhoz
 
-### <a name="tier-0---enterprise-production-forest"></a>Nulladik réteg: Vállalati éles környezetben működő erdő
+### Nulladik réteg: Vállalati éles környezetben működő erdő
+<a id="tier-0---enterprise-production-forest" class="xliff"></a>
 
 Nulladik rétegbeli éles környezetben működő erdő fiókjainak és erőforrásainak felügyeletére alkalmas szerepkörök következők lehetnek:
 
@@ -171,7 +182,8 @@ Nulladik rétegbeli éles környezetben működő erdő fiókjainak és erőforr
 - Nulladik réteg biztonsági mentési rendszergazdái
 - Nulladik rétegbeli gazdagépekhez csatlakozó sávon kívüli és alaplapi felügyeleti vezérlők (KVM vagy Lights-Out felügyelethez) felhasználói
 
-### <a name="tier-1"></a>Első réteg
+### Első réteg
+<a id="tier-1" class="xliff"></a>
 
 Az első rétegben található kiszolgálók felügyeletéhez és biztonsági mentéséhez tartozó szerepkörök a következők lehetnek:
 
@@ -193,7 +205,8 @@ Az első rétegbeli vállalati alkalmazások kezelésére a következő szerepk�
 - Felhőalapú szolgáltatások, például a vállalati webhelyek vagy a nyilvános DNS rendszergazdái
 - HCM, pénzügyi vagy jogi rendszerek rendszergazdái
 
-### <a name="tier-2"></a>Második réteg
+### Második réteg
+<a id="tier-2" class="xliff"></a>
 
 A nem rendszergazda jogosultságú felhasználók és számítógépek felügyeletének szerepkörei a következők lehetnek:
 

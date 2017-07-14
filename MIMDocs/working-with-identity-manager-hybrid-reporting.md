@@ -12,18 +12,20 @@ ms.technology: security
 ms.assetid: 68df2817-2040-407d-b6d2-f46b9a9a3dbb
 ms.reviewer: mwahl
 ms.suite: ems
-ms.translationtype: Human Translation
+ms.translationtype: MT
 ms.sourcegitcommit: 7f16c3a054f0a2c59f118ba33bf64fca10034690
 ms.openlocfilehash: df842309034ad68151dd8cc4151507e7ece6626d
 ms.contentlocale: hu-hu
-ms.lasthandoff: 05/02/2017
+ms.lasthandoff: 07/10/2017
 
 
 ---
 
-# <a name="working-with-identity-manager-hybrid-reporting---public-preview-refresh"></a>A hibrid jelentéskészítés kezelése az Identity Managerben – nyilvános előzetes verzió (frissítés)
+# A hibrid jelentéskészítés kezelése az Identity Managerben – nyilvános előzetes verzió (frissítés)
+<a id="working-with-identity-manager-hybrid-reporting---public-preview-refresh" class="xliff"></a>
 
-## <a name="available-hybrid-reports"></a>Rendelkezésre álló hibrid jelentések
+## Rendelkezésre álló hibrid jelentések
+<a id="available-hybrid-reports" class="xliff"></a>
 Az Azure AD-ben elérhető első három Microsoft Identity Manager- (MIM-) jelentés a **Password reset activity** (Jelszó-átállítási tevékenység), a **Password reset registration** (Jelszó-átállítás regisztrációja) és a **Self-service groups activity** (Önkiszolgáló csoportok tevékenysége).
 
 -   A jelszó-átállítási tevékenységről szóló jelentés az összes olyan esetet megjeleníti, amelyben egy felhasználó az önkiszolgáló jelszó-változtatási portállal (SSPR) megváltoztatta a jelszavát, és a hitelesítéshez használt átjárókat vagy **módszereket** is feltünteti.
@@ -40,7 +42,8 @@ Az Azure AD-ben elérhető első három Microsoft Identity Manager- (MIM-) jelen
 > A korábbi hibrid ügynököt el kell távolítani</br>
 > Ha el szeretné távolítani a hibrid jelentéseket, távolítsa el a MIMreportingAgent.msi ügynököt.
 
-## <a name="prerequisites"></a>Előfeltételek
+## Előfeltételek
+<a id="prerequisites" class="xliff"></a>
 
 1.  Telepítse a Microsoft Identity Manager 2016 RTM-et vagy a MIM szolgáltatás SP1-et.
 
@@ -48,7 +51,8 @@ Az Azure AD-ben elérhető első három Microsoft Identity Manager- (MIM-) jelen
 
 3.  Ellenőrizze, hogy a Microsoft Identity Manager rendelkezik-e kimenő internetkapcsolattal az Azure felé.
 
-## <a name="requirements"></a>Követelmények
+## Követelmények
+<a id="requirements" class="xliff"></a>
 Az alábbi táblázatban látható lista a hibrid jelentéskészítés a Microsoft Identity Managerben való használatának követelményeit sorolja fel.
 
 | Követelmény | Leírás |
@@ -63,7 +67,8 @@ Az alábbi táblázatban látható lista a hibrid jelentéskészítés a Microso
 | Az alábbi webhelyek engedélyezése, ha az Internet Explorer fokozott biztonsági beállításai engedélyezve vannak |Ha az Internet Explorer fokozott biztonsági beállításai engedélyezve vannak, az alábbi webhelyeket kell engedélyeznie azon a kiszolgálón, amelyen az ügynököt telepíteni fogja.</br></br><li>https://login.microsoftonline.com</li><li>https://secure.aadcdn.microsoftonline-p.com</li><li>https://login.windows.net</li><li>A szervezetnek rendelkeznie kell egy olyan összevonási kiszolgálóval, melyet az Azure Active Directory megbízhatónak tekint. Példa: https://sts.contoso.com</li> |
 </BR>
 
-## <a name="install-microsoft-identity-manager-reporting-agent-in-azure-ad"></a>A Microsoft Identity Manager jelentéskészítő ügynök telepítése az Azure AD-ben
+## A Microsoft Identity Manager jelentéskészítő ügynök telepítése az Azure AD-ben
+<a id="install-microsoft-identity-manager-reporting-agent-in-azure-ad" class="xliff"></a>
 A jelentéskészítő ügynök a telepítést követően a Microsoft Identity Manager-tevékenységek adatait a MIM-ből a Windows Eseménynaplóba exportálja. A MIM jelentéskészítő ügynök feldolgozza és feltölti az eseményeket az Azure-ba. Az Azure elemzi, visszafejti és szűri az eseményeket a szükséges jelentésekhez.
 
 1.  Telepítse a Microsoft Identity Manager 2016-ot.
@@ -90,7 +95,8 @@ A jelentéskészítő ügynök a telepítést követően a Microsoft Identity Ma
 
     Jelentési adatok létrehozásához használja a Microsoft Identity Manager önkiszolgáló jelszó-változtatási portálját, és állítsa át egy felhasználó jelszavát. Győződjön meg arról, hogy a jelszóátállítás sikeresen befejeződött, majd ellenőrizze, hogy az Azure AD felügyeleti portál megjeleníti-e az adatokat.
 
-## <a name="view-hybrid-reports-in-the-azure-portal"></a>Hibrid jelentések megtekintése az Azure Portal webhelyen
+## Hibrid jelentések megtekintése az Azure Portal webhelyen
+<a id="view-hybrid-reports-in-the-azure-portal" class="xliff"></a>
 
 1.  Jelentkezzen be az [Azure Portalra](https://portal.azure.com/) a bérlőhöz tartozó globális rendszergazdai fiókkal.
 
@@ -105,10 +111,12 @@ A jelentéskészítő ügynök a telepítést követően a Microsoft Identity Ma
 > [!WARNING]
 > Némi időbe telhet, amíg a Microsoft Identity Manager naplózási adatai megjelennek az Azure Portal webhelyen.
 
-## <a name="stop-creating-hybrid-reports"></a>A hibrid jelentések létrehozásának leállítása
+## A hibrid jelentések létrehozásának leállítása
+<a id="stop-creating-hybrid-reports" class="xliff"></a>
 Ha nem szeretne több naplózási adatot feltölteni a Microsoft Identity Managerből az Azure Active Directoryba, távolítsa el a hibrid jelentéskészítő ügynököt. A Microsoft Identity Manager hibrid jelentéskészítő összetevőjét a Windows **Programok telepítése és törlése** eszközével távolíthatja el.
 
-## <a name="windows-events-used-for-hybrid-reporting"></a>A hibrid jelentéskészítéshez használt Windows-események
+## A hibrid jelentéskészítéshez használt Windows-események
+<a id="windows-events-used-for-hybrid-reporting" class="xliff"></a>
 A Microsoft Identity Manager által generált eseményeket a Windows Eseménynapló naplózza, és az Alkalmazás- és szolgáltatásnaplók – &gt; **Identity Manager Request Log** (Identity Manager-kérelemnapló) csomópont alatt érhetők el. A rendszer minden MIM-kérelmet eseményként exportál a Windows Eseménynaplóba, JSON struktúrában. Ezeket a saját SIEM-rendszerébe exportálhatja.
 
 |Eseménytípus|Azonosító|Esemény részletei|
