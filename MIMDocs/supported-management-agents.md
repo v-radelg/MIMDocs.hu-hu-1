@@ -12,15 +12,17 @@ ms.technology: security
 ms.assetid: 8bc2f6d2-9f53-4db6-aee6-a937ae468163
 ms.reviewer: mwahl
 ms.suite: ems
-translationtype: Human Translation
-ms.sourcegitcommit: bfc73723bdd3a49529522f78ac056939bb8025a3
+ms.translationtype: MT
+ms.sourcegitcommit: 7f16c3a054f0a2c59f118ba33bf64fca10034690
 ms.openlocfilehash: b26fe7bc56ab8229054afb1409c3652e81464a3d
-ms.lasthandoff: 05/02/2017
+ms.contentlocale: hu-hu
+ms.lasthandoff: 07/10/2017
 
 
 ---
 
-# <a name="connect-to-your-directories"></a>Csatlakozás a címtárakhoz
+# Csatlakozás a címtárakhoz
+<a id="connect-to-your-directories" class="xliff"></a>
 
 Az összekötők adott csatlakoztatott adatforrásokat kapcsolnak össze a Microsoft Identity Manager (MIM) alkalmazással. A csatlakoztatott adatforrásból az összekötő adatokat helyez át az MIM alkalmazásba. Ha az MIM alkalmazásban az adatok módosulnak, az összekötő exportálja az adatokat a csatlakoztatott adatforráshoz, hogy szinkronizálja azt az MIM alkalmazással. Általában elmondható, hogy minden csatlakoztatott címtárhoz legalább egy összekötő tartozik.
 
@@ -28,7 +30,8 @@ A Forefront Identity Manager szoftver az összekötőket kezelőügynöknek neve
 
 Ez a cikk az MIM részét képző összekötőkre vonatkozik, de az Extensible Connectivity 2.0 összekötőivel további adatforrásokhoz is lehet csatlakozni. Egyes partnerek saját összekötőket hoztak létre, melyek teljes listája megtalálható a [FIM 2010: Partnerek kezelőügynökei](http://social.technet.microsoft.com/wiki/contents/articles/1589.fim-2010-management-agents-from-partners.aspx) wikicikkben.
 
-## <a name="supported-connectors-in-mim-2016"></a>Az MIM 2016 által támogatott összekötők
+## Az MIM 2016 által támogatott összekötők
+<a id="supported-connectors-in-mim-2016" class="xliff"></a>
 
 | Név | A csatlakoztatott adatforrás támogatott verziói |
 | ---- | ----------------------------------------------- |
@@ -55,7 +58,8 @@ Ez a cikk az MIM részét képző összekötőkre vonatkozik, de az Extensible C
 | Rögzített szélességű szövegfájl | Rögzített szélességű szövegfájlok |
 | LDAP Data Interchange formátum (LDIF) | LDAP Data Interchange formátum (LDIF) |
 
-## <a name="related-topics"></a>Kapcsolódó témakörök
+## Kapcsolódó témakörök
+<a id="related-topics" class="xliff"></a>
 
 [A FIM 2010 R2 kezelőügynökei](https://technet.microsoft.com/library/jj133885.aspx)
 

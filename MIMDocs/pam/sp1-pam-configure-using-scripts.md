@@ -12,14 +12,17 @@ ms.technology: active-directory-domain-services
 ms.assetid: 4b524ae7-6610-40a0-8127-de5a08988a8a
 ms.reviewer: 
 ms.suite: ems
-translationtype: Human Translation
+ms.translationtype: MT
 ms.sourcegitcommit: f08b0197341351bd5f33552f26b96132b1356239
 ms.openlocfilehash: bd73f43a096d58e1f7250e28b59e33f4411e88a3
+ms.contentlocale: hu-hu
+ms.lasthandoff: 07/10/2017
 
 
 ---
 
-# <a name="configure-pam-using-scripts"></a>A PAM konfigurálása szkriptek használatával
+# A PAM konfigurálása szkriptek használatával
+<a id="configure-pam-using-scripts" class="xliff"></a>
 
 Ha külön kiszolgálón telepíti az SQL- és SharePoint-szolgáltatásokat, az alábbi utasítások szerint kell konfigurálnia őket. Ha az SQL-, SharePoint- és a PAM-összetevők ugyanazon a gépen vannak telepítve, az alábbi lépéseket kell futtatni arról a gépről.
 
@@ -39,11 +42,13 @@ lépések:
 5. Másolja ugyanazt a PAMDeploymentConfig.xml fájlt minden gép, CORPDC-, PRIVDC-, PAM Server, SQL Server és SharePoint-kiszolgáló %SYSTEMDRIVE%\PAM mappájába.
 
 
-## <a name="deployment-worksheet"></a>Üzembehelyezési munkalap
+## Üzembehelyezési munkalap
+<a id="deployment-worksheet" class="xliff"></a>
 
 Folytatás előtt frissítse a PAMDeploymentConfig.xml fájlt, és másolja a frissített fájlt minden gépre.
 
-### <a name="setup"></a>Setup
+### Setup
+<a id="setup" class="xliff"></a>
 
 |Machine   | Futtatás más nevében   |Parancsok   |
 |---|---|---|
@@ -55,7 +60,8 @@ Folytatás előtt frissítse a PAMDeploymentConfig.xml fájlt, és másolja a fr
 | PAMServer  | Helyi rendszergazda (MIM-rendszergazda a tartomány csatlakoztatása után)  | .\PAMDeployment.ps1 Az 5. menüelem kiválasztása (MIM PAM beállítása)   |
 |  PAMServer |MIMAdmin   | .\PAMDeployment.ps1 A 6. menüelem kiválasztása (PAM bizalmi kapcsolat beállítása) .\PAMDeployment.ps1 A 6. menüelem kiválasztása (PAM bizalmi kapcsolat beállítása) |
 
-### <a name="validation"></a>Érvényesítés
+### Érvényesítés
+<a id="validation" class="xliff"></a>
 
 |  Machine | Futtatás más nevében   | Parancsok   |
 |---|---|---|
@@ -68,9 +74,4 @@ Folytatás előtt frissítse a PAMDeploymentConfig.xml fájlt, és másolja a fr
 
 >[!div class="step-by-step"]
 [Indítás »](sp1-step1-configuring-priv-domain.md)
-
-
-
-<!--HONumber=Jan17_HO2-->
-
 

@@ -12,15 +12,17 @@ ms.technology: security
 ms.assetid: 51507d0a-2aeb-4cfd-a642-7c71e666d6cd
 ms.reviewer: mwahl
 ms.suite: ems
-translationtype: Human Translation
-ms.sourcegitcommit: 3623bffb099a83d0eba47ba25e9777c3d590e529
-ms.openlocfilehash: 1cb0d6cd310372ecaeff47c9cc4461ebc43b3390
-ms.lasthandoff: 01/24/2017
+ms.translationtype: MT
+ms.sourcegitcommit: 7f16c3a054f0a2c59f118ba33bf64fca10034690
+ms.openlocfilehash: a0241964edb21ca4bf938ae84693b9947f6e2efb
+ms.contentlocale: hu-hu
+ms.lasthandoff: 07/10/2017
 
 
 ---
 
-# <a name="set-up-an-identity-management-server-windows-server-2012-r2"></a>Identitáskezelési kiszolgáló beállítása: Windows Server 2012 R2
+# Identitáskezelési kiszolgáló beállítása: Windows Server 2012 R2
+<a id="set-up-an-identity-management-server-windows-server-2012-r2" class="xliff"></a>
 
 >[!div class="step-by-step"]
 [« Tartomány előkészítése](preparing-domain.md)
@@ -32,7 +34,8 @@ ms.lasthandoff: 01/24/2017
 > - Tartománynév – **contoso**
 > - Jelszó – **Pass@word1**
 
-## <a name="join-windows-server-2012-r2-to-your-domain"></a>A Windows Server 2012 R2 csatlakoztatása a tartományhoz
+## A Windows Server 2012 R2 csatlakoztatása a tartományhoz
+<a id="join-windows-server-2012-r2-to-your-domain" class="xliff"></a>
 
 Készítsen elő egy Windows Server 2012 R2 rendszerű számítógépet legalább 8 GB RAM-mal. A telepítéskor válassza a „Windows Server 2012 R2 Standard (kiszolgáló grafikus felhasználói felülettel) x64” kiadást.
 
@@ -63,7 +66,8 @@ Készítsen elő egy Windows Server 2012 R2 rendszerű számítógépet legaláb
     Install-WindowsFeature Web-WebServer, Net-Framework-Features,rsat-ad-powershell,Web-Mgmt-Tools,Application-Server,Windows-Identity-Foundation,Server-Media-Foundation,Xps-Viewer –includeallsubfeature -restart -source d:\sources\SxS
     ```
 
-## <a name="configure-the-server-security-policy"></a>A kiszolgálói biztonsági házirend konfigurálása
+## A kiszolgálói biztonsági házirend konfigurálása
+<a id="configure-the-server-security-policy" class="xliff"></a>
 
 A kiszolgálói biztonsági házirendben engedélyezze az újonnan létrehozott fiókok szolgáltatásként történő futtatását.
 
@@ -94,7 +98,8 @@ A kiszolgálói biztonsági házirendben engedélyezze az újonnan létrehozott 
 12. Zárja be a Helyi biztonsági házirend ablakot.
 
 
-## <a name="change-the-iis-windows-authentication-mode"></a>Az IIS Windows-hitelesítés üzemmód módosítása
+## Az IIS Windows-hitelesítés üzemmód módosítása
+<a id="change-the-iis-windows-authentication-mode" class="xliff"></a>
 
 1.  Indítson el egy PowerShell-ablakot.
 

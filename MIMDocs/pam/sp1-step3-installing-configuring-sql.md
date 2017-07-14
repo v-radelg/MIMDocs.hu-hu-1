@@ -12,13 +12,16 @@ ms.technology: active-directory-domain-services
 ms.assetid: 4b524ae7-6610-40a0-8127-de5a08988a8a
 ms.reviewer: 
 ms.suite: ems
-translationtype: Human Translation
+ms.translationtype: MT
 ms.sourcegitcommit: f08b0197341351bd5f33552f26b96132b1356239
 ms.openlocfilehash: 93ae9f198d73d21ae966fe3c3b22e47435bd5608
+ms.contentlocale: hu-hu
+ms.lasthandoff: 07/10/2017
 
 
 ---
-# <a name="step-3-configuring-sql"></a>3. lépés: Az SQL konfigurálása
+# 3. lépés: Az SQL konfigurálása
+<a id="step-3-configuring-sql" class="xliff"></a>
 
 >[!div class="step-by-step"]
 [« 2. lépés](sp1-step2-configuring-corp-domain.md)
@@ -43,9 +46,4 @@ Ha szükséges, adja meg a MIMAdmin-szolgáltatásfiókhoz tartozó jelszót, é
 >[!div class="step-by-step"]
 [« 2. lépés](sp1-step2-configuring-corp-domain.md)
 [4. lépés »](sp1-step4-configuring-sharepoint.md)
-
-
-
-<!--HONumber=Jan17_HO2-->
-
 

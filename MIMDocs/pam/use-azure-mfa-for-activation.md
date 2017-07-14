@@ -12,15 +12,17 @@ ms.technology: active-directory-domain-services
 ms.assetid: 5134a112-f73f-41d0-a5a5-a89f285e1f73
 ms.reviewer: mwahl
 ms.suite: ems
-translationtype: Human Translation
+ms.translationtype: MT
 ms.sourcegitcommit: bfc73723bdd3a49529522f78ac056939bb8025a3
 ms.openlocfilehash: b937b30da2dff9bbfeabf7dceb43fcaca99a1b63
-ms.lasthandoff: 05/02/2017
+ms.contentlocale: hu-hu
+ms.lasthandoff: 07/10/2017
 
 
 ---
 
-# <a name="using-azure-mfa-for-activation"></a>Aktiválás az Azure MFA használatával
+# Aktiválás az Azure MFA használatával
+<a id="using-azure-mfa-for-activation" class="xliff"></a>
 A PAM-szerepkörök konfigurálásakor kiválaszthatja, hogyan szeretné engedélyekkel felruházni azokat a felhasználókat, akik a szerepkör aktiválását kérik. A PAM-engedélyezés a következő választási lehetőségeket nyújtja:
 
 - Szerepkör tulajdonosának jóváhagyása
@@ -30,7 +32,8 @@ Ha egyik ellenőrzési mód sincs engedélyezve, a jelölt felhasználók szerep
 
 A Microsoft Azure Multi-Factor Authentication (MFA) olyan hitelesítési szolgáltatás, amely a bejelentkezési kísérletek mobilalkalmazással, telefonhívással vagy SMS-sel történő megerősítését kéri a felhasználóktól. A szolgáltatás a Microsoft Azure Active Directoryval, valamint felhőalapú és helyszíni nagyvállalati alkalmazásokkal is használható. PAM alkalmazása esetén az Azure MFA olyan további hitelesítési mechanizmust biztosít, amely attól függetlenül használható az engedélyezéskor, hogy korábban hitelesítve volt-e a jelölt felhasználó a Windows PRIV tartományban.
 
-## <a name="prerequisites"></a>Előfeltételek
+## Előfeltételek
+<a id="prerequisites" class="xliff"></a>
 
 Az Azure MFA-nak a MIM szolgáltatásban történő használatához a következők szükségesek:
 
@@ -39,7 +42,8 @@ Az Azure MFA-nak a MIM szolgáltatásban történő használatához a következ�
 - Azure Active Directory Premium licenc vagy valamilyen alternatív, Azure MFA-licencet biztosító megoldás a jelölt felhasználóknál
 - Telefonszám az összes jelölt felhasználó esetén
 
-## <a name="creating-an-azure-mfa-provider"></a>Azure MFA-szolgáltató létrehozása
+## Azure MFA-szolgáltató létrehozása
+<a id="creating-an-azure-mfa-provider" class="xliff"></a>
 
 Ez a szakasz az Azure MFA-szolgáltatónak a Microsoft Azure Active Directoryben történő beállításához nyújt útmutatást.  Ha már használja az Azure MFA-t – akár önállóan, akár az Azure Active Directory Premiummal konfigurálva – ugorjon a következő bekezdéshez.
 
@@ -51,7 +55,8 @@ Ez a szakasz az Azure MFA-szolgáltatónak a Microsoft Azure Active Directoryben
 
 4.  A **Name** (Név) mezőbe írja be **PAM** szót, és a Usage Model (Használati modell) mezőben válassza a Per Enabled User (Engedélyezett felhasználónként) lehetőséget. Ha már rendelkezik Azure AD-címtárral, válassza azt a címtárat. Végül kattintson a **Create** (Létrehozás) gombra.
 
-## <a name="downloading-the-azure-mfa-service-credentials"></a>Az Azure MFA szolgáltatás hitelesítő adatainak letöltése
+## Az Azure MFA szolgáltatás hitelesítő adatainak letöltése
+<a id="downloading-the-azure-mfa-service-credentials" class="xliff"></a>
 
 A következő lépésben létre fog hozni egy fájlt, amely tartalmazza a PAM-nek az Azure MFA-hoz való kapcsolódásához szükséges hitelesítési anyagokat.
 
@@ -74,7 +79,8 @@ A következő lépésben létre fog hozni egy fájlt, amely tartalmazza a PAM-ne
 >[!NOTE]
 > A ZIP-fájl az Azure MFA szolgáltatással való hitelesítésre szolgáló kulcsanyagokat tartalmazza.
 
-## <a name="configuring-the-mim-service-for-azure-mfa"></a>A MIM szolgáltatás konfigurálása az Azure MFA használatára
+## A MIM szolgáltatás konfigurálása az Azure MFA használatára
+<a id="configuring-the-mim-service-for-azure-mfa" class="xliff"></a>
 
 1.  Rendszergazdaként vagy a MIM-et telepítő felhasználói fiókkal jelentkezzen be arra a számítógépre, amelyre a MIM szolgáltatás telepítve van.
 
@@ -103,7 +109,8 @@ A következő lépésben létre fog hozni egy fájlt, amely tartalmazza a PAM-ne
 > [!NOTE]
 > A folyamat végén győződjön meg róla, hogy az **MfaSettings.xml** fájl, illetve annak minden példánya, valamint a ZIP-fájl nyilvánosan nem olvasható.
 
-## <a name="configure-pam-users-for-azure-mfa"></a>PAM-felhasználók konfigurálása az Azure MFA számára
+## PAM-felhasználók konfigurálása az Azure MFA számára
+<a id="configure-pam-users-for-azure-mfa" class="xliff"></a>
 
 Azure MFA-alapú hitelesítést igénylő szerepkört aktiváló felhasználó esetén a felhasználó telefonszámát tárolni kell a MIM szolgáltatásban. Ez az attribútum kétféleképpen állítható be.
 
@@ -116,7 +123,8 @@ Set-PAMUser (Get-PAMUser -SourceDisplayName Jen) -SourcePhoneNumber 12135551212
 ```
 
 
-## <a name="configure-pam-roles-for-azure-mfa"></a>PAM-szerepkörök konfigurálása az Azure MFA számára
+## PAM-szerepkörök konfigurálása az Azure MFA számára
+<a id="configure-pam-roles-for-azure-mfa" class="xliff"></a>
 
 Ha már az adott PAM-szerepkörre jelölt összes felhasználó telefonszáma tárolva van a MIM szolgáltatás adatbázisában, a szerepkör konfigurálható az Azure MFA hitelesítés megkövetelésére. Ez a `New-PAMRole` vagy a `Set-PAMRole` paranccsal tehető meg. Például
 
@@ -126,7 +134,8 @@ Set-PAMRole (Get-PAMRole -DisplayName "R") -MFAEnabled 1
 
 Egy adott szerepkör esetében az „-MFAEnabled 0” paraméternek a `Set-PAMRole` parancsban való megadásával tiltható le az Azure MFA.
 
-## <a name="troubleshooting"></a>Hibaelhárítás
+## Hibaelhárítás
+<a id="troubleshooting" class="xliff"></a>
 
 A következő események a Privileged Access Management eseménynaplójában jelenhetnek meg:
 

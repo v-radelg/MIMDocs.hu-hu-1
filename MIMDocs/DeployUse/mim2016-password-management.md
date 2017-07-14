@@ -11,17 +11,18 @@ ms.prod: identity-manager-2016
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 
-ms.translationtype: Human Translation
+ms.translationtype: MT
 ms.sourcegitcommit: 1ef7b9816d265d17ef68fc54e010e655535dcdc8
 ms.openlocfilehash: 0a5a3f28af58dd59ab805f2836ffeb88f3508ae0
 ms.contentlocale: hu-hu
-ms.lasthandoff: 05/11/2017
+ms.lasthandoff: 07/10/2017
 
 
 ---
 
 
-# <a name="microsoft-identity-manager-2016-password-management"></a>Microsoft Identity Manager 2016 – Jelszókezelés
+# Microsoft Identity Manager 2016 – Jelszókezelés
+<a id="microsoft-identity-manager-2016-password-management" class="xliff"></a>
 
 A több adatforrással rendelkező vállalati környezetek felügyeletének egyik összetett része a több felhasználói fiókhoz tartozó jelszavak kezelése. A Microsoft Identity Manager 2016 (MIM) két jelszókezelési megoldást kínál:
 
@@ -43,7 +44,8 @@ A jelszó-szinkronizálás és a felhasználóalapú jelszóváltoztatás-kezel�
 
 -   Valós időben, a MIM-műveletektől függetlenül hajthatja végre a jelszókezelési műveleteket.
 
-## <a name="password-extensions"></a>Jelszóbővítmények
+## Jelszóbővítmények
+<a id="password-extensions" class="xliff"></a>
 
 A címtárkiszolgálók kezelőügynökei alapértelmezés szerint támogatják a jelszómódosítási és jelszóbeállítási műveleteket. A jelszómódosítási és jelszóbeállítási műveleteket alapértelmezés szerint nem támogató fájlalapú, adatbázis- és bővíthetőkapcsolat-kezelőügynökök számára .NET-alapú jelszóbővítmény-DLL-t (dinamikus csatolású függvénytárat) hozhat létre.
 Valahányszor ezek az ügynökök jelszómódosítási vagy jelszóbeállítási hívást kezdeményeznek, a hívást a .NET-alapú jelszóbővítmény-DLL fogadja. Az ügynökök jelszóbővítmény-beállításainak konfigurálása a Synchronization Service Manager eszközön keresztül történik. A jelszóbővítmények konfigurálásáról a FIM fejlesztői leírásában talál további információt.
@@ -60,7 +62,8 @@ Valahányszor ezek az ügynökök jelszómódosítási vagy jelszóbeállítási
 |                                                                           | Microsoft SQL Server                                                                               |
 |                                                                           | Oracle Database                                                                                    |
 
-## <a name="password-synchronization"></a>Jelszó-szinkronizálás
+## Jelszó-szinkronizálás
+<a id="password-synchronization" class="xliff"></a>
 
 
 A jelszó-szinkronizálás az Active Directory-tartományok jelszóváltozás-értesítési szolgáltatásával együttműködve lehetővé teszi, hogy az Active Directoryból származó jelszóváltozások automatikusan eljussanak a csatlakoztatott adatforrásokhoz. A MIM úgy hajtja ezt végre, hogy egy távoli eljáráshívási kiszolgálót futtat, amely az Active Directory-tartományvezérlőktől érkező jelszóváltoztatási értesítéseket figyeli. A jelszóváltoztatási kérelem beérkezése és hitelesítése után a MIM feldolgozza azt, és eljuttatja a megfelelő kezelőügynökökhöz.
@@ -86,7 +89,8 @@ A jelszó-szinkronizálás folyamatában a következő összetevők kapnak szere
 -   **Jelszóbővítmény-DLL** – A jelszóbővítmény-DLL segítségével a jelszóbeállítási vagy jelszóváltoztatási műveletek szabálykiterjesztéssel hajthatók végre tetszőleges adatbázis-, bővíthető kapcsolati vagy fájlalapú kezelőügynökön.
     Ez egy „export_password” nevű, csak exportálási, titkosított attribútum létrehozásával történik, amely ténylegesen nem létezik a kapcsolt címtárban, de a szabálykiterjesztések kiépítése esetén hozzáférhető és beállítható, vagy az attribútumfolyam exportálása során használható fel. A jelszóbővítmények konfigurálásáról a [FIM fejlesztői leírásában](https://msdn.microsoft.com/library/windows/desktop/ee652263(v=vs.100).aspx) talál további információt.
 
-## <a name="preparing-for-password-synchronization"></a>A jelszó-szinkronizálás előkészítése
+## A jelszó-szinkronizálás előkészítése
+<a id="preparing-for-password-synchronization" class="xliff"></a>
 
 Mielőtt jelszó-szinkronizálást állítana be a MIM és az Active Directory-környezet számára, győződjön meg a következőkről:
 
@@ -110,7 +114,8 @@ A jelszó-szinkronizálás beállításához:
 
 A jelszó-szinkronizálás beállításáról a Using Password Synchronization (Jelszó-szinkronizálás használata) című cikkben talál további információt.
 
-## <a name="password-synchronization-process"></a>A jelszó-szinkronizálás folyamata
+## A jelszó-szinkronizálás folyamata
+<a id="password-synchronization-process" class="xliff"></a>
 
 Az alábbi ábrán egy Active Directory-beli tartományvezérlő által a csatlakoztatott adatforrásokhoz küldött jelszóváltoztatási kérelem szinkronizálási folyamata látható:
 
@@ -126,7 +131,8 @@ Az alábbi ábrán egy Active Directory-beli tartományvezérlő által a csatla
 
 6.  Az illesztési tábla információinak felhasználásával a MIM meghatározza azokat a kezelőügynököket, amelyek megkapják a jelszóváltoztatást, majd le is küldi azt nekik.
 
-## <a name="password-synchronization-security"></a>A jelszó-szinkronizálás biztonsága
+## A jelszó-szinkronizálás biztonsága
+<a id="password-synchronization-security" class="xliff"></a>
 
 A jelszó-szinkronizálás során a következő biztonsági intézkedések történnek:
 
@@ -140,7 +146,8 @@ A jelszó-szinkronizálás során a következő biztonsági intézkedések tört
 
 -   Biztonságos jelszóvárólisták – A jelszóváltoztatás-értesítési szolgáltatás várólistáin tárolt jelszavak a kézbesítésig titkosítva vannak.
 
-## <a name="password-synchronization-error-recovery-scenarios"></a>A jelszó-szinkronizálási hibák utáni helyreállítás esetei
+## A jelszó-szinkronizálási hibák utáni helyreállítás esetei
+<a id="password-synchronization-error-recovery-scenarios" class="xliff"></a>
 
 Ideális esetben valahányszor egy felhasználó jelszót módosít, a módosítás hibátlanul szinkronizálódik. A MIM az alábbi forgatókönyvek szerint végez helyreállítást a leggyakoribb szinkronizálási hibák után:
 
@@ -162,7 +169,8 @@ Egyes, súlyosabb meghibásodások esetén akárhány újrapróbálkozás eseté
 | 6927  | Hiba       | A jelszó-szinkronizálás beállításának művelete nem sikerült, mert a jelszó nem felel meg a célrendszer jelszószabályzatának.                                      |
 | 6928  | Hiba       | A jelszó-szinkronizálás beállításának művelete nem sikerült, mert a céloldali kezelőügynök jelszókiterjesztése nincs konfigurálva a jelszóbeállítási műveletek támogatására. |
 
-## <a name="user-based-password-change-management"></a>Felhasználóalapú jelszóváltoztatás-kezelés
+## Felhasználóalapú jelszóváltoztatás-kezelés
+<a id="user-based-password-change-management" class="xliff"></a>
 
 A MIM két webalkalmazást kínál az új jelszavak Windows Management Instrumentation (WMI) használatával való kéréséhez. Ahogy a jelszó-szinkronizálásnál, itt is akkor aktiválhatja a jelszókezelést, amikor a kezelőügynök-tervezőben konfigurálja a kezelőügynököt. A jelszókezelésről és a WMI-ről a MIM fejlesztői leírásában talál további információt.
 

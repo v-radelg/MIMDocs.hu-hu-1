@@ -1,5 +1,5 @@
 ---
-title: "Nyolcadik lépés: A PAM üzembe helyezésének ellenőrzése"
+title: "8. lépés: A PAM üzembe helyezésének ellenőrzése"
 description: "A PAM parancsfájlokkal történő üzembe helyezéséhez szükséges csomag ellenőrzési parancsfájlokat is tartalmaz, amelyekkel végrehajtható egy PAM-forgatókönyv, így ellenőrizhető, hogy a PAM-környezet a vártnak megfelelően működik-e."
 keywords: 
 author: barclayn
@@ -12,14 +12,17 @@ ms.technology: active-directory-domain-services
 ms.assetid: 4b524ae7-6610-40a0-8127-de5a08988a8a
 ms.reviewer: 
 ms.suite: ems
-translationtype: Human Translation
+ms.translationtype: MT
 ms.sourcegitcommit: f08b0197341351bd5f33552f26b96132b1356239
 ms.openlocfilehash: 2f4306dc50ecb869a3c917dfaf320ad80dddedd1
+ms.contentlocale: hu-hu
+ms.lasthandoff: 07/10/2017
 
 
 ---
 
-# <a name="step-8-pam-deployment-verification"></a>Nyolcadik lépés: A PAM üzembe helyezésének ellenőrzése
+# Nyolcadik lépés: A PAM üzembe helyezésének ellenőrzése
+<a id="step-8-pam-deployment-verification" class="xliff"></a>
 
 >[!div class="step-by-step"]
 [« 7. lépés](sp1-step7-setup-sidhistory-sidfiltering.md)
@@ -80,9 +83,4 @@ A PowerShell ablakban írja be a következőt:
 >[!div class="step-by-step"]
 [« 7. lépés](sp1-step7-setup-sidhistory-sidfiltering.md)
 [Kiegészítés »](sp1-pam-deployment-addendum.md)
-
-
-
-<!--HONumber=Jan17_HO2-->
-
 

@@ -12,18 +12,21 @@ ms.technology: security
 ms.assetid: fed5ada9-d80f-4825-aad7-4172ac5d71d3
 ms.reviewer: mwahl
 ms.suite: ems
-translationtype: Human Translation
-ms.sourcegitcommit: 54d03fbd03f6c44298139324ea2dc7d945f008bc
-ms.openlocfilehash: 23cfb1134d1cbf2cf838354cb7d915084803cd41
-ms.lasthandoff: 01/24/2017
+ms.translationtype: MT
+ms.sourcegitcommit: 7f16c3a054f0a2c59f118ba33bf64fca10034690
+ms.openlocfilehash: 274039a6866c5c0fda807e4326220ecf785ca3bb
+ms.contentlocale: hu-hu
+ms.lasthandoff: 07/10/2017
 
 
 ---
 
-# <a name="create-software-certificates-with-certificate-manager"></a>Szoftvertanúsítványok létrehozása a Tanúsítványkezelővel
+# Szoftvertanúsítványok létrehozása a Tanúsítványkezelővel
+<a id="create-software-certificates-with-certificate-manager" class="xliff"></a>
 A szoftvertanúsítványok regisztrálásához és megújításához nem kell rendszergazdának lennie, és virtuális intelligens kártyára sincs szükség. A rendszer valamikor egy tanúsítványművelet engedélyezésére fogja kérni. Ez normális.
 
-## <a name="create-a-software-certificate-profile-template-in-mim-2016-certificate-manager"></a>Szoftvertanúsítvány-profilsablon létrehozása a MIM 2016 Tanúsítványkezelőben
+## Szoftvertanúsítvány-profilsablon létrehozása a MIM 2016 Tanúsítványkezelőben
+<a id="create-a-software-certificate-profile-template-in-mim-2016-certificate-manager" class="xliff"></a>
 
 1.  Hozzon létre egy sablont ahhoz a tanúsítványhoz, amelyet a virtuális intelligens kártyához fog igényelni. Indítsa el az MMC-t.
 
@@ -39,7 +42,7 @@ A szoftvertanúsítványok regisztrálásához és megújításához nem kell re
 
     1.  Az **Általános** lapon a Megjelenített név mezőbe írja be a következőt: **Archivált tanúsítványsablon**.
 
-    2.  b.    A **Kérelmek kezelése** lapon
+    2.  b.  A **Kérelmek kezelése** lapon
 
         1.  A **Felhasználási cél** értékét állítsa Aláírás és titkosítás értékre.
 
@@ -73,7 +76,8 @@ A szoftvertanúsítványok regisztrálásához és megújításához nem kell re
 
     10. A listáról válassza ki az újonnan létrehozott sablont (**Archivált tanúsítványsablon**), majd kattintson az **OK** gombra.
 
-## <a name="create-the-profile-template"></a>A profilsablon létrehozása
+## A profilsablon létrehozása
+<a id="create-the-profile-template" class="xliff"></a>
 
 1.  Rendszergazdai jogosultsággal jelentkezzen be a Tanúsítványkezelő portálra.
 

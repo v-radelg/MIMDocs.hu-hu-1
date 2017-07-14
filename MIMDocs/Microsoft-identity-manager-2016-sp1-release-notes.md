@@ -12,15 +12,16 @@ ms.technology: security
 ms.assetid: ccdd8a9f-02da-440a-81a8-354800dcd2a8
 ms.reviewer: mwahl
 ms.suite: ems
-ms.translationtype: Human Translation
+ms.translationtype: MT
 ms.sourcegitcommit: 3797f5789bb4e48836eb21776dafd5a2e0e11613
 ms.openlocfilehash: 69d44af5eaef3665f3a55ea91f48d3658cd5e65c
 ms.contentlocale: hu-hu
-ms.lasthandoff: 05/09/2017
+ms.lasthandoff: 07/10/2017
 
 
 ---
-# <a name="whats-new-for-microsoft-identity-manager-2016-service-pack-1"></a>A Microsoft Identity Manager 2016 Service Pack 1 újdonságai #
+# A Microsoft Identity Manager 2016 Service Pack 1 újdonságai
+<a id="whats-new-for-microsoft-identity-manager-2016-service-pack-1" class="xliff"></a> #
 
 A Microsoft Identity Manager karbantartásához és frissítéséhez tartozó kiadási ciklus részeként örömmel jelentjük be a [Microsoft Identity Manager (MIM) 2016 Service Pack 1 (SP1)](https://msdn.microsoft.com/subscriptions/downloads/?fileid=70212#searchTerm=&Languages=en&PageSize=10&PageIndex=0&FileId=70212) megjelenését. Ez a dokumentum az ebben a kiadásban található frissítéseket, fejlesztéseket, funkciókat és módosításokat ismerteti.
 
@@ -30,9 +31,11 @@ Szívesen meghallgatnánk a véleményét is! Ha visszajelzése vagy megjegyzés
 
 
 
-## <a name="updates-in-this-service-pack"></a>A szervizcsomag frissítései #
+## A szervizcsomag frissítései
+<a id="updates-in-this-service-pack" class="xliff"></a> #
 
-### <a name="mim"></a>MIM
+### MIM
+<a id="mim" class="xliff"></a>
 
 - **A MIM-portál böngészőkompatibilitása végfelhasználók önkiszolgáló munkafolyamataihoz:** Ebben a szervizcsomagban támogatást biztosítunk a legtöbb ismert böngészőhöz. A felhasználók mostantól elérhetik és használhatják a MIM-portált önkiszolgáló csoportok és profilok kezelésére a Microsoft Edge, a Chrome és a Safari böngészőből.
 
@@ -40,7 +43,8 @@ Szívesen meghallgatnánk a véleményét is! Ha visszajelzése vagy megjegyzés
 
 - **Kép fájlformátumának érvényesítése feltöltéskor:** A MIM-mel már lehetséges a képek fájlformátumának érvényesítése a portálra történő feltöltés közben.
 
-### <a name="privileged-access-managementpam"></a>Privileged Access Management (PAM)
+### Privileged Access Management (PAM)
+<a id="privileged-access-managementpam" class="xliff"></a>
 
 - **PAM „PRIV” (bástya) erdőtámogatás Windows Server 2016 működési szinthez:** A MIM PAM szolgáltatás konfigurálható olyan tartományvezérlőkkel rendelkező környezetben, amely a Windows Server 2016 Active Directory Domain Services-erdő működési szintjén fut. A konfigurálás után a felhasználók Kerberos-jegye időkorlátossá válik a szerepkör-aktiválásban megmaradt időre.
 
@@ -57,17 +61,21 @@ Szívesen meghallgatnánk a véleményét is! Ha visszajelzése vagy megjegyzés
     Ezek a parancsmagok automatikusan lefutnak az üzembehelyezési szkriptek részeként.
 
 
-## <a name="platform-support"></a>Platformtámogatás
+## Platformtámogatás
+<a id="platform-support" class="xliff"></a>
 A frissített platformtámogatási információk megtalálhatók a [MIM 2016 által támogatott platformok](microsoft-identity-manager-2016-supported-platforms.md) című dokumentumban.  Az ebben a szervizcsomagban támogatott új platformok közé tartozik az SQL Server 2016 és a SharePoint 2016.
 
-## <a name="issues-fixed-in-this-release-from-mim-2016-general-availability"></a>A MIM 2016 általános rendelkezésre állási hibáinak javításai ebben a kiadásban
+## A MIM 2016 általános rendelkezésre állási hibáinak javításai ebben a kiadásban
+<a id="issues-fixed-in-this-release-from-mim-2016-general-availability" class="xliff"></a>
 
-### <a name="pam"></a>PAM
+### PAM
+<a id="pam" class="xliff"></a>
 - Új – A PAMGroup nem hoz létre MIM-objektumokat tartományi helyi csoportokhoz a PRIV-erdőben.
 - Új – A PAMDomainConfiguration sikertelen eredményt adna vissza „netdom” hibaüzenettel.
 - A PAM figyelőszolgáltatása által naplózott figyelmeztetések csoportoknak a PRIV-erdőben.
 
-## <a name="how-to-upgrade-to-service-pack-1"></a>Frissítés a Service Pack 1 verzióra
+## Frissítés a Service Pack 1 verzióra
+<a id="how-to-upgrade-to-service-pack-1" class="xliff"></a>
 
 A Microsoft Identity Manager 2016 Service Pack 1-re áttérő ügyfeleknek ajánlott követni az alábbi útmutatót a környezetben használt összes szolgáltatásnál.
 

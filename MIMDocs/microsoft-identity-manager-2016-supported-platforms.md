@@ -2,25 +2,28 @@
 title: "Támogatott szoftverplatformok | Microsoft Docs"
 description: "A MIM 2016 összetevői által támogatott termékek és termékverziók"
 keywords: 
-author: billmath
-ms.author: billmath
+author: fimguy
+ms.author: fimguy
 manager: femila
-ms.date: 03/28/2017
+ms.date: 06/06/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 4978f60d-044d-4e84-8d93-65801fce1144
 ms.reviewer: mwahl
 ms.suite: ems
-translationtype: Human Translation
-ms.sourcegitcommit: f1faed3a09023e288a68a8950dae43725f19eb3e
-ms.openlocfilehash: 33c84afa4d6fd2ed7bde33de39dd151f83f07fd4
-ms.lasthandoff: 04/12/2017
+ms.custom: mim
+ms.translationtype: MT
+ms.sourcegitcommit: 02fb1274ae0dc11288f8bd9cd4799af144b8feae
+ms.openlocfilehash: e8f1d72930cd5998b5d9957e8b8f5dbd958f8342
+ms.contentlocale: hu-hu
+ms.lasthandoff: 07/10/2017
 
 
 ---
 
-# <a name="supported-platforms-for-mim-2016"></a>A MIM 2016 által támogatott platformok
+# A MIM 2016 által támogatott platformok
+<a id="supported-platforms-for-mim-2016" class="xliff"></a>
 
 Ez a tábla a Microsoft Identity Manager 2016 egyes összetevői által támogatott platformokat és verziókat ismerteti. A csillaggal (*) jelölt verziókat kizárólag a MIM 2016 1. szervizcsomagja támogatja.
 
@@ -33,18 +36,15 @@ Ez a tábla a Microsoft Identity Manager 2016 egyes összetevői által támogat
 | | Exchange a postaládák létrehozásához és a globális címlista szinkronizálásához (opcionális)|Exchange Server 2010 SP3<br/>Exchange Server 2013 SP1<br/>Exchange Server 2016* |
 | | Fejlesztői környezet (opcionális) | Visual Studio 2012<br/>Visual Studio 2013 <br/> Visual Studio 2015 <br/> Visual Studio 2017* |
 | | További csatlakoztatott rendszer (opcionális) | Active Directory tartományi szolgáltatások<br/>Active Directory<br/>Lightweight Directory-szolgáltatások<br/>SQL Server 2000 vagy újabb<br/>SharePoint Server 2013<br/> SharePoint Server 2016* <br/> Egyéb külső termékek |
-| **MIM szolgáltatás** (kivéve PAM esetén) | Windows Server | Windows Server 2008 R2 SP1<br/>Windows Server 2012<br/>Windows Server 2012 R2 <br/> Windows Server 2016* |
-| | MIM szolgáltatás adatbázisa | SQL Server 2008 R2 SP3<br/>SQL Server 2012 SP2<br/>SQL Server 2014 SP1 <br/> SQL Server 2016* |
-| | Exchange a MIM szolgáltatás jóváhagyási és csoportkezelési e-mailjeihez (opcionális) | Exchange Server 2010 SP3<br/>Exchange Server 2013 SP1 <br/> Exchange Server 2016 * <br/> Exchange Online * (csak értesítések) |
-| **MIM szolgáltatás és portál** (csak PAM esetén)| Windows Server | Windows Server 2012<br/>Windows Server 2012 R2 <br/> Windows Server 2016* |
+| **MIM szolgáltatás és -portál** | Windows Server | Windows Server 2012<br/>Windows Server 2012 R2 <br/> Windows Server 2016* |
 | | Active Directory bástyakörnyezeti PAM-erdőhöz | Windows Server 2012 R2 <br/> Windows Server 2016* |
 | | Active Directory meglévő erdőkhöz | Windows Server 2008 <br/> Windows Server 2008 R2 * <br/> Windows Server 2012 * <br/> Windows Server 2012 R2 * <br/> Windows Server 2016* |
 | | MIM szolgáltatás adatbázisa | SQL Server 2008 R2 SP3<br/>SQL Server 2012 SP2<br/>SQL Server 2014 SP1 <br/> SQL Server 2016* |
 | | SharePoint | SharePoint Foundation 2010<br/>SharePoint Foundation 2013 SP1 <br/> SharePoint 2016* |
 | | Levelezőkiszolgáló a MIM szolgáltatás jóváhagyási és csoportkezelési e-mailjeihez (opcionális) | Exchange Server 2010 SP3<br/>Exchange Server 2013 SP1 <br/> Exchange Server 2016 * <br/> Exchange Online * (csak értesítések) |
-| | Böngésző | Minden főbb böngésző |
+| | Böngésző | Az összes ismertebb böngésző * |
 | **Jelentéskészítés a MIM szolgáltatással** | Windows Server | Windows Server 2012 <br/> Windows Server 2016* |
-| | Adatraktár | System Center 2012 Service Manager <br/> System Center 2012 R2 Service Manager </br> System Center 2016 Service Manager * (4.4.1459-es verzióval)<br/> [A System Center 2016-tal kompatibilis SQL Server-verziók](https://technet.microsoft.com/en-us/system-center-docs/system-requirements/sql-server-version-compatibility)
+| | Adatraktár | System Center 2012 Service Manager <br/> System Center 2012 R2 Service Manager </br> System Center 2016 Service Manager * (4.4.1459-es verzióval)<br/> [A System Center 2016-tal kompatibilis SQL Server-verziók](https://docs.microsoft.com/system-center/scsm/upgrade-to-sm-2016)
  |
 | **A MIM jelszó-változtatási és -regisztrálási portáljai** | Windows Server | Windows Server 2008 R2 SP1<br/>Windows Server 2012<br/>Windows Server 2012 R2 <br/> Windows Server 2016* |
 | | Webböngésző | Minden főbb böngésző |

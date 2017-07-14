@@ -12,15 +12,17 @@ ms.technology: security
 ms.assetid: c01487f2-3de6-4fc4-8c3a-7d62f7c2496c
 ms.reviewer: mwahl
 ms.suite: ems
-translationtype: Human Translation
-ms.sourcegitcommit: 3623bffb099a83d0eba47ba25e9777c3d590e529
-ms.openlocfilehash: 2af432036033f8914d00228cd3d2d1af84f13054
-ms.lasthandoff: 01/24/2017
+ms.translationtype: MT
+ms.sourcegitcommit: 7f16c3a054f0a2c59f118ba33bf64fca10034690
+ms.openlocfilehash: 1114be2ce13ca012582676803eb1dc29cadae596
+ms.contentlocale: hu-hu
+ms.lasthandoff: 07/10/2017
 
 
 ---
 
-# <a name="set-up-an-identity-management-server-sharepoint"></a>Identitáskezelési kiszolgáló beállítása: SharePoint
+# Identitáskezelési kiszolgáló beállítása: SharePoint
+<a id="set-up-an-identity-management-server-sharepoint" class="xliff"></a>
 
 >[!div class="step-by-step"]
 [« SQL Server 2014](prepare-server-sql2014.md)
@@ -33,7 +35,8 @@ ms.lasthandoff: 01/24/2017
 > - Jelszó – **Pass@word1**
 
 
-## <a name="install-sharepoint-foundation-2013-with-sp1"></a>Telepítse a **SharePoint Foundation 2013-at SP1 szervizcsomaggal**.
+## Telepítse a **SharePoint Foundation 2013-at SP1 szervizcsomaggal**.
+<a id="install-sharepoint-foundation-2013-with-sp1" class="xliff"></a>
 
 > [!NOTE]
 > A telepítő előfeltételeinek letöltéséhez internetkapcsolat szükséges. Ha a számítógép olyan virtuális hálózaton található, amely nem biztosít internetkapcsolatot, akkor bővítse a számítógépet internetkapcsolatot biztosító hálózati illesztővel. Ez a telepítés befejezése után letiltható.
@@ -60,7 +63,8 @@ A SharePoint Foundation 2013 SP1 telepítéséhez kövesse a következő lépés
 
 4.  A telepítés befejezése után futtassa a varázslót.
 
-## <a name="run-the-wizard-to-configure-sharepoint"></a>A SharePoint konfigurálása a varázslóval
+## A SharePoint konfigurálása a varázslóval
+<a id="run-the-wizard-to-configure-sharepoint" class="xliff"></a>
 
 A SharePoint és a MIM együttműködésének konfigurálásához kövesse a **SharePoint termékek konfigurálása varázsló** lépéseit.
 
@@ -80,7 +84,8 @@ A SharePoint és a MIM együttműködésének konfigurálásához kövesse a **S
 
 8. A **Webhelycsoport létrehozása** ablakban kattintson a **Kihagyás** gombra.  Ezután kattintson a **Befejezés** gombra.
 
-## <a name="prepare-sharepoint-to-host-the-mim-portal"></a>A SharePoint előkészítése a MIM-portál futtatására
+## A SharePoint előkészítése a MIM-portál futtatására
+<a id="prepare-sharepoint-to-host-the-mim-portal" class="xliff"></a>
 
 > [!NOTE]
 > Az SSL-t a rendszer nem konfigurálja előre. A portálhoz való hozzáférés engedélyezése előtt konfiguráljon SSL vagy azzal egyenértékű protokollt.

@@ -12,13 +12,16 @@ ms.technology: active-directory-domain-services
 ms.assetid: 4b524ae7-6610-40a0-8127-de5a08988a8a
 ms.reviewer: 
 ms.suite: ems
-translationtype: Human Translation
+ms.translationtype: MT
 ms.sourcegitcommit: f08b0197341351bd5f33552f26b96132b1356239
 ms.openlocfilehash: 862f62ab9bac87bcee31c35e249db34740e9fb14
+ms.contentlocale: hu-hu
+ms.lasthandoff: 07/10/2017
 
 
 ---
-# <a name="step-5-installingconfiguring-pam"></a>5. lépés: PAM telepítése/konfigurálása
+# 5. lépés: PAM telepítése/konfigurálása
+<a id="step-5-installingconfiguring-pam" class="xliff"></a>
 
 >[!div class="step-by-step"]
 [« 4. lépés](sp1-step4-configuring-sharepoint.md)
@@ -46,9 +49,4 @@ Miután a PAMServer újraindult, jelentkezzen be a gépre a MIMAdmin-fiókkal.
 >[!div class="step-by-step"]
 [« 4. lépés](sp1-step4-configuring-sharepoint.md)
 [6. lépés »](sp1-step6-setup-pam-trust.md)
-
-
-
-<!--HONumber=Jan17_HO2-->
-
 
