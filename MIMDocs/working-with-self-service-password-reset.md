@@ -12,15 +12,12 @@ ms.technology: security
 ms.assetid: 94a74f1c-2192-4748-9a25-62a526295338
 ms.reviewer: mwahl
 ms.suite: ems
-ms.translationtype: MT
-ms.sourcegitcommit: 7f16c3a054f0a2c59f118ba33bf64fca10034690
 ms.openlocfilehash: bbcfee70c71bc2f1a637327721d015434600c5e0
-ms.contentlocale: hu-hu
-ms.lasthandoff: 07/10/2017
-
-
+ms.sourcegitcommit: 02fb1274ae0dc11288f8bd9cd4799af144b8feae
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 07/13/2017
 ---
-
 # Az önkiszolgáló jelszóváltoztatás kezelése
 <a id="working-with-self-service-password-reset" class="xliff"></a>
 A Microsoft Identity Manager 2016 önkiszolgáló jelszó-változtatási funkciója új lehetőségeket kínál. A funkcionalitást több fontos elemmel bővítettük:
@@ -216,4 +213,3 @@ Ha a MIM beépülő moduljait és bővítményeit olyan tartományhoz csatlakozt
 6.  Ha a felhasználó úgy dönt, hogy megváltoztatja a jelszavát, a módosításhoz kétszer be kell írnia az új jelszót, majd a **Next** (Tovább) gombra kell kattintania.
 
     ![Kép: Jelszóváltoztatás a MIM Bejelentkezési segéddel](media/MIM-SSPR-PR1.JPG)
-

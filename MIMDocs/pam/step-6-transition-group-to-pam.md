@@ -12,15 +12,12 @@ ms.technology: active-directory-domain-services
 ms.assetid: 7b689eff-3a10-4f51-97b2-cb1b4827b63c
 ms.reviewer: mwahl
 ms.suite: ems
-ms.translationtype: MT
-ms.sourcegitcommit: bfc73723bdd3a49529522f78ac056939bb8025a3
 ms.openlocfilehash: aeffca2c4e5467ec039c2077a88f36a652493e90
-ms.contentlocale: hu-hu
-ms.lasthandoff: 07/10/2017
-
-
+ms.sourcegitcommit: 02fb1274ae0dc11288f8bd9cd4799af144b8feae
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 07/13/2017
 ---
-
 # 6. lépés – Csoport áthelyezése a Privileged Access Management szolgáltatásba
 <a id="step-6--transition-a-group-to-privileged-access-management" class="xliff"></a>
 
@@ -90,4 +87,3 @@ Ha azt szeretné bemutatni, hogy az erdők közötti hozzáférési jogok vannak
 >[!div class="step-by-step"]
 [« 5. lépés ](step-5-establish-trust-between-priv-corp-forests.md)
 [7. lépés »](step-7-elevate-user-access.md)
-

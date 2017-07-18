@@ -12,15 +12,12 @@ ms.technology: security
 ms.assetid: 66060045-d0be-4874-914b-5926fd924ede
 ms.reviewer: mwahl
 ms.suite: ems
-ms.translationtype: MT
-ms.sourcegitcommit: 7f16c3a054f0a2c59f118ba33bf64fca10034690
 ms.openlocfilehash: 8a4582695d41ea605f2de4e336c3a780b2b2559f
-ms.contentlocale: hu-hu
-ms.lasthandoff: 07/10/2017
-
-
+ms.sourcegitcommit: 02fb1274ae0dc11288f8bd9cd4799af144b8feae
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 07/13/2017
 ---
-
 # A MIM Tanúsítványkezelő használata
 <a id="working-with-the-mim-certificate-manager" class="xliff"></a>
 A MIM 2016 és a Tanúsítványkezelő üzembe helyezését követően a Windows Áruházból telepítheti a MIM Tanúsítványkezelő alkalmazást, amellyel felhasználói egyszerűen kezelhetik fizikai és virtuális intelligens kártyáikat és szoftvertanúsítványaikat. A MIM Tanúsítványkezelő alkalmazás telepítési lépései:
@@ -260,4 +257,3 @@ Amikor létrehozza a profilsablont, állítsa be a virtuális intelligens kárty
 ## Az alkalmazás üzembe helyezése
 <a id="deploy-the-app" class="xliff"></a>
 A Tanúsítványkezelő alkalmazás telepítésekor a Letöltőközpontból töltse le a MIMDMModernApp_&lt;verziószám&gt;_AnyCPU_Test.zip fájlt, és bontsa ki a teljes tartalmát. A telepítő az .appx fájl. Az alkalmazás a Windows áruházbeli alkalmazásoknál megszokott módszerekkel telepíthető, például [System Center Configuration Managerrel](https://technet.microsoft.com/library/dn613840.aspx) vagy [Intune-nal](https://technet.microsoft.com/library/dn613839.aspx) is közvetlen telepítéssel – a felhasználóknak tehát a Vállalati portálon kell elérniük azt, vagy leküldéssel is telepíthető közvetlenül a számítógépükre.
-

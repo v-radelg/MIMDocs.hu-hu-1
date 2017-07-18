@@ -10,17 +10,12 @@ ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
 ms.assetid: 
-ms.translationtype: MT
-ms.sourcegitcommit: 3797f5789bb4e48836eb21776dafd5a2e0e11613
 ms.openlocfilehash: fbdebd59249667a0e60d3a248f183bcb6a75085a
-ms.contentlocale: hu-hu
-ms.lasthandoff: 07/10/2017
-
-
+ms.sourcegitcommit: 02fb1274ae0dc11288f8bd9cd4799af144b8feae
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 07/13/2017
 ---
-
-
-
 # A MIM PAM telepítése a Windows Server 2016-tal
 <a id="deploy-mim-pam-with-windows-server-2016" class="xliff"></a>
 
@@ -154,4 +149,3 @@ Végezze el a telepítést az [Útmutató az első lépésekhez](privileged-iden
 - [Privileged Access Management az Active Directory Domain Serviceshez](privileged-identity-management-for-active-directory-domain-services.md)
 - [A MIM-környezet konfigurálása a Privileged Access Management szolgáltatáshoz](configuring-mim-environment-for-pam.md)
 - [A PAM konfigurálása szkriptek használatával](sp1-pam-configure-using-scripts.md)
-

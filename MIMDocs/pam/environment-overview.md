@@ -12,15 +12,12 @@ ms.technology: active-directory-domain-services
 ms.assetid: 479db14c-1bfb-4d7c-a344-cd718a01f328
 ms.reviewer: mwahl
 ms.suite: ems
-ms.translationtype: MT
-ms.sourcegitcommit: bfc73723bdd3a49529522f78ac056939bb8025a3
 ms.openlocfilehash: 3e6c5a70c6b9ed140a56135676bbd14a84504317
-ms.contentlocale: hu-hu
-ms.lasthandoff: 07/10/2017
-
-
+ms.sourcegitcommit: 02fb1274ae0dc11288f8bd9cd4799af144b8feae
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 07/13/2017
 ---
-
 # A környezet áttekintése
 <a id="environment-overview" class="xliff"></a>
 
@@ -34,4 +31,3 @@ A virtuális gépek lemezképeit tároló meghajtókon legalább 120 GB szabad l
 
 > [!NOTE]
 > Az aktuális MIM-ügyfél technikai előzetese (CTP) nem kompatibilis az előző CTP-ből származó adatbázis vagy a könyvtár tartalmával. Ha a MIM-et korábban már kipróbálta a PAM-re vagy más forgatókönyvekre vonatkozóan, készítsen biztonsági másolatot, illetve archiválja a teszteléshez használt virtuális gépeket, majd indítsa el a központi telepítést új, MIM-forgatókönyvekhez korábban még nem használt virtuális gépek lemezképeivel.
-

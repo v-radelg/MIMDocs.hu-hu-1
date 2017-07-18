@@ -12,15 +12,12 @@ ms.technology: active-directory-domain-services
 ms.assetid: bfc7cb64-60c7-4e35-b36a-bbe73b99444b
 ms.reviewer: mwahl
 ms.suite: ems
-ms.translationtype: MT
-ms.sourcegitcommit: bfc73723bdd3a49529522f78ac056939bb8025a3
 ms.openlocfilehash: b459906f0c8d2c631e9b63813e208c9098ea5a4e
-ms.contentlocale: hu-hu
-ms.lasthandoff: 07/10/2017
-
-
+ms.sourcegitcommit: 02fb1274ae0dc11288f8bd9cd4799af144b8feae
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 07/13/2017
 ---
-
 # Megerősített környezet tervezése
 <a id="planning-a-bastion-environment" class="xliff"></a>
 
@@ -273,4 +270,3 @@ Tekintse át az adott tartomány Rendszer tárolójában található *AdminSDHol
 <a id="select-users-and-groups-for-inclusion" class="xliff"></a>
 
 A következő lépése a PAM-szerepkörök konfigurálása, valamint azon felhasználók és csoportok hozzárendelése, amelyekhez a szerepköröknek hozzá kell férniük. Ez általában a megerősített környezetben felügyelt réteg felhasználóinak és csoportjainak részhalmaza lesz. További információ: [Szerepkörök definiálása az emelt szintű hozzáférések felügyeletéhez](defining-roles-for-pam.md).
-

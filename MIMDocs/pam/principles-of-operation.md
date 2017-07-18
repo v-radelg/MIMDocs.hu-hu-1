@@ -12,15 +12,12 @@ ms.technology: active-directory-domain-services
 ms.assetid: 6498f68f-36d3-448c-8fe6-649ad5a7f97d
 ms.reviewer: mwahl
 ms.suite: ems
-ms.translationtype: MT
-ms.sourcegitcommit: bfc73723bdd3a49529522f78ac056939bb8025a3
 ms.openlocfilehash: 53fe79f251c3b18426f16b4007cda49e67d7b028
-ms.contentlocale: hu-hu
-ms.lasthandoff: 07/10/2017
-
-
+ms.sourcegitcommit: 02fb1274ae0dc11288f8bd9cd4799af144b8feae
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 07/13/2017
 ---
-
 # A PAM-összetevők megismerése
 <a id="understand-the-components-of-pam" class="xliff"></a>
 
@@ -43,4 +40,3 @@ A telepítést és a konfigurálást követően minden, a PRIV erdőben az átte
 Emiatt, amikor egy felhasználó a PowerShell-parancsmagok használatával jogosultságszint-emelést kér, és a kérelmet jóváhagyja a rendszer, a MIM szolgáltatás a felhasználó fiókját hozzáadja a PRIV erdő egyik csoportjához. Amikor a felhasználó bejelentkezik az emelt jogosultságú fiókkal, a felhasználó Kerberos-jogkivonata tartalmazni fog egy biztonsági azonosítót (SID), mely megegyezik a CORP erdőbeli csoport biztonsági azonosítójával. Mivel a CORP és a PRIV erdő között megbízhatósági kapcsolat van beállítva, a CORP erdőben lévő erőforrások eléréséhez használt rendszerjogosultságú fiók – a Kerberos-csoporttagságot ellenőrző erőforrás szempontjából – az adott erőforrás biztonsági csoportjának tagjává válik. Ezt a Kerberos erdők közötti hitelesítése biztosítja.
 
 Mindemellett ezek a tagságok időkorlátosak, így az előre beállított idő elteltével a felhasználó rendszergazdai fiókja már nem lesz tagja a továbbiakban a PRIV erdőbeli csoportnak. Ennek eredményeképpen a fiók nem használható többé a további erőforrások eléréséhez.
-

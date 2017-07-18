@@ -10,14 +10,11 @@ ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
 ms.assetid: 
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 1ff73d0bdfcbcb4ab79d0d81feca9abdc33f9213
 ms.openlocfilehash: 1e2fb9a9ae508ab601ebad1dec7acc21dc44d13e
-ms.contentlocale: hu-hu
-ms.lasthandoff: 07/10/2017
-
-
-
+ms.sourcegitcommit: 02fb1274ae0dc11288f8bd9cd4799af144b8feae
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 07/13/2017
 ---
 # Dinamikus naplózás a MIM SP1-es (4.4.1436.0-s) verziójában
 <a id="mim-sp1-4414360--service-dynamic-logging" class="xliff"></a>
@@ -25,9 +22,9 @@ A 4.4.1436.0-s verzióban új naplózási funkció mutatkozott be, amellyel a re
 
 A telepítés után a  Microsoft.ResourceManagement.Service.exe.config fájlban a következő új sorok lesznek láthatóak:
 
-*    Sor 6: ``<section name="dynamicLogging" type="Microsoft.ResourceManagement.Utilities.DynamicLoggingSection, Microsoft.ResourceManagement.Service" />``
-*    Sor 8:  ``<dynamicLogging mode="true" loggingLevel="Verbose" />``
-*    Sor 266 ``</system.diagnostics> ``
+*   Sor 6: ``<section name="dynamicLogging" type="Microsoft.ResourceManagement.Utilities.DynamicLoggingSection, Microsoft.ResourceManagement.Service" />``
+*   Sor 8:  ``<dynamicLogging mode="true" loggingLevel="Verbose" />``
+*   Sor 266 ``</system.diagnostics> ``
 
 ![Az új, dinamikus naplózási bejegyzéseket mutató kiemelt szakaszok](media/mim-service-dynamic-logging/screen01.png)
 
@@ -53,4 +50,3 @@ A naplózás alapértelmezett helye a **C:\Program Files\Microsoft Forefront Ide
 A kivonatot a [Service Trace Viewer eszközzel](https://msdn.microsoft.com//library/aa751795(v=vs.110).aspx) nézheti meg
 
  ![A Service Trace Viewer képernyőképe](media/mim-service-dynamic-logging/screen04.png)
-

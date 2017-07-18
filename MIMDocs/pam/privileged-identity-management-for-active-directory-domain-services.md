@@ -12,14 +12,12 @@ ms.technology: active-directory-domain-services
 ms.assetid: cf3796f7-bc68-4cf7-b887-c5b14e855297
 ms.reviewer: mwahl
 ms.suite: ems
-ms.translationtype: MT
-ms.sourcegitcommit: bfc73723bdd3a49529522f78ac056939bb8025a3
 ms.openlocfilehash: 1034db2b33ffd680e673f975af17145e9cf4c312
-ms.contentlocale: hu-hu
-ms.lasthandoff: 07/10/2017
-
+ms.sourcegitcommit: 02fb1274ae0dc11288f8bd9cd4799af144b8feae
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 07/13/2017
 ---
-
 # Privileged Access Management az Active Directory Domain Serviceshez
 <a id="privileged-access-management-for-active-directory-domain-services" class="xliff"></a>
 A Privileged Access Management (PAM) olyan megoldás, amely segít a szervezeteknek a meglévő Active Directory-környezetükben korlátozni a rendszerjogosultságú hozzáférést.
@@ -101,4 +99,3 @@ Ha a kérés jóváhagyást nyer, a munkafolyamat közvetlen kommunikációra l�
 > Ezzel szemben a lejárt hivatkozást valós időben értékeli ki a biztonsági fiókkezelő (SAM). Még ha a csoporttag felvételét replikálnia is kell annak a tartományvezérlőnek, amely megkapja a kérést, a csoporttag eltávolítását azonnal kiértékeli minden tartományvezérlő.
 
 Ez a munkafolyamat kifejezetten az ilyen rendszergazdai fiókok számára készült. A rendszerjogosultságú fiókokhoz csak alkalmi hozzáférést igénylő rendszergazdák (sőt akár szkriptek is) pontosan ilyen hozzáférést kérelmezhetnek. Az MIM naplózza a kérést és az Active Directoryban bekövetkező változásokat, Ön pedig megtekinthető őket az Eseménynaplóban, vagy elküldheti az adatokat vállalati figyelési megoldásoknak (például a System Center 2012 – Operations Manager naplózási szolgáltatásának (ACS) vagy más külső gyártású eszközöknek).
-

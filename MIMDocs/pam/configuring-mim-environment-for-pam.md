@@ -12,15 +12,12 @@ ms.technology: active-directory-domain-services
 ms.assetid: c4ca5b58-ad0c-48af-a9eb-b71b22d0c67c
 ms.reviewer: mwahl
 ms.suite: ems
-ms.translationtype: MT
-ms.sourcegitcommit: bfc73723bdd3a49529522f78ac056939bb8025a3
 ms.openlocfilehash: ce1ce0c67dfd39433ff01dabd542e862c557c787
-ms.contentlocale: hu-hu
-ms.lasthandoff: 07/10/2017
-
-
+ms.sourcegitcommit: 02fb1274ae0dc11288f8bd9cd4799af144b8feae
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 07/13/2017
 ---
-
 # A MIM-környezet konfigurálása a Privileged Access Management szolgáltatáshoz
 <a id="configure-the-mim-environment-for-privileged-access-management" class="xliff"></a>
 Az erdők közötti hozzáférés beállítását, az Active Directory és a Microsoft Identity Manager telepítését és konfigurálását, illetve a szükséges időben való hozzáférésre irányuló kérelem bemutatását hét lépésben hajthatja végre.
@@ -43,4 +40,3 @@ Ezek a lépések úgy vannak felépítve, hogy segítségükkel a tesztkörnyeze
 
 >[!div class="step-by-step"]
 [Indítás »](step-1-prepare-corp-domain.md)
-

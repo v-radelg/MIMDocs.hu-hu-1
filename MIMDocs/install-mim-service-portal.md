@@ -12,15 +12,12 @@ ms.technology: security
 ms.assetid: b0b39631-66df-4c5f-80c9-a1774346f816
 ms.reviewer: mwahl
 ms.suite: ems
-ms.translationtype: MT
-ms.sourcegitcommit: 7f16c3a054f0a2c59f118ba33bf64fca10034690
 ms.openlocfilehash: 974015bbba3a36e1107da33655eedf94e2938582
-ms.contentlocale: hu-hu
-ms.lasthandoff: 07/10/2017
-
-
+ms.sourcegitcommit: 02fb1274ae0dc11288f8bd9cd4799af144b8feae
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 07/13/2017
 ---
-
 # A MIM 2016 telepítése: A MIM szolgáltatás és -portál
 <a id="install-mim-2016-mim-service-and-portal" class="xliff"></a>
 
@@ -156,4 +153,3 @@ A telepítést követően győződjön meg arról, hogy a MIM-portál aktív.
 >[!div class="step-by-step"]  
 [« MIM Synchronization Service](install-mim-sync.md)
 [Adatbázisok szinkronizálása »](install-mim-sync-ad-service.md)
-
