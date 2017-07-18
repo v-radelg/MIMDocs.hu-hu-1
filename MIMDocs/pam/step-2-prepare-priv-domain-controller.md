@@ -12,15 +12,12 @@ ms.technology: active-directory-domain-services
 ms.assetid: 0e9993a0-b8ae-40e2-8228-040256adb7e2
 ms.reviewer: mwahl
 ms.suite: ems
-ms.translationtype: MT
-ms.sourcegitcommit: bfc73723bdd3a49529522f78ac056939bb8025a3
 ms.openlocfilehash: edc15b41d4248887f4a93217f68d8125f6500585
-ms.contentlocale: hu-hu
-ms.lasthandoff: 07/10/2017
-
-
+ms.sourcegitcommit: 02fb1274ae0dc11288f8bd9cd4799af144b8feae
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 07/13/2017
 ---
-
 # 2. lépés: A PRIV tartományvezérlő előkészítése
 <a id="step-2---prepare-the-first-priv-domain-controller" class="xliff"></a>
 
@@ -320,4 +317,3 @@ A következő lépésben egy PAM-kiszolgáló előkészítésével foglalkozunk.
 >[!div class="step-by-step"]
 [« 1. lépés](step-1-prepare-corp-domain.md)
 [3. lépés »](step-3-prepare-pam-server.md)
-

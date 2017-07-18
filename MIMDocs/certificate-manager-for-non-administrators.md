@@ -12,15 +12,12 @@ ms.technology: security
 ms.assetid: bfabc562-a2f0-4cff-ac31-36927f41e102
 ms.reviewer: mwahl
 ms.suite: ems
-ms.translationtype: MT
-ms.sourcegitcommit: 7f16c3a054f0a2c59f118ba33bf64fca10034690
 ms.openlocfilehash: f8de75a0027371b7ff88b90d3097adc63c02d933
-ms.contentlocale: hu-hu
-ms.lasthandoff: 07/10/2017
-
-
+ms.sourcegitcommit: 02fb1274ae0dc11288f8bd9cd4799af144b8feae
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 07/13/2017
 ---
-
 # Intelligens kártyák regisztrálása nem rendszergazdák számára
 <a id="enroll-smart-cards-for-non-administrators" class="xliff"></a>
 Ha a felhasználó nem helyi rendszergazda, akkor alapesetben nem jogosult intelligens kártyát regisztrálni a saját számítógépén. A következő folyamat bemutatja, miként lehet áthidalni ezt a korlátozást.
@@ -97,4 +94,3 @@ Ha a felhasználó nem helyi rendszergazda, akkor alapesetben nem jogosult intel
 7.  **Telepítse a Tanúsítványkezelő alkalmazást a nem rendszergazdai fiókban**
 
 8.  **Indítsa el a Tanúsítványkezelőt, és regisztráljon egy virtuális intelligens kártyát**
-

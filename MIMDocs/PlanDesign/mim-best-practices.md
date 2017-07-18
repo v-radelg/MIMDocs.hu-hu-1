@@ -11,16 +11,12 @@ ms.prod: identity-manager-2016
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 
-ms.translationtype: MT
-ms.sourcegitcommit: 3bb89e2c86724e6f6d32e4043fa37da74e2b7b24
 ms.openlocfilehash: a0d00c7e5d99e43d3fb0b3011a3851f7194bfdf2
-ms.contentlocale: hu-hu
-ms.lasthandoff: 07/10/2017
-
-
+ms.sourcegitcommit: 02fb1274ae0dc11288f8bd9cd4799af144b8feae
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 07/13/2017
 ---
-
-
 # Microsoft Identity Manager 2016 – Gyakorlati tanácsok
 <a id="microsoft-identity-manager-2016-best-practices" class="xliff"></a>
 
@@ -733,4 +729,3 @@ Kerülje a MIM-erőforrásokat, például a függvénykiértékelői tevékenys�
 <a id="understanding-fim-service-partitions" class="xliff"></a>
 
 A FIM célja az olyan FIM-ügyfelek, mint például a FIM Synchronization Service és az önkiszolgáló összetevők által kezdeményezhető kérelmek feldolgozása a konfigurált üzleti szabályzatok szerint. A kialakításból fakadóan mindegyik FIM-szolgáltatáspéldány egy logikai csoporthoz tartozik, amely egy vagy több FIM-szolgáltatáspéldányból, más néven FIM-szolgáltatáspartícióból áll. Ha csak egy FIM-szolgáltatáspéldány van telepítve az összes kérelem kezelésére, akkor előfordulhat, hogy feldolgozási késéseket tapasztal. Egyes műveletek akár az önkiszolgáló műveletekhez megfelelő alapértelmezett időtúllépési értékeket is meghaladhatják. A FIM-szolgáltatáspartíciók segíthetnek e probléma megoldásában. További információt a FIM-szolgáltatás partícióinak ismertetésében talál.
-

@@ -12,15 +12,12 @@ ms.technology: active-directory-domain-services
 ms.assetid: c6e3cd02-1e32-4194-a8ed-3a0b3d022a43
 ms.reviewer: mwahl
 ms.suite: ems
-ms.translationtype: MT
-ms.sourcegitcommit: bfc73723bdd3a49529522f78ac056939bb8025a3
 ms.openlocfilehash: 4c3b43e50403890572e77773191a821cf247269c
-ms.contentlocale: hu-hu
-ms.lasthandoff: 07/10/2017
-
-
+ms.sourcegitcommit: 02fb1274ae0dc11288f8bd9cd4799af144b8feae
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 07/13/2017
 ---
-
 # A rendszergazdai jogosultságok felosztásának rétegmodellje
 <a id="tier-model-for-partitioning-administrative-privileges" class="xliff"></a>
 
@@ -64,4 +61,3 @@ A bejelentkezési korlátozásokat a következőkkel lehet érvényesíteni:
 - Szelektív hitelesítés használata, ha a fiók dedikált rendszergazdai erdőben található
 
 A következő, a [Megerősített környezet tervezése](planning-bastion-environment.md) című cikkben a Microsoft Identity Manager rendszergazdai fiókjainak létrehozásához szükséges dedikált felügyeleti erdőinek létrehozásáról olvashat.
-
