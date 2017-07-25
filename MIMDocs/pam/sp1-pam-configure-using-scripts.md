@@ -5,21 +5,20 @@ keywords:
 author: barclayn
 ms.author: barclayn
 manager: MBaldwin
-ms.date: 01/10/2017
+ms.date: 07/20/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
 ms.assetid: 4b524ae7-6610-40a0-8127-de5a08988a8a
 ms.reviewer: 
 ms.suite: ems
-ms.openlocfilehash: bd73f43a096d58e1f7250e28b59e33f4411e88a3
-ms.sourcegitcommit: 02fb1274ae0dc11288f8bd9cd4799af144b8feae
+ms.openlocfilehash: 5718ec64fff049cb8717e4cbb36784c8f4ee4db3
+ms.sourcegitcommit: c13f814ce753e1fdacc7d0814087f59542e5098f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/13/2017
+ms.lasthandoff: 07/21/2017
 ---
-# A PAM konfigurálása szkriptek használatával
-<a id="configure-pam-using-scripts" class="xliff"></a>
+# <a name="configure-pam-using-scripts"></a>A PAM konfigurálása szkriptek használatával
 
 Ha külön kiszolgálón telepíti az SQL- és SharePoint-szolgáltatásokat, az alábbi utasítások szerint kell konfigurálnia őket. Ha az SQL-, SharePoint- és a PAM-összetevők ugyanazon a gépen vannak telepítve, az alábbi lépéseket kell futtatni arról a gépről.
 
@@ -27,25 +26,24 @@ A következő lépések feltételezik, hogy egy PRIV-tartomány már be van áll
 
 lépések:
 
-1. Minden gépen csomagolja ki a „PAMDeploymentScripts.zip” tömörített fájlt a %SYSTEMDRIVE%\PAM mappába.
-2. Az egyik gépen nyissa meg a **PAMDeploymentConfig.xml** fájlt, és frissítse a részleteket az alábbi ábra vagy az XML-fájlon belül található útmutatás alapján. Ha a CORP- és PRIV-erdők már be vannak állítva, csak a **DNSName** és a **NetbiosName** értékeket kell frissítenie.
-3. A Szerepkörök szakaszban frissítse az SQL, SharePoint és MIM szerepkörökhöz tartozó **szolgáltatásfiók**, **gép adatai**, és a **telepítési bináris fájlok helye** értékét.
+1. Letölt [PAM üzembehelyezési szkriptek](https://www.microsoft.com/download/details.aspx?id=53941)
+2. Minden gépen csomagolja ki a „PAMDeploymentScripts.zip” tömörített fájlt a %SYSTEMDRIVE%\PAM mappába.
+3. Az egyik gépen nyissa meg a **PAMDeploymentConfig.xml** fájlt, és frissítse a részleteket az alábbi ábra vagy az XML-fájlon belül található útmutatás alapján. Ha a CORP- és PRIV-erdők már be vannak állítva, csak a **DNSName** és a **NetbiosName** értékeket kell frissítenie.
+4. A Szerepkörök szakaszban frissítse az SQL, SharePoint és MIM szerepkörökhöz tartozó **szolgáltatásfiók**, **gép adatai**, és a **telepítési bináris fájlok helye** értékét.
     1. A MIM bináris fájljai helyének a „Service and Portal” mappát tartalmazó könyvtárra kell mutatnia. Az ügyfél bináris fájljai helyének az „Add-ins and Extensions.msi” fájlt tartalmazó könyvtárra kell mutatnia.
 
-4. Ha ez egy PRIVOnly-környezet, a PRIVOnly címkének igaz értékűnek kell lennie.
+5. Ha ez egy PRIVOnly-környezet, a PRIVOnly címkének igaz értékűnek kell lennie.
     1. PRIVOnly-környezetek esetében frissítse a PRIV-tartományhoz tartozó **DNSName** és **NetbiosName** értékét, hogy megegyezzenek a CORP-tartomány értékeivel. Győződjön meg róla, hogy a gép utótagjai helyesek azoknál a gépeknél, amelyekre SQL, SharePoint vagy MIM lesz telepítve, mivel az alapértelmezett sablon CORP- és PRIV-konfigurációt feltételez.
     2. A PRIVOnly környezetekkel kapcsolatos további információért kattintson ide.
 
-5. Másolja ugyanazt a PAMDeploymentConfig.xml fájlt minden gép, CORPDC-, PRIVDC-, PAM Server, SQL Server és SharePoint-kiszolgáló %SYSTEMDRIVE%\PAM mappájába.
+6. Másolja ugyanazt a PAMDeploymentConfig.xml fájlt minden gép, CORPDC-, PRIVDC-, PAM Server, SQL Server és SharePoint-kiszolgáló %SYSTEMDRIVE%\PAM mappájába.
 
 
-## Üzembehelyezési munkalap
-<a id="deployment-worksheet" class="xliff"></a>
+## <a name="deployment-worksheet"></a>Üzembehelyezési munkalap
 
 Folytatás előtt frissítse a PAMDeploymentConfig.xml fájlt, és másolja a frissített fájlt minden gépre.
 
-### Setup
-<a id="setup" class="xliff"></a>
+### <a name="setup"></a>Setup
 
 |Machine   | Futtatás más nevében   |Parancsok   |
 |---|---|---|
@@ -57,8 +55,7 @@ Folytatás előtt frissítse a PAMDeploymentConfig.xml fájlt, és másolja a fr
 | PAMServer  | Helyi rendszergazda (MIM-rendszergazda a tartomány csatlakoztatása után)  | .\PAMDeployment.ps1 Az 5. menüelem kiválasztása (MIM PAM beállítása)   |
 |  PAMServer |MIMAdmin   | .\PAMDeployment.ps1 A 6. menüelem kiválasztása (PAM bizalmi kapcsolat beállítása) .\PAMDeployment.ps1 A 6. menüelem kiválasztása (PAM bizalmi kapcsolat beállítása) |
 
-### Érvényesítés
-<a id="validation" class="xliff"></a>
+### <a name="validation"></a>Érvényesítés
 
 |  Machine | Futtatás más nevében   | Parancsok   |
 |---|---|---|
