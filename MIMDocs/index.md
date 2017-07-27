@@ -8,8 +8,7 @@ ms.translationtype: HT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 07/13/2017
 ---
-# A Microsoft Identity Manager dokumentációja
-<a id="microsoft-identity-manager-documentation" class="xliff"></a>
+# <a name="microsoft-identity-manager-documentation"></a>A Microsoft Identity Manager dokumentációja
 
 A Microsoft Identity Manager 2016 több helyszíni hitelesítési tároló – például az Active Directory, az LDAP, az Oracle és más alkalmazások – az Azure Active Directory-val való zökkenőmentes összeillesztésével köti össze a Microsoft identitás- és hozzáférés-kezelési megoldásait. Ez egységes felületeket biztosít a helyszíni üzletági alkalmazásokhoz és SaaS-megoldásokhoz.
 
