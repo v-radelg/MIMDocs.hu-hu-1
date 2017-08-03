@@ -18,11 +18,9 @@ ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 07/13/2017
 ---
-# PAM üzembehelyezési szkriptek, kiegészítés:
-<a id="pam-deployment-scripts-addendum" class="xliff"></a>
+# <a name="pam-deployment-scripts-addendum"></a>PAM üzembehelyezési szkriptek, kiegészítés:
 
-## 1. kiegészítés: A PRIV-tartomány beállítása
-<a id="addendum-1-setting-up-the-priv-domain" class="xliff"></a>
+## <a name="addendum-1-setting-up-the-priv-domain"></a>1. kiegészítés: A PRIV-tartomány beállítása
 
 Miután kicsomagolta a tömörített fájlt az $env:SYSTEMDRIVE\PAM mappába, a PAMDeploymentConfig.xml fájl szerkesztésével adja meg a PRIV-erdő adatait. Frissítse a DNSName, a NetbiosName, a tartományvezérlő-név, az Adatbázis/napló elérési útja és a Sysvol elérési útja értéket. Frissítse továbbá a DomainMode és a ForestMode értéket. Amennyiben a Windows Server Technical Preview 5-ös verzióját teszteli, a DomainMode és a ForestMode értéket állítsa WinThreshold értékre.
 
@@ -40,8 +38,7 @@ A befejezést követően a tartományvezérlő automatikusan újraindul. A címt
   * A jelszó legalább egy NAGYBETŰS karaktert tartalmaz
   * A jelszó legalább egy számjegyet vagy speciális karaktert tartalmaz
 
-## 2. kiegészítés: A CORP-tartomány beállítása
-<a id="addendum-2-setting-up-the-corp-domain" class="xliff"></a>
+## <a name="addendum-2-setting-up-the-corp-domain"></a>2. kiegészítés: A CORP-tartomány beállítása
 
 Ha induláskor PAM rendszer áll rendelkezésre, és szeretne telepíteni egy tesztkörnyezetet, a szkript lehetővé teszi egy CORP-tartomány konfigurálását is. Miután kicsomagolta a tömörített fájlt az $env:SYSTEMDRIVE\PAM mappába, a PAMDeploymentConfig.xml fájlt kiegészítve adja meg a CORP-erdő adatait. Frissítse a DNSName, a NetbiosName, a tartományvezérlő-név, az Adatbázis/napló elérési útja és a Sysvol elérési útja értéket. A működési szint legalább Windows Server 2012 R2 rendszerű kell legyen.
 
@@ -53,8 +50,7 @@ Ha induláskor PAM rendszer áll rendelkezésre, és szeretne telepíteni egy te
 
 A befejezést követően a tartományvezérlő automatikusan újraindul.
 
-## 3. kiegészítés: CORP-ügyfél beállítása az érvényesítés végrehajtására
-<a id="addendum-3-setting-up-a-corp-client-to-do-the-validation" class="xliff"></a>
+## <a name="addendum-3-setting-up-a-corp-client-to-do-the-validation"></a>3. kiegészítés: CORP-ügyfél beállítása az érvényesítés végrehajtására
 
 A konfigurációs fájlban a ClientBinaryLocation arra a helyre kell mutasson, ahol a setup.exe található.
 Jelentkezzen be az ügyfélre helyi rendszergazdaként, és futtassa a következő parancsokat egy emelt szintű PowerShell-ablakban:
@@ -72,7 +68,6 @@ Ha a gép nincs csatlakoztatva a tartományhoz, a rendszer kéri a rendszergazda
 
 Folytassa a fentebb ismertetett 8. lépéssel.
 
-## 4. kiegészítés: Ha valami probléma merül fel
-<a id="addendum-4-if-something-goes-wrong" class="xliff"></a>
+## <a name="addendum-4-if-something-goes-wrong"></a>4. kiegészítés: Ha valami probléma merül fel
 
 A szkriptek naplói mind az %AppData%\MIMPAMInstall helyen vannak tárolva. Tömörítse a mappát egy Zip-fájlba, és küldje el e-mailben a [mim2016@microsoft.com](mailto:mim2016@microsoft.com) címre a művelet és a hiba részleteivel együtt.

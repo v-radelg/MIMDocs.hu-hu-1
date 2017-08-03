@@ -18,8 +18,7 @@ ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 07/13/2017
 ---
-# A MIM Tanúsítványkezelő használata
-<a id="working-with-the-mim-certificate-manager" class="xliff"></a>
+# <a name="working-with-the-mim-certificate-manager"></a>A MIM Tanúsítványkezelő használata
 A MIM 2016 és a Tanúsítványkezelő üzembe helyezését követően a Windows Áruházból telepítheti a MIM Tanúsítványkezelő alkalmazást, amellyel felhasználói egyszerűen kezelhetik fizikai és virtuális intelligens kártyáikat és szoftvertanúsítványaikat. A MIM Tanúsítványkezelő alkalmazás telepítési lépései:
 
 1.  Tanúsítványsablon létrehozása.
@@ -30,8 +29,7 @@ A MIM 2016 és a Tanúsítványkezelő üzembe helyezését követően a Windows
 
 4.  Az alkalmazás üzembe helyezése az SCCM-en vagy az Intune-on keresztül.
 
-## Tanúsítványsablon létrehozása
-<a id="create-a-certificate-template" class="xliff"></a>
+## <a name="create-a-certificate-template"></a>Tanúsítványsablon létrehozása
 A Tanúsítványkezelő alkalmazáshoz a szokásos módon hozhat létre tanúsítványsablont, azzal a különbséggel, hogy meg kell győződnie arról, hogy a tanúsítványsablon 3-as vagy magasabb verziójú.
 
 1.  Jelentkezzen be az Active Directory Tanúsítványszolgáltatást futtató kiszolgálóra (a tanúsítványkiszolgálóra).
@@ -70,8 +68,7 @@ A Tanúsítványkezelő alkalmazáshoz a szokásos módon hozhat létre tanúsí
 
 16. A listáról válassza ki az újonnan létrehozott sablont, majd kattintson az **OK** gombra.
 
-## Profilsablon létrehozása
-<a id="create-a-profile-template" class="xliff"></a>
+## <a name="create-a-profile-template"></a>Profilsablon létrehozása
 Amikor létrehozza a profilsablont, állítsa be a virtuális intelligens kártya létrehozását/megsemmisítését és az adatgyűjtemény eltávolítását. A Tanúsítványkezelő alkalmazás nem képes az összegyűjtött adatok kezelésére, ezért ezt a funkciót a következő módon le kell tiltani.
 
 1.  Rendszergazdai jogosultsággal jelentkezzen be a Tanúsítványkezelő portálra.
@@ -96,8 +93,7 @@ Amikor létrehozza a profilsablont, állítsa be a virtuális intelligens kárty
 
 11. Minden házirendnél le kell tiltania az adatgyűjtő elemeket. Ehhez kattintson a házirendre a bal oldali panelen, jelölje be a **Sample data item** (Mintaadatelem) melletti négyzetet, majd kattintson az **Delete data collection items** (Adatgyűjtési elemek törlése) parancsra. Ezután kattintson az **OK** gombra.
 
-## A Tanúsítványkezelő alkalmazás üzembe helyezésének előkészítése
-<a id="prepare-the-cm-app-for-deployment" class="xliff"></a>
+## <a name="prepare-the-cm-app-for-deployment"></a>A Tanúsítványkezelő alkalmazás üzembe helyezésének előkészítése
 
 1.  A parancssorban futtassa az alábbi parancsot. Ezzel csomagolja ki az alkalmazást, bontsa ki a tartalmat egy új „appx” nevű almappába, és hozzon létre egy másolatot, hogy ne az eredeti fájlt kelljen módosítania.
 
@@ -254,6 +250,5 @@ Amikor létrehozza a profilsablont, állítsa be a virtuális intelligens kárty
 
     -   Ha segítségre van szüksége a **ConfigureMIimCMClientAndRelyingParty.ps1** szkript használatához, futtassa a következő parancsot: `get-help  -detailed ConfigureMimCMClientAndRelyingParty.ps1`
 
-## Az alkalmazás üzembe helyezése
-<a id="deploy-the-app" class="xliff"></a>
+## <a name="deploy-the-app"></a>Az alkalmazás üzembe helyezése
 A Tanúsítványkezelő alkalmazás telepítésekor a Letöltőközpontból töltse le a MIMDMModernApp_&lt;verziószám&gt;_AnyCPU_Test.zip fájlt, és bontsa ki a teljes tartalmát. A telepítő az .appx fájl. Az alkalmazás a Windows áruházbeli alkalmazásoknál megszokott módszerekkel telepíthető, például [System Center Configuration Managerrel](https://technet.microsoft.com/library/dn613840.aspx) vagy [Intune-nal](https://technet.microsoft.com/library/dn613839.aspx) is közvetlen telepítéssel – a felhasználóknak tehát a Vállalati portálon kell elérniük azt, vagy leküldéssel is telepíthető közvetlenül a számítógépükre.

@@ -18,12 +18,10 @@ ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 07/13/2017
 ---
-# Szoftvertanúsítványok létrehozása a Tanúsítványkezelővel
-<a id="create-software-certificates-with-certificate-manager" class="xliff"></a>
+# <a name="create-software-certificates-with-certificate-manager"></a>Szoftvertanúsítványok létrehozása a Tanúsítványkezelővel
 A szoftvertanúsítványok regisztrálásához és megújításához nem kell rendszergazdának lennie, és virtuális intelligens kártyára sincs szükség. A rendszer valamikor egy tanúsítványművelet engedélyezésére fogja kérni. Ez normális.
 
-## Szoftvertanúsítvány-profilsablon létrehozása a MIM 2016 Tanúsítványkezelőben
-<a id="create-a-software-certificate-profile-template-in-mim-2016-certificate-manager" class="xliff"></a>
+## <a name="create-a-software-certificate-profile-template-in-mim-2016-certificate-manager"></a>Szoftvertanúsítvány-profilsablon létrehozása a MIM 2016 Tanúsítványkezelőben
 
 1.  Hozzon létre egy sablont ahhoz a tanúsítványhoz, amelyet a virtuális intelligens kártyához fog igényelni. Indítsa el az MMC-t.
 
@@ -73,8 +71,7 @@ A szoftvertanúsítványok regisztrálásához és megújításához nem kell re
 
     10. A listáról válassza ki az újonnan létrehozott sablont (**Archivált tanúsítványsablon**), majd kattintson az **OK** gombra.
 
-## A profilsablon létrehozása
-<a id="create-the-profile-template" class="xliff"></a>
+## <a name="create-the-profile-template"></a>A profilsablon létrehozása
 
 1.  Rendszergazdai jogosultsággal jelentkezzen be a Tanúsítványkezelő portálra.
 

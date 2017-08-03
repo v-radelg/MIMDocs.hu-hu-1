@@ -18,8 +18,7 @@ ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 07/13/2017
 ---
-# A MIM 2016 telepítése: A MIM szolgáltatás és -portál
-<a id="install-mim-2016-mim-service-and-portal" class="xliff"></a>
+# <a name="install-mim-2016-mim-service-and-portal"></a>A MIM 2016 telepítése: A MIM szolgáltatás és -portál
 
 >[!div class="step-by-step"]
 [« MIM Synchronization Service](install-mim-sync.md)
@@ -35,8 +34,7 @@ ms.lasthandoff: 07/13/2017
 Ha a legutóbbi lépésben nem telepítette a MIM telepítőcsomagját, akkor a folytatás előtt lépjen vissza és telepítse a Microsoft Identity Manager 2016 összetevőit.
 
 
-## A MIM szolgáltatás és -portál konfigurálása a telepítéshez
-<a id="configure-mim-service-and-portal-for-installation" class="xliff"></a>
+## <a name="configure-mim-service-and-portal-for-installation"></a>A MIM szolgáltatás és -portál konfigurálása a telepítéshez
 
 1. Futtassa a **MIM szolgáltatás és -portál telepítőjét** a kicsomagolt **Service and Portal** almappából.
 
@@ -78,8 +76,7 @@ Ha a legutóbbi lépésben nem telepítette a MIM telepítőcsomagját, akkor a 
 
 16. Jelölje be a tűzfalon az 5725-ös és 5726-os portok megnyitására szolgáló négyzetet, valamint azt, amelyik az összes hitelesített felhasználónak hozzáférést biztosít a MIM-portálhoz.
 
-## A MIM jelszó-regisztrálási portál konfigurálása
-<a id="configure-mim-password-registration-portal" class="xliff"></a>
+## <a name="configure-mim-password-registration-portal"></a>A MIM jelszó-regisztrálási portál konfigurálása
 
 1.  Az önkiszolgáló jelszó-regisztrálási szolgáltatáshoz (SSPR) állítsa be a *contoso\MIMSSPR* fióknevet és a *Pass@word1* jelszót.
 
@@ -91,8 +88,7 @@ Ha a legutóbbi lépésben nem telepítette a MIM telepítőcsomagját, akkor a 
 
 4. A MIM jelszó-regisztrálási portál következő konfigurációs képernyőjén a MIM szolgáltatás kiszolgálójának címeként adja meg a *http://CorpIDM.contoso.local* címet a jelszó-regisztrálási portálhoz.
 
-## A MIM jelszó-változtatási portál konfigurálása
-<a id="configure-mim-password-reset-portal" class="xliff"></a>
+## <a name="configure-mim-password-reset-portal"></a>A MIM jelszó-változtatási portál konfigurálása
 
 1.  Az önkiszolgáló jelszó-regisztrálási szolgáltatáshoz (SSPR) állítsa be a *Contoso\MIMSSPRService* fióknevet és a *Pass@word1* jelszót.
 
@@ -104,8 +100,7 @@ Ha a legutóbbi lépésben nem telepítette a MIM telepítőcsomagját, akkor a 
 
 4. A MIM jelszó-regisztrálási portál következő konfigurációs képernyőjén a MIM szolgáltatás kiszolgálójának címeként adja meg a *http://CorpIDname.domain.local* címet a jelszó-változtatási portálhoz.
 
-## A MIM szolgáltatás és -portál telepítése
-<a id="install-mim-service-and-portal" class="xliff"></a>
+## <a name="install-mim-service-and-portal"></a>A MIM szolgáltatás és -portál telepítése
 
 Ha végzett a telepítés előtti teendőkkel, kattintson az **Install** (Telepítés) gombra a **szolgáltatás és portál** kijelölt összetevőinek telepítéséhez.
 

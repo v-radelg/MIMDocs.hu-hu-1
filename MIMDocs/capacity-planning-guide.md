@@ -18,8 +18,7 @@ ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 07/13/2017
 ---
-# Kapacitástervezési útmutató
-<a id="capacity-planning-guide" class="xliff"></a>
+# <a name="capacity-planning-guide"></a>Kapacitástervezési útmutató
 
 A Microsoft Identity Manager (MIM) segítségével létrehozhatja, frissítheti és eltávolíthatja a szervezetében lévő felhasználói fiókokat. Emellett a segítségével a végfelhasználók kezelhetik a saját fiókjuk önkiszolgáló szolgáltatásait. Ezek a műveletek még egy kis környezetben is gyorsan összeadódhatnak.
 
@@ -27,8 +26,7 @@ A MIM használatának megkezdése előtt a jelen útmutató és a tesztkörnyeze
 
 Ha még nem ismeri a MIM 2016 szoftvert és összetevőit, a folytatás előtt ismerje meg közelebbről a [Microsoft Identity Manager 2016-ot](microsoft-identity-manager-2016.md).
 
-## Áttekintés
-<a id="overview" class="xliff"></a>
+## <a name="overview"></a>Áttekintés
 A Microsoft Identity Manager-rendszer általános kapacitását és teljesítményét számos változó befolyásolhatja. A MIM-összetevők (topológia) fizikai üzembe helyezésének módja, valamint az összetevők futtatására szolgáló hardvereszközök fontos tényezőt jelentenek a MIM-rendszertől elvárható teljesítmény és kapacitás szempontjából. A MIM házirend-konfigurációs objektumainak száma és összetettsége kevésbé nyilvánvaló, ugyanakkor jelentős megfontolandó tényezőt jelent a kapacitástervezés során. Végül a környezet várható mérete és terhelése jellemzően viszonylag kézenfekvő tényezőt jelent a teljesítmény és kapacitás szempontjából.
 
 A MIM 2016-környezettől elvárható kapacitást és teljesítményt érintő főbb tényezőket a következő táblázat ismerteti.
@@ -42,8 +40,7 @@ A MIM 2016-környezettől elvárható kapacitást és teljesítményt érintő f
 | Terhelés | A használat gyakorisága, például hogy várhatóan milyen gyakran hoznak létre új csoportokat vagy felhasználókat, állítanak vissza jelszavakat vagy látogatják meg a portált egy adott időszakban. Vegye figyelembe, hogy a terhelés egy adott óra, nap, hét vagy év alatt változhat. Az összetevőtől függően tervezhet a csúcsterheléssel vagy az átlagos terheléssel is. |
 
 
-## A Microsoft Identity Manager összetevőinek üzemeltetése
-<a id="hosting-microsoft-identity-manager-components" class="xliff"></a>
+## <a name="hosting-microsoft-identity-manager-components"></a>A Microsoft Identity Manager összetevőinek üzemeltetése
 
 A Microsoft Identity Manager összetevőinek nem kell ugyanazon a számítógépen lenniük. Ezen összetevők, valamint a futtatásukra szolgáló fizikai vagy virtuális gépek számbavétele a kapacitástervezés fontos mozzanata.
 
@@ -54,8 +51,7 @@ Mindezek mellett gondolja át a konfigurációt érintő külső tényezőket is
 - Ha tárolóhálózatot használ a MIM 2016-szolgáltatás adatbázis-konfigurációjához: milyen egyéb alkalmazások használják még a tárolóhálózatot? Ha ezek az alkalmazások „versenyeznek” a tárolóhálózat megosztott lemezerőforrásaiért, az hatással lehet az adatbázis teljesítményére.
 
 
-## Felhasználók és csoportok
-<a id="users-and-groups" class="xliff"></a>
+## <a name="users-and-groups"></a>Felhasználók és csoportok
 A környezetben található felhasználók és csoportok száma jellemzően fontos szempont a rendszer méretezésének tervezésekor. A tervezéskor ugyanakkor számos egyéb kapcsolódó szempontot célszerű mérlegelnie.
 
 - Létrehozhatnak-e a felhasználók csoportokat? Ha igen, érdemes felmérni, hogy a felhasználók által létrehozott új csoportok milyen hatással lesznek a csoportok növekedésére a környezetben.
@@ -63,8 +59,7 @@ A környezetben található felhasználók és csoportok száma jellemzően font
 - Várható-e dinamikus csoportok létrehozása? Mérje fel, hogy hány és milyen típusú dinamikus csoport létrehozása várható a környezetben.
 
 
-## Várható terhelési szintek
-<a id="expected-load-levels" class="xliff"></a>
+## <a name="expected-load-levels"></a>Várható terhelési szintek
 Vegye számításba a MIM-összetevők várható terhelésének típusát is. Ez feltehetően megállapítható a környezetben jelenleg futó alkalmazások felmérésével. Célszerű megfontolni többek között a következő kérdéseket:
 
 - Milyen gyakran várhatók a csoporthoz való csatlakozásra és a csoport elhagyására irányuló kérések?
@@ -78,8 +73,7 @@ Vegye számításba a MIM-összetevők várható terhelésének típusát is. Ez
 - Várhatók-e nagy változások a terhelési szintben a normál és a csúcsterhelés között? Jellemző például, hogy a munkaszüneti időszakok után sok jelszóváltoztatás történik. Ügyeljen arra, hogy a rendszer karbantartási és szinkronizálási ütemezése elkerülje a várható csúcsterheléseket. A kapacitástervezés során mindenképpen vegye figyelembe a csúcsterhelési időszakokat.
 
 
-## Házirend-konfigurációs objektumok
-<a id="policy-configuration-objects" class="xliff"></a>
+## <a name="policy-configuration-objects"></a>Házirend-konfigurációs objektumok
 
 A Microsoft Identity Manager házirend-konfigurációs objektumai az adott példány felügyeleti házirendszabályait, halmazait, munkafolyamatait és szinkronizálási szabályait foglalják magukban. A MIM-példány minden ügyfélnél egyedi, hiszen a házirend-konfiguráció az adott környezet igényeinek megfelelően változik. A MIM házirend-konfigurációs objektumaihoz kapcsolódó legfontosabb teljesítményi szempontok a következők:
 
@@ -94,7 +88,6 @@ A MIM házirend-konfigurációjában emellett a környezet kiépítési tevéken
 - Fog-e kód nélküli kiépítést alkalmazni? Ha igen, az hatással lesz a várható szabálybejegyzések, illetve a kapcsolódó kérések és munkafolyamatok mennyiségére is a rendszerben.
 
 
-## További információ
-<a id="see-also" class="xliff"></a>
+## <a name="see-also"></a>További információ
 - [Topológiai szempontok a MIM üzembe helyezésekor](topology-considerations.md)
 - A letölthető [Forefront Identity Manager (FIM) 2010 kapacitástervezési útmutatóban](http://go.microsoft.com/fwlink/?LinkId=200180) részletes információkat olvashat egy tesztkörnyezetről és a kapcsolódó teljesítménytesztelési eredményekről.

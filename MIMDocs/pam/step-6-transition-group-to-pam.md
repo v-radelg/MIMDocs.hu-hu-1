@@ -18,8 +18,7 @@ ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 07/13/2017
 ---
-# 6. lépés – Csoport áthelyezése a Privileged Access Management szolgáltatásba
-<a id="step-6--transition-a-group-to-privileged-access-management" class="xliff"></a>
+# <a name="step-6--transition-a-group-to-privileged-access-management"></a>6. lépés – Csoport áthelyezése a Privileged Access Management szolgáltatásba
 
 >[!div class="step-by-step"]
 [« 5. lépés ](step-5-establish-trust-between-priv-corp-forests.md)

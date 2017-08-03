@@ -16,8 +16,7 @@ ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 07/13/2017
 ---
-# A MIM PAM telepítése a Windows Server 2016-tal
-<a id="deploy-mim-pam-with-windows-server-2016" class="xliff"></a>
+# <a name="deploy-mim-pam-with-windows-server-2016"></a>A MIM PAM telepítése a Windows Server 2016-tal
 
 
 Ez a konfiguráció lehetővé teszi, hogy a MIM 2016 SP1 kihasználja a Windows Server 2016 által a „PRIV” erdő tartományvezérlőjeként nyújtott funkciókat.  A konfigurálás után a felhasználók Kerberos-jegye időkorlátossá válik a szerepkör-aktiválásban megmaradt időre. 
@@ -25,8 +24,7 @@ Ez a konfiguráció lehetővé teszi, hogy a MIM 2016 SP1 kihasználja a Windows
 >[!Note]
 A Windows Server 2016 Technical Preview 5 előtti technikai előzetesek nem használhatók ezzel az MIM-kiadással.
 
-## Előkészítés
-<a id="preparation" class="xliff"></a>
+## <a name="preparation"></a>Előkészítés
 
 A tesztkörnyezetben legalább két virtuális gép szükséges:
 
@@ -143,8 +141,7 @@ Végezze el a telepítést az [Útmutató az első lépésekhez](privileged-iden
 
 -   Az 5. tételt (a megbízhatóság ellenőrzését) **nem szükséges elvégezni, ha a CORP és a PRIV tartomány is Windows Server 2016 tartományműködési szintű**.
 
-## További információ
-<a id="more-information" class="xliff"></a>
+## <a name="more-information"></a>További információ
 
 - [Privileged Access Management az Active Directory Domain Serviceshez](privileged-identity-management-for-active-directory-domain-services.md)
 - [A MIM-környezet konfigurálása a Privileged Access Management szolgáltatáshoz](configuring-mim-environment-for-pam.md)

@@ -18,8 +18,7 @@ ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 07/13/2017
 ---
-# A PAM-összetevők megismerése
-<a id="understand-the-components-of-pam" class="xliff"></a>
+# <a name="understand-the-components-of-pam"></a>A PAM-összetevők megismerése
 
 A Privileged Access Management a rendszergazdai hozzáférést a napi szintű felhasználói fiókoktól elkülönítve kezeli. Ez a megoldás párhuzamos erdőkre támaszkodik:
 

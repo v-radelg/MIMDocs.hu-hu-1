@@ -18,8 +18,7 @@ ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 07/13/2017
 ---
-# 1. lépés: A PRIV-tartomány konfigurálása
-<a id="step-1-configuring-the-priv-domain" class="xliff"></a>
+# <a name="step-1-configuring-the-priv-domain"></a>1. lépés: A PRIV-tartomány konfigurálása
 
 >[!div class="step-by-step"]
 [2. lépés »](sp1-step2-configuring-corp-domain.md)

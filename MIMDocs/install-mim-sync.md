@@ -18,8 +18,7 @@ ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 07/13/2017
 ---
-# A MIM 2016 telepítése: A MIM Synchronization Service
-<a id="install-mim-2016-mim-synchronization-service" class="xliff"></a>
+# <a name="install-mim-2016-mim-synchronization-service"></a>A MIM 2016 telepítése: A MIM Synchronization Service
 
 >[!div class="step-by-step"]
 [« Exchange Server](prepare-server-exchange.md)
@@ -37,8 +36,7 @@ A Microsoft Identity Manager 2016 összetevőinek telepítéséhez először ké
 
 2. Bontsa ki a MIM telepítési csomagját vagy csatlakoztassa a MIM DVD-lemezképét.
 
-## A MIM 2016 Synchronization Service telepítése
-<a id="install-mim-2016-synchronization-service" class="xliff"></a>
+## <a name="install-mim-2016-synchronization-service"></a>A MIM 2016 Synchronization Service telepítése
 
 1. A kibontott MIM telepítési mappában nyissa meg a **Synchronization Service** mappát.
 

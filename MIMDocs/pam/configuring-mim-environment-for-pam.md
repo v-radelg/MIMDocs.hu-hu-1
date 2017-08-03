@@ -18,8 +18,7 @@ ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 07/13/2017
 ---
-# A MIM-környezet konfigurálása a Privileged Access Management szolgáltatáshoz
-<a id="configure-the-mim-environment-for-privileged-access-management" class="xliff"></a>
+# <a name="configure-the-mim-environment-for-privileged-access-management"></a>A MIM-környezet konfigurálása a Privileged Access Management szolgáltatáshoz
 Az erdők közötti hozzáférés beállítását, az Active Directory és a Microsoft Identity Manager telepítését és konfigurálását, illetve a szükséges időben való hozzáférésre irányuló kérelem bemutatását hét lépésben hajthatja végre.
 
 Ezek a lépések úgy vannak felépítve, hogy segítségükkel a tesztkörnyezetet az alapoktól tudja elkezdeni és felépíteni. Ha a PAM szolgáltatást meglévő környezetben szeretné alkalmazni, használhatja saját tartományvezérlőit és felhasználói fiókjait is ahelyett, hogy újakat hozna létre a példáknak megfelelően.

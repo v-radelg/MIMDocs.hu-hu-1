@@ -18,12 +18,10 @@ ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 07/13/2017
 ---
-# Hibrid identitáskezelési naplójelentések az Azure Active Directoryban – nyilvános előzetes verzió (frissítés)
-<a id="hybrid-identity-management-audit-reports-in-azure-active-directory---public-previewrefresh" class="xliff"></a>
+# <a name="hybrid-identity-management-audit-reports-in-azure-active-directory---public-previewrefresh"></a>Hibrid identitáskezelési naplójelentések az Azure Active Directoryban – nyilvános előzetes verzió (frissítés)
 Az Azure Active Directory (AD) naplójelentéseinek segítségével egyetlen jelentésben nyomon követheti a helyszínen vagy a felhőben végzett identitáskezelési tevékenységeket. Ez a funkció lehetővé teszi, hogy az összes identitását egy helyen kezelje, és egy helyen férjen hozzá adataihoz, így időt takaríthat meg és csökkentheti a teljes költségeket.
 
-## Mi az az Azure Active Directory hibrid jelentéskészítés?
-<a id="what-is-azure-active-directory-hybrid-reporting" class="xliff"></a>
+## <a name="what-is-azure-active-directory-hybrid-reporting"></a>Mi az az Azure Active Directory hibrid jelentéskészítés?
 A hibrid naplózási jelentéskészítés segít a rendszergazdáknak az identitáskezeléshez kapcsolódó általános jelentéskészítési feladatok elvégzésében.
 
 1. **Identitáskezelési tevékenységek gyűjtése a különböző rendszerekből.** A hibrid jelentéseken az Azure AD és az Identity Manager identitáskezelési tevékenységei egyaránt megjelennek.
@@ -32,8 +30,7 @@ A hibrid naplózási jelentéskészítés segít a rendszergazdáknak az identit
 
 3. **A jelentéskészítő rendszer infrastrukturális költségeinek csökkentése.** A felhőbeli hibrid jelentéskészítéssel felszámolhatja a helyszíni jelentéskészítési adattárház-infrastruktúrát.
 
-## Hogyan működik?
-<a id="how-does-it-work" class="xliff"></a>
+## <a name="how-does-it-work"></a>Hogyan működik?
 
 A helyszíni adatok gyűjtéséhez először telepítenie kell egy jelentéskészítő ügynököt az Identity Manager 2016-kiszolgálón. A jelentéskészítő ügynököt a Microsoft letöltési oldaláról [itt](https://www.microsoft.com/en-us/download/details.aspx?id=55112) töltheti le.
 
@@ -44,7 +41,6 @@ A hibrid jelentéskészítés folyamata a következő lépésekből áll:
 4. A tevékenységek adatai egy hónapig tárolódnak az Azure-ban.
 5. Az Azure Portal beolvassa, majd az Azure Audit Reporing (Azure-naplójelentések) panel naplójának formájában jeleníti meg a naplójelentési adatokat.
 
-## További információ
-<a id="see-also" class="xliff"></a>
+## <a name="see-also"></a>További információ
 - További részletek: [A hibrid jelentéskészítés kezelése az Identity Managerben](working-with-identity-manager-hybrid-reporting.md)
 - További információt a [Naplózási tevékenységre vonatkozó jelentések az Azure Active Directory-portálon](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-reporting-activity-audit-logs) című témakörben talál

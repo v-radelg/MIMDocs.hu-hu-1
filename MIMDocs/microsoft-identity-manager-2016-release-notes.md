@@ -19,6 +19,5 @@ ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 07/13/2017
 ---
-# A MIM 2016 kibocsátási megjegyzései
-<a id="release-notes-for-mim-2016" class="xliff"></a>
+# <a name="release-notes-for-mim-2016"></a>A MIM 2016 kibocsátási megjegyzései
 Egyelőre nincsenek kibocsátási megjegyzések.

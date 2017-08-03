@@ -18,8 +18,7 @@ ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 07/13/2017
 ---
-# 4. lépés: A SharePoint konfigurálása
-<a id="step-4-configuring-sharepoint" class="xliff"></a>
+# <a name="step-4-configuring-sharepoint"></a>4. lépés: A SharePoint konfigurálása
 
 >[!div class="step-by-step"]
 [« 3. lépés](sp1-step3-installing-configuring-sql.md)

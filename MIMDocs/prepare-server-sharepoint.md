@@ -18,8 +18,7 @@ ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 07/13/2017
 ---
-# Identitáskezelési kiszolgáló beállítása: SharePoint
-<a id="set-up-an-identity-management-server-sharepoint" class="xliff"></a>
+# <a name="set-up-an-identity-management-server-sharepoint"></a>Identitáskezelési kiszolgáló beállítása: SharePoint
 
 >[!div class="step-by-step"]
 [« SQL Server 2014](prepare-server-sql2014.md)
@@ -32,8 +31,7 @@ ms.lasthandoff: 07/13/2017
 > - Jelszó – **Pass@word1**
 
 
-## Telepítse a **SharePoint Foundation 2013-at SP1 szervizcsomaggal**.
-<a id="install-sharepoint-foundation-2013-with-sp1" class="xliff"></a>
+## <a name="install-sharepoint-foundation-2013-with-sp1"></a>Telepítse a **SharePoint Foundation 2013-at SP1 szervizcsomaggal**.
 
 > [!NOTE]
 > A telepítő előfeltételeinek letöltéséhez internetkapcsolat szükséges. Ha a számítógép olyan virtuális hálózaton található, amely nem biztosít internetkapcsolatot, akkor bővítse a számítógépet internetkapcsolatot biztosító hálózati illesztővel. Ez a telepítés befejezése után letiltható.
@@ -60,8 +58,7 @@ A SharePoint Foundation 2013 SP1 telepítéséhez kövesse a következő lépés
 
 4.  A telepítés befejezése után futtassa a varázslót.
 
-## A SharePoint konfigurálása a varázslóval
-<a id="run-the-wizard-to-configure-sharepoint" class="xliff"></a>
+## <a name="run-the-wizard-to-configure-sharepoint"></a>A SharePoint konfigurálása a varázslóval
 
 A SharePoint és a MIM együttműködésének konfigurálásához kövesse a **SharePoint termékek konfigurálása varázsló** lépéseit.
 
@@ -81,8 +78,7 @@ A SharePoint és a MIM együttműködésének konfigurálásához kövesse a **S
 
 8. A **Webhelycsoport létrehozása** ablakban kattintson a **Kihagyás** gombra.  Ezután kattintson a **Befejezés** gombra.
 
-## A SharePoint előkészítése a MIM-portál futtatására
-<a id="prepare-sharepoint-to-host-the-mim-portal" class="xliff"></a>
+## <a name="prepare-sharepoint-to-host-the-mim-portal"></a>A SharePoint előkészítése a MIM-portál futtatására
 
 > [!NOTE]
 > Az SSL-t a rendszer nem konfigurálja előre. A portálhoz való hozzáférés engedélyezése előtt konfiguráljon SSL vagy azzal egyenértékű protokollt.

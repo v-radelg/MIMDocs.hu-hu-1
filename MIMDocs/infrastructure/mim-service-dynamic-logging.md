@@ -16,8 +16,7 @@ ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 07/13/2017
 ---
-# Dinamikus naplózás a MIM SP1-es (4.4.1436.0-s) verziójában
-<a id="mim-sp1-4414360--service-dynamic-logging" class="xliff"></a>
+# <a name="mim-sp1-4414360--service-dynamic-logging"></a>Dinamikus naplózás a MIM SP1-es (4.4.1436.0-s) verziójában
 A 4.4.1436.0-s verzióban új naplózási funkció mutatkozott be, amellyel a rendszergazdák és a támogatási szakemberek a felügyeleti szolgáltatás újraindítása nélkül kapcsolhatják be a naplózást.
 
 A telepítés után a  Microsoft.ResourceManagement.Service.exe.config fájlban a következő új sorok lesznek láthatóak:
