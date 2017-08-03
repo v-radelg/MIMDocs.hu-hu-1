@@ -18,8 +18,7 @@ ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 07/13/2017
 ---
-# 2. lépés: A CORP-tartomány konfigurálása
-<a id="step-2-configuring-the-corp-domain" class="xliff"></a>
+# <a name="step-2-configuring-the-corp-domain"></a>2. lépés: A CORP-tartomány konfigurálása
 
 >[!div class="step-by-step"]
 [« 1. lépés](sp1-step1-configuring-priv-domain.md)

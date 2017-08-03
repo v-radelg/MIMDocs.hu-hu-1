@@ -18,8 +18,7 @@ ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 07/13/2017
 ---
-# A MIM 2016 telepítése: Az Active Directory és a MIM szolgáltatás szinkronizálása
-<a id="install-mim-2016-synchronize-active-directory-and-mim-service" class="xliff"></a>
+# <a name="install-mim-2016-synchronize-active-directory-and-mim-service"></a>A MIM 2016 telepítése: Az Active Directory és a MIM szolgáltatás szinkronizálása
 
 >[!div class="step-by-step"]
 [« MIM szolgáltatás és -portál](install-mim-service-portal.md)
@@ -32,8 +31,7 @@ ms.lasthandoff: 07/13/2017
 
 Alapértelmezés szerint a MIM Synchronization Service (MIM Sync) szolgáltatáshoz nincs összekötő konfigurálva.  Az első lépés általában a MIM szolgáltatás adatbázisának feltöltése a meglévő Active Directory-fiókokkal a MIM Sync szolgáltatás használatával. Ehhez a MIM Sync Service alkalmazást kell használni.
 
-## A MIM-kezelőügynök létrehozása
-<a id="create-the-mim-management-agent" class="xliff"></a>
+## <a name="create-the-mim-management-agent"></a>A MIM-kezelőügynök létrehozása
 A MIM-kezelőügynök (MA) összekötőként funkcionál a MIM Sync és a MIM szolgáltatás között. Az összekötő a Create Management Agent (Kezelőügynök létrehozása) varázslóval hozható létre.
 
 A MIM-kezelőügynök konfigurálásához meg kell adnia egy felhasználói fiókot. A dokumentumban erre a fiókra **MIMMA** néven hivatkozunk.
@@ -41,8 +39,7 @@ A MIM-kezelőügynök konfigurálásához meg kell adnia egy felhasználói fió
 > [!NOTE]
 > A MIM-kezelőügynökhöz használt fióknak azonosnak kell lennie a MIM szolgáltatás telepítésekor megadott fiókkal.
 
-###A MIM-kezelőügynök létrehozása
-<a id="to-create-the-mim-ma" class="xliff"></a>
+###<a name="to-create-the-mim-ma"></a>A MIM-kezelőügynök létrehozása
 
 1.  Indítsa el a Synchronization Service Managert.
 
@@ -164,8 +161,7 @@ A MIM-kezelőügynök konfigurálásához meg kell adnia egy felhasználói fió
 
 11.  A kezelőügynök létrehozásához a **Configure Extensions** (Bővítmények konfigurálása) lapon kattintson a **Finish** (Befejezés) gombra.
 
-## Az AD-kezelőügynök létrehozása
-<a id="create-the-ad-management-agent" class="xliff"></a>
+## <a name="create-the-ad-management-agent"></a>Az AD-kezelőügynök létrehozása
 Az Active Directory-kezelőügynök összekötőként szolgál az AD tartományi szolgáltatásokhoz. Az összekötő a Create Management Agent (Kezelőügynök létrehozása) varázslóval hozható létre.
 
 1. A Create Management Agent (Kezelőügynök létrehozása) varázsló megnyitásához válassza az **Actions** (Műveletek) menü **Create** (Létrehozás) parancsát.
@@ -227,13 +223,11 @@ Az Active Directory-kezelőügynök összekötőként szolgál az AD tartományi
 12. A **Configure Extensions** (Bővítmények konfigurálása) lapon kattintson a **Finish** (Befejezés) gombra.
 
 
-## Futtatási profilok létrehozása
-<a id="create-run-profiles" class="xliff"></a>
+## <a name="create-run-profiles"></a>Futtatási profilok létrehozása
 
 Hozzon létre futtatási profilokat az ADMA és a MIMMA összekötőkhöz.
 
-### Futtatási profilok létrehozása az ADMA összekötőhöz
-<a id="create-run-profiles-for-the-adma-connector" class="xliff"></a>
+### <a name="create-run-profiles-for-the-adma-connector"></a>Futtatási profilok létrehozása az ADMA összekötőhöz
 
 Az alábbi táblázatban az ADMA összekötőhöz létrehozandó öt futtatási profil szerepel:
 
@@ -265,8 +259,7 @@ Futtatási profilok létrehozása az ADMA összekötőhöz:
 
 5. Kattintson az **OK** gombra a Configure Run Profiles (Futtatási profilok konfigurálása) párbeszédpanel bezárásához.
 
-### Futtatási profilok létrehozása a MIMMA összekötőhöz
-<a id="create-run-profiles-for-the-mimma-connector" class="xliff"></a>
+### <a name="create-run-profiles-for-the-mimma-connector"></a>Futtatási profilok létrehozása a MIMMA összekötőhöz
 
 Az alábbi táblázatban a MIMMA összekötőhöz tartozó öt kapcsolódó futtatási profil szerepel:
 
@@ -298,8 +291,7 @@ Futtatási profilok létrehozása a MIMMA összekötőhöz:
 
 5. Kattintson az **OK** gombra a Configure Run Profiles (Futtatási profilok konfigurálása) párbeszédpanel bezárásához.
 
-## A MIM szolgáltatás konfigurálása
-<a id="configure-the-mim-service" class="xliff"></a>
+## <a name="configure-the-mim-service"></a>A MIM szolgáltatás konfigurálása
 
 Az AD által a MIM szolgáltatás esetében a felhasználók bejövő szinkronizálásához használt szabály a MIM-portál segítségével hozható létre.
 
@@ -353,12 +345,10 @@ Az AD felhasználókra vonatkozó bejövő szinkronizálási szabályának létr
 
 8. A **Summary** (Összegzés) lapon kattintson a **Submit** (Küldés) gombra.
 
-## A tesztkörnyezet inicializálása
-<a id="initialize-the-testing-environment" class="xliff"></a>
+## <a name="initialize-the-testing-environment"></a>A tesztkörnyezet inicializálása
 A MIM-konfiguráció AD-ből származó adatokkal való teszteléséhez a következő négy lépést kell elvégeznie:
 
-### Kiépítés engedélyezése
-<a id="enable-provisioning" class="xliff"></a>
+### <a name="enable-provisioning"></a>Kiépítés engedélyezése
 
 1. Indítsa el a Synchronization Service Managert.
 
@@ -368,8 +358,7 @@ A MIM-konfiguráció AD-ből származó adatokkal való teszteléséhez a követ
 
 4. Kattintson az **OK** gombra az Options (Beállítások) párbeszédpanel bezárásához.
 
-### A MIMMA inicializálása
-<a id="initialize-the-mimma" class="xliff"></a>
+### <a name="initialize-the-mimma"></a>A MIMMA inicializálása
 
 Futtasson egy teljes szinkronizálási ciklust ezen az összekötőn. A teljes ciklus a következő futtatási profilokból tevődik össze:
 
@@ -394,15 +383,13 @@ A négy futtatási profil végrehajtásához kövesse az alábbi lépéseket.
 
     - A futtatási profil elindításához kattintson az **OK** gombra.
 
-#### Az attribútumfolyam precedenciájának konfigurálása
-<a id="configure-attribute-flow-precedence" class="xliff"></a>
+#### <a name="configure-attribute-flow-precedence"></a>Az attribútumfolyam precedenciájának konfigurálása
 
 A MIM-összekötő inicializálása során a rendszer a beállított szinkronizálási szabályokat beemelte a metaverzumba.
 
 Úgy állítsa be az összekötő által szolgáltatott attribútumok attribútumfolyam-precedenciáját, hogy az AD már meglévő attribútumai bekerülhessenek a metaverzumba, később pedig a MIM szolgáltatás adatbázisába is.
 
-### Az ADMA inicializálása
-<a id="initialize-the-adma" class="xliff"></a>
+### <a name="initialize-the-adma"></a>Az ADMA inicializálása
 
 Az Active Directory-összekötő inicializálásához teljes importálást kell futtatnia, és teljes szinkronizálást kell végrehajtania az importált adatokon. A teljes importálás során az AD-ből a meglévő objektumokat a kapcsolódási térbe kerülnek. A teljes szinkronizálás során a szinkronizálási szabályok a MIM-összekötő szabályainak megfelelően módosulnak.
 
@@ -420,8 +407,7 @@ Az Active Directory-összekötő inicializálásához teljes importálást kell 
 
     - A futtatási profil elindításához kattintson az **OK** gombra.
 
-### A MIM szolgáltatás adatbázisának feltöltése
-<a id="populate-the-mim-service-database" class="xliff"></a>
+### <a name="populate-the-mim-service-database"></a>A MIM szolgáltatás adatbázisának feltöltése
 
 A MIM szolgáltatás adatbázisának objektumokkal való feltöltéséhez szinkronizálási ciklust kell futtatnia a MIMMA összekötőn. Ez a ciklus a következő szakaszokból áll:
 

@@ -18,15 +18,13 @@ ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 07/13/2017
 ---
-# Hardver- és szoftverkövetelmények
-<a id="hardware-and-software-requirements" class="xliff"></a>
+# <a name="hardware-and-software-requirements"></a>Hardver- és szoftverkövetelmények
 
 A mögöttes szoftverplatformok rendszerkövetelményein kívül a Privileged Access Management nem rendelkezik további hardverkövetelményekkel. Ügyeljen rá, hogy rendelkezésre álljon elegendő memória vagy lemezterület, és hogy elérhető legyen a hálózati kapcsolat.
 
 Ez a cikk az alapszintű telepítéshez szükséges minimális követelményeket ismerteti. Nem célja a teljesítmény, a skálázhatóság és a magas rendelkezésre állás bemutatása, és nem ismerteti a nagyvállalati vagy üzemi környezetben végzett telepítésekhez javasolt topológiát.
 
-## Telepítés szoftvercsomagokból
-<a id="installing-from-software-packages" class="xliff"></a>
+## <a name="installing-from-software-packages"></a>Telepítés szoftvercsomagokból
 
 A következő szoftver letölthető a TechNet Evaluation Center vagy az MSDN webhelyéről:  
 - Microsoft Identity Manager 2016
@@ -36,33 +34,28 @@ A következő szoftver letölthető a TechNet Evaluation Center vagy az MSDN web
 A következő szoftver letölthető a GitHub webhelyről:  
 - PAMSamplePortal: tartalmazza a REST API minta-webalkalmazását
 
-## Szükséges szoftverek
-<a id="required-software" class="xliff"></a>
+## <a name="required-software"></a>Szükséges szoftverek
 
 - Windows Server 2012 R2  
 - Windows 8.1 Enterprise vagy Windows 10 Enterprise  
 - SQL Server 2012 Service Pack 1 vagy SQL Server 2014  
 
-## Próbaszoftver
-<a id="evaluation-software" class="xliff"></a>
+## <a name="evaluation-software"></a>Próbaszoftver
 
 Ha Ön nem rendelkezik Windows-, SQL Server- vagy Windows Server-licenccel, letöltheti ezek próbaverzióit.
 
-### TechNet Evaluation Center
-<a id="technet-evaluation-center" class="xliff"></a>
+### <a name="technet-evaluation-center"></a>TechNet Evaluation Center
 
 - [Windows Server 2012 R2](https://www.microsoft.com/evalcenter/evaluate-windows-server-2012-r2)  
 - [Windows 8.1 Enterprise](https://www.microsoft.com/evalcenter/evaluate-windows-8-1-enterprise)  
 - [Windows 10 Enterprise](https://www.microsoft.com/evalcenter/evaluate-windows-10-enterprise)  
 
-### Microsoft letöltőközpont
-<a id="microsoft-download-center" class="xliff"></a>
+### <a name="microsoft-download-center"></a>Microsoft letöltőközpont
 
 - [SQL Server](https://www.microsoft.com/download/details.aspx?id=29066)  
 - [A SharePoint Foundation 2013 SP1 és előfeltételei](https://www.microsoft.com/download/details.aspx?id=42039)
 
-## Hardverkövetelmények
-<a id="hardware-requirements" class="xliff"></a>
+## <a name="hardware-requirements"></a>Hardverkövetelmények
 
 Minden PAM-összetevő esetében tekintse át a szoftverek rendszerkövetelményeit.
 

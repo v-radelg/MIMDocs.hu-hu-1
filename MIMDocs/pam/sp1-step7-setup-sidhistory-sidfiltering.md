@@ -18,8 +18,7 @@ ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 07/13/2017
 ---
-# 7. lépés: SID-előzmények/SID-szűrés beállítása
-<a id="step-7-set-up-sid-historysid-filtering" class="xliff"></a>
+# <a name="step-7-set-up-sid-historysid-filtering"></a>7. lépés: SID-előzmények/SID-szűrés beállítása
 
 >[!div class="step-by-step"]
 [« 6. lépés](sp1-step6-setup-pam-trust.md)

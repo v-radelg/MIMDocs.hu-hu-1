@@ -18,8 +18,7 @@ ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 07/13/2017
 ---
-# 5. lépés – A CORP és a PRIV erdő közötti megbízhatósági kapcsolat létrehozása
-<a id="step-5--establish-trust-between-priv-and-corp-forests" class="xliff"></a>
+# <a name="step-5--establish-trust-between-priv-and-corp-forests"></a>5. lépés – A CORP és a PRIV erdő közötti megbízhatósági kapcsolat létrehozása
 
 >[!div class="step-by-step"]
 [« 4. lépés](step-4-install-mim-components-on-pam-server.md)
@@ -28,8 +27,7 @@ ms.lasthandoff: 07/13/2017
 
 Minden CORP tartománynál, így például a contoso.local tartomány esetében is, a PRIV és a CONTOSO tartományvezérlők között megbízhatósági kapcsolatnak kell fennállnia. Ez teszi lehetővé, hogy a PRIV tartomány felhasználói hozzáférhessenek a CORP tartományban lévő erőforrásokhoz.
 
-## Az egyes tartományvezérlők csatlakoztatása a párjukhoz
-<a id="connect-each-domain-controller-to-its-counterpart" class="xliff"></a>
+## <a name="connect-each-domain-controller-to-its-counterpart"></a>Az egyes tartományvezérlők csatlakoztatása a párjukhoz
 
 A megbízható kapcsolat kialakítása előtt minden tartományvezérlőn be kell állítani a párjuk DNS-nevének feloldását, a másik tartományvezérlő/DNS-kiszolgáló IP-címe alapján.
 
@@ -47,8 +45,7 @@ A megbízható kapcsolat kialakítása előtt minden tartományvezérlőn be kel
 
     ![a priv kulcsot tartalmazó fájlstruktúra – képernyőkép](./media/PAM_GS_DNS_Manager.png)
 
-## Megbízhatósági kapcsolat létrehozása a PAMSRV kiszolgálón
-<a id="establish-trust-on-pamsrv" class="xliff"></a>
+## <a name="establish-trust-on-pamsrv"></a>Megbízhatósági kapcsolat létrehozása a PAMSRV kiszolgálón
 
 A PAMSRV kiszolgálón hozzon létre egy egyirányú megbízhatósági kapcsolatot minden tartományhoz, például a CORPDC-hez úgy, hogy a bizalom a CORP tartományvezérlők felől a PRIV erdő felé irányuljon.
 
@@ -70,8 +67,7 @@ A PAMSRV kiszolgálón hozzon létre egy egyirányú megbízhatósági kapcsolat
     New-PAMDomainConfiguration -SourceDomain "contoso" -Credentials $ca
     ```
 
-## Az erdők Active Directoryhoz való olvasási hozzáférésének megadása
-<a id="give-forests-read-access-to-active-directory" class="xliff"></a>
+## <a name="give-forests-read-access-to-active-directory"></a>Az erdők Active Directoryhoz való olvasási hozzáférésének megadása
 
 A PRIV rendszergazdákon és a figyelőszolgáltatáson keresztül minden meglévő erdő számára olvasási hozzáférést biztosíthat az Active Directoryhoz.
 
@@ -94,8 +90,7 @@ A PRIV rendszergazdákon és a figyelőszolgáltatáson keresztül minden meglé
 
     A kimenetnek **A biztonsági azonosítók szűrése nem engedélyezett ebben a megbízhatósági kapcsolatban** szöveget is tartalmaznia kell. További információkért tekintse meg a [Disable SID filter quarantining](http://technet.microsoft.com/library/cc772816.aspx) (A SID-szűrők általi karanténba helyezés letiltása) című témakört.
 
-## A figyelőszolgáltatás és a komponensszolgáltatás elindítása
-<a id="start-the-monitoring-and-component-services" class="xliff"></a>
+## <a name="start-the-monitoring-and-component-services"></a>A figyelőszolgáltatás és a komponensszolgáltatás elindítása
 
 1.  Jelentkezzen be PRIV tartományi rendszergazdaként (PRIV\Rendszergazda) a PAMSRV kiszolgálóra.
 

@@ -18,8 +18,7 @@ ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 07/13/2017
 ---
-# Identitáskezelési kiszolgáló beállítása: Windows Server 2012 R2
-<a id="set-up-an-identity-management-server-windows-server-2012-r2" class="xliff"></a>
+# <a name="set-up-an-identity-management-server-windows-server-2012-r2"></a>Identitáskezelési kiszolgáló beállítása: Windows Server 2012 R2
 
 >[!div class="step-by-step"]
 [« Tartomány előkészítése](preparing-domain.md)
@@ -31,8 +30,7 @@ ms.lasthandoff: 07/13/2017
 > - Tartománynév – **contoso**
 > - Jelszó – **Pass@word1**
 
-## A Windows Server 2012 R2 csatlakoztatása a tartományhoz
-<a id="join-windows-server-2012-r2-to-your-domain" class="xliff"></a>
+## <a name="join-windows-server-2012-r2-to-your-domain"></a>A Windows Server 2012 R2 csatlakoztatása a tartományhoz
 
 Készítsen elő egy Windows Server 2012 R2 rendszerű számítógépet legalább 8 GB RAM-mal. A telepítéskor válassza a „Windows Server 2012 R2 Standard (kiszolgáló grafikus felhasználói felülettel) x64” kiadást.
 
@@ -63,8 +61,7 @@ Készítsen elő egy Windows Server 2012 R2 rendszerű számítógépet legaláb
     Install-WindowsFeature Web-WebServer, Net-Framework-Features,rsat-ad-powershell,Web-Mgmt-Tools,Application-Server,Windows-Identity-Foundation,Server-Media-Foundation,Xps-Viewer –includeallsubfeature -restart -source d:\sources\SxS
     ```
 
-## A kiszolgálói biztonsági házirend konfigurálása
-<a id="configure-the-server-security-policy" class="xliff"></a>
+## <a name="configure-the-server-security-policy"></a>A kiszolgálói biztonsági házirend konfigurálása
 
 A kiszolgálói biztonsági házirendben engedélyezze az újonnan létrehozott fiókok szolgáltatásként történő futtatását.
 
@@ -95,8 +92,7 @@ A kiszolgálói biztonsági házirendben engedélyezze az újonnan létrehozott 
 12. Zárja be a Helyi biztonsági házirend ablakot.
 
 
-## Az IIS Windows-hitelesítés üzemmód módosítása
-<a id="change-the-iis-windows-authentication-mode" class="xliff"></a>
+## <a name="change-the-iis-windows-authentication-mode"></a>Az IIS Windows-hitelesítés üzemmód módosítása
 
 1.  Indítson el egy PowerShell-ablakot.
 

@@ -18,8 +18,7 @@ ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 07/13/2017
 ---
-# 5. lépés: PAM telepítése/konfigurálása
-<a id="step-5-installingconfiguring-pam" class="xliff"></a>
+# <a name="step-5-installingconfiguring-pam"></a>5. lépés: PAM telepítése/konfigurálása
 
 >[!div class="step-by-step"]
 [« 4. lépés](sp1-step4-configuring-sharepoint.md)

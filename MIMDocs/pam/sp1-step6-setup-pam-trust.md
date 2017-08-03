@@ -18,8 +18,7 @@ ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 07/13/2017
 ---
-# 6. lépés: PAM bizalmi kapcsolat beállítása
-<a id="step-6-set-up-the-pam-trust" class="xliff"></a>
+# <a name="step-6-set-up-the-pam-trust"></a>6. lépés: PAM bizalmi kapcsolat beállítása
 
 >[!div class="step-by-step"]
 [« 5. lépés](sp1-step5-configuring-pam.md)

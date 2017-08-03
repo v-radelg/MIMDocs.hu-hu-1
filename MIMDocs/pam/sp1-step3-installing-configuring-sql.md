@@ -18,8 +18,7 @@ ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 07/13/2017
 ---
-# 3. lépés: Az SQL konfigurálása
-<a id="step-3-configuring-sql" class="xliff"></a>
+# <a name="step-3-configuring-sql"></a>3. lépés: Az SQL konfigurálása
 
 >[!div class="step-by-step"]
 [« 2. lépés](sp1-step2-configuring-corp-domain.md)

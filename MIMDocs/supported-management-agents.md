@@ -18,8 +18,7 @@ ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 07/13/2017
 ---
-# Csatlakozás a címtárakhoz
-<a id="connect-to-your-directories" class="xliff"></a>
+# <a name="connect-to-your-directories"></a>Csatlakozás a címtárakhoz
 
 Az összekötők adott csatlakoztatott adatforrásokat kapcsolnak össze a Microsoft Identity Manager (MIM) alkalmazással. A csatlakoztatott adatforrásból az összekötő adatokat helyez át az MIM alkalmazásba. Ha az MIM alkalmazásban az adatok módosulnak, az összekötő exportálja az adatokat a csatlakoztatott adatforráshoz, hogy szinkronizálja azt az MIM alkalmazással. Általában elmondható, hogy minden csatlakoztatott címtárhoz legalább egy összekötő tartozik.
 
@@ -27,8 +26,7 @@ A Forefront Identity Manager szoftver az összekötőket kezelőügynöknek neve
 
 Ez a cikk az MIM részét képző összekötőkre vonatkozik, de az Extensible Connectivity 2.0 összekötőivel további adatforrásokhoz is lehet csatlakozni. Egyes partnerek saját összekötőket hoztak létre, melyek teljes listája megtalálható a [FIM 2010: Partnerek kezelőügynökei](http://social.technet.microsoft.com/wiki/contents/articles/1589.fim-2010-management-agents-from-partners.aspx) wikicikkben.
 
-## Az MIM 2016 által támogatott összekötők
-<a id="supported-connectors-in-mim-2016" class="xliff"></a>
+## <a name="supported-connectors-in-mim-2016"></a>Az MIM 2016 által támogatott összekötők
 
 | Név | A csatlakoztatott adatforrás támogatott verziói |
 | ---- | ----------------------------------------------- |
@@ -55,7 +53,6 @@ Ez a cikk az MIM részét képző összekötőkre vonatkozik, de az Extensible C
 | Rögzített szélességű szövegfájl | Rögzített szélességű szövegfájlok |
 | LDAP Data Interchange formátum (LDIF) | LDAP Data Interchange formátum (LDIF) |
 
-## Kapcsolódó témakörök
-<a id="related-topics" class="xliff"></a>
+## <a name="related-topics"></a>Kapcsolódó témakörök
 
 [A FIM 2010 R2 kezelőügynökei](https://technet.microsoft.com/library/jj133885.aspx)

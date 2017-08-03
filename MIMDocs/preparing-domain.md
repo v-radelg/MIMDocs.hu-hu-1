@@ -18,8 +18,7 @@ ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 07/13/2017
 ---
-# Tartomány beállítása
-<a id="set-up-a-domain" class="xliff"></a>
+# <a name="set-up-a-domain"></a>Tartomány beállítása
 
 >[!div class="step-by-step"]
 [Windows Server 2012 R2»](prepare-server-ws2012r2.md)
@@ -28,8 +27,7 @@ A Microsoft Identity Manager (MIM) az Ön Active Directory- (AD-) tartományáva
 
 Ez a cikk részletesen ismerteti a lépéseket, amelyekkel előkészítheti a tartományt a MIM-mel való működésre.
 
-## Felhasználói fiókok és csoportok létrehozása
-<a id="create-user-accounts-and-groups" class="xliff"></a>
+## <a name="create-user-accounts-and-groups"></a>Felhasználói fiókok és csoportok létrehozása
 
 A MIM-telepítés minden összetevőjének saját identitással kell rendelkeznie a tartományban. Ez vonatkozik az olyan MIM-összetevőkre is, mint a Service, a Sync, a SharePoint és az SQL.
 

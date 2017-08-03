@@ -18,8 +18,7 @@ ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 07/13/2017
 ---
-# Nyolcadik lépés: A PAM üzembe helyezésének ellenőrzése
-<a id="step-8-pam-deployment-verification" class="xliff"></a>
+# <a name="step-8-pam-deployment-verification"></a>Nyolcadik lépés: A PAM üzembe helyezésének ellenőrzése
 
 >[!div class="step-by-step"]
 [« 7. lépés](sp1-step7-setup-sidhistory-sidfiltering.md)

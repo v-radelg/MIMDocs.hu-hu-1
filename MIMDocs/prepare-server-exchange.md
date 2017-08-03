@@ -18,15 +18,13 @@ ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 07/13/2017
 ---
-# Identitáskezelési kiszolgáló beállítása: Exchange
-<a id="set-up-an-identity-management-server-exchange" class="xliff"></a>
+# <a name="set-up-an-identity-management-server-exchange"></a>Identitáskezelési kiszolgáló beállítása: Exchange
 
 >[!div class="step-by-step"]
 [« SharePoint](prepare-server-sharepoint.md)
 [MIM Synchronization Service »](install-mim-sync.md)
 
-## A Microsoft Exchange Server üzembe helyezése
-<a id="deploy-microsoft-exchange-server" class="xliff"></a>
+## <a name="deploy-microsoft-exchange-server"></a>A Microsoft Exchange Server üzembe helyezése
 Ha szeretné, hogy a MIM e-maileket küldhessen és fogadhasson, vagy postaládákat létesíthessen, ahhoz szükséges, hogy az Exchange is telepítve legyen a környezetben. Ha még nincs üzembe helyezve az Exchange, kiértékelési célból a következő módon telepítheti a rendszer próbaverzióját:
 
 1. Töltse le és telepítse a Microsoft Office 2010 Filter Pack 2.0 és 2.0 SP1 verzióját.
