@@ -5,18 +5,18 @@ keywords:
 author: billmath
 ms.author: billmath
 manager: femila
-ms.date: 03/23/2017
+ms.date: 08/16/2017
 ms.topic: get-started-article
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: b0b39631-66df-4c5f-80c9-a1774346f816
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 974015bbba3a36e1107da33655eedf94e2938582
-ms.sourcegitcommit: 02fb1274ae0dc11288f8bd9cd4799af144b8feae
+ms.openlocfilehash: 03a0e6e90c1d0059872c4d37c88cb6f4f4095bac
+ms.sourcegitcommit: 451c3ddda84758c87b8eb0359dac4043af52865f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/13/2017
+ms.lasthandoff: 08/16/2017
 ---
 # <a name="install-mim-2016-mim-service-and-portal"></a>A MIM 2016 telepítése: A MIM szolgáltatás és -portál
 
@@ -62,13 +62,13 @@ Ha a legutóbbi lépésben nem telepítette a MIM telepítőcsomagját, akkor a 
 
 10. Elképzelhető, hogy megjelenik egy üzenet, amely arra figyelmeztet, hogy a szolgáltatásfiók aktuális konfigurációja nem biztonságos.
 
-11. A Synchronization Server (Szinkronizálási kiszolgáló) helyeként fogadja el az alapértelmezett értéket, a MIM Management Agent Account (MIM-kezelőügynök fiókja) mezőben pedig adja meg a *contoso\MIMsync* fiókot.
+11. Fogadja el az alapértelmezett értéket a szinkronizálási kiszolgálón található, és adja meg a MIM Management Agent account *contoso\MIMMA*.
 
     ![Kép: A MIM szolgáltatás és -portál konfigurálása](media/MIM-Install13.png)
 
 12. A MIM portálhoz tartozó MIM-szolgáltatás kiszolgálójának címeként adja meg a *CORPIDM* nevet (az adott számítógép nevét).
 
-13. A SharePoint-webhelycsoport URL-címeként adja meg a következőt: *http://CorpIDM.contoso.local:82*.
+13. Adja meg *http://CorpIDM.contoso.local* , a SharePoint webhely gyűjtemény URL-címe.
 
 14. A Password Registration jelszó-regisztrálási portál URL-címeként adja meg a következőt: *http://CorpIDM.contoso.local:8080*.
 
@@ -106,7 +106,7 @@ Ha végzett a telepítés előtti teendőkkel, kattintson az **Install** (Telep�
 
 A telepítést követően győződjön meg arról, hogy a MIM-portál aktív.
 
-1. Indítsa el az Internet Explorert, és kapcsolódjon a MIM-portálhoz a következő címen: *http://corpidm.contoso.local:82/identitymanagement*. Az oldal első látogatásakor némi késedelem lehet tapasztalható.
+1. Indítsa el az Internet Explorert, és kapcsolódjon a MIM-portál a *http://corpidm.contoso.local/identitymanagement*. Az oldal első látogatásakor némi késedelem lehet tapasztalható.
 
     - Szükség esetén hitelesítse magát a *contoso\Rendszergazda* fiókkal az Internet Explorerben.
 
