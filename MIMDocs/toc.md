@@ -21,6 +21,15 @@
 ### [A MIM telepítése: Szolgáltatás és portál](install-mim-service-portal.md)
 ### [A MIM telepítése: Adatbázisok szinkronizálása](install-mim-sync-ad-service.md)
 ## [Frissítés a Forefront Identity Manager 2010 R2-ről](microsoft-identity-manager-2016-upgrade-from-fim-2010-R2.md)
+## [A MIM Tanúsítványkezelő telepítése](./deploy-use/mim-cm-deploy.md)
+## [A BHOLD telepítési témakörei](./deploy-use/bhold-installation-guide.md)
+### [A BHOLD Core telepítése](./deploy-use/bhold-core-installation.md)
+### [A BHOLD Integration telepítése](./deploy-use/bhold-integration-installation.md)
+### [A BHOLD Attestation telepítése](./deploy-use/bhold-attestation-installation.md)
+### [A BHOLD Model Generator telepítése](./deploy-use/bhold-model-generator-installation.md)
+### [A BHOLD Reporting telepítése](./deploy-use/bhold-reporting-installation.md)
+### [A BHOLD Analytics telepítése](./deploy-use/bhold-analytics-installation.md)
+### [BHOLD Access Management Connector telepítése](./deploy-use/bhold-access-management-connector-install.md)
 ## [Jelszóváltozás-értesítési szolgáltatás](deploying-mim-password-change-notification-service-on-domain-controller.md)
 ## [Hibrid jelentéskészítés az Identity Managerben](working-with-identity-manager-hybrid-reporting.md)
 ## [Önkiszolgáló jelszóváltoztatás](working-with-self-service-password-reset.md)
@@ -75,7 +84,10 @@
 ### [Jelentéskészítés – egyéni jelentések és bővíthetőség](https://technet.microsoft.com/library/jj133861)
 ## [A Microsoft identitásszoftverei: nyilvános megjelenések és buildszámok](https://blogs.technet.microsoft.com/iamsupport/idmbuildversions/)
 # [Hivatkozás](./reference/microsoft-identity-manager-2016-developer-reference.md)
-## [Microsoft Identity Manager 2016 – fejlesztői leírás](./reference/microsoft-identity-manager-2016-developer-reference.md)
+## Fejlesztői leírás
+### [MIM 2016 fejlesztői leírás](./reference/microsoft-identity-manager-2016-developer-reference.md)
+### BHOLD
+#### [BHOLD fejlesztői leírás](./reference/mim2016-bhold-developer-reference.md) 
 ### [Tanúsítványkezelő – REST API-referencia](./reference/certificate-management-rest-api-reference.md)
 #### [CM REST API – a szolgáltatás részletei](./reference/certificate-management-rest-api-service-details.md)
 #### [Minta beléptetési forgatókönyv](./reference/sample-enrollment-walkthrough.md)
@@ -117,4 +129,8 @@
 ### [A Kezelőügynök futási hibakódjai](./reference/maerrorcodes.md)
 ### [A Microsoft Identity Manager 2016 függvényreferenciája](./reference/mim2016-functions-reference.md)
 ### [A Microsoft Identity Manager 2016 jelszókezelése](./infrastructure/mim2016-password-management.md)
-## [Korábbi verziók](./reference/version-history.md)
+### BHOLD
+#### [Útmutató a BHOLD-fogalmakhoz](./understand-explore/bhold-concepts-guide.md)
+## Korábbi verziók
+### [A MIM korábbi verziói](./reference/version-history.md)
+### [A BHOLD korábbi verziói](./reference/version-bhold-history.md)
