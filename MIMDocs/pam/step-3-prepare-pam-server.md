@@ -2,10 +2,10 @@
 title: "A PAM üzembe helyezése, 3. lépés – PAM-kiszolgáló | Microsoft Docs"
 description: "Készítsen elő a Privileged Access Management számára egy PAM-kiszolgálót mind az SQL, mind a SharePoint üzemeltetéséhez."
 keywords: 
-author: billmath
-ms.author: billmath
-manager: femila
-ms.date: 03/15/2017
+author: barclayn
+ms.author: barclayn
+manager: mbaldwin
+ms.date: 09/13/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
@@ -13,11 +13,11 @@ ms.assetid: 68ec2145-6faa-485e-b79f-2b0c4ce9eff7
 ROBOTS: noindex,nofollow
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 9a262a256062688542040827653a7df8d82e1044
-ms.sourcegitcommit: 02fb1274ae0dc11288f8bd9cd4799af144b8feae
+ms.openlocfilehash: fd52a191a0592441131249451011c4e2f026ea48
+ms.sourcegitcommit: 2be26acadf35194293cef4310950e121653d2714
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/13/2017
+ms.lasthandoff: 09/14/2017
 ---
 # <a name="step-3--prepare-a-pam-server"></a>3. lépés – PAM-kiszolgáló előkészítése
 
@@ -26,6 +26,7 @@ ms.lasthandoff: 07/13/2017
 [4. lépés »](step-4-install-mim-components-on-pam-server.md)
 
 ## <a name="install-windows-server-2012-r2"></a>A Windows Server 2012 R2 telepítése
+
 Egy harmadik, virtuális gépen telepítse a Windows Server 2012 R2-t, konkrétabban a Windows Server 2012 R2 Standard (kiszolgáló grafikus felhasználói felülettel) x 64 kiadást a *PAMSRV* létrehozásához. Mivel az SQL Servert és a SharePoint 2013-at is erre a számítógépre telepíti, legalább 8 GB RAM-ra lesz szüksége.
 
 1. Válassza a **Windows Server 2012 R2 Standard (kiszolgáló grafikus felhasználói felülettel) x64** kiadást.
@@ -46,13 +47,14 @@ Egy harmadik, virtuális gépen telepítse a Windows Server 2012 R2-t, konkréta
 
 
 ### <a name="add-the-web-server-iis-and-application-server-roles"></a>A webkiszolgálói (IIS) és az alkalmazáskiszolgálói szerepkörök beállítása
+
 Vegye fel a Webkiszolgáló (IIS) és az Alkalmazáskiszolgáló szerepkört, a .NET-keretrendszer 3.5 funkcióit, a Windows PowerShellhez készült Microsoft Azure Active Directory-modult, illetve a SharePointhoz szükséges egyéb funkciókat
 
 1.  Jelentkezzen be PRIV tartományi rendszergazdaként (PRIV\Rendszergazda), és indítsa el a PowerShellt.
 
 2.  Írja be a következő parancsokat: A .NET-keretrendszer 3.5 forrásfájljainak helye eltérő lehet, ez esetben azt kell megadni. Ezek a funkciók általában nem érhetők el a Windows Server telepítésekor, csak a következő mappában az operációs rendszer telepítésére szolgáló lemezen, pl.: „d:\Sources\SxS\”.
 
-    ```
+    ```PowerShell
     import-module ServerManager
     Install-WindowsFeature Web-WebServer, Net-Framework-Features,
     rsat-ad-powershell,Web-Mgmt-Tools,Application-Server,
@@ -61,6 +63,7 @@ Vegye fel a Webkiszolgáló (IIS) és az Alkalmazáskiszolgáló szerepkört, a 
     ```
 
 ### <a name="configure-the-server-security-policy"></a>A kiszolgálói biztonsági házirend konfigurálása
+
 A kiszolgálói biztonsági házirendben engedélyezze az újonnan létrehozott fiókok szolgáltatásként történő futtatását.
 
 1.  Indítsa el a **Helyi biztonsági házirend** programot.   
@@ -68,45 +71,49 @@ A kiszolgálói biztonsági házirendben engedélyezze az újonnan létrehozott 
 3.  A részletek ablaktábláján kattintson a jobb gombbal a **Bejelentkezés szolgáltatásként** lehetőségre, majd válassza a **Tulajdonságok** pontot.  
 4.  Kattintson a **Felhasználó vagy csoport hozzáadása** elemre, és a Felhasználó- és csoportnevek területen írja be a *priv\mimmonitor; priv\MIMService; priv\SharePoint; priv\mimcomponent; priv\SqlServer* karakterláncot. Kattintson a **Névellenőrzés**, majd az **OK** gombra.  
 
-5.  A Tulajdonságok ablak bezárásához kattintson az **OK** gombra.  
+5.  A Tulajdonságok ablak bezárásához kattintson az **OK** gombra.
 6.  A részletek ablaktábláján kattintson a jobb gombbal **A számítógép hálózati elérésének megtagadása** elemre, majd a **Tulajdonságok** pontra.  
 7.  Kattintson a **Felhasználó vagy csoport hozzáadása** elemre, és a Felhasználó- és csoportnevek területen írja be a *priv\mimmonitor; priv\MIMService; priv\mimcomponent* karakterláncot, majd kattintson az **OK** gombra.  
-8.  A Tulajdonságok ablak bezárásához kattintson az **OK** gombra.  
+8.  A Tulajdonságok ablak bezárásához kattintson az **OK** gombra.
 
 9. A részletek ablaktábláján kattintson a jobb gombbal a **Helyi bejelentkezés megtagadása** elemre, majd a **Tulajdonságok** pontra.  
 10. Kattintson a **Felhasználó vagy csoport hozzáadása** elemre, és a Felhasználó- és csoportnevek területen írja be a *priv\mimmonitor; priv\MIMService; priv\mimcomponent* karakterláncot, majd kattintson az **OK** gombra.  
 11. A Tulajdonságok ablak bezárásához kattintson az **OK** gombra.  
 12. Zárja be a Helyi biztonsági házirend ablakot.  
 
-13. Nyissa meg a Vezérlőpultot, és váltson a **Felhasználói fiókok** területre.  
-14. Kattintson a **Hozzáférés megadása a számítógéphez más felhasználóknak** lehetőségre.  
+13. Nyissa meg a Vezérlőpultot, és váltson a **Felhasználói fiókok** területre.
+14. Kattintson a **Hozzáférés megadása a számítógéphez más felhasználóknak** lehetőségre.
 15. Kattintson a **Hozzáadás** elemre, adja meg a *PRIV* tartomány *MIMADMIN* felhasználóját, és a következő képernyőn, a varázslóban, kattintson az **Add this user as an Administrator** (A felhasználó hozzáadása rendszergazdaként) lehetőségre.  
 16. Kattintson a **Hozzáadás** elemre, adja meg a *PRIV* tartomány *SharePoint* felhasználóját, és a következő képernyőn, a varázslóban, kattintson az **Add this user as an Administrator** (A felhasználó hozzáadása rendszergazdaként) lehetőségre.  
-17. Zárja be a Vezérlőpultot.  
+17. Zárja be a Vezérlőpultot.
 
 ### <a name="change-the-iis-configuration"></a>Az IIS konfigurációjának módosítása
+
 Ahhoz, hogy az alkalmazások számára engedélyezhesse a Windows-hitelesítési mód használatát, az IIS-konfigurációt kétféleképpen módosíthatja. Győződjön meg róla, hogy MIMAdmin néven jelentkezett be, és kövesse az alábbi lehetőségek egyikét.
 
 Ha a PowerShellt szeretné használni:
-1.  Kattintson jobb gombbal a PowerShellre, és válassza a **Futtatás rendszergazdaként** elemet.  
-2.  Az alábbi parancsokkal állítsa le az IIS-t, és oldja fel az alkalmazásgazda beállításainak zárolását  
-    ```
+
+1.  Kattintson jobb gombbal a PowerShellre, és válassza a **Futtatás rendszergazdaként** elemet.
+2.  Az alábbi parancsokkal állítsa le az IIS-t, és oldja fel az alkalmazásgazda beállításainak zárolását
+    ```CMD
     iisreset /STOP
     C:\Windows\System32\inetsrv\appcmd.exe unlock config /section:windowsAuthentication -commit:apphost
     iisreset /START
     ```
 
-Ha szövegszerkesztőt, például a Jegyzettömböt szeretné használni:   
-1. Nyissa meg a **C:\Windows\System32\inetsrv\config\applicationHost.config** fájlt.   
+Ha szövegszerkesztőt, például a Jegyzettömböt szeretné használni:
+
+1. Nyissa meg a **C:\Windows\System32\inetsrv\config\applicationHost.config** fájlt.
 2. Görgessen le a fájl 82. soráig. Az **overrideModeDefault** címke értékének a következőnek kell lennie: **<section name="windowsAuthentication" overrideModeDefault="Deny" />**.  
 3. Módosítsa az **overrideModeDefault** értékét az *Allow* értékre.  
 4. Mentse a fájlt, és indítsa újra az IIS-t az `iisreset /START` PowerShell-paranccsal.
 
 ## <a name="install-sql-server"></a>Az SQL Server telepítése
+
 Ha az SQL Server még nincs jelen a megerősített környezetben, telepítse az SQL Server 2012 (Service Pack 1 vagy újabb) vagy az SQL Server 2014 verziót. A következő lépések az SQL 2014 használatát feltételezik.
 
 1. Győződjön meg róla, hogy MIMAdmin néven van bejelentkezve.
-2. Kattintson jobb gombbal a PowerShellre, és válassza a **Futtatás rendszergazdaként** elemet.   
+2. Kattintson jobb gombbal a PowerShellre, és válassza a **Futtatás rendszergazdaként** elemet.
 3. Keresse meg azt a könyvtárat, amelyben az SQL Server telepítője található.  
 4. Írja be a következő parancsot:  
     ```
@@ -133,6 +140,7 @@ A SharePoint előfeltételeinek telepítését követően telepítse a SharePoin
 5.  A telepítés befejezése után futtassa a varázslót.  
 
 ### <a name="configure-sharepoint"></a>A SharePoint konfigurálása
+
 A SharePoint konfigurálásához futtassa a SharePoint termékek konfigurálása varázslót.
 
 1.  A Csatlakozás kiszolgálófarmhoz lapon adja meg, hogy **új kiszolgálófarmot szeretne kialakítani**.  
@@ -146,13 +154,14 @@ A SharePoint konfigurálásához futtassa a SharePoint termékek konfigurálása
 9. Ha a Webhelycsoport létrehozása ablak megjelenik, kattintson a **Kihagyás**, majd a **Befejezés** gombra.  
 
 ## <a name="create-a-sharepoint-foundation-2013-web-application"></a>SharePoint Foundation 2013-webalkalmazás létrehozása
+
 A varázslók befejezése után a PowerShell segítségével hozza létre a SharePoint Foundation 2013-webalkalmazást a MIM portál futtatásához. Mivel ez az útmutató bemutatásra szolgál, nem engedélyezzük az SSL-t.
 
 1.  Kattintson jobb gombbal a SharePoint 2013 – felügyeleti rendszerhéj elemre, válassza a **Futtatás rendszergazdaként** lehetőséget, és futtassa a következő PowerShell-parancsfájlt:
 
-    ```
+    ```PowerShell
     $dbManagedAccount = Get-SPManagedAccount -Identity PRIV\SharePoint
-    New-SpWebApplication -Name "MIM Portal" -ApplicationPool "MIMAppPool"            -ApplicationPoolAccount $dbManagedAccount -AuthenticationMethod "Kerberos" -Port 82 -URL http://PAMSRV.priv.contoso.local
+    New-SpWebApplication -Name "MIM Portal" -ApplicationPool "MIMAppPool" -ApplicationPoolAccount $dbManagedAccount -AuthenticationMethod "Kerberos" -Port 82 -URL http://PAMSRV.priv.contoso.local
     ```
 
 2. Ekkor megjelenik egy figyelmeztető üzenet arról, hogy a rendszer klasszikus Windows-hitelesítést használ, és több percig is eltarthat, míg a záró parancs sikeresen lefut.  Ha a parancs futása befejeződött, a kimenetben megjelenik az új portál URL-címe.
@@ -161,11 +170,12 @@ A varázslók befejezése után a PowerShell segítségével hozza létre a Shar
 > Ne zárja be a SharePoint 2013 felügyeleti rendszerhéj ablakát, mivel a következő lépésben szükség lesz rá.
 
 ## <a name="create-a-sharepoint-site-collection"></a>SharePoint-webhelycsoport létrehozása
+
 Most hozzon létre egy SharePoint-webhelycsoportot az imént készített webalkalmazáshoz, mely a MIM portált üzemelteti.
 
 1.  Nyissa meg a **SharePoint 2013 – felügyeleti rendszerhéj** ablakot, ha még nincs megnyitva, és futtassa a következő PowerShell-parancsfájlt
 
-    ```
+    ```PowerShell
     $t = Get-SPWebTemplate -compatibilityLevel 14 -Identity "STS#1"
     $w = Get-SPWebApplication http://pamsrv.priv.contoso.local:82
     New-SPSite -Url $w.Url -Template $t -OwnerAlias PRIV\MIMAdmin                -CompatibilityLevel 14 -Name "MIM Portal" -SecondaryOwnerAlias PRIV\BackupAdmin
@@ -178,7 +188,7 @@ Most hozzon létre egy SharePoint-webhelycsoportot az imént készített webalka
 
 2.  Futtassa a következő PowerShell-parancsokat a **SharePoint 2013 felügyeleti rendszerhéjban**. Ez letiltja a SharePoint kiszolgálóoldali Viewstate funkciót és az **Állapotelemzési feladat (Óránként, A Microsoft SharePoint Foundation időzítő szolgáltatása, Minden kiszolgáló)** SharePoint-feladatot.
 
-    ```
+    ```PowerShell
     $contentService = [Microsoft.SharePoint.Administration.SPWebService]::ContentService;
     $contentService.ViewStateOnServer = $false;
     $contentService.Update();

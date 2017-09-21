@@ -2,21 +2,21 @@
 title: "A PAM-összetevők ismertetése | Microsoft Docs"
 description: "A Privileged Access Management rendelkezik saját összetevőkkel is, de bizonyos összetevői megegyeznek a MIM összetevőivel. Ismerje meg, ezek hogyan működnek együtt."
 keywords: 
-author: billmath
-ms.author: billmath
-manager: femila
-ms.date: 03/15/2017
+author: barclayn
+ms.author: barclayn
+manager: mbaldwin
+ms.date: 09/13/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
 ms.assetid: 6498f68f-36d3-448c-8fe6-649ad5a7f97d
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 53fe79f251c3b18426f16b4007cda49e67d7b028
-ms.sourcegitcommit: 02fb1274ae0dc11288f8bd9cd4799af144b8feae
+ms.openlocfilehash: a129088989bb977c191e9dc372fed07044314403
+ms.sourcegitcommit: 2be26acadf35194293cef4310950e121653d2714
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/13/2017
+ms.lasthandoff: 09/14/2017
 ---
 # <a name="understand-the-components-of-pam"></a>A PAM-összetevők megismerése
 
@@ -27,7 +27,7 @@ A Privileged Access Management a rendszergazdai hozzáférést a napi szintű fe
 
 A PAM-hez konfigurált MIM megoldás a következő összetevőket tartalmazza:  
 
-- **MIM szolgáltatás**: biztosítja az identitás- és hozzáférés-kezelési feladatok végrehajtásához szükséges üzleti logikát, beleértve a rendszerjogosultságú fiókok felügyeletét és az emelt szintű jogosultsági kérelmek kezelését.   
+- **MIM szolgáltatás**: biztosítja az identitás- és hozzáférés-kezelési feladatok végrehajtásához szükséges üzleti logikát, beleértve a rendszerjogosultságú fiókok felügyeletét és az emelt szintű jogosultsági kérelmek kezelését.
 - **MIM portál**: SharePoint-alapú, a SharePoint 2013 által üzemeltetett portál, amely lehetővé teszi a rendszergazdák kezelését, és kezelőfelületet biztosít a konfigurációhoz.
 - **MIM szolgáltatás adatbázisa**: SQL Server 2012 vagy 2014 verzión tárolt adatbázis, mely tartalmazza a MIM szolgáltatás számára szükséges azonosítóadatokat és metaadatokat.
 - **PAM figyelőszolgáltatás** és **PAM összetevő-szolgáltatás**: két olyan szolgáltatás, amely kezeli a rendszerjogosultságú fiókok életciklusát, és segíti a PRIV AD működését a csoporttagság életciklusa alatt.
