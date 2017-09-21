@@ -2,28 +2,27 @@
 title: "A PAM üzembe helyezése, 5. lépés – Erdőkapcsolat | Microsoft Docs"
 description: "Megbízhatósági kapcsolat létrehozása a PRIV és CORP erdők között, hogy a PRIV rendszerjogosultságú felhasználói a CORP erőforrásaihoz is hozzáférjenek."
 keywords: 
-author: billmath
-ms.author: billmath
-manager: femila
-ms.date: 03/15/2017
+author: barclayn
+ms.author: barclayn
+manager: mbaldwin
+ms.date: 09/13/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
 ms.assetid: eef248c4-b3b6-4b28-9dd0-ae2f0b552425
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 1239ca2c0c6d376420723da01d7aa42821f5980f
-ms.sourcegitcommit: 02fb1274ae0dc11288f8bd9cd4799af144b8feae
+ms.openlocfilehash: 6d57b09508d4c0834619be0281fb373d9d3d361e
+ms.sourcegitcommit: 2be26acadf35194293cef4310950e121653d2714
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/13/2017
+ms.lasthandoff: 09/14/2017
 ---
 # <a name="step-5--establish-trust-between-priv-and-corp-forests"></a>5. lépés – A CORP és a PRIV erdő közötti megbízhatósági kapcsolat létrehozása
 
 >[!div class="step-by-step"]
 [« 4. lépés](step-4-install-mim-components-on-pam-server.md)
 [6. lépés »](step-6-transition-group-to-pam.md)
-
 
 Minden CORP tartománynál, így például a contoso.local tartomány esetében is, a PRIV és a CONTOSO tartományvezérlők között megbízhatósági kapcsolatnak kell fennállnia. Ez teszi lehetővé, hogy a PRIV tartomány felhasználói hozzáférhessenek a CORP tartományban lévő erőforrásokhoz.
 
@@ -36,7 +35,7 @@ A megbízható kapcsolat kialakítása előtt minden tartományvezérlőn be kel
 
 2.  Ellenőrizze, hogy minden meglévő CORP tartományvezérlő képes-e a neveket a PRIV erdőbe átirányítani. Minden PRIV erdőn kívüli tartományvezérlőn, például a CORPDC-n, indítsa el a PowerShellt, és írja be a következő parancsot:
 
-    ```
+    ```cmd
     nslookup -qt=ns priv.contoso.local.
     ```
     Győződjön meg róla, hogy a kimenet a PRIV tartományhoz tartozó, megfelelő IP-című névkiszolgáló-bejegyzést jelöli.
@@ -55,14 +54,14 @@ A PAMSRV kiszolgálón hozzon létre egy egyirányú megbízhatósági kapcsolat
 
 3.  Írja be a következő PowerShell-parancsokat minden meglévő erdőben. Ha a rendszer kéri, adja meg a CORP tartományi rendszergazda (CONTOSO\Rendszergazda) hitelesítő adatait.
 
-    ```
+    ```PowerShell
     $ca = get-credential
     New-PAMTrust -SourceForest "contoso.local" -Credentials $ca
     ```
 
 4.  Írja be a következő PowerShell-parancsokat a meglévő erdő minden tartományában. Ha a rendszer kéri, adja meg a CORP tartományi rendszergazda (CONTOSO\Rendszergazda) hitelesítő adatait.
 
-    ```
+    ```PowerShell
     $ca = get-credential
     New-PAMDomainConfiguration -SourceDomain "contoso" -Credentials $ca
     ```
@@ -80,9 +79,9 @@ A PRIV rendszergazdákon és a figyelőszolgáltatáson keresztül minden meglé
 7.  A gyakori feladatok listáján jelölje ki **Az összes felhasználói információ olvasása** elemet, és kattintson a **Tovább**, majd a **Befejezés** gombra.  
 8.  Zárja be az Active Directory – felhasználók és számítógépek beépülő modult.
 
-9.  Indítson el egy PowerShell-ablakot.  
-10.  Használja a `netdom` parancsot a SID-előzmények engedélyezéséhez, illetve a SID-szűrés letiltásához. Írja be ezt a parancsot:  
-    ```
+9.  Indítson el egy PowerShell-ablakot.
+10.  Használja a `netdom` parancsot a SID-előzmények engedélyezéséhez, illetve a SID-szűrés letiltásához. Írja be ezt a parancsot:
+    ```cmd
     netdom trust contoso.local /quarantine /domain priv.contoso.local
     netdom trust /enablesidhistory:yes /domain priv.contoso.local
     ```
@@ -98,7 +97,7 @@ A PRIV rendszergazdákon és a figyelőszolgáltatáson keresztül minden meglé
 
 3.  Írja be az alábbi PowerShell-parancsokat.
 
-    ```
+    ```cmd
     net start "PAM Component service"
     net start "PAM Monitoring service"
     ```

@@ -2,10 +2,10 @@
 title: "A PAM üzembe helyezése, 4. lépés – A MIM telepítése | Microsoft Docs"
 description: "A MIM szolgáltatás és -portál telepítése és konfigurálása saját Privileged Access Management-kiszolgálón és munkaállomásokon."
 keywords: 
-author: billmath
-ms.author: billmath
-manager: femila
-ms.date: 03/15/2017
+author: barclayn
+ms.author: barclayn
+manager: barclayn
+ms.date: 09/13/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
@@ -13,18 +13,17 @@ ms.assetid: ef605496-7ed7-40f4-9475-5e4db4857b4f
 ROBOTS: noindex,nofollow
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 3a1ec9db6da0a77f963dde76a3efe8d92f89078d
-ms.sourcegitcommit: 02fb1274ae0dc11288f8bd9cd4799af144b8feae
+ms.openlocfilehash: b69dfc39da63ec523fb09a58661b5f8367e6042c
+ms.sourcegitcommit: 2be26acadf35194293cef4310950e121653d2714
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/13/2017
+ms.lasthandoff: 09/14/2017
 ---
 # <a name="step-4--install-mim-components-on-pam-server-and-workstation"></a>4. lépés – MIM-összetevők telepítése PAM-kiszolgálóra és -munkaállomásra
 
 >[!div class="step-by-step"]
 [« 3. lépés](step-3-prepare-pam-server.md)
 [5. lépés »](step-5-establish-trust-between-priv-corp-forests.md)
-
 
 A MIM szolgáltatásnak és portálnak, illetve a mintaportál webalkalmazásának telepítéséhez a PAMSRV kiszolgálón PRIV\Rendszergazda jogosultsággal kell bejelentkeznie.
 
@@ -33,7 +32,7 @@ A MIM szolgáltatásnak és portálnak, illetve a mintaportál webalkalmazásán
 
 Ha letöltötte a MIM szolgáltatást, bontsa ki a tömörített MIM-telepítőcsomagot egy új mappába.
 
-##  <a name="run-the-service-and-portal-install-program"></a>Indítsa el a Service and Portal (Szolgáltatás és portál) telepítőprogramot.  
+## <a name="run-the-service-and-portal-install-program"></a>Indítsa el a Service and Portal (Szolgáltatás és portál) telepítőprogramot.
 
 Az útmutatást követve végezze el a telepítést.
 
@@ -140,13 +139,13 @@ Az útmutató ezen szakasza a MIM PAM REST API minta webalkalmazásának telepí
 
 3.  Hozzon létre az IIS-ben egy új webhelyet MIM Privileged Access felügyeleti példaportál néven, melynek fizikai elérési útja: C:\Program Files\Microsoft Forefront Identity Manager\2010\Privileged Access Management Portal, illetve a 8090-es port.  A beállítás a következő PowerShell-paranccsal végezhető el:
 
-  ```
+  ```PowerShell
   New-WebSite -Name "MIM Privileged Access Management Example Portal" -Port 8090   -PhysicalPath "C:\Program Files\Microsoft Forefront Identity Manager\2010\Privileged Access Management Portal\"
   ```
 
 4.  Állítsa be úgy a minta webalkalmazást, hogy az a felhasználókat át tudja irányítani a MIM PAM REST API-hoz. Szövegszerkesztőben, például a Jegyzettömbben szerkessze a **C:\Program Files\Microsoft Forefront Identity Manager\2010\Privileged Access Management REST API\web.config** fájlt. A **< system.webServer >** területen írja be a következő sorokat:
 
-  ```
+  ```XML
   <httpProtocol>
     <customHeaders>
       <add name="Access-Control-Allow-Credentials" value="true"  />
@@ -160,7 +159,7 @@ Az útmutató ezen szakasza a MIM PAM REST API minta webalkalmazásának telepí
 
 6.  A módosítások életbe léptetéséhez indítsa újra az IIS-t a következő paranccsal.
 
-  ```
+  ```cmd
   iisreset
   ```
 

@@ -2,27 +2,26 @@
 title: "A PAM üzembe helyezése, 1. lépés – CORP tartomány | Microsoft Docs"
 description: "CORP tartomány előkészítése létező vagy új identitásokkal a Privileged Identity Manager számára"
 keywords: 
-author: billmath
-ms.author: billmath
-manager: femila
-ms.date: 03/15/2017
+author: barclayn
+ms.author: barclayn
+manager: mbaldwin
+ms.date: 09/13/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
 ms.assetid: 4b524ae7-6610-40a0-8127-de5a08988a8a
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 1164e7efb70d911497b08248b68f8d929bc6d3fb
-ms.sourcegitcommit: 02fb1274ae0dc11288f8bd9cd4799af144b8feae
+ms.openlocfilehash: d14d2f40972686305abea2426e20f4c13e3e267b
+ms.sourcegitcommit: 2be26acadf35194293cef4310950e121653d2714
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/13/2017
+ms.lasthandoff: 09/14/2017
 ---
 # <a name="step-1---prepare-the-host-and-the-corp-domain"></a>1. lépés – A gazdagép és a CORP tartomány előkészítése
 
 >[!div class="step-by-step"]
 [2. lépés »](step-2-prepare-priv-domain-controller.md)
-
 
 Ebben a lépésben előkészíti a gazdagépet a megerősített környezet számára. Ha szükséges, létrehoz egy tartományvezérlőt és egy tag munkaállomást egy új tartományban és erdőben (a *CORP* erdőben) olyan identitásokkal, amelyeket a megerősített környezet kezel. A CORP erdő egy kezelendő erőforrásokat tartalmazó, meglévő erdőt szimulál. Ez a dokumentum egy védendő erőforrást, egy fájlmegosztást használ példaként.
 
@@ -57,7 +56,7 @@ Ebben a szakaszban be fogja állítani az Active Directory tartományi szolgált
 
 2. Írja be a következő parancsokat:
 
-  ```
+  ```PowoerShell
   import-module ServerManager
 
   Add-WindowsFeature AD-Domain-Services,DNS,FS-FileServer –restart –IncludeAllSubFeature -IncludeManagementTools
@@ -81,7 +80,7 @@ Minden tartományban jelentkezzen be egy tartományvezérlőre tartományi rends
 
 2. Írja be a következő parancsokat, de a „CONTOSO” szót cserélje ki a saját tartományának NetBIOS-nevével.
 
-  ```
+  ```PowerShell
   import-module activedirectory
 
   New-ADGroup –name 'CONTOSO$$$' –GroupCategory Security –GroupScope DomainLocal –SamAccountName 'CONTOSO$$$'
@@ -102,7 +101,7 @@ Létre fogjuk hozni a *CorpAdmins* nevű biztonsági csoportot és a *Ilona* nev
 
 2. Írja be a következő parancsokat: Helyettesítse a „Pass@word1” jelszót egy másik jelszókarakterlánccal.
 
-  ```
+  ```PowerShell
   import-module activedirectory
 
   New-ADGroup –name CorpAdmins –GroupCategory Security –GroupScope Global –SamAccountName CorpAdmins
@@ -140,7 +139,7 @@ Minden tartományban jelentkezzen be egy tartományvezérlőre tartományi rends
 
 8. A naplózási beállítások alkalmazásához nyisson meg egy PowerShell-ablakot, és írja be a következőt:
 
-  ```
+  ```cmd
   gpupdate /force /target:computer
   ```
 
@@ -154,7 +153,7 @@ Ebben a szakaszban konfigurálni fogja az SID-előzmények áttelepítéséhez s
 
 2. Írja be a következő parancsokat, amelyekkel beállíthatja, hogy a forrástartomány engedélyezze a távoli eljáráshívás (RPC) hozzáférését a biztonsági fiókkezelő (SAM) adatbázisához.
 
-  ```
+  ```PowerShell
   New-ItemProperty –Path HKLM:SYSTEM\CurrentControlSet\Control\Lsa –Name TcpipClientSupport –PropertyType DWORD –Value 1
 
   Restart-Computer
@@ -193,7 +192,7 @@ A PAM és a biztonságicsoport-alapú hozzáférés-vezérlés bemutatásához s
 
 4. Írja be a következő parancsokat:
 
-  ```
+  ```PowerShell
   mkdir c:\corpfs
 
   New-SMBShare –Name corpfs –Path c:\corpfs –ChangeAccess CorpAdmins

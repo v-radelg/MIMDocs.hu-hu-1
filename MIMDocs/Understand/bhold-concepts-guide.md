@@ -5,15 +5,15 @@ keywords:
 author: barclayn
 ms.author: barclayn
 manager: mbaldwin
-ms.date: 09/06/2017
+ms.date: 09/14/2017
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 
-ms.openlocfilehash: 0db8c2ebaee204c929dc7345ac6858fff6b0993b
-ms.sourcegitcommit: f29f02fa8437fa55e86afd7b0b99a36d2306b96b
+ms.openlocfilehash: 45054799cdc8bbe6d39fa2beb28e69d13cace031
+ms.sourcegitcommit: ed8dd5563e77ef4a3345b2a52a1426859c95576a
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 09/15/2017
 ---
 # <a name="microsoft-bhold-suite-concepts-guide"></a>Microsoft BHOLD Suite fogalmak útmutató
 
@@ -341,3 +341,7 @@ A Forefront Identity Manager 2010 és a Forefront Identity Manager 2010 R2 egyik
 Fontos megjegyezni, hogy a MIM-portálra BHOLD-bővítmények támogatják-e a önkiszolgáló szerepkört és a munkafolyamat felügyeleti és jelentéskészítési. Más BHOLD felügyeleti funkciók, valamint a tanúsítvány, a webes portálok a MIM portál külön üzemeltetett BHOLD modulok által biztosított.
 
 ## <a name="next-steps"></a>További lépések
+
+- [BHOLD a telepítési útmutató](../deploy-use/bhold-installation-guide.md)
+- [BHOLD fejlesztői leírás](../reference/mim2016-bhold-developer-reference.md)
+- [A BHOLD korábbi verziói](../reference/version-bhold-history.md)

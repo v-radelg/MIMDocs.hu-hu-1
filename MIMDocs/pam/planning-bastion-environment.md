@@ -2,21 +2,21 @@
 title: "Megerősített környezet tervezése | Microsoft Docs"
 description: 
 keywords: 
-author: billmath
-ms.author: billmath
-manager: femila
-ms.date: 03/16/2017
+author: barclayn
+ms.author: barclayn
+manager: mbaldwin
+ms.date: 09/13/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
 ms.assetid: bfc7cb64-60c7-4e35-b36a-bbe73b99444b
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 402c690b514dce62024f13014c1491433fbd8816
-ms.sourcegitcommit: a0e206fd67245f02d94d5f6c9d606970117dd8ed
+ms.openlocfilehash: 16ad83ab9a0fbe2b93428cf318b5ef138e2f3783
+ms.sourcegitcommit: 2be26acadf35194293cef4310950e121653d2714
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/02/2017
+ms.lasthandoff: 09/14/2017
 ---
 # <a name="planning-a-bastion-environment"></a>Megerősített környezet tervezése
 
@@ -166,7 +166,7 @@ A meglévő tartományok felügyeletének engedélyezésére hét követelmény 
 
 A meglévő tartományban kell lennie egy csoportnak, amelynek neve megegyezik a tartomány NetBIOS-nevével és három dollárjel szerepel a végén, például *CONTOSO$$$*. A csoport hatókörének *tartományi helyi csoportnak*, a típusának pedig *Biztonság* értékűnek kell lennie. Ez az olyan csoportok esetében szükséges, amelyek a dedikált felügyeleti erdőben lesznek létrehozva a tartomány csoportjainak biztonsági azonosítójával megegyező azonosítóval. Ez a csoport a következő PowerShell-paranccsal hozható létre úgy, hogy a parancsot a meglévő tartomány rendszergazdája futtatja a meglévő tartományhoz csatlakoztatott munkaállomáson:
 
-```
+```PowerShell
 New-ADGroup -name 'CONTOSO$$$' -GroupCategory Security -GroupScope DomainLocal -SamAccountName 'CONTOSO$$$'
 ```
 
@@ -194,7 +194,7 @@ A tartományvezérlő naplózásra vonatkozó csoportházirend-beállításainak
 
 7. Zárja be a Csoportházirendkezelés-szerkesztő ablakát és a Csoportházirend kezelése ablakot. Ezután a naplózási beállítások alkalmazásához nyisson meg egy PowerShell-ablakot, és írja be a következőt:
 
-    ```
+    ```cmd
     gpupdate /force /target:computer
     ```
 
@@ -204,7 +204,7 @@ Néhány perc elteltével „A számítógép-házirend frissítése sikeresen b
 
 A tartományvezérlőknek engedélyezniük kell a TCP/IP feletti RCP-kapcsolatokat a helyi biztonsági szervezet (LSA) számára a megerősített környezetből. A Windows Server korábbi verziói esetében a beállításjegyzékben kell engedélyezni az LSA TCP/IP-támogatását:
 
-```
+```PowerShell
 New-ItemProperty -Path HKLM:SYSTEM\\CurrentControlSet\\Control\\Lsa -Name TcpipClientSupport -PropertyType DWORD -Value 1
 ```
 
@@ -212,7 +212,7 @@ New-ItemProperty -Path HKLM:SYSTEM\\CurrentControlSet\\Control\\Lsa -Name TcpipC
 
 A `New-PAMDomainConfiguration` parancsmagot a MIM szolgáltatást tartalmazó számítógépen kell futtatni, a felügyeleti tartományban. A parancs paraméterei a következők: a meglévő tartomány neve, valamint az adott tartomány rendszergazdájának hitelesítő adatai.
 
-```
+```PowerShell
  New-PAMDomainConfiguration -SourceDomain "contoso" -Credentials (get-credential)
 ```
 

@@ -2,21 +2,21 @@
 title: "A PAM üzembe helyezése, 2. lépés – PRIV DC | Microsoft Docs"
 description: "A PRIV tartományvezérlő előkészítése, amely olyan megerősített környezetet biztosít, amelyben a Privileged Access Management elkülönítve szerepel."
 keywords: 
-author: billmath
-ms.author: billmath
-manager: femila
-ms.date: 03/15/2017
+author: barclayn
+ms.author: barclayn
+manager: mbaldwin
+ms.date: 09/14/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
 ms.assetid: 0e9993a0-b8ae-40e2-8228-040256adb7e2
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: edc15b41d4248887f4a93217f68d8125f6500585
-ms.sourcegitcommit: 02fb1274ae0dc11288f8bd9cd4799af144b8feae
+ms.openlocfilehash: de3392648f187ce6007bba332c0f191d32980c94
+ms.sourcegitcommit: 2be26acadf35194293cef4310950e121653d2714
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/13/2017
+ms.lasthandoff: 09/14/2017
 ---
 # <a name="step-2---prepare-the-first-priv-domain-controller"></a>2. lépés: A PRIV tartományvezérlő előkészítése
 
@@ -31,6 +31,7 @@ Ebben a lépésben egy új tartományt fog létrehozni, amely megerősített kö
 Ebben a szakaszban egy virtuális gépet fog beállítani egy új erdő tartományvezérlőjeként.
 
 ### <a name="install-windows-server-2012-r2"></a>A Windows Server 2012 R2 telepítése
+
 Egy „PRIVDC” számítógép létrehozásához telepítse a Windows Server 2012 R2 rendszert egy másik új virtuális gépre, amelyen nincs telepített szoftver.
 
 1. Válassza a Windows Server egyéni (nem frissítő) telepítését. A telepítéskor válassza a **Windows Server 2012 R2 Standard (kiszolgáló grafikus felhasználói felülettel) x64** kiadást. _Ne válassza az_ **Adatközpont vagy Server Core** lehetőséget.
@@ -44,13 +45,14 @@ Egy „PRIVDC” számítógép létrehozásához telepítse a Windows Server 20
 5. A kiszolgáló újraindítása után jelentkezzen be rendszergazdaként. A Vezérlőpulton állítsa be a számítógépet a frissítések keresésére, és telepítse a szükséges frissítéseket. Ehhez a kiszolgáló újraindítására lehet szükség.
 
 ### <a name="add-roles"></a>Szerepkörök hozzáadása
+
 Vegye fel az Active Directory tartományi szolgáltatásokat (AD DS) és a DNS-kiszolgálói szerepkört.
 
 1. Indítsa el a PowerShellt rendszergazdaként.
 
 2. A Windows Server Active Directory telepítésének előkészítéséhez írja be a következő parancsokat.
 
-  ```
+  ```PowerShell
   import-module ServerManager
 
   Install-WindowsFeature AD-Domain-Services,DNS –restart –IncludeAllSubFeature -IncludeManagementTools
@@ -60,7 +62,7 @@ Vegye fel az Active Directory tartományi szolgáltatásokat (AD DS) és a DNS-
 
 Indítsa el a PowerShellt, és írja be a következő parancsot, amellyel beállíthatja, hogy a forrástartomány engedélyezze a távoli eljáráshívás (RPC) hozzáférését a biztonsági fiókkezelő (SAM) adatbázisához.
 
-```
+```PowerShell
 New-ItemProperty –Path HKLM:SYSTEM\CurrentControlSet\Control\Lsa –Name TcpipClientSupport –PropertyType DWORD –Value 1
 ```
 
@@ -74,9 +76,8 @@ A jelen dokumentumban a priv.contoso.local név az új erdő tartományneve.  Az
 
 1. Az új tartomány létrehozásához írja be a következő parancsokat a PowerShell ablakban.  Ez egy DNS-delegálást is létrehoz az előző lépésben létrehozott felső szintű tartományban (contoso.local).  Ha azt tervezi, hogy később konfigurálja a DNS-t, akkor ne adja meg a következő paramétereket: `CreateDNSDelegation -DNSDelegationCredential $ca`.
 
-  ```
+  ```PowerShell
   $ca= get-credential
-
   Install-ADDSForest –DomainMode 6 –ForestMode 6 –DomainName priv.contoso.local –DomainNetbiosName priv –Force –CreateDNSDelegation –DNSDelegationCredential $ca
   ```
 
@@ -87,13 +88,14 @@ A jelen dokumentumban a priv.contoso.local név az új erdő tartományneve.  Az
 Az erdő létrehozásának befejezése után a kiszolgáló automatikusan újraindul.
 
 ### <a name="create-user-and-service-accounts"></a>Felhasználói és szolgáltatásfiókok létrehozása
+
 Hozzon létre felhasználói és szolgáltatásfiókokat a MIM szolgáltatás és a portál beállításához. Ezek a fiókok a priv.contoso.local tartomány Felhasználók tárolójába kerülnek.
 
 1. A kiszolgáló újraindítása után jelentkezzen be a PRIVDC számítógépre tartományi rendszergazdaként (PRIV\\Rendszergazda).
 
 2. Indítsa el a PowerShellt, és írja be következő parancsokat. A 'Pass@word1' jelszó csak példaként szolgál, a fiókokhoz használjon más jelszót.
 
-  ```
+  ```PowerShell
   import-module activedirectory
 
   $sp = ConvertTo-SecureString "Pass@word1" –asplaintext –force
@@ -159,7 +161,7 @@ Hozzon létre felhasználói és szolgáltatásfiókokat a MIM szolgáltatás é
 
 ### <a name="configure-auditing-and-logon-rights"></a>Naplózási és a bejelentkezési jogok konfigurálása
 
-Be kell állítania a naplózást ahhoz, hogy létre lehessen hozni a PAM konfigurációját az erdőkre vonatkozóan.  
+Be kell állítania a naplózást ahhoz, hogy létre lehessen hozni a PAM konfigurációját az erdőkre vonatkozóan.
 
 1. Győződjön meg arról, hogy tartományi rendszergazdaként van bejelentkezve (PRIV\\Rendszergazda).
 
@@ -199,7 +201,7 @@ Be kell állítania a naplózást ahhoz, hogy létre lehessen hozni a PAM konfig
 
 19. Rendszergazdaként nyisson meg egy PowerShell-ablakot, és írja be a következő parancsot a tartományvezérlőnek a csoportházirend-beállításokkal történő frissítéséhez.
 
-  ```
+  ```cmd
   gpupdate /force /target:computer
   ```
 
@@ -216,7 +218,7 @@ A PRIVDC számítógépen a PowerShell használatával konfigurálja a DNS-név�
 
   Ha az előző lépésben az egyetlen contoso.local tartományt hozta létre, akkor adja meg a *10.1.1.31* értéket a CORPDC számítógép virtuális hálózati IP-címeként.
 
-  ```
+  ```PowerShell
   Add-DnsServerConditionalForwarderZone –name "contoso.local" –masterservers 10.1.1.31
   ```
 
@@ -227,7 +229,7 @@ A PRIVDC számítógépen a PowerShell használatával konfigurálja a DNS-név�
 
 1. A PowerShell használatával vegyen fel egyszerű szolgáltatásneveket (SPN), hogy a SharePoint, a PAM REST API és a MIM szolgáltatás használni tudja a Kerberos-hitelesítést.
 
-  ```
+  ```cmd
   setspn -S http/pamsrv.priv.contoso.local PRIV\SharePoint
   setspn -S http/pamsrv PRIV\SharePoint
   setspn -S FIMService/pamsrv.priv.contoso.local PRIV\MIMService
@@ -241,25 +243,24 @@ A PRIVDC számítógépen a PowerShell használatával konfigurálja a DNS-név�
 
 Végezze el a következő lépéseket a PRIVDC számítógépen tartományi rendszergazdaként.
 
-1. Jelenítse meg az **Active Directory - felhasználók és számítógépek** ablakot.  
-2. Kattintson a jobb gombbal a **priv.contoso.local** tartományra, és válassza a **Vezérlés delegálása** parancsot.  
-3. A Kijelölt felhasználók és csoportok lapon kattintson a **Hozzáadás** gombra.  
-4. A Felhasználók, számítógépek vagy csoportok kiválasztása ablakban írja be a *mimcomponent; mimmonitor; mimservice* nevet, és kattintson a **Névellenőrzés** gombra. Miután a nevek alatt megjelent az aláhúzás, kattintson az **OK**, majd a **Tovább** gombra.  
+1. Jelenítse meg az **Active Directory - felhasználók és számítógépek** ablakot.
+2. Kattintson a jobb gombbal a **priv.contoso.local** tartományra, és válassza a **Vezérlés delegálása** parancsot.
+3. A Kijelölt felhasználók és csoportok lapon kattintson a **Hozzáadás** gombra.
+4. A Felhasználók, számítógépek vagy csoportok kiválasztása ablakban írja be a *mimcomponent; mimmonitor; mimservice* nevet, és kattintson a **Névellenőrzés** gombra. Miután a nevek alatt megjelent az aláhúzás, kattintson az **OK**, majd a **Tovább** gombra.
 5. A gyakori feladatok listáján jelölje ki a **Felhasználói fiókok létrehozása, törlése és kezelése** és az **Egy csoport tagságának módosítása** elemet, és kattintson a **Tovább**, majd a **Befejezés** gombra.
 
-6. Kattintson ismét a jobb gombbal a **priv.contoso.local** tartományra, és válassza a **Vezérlés delegálása** parancsot.  
+6. Kattintson ismét a jobb gombbal a **priv.contoso.local** tartományra, és válassza a **Vezérlés delegálása** parancsot.
 7. A Kijelölt felhasználók és csoportok lapon kattintson a **Hozzáadás** gombra.  
-8. A Felhasználók, számítógépek vagy csoportok kiválasztása ablakban adja meg a *MIMAdmin* nevet, és kattintson a **Névellenőrzés** gombra. Miután a nevek alatt megjelent az aláhúzás, kattintson az **OK**, majd a **Tovább** gombra.  
-9. Válassza az **Egyéni feladat** lehetőséget, és alkalmazza az **Ez a mappa** elemre az **Általános engedélyek** beállítás megadásával.    
-10. Az engedélyek listájában válassza a következőket:  
-  - **Olvasás**  
-  - **Írás**  
-  - **Az összes gyermekobjektum létrehozása**  
-  - **Az összes gyermekobjektum törlése**  
-  - **Az összes tulajdonság olvasása**  
-  - **Az összes tulajdonság írása**  
-  - **SID-előzmények áttelepítése**  
-  Kattintson a **Tovább**, majd a **Befejezés** gombra.
+8. A Felhasználók, számítógépek vagy csoportok kiválasztása ablakban adja meg a *MIMAdmin* nevet, és kattintson a **Névellenőrzés** gombra. Miután a nevek alatt megjelent az aláhúzás, kattintson az **OK**, majd a **Tovább** gombra.
+9. Válassza az **Egyéni feladat** lehetőséget, és alkalmazza az **Ez a mappa** elemre az **Általános engedélyek** beállítás megadásával.
+10. Az engedélyek listájában válassza a következőket:
+  - **Olvasás**
+  - **Írás**
+  - **Az összes gyermekobjektum létrehozása**
+  - **Az összes gyermekobjektum törlése**
+  - **Az összes tulajdonság olvasása**
+  - **Az összes tulajdonság írása**
+  - **Biztonsági azonosító előzményeinek áttelepítése** kattintson **következő** majd **Befejezés**.
 
 11. Kattintson ismét a jobb gombbal a **priv.contoso.local** tartományra, és válassza a **Vezérlés delegálása** parancsot.  
 12. A Kijelölt felhasználók és csoportok lapon kattintson a **Hozzáadás** gombra.  
@@ -269,15 +270,17 @@ Végezze el a következő lépéseket a PRIVDC számítógépen tartományi rend
 16. Zárja be az Active Directory – felhasználók és számítógépek beépülő modult.
 
 17. Nyisson meg egy parancssort.  
-18. Ellenőrizze az Admin SD Holder objektum hozzáférés-vezérlési listáját a PRIV tartományokban. Ha a tartomány például „priv.contoso.local” volt, írja be a következő parancsot:  
-  ```
+18. Ellenőrizze az Admin SD Holder objektum hozzáférés-vezérlési listáját a PRIV tartományokban. Ha a tartomány például „priv.contoso.local” volt, írja be a következő parancsot:
+  ```cmd
   dsacls "cn=adminsdholder,cn=system,dc=priv,dc=contoso,dc=local"
   ```
-19. Ha szükséges, módosítsa a hozzáférés-vezérlési listát úgy, hogy a MIM szolgáltatás és a MIM összetevő frissíteni tudja az adott hozzáférés-vezérlési lista által védett csoportok tagságát.  Írja be a következő parancsot:  
-  ```
-  dsacls "cn=adminsdholder,cn=system,dc=priv,dc=contoso,dc=local" /G priv\mimservice:WP;"member"  
-  dsacls "cn=adminsdholder,cn=system,dc=priv,dc=contoso,dc=local" /G priv\mimcomponent:WP;"member"
-  ```
+19. Ha szükséges, módosítsa a hozzáférés-vezérlési listát úgy, hogy a MIM szolgáltatás és a MIM összetevő frissíteni tudja az adott hozzáférés-vezérlési lista által védett csoportok tagságát.  Írja be a következő parancsot:
+
+```cmd
+dsacls "cn=adminsdholder,cn=system,dc=priv,dc=contoso,dc=local" /G priv\mimservice:WP;"member"
+dsacls "cn=adminsdholder,cn=system,dc=priv,dc=contoso,dc=local" /G priv\mimcomponent:WP;"member"
+```
+
 20. Indítsa újra a PRIVDC kiszolgálót, hogy a változtatások érvénybe lépjenek.
 
 ## <a name="prepare-a-priv-workstation"></a>PRIV munkaállomás előkészítése

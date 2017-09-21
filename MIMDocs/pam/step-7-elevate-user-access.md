@@ -2,21 +2,21 @@
 title: "A PAM üzembe helyezése, 7. lépés – felhasználói hozzáférés | Microsoft Docs"
 description: "Utolsó lépésként biztosítson ideiglenes rendszerjogosultságot egy felhasználónak, hogy tesztelhesse, sikeres volt-e a Privileged Access Management üzembe helyezése."
 keywords: 
-author: billmath
-ms.author: billmath
-manager: femila
-ms.date: 03/15/2017
+author: barclayn
+ms.author: barclayn
+manager: mbaldwin
+ms.date: 09/13/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
 ms.assetid: 5325fce2-ae35-45b0-9c1a-ad8b592fcd07
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 89d9b38177b91f64e746fea583684abcecc9d7ff
-ms.sourcegitcommit: 02fb1274ae0dc11288f8bd9cd4799af144b8feae
+ms.openlocfilehash: f8ad03bc072dbf6df36a9ef737479dce60b70b8b
+ms.sourcegitcommit: 2be26acadf35194293cef4310950e121653d2714
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/13/2017
+ms.lasthandoff: 09/14/2017
 ---
 # <a name="step-7--elevate-a-users-access"></a>7. lépés – Felhasználó jogosultságszintjének emelése
 
@@ -27,6 +27,7 @@ ms.lasthandoff: 07/13/2017
 Ebben a lépésben azt mutatjuk be, hogyan kérhet egy felhasználó hozzáférést egy szerepkörhöz a MIM-en keresztül.
 
 ## <a name="verify-that-jen-cannot-access-the-privileged-resource"></a>Győződjön meg róla, hogy Ilona nem tud hozzáférni a privilegizált erőforráshoz
+
 Emelt szintű jogosultságok nélkül Ilona nem férhet hozzá a CORP erdőben található privilegizált erőforrásokhoz.
 
 1. Jelentkezzen ki a CORPWKSTN munkaállomásról, hogy megszüntessen minden gyorsítótárazott, nyitott kapcsolatot.
@@ -36,9 +37,10 @@ Emelt szintű jogosultságok nélkül Ilona nem férhet hozzá a CORP erdőben t
 5. Hagyja nyitva a parancssor ablakát.
 
 ## <a name="request-privileged-access-from-mim"></a>Kérjen emelt szintű hozzáférést a MIM-ből.
+
 1. A CORPWKSTN munkaállomáson (még mindig CONTOSO\Ilona felhasználóként) írja be a következő parancsot.
 
-    ```
+    ```cmd
     runas /user:Priv.Jen@priv.contoso.local powershell
     ```
 
@@ -48,7 +50,7 @@ Emelt szintű jogosultságok nélkül Ilona nem férhet hozzá a CORP erdőben t
     > [!NOTE]
     > Miután futtatta ezeket a parancsokat, az alábbi lépések mindegyike időérzékennyé válik.
 
-    ```
+    ```PowerShell
     Import-module MIMPAM
     $r = Get-PAMRoleForRequest | ? { $_.DisplayName –eq "CorpAdmins" }
     New-PAMRequest –role $r
@@ -58,7 +60,7 @@ Emelt szintű jogosultságok nélkül Ilona nem férhet hozzá a CORP erdőben t
 4. Ha ez befejeződött, zárja be a PowerShell ablakát.
 5. A DOS parancsablakba írja be az alábbi parancsot.
 
-    ```
+    ```cmd
     runas /user:Priv.Jen@priv.contoso.local powershell
     ```
 
@@ -67,7 +69,7 @@ Emelt szintű jogosultságok nélkül Ilona nem férhet hozzá a CORP erdőben t
 ## <a name="validate-the-elevated-access"></a>Az emelt szintű hozzáférés ellenőrzése.
 Az újonnan megnyílt ablakba írja be az alábbi parancsokat.
 
-```
+```cmd
 whoami /groups
 dir \\corpwkstn\corpfs
 ```
@@ -75,12 +77,13 @@ dir \\corpwkstn\corpfs
 Ha a dir parancs végrehajtása nem sikerül, és megjelenik **A hozzáférés megtagadva** hibaüzenet, ellenőrizze újra a megbízhatósági kapcsolatot.
 
 ## <a name="activate-the-privileged-role"></a>Az emelt szintű szerepkör aktiválása
+
 Aktiválja a szerepkört a PAM-mintaportálon keresztüli emelt szintű hozzáférés-igényléssel.
 
 1. A CORPWKSTN munkaállomáson győződjön meg arról, hogy a CORP\Ilona felhasználónéven van bejelentkezve.
 2. Egy DOS parancsablakba írja be az alábbi parancsot.
 
-    ```
+    ```cmd
     runas /user:Priv.Jen@priv.contoso.local "c:\program files\Internet Explorer\iexplore.exe"
     ```
 
@@ -95,6 +98,7 @@ Aktiválja a szerepkört a PAM-mintaportálon keresztüli emelt szintű hozzáf�
 > Ebben a környezetben megismerkedhet a [Privileged Access Management REST API-referencia](/microsoft-identity-manager/reference/privileged-access-management-rest-api-reference) témakörben ismertetett PAM REST API-t használó alkalmazások fejlesztésével.
 
 ## <a name="summary"></a>Összefoglalás
+
 Az útmutató lépéseinek végrehajtását követően egy olyan Privileged Access Management-forgatókönyvet ismerhet meg, amelyben a felhasználók emelt szintű jogosultságai csak korlátozott ideig érvényesek, és a védett erőforrásokhoz egy elkülönített, emelt jogosultsági szintű fiókon keresztül férhetnek hozzá. Amint a jogosultságszint-emelés időtartama lejár, a rendszerjogosultságú fiók már nem tud hozzáférni a védett erőforrásokhoz. Annak eldöntése, hogy mely biztonsági csoportok kaphatnak kiemelt szerepköröket, a PAM-rendszergazda feladata. A hozzáférési jogoknak a Privileged Access Management-rendszerbe való áttelepítését követően a korábban az eredeti felhasználói fiókok számára biztosított hozzáférések csak akkor lesznek érvényesek, ha a felhasználó egy speciális, rendszerjogosultságú fiókkal bejelentkezik, és újra megkéri ezeket az engedélyeket. Ennek eredményeképpen a magas jogosultsági szintű csoportokhoz tartozó csoporttagságok csak korlátozott ideig használhatók eredményesen.
 
 >[!div class="step-by-step"]
