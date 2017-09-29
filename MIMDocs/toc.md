@@ -125,6 +125,7 @@
 #### [Függőben lévő PAM-kérelmek jóváhagyása vagy elutasítása](./reference/privileged-access-management-approve-reject-pending-request.md)
 #### [PAM-munkamenetadatok lekérése](./reference/privileged-access-management-get-session-info.md)
 ## Technikai útmutató
+### [A Microsoft Identity Manager 2016 SP1 terminológiája](./reference/mim-2016-sp1-terms.md)
 ### [Erőforrás-vezérlési konfiguráció megjelenítésének XML-hivatkozása](./reference/rcd-configuration-xml-reference.md)
 ### [A Kezelőügynök futási hibakódjai](./reference/maerrorcodes.md)
 ### [A Microsoft Identity Manager 2016 függvényreferenciája](./reference/mim2016-functions-reference.md)
