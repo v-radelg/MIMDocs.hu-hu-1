@@ -4,19 +4,19 @@ description: "Az Azure Active Directory hibrid naplózási jelentéseivel a felh
 keywords: 
 author: fimguy
 ms.author: fimguy
-manager: femila
-ms.date: 04/28/2017
+manager: bhu
+ms.date: 09/28/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 7320f014-8b60-4866-92de-cfbd3e6edc48
-ms.reviewer: mwahl
+ms.reviewer: fimguy
 ms.suite: ems
-ms.openlocfilehash: 678626e7c32659570de88d8178c16821cceaf7ee
-ms.sourcegitcommit: 02fb1274ae0dc11288f8bd9cd4799af144b8feae
+ms.openlocfilehash: 151fbd26011ca76901d181131a88ded8a718a27a
+ms.sourcegitcommit: 0f99de31fe6b52ec692b3886073909f549a451d6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/13/2017
+ms.lasthandoff: 09/29/2017
 ---
 # <a name="hybrid-identity-management-audit-reports-in-azure-active-directory---public-previewrefresh"></a>Hibrid identitáskezelési naplójelentések az Azure Active Directoryban – nyilvános előzetes verzió (frissítés)
 Az Azure Active Directory (AD) naplójelentéseinek segítségével egyetlen jelentésben nyomon követheti a helyszínen vagy a felhőben végzett identitáskezelési tevékenységeket. Ez a funkció lehetővé teszi, hogy az összes identitását egy helyen kezelje, és egy helyen férjen hozzá adataihoz, így időt takaríthat meg és csökkentheti a teljes költségeket.
@@ -41,6 +41,9 @@ A hibrid jelentéskészítés folyamata a következő lépésekből áll:
 4. A tevékenységek adatai egy hónapig tárolódnak az Azure-ban.
 5. Az Azure Portal beolvassa, majd az Azure Audit Reporing (Azure-naplójelentések) panel naplójának formájában jeleníti meg a naplójelentési adatokat.
 
-## <a name="see-also"></a>További információ
+## <a name="next-steps"></a>További lépések
 - További részletek: [A hibrid jelentéskészítés kezelése az Identity Managerben](working-with-identity-manager-hybrid-reporting.md)
 - További információt a [Naplózási tevékenységre vonatkozó jelentések az Azure Active Directory-portálon](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-reporting-activity-audit-logs) című témakörben talál
+- További részletek a [adatmegőrzési jelentés](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-reporting-retention)
+- További részletek a [Microsoft Azure napló integrációs (SIEM)](https://docs.microsoft.com/en-us/azure/security/security-azure-log-integration-overview)
+- További részletek a [Azure Active Directory reporting API-val](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-reporting-api-getting-started)
