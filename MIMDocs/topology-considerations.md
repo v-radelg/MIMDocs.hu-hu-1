@@ -3,20 +3,20 @@ title: "Topológiai útmutató az üzembe helyezéshez | Microsoft Docs"
 description: "Ismerje meg a MIM 2016 összetevőit, és olvasson javaslatokat arról, hogyan telepheti őket a környezetben."
 keywords: 
 author: billmath
-ms.author: billmath
-manager: femila
-ms.date: 07/13/2017
+ms.author: barclayn
+manager: mbaldwin
+ms.date: 10/12/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 735dc357-dfba-4f68-a5b3-d66d6c018803
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 1695cc2df766df3c38a0e1393f6f974102f9fd36
-ms.sourcegitcommit: 0cb8269f07a5f419d2d1cd760d9cc78b8a1c8aa9
+ms.openlocfilehash: e257a2e64225a4bc545d8a9384167819412e939b
+ms.sourcegitcommit: f077508b5569e2a96084267879c5b6551e1e0905
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/14/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="topology-considerations"></a>Topológiai szempontok
 A Microsoft Identity Manager (MIM) összetevőit ugyanarra a kiszolgálóra, vagy több különböző konfigurációjú kiszolgálóra is telepítheti. Az üzembe helyezéshez választott topológia hatással van a MIM-mel elérhető teljesítményre. Ez a cikk több lehetséges üzembe helyezési topológiát mutat be.
