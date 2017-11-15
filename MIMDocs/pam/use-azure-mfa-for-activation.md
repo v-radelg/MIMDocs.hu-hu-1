@@ -3,22 +3,26 @@ title: "Az Azure MFA használata a PAM aktiválásához | Microsoft Docs"
 description: "Állítsa be az Azure MFA-t második biztonsági szintként, ha a felhasználók szerepköröket aktiválnak a Privileged Access Managementben."
 keywords: 
 author: barclayn
-ms.author: barclayn
+ms.author: fimguy
 manager: mbaldwin
-ms.date: 08/31/2017
+ms.date: 11/14/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
 ms.assetid: 5134a112-f73f-41d0-a5a5-a89f285e1f73
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: dd77c0135bee40a90f3ea9fd5c1b2771cbc21793
-ms.sourcegitcommit: c049dceaf02ab8b6008fe440daae4d07b752ca2e
+ms.openlocfilehash: 4accb4c1db90f11c18917012b9a3ab4966ea6496
+ms.sourcegitcommit: 0d8b19c5d4bfd39d9c202a3d2f990144402ca79c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="using-azure-mfa-for-activation"></a>Aktiválás az Azure MFA használatával
+>[!IMPORTANT]
+Miatt az Azure multi-factor Authentication Software Development Kit érvénytelenítése bejelentés. Az Azure MFA SDK használatból való kivonást időpontjáig 2018. október 01. a meglévő ügyfeleknek is támogatottak lesznek. Új ügyfelek és az aktuális ügyfelek nem tudnak többé letöltése SDK a klasszikus Azure portálon keresztül. Töltse le, akkor kell érheti el a generált MFA szolgáltatás hitelesítő adatait a csomagot fogadó Azure ügyfélszolgálathoz. <br> A Microsoft fejlesztői csapat dolgozik a többtényezős hitelesítés módosításai tervezési integrálja az MFA kiszolgáló SDK-val. Ez szerepelni fog a jövőbeli gyorsjavítás korai 2018.
+
+
 
 A PAM-szerepkörök konfigurálásakor kiválaszthatja, hogyan szeretné engedélyekkel felruházni azokat a felhasználókat, akik a szerepkör aktiválását kérik. A PAM-engedélyezés a következő választási lehetőségeket nyújtja:
 

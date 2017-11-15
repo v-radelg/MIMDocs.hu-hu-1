@@ -11,10 +11,10 @@ ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 
 ms.openlocfilehash: 96363fb3b0067ff5c8f8c2f32e9a855464038653
-ms.sourcegitcommit: ed8dd5563e77ef4a3345b2a52a1426859c95576a
+ms.sourcegitcommit: 0d8b19c5d4bfd39d9c202a3d2f990144402ca79c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/15/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="bhold-model-generator-installation"></a>BHOLD modellhez generátor telepítése
 
@@ -39,7 +39,7 @@ Microsoft Access-adatbázis Engine 2010 újraterjeszthető csomag
 
  
 
-*A \< * <http://daipvstf:8080/tfs/Active Directoryban/IAM/_workitems>*\>*
+*A \<*  <http://daipvstf:8080/tfs/Active Directoryban/IAM/_workitems>*\>*
 
  
 
@@ -60,15 +60,15 @@ Microsoft Access-adatbázis Engine 2010 újraterjeszthető csomag
 |---------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Beépített biztonság használatára**                 | Meghatározza, hogy az adatbázis eléréséhez használt-e a Windows-hitelesítést.                                                                                                                                                                                                                                                                                                                                                        | Jelölje be a jelölőnégyzetet, ha Windows-hitelesítést használ az SQL-kiszolgálóhoz való csatlakozáshoz. Törölje a jelet a jelölőnégyzetből, ha az SQL Server-hitelesítés használata. Az adatbázist kell létrehozni futtató BHOLD Core telepítés Ha SQL Server-hitelesítés használata előtt. **Megjegyzés:** Windows-hitelesítés használata esetén meg kell bejelentkeznie egy olyan fiókkal, amely a sysadmin (rendszergazda) kiszolgálói szerepkörrel rendelkezik az adatbázis-kiszolgálón. **Fontos:** használható SQL Server-hitelesítés csak tesztelési környezetben. A Microsoft azt javasolja, a Windows-hitelesítés az éles környezetekben. |
 | **Adatbázis-felhasználót** és **adatbázis-jelszó** | A felhasználónevet és egy felhasználó jelszavát adja meg a sysadmin (rendszergazda) kiszolgálói szerepkör az adatbázis-kiszolgálón. Ezek az értékek megadva, csak az SQL Server-hitelesítés használata esetén.                                                                                                                                                                                                                                                  | A SQL Server felhasználói nevet itt: írása az SQL Server felhasználói jelszó itt: </br></br> **Fontos:** mindenképp ezt a jelszót rejtett, biztonságos helyen.                                                                                                                                                                                                                                                                                                                                                                                                           |
-| **Adatbázis-kiszolgáló** és **adatbázis neve**   | Az adatbázis-kiszolgáló NetBIOS-nevét és az adatbázis biztonsági másolatának BHOLD modellhez generátor a telepítő létrehozza a nevét adja meg. Ha nem használ az alapértelmezett adatbázis-kiszolgálópéldányra, adja meg az adatbázis-kiszolgálópéldányra formájában * \<server\>*\\*\<példány\> *.  A Microsoft azt javasolja, hogy elnevezni az adatbázis biztonsági másolatának használata a BHOLD Core-adatbázis leendő nevét \_biztonsági másolat, például B1_BACKUP. | A kiszolgáló (vagy a kiszolgáló és példány) neve itt írási: </br> Írás az adatbázisnevet:
+| **Adatbázis-kiszolgáló** és **adatbázis neve**   | Az adatbázis-kiszolgáló NetBIOS-nevét és az adatbázis biztonsági másolatának BHOLD modellhez generátor a telepítő létrehozza a nevét adja meg. Ha nem használ az alapértelmezett adatbázis-kiszolgálópéldányra, adja meg az adatbázis-kiszolgálópéldányra formájában  *\<server\>*\\*\<példány\>* .  A Microsoft azt javasolja, hogy elnevezni az adatbázis biztonsági másolatának használata a BHOLD Core-adatbázis leendő nevét \_biztonsági másolat, például B1_BACKUP. | A kiszolgáló (vagy a kiszolgáló és példány) neve itt írási: </br> Írás az adatbázisnevet:
 
 ## <a name="bhold-model-generator-setup"></a>BHOLD modellhez generátor beállítása
 
 BHOLD modellhez generátor-modul telepítéséhez, jelentkezzen be a tartományi rendszergazdák csoport tagjaként, töltse le a következő fájlt, és futtassa rendszergazdaként a kiszolgálón, melyet a BHOLD Core modul telepítése:
 
-- BholdModelGenerator * \<verzió\>*\_Release.msi
+- BholdModelGenerator  *\<verzió\>*\_Release.msi
 
-Cserélje le * \<verzió\> * rendelkező a telepíteni kívánt BHOLD modellhez generátor kiadás verziószáma.
+Cserélje le  *\<verzió\>*  rendelkező a telepíteni kívánt BHOLD modellhez generátor kiadás verziószáma.
 
 A program fájlt rendszergazdaként futtatni, kattintson jobb gombbal a fájlra, és kattintson a **Futtatás rendszergazdaként**.
 

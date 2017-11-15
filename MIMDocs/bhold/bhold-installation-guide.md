@@ -11,10 +11,10 @@ ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 
 ms.openlocfilehash: c36a9d02e90101b98ade913224e573ed21dc3d5c
-ms.sourcegitcommit: ed8dd5563e77ef4a3345b2a52a1426859c95576a
+ms.sourcegitcommit: 0d8b19c5d4bfd39d9c202a3d2f990144402ca79c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/15/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="microsoft-bhold-suite-sp1-60-installation-guide"></a>Microsoft BHOLD Suite SP1 (6.0) a telepítési útmutató
 
@@ -52,7 +52,7 @@ Ez a szakasz témakörei a következők:
 
 - Egykiszolgálós architektúrája
 - Kettős-kiszolgáló architektúrája
-- Kétrétegű architektúra
+- kétrétegű architektúra
 - Az SQL Serverre vonatkozó ajánlások
 
 ### <a name="single-server-architecture"></a>Egykiszolgálós architektúrája
@@ -73,7 +73,7 @@ BHOLD Core és a FIM telepítése különálló kiszolgálókra biztosít nagyob
 >[!IMPORTANT]
 BHOLD FIM integrációs modul a jelentéskészítési szolgáltatás szükséges a BHOLD és a FIM adatbázisok ugyanazon SQL Server-példányra kell telepíteni, és a BHOLD szolgáltatásfióknak a FIM szolgáltatás adatbázisához hozzáférési jogosultsággal kell rendelkeznie.
 
-### <a name="two-tier-architecture"></a>Kétrétegű architektúra
+### <a name="two-tier-architecture"></a>kétrétegű architektúra
 
 A legtöbb környezetben, különösen ha teljesítmény fontos, futtatnia kell a BHOLD Suite SP1, a FIM és az SQL Server eltérő kiszolgálókra (kétrétegű architektúra). Egy kétrétegű architektúrával memória és CPU-erőforrást az egyes rétegekhez vannak fenntartva. A következő ábrán egy kétrétegű architektúra konfigurálása egyik lehetséges módja. A FIM szinkronizálási szolgáltatás a FIM-kiszolgálón futó szinkronizálja a módosításokat a FIM és BHOLD-adatbázis között. Vegye figyelembe, hogy végfelhasználói önkiszolgáló szükség, ha a BHOLD FIM integrációs modul telepíteni kell a FIM szolgáltatás és -portál ugyanarra a kiszolgálóra.
 

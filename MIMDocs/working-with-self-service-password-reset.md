@@ -12,12 +12,15 @@ ms.technology: security
 ms.assetid: 94a74f1c-2192-4748-9a25-62a526295338
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: c6786ea653f178b25ea3da4fbd3b01d21b79c622
-ms.sourcegitcommit: f077508b5569e2a96084267879c5b6551e1e0905
+ms.openlocfilehash: 90c773c30b0ab23ad29ca1a215745bf59b188764
+ms.sourcegitcommit: 0d8b19c5d4bfd39d9c202a3d2f990144402ca79c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/14/2017
 ---
+>[!IMPORTANT]
+Miatt az Azure multi-factor Authentication Software Development Kit érvénytelenítése bejelentés. Az Azure MFA SDK használatból való kivonást időpontjáig 2018. október 01. a meglévő ügyfeleknek is támogatottak lesznek. Új ügyfelek és az ügyfelek aktuális fog tudni többé SDK letöltése a klasszikus Azure portálon keresztül. Töltse le, akkor kell érheti el a generált MFA szolgáltatás hitelesítő adatait a csomagot fogadó Azure ügyfélszolgálathoz. <br> A Microsoft fejlesztői csapat dolgozik a többtényezős hitelesítés módosításai tervezési integrálja az MFA kiszolgáló SDK-val. Ez szerepelni fog a jövőbeli gyorsjavítás korai 2018.
+
 # <a name="working-with-self-service-password-reset"></a>Az önkiszolgáló jelszóváltoztatás kezelése
 A Microsoft Identity Manager 2016 önkiszolgáló jelszó-változtatási funkciója új lehetőségeket kínál. A funkcionalitást több fontos elemmel bővítettük:
 
@@ -68,7 +71,7 @@ A következő szakaszban az Azure MFA szolgáltató Microsoft Azure Active Direc
 
 3.  Válassza az **App Services &gt; Active Directory &gt; Multi-Factor Auth Provider &gt; Quick Create** (Alkalmazásszolgáltatások > Active Directory > Többtényezős hitelesítési szolgáltató > Gyors létrehozás) lehetőséget.
 
-![Kép: Többtényezős hitelesítési szolgáltató gyors létrehozása az Azure-portálon](media/MIM-SSPR-Azureportal.png)
+![Az Azure portálon gyorsan MFA lemezkép létrehozása](media/MIM-SSPR-Azureportal.png)
 
 4.  A **Name** (Név) mezőbe írja be, hogy **SSPRMFA**, majd kattintson a **Create** (Létrehozás) gombra.
 
@@ -82,7 +85,7 @@ A következő szakaszban az Azure MFA szolgáltató Microsoft Azure Active Direc
 
 7.  Az új ablakban a **Configure** (Konfigurálás) felirat alatti bal oldali panelen kattintson a **Settings** (Beállítások) lehetőségre.
 
-8.  A **Fraud Alert** (Visszaélési riasztás) területen törölje a **Block user when fraud is reported** (Felhasználó blokkolása visszaélés jelentésekor) négyzet jelölését. Ennek a célja megakadályozni adott esetben a teljes szolgáltatás letiltását.
+8.  A **csalási riasztás**, törölje a jelet ** felhasználó blokkolása visszaélés jelentésekor. Ennek a célja megakadályozni adott esetben a teljes szolgáltatás letiltását.
 
 9. A megjelenő **Azure Multi-Factor Authentication** (Azure többtényezős hitelesítés) ablakban a bal oldali menüben kattintson az **SDK** elemre a **Downloads** (Letöltések) területen.
 
@@ -136,7 +139,7 @@ A szervezeti felhasználók ezután már regisztrálhatnak a jelszóváltoztatá
 
 #### <a name="register-users-for-password-reset"></a>Felhasználók regisztrálása jelszóváltoztatásra
 
-1.  A felhasználó elindít egy böngészőt, és a MIM jelszó-változtatási regisztrációs portálra lép.  (A portál jellemzően Windows-hitelesítésre van konfigurálva.)  Identitása megerősítéséhez a portálon ismét meg kell adnia felhasználónevét és jelszavát.
+1.  A felhasználó fogja elindítani a webböngészőt, és keresse meg a MIM jelszó-változtatási regisztrációs portálra.  (A portál jellemzően Windows-hitelesítésre van konfigurálva.)  Identitása megerősítéséhez a portálon ismét meg kell adnia felhasználónevét és jelszavát.
 
     Be kell lépnie a jelszó-regisztrálási portálra, és hitelesítenie kell magát a felhasználónevével és jelszavával.
 
@@ -165,7 +168,7 @@ Ha a MIM beépülő moduljait és bővítményeit olyan tartományhoz csatlakozt
 
 2.  A rendszer hitelesítésre kéri a felhasználót. Ha a többtényezős hitelesítés be lett állítva, a felhasználó telefonhívást kap.
 
-3.  Ebben az esetben az Azure MFA szolgáltatás a háttérben felhívja azt a telefonszámot, amelyet a felhasználó megadott, amikor a szolgáltatásra regisztrált.
+3.  A háttérben mi történik az adott Azure MFA a felhasználó telefonhívást megadott, amikor azok a szolgáltatásra regisztrált.
 
 4.  Amikor a felhasználó felveszi a telefont, a rendszer arra kéri, hogy nyomja meg a kettőskereszt (#) gombot a készüléken. A felhasználónak ezután a **Next** (Tovább) gombra kell kattintania a portálon.
 
@@ -182,7 +185,7 @@ Ha a MIM beépülő moduljait és bővítményeit olyan tartományhoz csatlakozt
 
 1.  A felhasználó böngészőben a **jelszó-változtatási portálra** lép, megadja a felhasználónevét, majd a **Next** (Tovább) gombra kattint.
 
-    Ha a többtényezős hitelesítés be lett állítva, a felhasználó telefonhívást kap. Ebben az esetben az Azure MFA szolgáltatás a háttérben felhívja azt a telefonszámot, amelyet a felhasználó megadott, amikor a szolgáltatásra regisztrált.
+    Ha a többtényezős hitelesítés be lett állítva, a felhasználó telefonhívást kap. A háttérben mi történik az adott Azure MFA a felhasználó telefonhívást megadott, amikor azok a szolgáltatásra regisztrált.
 
     Amikor a felhasználó felveszi a telefont, a rendszer arra kéri, hogy nyomja meg a kettőskereszt (#) gombot a készüléken. A felhasználónak ezután a **Next** (Tovább) gombra kell kattintania a portálon.
 

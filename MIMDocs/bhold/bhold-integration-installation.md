@@ -11,10 +11,10 @@ ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 
 ms.openlocfilehash: ef68de19bd0eabd6d9203469ecc991d496f05846
-ms.sourcegitcommit: ed8dd5563e77ef4a3345b2a52a1426859c95576a
+ms.sourcegitcommit: 0d8b19c5d4bfd39d9c202a3d2f990144402ca79c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/15/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="bhold-fimmim-integration-installation"></a>BHOLD FIM vagy MIM-integráció telepítése
 
@@ -75,7 +75,7 @@ BHOLD FIM integrációs modul telepítéséhez, jelentkezzen be a tartományi re
 
 - BholdFIMIntegration*\<verzió\>*\_Release.msi
 
-Cserélje le * \<verzió\> * rendelkező a telepíteni kívánt BHOLD FIM-integráció kiadás verziószáma.
+Cserélje le  *\<verzió\>*  rendelkező a telepíteni kívánt BHOLD FIM-integráció kiadás verziószáma.
 
 A program fájlt rendszergazdaként futtatni, kattintson jobb gombbal a fájlra, és kattintson a **Futtatás rendszergazdaként**.
 
@@ -125,17 +125,17 @@ A következő táblázat a fájlok és az eredeti és módosított verziója a k
 
 Ahol:
 
--   *\<BHOLD_Server\> * határozza meg a fájl eredeti verziójában található a BHOLD-kiszolgáló nevét
+-   *\<BHOLD_Server\>*  határozza meg a fájl eredeti verziójában található a BHOLD-kiszolgáló nevét
 
--   *\<MIM_Server\> * adja meg a fájl eredeti verziójában található a FIM-kiszolgáló nevét
+-   *\<MIM_Server\>*  adja meg a fájl eredeti verziójában található a FIM-kiszolgáló nevét
 
--   *\<BHOLD_Server_FQDN\> * határozza meg a BHOLD-kiszolgáló teljes tartománynevét (FQDN)
+-   *\<BHOLD_Server_FQDN\>*  határozza meg a BHOLD-kiszolgáló teljes tartománynevét (FQDN)
 
--   *\<MIM_Port\> * adja meg a fájl eredeti verziójában található a FIM-kiszolgáló portjának száma
+-   *\<MIM_Port\>*  adja meg a fájl eredeti verziójában található a FIM-kiszolgáló portjának száma
 
--   *\<MIM_Server_FQDN\> * a FIM-kiszolgáló teljes Tartománynevét adja meg
+-   *\<MIM_Server_FQDN\>*  a FIM-kiszolgáló teljes Tartománynevét adja meg
 
--   *\<MIM_SSL_Port\> * határozza meg egy másik portot használja az SSL-titkosítással a FIM-kiszolgálón
+-   *\<MIM_SSL_Port\>*  határozza meg egy másik portot használja az SSL-titkosítással a FIM-kiszolgálón
 
 ### <a name="enable-approval-workflows-in-bhold-core"></a>Jóváhagyási munkafolyamatok alapvető BHOLD engedélyezése
 
@@ -189,7 +189,7 @@ Ha a szerepkör önkiszolgáló kérelmek jóváhagyó ezen módszerek egyikéve
 
 18. Az a **szervezeti egység/root** kattintson **módosítás**.
 
-19. Az a **attribútumok/root/szervezeti egység módosítása** lap **jóváhagyó**, írja be a tartomány és a felhasználó nevét hagyja jóvá a szerepkör-hozzárendelési kérelmek formátumú felhasználó * \<tartomány\>*\\*\<felhasználói\>*, ahol * \<tartomány\> * van a (Rövid) NetBIOS-tartománynév és * \<felhasználói\> * a felhasználó bejelentkezési neve.
+19. Az a **attribútumok/root/szervezeti egység módosítása** lap **jóváhagyó**, írja be a tartomány és a felhasználó nevét hagyja jóvá a szerepkör-hozzárendelési kérelmek formátumú felhasználó  *\<tartomány\>*\\*\<felhasználói\>*, ahol  *\<tartomány\>*  van a (Rövid) NetBIOS-tartománynév és  *\<felhasználói\>*  a felhasználó bejelentkezési neve.
 20. Kattintson az **OK**gombra.
 
 >[!IMPORTANT]
@@ -207,7 +207,7 @@ Nagyobb biztonságot munkafolyamat, jóváhagyóknak, felül kell megadott tová
 
 - értesítés*\<n\>*
 
-Ha * \< n \> * arra, hogy több, ugyanolyan típusú attribútum egy választható numerikus utótagból jelzi.
+Ha  *\< n \>*  arra, hogy több, ugyanolyan típusú attribútum egy választható numerikus utótagból jelzi.
 
 ### <a name="verify-approval-workflows-configured-in-the-fim-service"></a>Ellenőrizze a FIM szolgáltatásban konfigurált jóváhagyási munkafolyamatok
 
