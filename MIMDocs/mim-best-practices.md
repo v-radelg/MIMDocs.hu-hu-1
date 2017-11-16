@@ -11,11 +11,11 @@ ms.prod: identity-manager-2016
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 
-ms.openlocfilehash: 694ec1e0d6577c4335fd75ab0984aed9a0e4f220
-ms.sourcegitcommit: 8edd380f54c3e9e83cfabe8adfa31587612e5773
+ms.openlocfilehash: fe361c3f6dd85a478d655a910f0f3ec9802128b0
+ms.sourcegitcommit: 0d8b19c5d4bfd39d9c202a3d2f990144402ca79c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/19/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="microsoft-identity-manager-2016-best-practices"></a>Microsoft Identity Manager 2016 – Gyakorlati tanácsok
 
@@ -189,8 +189,7 @@ MANUAL
 ALTER FULLTEXT INDEX ON [fim].[ObjectValueXml] SET CHANGE_TRACKING = MANUAL
 ```
 
-Fontos tisztában lenni az SQL Server helyreállítási modell lemezkövetelményeivel. A biztonsági mentési ütemezéstől függően előfordulhat, hogy a kezdeti rendszerbetöltés során ajánlott az egyszerű helyreállítási módot használni a lemezterület használatának korlátozásához, de ismernie kell az adatvesztés kockázatát illető következményeket.
-Teljes helyreállítási mód használatakor szükséges a lemezterület biztonsági másolatokra való használatának felügyelete, többek között a tranzakciónapló gyakori biztonsági mentései magas lemezterület-használatának megakadályozására.
+Fontos tisztában lenni az SQL Server helyreállítási modell lemezkövetelményeivel. A biztonsági mentési ütemezéstől függően előfordulhat, hogy a kezdeti rendszerbetöltés során ajánlott az egyszerű helyreállítási módot használni a lemezterület használatának korlátozásához, de ismernie kell az adatvesztés kockázatát illető következményeket. Teljes helyreállítási mód használatakor szükséges a lemezterület biztonsági másolatokra való használatának felügyelete, többek között a tranzakciónapló gyakori biztonsági mentései magas lemezterület-használatának megakadályozására.
 
 >[!IMPORTANT]
 Ezen eljárások elmulasztása magas lemezterület-használatot eredményezhet, és előfordulhat, hogy elfogy a szabad lemezterület. További információt ebben a témakörben a [Recovery Model Overview](http://go.microsoft.com/fwlink/?LinkID=185370) (A helyreállítási modell áttekintése) című részben találhat. A [FIM biztonsági mentési és visszaállítási útmutatója](http://go.microsoft.com/fwlink/?LinkID=165864) további információkat tartalmaz (angol nyelven).
@@ -200,7 +199,6 @@ Ezen eljárások elmulasztása magas lemezterület-használatot eredményezhet, 
 A kezdeti betöltése során csak a FIM-konfigurációhoz a felügyeletiházirend-szabályokhoz (MPR-ek) és a készletdefiníciókhoz minimálisan szükséges konfigurációt kell alkalmazni. Az adatok betöltése után hozza létre az adott környezethez szükséges további készleteket. A szabályzatoknak a betöltött adatokra való visszamenőleges alkalmazásához használja a munkafolyamatok Run On Policy Update (Futtatás szabályzatfrissítéskor) beállítását.
 
 ### <a name="step-3-configure-and-populate-the-fim-service-with-external-identity-data"></a>3. lépés: A FIM szolgáltatás konfigurálása és feltöltése külső azonosító adatokkal
-
 
 Ehhez kövesse a felhasználók az Active Directoryból a FIM-be való szinkronizálásának
 
@@ -224,13 +222,11 @@ Minden az inicializálási ciklus részét képező forrás-kezelőügynök eset
 
 ### <a name="step-4-apply-your-full-mim-configuration"></a>4. lépés: A teljes MIM-konfiguráció alkalmazása
 
-
 A kezdeti adatbetöltés befejezése után alkalmaznia kell a teljes MIM-konfigurációt az adott környezethez.
 
 Az alkalmazási helyzettől függően ebbe beletartozik a további készletek, MPR-ek és munkafolyamatok létrehozása. Az esetleges minden meglévő rendszerbeli objektumra visszamenőlegesen alkalmazandó szabályzatok esetén használja a Run On Policy Update (Futtatás szabályzatfrissítéskor) beállítást a munkafolyamatok esetén ezen szabályzatoknak a betöltött adatokra való visszamenőleges alkalmazásához.
 
 ### <a name="step-5-reconfigure-sql-to-previous-settings"></a>5. lépés: Az SQL újrakonfigurálása az előző beállításokra
-
 
 Ne felejtse el módosítani az SQL-beállításokat a normál beállításokra. Ez a következő teendőket foglalja magában:
 
@@ -267,8 +263,7 @@ ActivityInformationConfiguration objektumok igényelnek pontosan az éles körny
 
 ### <a name="avoid-cyclic-references"></a>Kerülje a körkörös hivatkozásokat
 
-Általában körkörös hivatkozások nem ajánlottak MIM-konfigurációkban.
-Azonban néha előfordulhat körkörös hivatkozás, ha az A készlet a B készletre hivatkozik, és a B is hivatkozik az A-ra. A körkörös hivatkozások okozta problémák elkerülése érdekében módosítania kell az A vagy a B készlet definícióját, hogy mindkettő ne hivatkozzon egymásra. Ezután indítsa újra a migrálási folyamatot. Ha körkörös hivatkozások vannak, és a Compare-FIMConfig parancsmag hibát eredményez, manuálisan kell a körkörös hivatkozást megszüntetni. A Compare-FIMConfig parancsmag kimenete elsőbbségi sorrendben jeleníti meg a szükséges módosítások listáját, ezért a konfigurációs objektumok hivatkozásai között nem szerepelhet körkörös hivatkozás.
+Általában körkörös hivatkozások nem ajánlottak MIM-konfigurációkban. Azonban néha előfordulhat körkörös hivatkozás, ha az A készlet a B készletre hivatkozik, és a B is hivatkozik az A-ra. A körkörös hivatkozások okozta problémák elkerülése érdekében módosítania kell az A vagy a B készlet definícióját, hogy mindkettő ne hivatkozzon egymásra. Ezután indítsa újra a migrálási folyamatot. Ha körkörös hivatkozások vannak, és a Compare-FIMConfig parancsmag hibát eredményez, manuálisan kell a körkörös hivatkozást megszüntetni. A Compare-FIMConfig parancsmag kimenete elsőbbségi sorrendben jeleníti meg a szükséges módosítások listáját, ezért a konfigurációs objektumok hivatkozásai között nem szerepelhet körkörös hivatkozás.
 
 ## <a name="security"></a>Biztonság
 
@@ -394,17 +389,16 @@ Alapértelmezés szerint a MIM 2016 kiüríti a lejárt rendszerobjektumokat, am
 
 A MIM kétféle MPR-t használ, a kérelmet és a készletátmenetet:
 
--   Kérelem-MPR (RMPR)
+-  Kérelem-MPR (RMPR)
 
- - Az erőforrásokon végzett műveletek létrehozási, olvasási, frissítési vagy törlési (CRUD) hozzáférés-vezérlési házirendjének (hitelesítési, engedélyezési és műveleti) meghatározásához használatos.
- - Akkor alkalmazza a rendszer, ha egy CRUD-művelet kiadására kerül sor egy cél-erőforrásra a FIM-ben.
-   - Hatóköre a szabályban megadott megfelelési feltételek, azaz hogy mely CRUD-kérelmekre vonatkozik a szabály.
+  - Az erőforrásokon végzett műveletek létrehozási, olvasási, frissítési vagy törlési (CRUD) hozzáférés-vezérlési házirendjének (hitelesítési, engedélyezési és műveleti) meghatározásához használatos.
+  - Akkor alkalmazza a rendszer, ha egy CRUD-művelet kiadására kerül sor egy cél-erőforrásra a FIM-ben.
+  - Hatóköre a szabályban megadott megfelelési feltételek, azaz hogy mely CRUD-kérelmekre vonatkozik a szabály.
 
-
--   Készletátmenet-MPR (TMPR)
- - A szabályzat meghatározására használatos függetlenül attól, hogy az objektum milyen módon lépett a készletátmenet által jelzett aktuális állapotba. Használja a TMPR-t jogosultsági szabályzatok modellezésére.
- - Akkor alkalmazza a rendszer, amikor egy erőforrás belép egy kapcsolódó készletbe, vagy elhagyja azt.
- - Hatóköre a készlet tagjaira terjed ki.
+- Készletátmenet-MPR (TMPR)
+  - A szabályzat meghatározására használatos függetlenül attól, hogy az objektum milyen módon lépett a készletátmenet által jelzett aktuális állapotba. Használja a TMPR-t jogosultsági szabályzatok modellezésére.
+  - Akkor alkalmazza a rendszer, amikor egy erőforrás belép egy kapcsolódó készletbe, vagy elhagyja azt.
+  - Hatóköre a készlet tagjaira terjed ki.
 
 >[MEGJEGYZÉS] További részletekért lásd: [Üzleti szabályok tervezése](http://go.microsoft.com/fwlink/?LinkID=183691).
 
@@ -413,18 +407,14 @@ A MIM kétféle MPR-t használ, a kérelmet és a készletátmenetet:
 A konfiguráció alkalmazásakor használja a legalacsonyabb jogosultsági szint elvét. Az MPR-ek a FIM környezet hozzáférési szabályzatát szabályozzák. Csak a felhasználók többsége által használt szolgáltatásokat engedélyezze. Nem minden felhasználó használhatja például FIM-et csoportfelügyeletre, így a társított csoportkezelési MPR-ek le lesznek tiltva. Alapértelmezés szerint a FIM-ben le van tiltva a legtöbb nem rendszergazdai jogosultság.
 
 #### <a name="duplicate-built-in-mprs-instead-of-directly-modifying"></a>A beépített MPR-ek közvetlen módosítása helyett másolja azokat
-
 Ha módosítani szeretné a beépített MPR-eket, létre kell hoznia egy új MPR-t a szükséges konfigurációval és ki kell kapcsolnia a beépített MPR-t. Ez biztosítja, hogy a beépített MPR-ek a frissítési folyamaton keresztül bevezetett jövőbeli módosításai nem lesznek negatív hatással a rendszerkonfigurációra.
 
 #### <a name="end-user-permissions-should-use-explicit-attribute-lists-scoped-to-users-business-needs"></a>A végfelhasználói engedélyeknek a felhasználók üzleti igényeihez kötött kifejezett attribútumlistákat kell használnia
-
-A kifejezett attribútumlisták használatával megakadályozható az engedélyek véletlen megadása a rendszerjogosultsággal nem rendelkező felhasználók számára, amikor attribútumokat adnak hozzá objektumokhoz.
-A rendszergazdáknak explicit módon kell hozzáférést adniuk az új attribútumokhoz a hozzáférés eltávolítása helyett.
+A kifejezett attribútumlisták használatával megakadályozható az engedélyek véletlen megadása a rendszerjogosultsággal nem rendelkező felhasználók számára, amikor attribútumokat adnak hozzá objektumokhoz. A rendszergazdáknak explicit módon kell hozzáférést adniuk az új attribútumokhoz a hozzáférés eltávolítása helyett.
 
 Az adatok elérését a felhasználók üzleti igényeihez kell kötni. Például a csoportok tagjai nem férhetnek hozzá azon csoport szűrőattribútumához, amelyhez tartoznak. A szűrő véletlenül olyan szervezeti adatokat fedhet fel, amelyekhez a felhasználó normál esetben nem férhetne hozzá.
 
 #### <a name="mprs-should-reflect-effective-permissions-in-the-system"></a>Az MPR-eknek a rendszerbeli vonatkozó engedélyeket kell tükrözniük
-
 Kerülje engedélyek megadását olyan attribútumokhoz, amelyeket a felhasználó soha nem használhat. Például nem adhat engedélyt az alapvető erőforrás-attribútumok, például az objectType módosítására. Az MPR ellenére a rendszer megtagadja az erőforrástípus létrehozását követő bármilyen módosítási kísérletet.
 
 #### <a name="read-permissions-should-be-separate-from-modify-and-create-permissions-when-using-explicit-attributes-in-mprs"></a>Az olvasási engedélyeknek el kell különülniük a módosítási és létrehozási engedélyektől, ha explicit attribútumokat használ az MPR-ekben
@@ -443,12 +433,9 @@ Olyan azonos hozzáférési követelményekkel rendelkező attribútumok esetén
 
 A FIM-ben az engedélyek definiálása pozitív állításként történik. Mivel a FIM nem támogatja a megtagadási engedélyeket, az erőforrásokhoz való korlátlan hozzáférés megadása bonyolítja bármely kizárás megadását az engedélyekben. Ajánlott eljárásként azt javasoljuk, hogy csak a szükséges engedélyeket adja meg.
 
->[!NOTE]
-A Jogosultságok szakasz alább következik. Azon tűnődök, hogyan lehet egyesíteni őket, hogy elkerüljem az 5. szintű fejlécek létrehozását
 #### <a name="use-tmprs-to-define-custom-entitlements"></a>Használjon TMPR-eket az egyéni jogosultságok megadásához
 
-Egyéni jogosultságok megadása helyett készletátmenet-MPR-eket (TMPR-eket) használjon.
-A TMPR-ek állapotalapú modellt biztosítanak a jogosultságok hozzárendeléséhez vagy eltávolításához a definiált átmeneti készletek tagsága, illetve a szerepkörök és hozzájuk tartozó munkafolyamat-tevékenységek alapján. A TMPR-eket mindig párokban kell meghatározni, az egyiket a befelé áthelyezett erőforrásokhoz, egyet pedig a kifelé áthelyezettek számára. Emellett minden átmeneti MPR-nek külön munkafolyamatokat kell tartalmaznia a kiépítési és megszüntetési tevékenységekhez.
+Egyéni jogosultságok megadása helyett készletátmenet-MPR-eket (TMPR-eket) használjon. A TMPR-ek állapotalapú modellt biztosítanak a jogosultságok hozzárendeléséhez vagy eltávolításához a definiált átmeneti készletek tagsága, illetve a szerepkörök és hozzájuk tartozó munkafolyamat-tevékenységek alapján. A TMPR-eket mindig párokban kell meghatározni, az egyiket a befelé áthelyezett erőforrásokhoz, egyet pedig a kifelé áthelyezettek számára. Emellett minden átmeneti MPR-nek külön munkafolyamatokat kell tartalmaznia a kiépítési és megszüntetési tevékenységekhez.
 
 >[!NOTE]
 Minden megszüntetési munkafolyamatnak biztosítania kell, hogy a Futtatás szabályzatfrissítéskor attribútum igaz értékű legyen.
@@ -461,8 +448,7 @@ A TMPR-pár létrehozásakor a készletátmenet bejövő MPR-jének bekapcsolás
 
 A kiépítési munkafolyamatnak először azt ellenőrizniük, hogy a célként megadott erőforrás már ki lett-e építve a jogosultságnak megfelelően. Ha igen, nincs teendő.
 
-A megszüntetési munkafolyamatoknak először azt ellenőrizniük, hogy a célként megadott erőforrás már ki lett-e építve. Ha igen, meg kell szüntetnie azt.
-Ellenkező esetben nincs teendő.
+A megszüntetési munkafolyamatoknak először azt ellenőrizniük, hogy a célként megadott erőforrás már ki lett-e építve. Ha igen, meg kell szüntetnie azt. Ellenkező esetben nincs teendő.
 
 #### <a name="select-run-on-policy-update-for-tmprs"></a>Válassza a Run On Policy Update (Futtatás szabályzatfrissítéskor) lehetőséget a TMPR-ekhez
 
@@ -494,19 +480,17 @@ A jogosultság eltávolításához, de a jelenlegi tagok békén hagyásához (p
 
 ### <a name="sets"></a>Készletek
 
-A készletekre vonatkozó gyakorlati tanácsok alkalmazásakor vegye figyelembe a kezelhetőség optimalizálása és a jövőbeli egyszerű felügyelet szempontjait.
-Az itt szereplő ajánlások alkalmazása előtt megfelelő tesztelést kell végezni a várható éles üzemelési körülmények között, hogy meg lehessen határozni a megfelelő egyensúlyt a teljesítmény és a kezelhetőség között.
+A készletekre vonatkozó gyakorlati tanácsok alkalmazásakor vegye figyelembe a kezelhetőség optimalizálása és a jövőbeli egyszerű felügyelet szempontjait. Az itt szereplő ajánlások alkalmazása előtt megfelelő tesztelést kell végezni a várható éles üzemelési körülmények között, hogy meg lehessen határozni a megfelelő egyensúlyt a teljesítmény és a kezelhetőség között.
 
 >[!NOTE]
-Az alábbi irányelvek a dinamikus készletekre és a dinamikus csoportokra vonatkoznak.
+> Az alábbi irányelvek a dinamikus készletekre és a dinamikus csoportokra vonatkoznak.
 
 
 #### <a name="minimize-the-use-of-dynamic-nesting"></a>Minimalizálja a dinamikus beágyazás használatát
 
 Ez egy olyan készlet szűrőjére utal, amely egy másik készlet ComputedMember attribútumára hivatkozik. A készletek beágyazásának gyakori indoka, hogy elkerülhető legyen a tagsági feltételek többszörözése a készletekben. Bár ez a módszer a készlet jobb kezelhetőségét eredményezheti, a teljesítményre vonatkozóan kompromisszumot jelent. Úgy optimalizálhatja a teljesítményt, ha ahelyett, hogy magát a készletet ágyazná be, többszörözi a beágyazott készlet tagsági feltételeit.
 
-Előfordulhat, hogy nem kerülheti el a készletek beágyazását a működési követelmények kielégítése érdekében. Az alábbiak a leggyakoribb olyan helyzetek, amelyekben készleteket kell beágyaznia. Például a teljes idejű alkalmazott tulajdonosok nélküli csoportok készletének definiálásához a készletek beágyazását kell használni az alábbiak szerint: `/Group[not(Owner =
-/Set[ObjectID = ‘X’]/ComputedMember]`, ahol az ’X’ az összes teljes idejű alkalmazott készletének objektumazonosítója.
+Előfordulhat, hogy nem kerülheti el a készletek beágyazását a működési követelmények kielégítése érdekében. Az alábbiak a leggyakoribb olyan helyzetek, amelyekben készleteket kell beágyaznia. Például a teljes idejű alkalmazott tulajdonosok nélküli csoportok készletének definiálásához a készletek beágyazását kell használni az alábbiak szerint: `/Group[not(Owner = /Set[ObjectID = ‘X’]/ComputedMember]`, ahol az ’X’ az összes teljes idejű alkalmazott készletének objektumazonosítója.
 
 #### <a name="minimize-the-use-of-negative-conditions"></a>Minimalizálja a negatív feltételek használatát
 
@@ -540,8 +524,7 @@ Communication Foundation (WCF) szolgáltatásban. Ez a beállítás nincs bekapc
 
 #### <a name="do-not-map-an-authorization-workflow-to-the-password-reset-process"></a>Az engedélyezési munkafolyamat nem feleltethető meg a jelszó-visszállítási folyamatnak
 
-Az engedélyezési munkafolyamatokat nem kapcsolhatja össze egy jelszó-visszaállítási művelettel.
-A jelszó-visszaállításhoz szinkron válaszra van szükség, és jóváhagyási munkafolyamatok pedig aszinkron tevékenységeket tartalmaznak, például a jóváhagyást.
+Az engedélyezési munkafolyamatokat nem kapcsolhatja össze egy jelszó-visszaállítási művelettel. A jelszó-visszaállításhoz szinkron válaszra van szükség, és jóváhagyási munkafolyamatok pedig aszinkron tevékenységeket tartalmaznak, például a jóváhagyást.
 
 #### <a name="do-not-map-multiple-action-activities-to-password-reset"></a>Több tevékenység nem feleltethető meg a jelszó-visszaállításnak
 

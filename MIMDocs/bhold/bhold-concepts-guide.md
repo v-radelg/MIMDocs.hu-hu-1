@@ -9,11 +9,11 @@ ms.date: 09/14/2017
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 
-ms.openlocfilehash: 45054799cdc8bbe6d39fa2beb28e69d13cace031
-ms.sourcegitcommit: ed8dd5563e77ef4a3345b2a52a1426859c95576a
+ms.openlocfilehash: 0d814dd27fe53ee7cfc46eac24ec577b05f78e52
+ms.sourcegitcommit: 0d8b19c5d4bfd39d9c202a3d2f990144402ca79c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/15/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="microsoft-bhold-suite-concepts-guide"></a>Microsoft BHOLD Suite fogalmak útmutató
 
@@ -342,6 +342,6 @@ Fontos megjegyezni, hogy a MIM-portálra BHOLD-bővítmények támogatják-e a �
 
 ## <a name="next-steps"></a>További lépések
 
-- [BHOLD a telepítési útmutató](../deploy-use/bhold-installation-guide.md)
+- [BHOLD a telepítési útmutató](bhold-installation-guide.md)
 - [BHOLD fejlesztői leírás](../reference/mim2016-bhold-developer-reference.md)
 - [A BHOLD korábbi verziói](../reference/version-bhold-history.md)

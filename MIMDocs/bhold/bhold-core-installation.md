@@ -11,10 +11,10 @@ ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 
 ms.openlocfilehash: 33fbe63528d5d7c543ae286f934654538782b4d5
-ms.sourcegitcommit: 2be26acadf35194293cef4310950e121653d2714
+ms.sourcegitcommit: 0d8b19c5d4bfd39d9c202a3d2f990144402ca79c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/14/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="bhold-core-installation"></a>BHOLD Core telepítés
 
@@ -109,7 +109,7 @@ BHOLD Core moduljának telepítése előtt kell készüljön fel a BHOLD Core te
 |------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Beépített biztonság használatára**                    | Meghatározza, hogy az adatbázis eléréséhez használt-e a Windows-hitelesítést.                                                                                                                                                                                                     | Jelölje be a jelölőnégyzetet, ha Windows-hitelesítést használ az SQL-kiszolgálóhoz való csatlakozáshoz. Törölje a jelet a jelölőnégyzetből, ha az SQL Server-hitelesítés használata. Az adatbázist kell létrehozni futtató BHOLD Core telepítés Ha SQL Server-hitelesítés használata előtt. **Megjegyzés:** Windows-hitelesítés használata esetén meg kell bejelentkeznie egy olyan fiókkal, amely a sysadmin (rendszergazda) kiszolgálói szerepkörrel rendelkezik az adatbázis-kiszolgálón. |
 | **Adatbázis-felhasználót** és **adatbázis-jelszó** | A felhasználónevet és egy felhasználó jelszavát adja meg a sysadmin (rendszergazda) kiszolgálói szerepkör az adatbázis-kiszolgálón. Ezek az értékek megadva, csak az SQL Server-hitelesítés használata esetén.                                                                                               | A SQL Server felhasználói nevet itt: írása az SQL Server felhasználói jelszó itt: **Megjegyzés:** mindenképp ezt a jelszót rejtett, biztonságos helyen.                                                                                                                                                                                                                                                  |
-| **Adatbázis-kiszolgáló** és **adatbázis neve**   | Megadja az adatbázis-kiszolgáló NetBIOS-nevét és az adatbázis nevét (alapértelmezett: b1) BHOLD az alapvető telepítés hoz létre. Ha nem használ az alapértelmezett adatbázis-kiszolgálópéldányra, adja meg az adatbázis-kiszolgálópéldányra formájában * \<server\>*\\*\<példány\> *. | A kiszolgáló (vagy a kiszolgáló és példány) neve itt írási: írni az adatbázisnevet:                                                                                                                                                                                                                                                                                                                   |
+| **Adatbázis-kiszolgáló** és **adatbázis neve**   | Megadja az adatbázis-kiszolgáló NetBIOS-nevét és az adatbázis nevét (alapértelmezett: b1) BHOLD az alapvető telepítés hoz létre. Ha nem használ az alapértelmezett adatbázis-kiszolgálópéldányra, adja meg az adatbázis-kiszolgálópéldányra formájában  *\<server\>*\\*\<példány\>* . | A kiszolgáló (vagy a kiszolgáló és példány) neve itt írási: írni az adatbázisnevet:                                                                                                                                                                                                                                                                                                                   |
 | **Az adatbázis-felhasználó korlátozások**    | Elavult.                                                                                                                                                                                                                                                                 | Ne változtassa meg az alapértelmezett érték                                                                                                                                                                                                                                                                                                                                                                       |
 |                                                |                                                                                                                                                                                                                                                                           |                                                                                                                                                                                                                                                                                                                                                                                                       |
 |                                                |                                                                                                                                                                                                                                                                           |                                                                                                                                                                                                                                                                                                                                                                                                       |
@@ -118,9 +118,9 @@ BHOLD Core moduljának telepítése előtt kell készüljön fel a BHOLD Core te
 
 BHOLD Core-modul telepítéséhez, jelentkezzen be a tartományi rendszergazdák csoport tagjaként, töltse le a következő fájlt, és futtassa rendszergazdaként a kiszolgálón, melyet a BHOLD Core modul telepítése: 
 
-- BholdCore * \<verzió\>*\_Release.msi
+- BholdCore  *\<verzió\>*\_Release.msi
 
-Cserélje le * \<verzió\> * rendelkező a telepíteni kívánt BHOLD Core kiadás verziószáma.
+Cserélje le  *\<verzió\>*  rendelkező a telepíteni kívánt BHOLD Core kiadás verziószáma.
 
 A program fájlt rendszergazdaként futtatni, kattintson jobb gombbal a fájlra, és kattintson a **Futtatás rendszergazdaként**.
 
@@ -142,7 +142,7 @@ A művelet végrehajtásához a helyi számítógépen a Rendszergazdák csoport
 
 3.  Kattintson az új bejövő szabály varázsló **Port**, és kattintson a **következő**.
 
-4.  Győződjön meg arról, hogy **TCP** van jelölve, a **adott helyi portok**, írja be a BHOLD Core portszám (5151), vagy ha BHOLD Core telepítve, és kattintson a megadott portszám ** Következő**.
+4.  Győződjön meg arról, hogy **TCP** van jelölve, a **adott helyi portok**, írja be a BHOLD Core portszám (5151), vagy ha BHOLD Core telepítve, és kattintson a megadott portszám  **Következő**.
 
 5.  Győződjön meg arról, hogy **a kapcsolat engedélyezéséhez** van kiválasztva, és kattintson **következő**.
 
@@ -175,13 +175,13 @@ Tagság a **Tartománygazdák**, vagy egy ezzel egyenértékű, ez a művelet el
 
 #### <a name="to-establish-the-spn-of-the-bhold-website"></a>Az egyszerű Szolgáltatásnevet a BHOLD webhely létrehozásához
 
-1.  Kattintson az Active Directory tartományi szolgáltatások tartományvezérlő **Start**, kattintson a **minden program**, kattintson a **Kellékek**, kattintson a jobb gombbal **parancssor **, és kattintson a **Futtatás rendszergazdaként**.
+1.  Kattintson az Active Directory tartományi szolgáltatások tartományvezérlő **Start**, kattintson a **minden program**, kattintson a **Kellékek**, kattintson a jobb gombbal **parancssor** , és kattintson a **Futtatás rendszergazdaként**.
 
-2.  A parancssorba írja be a következő parancsot, és nyomja le az ENTER BILLENTYŰT: setspn – S HTTP / * \<networkalias\> \<tartomány\> * \\ * \<accountname\> * ahol:
+2.  A parancssorba írja be a következő parancsot, és nyomja le az ENTER BILLENTYŰT: setspn – S HTTP /  *\<networkalias\> \<tartomány\>*  \\  *\<accountname\>*  ahol:
 
-    -   *\<networkalias\> * használó ügyfelek csatlakozni a BHOLD webhely-címe
+    -   *\<networkalias\>*  használó ügyfelek csatlakozni a BHOLD webhely-címe
 
-    -   *\<tartomány\>*\\*\<accountname\> * BHOLD központi telepítésekor létrehozott BHOLD Core szolgáltatásfiók tartomány és a felhasználó neve.
+    -   *\<tartomány\>*\\*\<accountname\>*  BHOLD központi telepítésekor létrehozott BHOLD Core szolgáltatásfiók tartomány és a felhasználó neve.
 
 3.  Ismételje meg az előző lépést minden egyéb kiderül, hogy az ügyfelek használják a BHOLD webhely, például kapcsolódni, CNAME aliasok, egy teljesen minősített tartománynevet tartalmazó neveket vagy neve (rövid) NetBIOS-tartománynév tartalmaz.
 
@@ -205,7 +205,7 @@ A művelet végrehajtásához a Tartománygazdák csoport tagjaként kell bejele
 
 1.  Kattintson a **Start**, kattintson a **minden program**, és kattintson a **Internet Explorer**.
 
-2.  A cím mezőbe írja be, ahol * \<server\> * a BHOLD-webhely kiszolgálójának neve és * \<port\> * a portszámot a webhelyhez kötött.
+2.  A cím mezőbe írja be, ahol  *\<server\>*  a BHOLD-webhely kiszolgálójának neve és  *\<port\>*  a portszámot a webhelyhez kötött.
 
 3.  Kattintson a **Home**, kattintson a **értékek**, és kattintson a **módosítás**.
 

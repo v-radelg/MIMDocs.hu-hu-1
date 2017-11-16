@@ -10,11 +10,11 @@ ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 
-ms.openlocfilehash: 0e039c0b05cc9088a6934c07ead09fb5250f8a81
-ms.sourcegitcommit: 81ad3ede52c3a4308b806c0c8a3fd42b5f5965b0
+ms.openlocfilehash: 171aa1a2e19ea9f78f9fadbc7368404702095d71
+ms.sourcegitcommit: 0d8b19c5d4bfd39d9c202a3d2f990144402ca79c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="how-do-i-provision-users-to-ad-ds"></a>Felhasználók kiépítése az AD DS-ben
 
@@ -294,7 +294,7 @@ Az alábbi táblázatokban a Fabrikam számára szükséges kiépítési szinkro
 
 
  >[!NOTE]
-Győződjön meg arról, hogy kiválasztott kezdeti folyamat csak a Attribútumfolyam, amely rendelkezik a cél a megkülönböztető név.                                                                          
+ Fontos Győződjön meg arról, hogy bejelölte az Initial Flow Only (Csak kezdeti folyam) lehetőséget az attribútumfolyamnál, melynek céljaként a megkülönböztető név van megadva.                                                                          
 
 ### <a name="step-7-create-the-workflow"></a>7. lépés: A munkafolyamat létrehozása
 
@@ -459,11 +459,7 @@ A fenti feladatok elvégzéséhez futtassa a következő futtatási profilokat.
 | Fabrikam FIMMA   | 1. Exportálás <br/> 2. Különbözeti importálás       |
 
 
-A FIM szolgáltatás adatbázisából való importálást követően Britta Simont és a ExpectedRuleEntry objektumot, amely Brittát
-
-az AD-felhasználó kimenő szinkronizálási szabályához csatolja, előkészíti a rendszer a Fabrikam FIMMA összekötőterében. Amikor áttekinti
-
-Britta tulajdonságait az összekötőtérben, a FIM-portálon konfigurált attribútumértékek mellett a várhatószabály-bejegyzési objektum egy érvényes hivatkozása is szerepelni fog. A következő képernyőfelvételen erre láthat példát.
+Az importálás a FIM szolgáltatás adatbázisához, Britta Simon és az, hogy az AD-felhasználó kimenő szinkronizálási szabály Britta hivatkozások elő van készítve a Fabrikam FIMMA kapcsolódási térbe ExpectedRuleEntry objektum. Amikor a kapcsolódási térbe melletti attribútumértékek az FIM portálon beállított Britta tartozó tulajdonságok is található a várt szabály bejegyzés objektum érvényes hivatkozás. A következő képernyőfelvételen erre láthat példát.
 
 ![Összekötőtér-objektum tulajdonságai](media/how-provision-users-adds/image025.jpg)
 

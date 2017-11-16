@@ -11,10 +11,10 @@ ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 
 ms.openlocfilehash: 2473ef1c3d6fc5350d60d81bd508296a33343f01
-ms.sourcegitcommit: 58d6c628d3bb770669348b987cf8f52ec0576132
+ms.sourcegitcommit: 0d8b19c5d4bfd39d9c202a3d2f990144402ca79c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/19/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="deploying-microsoft-identity-manager-certificate-manager-2016-mim-cm"></a>A Microsoft Identity Manager Tanúsítványkezelő 2016 (MIM CM) üzembe helyezése
 
@@ -221,7 +221,7 @@ A fenti fiókok három fog rendelkezik emelt szintű jogosultságokkal a szervez
 
 Az a **tulajdonosnévvel** lapon törölje a **e-mail név belefoglalása a tulajdonosnévbe** és **E-mail név** jelölőnégyzeteket.
 
-Az a **bővítmények** lap a **a sablonban található bővítmények** listában, ügyeljen arra, hogy **alkalmazás-házirendek** van kiválasztva, és kattintson **szerkesztése **.
+Az a **bővítmények** lap a **a sablonban található bővítmények** listában, ügyeljen arra, hogy **alkalmazás-házirendek** van kiválasztva, és kattintson **szerkesztése** .
 
 Az a **használati szabályzatok bővítmény szerkesztése** párbeszédpanelen jelölje ki mindkét a **titkosított fájlrendszer** és a **biztonságos e-mailek** alkalmazás-házirendek. Kattintson a **eltávolítása**, és kattintson a **OK**.
 
@@ -253,7 +253,7 @@ Az a **új sablon tulajdonságai** párbeszédpanel a **általános** lap a **sa
 
 Az a **kérelmek kezelése** lapján engedélyezése **a titkos kulcs exportálható**, és kattintson a **kriptográfiai szolgáltatók vagy titkosítás lap.**
 
-Az a **CSP kiválasztása** párbeszédpanel, tiltsa le a **Microsoft Base titkosításszolgáltató v1.0**, tiltsa le a **Microsoft Enhanced titkosításszolgáltató v1.0**, engedélyezése** A Microsoft Enhanced RSA és az AES kriptográfiai szolgáltató**, és kattintson a **OK**.
+Az a **CSP kiválasztása** párbeszédpanel, tiltsa le a **Microsoft Base titkosításszolgáltató v1.0**, tiltsa le a **Microsoft Enhanced titkosításszolgáltató v1.0**, engedélyezése **A Microsoft Enhanced RSA és az AES kriptográfiai szolgáltató**, és kattintson a **OK**.
 
 Az a **biztonsági** lapon tegye a következőket:
 
@@ -495,7 +495,7 @@ Ebben a lépésben az telepítjük és a FIM CM hitelesítésszolgáltató modul
 
 1. FIM CM a műveleteket a felhasználói engedélyek csak vizsgálata konfigurálása
 
-2. Az a **C:\\Program Files\\Microsoft Forefront Identity Manager\\2010\\Tanúsítványkezelő\\webes** ablakban másolata legyen ** Web.config** a másolat elnevezési **web.1.config**.
+2. Az a **C:\\Program Files\\Microsoft Forefront Identity Manager\\2010\\Tanúsítványkezelő\\webes** ablakban másolata legyen  **Web.config** a másolat elnevezési **web.1.config**.
 
 3. Az a **webes** ablak, kattintson a jobb gombbal **Web.config**, és kattintson a **nyitott**.
 
@@ -508,7 +508,7 @@ Ebben a lépésben az telepítjük és a FIM CM hitelesítésszolgáltató modul
 
 6. Zárja be a **keresése és cseréje** párbeszédpanel megnyitásához.
 
-7. A sorban kell ** \<key="Clm.RequestSecurity.Flags hozzáadása" érték "UseUser, UseGroups" = /\>**. Módosítsa a sor olvasására ** \<key="Clm.RequestSecurity.Flags hozzáadása" érték "UseUser" = /\>**.
+7. A sorban kell  **\<key="Clm.RequestSecurity.Flags hozzáadása" érték "UseUser, UseGroups" = /\>**. Módosítsa a sor olvasására  **\<key="Clm.RequestSecurity.Flags hozzáadása" érték "UseUser" = /\>**.
 
 8. Zárja be a fájlt, az összes módosításainak mentése folyamatban van.
 
@@ -756,7 +756,7 @@ Ebben a lépésben az telepítjük és a FIM CM hitelesítésszolgáltató modul
      2. Az a **OID tulajdonságok** párbeszédpanel a **biztonsági** lapra, majd **speciális**.
      3. Az a **OID speciális biztonsági beállítások** párbeszédpanel, kattintson a **Hozzáadás**.
      4. A a **válassza ki a felhasználó, számítógép, szolgáltatásfiók vagy csoport** párbeszédpanel a **adja meg a kiválasztandó objektum nevét** mezőbe írja be **mimcm-kezelők**, majd kattintson az **OK**.
-     5. A a **engedélybejegyzés OID azonosítója** párbeszédpanelen győződjön meg arról, hogy az engedélyek alkalmazása **Ez az objektum és a gyermekobjektumok**, kattintson a **teljes hozzáférés**, és kattintson a ** OK**.
+     5. A a **engedélybejegyzés OID azonosítója** párbeszédpanelen győződjön meg arról, hogy az engedélyek alkalmazása **Ez az objektum és a gyermekobjektumok**, kattintson a **teljes hozzáférés**, és kattintson a  **OK**.
      6. Az a **OID speciális biztonsági beállítások** párbeszédpanel, kattintson a **OK**.
      7. Az a **OID tulajdonságok** párbeszédpanel, kattintson a **OK**.
      8. Bezárás **Active Directory – helyek és szolgáltatások**.
