@@ -5,17 +5,17 @@ keywords:
 author: barclayn
 ms.author: barclayn
 manager: mbaldwin
-ms.date: 08/18/2017
+ms.date: 11/15/2017
 ms.topic: reference
 ms.prod: identity-manager-2016
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 
-ms.openlocfilehash: fe361c3f6dd85a478d655a910f0f3ec9802128b0
-ms.sourcegitcommit: 0d8b19c5d4bfd39d9c202a3d2f990144402ca79c
+ms.openlocfilehash: 7f56882bf005de6c888997c1bf6a9e2feaea410c
+ms.sourcegitcommit: 42253562ac2f9ed689e9db9d0c470213b7926883
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/14/2017
+ms.lasthandoff: 11/16/2017
 ---
 # <a name="microsoft-identity-manager-2016-best-practices"></a>Microsoft Identity Manager 2016 – Gyakorlati tanácsok
 
@@ -90,7 +90,7 @@ Attól függően, hogy mennyi memóriát használ az SQL Server, és hogy megosz
   WITH OVERRIDE
   ```
 
-  Ez a példa újrakonfigurálja az SQL Servert, hogy legfeljebb 12 gigabájt (GB) memóriát használjon.
+  Ez a példa újrakonfigurálja az SQL-kiszolgáló legfeljebb 12 gigabájt (GB) memória használatával.
 
 4.  A beállítás ellenőrzésére használja a következő lekérdezést:
 
@@ -108,13 +108,16 @@ Attól függően, hogy mennyi memóriát használ az SQL Server, és hogy megosz
 
 ### <a name="backup-and-recovery-configuration"></a>Biztonsági mentés és helyreállítás konfigurálása
 
-Általánosságban a szervezet érvényes biztonsági mentési szabályzata szerint kell az adatbázisról biztonsági mentést készítenie. Ha a növekményes naplófájlok biztonsági mentései nem tervezettek, az egyszerű helyreállítási módot kell beállítani az adatbázishoz. Mielőtt hozzálátna a biztonsági mentési stratégia bevezetéséhez, meg kell bizonyosodnia afelől, hogy tisztában van a különböző helyreállítási modellek következményeivel, valamint ezen modellek lemezterület-szükségleteivel. A teljes helyreállítási modell a naplók gyakori biztonsági mentéseit igényli a magas lemezterület-használat elkerülése érdekében. További információt a [Recovery Model Overview](http://go.microsoft.com/fwlink/?LinkID=185370) (A helyreállítási modell áttekintése) és a [FIM 2010 Backup and Restore Guide](http://go.microsoft.com/fwlink/?LinkID=165864) (FIM 2010 biztonsági mentési és visszaállítási útmutató) című részben talál.
+Általában a rendszergazdát, hogy egy biztonsági mentési és helyreállítási stratégia kialakítása együtt kell működnie. Bizonyos ajánlások a következők:
+- Az adatbázisról biztonsági mentést, a szervezet biztonsági házirendjének megfelelően. 
+- Ha a növekményes naplófájlok biztonsági mentései nem tervezettek, az egyszerű helyreállítási módot kell beállítani az adatbázishoz. 
+- Győződjön meg arról, hogy tudomásul veszi a különböző helyreállítási modellek következményekkel járhat a biztonsági mentési stratégia megvalósítása előtt. Ismerje meg, a lemezterületre vonatkozó követelményei ezek a modellek. A teljes helyreállítási modell a naplók gyakori biztonsági mentéseit igényli a magas lemezterület-használat elkerülése érdekében. 
 
-## <a name="create-a-backup-administrator-account-for-the-fimservice-after-installation"></a>Biztonsági mentésért felelős rendszergazdai fiók létrehozása a FIMService-hez a telepítés után
+További információt a [Recovery Model Overview](http://go.microsoft.com/fwlink/?LinkID=185370) (A helyreállítási modell áttekintése) és a [FIM 2010 Backup and Restore Guide](http://go.microsoft.com/fwlink/?LinkID=165864) (FIM 2010 biztonsági mentési és visszaállítási útmutató) című részben talál.
 
+## <a name="create-a-backup-administrator-account-for-the-fim-service-after-installation"></a>Biztonsági mentés rendszergazdai fiók létrehozása a FIM szolgáltatás telepítése után
 
->[!IMPORTANT]
-A FIMService-rendszergazdák csoport tagjai a FIM környezet üzemeltetéséhez alapvető fontosságú egyedi engedélyekkel rendelkeznek. Ha Ön nem tud bejelentkezni a Rendszergazdák csoport tagjaként, egyetlen megoldás a rendszer visszaállítása egy korábbi biztonsági másolattal. Ezen helyzet elkerülése érdekében javasolt, hogy a telepítés utáni konfiguráció részeként adjon hozzá más felhasználókat a FIM rendszergazdai csoporthoz.
+A rendszergazdák FIMService készlet tagjait engedélye egyedi alapvető fontosságú a MIM-környezet működését. Ha nem tud bejelentkezni a fiókkal részei a Rendszergazdák csoportnak, a csak megoldás lehet, a visszaállítás egy korábbi biztonsági mentés, a rendszer. Ezen helyzet elkerülése érdekében javasolt, hogy a telepítés utáni konfiguráció részeként adjon hozzá más felhasználókat a FIM rendszergazdai csoporthoz.
 
 ## <a name="fim-service"></a>FIM szolgáltatás
 
@@ -144,7 +147,7 @@ További információkért lásd: [Configure Message Delivery Restrictions](http
 
 ### <a name="disable-sharepoint-indexing"></a>SharePoint-indexelés letiltása
 
-Ajánlott letiltani a Microsoft Office SharePoint® indexelését. Nincsenek indexelendő dokumentumok és az indexelés számos hibanapló-bejegyzést és esetleges teljesítményproblémákat okozhat a FIM 2010 használatakor. A SharePoint-indexelés letiltásához:
+Ajánlott letiltani a Microsoft Office SharePoint® indexelését. Nincsenek indexelése igénylő. Indexelő hatására hány potenciális problémákat és hiba naplóbejegyzések a MIM-ben. Tiltsa le a SharePoint-indexelés hajtsa végre az alábbi lépéseket:
 
 1.  A MIM 2016 portált futtató kiszolgálón kattintson a Start gombra.
 
@@ -164,16 +167,16 @@ Ajánlott letiltani a Microsoft Office SharePoint® indexelését. Nincsenek ind
 
 ## <a name="mim-2016-initial-data-load"></a>A MIM 2016 kezdeti adatbetöltése
 
-Ez a szakasz felsorolja a teljesítmény növelése érdekében végrehajtandó lépéseket a külső rendszerekből származó kezdeti adatok a FIM 2010-be való betöltéséhez. Fontos tisztában lenni azzal, hogy ezen lépések némelyike ideiglenesen, a rendszer kezdeti feltöltése során alkalmazandó, és annak befejezését követően vissza kell állítani az alaphelyzetet. Ez egy egyszeri művelet, és nem folyamatos szinkronizálás.
+Ez a rész felsorolja a kezdeti adatok terhelés külső rendszer MIM teljesítményének javítása érdekében lépések egy sorozatát. Fontos megérteni, hogy ezeket a lépéseket számos csak végre a rendszer a kezdeti feltöltése során. Ezek betöltés befejezése után kell állítani. Ez egy egyszeri művelet, és nem folyamatos szinkronizálás.
 
 >[!NOTE]
-További információt a felhasználók a FIM 2010 és az Active Directory tartományi szolgáltatások (AD DS) közötti szinkronizálásáról a következő FIM-dokumentációban talál: [How do I Synchronize Users from Active Directory to FIM](http://go.microsoft.com/fwlink/?LinkID=188277) (A felhasználók az Active Directoryból a FIM-be való szinkronizálásának menete).
+További információ a felhasználók MIM és Active Directory tartományi szolgáltatások (AD DS) közötti szinkronizálás: [hogyan felhasználók szinkronizálása az Active Directoryból az FIM felé irányuló](http://go.microsoft.com/fwlink/?LinkID=188277) a FIM-dokumentáció.
 
 >[!IMPORTANT]
-Győződjön meg arról, hogy alkalmazta a jelen útmutató SQL-telepítéssel foglalkozó szakaszában tárgyalt ajánlott eljárásokat.                                                                                                                                                      |
+Győződjön meg arról, hogy alkalmazta a jelen útmutató SQL-telepítéssel foglalkozó szakaszában tárgyalt ajánlott eljárásokat. 
 
 ### <a name="step-1-configure-the-sql-server-for-initial-data-load"></a>1. lépés: Az SQL Server konfigurálása a kezdeti adatbetöltéshez
-Ha sok adatot szeretne kezdetben betölteni, akkor lerövidítheti az adatbázis feltöltésének időtartamát a teljes szöveges keresés átmeneti kikapcsolásával és a MIM 2016 kezelőügynökbe (FIM MA) való exportálás befejezése utáni újbóli bekapcsolásával.
+Az adatok kezdeti betöltés hosszadalmas folyamat lehet. Ha azt tervezi, először nagy mennyiségű adat betöltésére, lerövidíthető ideiglenesen teljes szöveges keresés kikapcsolásával, és kapcsolja be azt újra az exportálást a MIM 2016 management Agent (FIM MA) befejezése után az adatbázis feltöltéséhez szükséges idő.
 
 A teljes szöveges keresés átmeneti kikapcsolásához:
 
@@ -184,12 +187,9 @@ A teljes szöveges keresés átmeneti kikapcsolásához:
 3.  Futtassa a következő SQL-utasításokat:
 
 ```SQL
-ALTER FULLTEXT INDEX ON [fim].[ObjectValueString] SET CHANGE_TRACKING =
-MANUAL
+ALTER FULLTEXT INDEX ON [fim].[ObjectValueString] SET CHANGE_TRACKING = MANUAL
 ALTER FULLTEXT INDEX ON [fim].[ObjectValueXml] SET CHANGE_TRACKING = MANUAL
 ```
-
-Fontos tisztában lenni az SQL Server helyreállítási modell lemezkövetelményeivel. A biztonsági mentési ütemezéstől függően előfordulhat, hogy a kezdeti rendszerbetöltés során ajánlott az egyszerű helyreállítási módot használni a lemezterület használatának korlátozásához, de ismernie kell az adatvesztés kockázatát illető következményeket. Teljes helyreállítási mód használatakor szükséges a lemezterület biztonsági másolatokra való használatának felügyelete, többek között a tranzakciónapló gyakori biztonsági mentései magas lemezterület-használatának megakadályozására.
 
 >[!IMPORTANT]
 Ezen eljárások elmulasztása magas lemezterület-használatot eredményezhet, és előfordulhat, hogy elfogy a szabad lemezterület. További információt ebben a témakörben a [Recovery Model Overview](http://go.microsoft.com/fwlink/?LinkID=185370) (A helyreállítási modell áttekintése) című részben találhat. A [FIM biztonsági mentési és visszaállítási útmutatója](http://go.microsoft.com/fwlink/?LinkID=165864) további információkat tartalmaz (angol nyelven).
@@ -200,16 +200,11 @@ A kezdeti betöltése során csak a FIM-konfigurációhoz a felügyeletiháziren
 
 ### <a name="step-3-configure-and-populate-the-fim-service-with-external-identity-data"></a>3. lépés: A FIM szolgáltatás konfigurálása és feltöltése külső azonosító adatokkal
 
-Ehhez kövesse a felhasználók az Active Directoryból a FIM-be való szinkronizálásának
-
-menetét ismertető cikk lépéseit a rendszer konfigurálásához és szinkronizálásához az Active Directory-beli felhasználókkal. A csoportinformációk szinkronizálásának folyamatát a How Do I Synchronize Groups from Active Directory Domain Services to FIM (A csoportok az Active Directory tartományi szolgáltatásokból a FIM-be való szinkronizálásának menete) című útmutatóban találja.
+Ezen a ponton érdemes követnie eljárások ismertetik a How Do I felhasználók szinkronizálása az Active Directory tartományi szolgáltatásokból FIM útmutató konfigurálását, és szinkronizálja a rendszer a felhasználókat az Active Directoryból. Adatait szinkronizálni kell, ha a folyamat eljárásait ismerteti a [hogyan csoportok szinkronizálásához Active Directory tartományi szolgáltatásokból az FIM felé irányuló](https://technet.microsoft.com/library/ff686936(v=ws.10).aspx) útmutató.
 
 #### <a name="synchronization-and-export-sequences"></a>A szinkronizálás és az exportálás sorrendje
 
-A teljesítmény optimalizálása érdekében az exportálást az összekötőtérben nagy számú függőben lévő exportálási műveletet eredményező szinkronizálás után kell futtatni.
-
-Ezután futtasson megerősítő importálást az érintett összekötőtérrel társított kezelőügynökön. Például, ha a kezdeti adatbetöltés részeként több kezelőügynökön kell szinkronizálási futtatási profilokat futtatni, minden egyes szinkronizálásfuttatás után futtatnia kell egy exportálást, majd egy különbözeti importálást.
-
+A teljesítmény optimalizálása érdekében az exportálást az összekötőtérben nagy számú függőben lévő exportálási műveletet eredményező szinkronizálás után kell futtatni. Ezután futtasson megerősítő importálást az érintett összekötőtérrel társított kezelőügynökön. Például, ha a kezdeti adatbetöltés részeként több kezelőügynökön kell szinkronizálási futtatási profilokat futtatni, minden egyes szinkronizálásfuttatás után futtatnia kell egy exportálást, majd egy különbözeti importálást.
 Minden az inicializálási ciklus részét képező forrás-kezelőügynök esetén hajtsa végre az alábbi lépéseket:
 
 1.  Teljes importálás a forrás-kezelőügynökön.
@@ -320,7 +315,7 @@ Az SSL implementálásához:
 
 7.  Mentse tetszőleges helyre a fájlt. A későbbi lépésekben szüksége lesz a hely elérésére.
 
-8.  A Windows Internet Explorer® böngészőben nyissa meg a https://kiszolgálónév/certsrv oldalt. A „kiszolgálónév” részt cserélje le a tanúsítványokat kiállító kiszolgáló nevére.
+8.  Tallózással keresse meg a https://servername/certsrv. A „kiszolgálónév” részt cserélje le a tanúsítványokat kiállító kiszolgáló nevére.
 
 9.  Kattintson az Új tanúsítvány kérése lehetőségre.
 
@@ -374,7 +369,7 @@ Az optimális teljesítménykonfigurációhoz:
 
 -   Alkalmazza a jelen a dokumentum SQL-telepítő szakaszában leírt ajánlott eljárásokat.
 
--   Kapcsolja ki a SharePoint-indexelést a FIM 2010 R2 Portal webhelyén. További tudnivalókat a jelen dokumentum SharePoint-indexelés letiltása című szakaszában találhat.
+-   Kapcsolja ki a SharePoint-indexelés meg a MIM-portál webhelyéhez. További tudnivalókat a jelen dokumentum SharePoint-indexelés letiltása című szakaszában találhat.
 
 ## <a name="feature-specific-best-practices--i-want-to-remove-this-and-collapse-this-section-and-just-have-the-specific-features-at-header-2-level-versus-3"></a>Funkcióspecifikus ajánlott eljárások (El szeretném távolítani ezt, és összecsukni ezt a szakaszt, és csak adott funkciók legyenek a 2. fejléc szintjén a 3. helyett)
 
@@ -392,7 +387,7 @@ A MIM kétféle MPR-t használ, a kérelmet és a készletátmenetet:
 -  Kérelem-MPR (RMPR)
 
   - Az erőforrásokon végzett műveletek létrehozási, olvasási, frissítési vagy törlési (CRUD) hozzáférés-vezérlési házirendjének (hitelesítési, engedélyezési és műveleti) meghatározásához használatos.
-  - Akkor alkalmazza a rendszer, ha egy CRUD-művelet kiadására kerül sor egy cél-erőforrásra a FIM-ben.
+  - Amikor egy CRUD művelet szemben a MIM-ben a cél erőforráson alkalmazza.
   - Hatóköre a szabályban megadott megfelelési feltételek, azaz hogy mely CRUD-kérelmekre vonatkozik a szabály.
 
 - Készletátmenet-MPR (TMPR)
@@ -404,7 +399,7 @@ A MIM kétféle MPR-t használ, a kérelmet és a készletátmenetet:
 
 #### <a name="only-enable-mprs-as-necessary"></a>Csak szükség esetén engedélyezze az MPR-eket
 
-A konfiguráció alkalmazásakor használja a legalacsonyabb jogosultsági szint elvét. Az MPR-ek a FIM környezet hozzáférési szabályzatát szabályozzák. Csak a felhasználók többsége által használt szolgáltatásokat engedélyezze. Nem minden felhasználó használhatja például FIM-et csoportfelügyeletre, így a társított csoportkezelési MPR-ek le lesznek tiltva. Alapértelmezés szerint a FIM-ben le van tiltva a legtöbb nem rendszergazdai jogosultság.
+A konfiguráció alkalmazásakor használja a legalacsonyabb jogosultsági szint elvét. Házirendszabályok szabályozhatja a hozzáférési házirendet a MIM-környezet. Csak a felhasználók többsége által használt szolgáltatásokat engedélyezze. Például nem minden felhasználónak a MIM az eszközcsoport-kezelés, ezért társított csoport felügyeleti házirendszabályok le kell tiltani. Alapértelmezés szerint a MIM részét képező legtöbb nem rendszergazdai engedélyek le van tiltva.
 
 #### <a name="duplicate-built-in-mprs-instead-of-directly-modifying"></a>A beépített MPR-ek közvetlen módosítása helyett másolja azokat
 Ha módosítani szeretné a beépített MPR-eket, létre kell hoznia egy új MPR-t a szükséges konfigurációval és ki kell kapcsolnia a beépített MPR-t. Ez biztosítja, hogy a beépített MPR-ek a frissítési folyamaton keresztül bevezetett jövőbeli módosításai nem lesznek negatív hatással a rendszerkonfigurációra.
@@ -431,7 +426,7 @@ Olyan azonos hozzáférési követelményekkel rendelkező attribútumok esetén
 
 #### <a name="avoid-giving-unrestricted-access-even-to-selected-principal-groups"></a>Kerülje a korlátlan hozzáférés megadását még a kiválasztott egyszerű rendszercsoportokhoz is
 
-A FIM-ben az engedélyek definiálása pozitív állításként történik. Mivel a FIM nem támogatja a megtagadási engedélyeket, az erőforrásokhoz való korlátlan hozzáférés megadása bonyolítja bármely kizárás megadását az engedélyekben. Ajánlott eljárásként azt javasoljuk, hogy csak a szükséges engedélyeket adja meg.
+A mim szoftverben engedélyeket is meg van adva egy pozitív helyességi feltételt. MIM nem támogatja a megtagadási engedélyeket, adjon korlátlan hozzáférést egy erőforráshoz növeli a kizárások az engedélyek biztosítása. Ajánlott eljárásként azt javasoljuk, hogy csak a szükséges engedélyeket adja meg.
 
 #### <a name="use-tmprs-to-define-custom-entitlements"></a>Használjon TMPR-eket az egyéni jogosultságok megadásához
 
@@ -470,7 +465,7 @@ A jogosultság eltávolításához a rendszerből (és visszavonásához a jelen
 
 3.  Tiltsa le a készletátmenet kimenő MPR-jét.
 
-A jogosultság eltávolításához, de a jelenlegi tagok békén hagyásához (például a FIM jogosultságkezelésre való használatának leállítása):
+Egy jogosultság eltávolítása, de a jelenlegi tagok különálló hagyjon (például a MIM használatával felügyeli a jogosultság stop):
 
 1.  Tiltsa le a készletátmenet bejövő MPR-jét. Ezzel elkerülhetők az új jogosultság-megadások.
 
@@ -504,11 +499,11 @@ A többértékű referenciaattribútumokon alapuló feltételek használata ker�
 
 #### <a name="kiosk-like-computers-that-are-used-for-password-reset-should-set-local-security-to-clear-the-virtual-memory-pagefile"></a>A jelszó-visszaállításhoz használt kioszkmódban üzemelő számítógépeknél a helyi biztonságot a virtuális memória lapozófájljának törlésére kell beállítani
 
-A FIM 2010 jelszó-visszaállítás kioszkként használandó munkaállomáson történő telepítéskor javasoljuk, hogy kapcsolja be a helyi biztonsági házirend Leállítás: Virtuális memória lapozófájljának törlése beállítását annak biztosítására, hogy a folyamat memóriájából származó érzékeny információkhoz jogosulatlan felhasználók ne férhessenek hozzá.
+A MIM jelszó-változtatási céljuk, hogy a teljes képernyős munkaállomáson való telepítésekor, azt javasoljuk, hogy a leállítási: törölje a virtuális memória lapozófájl helyi biztonsági házirend beállítása be kell kapcsolni győződjön meg arról, hogy a bizalmas adatok nem érhető el jogosulatlan felhasználók.
 
 #### <a name="users-should-always-register-for-a-password-reset-on-a-computer-that-they-are-logged-on-to"></a>A felhasználóknak mindig azon a számítógépen kell regisztrálniuk a jelszó-visszaállításra, amelyen bejelentkeztek
 
-Amikor egy felhasználó megpróbál regisztrálni a jelszó-visszaállításra egy webportálon keresztül, a FIM 2010 mindig a bejelentkezett felhasználó nevében kezdeményezi a regisztrációt, függetlenül attól, hogy ki van bejelentkezve a webhelyen. A felhasználóknak mindig azon a számítógépen kell regisztrálniuk a jelszó-visszaállításra, amelyen bejelentkeztek.
+Amikor a felhasználó megkísérli regisztrálni a jelszó alaphelyzetbe webes portálon keresztül, a MIM mindig a bejelentkezett felhasználó nevében, függetlenül attól, akik van bejelentkezve a webhely kezdeményezi a regisztráció. A felhasználóknak mindig azon a számítógépen kell regisztrálniuk a jelszó-visszaállításra, amelyen bejelentkeztek.
 
 #### <a name="do-not-set-the-avoidpdconwan-registry-key-to-true"></a>Ne állítsa az AvoidPdcOnWan beállításkulcsot igaz értékre
 
@@ -580,7 +575,7 @@ Ne töröljön sémaerőforrásokat, amíg fennálló naplózási követelménye
 
 #### <a name="making-regular-expressions-case-insensitive"></a>Kis-és nagybetűk megkülönböztetésének kikapcsolása a reguláris kifejezésekben
 
-A FIM-ben hasznos lehet, ha bizonyos reguláris kifejezések nem különböztetik meg a kis-és nagybetűket. A ?!: operátor használatával figyelmen kívül hagyhatja a kis- és nagybetűket. Például az alkalmazott típusa esetén használja az alábbi kifejezést:
+A mim szoftverben célszerű annak néhány reguláris kifejezések-és nagybetűket. A ?!: operátor használatával figyelmen kívül hagyhatja a kis- és nagybetűket. Például az alkalmazott típusa esetén használja az alábbi kifejezést:
 
 `\^(?!:contractor\|full time employee)%.`
 
@@ -590,17 +585,17 @@ A szinkronizáló vezérlő számára felfedett Tag attribútum ténylegesen a C
 
 #### <a name="leading-and-trailing-spaces-in-strings-are-ignored"></a>Kezdő és záró szóközök figyelmen kívül hagyása karakterláncokban
 
-A FIM-ben megadhat kezdő és záró szóközökkel rendelkező karakterláncokat, de a FIM figyelmen kívül hagyja ezeket a szóközöket. Egy kezdő és záró szóközzel rendelkező karakterlánc elküldése esetén a szinkronizáló vezérlő és a webszolgáltatások figyelmen kívül hagyják ezeket a szóközöket.
+A mim szoftverben megadhatja a kezdő és záró szóközök karakterláncok, de a MIM rendszer figyelmen kívül hagyja ezeket a szóközöket. Egy kezdő és záró szóközzel rendelkező karakterlánc elküldése esetén a szinkronizáló vezérlő és a webszolgáltatások figyelmen kívül hagyják ezeket a szóközöket.
 
 #### <a name="empty-strings-do-not-equal-null"></a>Az üres karakterlánc nem egyenlő a null értékkel
 
-A FIM ezen kiadásában az üres karakterláncok értéke nem egyenlő a null értékkel. Az üres karakterláncot tartalmazó bemeneti érték érvényes értéknek minősül. Ha nem található bemeneti érték, az null értéknek minősül.
+Üres értékek a következők nem null, ebben a kiadásban a MIM egyenlő. Az üres karakterláncot tartalmazó bemeneti érték érvényes értéknek minősül. Ha nem található bemeneti érték, az null értéknek minősül.
 
 ### <a name="workflow-and-request-processing"></a>Munkafolyamat- és a kérelemfeldolgozás
 
 #### <a name="do-not-delete-default-workflows-that-are-shipped-with-mim-2016"></a>Ne törölje a MIM 2016-tal szállított alapértelmezett munkafolyamatokat
 
-A következő, a FIM 2010-hez mellékelt munkafolyamatok nem törölhetők:
+A következő munkafolyamatok a MIM szállítják, és nem törölhető:
 
 -   Lejárati munkafolyamat
 
@@ -634,4 +629,11 @@ Kerülje a MIM-erőforrásokat, például a függvénykiértékelői tevékenys�
 
 ### <a name="understanding-fim-service-partitions"></a>A FIM szolgáltatás partícióinak ismertetése
 
-A FIM célja az olyan FIM-ügyfelek, mint például a FIM Synchronization Service és az önkiszolgáló összetevők által kezdeményezhető kérelmek feldolgozása a konfigurált üzleti szabályzatok szerint. A kialakításból fakadóan mindegyik FIM-szolgáltatáspéldány egy logikai csoporthoz tartozik, amely egy vagy több FIM-szolgáltatáspéldányból, más néven FIM-szolgáltatáspartícióból áll. Ha csak egy FIM-szolgáltatáspéldány van telepítve az összes kérelem kezelésére, akkor előfordulhat, hogy feldolgozási késéseket tapasztal. Egyes műveletek akár az önkiszolgáló műveletekhez megfelelő alapértelmezett időtúllépési értékeket is meghaladhatják. A FIM-szolgáltatáspartíciók segíthetnek e probléma megoldásában. További információt a FIM-szolgáltatás partícióinak ismertetésében talál.
+A MIM célkitűzése dolgozza fel kérelmeket, melyek elindíthatóak különböző MIM ügyfelekről, például a FIM szinkronizálási szolgáltatás és az önkiszolgáló összetevők az üzleti konfigurált házirendek alapján. A kialakításból fakadóan mindegyik FIM-szolgáltatáspéldány egy logikai csoporthoz tartozik, amely egy vagy több FIM-szolgáltatáspéldányból, más néven FIM-szolgáltatáspartícióból áll. Ha csak egy FIM-szolgáltatáspéldány van telepítve az összes kérelem kezelésére, akkor előfordulhat, hogy feldolgozási késéseket tapasztal. Egyes műveletek akár az önkiszolgáló műveletekhez megfelelő alapértelmezett időtúllépési értékeket is meghaladhatják. A FIM-szolgáltatáspartíciók segíthetnek e probléma megoldásában.
+
+További információ: [ismertetése FIM szolgáltatás partíciók](https://social.technet.microsoft.com/wiki/contents/articles/2363.understanding-fim-service-partitions.aspx).
+
+## <a name="next-steps"></a>További lépések
+- [FIM biztonsági mentési és visszaállítási útmutató](http://go.microsoft.com/fwlink/?LinkID=165864)
+- [Hogyan készíthetek felhasználók szinkronizálása az Active Directoryból az FIM felé](http://go.microsoft.com/fwlink/?LinkID=188277) 
+- [Helyreállítási modell áttekintése](http://go.microsoft.com/fwlink/?LinkID=185370).
