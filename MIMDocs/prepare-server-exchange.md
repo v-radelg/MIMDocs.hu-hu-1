@@ -5,18 +5,18 @@ keywords:
 author: billmath
 ms.author: barclayn
 manager: mbaldwin
-ms.date: 10/12/2017
+ms.date: 11/30/2017
 ms.topic: get-started-article
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 34a8c16e-3bed-4e16-939b-b9fe17dd834b
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 145248962f0977f4aa7bc1edf49f0e88543d5cb8
-ms.sourcegitcommit: f077508b5569e2a96084267879c5b6551e1e0905
+ms.openlocfilehash: cdb425938f7458f74cf06b76d33f557d6a38beeb
+ms.sourcegitcommit: 362475d4018e74e5a17ba574ccaec47a2caebaff
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 12/01/2017
 ---
 # <a name="set-up-an-identity-management-server-exchange"></a>Identitáskezelési kiszolgáló beállítása: Exchange
 
@@ -29,13 +29,13 @@ Ha szeretné, hogy a MIM e-maileket küldhessen és fogadhasson, vagy postalád�
 
 1. Töltse le és telepítse a Microsoft Office 2010 Filter Pack 2.0 és 2.0 SP1 verzióját.
 
-    - [MS Office10 FP2.0](http://www.microsoft.com/en-us/download/details.aspx?id=17062)
+    - [MS Office10 FP2.0](http://www.microsoft.com/download/details.aspx?id=17062)
 
-    - [MS Office10 FP2.0 SP1](http://www.microsoft.com/en-us/download/details.aspx?id=26604)
+    - [MS Office10 FP2.0 SP1](http://www.microsoft.com/download/details.aspx?id=26604)
 
-2. Töltse le és telepítse a [Microsoft Unified Communications Managed API 4.0-s verzióját (Core Runtime, 64 bit)](http://www.microsoft.com/en-us/download/details.aspx?id=34992).
+2. Töltse le és telepítse a [Microsoft Unified Communications Managed API 4.0-s verzióját (Core Runtime, 64 bit)](http://www.microsoft.com/download/details.aspx?id=34992).
 
-3. Töltse le és telepítse a [MS Exchange Server 2013 180 napos próbaverzióját](http://www.microsoft.com/en-us/evalcenter/evaluate-exchange-server-2013).
+3. Töltse le és telepítse a [MS Exchange Server 2013 180 napos próbaverzióját](http://www.microsoft.com/evalcenter/evaluate-exchange-server-2013).
 
 >[!div class="step-by-step"]  
 [« SharePoint](prepare-server-sharepoint.md)
