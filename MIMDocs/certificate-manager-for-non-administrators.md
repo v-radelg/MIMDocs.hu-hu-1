@@ -12,11 +12,11 @@ ms.technology: security
 ms.assetid: bfabc562-a2f0-4cff-ac31-36927f41e102
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 263752678e75267d6f58fe3fcb28975984f62f70
-ms.sourcegitcommit: f077508b5569e2a96084267879c5b6551e1e0905
+ms.openlocfilehash: 39becb555d2efe17e60789453dbaf448c90a8b60
+ms.sourcegitcommit: 362475d4018e74e5a17ba574ccaec47a2caebaff
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 12/01/2017
 ---
 # <a name="enroll-smart-cards-for-non-administrators"></a>Intelligens kártyák regisztrálása nem rendszergazdák számára
 Ha a felhasználó nem helyi rendszergazda, akkor alapesetben nem jogosult intelligens kártyát regisztrálni a saját számítógépén. A következő folyamat bemutatja, miként lehet áthidalni ezt a korlátozást.
@@ -63,7 +63,7 @@ Ha a felhasználó nem helyi rendszergazda, akkor alapesetben nem jogosult intel
 
     `makeappx pack /l /d .\appx /p <app package name>.appx`
 
-    s`igntool sign /f <path\>mysign.pfx /p <pfx password> /fd "sha256" <app package name>.appx`
+    `signtool sign /f <path\>mysign.pfx /p <pfx password> /fd "sha256" <app package name>.appx`
 
 4.  Duplikálja a profilsablont, és állítsa be a kezdő adminisztrációs kulcsot a MIM-kiszolgáló konfigurálásához:
 
