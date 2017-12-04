@@ -86,6 +86,13 @@
 # [Hivatkozás](./reference/microsoft-identity-manager-2016-developer-reference.md)
 ## Fejlesztői leírás
 ### [MIM 2016 fejlesztői leírás](./reference/microsoft-identity-manager-2016-developer-reference.md)
+### Webszolgáltatások összekötője
+#### [Webszolgáltatások általános összekötője – áttekintés](./reference/microsoft-identity-manager-2016-ma-ws.md)
+#### [A webkonfigurációs eszköz telepítésének lépései](./reference/microsoft-identity-manager-2016-ma-ws-install.md)
+#### [Webszolgáltatások összekötője – munkafolyamat leírása SOAP-hez](./reference/microsoft-identity-manager-2016-ma-ws-soap.md)
+#### [Webszolgáltatások összekötője – munkafolyamat leírása REST mintához](./reference/microsoft-identity-manager-2016-ma-ws-restgeneric.md)
+#### [Webszolgáltatások összekötője – REST minta App Service](./reference/microsoft-identity-manager-2016-ma-ws-restsample.md)
+#### [Webszolgáltatások összekötőjének konfigurálási lehetőségei](./reference/microsoft-identity-manager-2016-ma-ws-maconfig.md)
 ### BHOLD
 #### [BHOLD fejlesztői leírás](./reference/mim2016-bhold-developer-reference.md) 
 ### [Tanúsítványkezelő – REST API-referencia](./reference/certificate-management-rest-api-reference.md)
