@@ -12,11 +12,11 @@ ms.technology: security
 ms.assetid: 7320f014-8b60-4866-92de-cfbd3e6edc48
 ms.reviewer: fimguy
 ms.suite: ems
-ms.openlocfilehash: 151fbd26011ca76901d181131a88ded8a718a27a
-ms.sourcegitcommit: 0f99de31fe6b52ec692b3886073909f549a451d6
+ms.openlocfilehash: ffe372c273aae55278f9b18b45b65425734aa6f7
+ms.sourcegitcommit: e52bab207117390997c6fa8450de24335b502673
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 12/20/2017
 ---
 # <a name="hybrid-identity-management-audit-reports-in-azure-active-directory---public-previewrefresh"></a>Hibrid identitáskezelési naplójelentések az Azure Active Directoryban – nyilvános előzetes verzió (frissítés)
 Az Azure Active Directory (AD) naplójelentéseinek segítségével egyetlen jelentésben nyomon követheti a helyszínen vagy a felhőben végzett identitáskezelési tevékenységeket. Ez a funkció lehetővé teszi, hogy az összes identitását egy helyen kezelje, és egy helyen férjen hozzá adataihoz, így időt takaríthat meg és csökkentheti a teljes költségeket.
@@ -32,7 +32,7 @@ A hibrid naplózási jelentéskészítés segít a rendszergazdáknak az identit
 
 ## <a name="how-does-it-work"></a>Hogyan működik?
 
-A helyszíni adatok gyűjtéséhez először telepítenie kell egy jelentéskészítő ügynököt az Identity Manager 2016-kiszolgálón. A jelentéskészítő ügynököt a Microsoft letöltési oldaláról [itt](https://www.microsoft.com/en-us/download/details.aspx?id=55112) töltheti le.
+A helyszíni adatok gyűjtéséhez először telepítenie kell egy jelentéskészítő ügynököt az Identity Manager 2016-kiszolgálón. A jelentéskészítő ügynököt a Microsoft letöltési oldaláról [itt](https://www.microsoft.com/download/details.aspx?id=55112) töltheti le.
 
 A hibrid jelentéskészítés folyamata a következő lépésekből áll:
 1. A jelentéskészítő ügynök a telepítést követően az Identity Manager-tevékenységek adatait a Windows Eseménynaplóba exportálja.
@@ -43,7 +43,7 @@ A hibrid jelentéskészítés folyamata a következő lépésekből áll:
 
 ## <a name="next-steps"></a>További lépések
 - További részletek: [A hibrid jelentéskészítés kezelése az Identity Managerben](working-with-identity-manager-hybrid-reporting.md)
-- További információt a [Naplózási tevékenységre vonatkozó jelentések az Azure Active Directory-portálon](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-reporting-activity-audit-logs) című témakörben talál
-- További részletek a [adatmegőrzési jelentés](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-reporting-retention)
-- További részletek a [Microsoft Azure napló integrációs (SIEM)](https://docs.microsoft.com/en-us/azure/security/security-azure-log-integration-overview)
-- További részletek a [Azure Active Directory reporting API-val](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-reporting-api-getting-started)
+- További információt a [Naplózási tevékenységre vonatkozó jelentések az Azure Active Directory-portálon](https://docs.microsoft.com/azure/active-directory/active-directory-reporting-activity-audit-logs) című témakörben talál
+- További részletek a [adatmegőrzési jelentés](https://docs.microsoft.com/azure/active-directory/active-directory-reporting-retention)
+- További részletek a [Microsoft Azure napló integrációs (SIEM)](https://docs.microsoft.com/azure/security/security-azure-log-integration-overview)
+- További részletek a [Azure Active Directory reporting API-val](https://docs.microsoft.com/azure/active-directory/active-directory-reporting-api-getting-started)
