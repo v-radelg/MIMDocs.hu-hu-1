@@ -1,22 +1,19 @@
 ---
 title: "A PAM üzembe helyezése, 7. lépés – felhasználói hozzáférés | Microsoft Docs"
 description: "Utolsó lépésként biztosítson ideiglenes rendszerjogosultságot egy felhasználónak, hogy tesztelhesse, sikeres volt-e a Privileged Access Management üzembe helyezése."
-keywords: 
 author: barclayn
 ms.author: barclayn
 manager: mbaldwin
-ms.date: 09/13/2017
+ms.date: 01/17/2018
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
 ms.assetid: 5325fce2-ae35-45b0-9c1a-ad8b592fcd07
-ms.reviewer: mwahl
-ms.suite: ems
-ms.openlocfilehash: f8ad03bc072dbf6df36a9ef737479dce60b70b8b
-ms.sourcegitcommit: 2be26acadf35194293cef4310950e121653d2714
+ms.openlocfilehash: 2d92be315547da1c352c0e60732f9aeecf0c2d90
+ms.sourcegitcommit: 3d8a2493eae1218bfdb75a399ffa4adc8c2a8fdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/14/2017
+ms.lasthandoff: 01/20/2018
 ---
 # <a name="step-7--elevate-a-users-access"></a>7. lépés – Felhasználó jogosultságszintjének emelése
 
@@ -38,7 +35,12 @@ Emelt szintű jogosultságok nélkül Ilona nem férhet hozzá a CORP erdőben t
 
 ## <a name="request-privileged-access-from-mim"></a>Kérjen emelt szintű hozzáférést a MIM-ből.
 
-1. A CORPWKSTN munkaállomáson (még mindig CONTOSO\Ilona felhasználóként) írja be a következő parancsot.
+> [!NOTE]
+> Javasoljuk, hogy a munkaállomás egy rendszerjogosultságú workstation(PAW) kell-e.  További információ: [PAW](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/privileged-access-workstations).
+
+1. A PRIVWKSTN, PRIV\priv.jen bejelentkezés.
+2. Kattintson a **Start**, **futtatása**, és írja be **PowerShell.exe**.
+3. Írja be a következő parancsot:
 
     ```cmd
     runas /user:Priv.Jen@priv.contoso.local powershell
