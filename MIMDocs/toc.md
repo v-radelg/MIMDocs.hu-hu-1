@@ -11,6 +11,7 @@
 ## [Üzembe helyezési topológia](topology-considerations.md)
 ## [A PAM bevezetésének megtervezése](./pam/environment-overview.md)
 # [Üzembe helyezés és használat](microsoft-identity-manager-deploy.md)
+## [Elavult funkciók:](microsoft-identity-manager-2016-deprecated-features.md)
 ## [Első üzembe helyezés](microsoft-identity-manager-deploy.md)
 ### [Tartomány beállítása](preparing-domain.md)
 ### [Kiszolgáló beállítása: Windows Server](prepare-server-ws2012r2.md)
