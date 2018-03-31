@@ -1,12 +1,13 @@
 ---
 layout: LandingPage
-title: "A Microsoft Identity Manager dokumentációja | Microsoft Docs"
-description: "A Microsoft Identity Manager használatának ismertetése."
-ms.openlocfilehash: 14bfdf808072f236a17431cf4e0634bf287c3a65
-ms.sourcegitcommit: f95369a51ec5edae076505b3b0059f878cdf6e96
+ms.topic: landing-page
+title: A Microsoft Identity Manager dokumentációja | Microsoft Docs
+description: A Microsoft Identity Manager használatának ismertetése.
+ms.openlocfilehash: f57d2f9b4f61eeef09b8abb29ef3023cba798a5d
+ms.sourcegitcommit: 3c422a03c33774d3f94faee72e063d80730a9d1a
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/16/2017
+ms.lasthandoff: 03/30/2018
 ---
 # <a name="microsoft-identity-manager-documentation"></a>A Microsoft Identity Manager dokumentációja
 
