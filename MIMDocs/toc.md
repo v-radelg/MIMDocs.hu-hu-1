@@ -144,3 +144,4 @@
 ## Korábbi verziók
 ### [A MIM korábbi verziói](./reference/version-history.md)
 ### [A BHOLD korábbi verziói](./reference/version-bhold-history.md)
+### [A Connector korábbi verziókiadásai](./reference/microsoft-identity-manager-2016-connector-version-history.md)
