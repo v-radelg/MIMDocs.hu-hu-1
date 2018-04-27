@@ -1,7 +1,7 @@
 ---
-title: "Az Önkiszolgáló jelszóváltoztatás portál kezelése | Microsoft Docs"
-description: "Ismerje meg, hogy milyen újdonságokat kínál a MIM 2016 önkiszolgáló jelszó-változtatási összetevője, például hogy miként képes együttműködni a többtényezős hitelesítéssel."
-keywords: 
+title: Az Önkiszolgáló jelszóváltoztatás portál kezelése | Microsoft Docs
+description: Ismerje meg, hogy milyen újdonságokat kínál a MIM 2016 önkiszolgáló jelszó-változtatási összetevője, például hogy miként képes együttműködni a többtényezős hitelesítéssel.
+keywords: ''
 author: billmath
 ms.author: barclayn
 manager: mbaldwin
@@ -12,11 +12,11 @@ ms.technology: security
 ms.assetid: 94a74f1c-2192-4748-9a25-62a526295338
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 0463a91275f3e181a66eb460c167bb9a2008f444
-ms.sourcegitcommit: 27a23142393bbb0f66a3d533d89a5a8366a29e41
+ms.openlocfilehash: 18c3e4ea623b4b092bbd9236c5fa1b2a63af0486
+ms.sourcegitcommit: 637988684768c994398b5725eb142e16e4b03bb3
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/20/2017
+ms.lasthandoff: 04/26/2018
 ---
 >[!IMPORTANT]
 Miatt az Azure multi-factor Authentication Software Development Kit érvénytelenítése bejelentés. Az Azure MFA SDK használatból való kivonást időpontjáig 2018. November 14. a meglévő ügyfeleknek is támogatottak lesznek. Új ügyfelek és az ügyfelek aktuális fog tudni többé SDK letöltése a klasszikus Azure portálon keresztül. Töltse le, akkor kell érheti el a generált MFA szolgáltatás hitelesítő adatait a csomagot fogadó Azure ügyfélszolgálathoz. <br> A Microsoft fejlesztői csapat dolgozik a többtényezős hitelesítés módosításai tervezési integrálja az MFA kiszolgáló SDK-val. Ez szerepelni fog a jövőbeli gyorsjavítás korai 2018.
@@ -65,9 +65,9 @@ A következő szakaszban az Azure MFA szolgáltató Microsoft Azure Active Direc
 
 ### <a name="register-your-multi-factor-authentication-provider-in-azure"></a>A többtényezős hitelesítési szolgáltató regisztrálása az Azure-ban
 
-1.  Lépjen a [klasszikus Azure-portálra](http://manage.windowsazure.com), és jelentkezzen be Azure előfizetés-adminisztrátorként.
+1.  Hozzon létre egy [MFA-szolgáltatóra](https://docs.microsoft.com/en-us/azure/multi-factor-authentication/multi-factor-authentication-get-started-auth-provider).
 
-2.  A bal alsó sarokban kattintson a **New** (Új) gombra.
+2. Nyissa meg a támogatási esetet, és a közvetlen SDK for ASP.net 2.0 C# kérelem. Az SDK-t csak kell adni a multi-factor Authentication szolgáltatás MIM aktuális felhasználóinak, mert a közvetlen SDK elavult. Új felhasználók a multi-factor Authentication kiszolgáló integrálódó MIM következő verziójában el kell fogadnia.
 
 3.  Válassza az **App Services &gt; Active Directory &gt; Multi-Factor Auth Provider &gt; Quick Create** (Alkalmazásszolgáltatások > Active Directory > Többtényezős hitelesítési szolgáltató > Gyors létrehozás) lehetőséget.
 

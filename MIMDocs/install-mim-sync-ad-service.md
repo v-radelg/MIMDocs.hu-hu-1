@@ -1,7 +1,7 @@
 ---
-title: "A Microsoft Identity Manager Synchronize használata az AD szolgáltatással | Microsoft Docs"
-description: "Az Active Directory és a MIM-adatbázisok szinkronizálása kezelőügynökök és a MIM Sync szolgáltatás segítségével."
-keywords: 
+title: A Microsoft Identity Manager Synchronize használata az AD szolgáltatással | Microsoft Docs
+description: Az Active Directory és a MIM-adatbázisok szinkronizálása kezelőügynökök és a MIM Sync szolgáltatás segítségével.
+keywords: ''
 author: billmath
 ms.author: barclayn
 manager: mbaldwin
@@ -12,11 +12,11 @@ ms.technology: security
 ms.assetid: 5e532b67-64a6-4af6-a806-980a6c11a82d
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 31cc9a61bbcb309dae4ee4d09654432d08bf1e28
-ms.sourcegitcommit: f077508b5569e2a96084267879c5b6551e1e0905
+ms.openlocfilehash: 736d933f2c62d440abafdab27f82b3b1ba0f9a06
+ms.sourcegitcommit: 48f89d555c0ac7caa97d149ee42e0b9ef6ccc5f5
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 04/23/2018
 ---
 # <a name="install-mim-2016-synchronize-active-directory-and-mim-service"></a>A MIM 2016 telepítése: Az Active Directory és a MIM szolgáltatás szinkronizálása
 
@@ -24,7 +24,7 @@ ms.lasthandoff: 10/12/2017
 [« MIM szolgáltatás és -portál](install-mim-service-portal.md)
 
 > [!NOTE]
-> Ez az útmutató egy Contoso nevű fiktív vállalat neveit és értékeit használja szemléltetésként. Ezeket helyettesítse a saját neveivel és értékeivel. Példa:
+> Ez az útmutató egy Contoso nevű fiktív vállalat neveit és értékeit használja szemléltetésként. Ezeket helyettesítse a saját neveivel és értékeivel. Például:
 > - Tartományvezérlő neve – **mimservername**
 > - Tartománynév – **contoso**
 > - Jelszó – **Pass@word1**
@@ -43,7 +43,7 @@ A MIM-kezelőügynök konfigurálásához meg kell adnia egy felhasználói fió
 
 1.  Indítsa el a Synchronization Service Managert.
 
-2.  A Create Management Agent (Kezelőügynök létrehozása) varázsló megnyitásához váltson a **Managment Actions** (Felügyeleti műveletek) lapra, majd válassza az **Actions** (Műveletek) menü **Create** (Létrehozás) parancsát.
+2.  Nyissa meg a kezelőügynök létrehozása varázslót, módosítsa a **Kezelőügynökök** lap, ezután a a **műveletek** menüben kattintson a **létrehozása**.
 
 3.  A **Create Management Agent** (Kezelőügynök létrehozása) oldalon adja meg a következő beállításokat, majd kattintson a **Next** (Tovább) gombra.
 
@@ -57,7 +57,7 @@ A MIM-kezelőügynök konfigurálásához meg kell adnia egy felhasználói fió
 
     -   Database (Adatbázis): FIMService
 
-    -   MIM Service base address (MIM szolgáltatás alapcíme): http://localhost:5725
+    -   MIM Service base címe: http://localhost:5725
 
     -   Authentication mode (Hitelesítési mód): Windows integrated authentication (Integrált Windows-hitelesítés)
 
@@ -141,7 +141,7 @@ A MIM-kezelőügynök konfigurálásához meg kell adnia egy felhasználói fió
     | AccountName | Exportálás | accountName |
     | DisplayName | Exportálás | displayName |
     | Domain | Exportálás | domain |
-    | E-mail | Exportálás | Levelezés |
+    | E-mail | Exportálás | mail |
     | MailNickName | Exportálás | mailNickName |
     | Tag | Exportálás | member |
     | ObjectSID | Exportálás | objectSid |
