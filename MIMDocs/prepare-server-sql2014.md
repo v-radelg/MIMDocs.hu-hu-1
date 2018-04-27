@@ -1,7 +1,7 @@
 ---
-title: "Az SQL Server konfigurálása a Microsoft Identity Manager 2016 használatához | Microsoft Docs"
-description: "Az SQL Server 2014 telepítése a MIM 2016 üzembe helyezésének előkészületeként."
-keywords: 
+title: Az SQL Server konfigurálása a Microsoft Identity Manager 2016 használatához | Microsoft Docs
+description: Az SQL Server 2014 telepítése a MIM 2016 üzembe helyezésének előkészületeként.
+keywords: ''
 author: billmath
 ms.author: barclayn
 manager: mbaldwin
@@ -13,10 +13,10 @@ ms.assetid: 297df3b3-192e-4ed9-82ed-c95eb5297c84
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: 8a33e09719b8c806de43531d12ea4b65b5cb443a
-ms.sourcegitcommit: f077508b5569e2a96084267879c5b6551e1e0905
+ms.sourcegitcommit: 637988684768c994398b5725eb142e16e4b03bb3
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="set-up-an-identity-management-server-sql-server-2014"></a>Identitáskezelési kiszolgáló beállítása: SQL Server 2014
 
@@ -25,7 +25,7 @@ ms.lasthandoff: 10/12/2017
 [SharePoint »](prepare-server-sharepoint.md)
 
 > [!NOTE]
-> Ez az útmutató egy Contoso nevű fiktív vállalat neveit és értékeit használja szemléltetésként. Ezeket helyettesítse a saját neveivel és értékeivel. Példa:
+> Ez az útmutató egy Contoso nevű fiktív vállalat neveit és értékeit használja szemléltetésként. Ezeket helyettesítse a saját neveivel és értékeivel. Például:
 > - Tartományvezérlő neve – **mimservername**
 > - Tartománynév – **contoso**
 > - Jelszó – **Pass@word1**

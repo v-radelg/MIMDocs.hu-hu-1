@@ -1,22 +1,22 @@
 ---
-title: "A Microsoft Identity Manager Sync Service telepítése | Microsoft Docs"
-description: "Első lépések a MIM 2016 összetevői kapcsán – a Synchronization Service telepítése és konfigurálása"
-keywords: 
+title: A Microsoft Identity Manager Sync Service telepítése | Microsoft Docs
+description: Első lépések a MIM 2016 összetevői kapcsán – a Synchronization Service telepítése és konfigurálása
+keywords: ''
 author: billmath
 ms.author: barclayn
 manager: mbaldwin
-ms.date: 10/12/2017
+ms.date: 04/26/2018
 ms.topic: get-started-article
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 2585e9c5-ce34-46c7-bdcf-8c08773901dc
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 836279ecc7fce65912df4a1a34a9d48daf9d1151
-ms.sourcegitcommit: f077508b5569e2a96084267879c5b6551e1e0905
+ms.openlocfilehash: f5204d0396e2b485c9e8c210906703c467a67994
+ms.sourcegitcommit: 32d9a963a4487a8649210745c97a3254645e8744
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="install-mim-2016-mim-synchronization-service"></a>A MIM 2016 telepítése: A MIM Synchronization Service
 
@@ -25,18 +25,21 @@ ms.lasthandoff: 10/12/2017
 [MIM szolgáltatás és -portál »](install-mim-service-portal.md)
 
 > [!NOTE]
-> Ez az útmutató egy Contoso nevű fiktív vállalat neveit és értékeit használja szemléltetésként. Ezeket helyettesítse a saját neveivel és értékeivel. Példa:
-> - Tartományvezérlő neve – **mimservername**
+> Ez az útmutató egy Contoso nevű fiktív vállalat neveit és értékeit használja szemléltetésként. Ezeket helyettesítse a saját neveivel és értékeivel. Például:
+> - Tartományvezérlő neve – **corpdc**
 > - Tartománynév – **contoso**
+> - MIM szolgáltatás kiszolgálójának neve – **corpservice**
+> - MIM Sync-kiszolgáló neve – **corpsync**
+> - SQL Server-neve - **corpsql**
 > - Jelszó – **Pass@word1**
 
 A Microsoft Identity Manager 2016 összetevőinek telepítéséhez először készítse elő a telepítési csomagot.
 
-1. Jelentkezzen be az identitáskezeléshez használt kiszolgálóra a *contoso\Rendszergazda* fiókkal.
+1. Jelentkezzen be a *contoso\miminstall* identitáskezelési szinkronizálás kiszolgáló használ a kiszolgálóhoz **corpsync**.
 
 2. Bontsa ki a MIM telepítési csomagját vagy csatlakoztassa a MIM DVD-lemezképét.
 
-## <a name="install-mim-2016-synchronization-service"></a>A MIM 2016 Synchronization Service telepítése
+## <a name="install-mim-2016-sp1-synchronization-service"></a>A MIM 2016 SP1 Synchronization Service telepítése
 
 1. A kibontott MIM telepítési mappában nyissa meg a **Synchronization Service** mappát.
 

@@ -1,7 +1,7 @@
 ---
-title: "Tartomány beállítása a Microsoft Identity Manager 2016 használatához | Microsoft Docs"
-description: "Active Directory-tartományvezérlő létrehozása a MIM 2016 telepítése előtt"
-keywords: 
+title: Tartomány beállítása a Microsoft Identity Manager 2016 használatához | Microsoft Docs
+description: Active Directory-tartományvezérlő létrehozása a MIM 2016 telepítése előtt
+keywords: ''
 author: billmath
 ms.author: barclayn
 manager: mbaldwin
@@ -12,16 +12,16 @@ ms.technology: security
 ms.assetid: 50345fda-56d7-4b6e-a861-f49ff90a8376
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 816e816111b27d1cc7dd4f7da2c5a810e7aa22fd
-ms.sourcegitcommit: 9e854a39128a5f81cdbb1379e1fa95ef3a88cdd2
+ms.openlocfilehash: ff8d8a6f66212b006e2c17186dc299a5bcf3f68b
+ms.sourcegitcommit: 32d9a963a4487a8649210745c97a3254645e8744
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/26/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="set-up-a-domain"></a>Tartomány beállítása
 
 >[!div class="step-by-step"]
-[Windows Server 2012 R2»](prepare-server-ws2012r2.md)
+[Windows Server 2016»](prepare-server-ws2016.md)
 
 A Microsoft Identity Manager (MIM) az Ön Active Directory- (AD-) tartományával együtt is használható. Az AD-nek már telepítve kell lennie, és győződjön meg arról is, hogy a környezetében rendelkezik egy tartományvezérlővel egy felügyelhető tartományhoz.
 
@@ -32,9 +32,12 @@ Ez a cikk részletesen ismerteti a lépéseket, amelyekkel előkészítheti a ta
 A MIM-telepítés minden összetevőjének saját identitással kell rendelkeznie a tartományban. Ez vonatkozik az olyan MIM-összetevőkre is, mint a Service, a Sync, a SharePoint és az SQL.
 
 > [!NOTE]
-> Ez az útmutató egy Contoso nevű fiktív vállalat neveit és értékeit használja szemléltetésként. Ezeket helyettesítse a saját neveivel és értékeivel. Példa:
-> - Tartományvezérlő neve – **mimservername**
+> Ez az útmutató egy Contoso nevű fiktív vállalat neveit és értékeit használja szemléltetésként. Ezeket helyettesítse a saját neveivel és értékeivel. Például:
+> - Tartományvezérlő neve – **corpdc**
 > - Tartománynév – **contoso**
+> - MIM szolgáltatás kiszolgálójának neve – **corpservice**
+> - MIM Sync-kiszolgáló neve – **corpsync**
+> - SQL Server-neve - **corpsql**
 > - Jelszó – **Pass@word1**
 
 1. Jelentkezzen be a tartományvezérlőbe tartományi rendszergazdaként (*pl.: Contoso\Administrator*).
@@ -44,6 +47,9 @@ A MIM-telepítés minden összetevőjének saját identitással kell rendelkezni
     ```PowerShell
     import-module activedirectory
     $sp = ConvertTo-SecureString "Pass@word1" –asplaintext –force
+    New-ADUser –SamAccountName MIMINSTALL –name MIMMA
+    Set-ADAccountPassword –identity MIMINSTALL –NewPassword $sp
+    Set-ADUser –identity MIMINSTALL –Enabled 1 –PasswordNeverExpires 1
     New-ADUser –SamAccountName MIMMA –name MIMMA
     Set-ADAccountPassword –identity MIMMA –NewPassword $sp
     Set-ADUser –identity MIMMA –Enabled 1 –PasswordNeverExpires 1
@@ -65,6 +71,9 @@ A MIM-telepítés minden összetevőjének saját identitással kell rendelkezni
     New-ADUser –SamAccountName BackupAdmin –name BackupAdmin
     Set-ADAccountPassword –identity BackupAdmin –NewPassword $sp
     Set-ADUser –identity BackupAdmin –Enabled 1 -PasswordNeverExpires 1
+    New-ADUser –SamAccountName MIMpool –name BackupAdmin
+    Set-ADAccountPassword –identity MIMPool –NewPassword $sp
+    Set-ADUser –identity MIMPool –Enabled 1 -PasswordNeverExpires 1
     ```
 
 3.  Hozzon létre biztonsági csoportokat az összes csoporthoz.
@@ -77,15 +86,24 @@ A MIM-telepítés minden összetevőjének saját identitással kell rendelkezni
     New-ADGroup –name MIMSyncPasswordReset –GroupCategory Security –GroupScope Global –SamAccountName MIMSyncPasswordReset
     Add-ADGroupMember -identity MIMSyncAdmins -Members Administrator
     Add-ADGroupmember -identity MIMSyncAdmins -Members MIMService
+    Add-ADGroupmember -identity MIMSyncAdmins -Members MIMInstall
     ```
 
 4.  Állítson be egyszerű szolgáltatásneveket (SPN), amivel lehetővé válik a Kerberos hitelesítés használata a szolgáltatásfiókokhoz.
 
     ```CMD
-    setspn -S http/mimservername.contoso.local Contoso\SharePoint
-    setspn -S http/mimservername Contoso\SharePoint
-    setspn -S FIMService/mimservername.contoso.local Contoso\MIMService    
+    setspn -S http/mim.contoso.com Contoso\mimpool
+    setspn -S http/mim Contoso\mimpool
+    setspn -S http/passwordreset.contoso.com Contoso\mimsspr
+    setspn -S http/passwordregistration.contoso.com Contoso\mimsspr
+    setspn -S FIMService/mim.contoso.com Contoso\MIMService
+    setspn -S FIMService/corpservice.contoso.com Contoso\MIMService
     ```
+5.  A telepítés során adja hozzá a következő "A" DNS-rekordokat a megfelelő név feloldásához kell
+
+- mim.contoso.com pont corpservice fizikai IP-cím
+- passwordreset.contoso.com pont corpservice fizikai IP-cím
+- passwordregistration.contoso.com pont corpservice fizikai IP-cím
 
 >[!div class="step-by-step"]
-[Windows Server 2012 R2»](prepare-server-ws2012r2.md)
+[Windows Server 2016»](prepare-server-ws2016.md)
