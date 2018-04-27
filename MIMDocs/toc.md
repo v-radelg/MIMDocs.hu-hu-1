@@ -145,3 +145,11 @@
 ### [A MIM korábbi verziói](./reference/version-history.md)
 ### [A BHOLD korábbi verziói](./reference/version-bhold-history.md)
 ### [A Connector korábbi verziókiadásai](./reference/microsoft-identity-manager-2016-connector-version-history.md)
+## Összekötők
+### [Gráf](microsoft-identity-manager-2016-connector-graph.md)
+### [Lotus Notes](./reference/microsoft-identity-manager-2016-connector-domino.md)
+### [Általános LDAP](./reference/microsoft-identity-manager-2016-connector-genericldap.md)
+### [Általános SQL](./reference/microsoft-identity-manager-2016-connector-genericsql.md)
+### [Webszolgáltatások](./reference/microsoft-identity-manager-2016-ma-ws.md)
+### [PowerShell](./reference/microsoft-identity-manager-2016-connector-powershell.md)
+### [A Connector korábbi verziókiadásai](./reference/microsoft-identity-manager-2016-connector-version-history.md)
