@@ -5,18 +5,18 @@ keywords: ''
 author: billmath
 ms.author: barclayn
 manager: mbaldiwn
-ms.date: 10/12/2017
+ms.date: 04/30/2018
 ms.topic: get-started-article
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: b0b39631-66df-4c5f-80c9-a1774346f816
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 204aa33cb21ed3998d9085fc56f0c7bea7afec58
-ms.sourcegitcommit: 32d9a963a4487a8649210745c97a3254645e8744
+ms.openlocfilehash: fcc137527d8326c82bf3b201039926699bd4e342
+ms.sourcegitcommit: a98a4c1aee12016d480c400f4ff2c6aadb6518ee
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="install-mim-2016-mim-service-and-portal"></a>A MIM 2016 telepítése: A MIM szolgáltatás és -portál
 
@@ -48,23 +48,23 @@ Ha a legutóbbi lépésben nem telepítette a MIM telepítőcsomagját, akkor a 
 
 6. A **Configure the MIM database connection** (A MIM-adatbázis kapcsolatának konfigurálása) lapon válassza a **Create a new database** (Új adatbázis létrehozása) beállítást.
 
-    ![Kép: A MIM-adatbázis kapcsolatának konfigurálása](media/MIM-Install10.png)
+    ![Kép: A MIM-adatbázis kapcsolatának konfigurálása](media/install-mim-service-portal/MIM_Install10.png)
 
-7. Az a **mail server kapcsolat beállítása**, adja meg az Exchange Server-kiszolgáló nevét **levelezőkiszolgáló** vagy Office 365 postaláda is használhat. Ha nincs levelezőkiszolgáló konfigurálva, akkor a **localhost** nevet adja meg, és törölje a felső két négyzet jelölését. Kattintson a **Tovább**gombra.
+7. A a **mail server kapcsolat beállítása**, adja meg az Exchange Server-kiszolgáló nevét **levelezőkiszolgáló** vagy **O365 postaláda**. Ha nincs levelezőkiszolgáló konfigurálva, akkor a **localhost** nevet adja meg, és törölje a felső két négyzet jelölését. Kattintson a **Tovább**gombra.
 
-    ![Kép: A levelezőkiszolgálóval való kapcsolat beállítása](media/MIM-Install11.png)
+    ![Kép: A levelezőkiszolgálóval való kapcsolat beállítása](media/install-mim-service-portal/MIM_Install11.png)
 
 8. Adja meg, hogy új önaláírt tanúsítványt szeretne-e generálni, vagy válassza ki a megfelelő tanúsítványt.
 
 9. A Service Account Name mezőben adja meg a használni kívánt szolgáltatásfiók nevét – például *MIMService* –, a Service Account Password mezőben a szolgáltatásfiók jelszavát – például *Pass@word1*, a Service Account Domain mezőben a szolgáltatásfiók tartományát – például *contoso*, a Service Email Account mezőben pedig az e-mail fiókot, például *contoso*.
 
-    ![Kép: A MIM szolgáltatás fiókjának konfigurálása](media/MIM-Install12.png)
+    ![Kép: A MIM szolgáltatás fiókjának konfigurálása](media/install-mim-service-portal/MIM_Install12.png)
 
 10. Elképzelhető, hogy megjelenik egy üzenet, amely arra figyelmeztet, hogy a szolgáltatásfiók aktuális konfigurációja nem biztonságos.
 
 11. Fogadja el az alapértelmezett értéket a szinkronizálási kiszolgálón található, és adja meg a MIM Management Agent account *contoso\MIMMA*.
 
-    ![Kép: A MIM szolgáltatás és -portál konfigurálása](media/MIM-Install13.png)
+    ![Kép: A MIM szolgáltatás és -portál konfigurálása](media/install-mim-service-portal/MIM_Install13.png)
 
 12. A MIM portálhoz tartozó MIM-szolgáltatás kiszolgálójának címeként adja meg a *CORPIDM* nevet (az adott számítógép nevét).
 
@@ -82,7 +82,7 @@ Ha a legutóbbi lépésben nem telepítette a MIM telepítőcsomagját, akkor a 
 
 2.  Adja meg *passwordregistration.contoso.com* a MIM jelszó-regisztrálási állomásnévként, és a port **80**. Jelölje be az **Open port in firewall** (Port nyitása a tűzfalon) négyzetet.
 
-    ![Kép: Az IIS által használt konfigurációs információk megadása](media/MIM-Install14.png)
+    ![Kép: Az IIS által használt konfigurációs információk megadása](media/install-mim-service-portal/MIM_Install14.png)
 
 3.  Megjelenik egy figyelmeztető üzenet – olvassa el, majd kattintson a **Next** (Tovább) gombra.
 
@@ -94,7 +94,7 @@ Ha a legutóbbi lépésben nem telepítette a MIM telepítőcsomagját, akkor a 
 
 2.  Adja meg *passwordreset.contoso.com* MIM jelszó-változtatási portálhoz állomásnévként, és a port **80**. Jelölje be az **Open port in firewall** (Port nyitása a tűzfalon) négyzetet.
 
-    ![Kép: Az IIS által használt konfigurációs információk megadása](media/MIM-Install15.png)
+    ![Kép: Az IIS által használt konfigurációs információk megadása](media/install-mim-service-portal/MIM_Install15.png)
 
 3.  Megjelenik egy figyelmeztető üzenet – olvassa el, majd kattintson a **Next** (Tovább) gombra.
 

@@ -12,11 +12,11 @@ ms.technology: security
 ms.assetid: fa0af422-b5e9-4599-9d9b-cb6c18ea07f9
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: a1f2a30dd6d8519ec09ea3765e5584123725fe03
-ms.sourcegitcommit: 32d9a963a4487a8649210745c97a3254645e8744
+ms.openlocfilehash: 3460436682054acf5e9e1b186c3fa39faaa40a43
+ms.sourcegitcommit: 8316fa41f06f137dba0739a8700910116b5575d8
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="deploy-microsoft-identity-manager-2016-sp1"></a>A Microsoft Identity Manager 2016 SP1 telepítése
 A jelen szakaszban olvasható cikkek részletes útmutatást nyújtanak az önkiszolgáló végfelhasználói esetek ellátására szolgáló Microsoft Identity Manager (MIM) 2016 üzembe helyezéséhez egy olyan új kiszolgálón, amelyen korábban még nem volt telepítve se a FIM, se a MIM rendszer.
@@ -34,7 +34,7 @@ A MIM az Active Directoryval (AD) működik, ezért a következő lépések seg�
 
 ## <a name="next-prepare-an-identity-management-servers"></a>A következő lépés: Felkészülés identitás felügyeleti kiszolgálók
 Miután telepítette és konfigurálta a tartományt, készítse elő a vállalati identitáskezelő kiszolgálót. Ehhez a következőket kell előkészíteni:
-- [Windows Server 2012 R2](prepare-server-ws2016.md)
+- [Windows Server 2016](prepare-server-ws2016.md)
 - [SQL Server 2016](prepare-server-sql2016.md)
 - [A SharePoint 2016](prepare-server-sharepoint.md)
 - [Exchange Server](prepare-server-exchange.md) (nem kötelező)

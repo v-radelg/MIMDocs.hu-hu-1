@@ -12,11 +12,11 @@ ms.technology: security
 ms.assetid: c01487f2-3de6-4fc4-8c3a-7d62f7c2496c
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: eceb1ed31b0212970d5cf0eae0bc8d96aa087ff5
-ms.sourcegitcommit: 32d9a963a4487a8649210745c97a3254645e8744
+ms.openlocfilehash: 6922c3c2f66b6dbb0b0751420be9dd778206a3cf
+ms.sourcegitcommit: 8316fa41f06f137dba0739a8700910116b5575d8
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="set-up-an-identity-management-server-sharepoint"></a>Identitáskezelési kiszolgáló beállítása: SharePoint
 
@@ -68,14 +68,15 @@ A SharePoint és a MIM együttműködésének konfigurálásához kövesse a **S
 1. A **Csatlakozás kiszolgálófarmhoz** lapon adja meg, hogy új kiszolgálófarmot szeretne kialakítani.
 
 2. Adja meg ezen a kiszolgálón, például adatbázis-kiszolgálóként **corpsql** a konfigurációs adatbázishoz, és *Contoso\SharePoint* SharePoint által használandó adatbázis-hozzáférési fiókként.
-    a. A konfiguráció varázsló ajánlott kiválasztásával [MinRole](https://docs.microsoft.com/en-us/sharepoint/install/overview-of-minrole-server-roles-in-sharepoint-server-2016) típusú **előtér-**
 3. Hozza létre a farm biztonsági jelszavát.
 
-4. Miután a konfigurációs varázsló végrehajtotta mind a 10 konfigurációs lépést, kattintson a Befejezés gombra. Ekkor megnyílik egy böngészőablak.
+4. A konfiguráció varázsló ajánlott kiválasztásával [MinRole](https://docs.microsoft.com/en-us/sharepoint/install/overview-of-minrole-server-roles-in-sharepoint-server-2016) típusú **előtér-**
 
-5. Az Internet Explorer előugró ablakában hitelesítse *Contoso\miminstall* (vagy a megfelelő rendszergazdai fiókot) a folytatáshoz.
+5. Ha a konfigurációs varázsló végrehajtotta mind a 10 10 konfigurációs lépést, kattintson a Befejezés gombra egy webes böngésző csak akkor nyílik meg...
 
-6. (A webalkalmazáson belül) varázslóban kattintson **Mégse/Skip**.
+6. Ha a rendszer kéri az Internet Explorer előugró ablak, hitelesítse magát *Contoso\miminstall* (vagy a megfelelő rendszergazdai fiókot) a folytatáshoz.
+
+7. (A webalkalmazáson belül) varázslóban kattintson **Mégse/Skip**.
 
 
 ## <a name="prepare-sharepoint-to-host-the-mim-portal"></a>A SharePoint előkészítése a MIM-portál futtatására
@@ -94,14 +95,13 @@ A SharePoint és a MIM együttműködésének konfigurálásához kövesse a **S
     > [!NOTE]
     > Ekkor megjelenik egy figyelmeztető üzenet arról, hogy a rendszer klasszikus Windows-hitelesítést használ, és több percig is eltarthat, míg a záró parancs sikeresen lefut. Ha a parancs futása befejeződött, a kimenetben megjelenik az új portál URL-címe. Tartsa a **SharePoint 2016-kezelőfelület** ugyanis szükség lehet hivatkozás később.
 
-2. Indítsa el a SharePoint 2013 felügyeleti rendszerhéjat, és a következő PowerShell-parancsprogrammal hozzon létre egy **SharePoint-webhelycsoportot** az imént készített webalkalmazáshoz:
+2. Indítsa el a SharePoint 2016 felügyeleti rendszerhéjat, és futtassa a következő PowerShell-parancsfájl létrehozásához egy **SharePoint-webhelycsoportot** webalkalmazáshoz társított.
 
   ```
     $t = Get-SPWebTemplate -compatibilityLevel 15 -Identity "STS#1"
     $w = Get-SPWebApplication http://mim.contoso.com/
     New-SPSite -Url $w.Url -Template $t -OwnerAlias contoso\miminstall -CompatibilityLevel 15 -Name "MIM Portal"
     $s = SpSite($w.Url)
-    $s.AllowSelfServiceUpgrade = $false
     $s.CompatibilityLevel
   ```
 
@@ -119,7 +119,7 @@ A SharePoint és a MIM együttműködésének konfigurálásához kövesse a **S
 
 4. Az identitáskezelési kiszolgálón, nyisson meg egy új böngészőlapot, lépjen http://mim.contoso.com/ majd jelentkezzen be *contoso\miminstall*.  Ekkor megjelenik egy üres SharePoint-webhely, *MIM Portal* néven.
 
-    ![: A MIM-portál http://mim.contoso.com/ kép](media/MIM-DeploySP1.png)
+    ![: A MIM-portál http://mim.contoso.com/ kép](media/prepare-server-sharepoint/MIM_DeploySP1new.png)
 
 5. Másolja az URL-t, majd az Internet Explorerben nyissa meg az **Internetbeállításokat**, lépjen a **Biztonság** lapra, válassza a **Helyi intranet** zónát, majd kattintson a **Helyek** gombra.
 
