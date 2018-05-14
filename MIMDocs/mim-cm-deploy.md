@@ -10,19 +10,15 @@ ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: ''
-ms.openlocfilehash: 3c2246ec21ad73cf025daec5c56295ec57838bb2
-ms.sourcegitcommit: 3502d636687e442f7d436ee56218b9b95f5056cf
+ms.openlocfilehash: 241ad68d3f4a692c87d0d2a0069781ad042453c7
+ms.sourcegitcommit: 39f34a38967baa9c0da6ae5b57734b222f5771a5
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="deploying-microsoft-identity-manager-certificate-manager-2016-mim-cm"></a>A Microsoft Identity Manager Tanúsítványkezelő 2016 (MIM CM) üzembe helyezése
 
-A Microsoft Identity Manager Tanúsítványkezelő 2016 (MIM CM) telepítése magában foglalja a több lépésből áll. Így a folyamat leegyszerűsítése érdekében azt bontja dolgot. Előzetes lépések előtt minden tényleges MIM CM lépést kell tenni. Az előzetes munka nélkül a telepítés valószínű, hogy sikertelen lesz. 
-
-1. Telepítésének áttekintése
-2. Központi telepítés előtti lépések
-3. Milyen hiba?
+A Microsoft Identity Manager Tanúsítványkezelő 2016 (MIM CM) telepítése magában foglalja a több lépésből áll. Így a folyamat leegyszerűsítése érdekében azt bontja dolgot. Előzetes lépések előtt minden tényleges MIM CM lépést kell tenni. Az előzetes munka nélkül a telepítés valószínű, hogy sikertelen lesz.
 
 Az alábbi ábra azt szemlélteti, amelyeket felhasználhatunk környezet típusú. A rendszer a számokból szerepelnek a diagram az alábbi listából, és fejezze be a cikkben szereplő lépések szükségesek. Végezetül Windows 2016 Datacenter kiszolgálókat használnak:
 
@@ -38,65 +34,75 @@ Az alábbi ábra azt szemlélteti, amelyeket felhasználhatunk környezet típus
 ## <a name="deployment-overview"></a>Telepítésének áttekintése
 
 - Alap operációs rendszer telepítése
-  - A tesztlabor a windows 2016 Datacenter kiszolgálókból áll.
-       >[!NOTE]
-Az a MIM 2016 által támogatott platformok vonatkozó részletes információért tekintse meg a című cikk [a MIM 2016 által támogatott platformok](/microsoft-identity-manager/microsoft-identity-manager-2016-supported-platforms.md)
-- Központi telepítés előtti lépések
-  - [A séma kiterjesztése](https://msdn.microsoft.com/library/ms676929(v=vs.85).aspx)
-  - Szolgáltatásfiókok létrehozása
-  - [Tanúsítványsablonok létrehozása](https://technet.microsoft.com/library/cc753370(v=ws.11).aspx)
-  - IIS
-  - A Kerberos konfigurálása
-  - Adatbázissal kapcsolatos lépéseket
-    - SQL-konfigurációs követelményei
-    - Adatbázis-engedélyek
-- Környezet
+
+    A tesztlabor a windows 2016 Datacenter kiszolgálókból áll.
+
+    >[!NOTE]
+    >Az a MIM 2016 által támogatott platformok vonatkozó részletes információért tekintse meg a című cikk [a MIM 2016 által támogatott platformok](/microsoft-identity-manager/microsoft-identity-manager-2016-supported-platforms.md)
+
+1. Központi telepítés előtti lépések
+
+    - [A séma kiterjesztése](https://msdn.microsoft.com/library/ms676929(v=vs.85).aspx)
+
+    - Szolgáltatásfiókok létrehozása
+
+    - [Tanúsítványsablonok létrehozása](https://technet.microsoft.com/library/cc753370(v=ws.11).aspx)
+
+    - IIS
+
+    - A Kerberos konfigurálása
+
+    - Adatbázissal kapcsolatos lépéseket
+
+        - SQL-konfigurációs követelményei
+
+        - Adatbázis-engedélyek
+
+2. Környezet
 
 ## <a name="pre-deployment-steps"></a>Központi telepítés előtti lépések
 
-A MIM CM konfigurációs varázsló meg kell adni ahhoz, hogy az sikeres befejezéséhez menet információra van szüksége. 
-![](media/mim-cm-deploy/image003.png)
+A MIM CM konfigurációs varázsló meg kell adni ahhoz, hogy az sikeres befejezéséhez menet információra van szüksége.
+
+![diagram](media/mim-cm-deploy/image003.png)
 
 ### <a name="extending-the-schema"></a>A séma kiterjesztése
 
 A folyamat a séma kiterjesztésének egyszerű, de visszafordíthatatlan jellegéből körültekintően kell során.
 
 >[!NOTE]
-Ez a lépés megköveteli, hogy a használt fiók rendelkezik-e a séma-rendszergazdai jogosultságokkal.
+>Ez a lépés megköveteli, hogy a használt fiók rendelkezik-e a séma-rendszergazdai jogosultságokkal.
 
-- Keresse meg a MIM adathordozó helyét, és keresse meg \\Tanúsítványkezelő\\x64 mappa.
+1. Keresse meg a MIM adathordozó helyét, és keresse meg \\Tanúsítványkezelő\\x64 mappa.
 
-- A séma mappa másolása CORPDC, majd keresse meg a fájlt.
+2. A séma mappa másolása CORPDC, majd keresse meg a fájlt.
 
-    ![](media/mim-cm-deploy/image005.png)
+    ![diagram](media/mim-cm-deploy/image005.png)
 
-- A parancsfájl resourceForestModifySchema.vbs egyetlen erdő forgatókönyv futtatása
+3. A parancsfájl resourceForestModifySchema.vbs egyetlen erdő forgatókönyv futtatása. Az erőforrás-erdő forgatókönyvhöz a parancsfájlok futtatása:
+    - TartomanyA – a felhasználók található (userForestModifySchema.vbs)
+    - ResourceForestB – (resourceForestModifySchema.vbs) CM telepítési helye.
 
-- Az erőforrás-erdő forgatókönyvhöz a parancsfájlok futtatása:
-  - TartomanyA – a felhasználók található (userForestModifySchema.vbs)
-  - ResourceForestB – (resourceForestModifySchema.vbs) CM telepítési helye
+    >[!NOTE]
+    >Sémaváltozások egyirányú művelettel és egy erdőt igényel a visszaállítás helyreállítási ezért győződjön meg arról, hogy a szükséges biztonsági másolatot. A módosításait a séma szerint ez a művelet végrehajtása a részleteket nézze át a [Forefront Identity Manager 2010 tanúsítvány felügyeleti sémaváltozások](https://technet.microsoft.com/library/jj159298(v=ws.10).aspx)
 
->[!NOTE]
-Sémaváltozások egyirányú művelettel és egy erdőt igényel a visszaállítás helyreállítási ezért győződjön meg arról, hogy a szükséges biztonsági másolatot. A módosításait a séma szerint ez a művelet végrehajtása a részleteket nézze át a [Forefront Identity Manager 2010 tanúsítvány felügyeleti sémaváltozások](https://technet.microsoft.com/library/jj159298(v=ws.10).aspx)
+    ![diagram](media/mim-cm-deploy/image007.png)
 
-![](media/mim-cm-deploy/image007.png)
+4. Futtassa a parancsfájlt, és sikeres kell kapnia egyszer jelenik meg, hogy a parancsfájl befejeződik.
 
-Futtassa a parancsfájlt, és sikeres kell kapnia egyszer jelenik meg, hogy a parancsfájl befejeződik.
-
-![Sikeres üzenet](media/mim-cm-deploy/image009.png)
+    ![Sikeres üzenet](media/mim-cm-deploy/image009.png)
 
 Az Active Directory-séma már ki van bővítve a MIM Tanúsítványkezelő támogatásához.
 
 ### <a name="creating-service-accounts-and-groups"></a>Szolgáltatási fiókok és csoportok létrehozása
 
-A következő táblázat összefoglalja a fiókok és a MIM CM szükséges engedélyek.
-Engedélyezheti, hogy a MIM CM hozza létre a következő fiókokat automatikusan, vagy a telepítés előtti létrehozhat. A tényleges számítógépfiók-nevét módosíthatja. Ha fiókokat hozhat létre a saját magának, fontolja meg, úgy, hogy nem felel meg a felhasználói fiók nevét, a függvény a felhasználói fiókok elnevezési.
+A következő táblázat összefoglalja a fiókok és a MIM CM szükséges engedélyek. Engedélyezheti, hogy a MIM CM hozza létre a következő fiókokat automatikusan vagy a telepítés előtti létrehozhat. A tényleges számítógépfiók-nevét módosíthatja. Ha fiókokat hozhat létre a saját magának, fontolja meg, a felhasználói fiókok olyan számítógépnél, hogy nem felel meg a felhasználói fiók nevét, a függvény elnevezési.
 
 Felhasználók:
 
-![](media/mim-cm-deploy/image010.png)
+![Diagram](media/mim-cm-deploy/image010.png)
 
-![](media/mim-cm-deploy/image012.png)
+![Diagram](media/mim-cm-deploy/image012.png)
 
 | **Szerepkör**                   | **Felhasználói bejelentkezési név** |
 |----------------------------|---------------------|
@@ -120,9 +126,9 @@ Csoportok:
 | CM Manager tagok     | MIMCM-kezelők    |
 | CM-előfizető tagjai | MIMCM-előfizetők |
 
-PowerShell: Ügynök fiókok
+PowerShell: Ügynök fiókok:
 
-```
+```powershell
 import-module activedirectory
 ## Agent accounts used during setup
 $cmagents = @{
@@ -203,15 +209,19 @@ A fenti fiókok három fog rendelkezik emelt szintű jogosultságokkal a szervez
 #### <a name="create-the-mim-cm-signing-certificate-template"></a>A MIM CM aláíró tanúsítvány sablonjának létrehozása
 
 1. A **felügyeleti eszközök**, nyissa meg **hitelesítésszolgáltató**.
+
 2. Az a **hitelesítésszolgáltató** konzol, a konzolfán bontsa ki a **Contoso-CorpCA**, és kattintson a **tanúsítványsablonok**.
+
 3. Kattintson a jobb gombbal **tanúsítványsablonok**, és kattintson a **kezelése**.
+
 4. Az a **Tanúsítványsablonok konzolt**, a a **részletek** ablaktábla, válassza ki, és kattintson a jobb gombbal **felhasználói**, és kattintson a **Sablon duplikálása** .
+
 5. Az a **Sablon duplikálása** párbeszédpanelen jelölje ki **Windows Server 2003 Enterprise**, és kattintson a **OK**.
 
-![Eredményül kapott változásainak](media/mim-cm-deploy/image014.png)
+    ![Eredményül kapott változásainak](media/mim-cm-deploy/image014.png)
 
     >[!NOTE]
-    MIM CM does not work with certificates based on version 3 certificate templates. You must create a Windows Server® 2003 Enterprise (version 2)certificate template. See the following link for V3 details https://blogs.msdn.microsoft.com/ms-identity-support/2016/07/14/faq-for-fim-2010-to-support-sha2-kspcng-and-v3-certificate-templates-for-issuing-user-and-agent-certificates-and-mim-2016-upgrade
+    >A MIM Tanúsítványkezelő 3 tanúsítványsablonok alapuló tanúsítványok nem működik. Létre kell hoznia egy Windows Server® 2003 Enterprise (2-es verziójú) tanúsítványsablont. Lásd: [V3 részletek](https://blogs.msdn.microsoft.com/ms-identity-support/2016/07/14/faq-for-fim-2010-to-support-sha2-kspcng-and-v3-certificate-templates-for-issuing-user-and-agent-certificates-and-mim-2016-upgrade) további információt.
 
 6. Az a **új sablon tulajdonságai** párbeszédpanel a **általános** lap a **sablon megjelenítendő neve** mezőbe írja be **MIM CM aláírási**. Módosítsa a **érvényességi** való **2 év**, és törölje a **a tanúsítvány közzététele az Active Directory** jelölőnégyzetet.
 
@@ -219,57 +229,57 @@ A fenti fiókok három fog rendelkezik emelt szintű jogosultságokkal a szervez
 
 8. Az a **titkosítás kijelölés** párbeszédpanel, tiltsa le a **Microsoft Enhanced titkosításszolgáltató v1.0**, engedélyezése **Microsoft Enhanced RSA és az AES kriptográfiai szolgáltató**, és kattintson a **OK**.
 
-Az a **tulajdonosnévvel** lapon törölje a **e-mail név belefoglalása a tulajdonosnévbe** és **E-mail név** jelölőnégyzeteket.
+9. Az a **tulajdonosnévvel** lapon törölje a **e-mail név belefoglalása a tulajdonosnévbe** és **E-mail név** jelölőnégyzeteket.
 
-Az a **bővítmények** lap a **a sablonban található bővítmények** listában, ügyeljen arra, hogy **alkalmazás-házirendek** van kiválasztva, és kattintson **szerkesztése** .
+10. Az a **bővítmények** lap a **a sablonban található bővítmények** listában, ügyeljen arra, hogy **alkalmazás-házirendek** van kiválasztva, és kattintson **szerkesztése** .
 
-Az a **használati szabályzatok bővítmény szerkesztése** párbeszédpanelen jelölje ki mindkét a **titkosított fájlrendszer** és a **biztonságos e-mailek** alkalmazás-házirendek. Kattintson a **eltávolítása**, és kattintson a **OK**.
+11. Az a **használati szabályzatok bővítmény szerkesztése** párbeszédpanelen jelölje ki mindkét a **titkosított fájlrendszer** és a **biztonságos e-mailek** alkalmazás-házirendek. Kattintson a **eltávolítása**, és kattintson a **OK**.
 
-Az a **biztonsági** lapon hajtsa végre a következő lépéseket:
+12. Az a **biztonsági** lapon hajtsa végre a következő lépéseket:
 
-- Távolítsa el **rendszergazda**.
+    - Távolítsa el **rendszergazda**.
 
-- Távolítsa el **Tartománygazdák**.
+    - Távolítsa el **Tartománygazdák**.
 
-- Távolítsa el **tartományi felhasználók**.
+    - Távolítsa el **tartományi felhasználók**.
 
-- Rendeljen csak **olvasási** és **írási** engedélyekkel **vállalati rendszergazdák**.
+    - Rendeljen csak **olvasási** és **írási** engedélyekkel **vállalati rendszergazdák**.
 
-- Adja hozzá **MIMCMAgent.**
+    - Adja hozzá **MIMCMAgent.**
 
-- Rendelje hozzá **olvasási** és **beléptetés** engedélyekkel **MIMCMAgent**.
+    - Rendelje hozzá **olvasási** és **beléptetés** engedélyekkel **MIMCMAgent**.
 
-Az a **új sablon tulajdonságai** párbeszédpanel, kattintson a **OK**.
+13. Az a **új sablon tulajdonságai** párbeszédpanel, kattintson a **OK**.
 
-Hagyja a **Tanúsítványsablonok konzolt** megnyitásához.
+14. Hagyja a **Tanúsítványsablonok konzolt** megnyitásához.
 
 #### <a name="create-the-mim-cm-enrollment-agent-certificate-template"></a>A MIM CM tanúsítványigénylő megbízott tanúsítványsablon létrehozása
 
--   Az a **Tanúsítványsablonok konzolt**, a a **részletek** ablaktábla, válassza ki, és kattintson a jobb gombbal **tanúsítványigénylő megbízott**, és kattintson a **sablonmásolása**.
+1. Az a **Tanúsítványsablonok konzolt**, a a **részletek** ablaktábla, válassza ki, és kattintson a jobb gombbal **tanúsítványigénylő megbízott**, és kattintson a **sablonmásolása**.
 
-Az a **Sablon duplikálása** párbeszédpanelen jelölje ki **Windows Server 2003 Enterprise**, és kattintson a **OK**.
+2. Az a **Sablon duplikálása** párbeszédpanelen jelölje ki **Windows Server 2003 Enterprise**, és kattintson a **OK**.
 
-Az a **új sablon tulajdonságai** párbeszédpanel a **általános** lap a **sablon megjelenítendő neve** mezőbe írja be **MIM CM tanúsítványigénylő megbízott**. Győződjön meg arról, hogy a **érvényességi** van **2 év**.
+3. Az a **új sablon tulajdonságai** párbeszédpanel a **általános** lap a **sablon megjelenítendő neve** mezőbe írja be **MIM CM tanúsítványigénylő megbízott**. Győződjön meg arról, hogy a **érvényességi** van **2 év**.
 
-Az a **kérelmek kezelése** lapján engedélyezése **a titkos kulcs exportálható**, és kattintson a **kriptográfiai szolgáltatók vagy titkosítás lap.**
+4. Az a **kérelmek kezelése** lapján engedélyezése **a titkos kulcs exportálható**, és kattintson a **kriptográfiai szolgáltatók vagy titkosítás lap.**
 
-Az a **CSP kiválasztása** párbeszédpanel, tiltsa le a **Microsoft Base titkosításszolgáltató v1.0**, tiltsa le a **Microsoft Enhanced titkosításszolgáltató v1.0**, engedélyezése **A Microsoft Enhanced RSA és az AES kriptográfiai szolgáltató**, és kattintson a **OK**.
+5. Az a **CSP kiválasztása** párbeszédpanel, tiltsa le a **Microsoft Base titkosításszolgáltató v1.0**, tiltsa le a **Microsoft Enhanced titkosításszolgáltató v1.0**, engedélyezése **A Microsoft Enhanced RSA és az AES kriptográfiai szolgáltató**, és kattintson a **OK**.
 
-Az a **biztonsági** lapon tegye a következőket:
+6. Az a **biztonsági** lapon tegye a következőket:
 
-- Távolítsa el **rendszergazda**.
+    - Távolítsa el **rendszergazda**.
 
-- Távolítsa el **Tartománygazdák**.
+    - Távolítsa el **Tartománygazdák**.
 
-- Rendeljen csak **olvasási** és **írási** engedélyekkel **vállalati rendszergazdák**.
+    - Rendeljen csak **olvasási** és **írási** engedélyekkel **vállalati rendszergazdák**.
 
-- Adja hozzá **MIMCMEnrollAgent**.
+    - Adja hozzá **MIMCMEnrollAgent**.
 
-- Rendelje hozzá **olvasási** és **beléptetés** engedélyekkel **MIMCMEnrollAgent**.
+    - Rendelje hozzá **olvasási** és **beléptetés** engedélyekkel **MIMCMEnrollAgent**.
 
-Az a **új sablon tulajdonságai** párbeszédpanel, kattintson a **OK**.
+7. Az a **új sablon tulajdonságai** párbeszédpanel, kattintson a **OK**.
 
-Hagyja a **Tanúsítványsablonok konzolt** megnyitásához.
+8. Hagyja a **Tanúsítványsablonok konzolt** megnyitásához.
 
 #### <a name="create-the-mim-cm-key-recovery-agent-certificate-template"></a>A MIM CM kulcs-helyreállítási megbízott tanúsítványsablon létrehozása
 
@@ -304,37 +314,42 @@ Hagyja a **Tanúsítványsablonok konzolt** megnyitásához.
 1. Állítsa vissza a **hitelesítésszolgáltató** konzol.
 
 2. Az a **hitelesítésszolgáltató** konzol, a konzolfán kattintson a jobb gombbal **tanúsítványsablonok**, mutasson a **új**, és kattintson a **tanúsítvány Tanúsítványsablon**.
+
 3. Az a **tanúsítványsablonok engedélyezése** párbeszédpanelen jelölje ki **MIM CM tanúsítványigénylő megbízott**, **MIM CM kulcs-helyreállítási megbízott**, és **MIM CM aláíró**. Kattintson az **OK** gombra.
+
 4. A konzolfán kattintson **tanúsítványsablonok**.
+
 5. Ellenőrizze, hogy a három új sablonok megjelennek a **részletek** ablaktáblán, majd zárja be **hitelesítésszolgáltató**.
+
     ![A MIM CM aláírása](media/mim-cm-deploy/image016.png)
+
 6. Zárjon be minden nyitott, és jelentkezzen ki.
 
-### <a name="iis-configuration"></a>IIS-konfiguráció 
+### <a name="iis-configuration"></a>IIS-konfiguráció
 
-A webhely üzemeltetésére a CM hoIn rendezéshez sorrendben megrekedésének kezelése, és konfigurálja az IIS
+Ahhoz, hogy a webhely állomásról CM, IIS telepítése és konfigurálása.
 
 #### <a name="install-and-configure-iis"></a>IIS telepítése és konfigurálása
 
-1. Jelentkezzen be **, a CORLog **MIMINSTALL** fiók
+1. Jelentkezzen be **a CORLog** , **MIMINSTALL** fiók
 
->[!IMPORTANT]
-A MIM telepítési fiókot a helyi rendszergazdának kell lennie.
+    >[!IMPORTANT]
+    >A MIM telepítési fiókot a helyi rendszergazdának kell lennie.
 
-2. Nyissa meg a powershellt, és futtassa a következő parancsot
+2. Nyissa meg a Powershellt, és futtassa a következő parancsot
 
-   - ```Install-WindowsFeature –ConfigurationFilePath```
+    `Install-WindowsFeature –ConfigurationFilePath`
 
 >[!NOTE]
- Az IIS 7 alapértelmezés szerint telepítve van a alapértelmezett webhely nevű webhelyhez. Ha, hogy a hely át lett nevezve vagy eltávolítani a nevű hely alapértelmezett webhely kell érhető el a MIM Tanúsítványkezelő telepítése előtt.
+>Az IIS 7 alapértelmezés szerint telepítve van a alapértelmezett webhely nevű webhelyhez. Ha, hogy a hely át lett nevezve vagy eltávolítani a nevű hely alapértelmezett webhely kell érhető el a MIM Tanúsítványkezelő telepítése előtt.
 
 #### <a name="configuring-kerberos"></a>A Kerberos konfigurálása
 
 A MIMCMWebAgent fiókkal fog futni a MIM Tanúsítványkezelő portálra. Alapértelmezés az IIS-ben, és fel rendszermag módú hitelesítés alapértelmezés szerint szolgál az IIS-ben. Tiltsa le a Kerberos a rendszermag módú hitelesítés lesz, és SPN-ek inkább a MIMCMWebAgent fiók konfigurálása. Néhány parancs emelt szintű engedélyekkel az active directory és a CORPCM kiszolgáló szükséges.
 
-![](media/mim-cm-deploy/image020.png)
+![Diagram](media/mim-cm-deploy/image020.png)
 
-```
+```powershell
 #Kerberos settings
 #SPN
 SETSPN -S http/cm.contoso.com contoso\MIMCMWebAgent
@@ -343,12 +358,11 @@ Get-ADUser CONTOSO\MIMCMWebAgent | Set-ADObject -Add @{"msDS-AllowedToDelegateTo
 
 ```
 
-** IIS frissítése a **CORPCM**
+**Az IIS CORPCM frissítése**
 
+![diagram](media/mim-cm-deploy/image022.png)
 
-![](media/mim-cm-deploy/image022.png)
-
-```
+```powershell
 add-pssnapin WebAdministration
 
 Set-WebConfigurationProperty -Filter System.webServer/security/authentication/WindowsAuthentication -Location 'Default Web Site' -Name enabled -Value $true
@@ -357,9 +371,8 @@ Set-WebConfigurationProperty -Filter System.webServer/security/authentication/Wi
 
 ```
 
-
 >[!NOTE]
-Adja hozzá a "cm.contoso.com" A DNS-rekordját és CORPCM IP mutasson kell
+>Adja hozzá a "cm.contoso.com" A DNS-rekordját és CORPCM IP mutasson kell
 
 #### <a name="requiring-ssl-on-the-mim-cm-portal"></a>SSL megkövetelése a MIM CM-portálon
 
@@ -379,18 +392,18 @@ Erősen ajánlott, hogy a MIM CM-portálon SSL szükséges. Ha még nem a varáz
 
 1. Győződjön meg arról, hogy a CORPSQL01 kiszolgálóhoz csatlakozott.
 
-2. Győződjön meg arról, SQL DBA vannak bejelentkezve
+2. Gondoskodjon arról, hogy be vannak jelentkezve SQL DBA.
 
 3. Futtassa a következő T-SQL parancsfájlt a CONTOSO engedélyezéséhez\\MIMINSTALL fiókot létrehozni az adatbázist, amikor azt nyissa meg a konfigurációs lépés
 
->[!NOTE]
-Fel kell térjen vissza az SQL amikor azt készen áll a kilépési & házirend modul
+    >[!NOTE]
+    >Fel kell térjen vissza az SQL amikor azt készen áll a kilépési & házirend modul
 
-```
-create login [CONTOSO\\MIMINSTALL] from windows;
-exec sp_addsrvrolemember 'CONTOSO\\MIMINSTALL', 'dbcreator';
-exec sp_addsrvrolemember 'CONTOSO\\MIMINSTALL', 'securityadmin';  
-```
+    ```sql
+    create login [CONTOSO\\MIMINSTALL] from windows;
+    exec sp_addsrvrolemember 'CONTOSO\\MIMINSTALL', 'dbcreator';
+    exec sp_addsrvrolemember 'CONTOSO\\MIMINSTALL', 'securityadmin';  
+    ```
 
 ![A MIM Tanúsítványkezelő konfigurációs varázsló hibaüzenet](media/mim-cm-deploy/image024.png)
 
@@ -412,7 +425,7 @@ exec sp_addsrvrolemember 'CONTOSO\\MIMINSTALL', 'securityadmin';
 
 8. Egyéni beállítása lapon győződjön meg arról, hogy a **MIM Tanúsítványkezelő portálra** és **MIM CM frissítési szolgáltatás-összetevők** , telepítve van beállítva, majd **kattintson a Tovább gombra**.
 
-9. A virtuális webes mappa lapon győződjön meg arról, hogy a virtuális mappa neve ** CertificateManagement, majd **kattintson a Tovább gombra**.
+9. A virtuális webes mappa lapon győződjön meg arról, hogy a virtuális mappa neve **CertificateManagement**, majd **kattintson a Tovább gombra**.
 
 10. A telepítése a Microsoft Identity Manager Tanúsítványkezelő lapon **kattintson a telepítés**.
 
@@ -422,14 +435,18 @@ exec sp_addsrvrolemember 'CONTOSO\\MIMINSTALL', 'securityadmin';
 
 ### <a name="configuration-wizard-of-microsoft-identity-manager-2016-certificate-management"></a>A Microsoft Identity Manager 2016 tanúsítványkezelés konfigurációs varázsló
 
-CORPCM való bejelentkezés előtt vegye fel a MIMINSTALL **tartományi rendszergazdák, a Sémagazdák és a helyi rendszergazdák** csoportot ehhez a konfigurációs varázsló. Ez lehet eltávolítani, később konfigurálásának befejezését követően.      
-    
+CORPCM való bejelentkezés előtt vegye fel a MIMINSTALL **tartományi rendszergazdák, a Sémagazdák és a helyi rendszergazdák** csoportot ehhez a konfigurációs varázsló. Ez lehet eltávolítani, később konfigurálásának befejezését követően.
+
 ![Hibaüzenet](media/mim-cm-deploy/image028.png)
 
 1. Az a **Start** menüben kattintson a **tanúsítvány konfigurációs varázsló**. És futtató **rendszergazda**
+
 2. Az a **üdvözli a konfiguráció varázsló** kattintson **következő**.
+
 3. Az a **hitelesítésszolgáltató konfigurációjának** lapon, győződjön meg arról, hogy a kijelölt hitelesítésszolgáltató **Contoso-CORPCA-hitelesítésszolgáltató**, győződjön meg arról, hogy a kijelölt kiszolgáló **CORPCA. A CONTOSO.COM**, és kattintson a **következő**.
+
 4. A a **beállítása a Microsoft® SQL Server®-adatbázis** lap a **nevet az SQL Server** mezőbe írja be **CORPSQL1** , engedélyezze a **létrehozásához használja a hitelesítő adataimat a adatbázis** jelölőnégyzetet, majd kattintson a **következő**.
+
 5. Az a **adatbázis beállításainak** lap, fogadja el az alapértelmezett adatbázis **FIMCertificateManagement**, ügyeljen arra, hogy **SQL integrált hitelesítés** van kijelölve, majd Kattintson a **következő**.
 
 6. Az a **beállítása az Active Directory** lapon fogadja el az alapértelmezett nevet, a szolgáltatáskapcsolódási pont előírt, és kattintson a **következő**.
@@ -439,35 +456,48 @@ CORPCM való bejelentkezés előtt vegye fel a MIMINSTALL **tartományi rendszer
 8. Az a **ügynökök – FIM CM** lapon törölje a jelet a **az FIM CM alapértelmezett beállításokat használja** jelölőnégyzetet, majd kattintson a **egyéni fiókok**.
 
 9. Az a **ügynökök – FIM CM** többlapos párbeszédpanel, az egyes lapokon írja be a következőt:
-   - Felhasználónév: **frissítés** 
-   - Jelszó: **átadni\@word1**
-   - Jelszó megerősítése: **átadni\@word1**
-   - Használjon egy meglévő felhasználó: **engedélyezve**
->[!NOTE]
-Korábban létrehozott ezeket a fiókokat. Győződjön meg arról, hogy az eljárások a 8. lépés ismétlődjenek-e az összes hat ügynök fiók lap.
 
-![A MIM CM-fiókok](media/mim-cm-deploy/image030.png)
+   - Felhasználónév: **frissítés**
+
+   - Jelszó: **átadni\@word1**
+
+   - Jelszó megerősítése: **átadni\@word1**
+
+   - Használjon egy meglévő felhasználó: **engedélyezve**
+
+    >[!NOTE]
+    >Korábban létrehozott ezeket a fiókokat. Győződjön meg arról, hogy az eljárások a 8. lépés ismétlődjenek-e az összes hat ügynök fiók lap.
+
+    ![A MIM CM-fiókok](media/mim-cm-deploy/image030.png)
 
 10. Amikor befejeződött az összes ügynök fiók adatait, kattintson **OK**.
 
 11. Az a **ügynökök – a MIM Tanúsítványkezelő** kattintson **következő**.
 
 12. Az a **beállítása a kiszolgálói tanúsítványok** lapon, a következő tanúsítványsablonok engedélyezése:
+
     - A helyreállítási ügynök kulcs-helyreállítási megbízott tanúsítványt használt tanúsítványsablont: **MIMCMKeyRecoveryAgent**.
+
     - Az FIM CM-ügynök tanúsítvány használt tanúsítványsablont: **MIMCMSigning**.
+
     - A tanúsítványigénylő ügynök tanúsítványával használt tanúsítványsablont: **FIMCMEnrollmentAgent**.
+
 13. Az a **beállításról kiszolgálótanúsítványok** kattintson **következő**.
+
 14. Az a **telepítő E-mail kiszolgáló, a dokumentum nyomtatása** lap a **adja meg a regisztrációs értesítések küldéséhez használni kívánt SMTP-kiszolgáló nevét** mezőbe, majd kattintson **tovább.**
+
 15. Az a **beállíthatja az** kattintson **konfigurálása**.
+
 16. Az a **konfigurációs varázsló – Microsoft Forefront Identity Manager 2010 R2** figyelmeztető párbeszédpanel, kattintson a **OK** megerősíti, hogy az SSL nincs engedélyezve az IIS virtuális könyvtár számára.
 
     ![Media/image17.png](media/mim-cm-deploy/image032.png)
 
     >[!NOTE] 
-    Ne kattintson a Befejezés gombra, amíg a konfiguráció varázsló végrehajtása befejeződik. Naplózás, a varázsló itt találhatók:**% programfiles %\\Microsoft Forefront Identity Management\\2010\\Tanúsítványkezelő\\config.log**
+    >Ne kattintson a Befejezés gombra, amíg a konfiguráció varázsló végrehajtása befejeződik. Naplózás, a varázsló itt találhatók: **% programfiles %\\Microsoft Forefront Identity Management\\2010\\Tanúsítványkezelő\\config.log**
+
 17. Kattintson a **Befejezés**gombra.
 
-![A MIM Tanúsítványkezelő varázsló befejeződött](media/mim-cm-deploy/image033.png)
+    ![A MIM Tanúsítványkezelő varázsló befejeződött](media/mim-cm-deploy/image033.png)
 
 18. Zárjon be minden nyitott.
 
@@ -475,7 +505,7 @@ Korábban létrehozott ezeket a fiókokat. Győződjön meg arról, hogy az elj�
 
 20. Keresse fel a webhelyet CORPCM kiszolgálóról https://cm.contoso.com/certificatemanagement  
 
-    ![](media/mim-cm-deploy/image035.png)
+    ![diagram](media/mim-cm-deploy/image035.png)
 
 ### <a name="verify-the-cng-key-isolation-service"></a>Ellenőrizze a CNG-kulcs elkülönítése szolgáltatás
 
@@ -500,7 +530,7 @@ Ebben a lépésben az telepítjük és a FIM CM hitelesítésszolgáltató modul
 3. Az a **webes** ablak, kattintson a jobb gombbal **Web.config**, és kattintson a **nyitott**.
 
     >[!Note]
-    A Web.config fájlt a Jegyzettömb alkalmazásban van megnyitva.
+    >A Web.config fájlt a Jegyzettömb alkalmazásban van megnyitva.
 
 4. A fájl megnyitása után nyomja le a CTRL + F.
 
@@ -549,7 +579,7 @@ Ebben a lépésben az telepítjük és a FIM CM hitelesítésszolgáltató modul
 6. Az a **egyéni telepítés** lapon jelölje be **MIM CM frissítési szolgáltatás**, és kattintson a **a szolgáltatás nem érhető el**.
 
     >[!Note]
-    Ez a MIM CM hitelesítésszolgáltató fájlok hagyja a egyetlen szolgáltatás, a telepítés engedélyezve van.
+    >Ez a MIM CM hitelesítésszolgáltató fájlok hagyja a egyetlen szolgáltatás, a telepítés engedélyezve van.
 
 7. Az a **egyéni telepítés** kattintson **következő**.
 
@@ -585,7 +615,7 @@ Ebben a lépésben az telepítjük és a FIM CM hitelesítésszolgáltató modul
 12. Az események listájában ellenőrizze, hogy a legújabb események hajthatja végre *nem* foglalja magában a **figyelmeztetés** vagy **hiba** események a tanúsítványszolgáltatások az utolsó újraindítás óta.
 
     >[!NOTE] 
-    Az utolsó esemény tartalmaznia kell, hogy a kilépési modul betöltése a beállítások használatával ```SYSTEM\CurrentControlSet\Services\CertSvc\Configuration\ContosoRootCA\ExitModules\Clm.Exit```
+    >Az utolsó esemény tartalmaznia kell, hogy a kilépési modul betöltött beállításait: `SYSTEM\CurrentControlSet\Services\CertSvc\Configuration\ContosoRootCA\ExitModules\Clm.Exit`
 
 13. Minimalizálja a **Eseménynapló**.
 
@@ -602,7 +632,7 @@ Ebben a lépésben az telepítjük és a FIM CM hitelesítésszolgáltató modul
 5. Válassza ki az ujjlenyomatot, és nyomja le az CTRL + C billentyűket.
 
     >[!NOTE]
-    Tegye **nem** közé tartozik a szóközök ujjlenyomat karakterek közül.
+    >Tegye **nem** közé tartozik a szóközök ujjlenyomat karakterek közül.
 
 6. Az a **tanúsítvány** párbeszédpanel, kattintson a **OK**.
 
@@ -615,8 +645,8 @@ Ebben a lépésben az telepítjük és a FIM CM hitelesítésszolgáltató modul
 10. Az a **mit** mezőbe, írja be a szóköz karaktert, majd kattintson **Mindet**.
 
     >[!Note]
-    Ez eltávolítja az összes az ujjlenyomatot a karakter a szóközt.
-    
+    >Ez eltávolítja az összes az ujjlenyomatot a karakter a szóközt.
+
 11. Az a **cserélje le** párbeszédpanel, kattintson a **Mégse**.
 
 12. Válassza ki a konvertált *thumbprintstring*, majd nyomja le a CTRL + C az.
@@ -629,143 +659,239 @@ Ebben a lépésben az telepítjük és a FIM CM hitelesítésszolgáltató modul
 
 2. Kattintson a jobb gombbal **contoso-CORPCA-hitelesítésszolgáltató**, és kattintson a **tulajdonságok**.
 
-3.  Az a **contoso-CORPCA-hitelesítésszolgáltató tulajdonságainak** párbeszédpanel a **irányelvmodul** lapra, majd **tulajdonságok**.
+3. Az a **contoso-CORPCA-hitelesítésszolgáltató tulajdonságainak** párbeszédpanel a **irányelvmodul** lapra, majd **tulajdonságok**.
 
-- Az a **általános** lapra, győződjön meg arról, hogy **FIM CM kérelmek át az alapértelmezett házirend modul a feldolgozási** van kiválasztva.
-- Az a **aláíró tanúsítványok** lapra, majd **Hozzáadás**.
-- A tanúsítvány párbeszédpanelen kattintson a jobb gombbal a **hexadecimális kódolású tanúsítvány kivonatát adja meg** gombra, majd **Beillesztés**.
-- Az a **tanúsítvány** párbeszédpanel, kattintson a **OK**.
-    >[!Note]
-    Ha a **OK** gomb nincs engedélyezve, akkor véletlenül egy rejtett karakter a ujjlenyomat karakterláncban található a clmAgent tanúsítvány ujjlenyomata másolása során. Ismételje meg a-től kezdődő lépéseket **4. feladat: a Windows vágólapra másolása a MIMCMAgent tanúsítvány ujjlenyomata** ebben a gyakorlatban.
+    - Az a **általános** lapra, győződjön meg arról, hogy **FIM CM kérelmek át az alapértelmezett házirend modul a feldolgozási** van kiválasztva.
 
-- Az a **konfigurációs tulajdonságok** párbeszédpanelen győződjön meg arról, hogy az ujjlenyomat megjelenik a **érvényes aláíró tanúsítványok** listára, majd **OK**.
+    - Az a **aláíró tanúsítványok** lapra, majd **Hozzáadás**.
 
-- Az a **FIM Tanúsítványkezelő** üzenetpanelen, kattintson a **OK**.
+    - A tanúsítvány párbeszédpanelen kattintson a jobb gombbal a **hexadecimális kódolású tanúsítvány kivonatát adja meg** gombra, majd **Beillesztés**.
 
-- Az a **contoso-CORPCA-hitelesítésszolgáltató tulajdonságainak** párbeszédpanel, kattintson a **OK**.
+    - Az a **tanúsítvány** párbeszédpanel, kattintson a **OK**.
+    
+        >[!Note]
+        >Ha a **OK** gomb nincs engedélyezve, akkor véletlenül egy rejtett karakter a ujjlenyomat karakterláncban található a clmAgent tanúsítvány ujjlenyomata másolása során. Ismételje meg a-től kezdődő lépéseket **4. feladat: a Windows vágólapra másolása a MIMCMAgent tanúsítvány ujjlenyomata** ebben a gyakorlatban.
 
-- Kattintson a jobb gombbal **contoso-CORPCA-hitelesítésszolgáltató x* mutasson **feladataival**, és kattintson a **szolgáltatás leállítása**.
+4. Az a **konfigurációs tulajdonságok** párbeszédpanelen győződjön meg arról, hogy az ujjlenyomat megjelenik a **érvényes aláíró tanúsítványok** listára, majd **OK**.
 
-- Várjon, amíg az Active Directory tanúsítványszolgáltatások leáll.
+5. Az a **FIM Tanúsítványkezelő** üzenetpanelen, kattintson a **OK**.
 
-- Kattintson a jobb gombbal **contoso-CORPCA-hitelesítésszolgáltató x* mutasson **feladataival**, és kattintson a **szolgáltatás indítása**.
+6. Az a **contoso-CORPCA-hitelesítésszolgáltató tulajdonságainak** párbeszédpanel, kattintson a **OK**.
 
-- Zárja be a **hitelesítésszolgáltató** konzol.
+7. Kattintson a jobb gombbal **contoso-CORPCA-hitelesítésszolgáltató x* mutasson **feladataival**, és kattintson a **szolgáltatás leállítása**.
 
-- Zárjon be minden nyitott, és jelentkezzen.
+8. Várjon, amíg az Active Directory tanúsítványszolgáltatások leáll.
 
-- **Utolsó lépés a központi telepítésben lévő** , győződjön meg arról, hogy a CONTOSO szeretnénk\\MIMCM-kezelők telepítheti és sablonok létrehozása és konfigurálása a rendszer anélkül, hogy a séma- és tartományi rendszergazdák. A következő parancsfájl fog ACL az engedélyeket, hogy a dsacls használt tanúsítványsablonok. Futtassa a teljes jogosultságot kapnak, módosítsa a biztonsági fiók olvasási és írási engedéllyel az erdő minden meglévő tanúsítványsablonhoz.
+9. Kattintson a jobb gombbal **contoso-CORPCA-hitelesítésszolgáltató x* mutasson **feladataival**, és kattintson a **szolgáltatás indítása**.
 
-- Első lépések: **szolgáltatáskapcsolódási pont és a cél csoportengedélyek konfigurálásával & profil sablon kezelésének delegálása**
-  - Engedélyek konfigurálása a szolgáltatáskapcsolati pontot (SCP).
+10. Zárja be a **hitelesítésszolgáltató** konzol.
 
-  - Delegált profilkezelés sablon konfigurálása.
+11. Zárjon be minden nyitott, és jelentkezzen.
 
-  - Engedélyek konfigurálása a szolgáltatáskapcsolati pontot (SCP). **\<parancsfájl\>**
+**Utolsó lépés a központi telepítésben lévő** , győződjön meg arról, hogy a CONTOSO szeretnénk\\MIMCM-kezelők telepítheti és sablonok létrehozása és konfigurálása a rendszer anélkül, hogy a séma- és tartományi rendszergazdák. A következő parancsfájl fog ACL az engedélyeket, hogy a dsacls használt tanúsítványsablonok. Futtassa a teljes jogosultságot kapnak, módosítsa a biztonsági fiók olvasási és írási engedéllyel az erdő minden meglévő tanúsítványsablonhoz.
 
-     -   Győződjön meg arról, hogy csatlakozik a **CORPDC** virtuális kiszolgáló.
+Első lépések: **szolgáltatáskapcsolódási pont és a cél csoportengedélyek konfigurálásával & profil sablon kezelésének delegálása**
 
-     -   Jelentkezzen be **contoso\\corpadmin**
+1. Engedélyek konfigurálása a szolgáltatáskapcsolati pontot (SCP).
 
-     -   A **felügyeleti eszközök**, nyissa meg **Active Directory – felhasználók és számítógépek**.
+2. Delegált profilkezelés sablon konfigurálása.
 
-     -   A **Active Directory – felhasználók és számítógépek**, a **nézet** menü, ügyeljen arra, hogy **speciális funkciók** engedélyezve van.
+3. Engedélyek konfigurálása a szolgáltatáskapcsolati pontot (SCP). **\<parancsfájl\>**
 
-     -   A konzolfán bontsa ki a **Contoso.com** \| **rendszer** \| **Microsoft** \| **tanúsítványának élettartama Manager**, és kattintson a **CORPCM**.    
+4.   Győződjön meg arról, hogy csatlakozik a **CORPDC** virtuális kiszolgáló.
 
-     -   Kattintson a jobb gombbal **CORPCM**, és kattintson a **tulajdonságok**.
+5. Jelentkezzen be **contoso\\corpadmin**
 
-     -   Az a **CORPCM tulajdonságok** párbeszédpanel a **biztonsági** lapon vegye fel a következő csoportok a megfelelő engedélyekkel:
+6. A **felügyeleti eszközök**, nyissa meg **Active Directory – felhasználók és számítógépek**.
 
-    | Csoport          | Engedélyek                                                                                                                                                         |
-    |----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+7. A **Active Directory – felhasználók és számítógépek**, a **nézet** menü, ügyeljen arra, hogy **speciális funkciók** engedélyezve van.
+
+8. A konzolfán bontsa ki a **Contoso.com** \| **rendszer** \| **Microsoft** \| **tanúsítványának élettartama Manager**, és kattintson a **CORPCM**.
+
+9. Kattintson a jobb gombbal **CORPCM**, és kattintson a **tulajdonságok**.
+
+10. Az a **CORPCM tulajdonságok** párbeszédpanel a **biztonsági** lapon vegye fel a következő csoportok a megfelelő engedélyekkel:
+
+    | Csoport          | Engedélyek      |
+    |----------------|------------------|
     | mimcm-kezelők | Olvasás </br> FIM CM naplózási</br> FIM CM tanúsítványigénylő ügynök</br> FIM CM kérelem regisztrálása</br> FIM CM kérelem helyreállítása</br> FIM CM kérelem megújítása</br> FIM CM kérelem visszavonása </br> FIM CM kérelem intelligens kártya letiltásának feloldása |
-    | MIMCM-segélyszolgálat | Olvasás</br> FIM CM tanúsítványigénylő ügynök</br> FIM CM kérelem visszavonása</br> FIM CM kérelem intelligens kártya letiltásának feloldása                                                                                |
-- Az a **CORPDC tulajdonságok** párbeszédpanel, kattintson a **OK**.
+    | MIMCM-segélyszolgálat | Olvasás</br> FIM CM tanúsítványigénylő ügynök</br> FIM CM kérelem visszavonása</br> FIM CM kérelem intelligens kártya letiltásának feloldása |
 
-- Hagyja **Active Directory – felhasználók és számítógépek** megnyitásához.
+11. Az a **CORPDC tulajdonságok** párbeszédpanel, kattintson a **OK**.
 
-- **Engedélyek konfigurálása a leszármazott felhasználó objektumok**
-    - Ellenőrizze, hogy még mindig a **Active Directory – felhasználók és számítógépek** konzol.
-    - A konzolfán kattintson a jobb gombbal **Contoso.com**, és kattintson a **tulajdonságok**.
-    - Az a **biztonsági** lapra, majd **speciális**.
-    - Az a **speciális biztonsági beállítások a Contoso** párbeszédpanel, kattintson a **Hozzáadás**.
-    - A a **válassza ki a felhasználó, számítógép, szolgáltatásfiók vagy csoport** párbeszédpanel a **adja meg a kiválasztandó objektum nevét** mezőbe írja be **mimcm-kezelők**, majd kattintson az **OK**.
-    - Az a **Contoso engedélybejegyzés** párbeszédpanel a **alkalmazása** listáról válassza ki **leszármazott felhasználó objektumai** , majd engedélyezze a **engedélyezése**jelölőnégyzetét az alábbi **engedélyek**:
-        - **Az összes tulajdonság olvasása**
-        - **Olvasási engedélyek**
-        - **FIM CM naplózási**
-        - **FIM CM tanúsítványigénylő ügynök**
-        - **FIM CM kérelem regisztrálása**
-        - **FIM CM kérelem helyreállítása**
-        - **FIM CM kérelem megújítása**
-        - **FIM CM kérelem visszavonása**
-        - **FIM CM kérelem intelligens kártya letiltásának feloldása**
-    - Az a **Contoso engedélybejegyzés** párbeszédpanel, kattintson a **OK**.
-    - Az a **speciális biztonsági beállítások a Contoso** párbeszédpanel, kattintson a **Hozzáadás**.
-    - Az a **válassza ki a felhasználó, számítógép, szolgáltatásfiók vagy csoport** párbeszédpanel a **adja meg a kiválasztandó objektum nevét** mezőbe írja be **mimcm-segélyszolgálat**, és kattintson a **OK**.
-    - Az a **Contoso engedélybejegyzés** párbeszédpanel a **alkalmazása** listáról válassza ki **leszármazott felhasználó objektumai** , és válassza a **engedélyezése**jelölőnégyzetét az alábbi **engedélyek**: - **az összes tulajdonság olvasása** - **olvasási engedéllyel** - **FIM CM tanúsítványigénylő megbízott** - **FIM CM kérelem Revoke** - **FIM CM kérelem intelligens kártya letiltásának feloldása**
-    - Az a **Contoso engedélybejegyzés** párbeszédpanel, kattintson a **OK**.
-    -A a **speciális biztonsági beállítások a Contoso** párbeszédpanel, kattintson a **OK**.
-    - Az a **contoso.com tulajdonságok** párbeszédpanel, kattintson a **OK**.
-    - Hagyja **Active Directory – felhasználók és számítógépek** megnyitásához.
+12. Hagyja **Active Directory – felhasználók és számítógépek** megnyitásához.
 
-    - **Engedélyek konfigurálása a leszármazott felhasználó objektumokon \<nem parancsprogram\>**
-        - Ellenőrizze, hogy még mindig a **Active Directory – felhasználók és számítógépek** konzol.
-        - A konzolfán kattintson a jobb gombbal **Contoso.com**, és kattintson a **tulajdonságok**.
-        - Az a **biztonsági** lapra, majd **speciális**.
-        - Az a **speciális biztonsági beállítások a Contoso** párbeszédpanel, kattintson a **Hozzáadás**.
-        - A a **válassza ki a felhasználó, számítógép, szolgáltatásfiók vagy csoport** párbeszédpanel a **adja meg a kiválasztandó objektum nevét** mezőbe írja be **mimcm-kezelők**, majd kattintson az **OK**.
-        - Az a **CONTOSO engedélybejegyzés** párbeszédpanel a **alkalmazása** listáról válassza ki **leszármazott felhasználó objektumai** , majd engedélyezze a **engedélyezése**jelölőnégyzetét az alábbi **engedélyek**:
-            - **Az összes tulajdonság olvasása**
-            - **Olvasási engedélyek**
-            - **FIM CM naplózási**
-            - **FIM CM tanúsítványigénylő ügynök**
-            - **FIM CM kérelem regisztrálása**
-            - **FIM CM kérelem helyreállítása**
-            - **FIM CM kérelem megújítása**
-            - **FIM CM kérelem visszavonása**
-            - **FIM CM kérelem intelligens kártya letiltásának feloldása**
-    - Az a **CONTOSO engedélybejegyzés** párbeszédpanel, kattintson a **OK**.
-    - Az a **speciális biztonsági beállítások a CONTOSO** párbeszédpanel, kattintson a **Hozzáadás**.
-    - Az a **válassza ki a felhasználó, számítógép, szolgáltatásfiók vagy csoport** párbeszédpanel a **adja meg a kiválasztandó objektum nevét** mezőbe írja be **mimcm-segélyszolgálat**, és kattintson a **OK**.
-    - Az a **CONTOSO engedélybejegyzés** párbeszédpanel a **alkalmazása** listáról válassza ki **leszármazott felhasználó objektumai** , és válassza a **engedélyezése**jelölőnégyzetét az alábbi **engedélyek**: - **az összes tulajdonság olvasása** - **olvasási engedéllyel** - **FIM CM tanúsítványigénylő megbízott** - **FIM CM kérelem Revoke** - **FIM CM kérelem intelligens kártya letiltásának feloldása**
-    - Az a **contoso engedélybejegyzés** párbeszédpanel, kattintson a **OK**.
-    - Az a **speciális biztonsági beállítások a Contoso** párbeszédpanel, kattintson a **OK**.
-    - Az a **contoso.com tulajdonságok** párbeszédpanel, kattintson a **OK**.
-    - Hagyja **Active Directory – felhasználók és számítógépek** megnyitásához.
-- Második lépéseket: **tanúsítványsablonok felügyeleti engedélyeinek delegálása \<parancsfájl\>**
-    - A tanúsítványsablonok tároló engedélyeinek delegálása.
-    - Az OID-tárolóra vonatkozó engedélyek delegálása.
-    - A meglévő tanúsítványsablonok engedélyeinek delegálása.
-- Adja meg a tanúsítványsablonok tároló az engedélyek
-     1. Állítsa vissza a **Active Directory – helyek és szolgáltatások** konzol.
-     2. A konzolfán bontsa ki a **szolgáltatások**, bontsa ki a **nyilvánoskulcs-szolgáltatások**, és kattintson a **tanúsítványsablonok**.
-     3. A konzolfán kattintson a jobb gombbal **tanúsítványsablonok**, és kattintson a **Vezérlés delegálása**.
-     4. Az a **Vezérlés delegálása** varázsló, kattintson a **következő**.
-     5. Az a **felhasználók vagy csoportok** kattintson **Hozzáadás**.
-     6. Az a **felhasználók, számítógépek vagy csoportok** párbeszédpanel a **írja be a kijelölendő** mezőbe írja be **mimcm-kezelők**, és kattintson a **OK**.
-     7. Az a **felhasználók vagy csoportok** kattintson **következő**.
-     8. Az a **Delegálandó feladatok** kattintson **hozzon létre egy egyéni feladat**, és kattintson a **következő**.
-     9.  Az a **Active Directory objektumtípus** lapon **ebben a mappában, ez a mappa, és ebben a mappában új objektumok létrehozása a meglévő objektumok** van kiválasztva, és kattintson **tovább**.
-     10. Az a **engedélyek** lap a **engedélyek** listáról válassza ki a **teljes hozzáférés** jelölőnégyzetet, majd kattintson a **következő**.
-     11. Az a **a Vezérlés delegálása varázsló befejezése** kattintson **Befejezés**.
+**Engedélyek konfigurálása a leszármazott felhasználó objektumok**
 
-- Adja meg a OID tároló az engedélyek
-     1. A konzolfán kattintson a jobb gombbal **OID**, és kattintson a **tulajdonságok**.
-     2. Az a **OID tulajdonságok** párbeszédpanel a **biztonsági** lapra, majd **speciális**.
-     3. Az a **OID speciális biztonsági beállítások** párbeszédpanel, kattintson a **Hozzáadás**.
-     4. A a **válassza ki a felhasználó, számítógép, szolgáltatásfiók vagy csoport** párbeszédpanel a **adja meg a kiválasztandó objektum nevét** mezőbe írja be **mimcm-kezelők**, majd kattintson az **OK**.
-     5. A a **engedélybejegyzés OID azonosítója** párbeszédpanelen győződjön meg arról, hogy az engedélyek alkalmazása **Ez az objektum és a gyermekobjektumok**, kattintson a **teljes hozzáférés**, és kattintson a  **OK**.
-     6. Az a **OID speciális biztonsági beállítások** párbeszédpanel, kattintson a **OK**.
-     7. Az a **OID tulajdonságok** párbeszédpanel, kattintson a **OK**.
-     8. Bezárás **Active Directory – helyek és szolgáltatások**.
+1. Ellenőrizze, hogy még mindig a **Active Directory – felhasználók és számítógépek** konzol.
+
+2. A konzolfán kattintson a jobb gombbal **Contoso.com**, és kattintson a **tulajdonságok**.
+
+3. Az a **biztonsági** lapra, majd **speciális**.
+
+4. Az a **speciális biztonsági beállítások a Contoso** párbeszédpanel, kattintson a **Hozzáadás**.
+
+5. A a **válassza ki a felhasználó, számítógép, szolgáltatásfiók vagy csoport** párbeszédpanel a **adja meg a kiválasztandó objektum nevét** mezőbe írja be **mimcm-kezelők**, majd kattintson az **OK**.
+
+6. Az a **Contoso engedélybejegyzés** párbeszédpanel a **alkalmazása** listáról válassza ki **leszármazott felhasználó objektumai** , majd engedélyezze a **engedélyezése**jelölőnégyzetét az alábbi **engedélyek**:
+
+    - **Az összes tulajdonság olvasása**
+    
+    - **Olvasási engedélyek**
+
+    - **FIM CM naplózási**
+
+    - **FIM CM tanúsítványigénylő ügynök**
+
+    - **FIM CM kérelem regisztrálása**
+
+    - **FIM CM kérelem helyreállítása**
+
+    - **FIM CM kérelem megújítása**
+
+    - **FIM CM kérelem visszavonása**
+
+    - **FIM CM kérelem intelligens kártya letiltásának feloldása**
+
+7. Az a **Contoso engedélybejegyzés** párbeszédpanel, kattintson a **OK**.
+
+8. Az a **speciális biztonsági beállítások a Contoso** párbeszédpanel, kattintson a **Hozzáadás**.
+
+9. Az a **válassza ki a felhasználó, számítógép, szolgáltatásfiók vagy csoport** párbeszédpanel a **adja meg a kiválasztandó objektum nevét** mezőbe írja be **mimcm-segélyszolgálat**, és kattintson a **OK**.
+
+10. Az a **Contoso engedélybejegyzés** párbeszédpanel a **alkalmazása** listáról válassza ki **leszármazott felhasználó objektumai** , és válassza a **engedélyezése**jelölőnégyzetét az alábbi **engedélyek**:
+
+    - **Az összes tulajdonság olvasása**
+
+    - **Olvasási engedélyek**
+
+    - **FIM CM tanúsítványigénylő ügynök**
+
+    - **FIM CM kérelem visszavonása**
+
+    - **FIM CM kérelem intelligens kártya letiltásának feloldása**
+
+11. Az a **Contoso engedélybejegyzés** párbeszédpanel, kattintson a **OK**.
+
+12. Az a **speciális biztonsági beállítások a Contoso** párbeszédpanel, kattintson a **OK**.
+
+13. Az a **contoso.com tulajdonságok** párbeszédpanel, kattintson a **OK**.
+
+14. Hagyja **Active Directory – felhasználók és számítógépek** megnyitásához.
+
+**Engedélyek konfigurálása a leszármazott felhasználó objektumokon \<nem parancsprogram\>**
+
+1. Ellenőrizze, hogy még mindig a **Active Directory – felhasználók és számítógépek** konzol.
+
+2. A konzolfán kattintson a jobb gombbal **Contoso.com**, és kattintson a **tulajdonságok**.
+
+3. Az a **biztonsági** lapra, majd **speciális**.
+
+4. Az a **speciális biztonsági beállítások a Contoso** párbeszédpanel, kattintson a **Hozzáadás**.
+
+5. A a **válassza ki a felhasználó, számítógép, szolgáltatásfiók vagy csoport** párbeszédpanel a **adja meg a kiválasztandó objektum nevét** mezőbe írja be **mimcm-kezelők**, majd kattintson az **OK**.
+
+6. Az a **CONTOSO engedélybejegyzés** párbeszédpanel a **alkalmazása** listáról válassza ki **leszármazott felhasználó objektumai** , majd engedélyezze a **engedélyezése**jelölőnégyzetét az alábbi **engedélyek**:
+
+    - **Az összes tulajdonság olvasása**
+
+    - **Olvasási engedélyek**
+
+    - **FIM CM naplózási**
+
+    - **FIM CM tanúsítványigénylő ügynök**
+
+    - **FIM CM kérelem regisztrálása**
+
+    - **FIM CM kérelem helyreállítása**
+
+    - **FIM CM kérelem megújítása**
+
+    - **FIM CM kérelem visszavonása**
+
+    - **FIM CM kérelem intelligens kártya letiltásának feloldása**
+
+7. Az a **CONTOSO engedélybejegyzés** párbeszédpanel, kattintson a **OK**.
+
+8. Az a **speciális biztonsági beállítások a CONTOSO** párbeszédpanel, kattintson a **Hozzáadás**.
+
+9. Az a **válassza ki a felhasználó, számítógép, szolgáltatásfiók vagy csoport** párbeszédpanel a **adja meg a kiválasztandó objektum nevét** mezőbe írja be **mimcm-segélyszolgálat**, és kattintson a **OK**.
+
+10. Az a **CONTOSO engedélybejegyzés** párbeszédpanel a **alkalmazása** listáról válassza ki **leszármazott felhasználó objektumai** , és válassza a **engedélyezése**jelölőnégyzetét az alábbi **engedélyek**:
+
+    - **Az összes tulajdonság olvasása**
+
+    - **Olvasási engedélyek**
+
+    - **FIM CM tanúsítványigénylő ügynök**
+
+    - **FIM CM kérelem visszavonása**
+
+    - **FIM CM kérelem intelligens kártya letiltásának feloldása**
+
+11. Az a **contoso engedélybejegyzés** párbeszédpanel, kattintson a **OK**.
+
+12. Az a **speciális biztonsági beállítások a Contoso** párbeszédpanel, kattintson a **OK**.
+
+13. Az a **contoso.com tulajdonságok** párbeszédpanel, kattintson a **OK**.
+
+14. Hagyja **Active Directory – felhasználók és számítógépek** megnyitásához.
+
+Második lépéseket: **tanúsítványsablonok felügyeleti engedélyeinek delegálása \<parancsfájl\>**
+
+- A tanúsítványsablonok tároló engedélyeinek delegálása.
+
+- Az OID-tárolóra vonatkozó engedélyek delegálása.
+
+- A meglévő tanúsítványsablonok engedélyeinek delegálása.
+
+A tanúsítványsablonok tároló vonatkozó engedélyek meghatározásához:
+
+1. Állítsa vissza a **Active Directory – helyek és szolgáltatások** konzol.
+
+2. A konzolfán bontsa ki a **szolgáltatások**, bontsa ki a **nyilvánoskulcs-szolgáltatások**, és kattintson a **tanúsítványsablonok**.
+
+3. A konzolfán kattintson a jobb gombbal **tanúsítványsablonok**, és kattintson a **Vezérlés delegálása**.
+
+4. Az a **Vezérlés delegálása** varázsló, kattintson a **következő**.
+
+5. Az a **felhasználók vagy csoportok** kattintson **Hozzáadás**.
+
+6. Az a **felhasználók, számítógépek vagy csoportok** párbeszédpanel a **írja be a kijelölendő** mezőbe írja be **mimcm-kezelők**, és kattintson a **OK**.
+
+7. Az a **felhasználók vagy csoportok** kattintson **következő**.
+
+8. Az a **Delegálandó feladatok** kattintson **hozzon létre egy egyéni feladat**, és kattintson a **következő**.
+
+9.  Az a **Active Directory objektumtípus** lapon **ebben a mappában, ez a mappa, és ebben a mappában új objektumok létrehozása a meglévő objektumok** van kiválasztva, és kattintson **tovább**.
+
+10. Az a **engedélyek** lap a **engedélyek** listáról válassza ki a **teljes hozzáférés** jelölőnégyzetet, majd kattintson a **következő**.
+
+11. Az a **a Vezérlés delegálása varázsló befejezése** kattintson **Befejezés**.
+
+Az OID tároló vonatkozó engedélyek meghatározásához:
+
+1. A konzolfán kattintson a jobb gombbal **OID**, és kattintson a **tulajdonságok**.
+
+2. Az a **OID tulajdonságok** párbeszédpanel a **biztonsági** lapra, majd **speciális**.
+
+3. Az a **OID speciális biztonsági beállítások** párbeszédpanel, kattintson a **Hozzáadás**.
+
+4. A a **válassza ki a felhasználó, számítógép, szolgáltatásfiók vagy csoport** párbeszédpanel a **adja meg a kiválasztandó objektum nevét** mezőbe írja be **mimcm-kezelők**, majd kattintson az **OK**.
+
+5. A a **engedélybejegyzés OID azonosítója** párbeszédpanelen győződjön meg arról, hogy az engedélyek alkalmazása **Ez az objektum és a gyermekobjektumok**, kattintson a **teljes hozzáférés**, és kattintson a  **OK**.
+
+6. Az a **OID speciális biztonsági beállítások** párbeszédpanel, kattintson a **OK**.
+
+7. Az a **OID tulajdonságok** párbeszédpanel, kattintson a **OK**.
+
+8. Bezárás **Active Directory – helyek és szolgáltatások**.
 
 **Parancsfájlok: Az Objektumazonosító, profilsablon & tanúsítványsablonok tároló engedélyeinek**
 
-![](media/mim-cm-deploy/image021.png)
+![diagram](media/mim-cm-deploy/image021.png)
 
-```
+```powershell
 import-module activedirectory
 $adace = @{
 "OID" = "AD:\\CN=OID,CN=Public Key Services,CN=Services,CN=Configuration,DC=contoso,DC=com";
@@ -789,76 +915,150 @@ $acl.AddAccessRule($ace)
 
 **Parancsfájlok: A meglévő tanúsítványsablonok engedélyeinek delegálása.**  
 
-![](media/mim-cm-deploy/image039.png)  
+![diagram](media/mim-cm-deploy/image039.png)
 
-dsacls "CN-rendszergazdaként, CN = tanúsítványsablonok, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = = com" /G Contoso\\MIMCM-kezelők: SDDTRCWDWOLCWPRPCCDCWSLO
+```shell
+dsacls "CN=Administrator,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls "CN hitelesítésszolgáltató, CN = tanúsítványsablonok, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = = com" /G Contoso\\MIMCM-kezelők: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=CA,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls "CN CAExchange, CN = tanúsítványsablonok, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = = com" /G Contoso\\MIMCM-kezelők: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=CAExchange,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls "CN CEPEncryption, CN = tanúsítványsablonok, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = = com" /G Contoso\\MIMCM-kezelők: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=CEPEncryption,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls "CN ClientAuth, CN = tanúsítványsablonok, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = = com" /G Contoso\\MIMCM-kezelők: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=ClientAuth,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls "CN kódaláíró, CN = tanúsítványsablonok, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = = com" /G Contoso\\MIMCM-kezelők: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=CodeSigning,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls "CN CrossCA, CN = tanúsítványsablonok, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = = com" /G Contoso\\MIMCM-kezelők: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=CrossCA,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls "CN CTLSigning, CN = tanúsítványsablonok, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = = com" /G Contoso\\MIMCM-kezelők: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=CTLSigning,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls "CN DirectoryEmailReplication, CN = tanúsítványsablonok, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = = com" /G Contoso\\MIMCM-kezelők: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=DirectoryEmailReplication,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls "CN DomainController, CN = tanúsítványsablonok, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = = com" /G Contoso\\MIMCM-kezelők: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=DomainController,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls "CN DomainControllerAuthentication, CN = tanúsítványsablonok, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = = com" /G Contoso\\MIMCM-kezelők: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=DomainControllerAuthentication,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls "CN EFS, CN = tanúsítványsablonok, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = = com" /G Contoso\\MIMCM-kezelők: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=EFS,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls "CN EFSRecovery, CN = tanúsítványsablonok, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = = com" /G Contoso\\MIMCM-kezelők: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=EFSRecovery,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls "CN EnrollmentAgent, CN = tanúsítványsablonok, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = = com" /G Contoso\\MIMCM-kezelők: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=EnrollmentAgent,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls "CN EnrollmentAgentOffline, CN = tanúsítványsablonok, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = = com" /G Contoso\\MIMCM-kezelők: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=EnrollmentAgentOffline,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls "CN ExchangeUser, CN = tanúsítványsablonok, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = = com" /G Contoso\\MIMCM-kezelők: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=ExchangeUser,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls "CN ExchangeUserSignature, CN = tanúsítványsablonok, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = = com" /G Contoso\\MIMCM-kezelők: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=ExchangeUserSignature,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls "CN FIMCMSigning, CN = tanúsítványsablonok, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = = com" /G Contoso\\MIMCM-kezelők: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=FIMCMSigning,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls "CN FIMCMEnrollmentAgent, CN = tanúsítványsablonok, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = = com" /G Contoso\\MIMCM-kezelők: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=FIMCMEnrollmentAgent,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls "CN FIMCMKeyRecoveryAgent, CN = tanúsítványsablonok, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = = com" /G Contoso\\MIMCM-kezelők: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=FIMCMKeyRecoveryAgent,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls "CN IPSecIntermediateOffline, CN = tanúsítványsablonok, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = = com" /G Contoso\\MIMCM-kezelők: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=IPSecIntermediateOffline,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls "CN IPSecIntermediateOnline, CN = tanúsítványsablonok, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = = com" /G Contoso\\MIMCM-kezelők: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=IPSecIntermediateOnline,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls "CN KerberosAuthentication, CN = tanúsítványsablonok, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = = com" /G Contoso\\MIMCM-kezelők: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=KerberosAuthentication,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls "CN KeyRecoveryAgent, CN = tanúsítványsablonok, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = = com" /G Contoso\\MIMCM-kezelők: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=KeyRecoveryAgent,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls "CN gép, CN = tanúsítványsablonok, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = = com" /G Contoso\\MIMCM-kezelők: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=Machine,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls "CN MachineEnrollmentAgent, CN = tanúsítványsablonok, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = = com" /G Contoso\\MIMCM-kezelők: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=MachineEnrollmentAgent,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls "CN OCSPResponseSigning, CN = tanúsítványsablonok, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = = com" /G Contoso\\MIMCM-kezelők: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=OCSPResponseSigning,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls "CN OfflineRouter, CN = tanúsítványsablonok, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = = com" /G Contoso\\MIMCM-kezelők: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=OfflineRouter,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls "CN RASAndIASServer, CN = tanúsítványsablonok, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = = com" /G Contoso\\MIMCM-kezelők: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=RASAndIASServer,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls "CN SmartCardLogon, CN = tanúsítványsablonok, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = = com" /G Contoso\\MIMCM-kezelők: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=SmartCardLogon,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls "CN SmartCardUser, CN = tanúsítványsablonok, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = = com" /G Contoso\\MIMCM-kezelők: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=SmartCardUser,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls "CN SubCA, CN = tanúsítványsablonok, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = = com" /G Contoso\\MIMCM-kezelők: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=SubCA,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls "CN felhasználói, CN = tanúsítványsablonok, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = = com" /G Contoso\\MIMCM-kezelők: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=User,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls "CN UserSignature, CN = tanúsítványsablonok, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = = com" /G Contoso\\MIMCM-kezelők: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=UserSignature,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls "CN webkiszolgáló, CN = tanúsítványsablonok, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = = com" /G Contoso\\MIMCM-kezelők: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=WebServer,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls "CN munkaállomás, CN = tanúsítványsablonok, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = = com" /G Contoso\\MIMCM-kezelők: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=Workstation,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
+```
