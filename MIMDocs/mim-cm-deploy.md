@@ -602,9 +602,9 @@ Ebben a lépésben az telepítjük és a FIM CM hitelesítésszolgáltató modul
 
 6. Az a **contoso-CORPCA-hitelesítésszolgáltató tulajdonságainak** párbeszédpanel, kattintson a **OK**.
 
-7. Kattintson a jobb gombbal **contoso-CORPCA-hitelesítésszolgáltató x* mutasson **feladataival**, és kattintson a **szolgáltatás leállítása**. Várjon, amíg az Active Directory tanúsítványszolgáltatások leáll.
+7. Kattintson a jobb gombbal **contoso-CORPCA-hitelesítésszolgáltató***,* mutasson **feladataival**, és kattintson a **szolgáltatás leállítása**. Várjon, amíg az Active Directory tanúsítványszolgáltatások leáll.
 
-8. Kattintson a jobb gombbal **contoso-CORPCA-hitelesítésszolgáltató x* mutasson **feladataival**, és kattintson a **szolgáltatás indítása**.
+8. Kattintson a jobb gombbal **contoso-CORPCA-hitelesítésszolgáltató***,* mutasson **feladataival**, és kattintson a **szolgáltatás indítása**.
 
 9. Minimalizálja a **hitelesítésszolgáltató** konzol.
 
@@ -678,11 +678,11 @@ Ebben a lépésben az telepítjük és a FIM CM hitelesítésszolgáltató modul
 
 6. Az a **contoso-CORPCA-hitelesítésszolgáltató tulajdonságainak** párbeszédpanel, kattintson a **OK**.
 
-7. Kattintson a jobb gombbal **contoso-CORPCA-hitelesítésszolgáltató x* mutasson **feladataival**, és kattintson a **szolgáltatás leállítása**.
+7. Kattintson a jobb gombbal **contoso-CORPCA-hitelesítésszolgáltató***,* mutasson **feladataival**, és kattintson a **szolgáltatás leállítása**.
 
 8. Várjon, amíg az Active Directory tanúsítványszolgáltatások leáll.
 
-9. Kattintson a jobb gombbal **contoso-CORPCA-hitelesítésszolgáltató x* mutasson **feladataival**, és kattintson a **szolgáltatás indítása**.
+9. Kattintson a jobb gombbal **contoso-CORPCA-hitelesítésszolgáltató***,* mutasson **feladataival**, és kattintson a **szolgáltatás indítása**.
 
 10. Zárja be a **hitelesítésszolgáltató** konzol.
 
