@@ -1,7 +1,7 @@
 ---
-title: "A PAM szoftverkövetelményei | Microsoft Docs"
-description: "A Privileged Access Management sikeres üzembe helyezéséhez szükséges hardver- és szoftverkövetelmények"
-keywords: 
+title: A PAM szoftverkövetelményei | Microsoft Docs
+description: A Privileged Access Management sikeres üzembe helyezéséhez szükséges hardver- és szoftverkövetelmények
+keywords: ''
 author: barclayn
 ms.author: barclayn
 manager: mbaldwin
@@ -12,11 +12,11 @@ ms.technology: active-directory-domain-services
 ms.assetid: 82a9085c-9667-4b3b-8079-657eab1d1e58
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 2ff6fd997dc5bc7e4a4949520e978ae2d8283d4b
-ms.sourcegitcommit: f29f02fa8437fa55e86afd7b0b99a36d2306b96b
+ms.openlocfilehash: b95e23c8beb4990c5649c9358ba85687f148de30
+ms.sourcegitcommit: c773edc8262b38df50d82dae0f026bb49500d0a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="hardware-and-software-requirements"></a>Hardver- és szoftverkövetelmények
 
@@ -39,7 +39,7 @@ A következő szoftver letölthető a GitHub webhelyről:
 
 ## <a name="required-software"></a>Szükséges szoftverek
 
-- Windows Server 2012 R2
+- Windows Server 2012 R2
 - Windows 10 Enterprise
 - SQL Server 2012 Service Pack 1 vagy SQL Server 2014
 
@@ -49,7 +49,7 @@ Ha Ön nem rendelkezik Windows-, SQL Server- vagy Windows Server-licenccel, let�
 
 ### <a name="technet-evaluation-center"></a>TechNet Evaluation Center
 
-- [Windows Server 2012 R2](https://www.microsoft.com/evalcenter/evaluate-windows-server-2012-r2)
+- [Windows Server 2012 R2](https://www.microsoft.com/evalcenter/evaluate-windows-server-2012-r2)
 - [Windows 10 Enterprise](https://www.microsoft.com/evalcenter/evaluate-windows-10-enterprise)
 
 ### <a name="microsoft-download-center"></a>Microsoft letöltőközpont
@@ -71,9 +71,9 @@ A CORPWKSTN géphez:
 
 A PRIVDC géphez:
 
-- [Windows Server 2012 R2](https://technet.microsoft.com/library/dn303418.aspx)
+- [Windows Server 2012 R2](https://technet.microsoft.com/library/dn303418.aspx)
 
 A PAMSRV géphez:
 
-- [Windows Server 2012 R2](https://technet.microsoft.com/library/dn303418.aspx)
-- [SQL Server 2012](https://msdn.microsoft.com/library/ms143506(sql.110).aspx) vagy [SQL Server 2014](https://msdn.microsoft.com/en-us/library/ms143506(v=sql.120).aspx)
+- [Windows Server 2012 R2](https://technet.microsoft.com/library/dn303418.aspx)
+- [SQL Server 2012](https://msdn.microsoft.com/library/ms143506(sql.110).aspx) vagy [SQL Server 2014](https://msdn.microsoft.com/library/ms143506(v=sql.120).aspx)

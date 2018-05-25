@@ -10,20 +10,20 @@ ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 94a74f1c-2192-4748-9a25-62a526295338
-ms.openlocfilehash: 77d322f447546897ad18f0981e5faad12efafef1
-ms.sourcegitcommit: 637988684768c994398b5725eb142e16e4b03bb3
+ms.openlocfilehash: ac11a4dfb23944d50dbbcf0b0d70c915f186c159
+ms.sourcegitcommit: c773edc8262b38df50d82dae0f026bb49500d0a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/25/2018
 ---
 <a name="azure-ad-business-to-business-b2b-collaboration-with-microsoft-identity-managermim-2016-sp1-with-azure-application-proxy-public-preview"></a>Azure AD-vállalatok (B2B) együttműködés a Microsoft Identity Manager(MIM) 2016 SP1 Azure Application Proxy (nyilvános előzetes verzió)
 ============================================================================================================================
 
-A kezdeti helyzetet előzetes verzióját a külső felhasználó AD fiókkezelés életciklus.   Ebben a forgatókönyvben egy szervezet meghívta a vendégek be az Azure AD-címtár, és hozzáférést adott vendégek a helyi Windows-hitelesítés és Kerberos-alapú alkalmazások keresztül kívánja a [az Azure AD-alkalmazást](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-application-proxy-publish)proxy vagy más átjáró mechanizmusokat. Az Azure AD-alkalmazásproxy igényel minden felhasználó saját AD DS-fiókjához, azonosítása és a delegálás célokra
+A kezdeti helyzetet előzetes verzióját a külső felhasználó AD fiókkezelés életciklus.   Ebben a forgatókönyvben egy szervezet meghívta a vendégek be az Azure AD-címtár, és hozzáférést adott vendégek a helyi Windows-hitelesítés és Kerberos-alapú alkalmazások keresztül kívánja a [az Azure AD-alkalmazást](https://docs.microsoft.com/azure/active-directory/active-directory-application-proxy-publish)proxy vagy más átjáró mechanizmusokat. Az Azure AD-alkalmazásproxy igényel minden felhasználó saját AD DS-fiókjához, azonosítása és a delegálás célokra
 
 ## <a name="scenario-specific-supported-guidance"></a>A forgatókönyv támogatott útmutatót
 
-Ebben a forgatókönyvben a szervezet meghívta a vendégek be az Azure AD-címtár, és kívánja ezeket a vendégek hozzáférést a helyszíni Windows. Hitelesítés és Kerberos-alapú alkalmazások integrált keresztül a [az Azure AD-alkalmazást](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-application-proxy-publish) proxy vagy más átjáró mechanizmusokat. Az Azure AD-alkalmazásproxy igényel minden felhasználó saját AD DS-fiókjához, azonosítása és a delegálás célokra
+Ebben a forgatókönyvben a szervezet meghívta a vendégek be az Azure AD-címtár, és kívánja ezeket a vendégek hozzáférést a helyszíni Windows. Hitelesítés és Kerberos-alapú alkalmazások integrált keresztül a [az Azure AD-alkalmazást](https://docs.microsoft.com/azure/active-directory/active-directory-application-proxy-publish) proxy vagy más átjáró mechanizmusokat. Az Azure AD-alkalmazásproxy igényel minden felhasználó saját AD DS-fiókjához, azonosítása és a delegálás célokra
 
 A MIM és Azure Application Proxy B2B konfigurációjában néhány ismertetése
 
@@ -33,14 +33,14 @@ A MIM és Azure Application Proxy B2B konfigurációjában néhány ismertetése
 
     -   Alkalmazás szabályozása Office csoportok segítségével érhető [az Azure AD Connect](http://robsgroupsblog.com/blog/how-to-write-back-an-office-group-in-azure-active-directory-to-a-mail-enabled-security-group-in-an-on-premises-active-directory)
 
--   Ön már beállított alkalmazásproxy összekötők és összekötő csoportok, ha nem, fel is keresheti [Itt](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-application-proxy-enable#install-and-register-a-connector) telepítése és konfigurálása
+-   Ön már beállított alkalmazásproxy összekötők és összekötő csoportok, ha nem, fel is keresheti [Itt](https://docs.microsoft.com/azure/active-directory/active-directory-application-proxy-enable#install-and-register-a-connector) telepítése és konfigurálása
 
 -   Egy vagy több alkalmazást, amely integrált Windows-hitelesítés és az egyes AD-fiókok Azure AD alkalmazás-proxyn keresztül történő közzététele
 
--   Meghívót, vagy egy vagy több Vendégek, az Azure ad-ben létrehozott meghívott <https://docs.microsoft.com/en-us/azure/active-directory/active-directory-b2b-self-service-portal>
+-   Meghívót, vagy egy vagy több Vendégek, az Azure ad-ben létrehozott meghívott <https://docs.microsoft.com/azure/active-directory/active-directory-b2b-self-service-portal>
 
 -   A Microsoft Identity Manager telepítve, és alapvető konfigurációs szolgáltatás és portál és az Active Directory-kezelőügynök.
-    <https://docs.microsoft.com/en-us/microsoft-identity-manager/microsoft-identity-manager-deploy>
+    <https://docs.microsoft.com/microsoft-identity-manager/microsoft-identity-manager-deploy>
 
 ## <a name="b2b-end-to-end-deployment"></a>B2B teljes körű központi telepítés
 
@@ -188,7 +188,7 @@ Indexelt = **igaz**
 
 A következő lépéseket a FIM szolgáltatás felügyeleti ügynöke és az Active Directory tartományi szolgáltatások-kezelőügynök minimális konfiguráció szükséges.
 
-További részletek itt találhatók a konfiguráció <https://technet.microsoft.com/en-us/library/ff686263(v=ws.10).aspx> -hogyan rendelkezés felhasználók Active Directory tartományi szolgáltatásokhoz
+További részletek itt találhatók a konfiguráció <https://technet.microsoft.com/library/ff686263(v=ws.10).aspx> -hogyan rendelkezés felhasználók Active Directory tartományi szolgáltatásokhoz
 
 ### <a name="synchronization-rule-import-guest-user-to-mv-to-synchronization-service-metaverse-from-azure-active-directorybr"></a>Szinkronizálási szabály: Az Azure Active Directoryból a szinkronizálási szolgáltatás Metaverse MV Vendég felhasználó importálása<br>
 
@@ -292,10 +292,10 @@ Végül B2B felhasználói bejelentkezési adatokkal, és tekintse meg az alkalm
 <a name="next-steps"></a>További lépések
 ----------
 
-[Felhasználók kiépítése az Active Directory tartományi szolgáltatásokban](https://technet.microsoft.com/en-us/library/ff686263(v=ws.10).aspx)
+[Felhasználók kiépítése az Active Directory tartományi szolgáltatásokban](https://technet.microsoft.com/library/ff686263(v=ws.10).aspx)
 
-[FIM 2010-funkciók dokumentációja](https://technet.microsoft.com/en-us/library/ff800820(v=ws.10).aspx)
+[FIM 2010-funkciók dokumentációja](https://technet.microsoft.com/library/ff800820(v=ws.10).aspx)
 
-[Útmutató a helyszíni alkalmazások biztonságos távoli hozzáférést biztosítanak](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-application-proxy-get-started)
+[Útmutató a helyszíni alkalmazások biztonságos távoli hozzáférést biztosítanak](https://docs.microsoft.com/azure/active-directory/active-directory-application-proxy-get-started)
 
 [Töltse le a Microsoft Identity Manager felügyeleti ügynök a Microsoft Graph (előzetes verzió)](http://go.microsoft.com/fwlink/?LinkId=717495)

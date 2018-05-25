@@ -1,7 +1,7 @@
 ---
-title: "BHOLD modellhez generátor telepítési |} Microsoft Docs"
-description: "BHOLD modell lehetővé teszi a struktúra adatokat különböző forrásokból"
-keywords: 
+title: BHOLD modellhez generátor telepítési |} Microsoft Docs
+description: BHOLD modell lehetővé teszi a struktúra adatokat különböző forrásokból
+keywords: ''
 author: barclayn
 ms.author: barclayn
 manager: mbaldwin
@@ -9,12 +9,12 @@ ms.date: 09/07/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: security
-ms.assetid: 
-ms.openlocfilehash: 96363fb3b0067ff5c8f8c2f32e9a855464038653
-ms.sourcegitcommit: 0d8b19c5d4bfd39d9c202a3d2f990144402ca79c
+ms.assetid: ''
+ms.openlocfilehash: 3d45d18042ccda83873aa929101222c15f36246a
+ms.sourcegitcommit: c773edc8262b38df50d82dae0f026bb49500d0a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/14/2017
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="bhold-model-generator-installation"></a>BHOLD modellhez generátor telepítése
 
@@ -24,7 +24,7 @@ BHOLD modellhez generátor modul használatával, amely tartalmazza a felhaszná
 
 A modellhez generátor BHOLD-modul telepítése előtt telepítenie kell a következő:
 
-1. BHOLD Alap modulban a kiszolgálón, amelyen a BHOLD modellhez generátor modul telepítését tervezi. A BHOLD Alap modulban telepítésével kapcsolatos információkért lásd: [BHOLD Core telepítés](https://technet.microsoft.com/en-us/library/jj134095(v=ws.10).aspx).
+1. BHOLD Alap modulban a kiszolgálón, amelyen a BHOLD modellhez generátor modul telepítését tervezi. A BHOLD Alap modulban telepítésével kapcsolatos információkért lásd: [BHOLD Core telepítés](https://technet.microsoft.com/library/jj134095(v=ws.10).aspx).
 
 2. A Microsoft OLE DB Provider for Microsoft Jet telepítve kell lennie. További információ: [Ez a cikk](http://support.microsoft.com/kb/271908).
 
@@ -39,24 +39,24 @@ Microsoft Access-adatbázis Engine 2010 újraterjeszthető csomag
 
  
 
-*A \<*  <http://daipvstf:8080/tfs/Active Directoryban/IAM/_workitems>*\>*
+*A \<*<http://daipvstf:8080/tfs/ActiveDirectory/IAM/_workitems>*\>*
 
  
 
-<https://www.microsoft.com/en-us/download/Confirmation.aspx?ID=13255>
+<https://www.microsoft.com/en-us/download/confirmation.aspx?id=13255>
 
 **Fiókbeállítások**
 
 | **Elem**                                    | **Leírás**                                                                                                                                                                                                           | **Érték**                                                                                                                                                                                                                                                                                                            |
 |---------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Tartomány/gépen biztonsági szolgáltató használata** | Kiválasztásakor határozza meg, hogy az Active Directory tartományi szolgáltatások biztonsági szabályozza a BHOLD Core elérésére.                                                                                                                | Jelölje be a jelölőnégyzetet. **Fontos:** a telepítés sikertelen lesz, ha a jelölőnégyzet nincs bejelölve.                                                                                                                                                                                                                   |
-| **Tartomány**                                  | Megadja azt a BHOLD központi telepítésekor létrehozott szolgáltatási fiókot tartalmazó tartományt. További információkért lásd: [BHOLD Core telepítés](https://technet.microsoft.com/en-us/library/jj134095(v=ws.10).aspx). | A varázsló automatikusan rendelkezik a tartomány nevét. Módosítsa a nevét, ha az nem megfelelő. **Fontos:** adja meg a tartomány nevét (rövid) NetBIOS-nevét, nem a teljes tartománynevét (FQDN) használatával. Például fabrikam.com esetén a a teljes Tartománynevét adja meg a tartománynév FABRIKAM. |
+| **Tartomány**                                  | Megadja azt a BHOLD központi telepítésekor létrehozott szolgáltatási fiókot tartalmazó tartományt. További információkért lásd: [BHOLD Core telepítés](https://technet.microsoft.com/library/jj134095(v=ws.10).aspx). | A varázsló automatikusan rendelkezik a tartomány nevét. Módosítsa a nevét, ha az nem megfelelő. **Fontos:** adja meg a tartomány nevét (rövid) NetBIOS-nevét, nem a teljes tartománynevét (FQDN) használatával. Például fabrikam.com esetén a a teljes Tartománynevét adja meg a tartománynév FABRIKAM. |
 | **Felhasználó**                                    | Megadja a BHOLD Core szolgáltatásfiók-felhasználó bejelentkezési nevét.                                                                                                                                                          | Írás a felhasználói fiók nevét itt:                                                                                                                                                                                                                                                                                    |
 | **Jelszó**                                | A szolgáltatás felhasználói fiók jelszavát adja meg.                                                                                                                                                                       | A jelszó itt írási: **fontos:** mindenképp ezt a jelszót rejtett, biztonságos helyen.                                                                                                                                                                                                                  |
 
 **A Backup database beállítások**
 
-| Elem                                        | Leírás                                                                                                                                                                                                                                                                                                                                                                                                                  | Érték                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| Elem                                        | Description                                                                                                                                                                                                                                                                                                                                                                                                                  | Érték                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 |---------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Beépített biztonság használatára**                 | Meghatározza, hogy az adatbázis eléréséhez használt-e a Windows-hitelesítést.                                                                                                                                                                                                                                                                                                                                                        | Jelölje be a jelölőnégyzetet, ha Windows-hitelesítést használ az SQL-kiszolgálóhoz való csatlakozáshoz. Törölje a jelet a jelölőnégyzetből, ha az SQL Server-hitelesítés használata. Az adatbázist kell létrehozni futtató BHOLD Core telepítés Ha SQL Server-hitelesítés használata előtt. **Megjegyzés:** Windows-hitelesítés használata esetén meg kell bejelentkeznie egy olyan fiókkal, amely a sysadmin (rendszergazda) kiszolgálói szerepkörrel rendelkezik az adatbázis-kiszolgálón. **Fontos:** használható SQL Server-hitelesítés csak tesztelési környezetben. A Microsoft azt javasolja, a Windows-hitelesítés az éles környezetekben. |
 | **Adatbázis-felhasználót** és **adatbázis-jelszó** | A felhasználónevet és egy felhasználó jelszavát adja meg a sysadmin (rendszergazda) kiszolgálói szerepkör az adatbázis-kiszolgálón. Ezek az értékek megadva, csak az SQL Server-hitelesítés használata esetén.                                                                                                                                                                                                                                                  | A SQL Server felhasználói nevet itt: írása az SQL Server felhasználói jelszó itt: </br></br> **Fontos:** mindenképp ezt a jelszót rejtett, biztonságos helyen.                                                                                                                                                                                                                                                                                                                                                                                                           |
@@ -68,13 +68,13 @@ BHOLD modellhez generátor-modul telepítéséhez, jelentkezzen be a tartományi
 
 - BholdModelGenerator  *\<verzió\>*\_Release.msi
 
-Cserélje le  *\<verzió\>*  rendelkező a telepíteni kívánt BHOLD modellhez generátor kiadás verziószáma.
+Cserélje le *\<verzió\>* rendelkező a telepíteni kívánt BHOLD modellhez generátor kiadás verziószáma.
 
 A program fájlt rendszergazdaként futtatni, kattintson jobb gombbal a fájlra, és kattintson a **Futtatás rendszergazdaként**.
 
 ## <a name="next-steps"></a>További lépések
 
-- A bemeneti fájlok létrehozásával kapcsolatos információkat [Microsoft BHOLD Suite műszaki útmutatója](https://technet.microsoft.com/en-us/library/jj134935(v=ws.10).aspx)
+- A bemeneti fájlok létrehozásával kapcsolatos információkat [Microsoft BHOLD Suite műszaki útmutatója](https://technet.microsoft.com/library/jj134935(v=ws.10).aspx)
 - [BHOLD a telepítési útmutató](bhold-installation-guide.md)
 - [BHOLD fejlesztői leírás](../reference/mim2016-bhold-developer-reference.md)
 - [A BHOLD korábbi verziói](../reference/version-bhold-history.md)

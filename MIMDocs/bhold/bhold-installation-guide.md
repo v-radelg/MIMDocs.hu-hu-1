@@ -1,7 +1,7 @@
 ---
-title: "BHOLD SP1 telepítése |} Microsoft Docs"
-description: "BHOLD SP1 dokumentáció"
-keywords: 
+title: BHOLD SP1 telepítése |} Microsoft Docs
+description: BHOLD SP1 dokumentáció
+keywords: ''
 author: barclayn
 ms.author: barclayn
 manager: mbaldwin
@@ -9,12 +9,12 @@ ms.date: 09/11/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: security
-ms.assetid: 
-ms.openlocfilehash: c36a9d02e90101b98ade913224e573ed21dc3d5c
-ms.sourcegitcommit: 0d8b19c5d4bfd39d9c202a3d2f990144402ca79c
+ms.assetid: ''
+ms.openlocfilehash: e0514530c9bceef18cc8eea7ec8b7060110811c2
+ms.sourcegitcommit: c773edc8262b38df50d82dae0f026bb49500d0a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/14/2017
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="microsoft-bhold-suite-sp1-60-installation-guide"></a>Microsoft BHOLD Suite SP1 (6.0) a telepítési útmutató
 
@@ -109,7 +109,7 @@ Szerkesztése, és a fájl mentése után futtassa az iisreset parancsot alaphel
 
 ## <a name="upgrading-bhold-suite"></a>BHOLD Suite frissítése
 
-Egy meglévő BHOLD Suite-telepítés nem frissíthető. Ehelyett távolítsa el egy meglévő BHOLD Suite telepítése BHOLD modulok frissítése előtt. Ha egy meglévő BHOLD szerepkör modell, a BHOLD-adatbázis frissítése, és használatra, ha a frissített BHOLD Core-modul telepítése. További információkért lásd: [BHOLD Suite cseréje BHOLD Suite SP1](https://technet.microsoft.com/en-us/library/jj874043(v=ws.10).aspx).
+Egy meglévő BHOLD Suite-telepítés nem frissíthető. Ehelyett távolítsa el egy meglévő BHOLD Suite telepítése BHOLD modulok frissítése előtt. Ha egy meglévő BHOLD szerepkör modell, a BHOLD-adatbázis frissítése, és használatra, ha a frissített BHOLD Core-modul telepítése. További információkért lásd: [BHOLD Suite cseréje BHOLD Suite SP1](https://technet.microsoft.com/library/jj874043(v=ws.10).aspx).
 
 
 ## <a name="next-steps"></a>További lépések

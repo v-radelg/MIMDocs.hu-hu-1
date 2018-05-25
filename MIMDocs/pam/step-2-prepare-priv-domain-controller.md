@@ -1,7 +1,7 @@
 ---
-title: "A PAM üzembe helyezése, 2. lépés – PRIV DC | Microsoft Docs"
-description: "A PRIV tartományvezérlő előkészítése, amely olyan megerősített környezetet biztosít, amelyben a Privileged Access Management elkülönítve szerepel."
-keywords: 
+title: A PAM üzembe helyezése, 2. lépés – PRIV DC | Microsoft Docs
+description: A PRIV tartományvezérlő előkészítése, amely olyan megerősített környezetet biztosít, amelyben a Privileged Access Management elkülönítve szerepel.
+keywords: ''
 author: barclayn
 ms.author: barclayn
 manager: mbaldwin
@@ -12,11 +12,11 @@ ms.technology: active-directory-domain-services
 ms.assetid: 0e9993a0-b8ae-40e2-8228-040256adb7e2
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: de3392648f187ce6007bba332c0f191d32980c94
-ms.sourcegitcommit: 2be26acadf35194293cef4310950e121653d2714
+ms.openlocfilehash: 9cb36a52525c538d0ac323a3342a9dd6b7f6e42e
+ms.sourcegitcommit: c773edc8262b38df50d82dae0f026bb49500d0a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/14/2017
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="step-2---prepare-the-first-priv-domain-controller"></a>2. lépés: A PRIV tartományvezérlő előkészítése
 
@@ -299,7 +299,7 @@ Egy új virtuális gépen, amelyen még nincs telepített szoftver, telepítse a
 
 4. A Vezérlőpulton csatlakoztassa a PRIVWKSTN számítógépet a priv.contoso.local tartományhoz. Ehhez meg kell adnia a PRIV tartomány rendszergazdai hitelesítő adatait. Amikor ezzel elkészült, indítsa újra a PRIVWKSTN számítógépet.
 
-A további részleteket [az emelt szintű hozzáféréssel rendelkező munkaállomások biztonságossá tételét](https://technet.microsoft.com/en-us/library/mt634654.aspx) ismertető cikk tartalmazza.
+A további részleteket [az emelt szintű hozzáféréssel rendelkező munkaállomások biztonságossá tételét](https://technet.microsoft.com/library/mt634654.aspx) ismertető cikk tartalmazza.
 
 A következő lépésben egy PAM-kiszolgáló előkészítésével foglalkozunk.
 

@@ -1,7 +1,7 @@
 ---
-title: "BHOLD core telepítési |} Microsoft Docs"
-description: "BHOLD suite telepítése core dokumentum"
-keywords: 
+title: BHOLD core telepítési |} Microsoft Docs
+description: BHOLD suite telepítése core dokumentum
+keywords: ''
 author: barclayn
 ms.author: barclayn
 manager: mbaldwin
@@ -9,12 +9,12 @@ ms.date: 09/07/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: security
-ms.assetid: 
-ms.openlocfilehash: 33fbe63528d5d7c543ae286f934654538782b4d5
-ms.sourcegitcommit: 0d8b19c5d4bfd39d9c202a3d2f990144402ca79c
+ms.assetid: ''
+ms.openlocfilehash: 25825c1472dec44ed0e09519d4bc17809c1b95b1
+ms.sourcegitcommit: c773edc8262b38df50d82dae0f026bb49500d0a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/14/2017
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="bhold-core-installation"></a>BHOLD Core telepítés
 
@@ -30,7 +30,7 @@ A BHOLD Core modul a Microsoft BHOLD Suite alapját képezi. Más Microsoft BHOL
 
 |          |        |          |
 |----------|--------|----------|
-|**Az összetevő** |**Minimális** | **Ajánlott** |
+|**Az összetevő** |**Minimum** | **Ajánlott** |
 |Processzor | 64 bites processzor | Multicore 64 bites processzor |
 | Memória |3 GB | Legalább 6 GB |
 |Tárterület| 30 GB-ig érhető el |Központi telepítés méretétől függ |
@@ -98,8 +98,8 @@ BHOLD Core moduljának telepítése előtt kell készüljön fel a BHOLD Core te
 |---------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Tartomány/gépen biztonsági szolgáltató használata** | Kiválasztásakor határozza meg, hogy az Active Directory tartományi szolgáltatások biztonsági szabályozza a BHOLD Core elérésére.                                                                                                                                                                                                  | Jelölje be a jelölőnégyzetet. **Fontos:** a telepítés sikertelen lesz, ha a jelölőnégyzet nincs bejelölve.                                                                 |
 | **Tartomány**                                  | BHOLD server, a szolgáltatásfiók és az alkalmazáscsoport tartalmazó tartomány megadása **Fontos:** adja meg a tartomány nevét (rövid) NetBIOS-nevét, nem a teljes tartománynevét (FQDN) használatával. Például fabrikam.com esetén a a teljes Tartománynevét adja meg a tartomány neve CONTOSO. | A tartománynév írni:                                                                                                                                        |
-| **Alkalmazáscsoport**                       | A korábban létrehozott biztonsági csoport neve [szükséges felhasználók és csoportok](https://technet.microsoft.com/en-us/library/jj134095(v=ws.10).aspx#rug).                                                                                                                                  | Írás a csoportnév:                                                                                                                                         |
-| **Szolgáltatás felhasználói**                            | A szolgáltatás a korábban létrehozott felhasználói fiók bejelentkezési neve [szükséges felhasználók és csoportok](https://technet.microsoft.com/en-us/library/jj134095(v=ws.10).aspx#rug).                                                                                                                      | Írás a felhasználói fiók nevét itt:                                                                                                                                  |
+| **Alkalmazáscsoport**                       | A korábban létrehozott biztonsági csoport neve [szükséges felhasználók és csoportok](https://technet.microsoft.com/library/jj134095(v=ws.10).aspx#rug).                                                                                                                                  | Írás a csoportnév:                                                                                                                                         |
+| **Szolgáltatás felhasználói**                            | A szolgáltatás a korábban létrehozott felhasználói fiók bejelentkezési neve [szükséges felhasználók és csoportok](https://technet.microsoft.com/library/jj134095(v=ws.10).aspx#rug).                                                                                                                      | Írás a felhasználói fiók nevét itt:                                                                                                                                  |
 | **Jelszó**                                | Megadja a BHOLD Core felhasználói fiókjának jelszavát.                                                                                                                                                                                                                                              | A jelszó itt írási: **fontos:** mindenképp ezt a jelszót rejtett, biztonságos helyen.                                                                |
 | **IP/Webhelyportot**                         | Adja meg az IP-cím és port számát a webhely az intraneten kiszolgálón kell létrehozni. Módosítsa az alapértelmezett értéket (\*) csak akkor, ha az alapértelmezett webhely, nem fogja használni az azonos IP-cím. Módosítsa a port számát egy tetszőleges szabad portot csak akkor, ha az alapértelmezett port (5151) már használatban van.             | Ha egy nem alapértelmezett IP-címet használja az alapértelmezett webhely, jegyezze itt: Ha az alapértelmezett portszám már használatban van, írja be a BHOLD webhely portszámot itt: |
 
@@ -120,7 +120,7 @@ BHOLD Core-modul telepítéséhez, jelentkezzen be a tartományi rendszergazdák
 
 - BholdCore  *\<verzió\>*\_Release.msi
 
-Cserélje le  *\<verzió\>*  rendelkező a telepíteni kívánt BHOLD Core kiadás verziószáma.
+Cserélje le *\<verzió\>* rendelkező a telepíteni kívánt BHOLD Core kiadás verziószáma.
 
 A program fájlt rendszergazdaként futtatni, kattintson jobb gombbal a fájlra, és kattintson a **Futtatás rendszergazdaként**.
 
@@ -177,7 +177,7 @@ Tagság a **Tartománygazdák**, vagy egy ezzel egyenértékű, ez a művelet el
 
 1.  Kattintson az Active Directory tartományi szolgáltatások tartományvezérlő **Start**, kattintson a **minden program**, kattintson a **Kellékek**, kattintson a jobb gombbal **parancssor** , és kattintson a **Futtatás rendszergazdaként**.
 
-2.  A parancssorba írja be a következő parancsot, és nyomja le az ENTER BILLENTYŰT: setspn – S HTTP /  *\<networkalias\> \<tartomány\>*  \\  *\<accountname\>*  ahol:
+2.  A parancssorba írja be a következő parancsot, és nyomja le az ENTER BILLENTYŰT: setspn – S HTTP / *\<networkalias\> \<tartomány\>* \\ *\<accountname\>* ahol:
 
     -   *\<networkalias\>*  használó ügyfelek csatlakozni a BHOLD webhely-címe
 
@@ -196,7 +196,7 @@ Ahhoz, hogy ellenőrizze, hogy a BHOLD Core modul telepítése sikeres volt, a B
 | **ABA között eltelt napok futtatása**     | Ha értékre van állítva egy kétjegyű egész számot adja meg az időközt (napokban) között két attribútum-alapú engedélyezési (ABA) futtatása. Például, hogy ABA futtatása elválasztott két nap megadásához írja be a 02.                                                                                                                     |
 | **ABA futtassa a kezdő óra**    | Egy kétjegyű egész számot adjon meg egy attribútum-alapú engedélyezési futása közben a óra beállítása történik. Például annak meghatározása, hogy a Futtatás ABA kerül sor. 11:00 órakor 23 (23:00), adja meg.                                                                                                             |
 | **Rendszer kardinalitása**       | Állítsa be az N, ha nem szeretné, hogy a rendszer számossága négyzet BHOLD. Az alapértelmezett érték: Y.                                                                                                                                                                                                                             |
-| **Naplózás**                  | Állítsa be az N, ha nem szeretné, hogy be kell jelentkezniük a módosításokat. Az alapértelmezett érték: Y.                                                                                                                                                                                                                                            |
+| **Logging**                  | Állítsa be az N, ha nem szeretné, hogy be kell jelentkezniük a módosításokat. Az alapértelmezett érték: Y.                                                                                                                                                                                                                                            |
 | **SystemQueue feldolgozása**   | Állítsa be az N, ha nem szeretné, hogy rendszer várólista feldolgozása. Ne módosítsa ezt az értéket, kivéve, ha ehhez a terméktámogatási szolgálathoz által vezérelt.                                                                                                                                                                                           |
 
 A művelet végrehajtásához a Tartománygazdák csoport tagjaként kell bejelentkeznie.
@@ -205,7 +205,7 @@ A művelet végrehajtásához a Tartománygazdák csoport tagjaként kell bejele
 
 1.  Kattintson a **Start**, kattintson a **minden program**, és kattintson a **Internet Explorer**.
 
-2.  A cím mezőbe írja be, ahol  *\<server\>*  a BHOLD-webhely kiszolgálójának neve és  *\<port\>*  a portszámot a webhelyhez kötött.
+2.  A cím mezőbe írja be, ahol *\<server\>* a BHOLD-webhely kiszolgálójának neve és *\<port\>* a portszámot a webhelyhez kötött.
 
 3.  Kattintson a **Home**, kattintson a **értékek**, és kattintson a **módosítás**.
 
@@ -213,9 +213,9 @@ A művelet végrehajtásához a Tartománygazdák csoport tagjaként kell bejele
 
 ## <a name="next-steps"></a>További lépések
 
-BHOLD Core telepítve és, hogy a telepítés sikeres volt-e érvényesítve, után további modulok is telepítheti. Ezen a ponton a BHOLD-adatbázis lényegében üres, csak egy felhasználói fiókot, a legfelső szintű fiókot és egy szervezeti egységet (orgunit), a legfelső szintű orgunit tartalmazó lesz. Több felhasználó hozzáadása a BHOLD-adatbázis, vagy telepítheti a Access Management-összekötő modul vagy a BHOLD modellhez generátor modul igényeitől függően. Az Access Management-összekötő modul segítségével felhasználói adatokat importálhat a FIM szinkronizálási szolgáltatás, vagy használhatja a BHOLD modellhez generátor felhasználói adatok importálása a strukturált fájlokat. Az Access Management-összekötő modullal kapcsolatos további információkért lásd: [tesztlabor-Útmutató: BHOLD Access Management-összekötő](https://technet.microsoft.com/en-us/library/jj853085(v=ws.10).aspx).
+BHOLD Core telepítve és, hogy a telepítés sikeres volt-e érvényesítve, után további modulok is telepítheti. Ezen a ponton a BHOLD-adatbázis lényegében üres, csak egy felhasználói fiókot, a legfelső szintű fiókot és egy szervezeti egységet (orgunit), a legfelső szintű orgunit tartalmazó lesz. Több felhasználó hozzáadása a BHOLD-adatbázis, vagy telepítheti a Access Management-összekötő modul vagy a BHOLD modellhez generátor modul igényeitől függően. Az Access Management-összekötő modul segítségével felhasználói adatokat importálhat a FIM szinkronizálási szolgáltatás, vagy használhatja a BHOLD modellhez generátor felhasználói adatok importálása a strukturált fájlokat. Az Access Management-összekötő modullal kapcsolatos további információkért lásd: [tesztlabor-Útmutató: BHOLD Access Management-összekötő](https://technet.microsoft.com/library/jj853085(v=ws.10).aspx).
 
 Az BHOLD modellhez generátor modullal kapcsolatos további információkért lásd:
 
-- [Microsoft BHOLD Suite fogalmak útmutató](https://technet.microsoft.com/en-us/library/jj134102(v=ws.10).aspx)
-- [Microsoft BHOLD Suite TechnicalReference](https://technet.microsoft.com/en-us/library/jj134935(v=ws.10).aspx).
+- [Microsoft BHOLD Suite fogalmak útmutató](https://technet.microsoft.com/library/jj134102(v=ws.10).aspx)
+- [Microsoft BHOLD Suite TechnicalReference](https://technet.microsoft.com/library/jj134935(v=ws.10).aspx).
