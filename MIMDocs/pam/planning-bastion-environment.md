@@ -1,7 +1,7 @@
 ---
-title: "Megerősített környezet tervezése | Microsoft Docs"
-description: 
-keywords: 
+title: Megerősített környezet tervezése | Microsoft Docs
+description: ''
+keywords: ''
 author: barclayn
 ms.author: barclayn
 manager: mbaldwin
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 2be26acadf35194293cef4310950e121653d2714
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 09/14/2017
+ms.locfileid: "22052416"
 ---
 # <a name="planning-a-bastion-environment"></a>Megerősített környezet tervezése
 

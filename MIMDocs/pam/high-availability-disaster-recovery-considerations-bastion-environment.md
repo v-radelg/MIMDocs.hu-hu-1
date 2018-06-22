@@ -1,7 +1,7 @@
 ---
-title: "PAM vészhelyreállítás | Microsoft Docs"
-description: "Információk a Privileged Access Management konfigurálásáról magas rendelkezésre álláshoz és vészhelyreállításhoz."
-keywords: 
+title: PAM vészhelyreállítás | Microsoft Docs
+description: Információk a Privileged Access Management konfigurálásáról magas rendelkezésre álláshoz és vészhelyreállításhoz.
+keywords: ''
 author: barclayn
 ms.author: barclayn
 manager: mbaldwin
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 2be26acadf35194293cef4310950e121653d2714
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 09/14/2017
+ms.locfileid: "22052314"
 ---
 # <a name="high-availability-and-disaster-recovery-considerations-for-the-bastion-environment"></a>A magas rendelkezésre állással és a vészhelyreállítással kapcsolatos szempontok a megerősített környezet esetében
 

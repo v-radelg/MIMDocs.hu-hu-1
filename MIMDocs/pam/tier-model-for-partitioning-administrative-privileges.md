@@ -1,7 +1,7 @@
 ---
-title: "Rétegmodell PAM-környezetben | Microsoft Docs"
-description: "Információk a rétegmodellről, amely a biztonsági kockázat alapján különíti el a rendszert."
-keywords: 
+title: Rétegmodell PAM-környezetben | Microsoft Docs
+description: Információk a rétegmodellről, amely a biztonsági kockázat alapján különíti el a rendszert.
+keywords: ''
 author: barclayn
 ms.author: barclayn
 manager: mbaldwin
@@ -17,6 +17,7 @@ ms.sourcegitcommit: c049dceaf02ab8b6008fe440daae4d07b752ca2e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 08/31/2017
+ms.locfileid: "21942731"
 ---
 # <a name="tier-model-for-partitioning-administrative-privileges"></a>A rendszergazdai jogosultságok felosztásának rétegmodellje
 

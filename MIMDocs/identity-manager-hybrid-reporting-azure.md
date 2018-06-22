@@ -1,7 +1,7 @@
 ---
-title: "Mi az a hibrid jelentéskészítés az Azure AD? | Microsoft Docs"
-description: "Hibrid naplózási Tevékenységjelentések az Azure Active Directoryban lehetővé teszi a felhőben és a helyszíni naplózott események megtekintése."
-keywords: 
+title: Mi az a hibrid jelentéskészítés az Azure AD? | Microsoft Docs
+description: Hibrid naplózási Tevékenységjelentések az Azure Active Directoryban lehetővé teszi a felhőben és a helyszíni naplózott események megtekintése.
+keywords: ''
 author: davidste
 ms.author: davidste
 manager: bhu
@@ -16,6 +16,7 @@ ms.sourcegitcommit: b4a39928c5fa1d7718046563c0809bcbf11d833d
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 02/20/2018
+ms.locfileid: "29370378"
 ---
 # <a name="hybrid-identity-management-audit-reporting-in-azure-active-directory"></a>Hibrid Identitáskezelés naplózási jelentéskészítés az Azure Active Directory-ban
 Az Azure Active Directory (Azure AD) naplózási Tevékenységjelentés, figyelheti identitáskezelési tevékenységei helyi vagy a felhőben. A identitások és hozzáférések adatokat egyetlen kimutatásban kezelésével, időt takaríthat meg, és csökkenteni szeretné költségeit.

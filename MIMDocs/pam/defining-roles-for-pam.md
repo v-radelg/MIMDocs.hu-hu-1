@@ -1,7 +1,7 @@
 ---
-title: "Rendszerjogosultságú szerepkörök definiálása a PAM számára | Microsoft Docs"
-description: "Határozza meg, mely rendszerjogosultságú szerepköröket kell kezelni, és alakítsa ki mindegyik számára a kezelési házirendet."
-keywords: 
+title: Rendszerjogosultságú szerepkörök definiálása a PAM számára | Microsoft Docs
+description: Határozza meg, mely rendszerjogosultságú szerepköröket kell kezelni, és alakítsa ki mindegyik számára a kezelési házirendet.
+keywords: ''
 author: barclayn
 ms.author: barclayn
 manager: mbaldwin
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 210195369d2ecd610569d57d0f519d683ea6a13b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 09/01/2017
+ms.locfileid: "21943757"
 ---
 # <a name="define-roles-for-privileged-access-management"></a>Szerepkörök definiálása a Privileged Access Management megoldáshoz
 

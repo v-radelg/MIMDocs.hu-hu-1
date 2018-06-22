@@ -1,7 +1,7 @@
 ---
-title: "A PAM-összetevők ismertetése | Microsoft Docs"
-description: "A Privileged Access Management rendelkezik saját összetevőkkel is, de bizonyos összetevői megegyeznek a MIM összetevőivel. Ismerje meg, ezek hogyan működnek együtt."
-keywords: 
+title: A PAM-összetevők ismertetése | Microsoft Docs
+description: A Privileged Access Management rendelkezik saját összetevőkkel is, de bizonyos összetevői megegyeznek a MIM összetevőivel. Ismerje meg, ezek hogyan működnek együtt.
+keywords: ''
 author: barclayn
 ms.author: barclayn
 manager: mbaldwin
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 2be26acadf35194293cef4310950e121653d2714
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 09/14/2017
+ms.locfileid: "22052365"
 ---
 # <a name="understand-the-components-of-pam"></a>A PAM-összetevők megismerése
 

@@ -17,6 +17,7 @@ ms.sourcegitcommit: 8316fa41f06f137dba0739a8700910116b5575d8
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33079006"
 ---
 # <a name="deploy-microsoft-identity-manager-2016-sp1"></a>A Microsoft Identity Manager 2016 SP1 telepítése
 A jelen szakaszban olvasható cikkek részletes útmutatást nyújtanak az önkiszolgáló végfelhasználói esetek ellátására szolgáló Microsoft Identity Manager (MIM) 2016 üzembe helyezéséhez egy olyan új kiszolgálón, amelyen korábban még nem volt telepítve se a FIM, se a MIM rendszer.

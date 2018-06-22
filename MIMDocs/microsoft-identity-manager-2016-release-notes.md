@@ -1,7 +1,7 @@
 ---
-title: "A Microsoft Identity Manager 2016 kibocsátási megjegyzései | Microsoft Docs"
-description: "Információkat tartalmaz a legújabb MIM-kiadásokról."
-keywords: 
+title: A Microsoft Identity Manager 2016 kibocsátási megjegyzései | Microsoft Docs
+description: Információkat tartalmaz a legújabb MIM-kiadásokról.
+keywords: ''
 author: billmath
 ms.author: barclayn
 manager: mbaldwin
@@ -18,6 +18,7 @@ ms.sourcegitcommit: f077508b5569e2a96084267879c5b6551e1e0905
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 10/12/2017
+ms.locfileid: "23137574"
 ---
 # <a name="release-notes-for-mim-2016"></a>A MIM 2016 kibocsátási megjegyzései
 Egyelőre nincsenek kibocsátási megjegyzések.
