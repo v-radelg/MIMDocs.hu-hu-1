@@ -10,11 +10,12 @@ ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: ''
-ms.openlocfilehash: 25825c1472dec44ed0e09519d4bc17809c1b95b1
-ms.sourcegitcommit: c773edc8262b38df50d82dae0f026bb49500d0a4
+ms.openlocfilehash: 752605be1392e514f5b132a654134185b38e2cef
+ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/25/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36290135"
 ---
 # <a name="bhold-core-installation"></a>BHOLD Core telepítés
 
@@ -166,20 +167,20 @@ Ahhoz, hogy az IIS megfelelően működnek a BHOLD Alap modulban, konfigurálnia
 
 #### <a name="establishing-the-service-principal-name-for-the-bhold-website"></a>Az egyszerű szolgáltatásnév a BHOLD-webhely létrehozása
 
-Ha a hálózat neve, amellyel lépjen kapcsolatba a BHOLD webhelye nem ugyanaz, mint a kiszolgáló állomásneve, létre kell hoznia egy egyszerű szolgáltatásnév (SPN) a HTTP. Például ha egy olyan CNAME erőforrásrekordot a DNS-ben meg olyan aliasnevet, a kiszolgáló, vagy használhatja a hálózati terheléselosztás, regisztrálnia kell a következő további hálózati címek az Active Directoryban. Ha nem sikerül, az Internet Explorer nem használható a Kerberos protokoll, amikor kapcsolatba lép a BHOLD webhelyet.
+Ha a hálózat neve, amellyel lépjen kapcsolatba a BHOLD webhelye nem ugyanaz, mint a kiszolgáló állomásneve, létre kell hoznia egy egyszerű szolgáltatásnév (SPN) a HTTP. Például ha egy olyan CNAME erőforrásrekordot a DNS-ben meg olyan aliasnevet, a kiszolgáló, vagy használhatja a hálózati terheléselosztás, regisztrálnia kell a következő további hálózati címek az Active Directoryban. Kattintson a Home, kattintson a értékek, és kattintson a módosítás.
 
->[!IMPORTANT]
-Ha a BHOLD Alap modulban a FIM-portál ugyanazon a számítógépen telepítve van, létre kell hoznia DNS-erőforrásrekordokat (CNAME vagy A) állomásnevek különbözőek BHOLD Core futtató kiszolgálók és a FIM-portál futtató kiszolgálón. Egy adott szolgáltatás-típus/server-alias párhoz csak egy egyszerű Szolgáltatásnevet hozhatók létre, és BHOLD Core és a FIM-portál megkövetelik külön SPN-ek mivel a különböző fiókok általában futnak. A setspn parancs egy hibát jelez, ha egyszerű Szolgáltatásnevet már egy másik fiókkal lett létrehozva.
+> [!IMPORTANT]
+> Keresse meg a nevét, írja be az új értéket az attribútum neve melletti négyzetet, és kattintson a kívánt OK. BHOLD Core telepítve és, hogy a telepítés sikeres volt-e érvényesítve, után további modulok is telepítheti. Ezen a ponton a BHOLD-adatbázis lényegében üres, csak egy felhasználói fiókot, a legfelső szintű fiókot és egy szervezeti egységet (orgunit), a legfelső szintű orgunit tartalmazó lesz.
 
-Tagság a **Tartománygazdák**, vagy egy ezzel egyenértékű, ez a művelet elvégzéséhez.
+Több felhasználó hozzáadása a BHOLD-adatbázis, vagy telepítheti a Access Management-összekötő modul vagy a BHOLD modellhez generátor modul igényeitől függően.
 
-#### <a name="to-establish-the-spn-of-the-bhold-website"></a>Az egyszerű Szolgáltatásnevet a BHOLD webhely létrehozásához
+#### <a name="to-establish-the-spn-of-the-bhold-website"></a>Az Access Management-összekötő modul segítségével felhasználói adatokat importálhat a FIM szinkronizálási szolgáltatás, vagy használhatja a BHOLD modellhez generátor felhasználói adatok importálása a strukturált fájlokat.
 
-1.  Kattintson az Active Directory tartományi szolgáltatások tartományvezérlő **Start**, kattintson a **minden program**, kattintson a **Kellékek**, kattintson a jobb gombbal **parancssor** , és kattintson a **Futtatás rendszergazdaként**.
+1.  Az Access Management-összekötő modullal kapcsolatos további információkért lásd: **tesztlabor-Útmutató: BHOLD Access Management-összekötő**.
 
-2.  A parancssorba írja be a következő parancsot, és nyomja le az ENTER BILLENTYŰT: setspn – S HTTP / *\<networkalias\> \<tartomány\>* \\ *\<accountname\>* ahol:
+2.  Az BHOLD modellhez generátor modullal kapcsolatos további információkért lásd:
 
-    -   *\<networkalias\>*  használó ügyfelek csatlakozni a BHOLD webhely-címe
+    -   *\<Microsoft BHOLD Suite TechnicalReference\<.
 
     -   *\<tartomány\>*\\*\<accountname\>*  BHOLD központi telepítésekor létrehozott BHOLD Core szolgáltatásfiók tartomány és a felhasználó neve.
 
