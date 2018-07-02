@@ -12,16 +12,17 @@ ms.technology: security
 ms.assetid: 50345fda-56d7-4b6e-a861-f49ff90a8376
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: ff8d8a6f66212b006e2c17186dc299a5bcf3f68b
-ms.sourcegitcommit: 32d9a963a4487a8649210745c97a3254645e8744
+ms.openlocfilehash: ddab5b1ab57d3d332d5cd36ecc5a29abd83222ec
+ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36289030"
 ---
 # <a name="set-up-a-domain"></a>Tartomány beállítása
 
->[!div class="step-by-step"]
-[Windows Server 2016»](prepare-server-ws2016.md)
+> [!div class="step-by-step"]
+> [Windows Server 2016»](prepare-server-ws2016.md)
 
 A Microsoft Identity Manager (MIM) az Ön Active Directory- (AD-) tartományával együtt is használható. Az AD-nek már telepítve kell lennie, és győződjön meg arról is, hogy a környezetében rendelkezik egy tartományvezérlővel egy felügyelhető tartományhoz.
 
@@ -38,7 +39,7 @@ A MIM-telepítés minden összetevőjének saját identitással kell rendelkezni
 > - MIM szolgáltatás kiszolgálójának neve – **corpservice**
 > - MIM Sync-kiszolgáló neve – **corpsync**
 > - SQL Server-neve - **corpsql**
-> - Jelszó – **Pass@word1**
+> - Jelszó – <strong>Pass@word1</strong>
 
 1. Jelentkezzen be a tartományvezérlőbe tartományi rendszergazdaként (*pl.: Contoso\Administrator*).
 
@@ -105,5 +106,5 @@ A MIM-telepítés minden összetevőjének saját identitással kell rendelkezni
 - passwordreset.contoso.com pont corpservice fizikai IP-cím
 - passwordregistration.contoso.com pont corpservice fizikai IP-cím
 
->[!div class="step-by-step"]
-[Windows Server 2016»](prepare-server-ws2016.md)
+> [!div class="step-by-step"]
+> [Windows Server 2016»](prepare-server-ws2016.md)

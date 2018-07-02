@@ -10,11 +10,12 @@ ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: ''
-ms.openlocfilehash: 2b8e6935eda6c679b00b5b5b17752a675a257de9
-ms.sourcegitcommit: c773edc8262b38df50d82dae0f026bb49500d0a4
+ms.openlocfilehash: deb43aeb9133d7eed958730b0eb2cbd22fe3a0ef
+ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/25/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36289305"
 ---
 # <a name="bhold-reporting-installation"></a>BHOLD reporting telepítésére
 
@@ -24,8 +25,8 @@ A BHOLD Jelentéskezelő modul lehetővé teszi a szerepkörök és a többi eng
 
 A BHOLD Jelentéskezelő modul telepítése, előtt telepítenie kell a BHOLD Alap modulban a kiszolgáló, amelyen a BHOLD Jelentéskezelő modul telepítésének megtervezése. A BHOLD Alap modulban telepítésével kapcsolatos információkért lásd: [BHOLD Core telepítés](https://technet.microsoft.com/library/jj134095(v=ws.10).aspx).
 
->[!IMPORTANT]
-BHOLD jelentéskészítési és BHOLD igazolás telepítésekor, telepítenie kell BHOLD Reporting BHOLD tanúsítvány telepítése előtt.
+> [!IMPORTANT]
+> BHOLD jelentéskészítési és BHOLD igazolás telepítésekor, telepítenie kell BHOLD Reporting BHOLD tanúsítvány telepítése előtt.
 
 ## <a name="before-you-begin"></a>Előkészületek
 
@@ -42,7 +43,7 @@ A BHOLD Jelentéskezelő modul telepítésének megkezdése előtt kell előkés
 
 A BHOLD Jelentéskezelő modul telepítésének, jelentkezzen be a tartományi rendszergazdák csoport tagjaként, töltse le a következő fájlt, és futtassa rendszergazdaként a kiszolgálón, melyet a BHOLD Jelentéskezelő modul telepítése:
 
-- BholdReporting*\<verzió\>*\_Release.msi
+- BholdReporting<em>\<verzió\></em>\_Release.msi
 
 Cserélje le *\<verzió\>* rendelkező a telepíteni kívánt BHOLD Reporting kiadás verziószáma.
 

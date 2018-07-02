@@ -12,11 +12,12 @@ ms.technology: security
 ms.assetid: ccdd8a9f-02da-440a-81a8-354800dcd2a8
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 98d21076801bbe60b7a2d2d5b7e1c41d4bce1b4a
-ms.sourcegitcommit: c773edc8262b38df50d82dae0f026bb49500d0a4
+ms.openlocfilehash: 9b12f8bebf44847d76e94fe083266b1b32b608a9
+ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/25/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36290288"
 ---
 # <a name="whats-new-for-microsoft-identity-manager-2016-service-pack-1"></a>A Microsoft Identity Manager 2016 Service Pack 1 újdonságai #
 
@@ -42,8 +43,8 @@ Szívesen meghallgatnánk a véleményét is! Ha visszajelzése vagy megjegyzés
 
 - **PAM „PRIV” (bástya) erdőtámogatás Windows Server 2016 működési szinthez:** A MIM PAM szolgáltatás konfigurálható olyan tartományvezérlőkkel rendelkező környezetben, amely a Windows Server 2016 Active Directory Domain Services-erdő működési szintjén fut. A konfigurálás után a felhasználók Kerberos-jegye időkorlátossá válik a szerepkör-aktiválásban megmaradt időre.
 
-    >[!Note]
-    Ha karban kívánja tartani a Windows Server 2012 R2-erdő működési szintjét a CORP-tartományban, a [KB 2919442](https://support.microsoft.com/en-us/kb/2919442) és a [KB 2919355](https://support.microsoft.com/en-us/kb/2919355) telepítése javasolt a CORP-tartományvezérlőn.
+  > [!Note]
+  >   Ha karban kívánja tartani a Windows Server 2012 R2-erdő működési szintjét a CORP-tartományban, a [KB 2919442](https://support.microsoft.com/en-us/kb/2919442) és a [KB 2919355](https://support.microsoft.com/en-us/kb/2919355) telepítése javasolt a CORP-tartományvezérlőn.
 
 - **Rendszerjogosultságú fiók kiterjesztése a „PRIV” (bástya) erdő kizárólagos csoportjaiba:** Mostantól a rendszergazdák értesíthetik a „PRIV”-erdő kizárólagos MIM-szolgáltatáscsoportjait és -felhasználóit. Ez lehetővé teszi csoportok és felhasználók PAM-szerepkörbe helyezését.  Ezután aktiválhatók egy szerepkörhöz, és csoporttagság rendelhető hozzájuk a „PRIV” erdőben.
 
@@ -51,8 +52,8 @@ Szívesen meghallgatnánk a véleményét is! Ha visszajelzése vagy megjegyzés
 
 - **PAM-parancsmagok hitelesítési házirendi siló konfigurálásához:** Az 1. szervizcsomagban új parancsmagok találhatók, amelyek megerősítik a bástyaerdő biztonságát. Ezek a parancsmagok automatikusan létrehoznak egy hitelesítési házirendi sablonhoz kötött hitelesítési házirendi silót.
 
-    >[!Note]
-    Ezek a parancsmagok automatikusan lefutnak az üzembehelyezési szkriptek részeként.
+  > [!Note]
+  >   Ezek a parancsmagok automatikusan lefutnak az üzembehelyezési szkriptek részeként.
 
 
 ## <a name="platform-support"></a>Platformtámogatás
@@ -77,8 +78,8 @@ Előkészületek
 A MIM-szinkronizálási motor frissítése szükséges a MIM szolgáltatás és a portál frissítése előtt.
 Biztonsági másolat készítése szükséges a MIMService és MIM Sync adatbázisról.
 
-  1. Távolítsa el a frissíteni kívánt Microsoft Identity Manager-összetevőt.
-  2. Az eltávolítás után nyissa meg a telepítési adathordozón található „FIMSplash.htm” kezdőlapot.
-  3. Válassza ki a frissíteni kívánt MIM-összetevőt.
-  4. Az utasításokat követve folytassa a telepítést.
-    * A MIM szolgáltatás és portál telepítése: Az Exchange Online levelezési fiókként történő kiválasztásakor írja be az Exchange Online-fiókhoz tartozó e-mail-címet és hitelesítő adatokat a következő képernyőn.
+1. Távolítsa el a frissíteni kívánt Microsoft Identity Manager-összetevőt.
+2. Az eltávolítás után nyissa meg a telepítési adathordozón található „FIMSplash.htm” kezdőlapot.
+3. Válassza ki a frissíteni kívánt MIM-összetevőt.
+4. Az utasításokat követve folytassa a telepítést.
+   * A MIM szolgáltatás és portál telepítése: Az Exchange Online levelezési fiókként történő kiválasztásakor írja be az Exchange Online-fiókhoz tartozó e-mail-címet és hitelesítő adatokat a következő képernyőn.

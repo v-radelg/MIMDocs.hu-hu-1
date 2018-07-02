@@ -1,19 +1,20 @@
 ---
-title: "Microsoft BHOLD Suite fogalmak útmutató |} Microsoft Docs"
-description: "Első lépések a MIM 2016 összetevői kapcsán – a Synchronization Service telepítése és konfigurálása"
-keywords: 
+title: Microsoft BHOLD Suite fogalmak útmutató |} Microsoft Docs
+description: Első lépések a MIM 2016 összetevői kapcsán – a Synchronization Service telepítése és konfigurálása
+keywords: ''
 author: barclayn
 ms.author: barclayn
 manager: mbaldwin
 ms.date: 09/14/2017
 ms.service: microsoft-identity-manager
 ms.technology: security
-ms.assetid: 
-ms.openlocfilehash: 0d814dd27fe53ee7cfc46eac24ec577b05f78e52
-ms.sourcegitcommit: 0d8b19c5d4bfd39d9c202a3d2f990144402ca79c
+ms.assetid: ''
+ms.openlocfilehash: 521025de3dc16a9bda02aed8287faeb3449192c1
+ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/14/2017
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36290067"
 ---
 # <a name="microsoft-bhold-suite-concepts-guide"></a>Microsoft BHOLD Suite fogalmak útmutató
 
@@ -56,8 +57,8 @@ BHOLD Suite adja meg, és a szerepkörök rendezheti a szervezetben, térkép fe
 
 Szervezeti egység (OrgUnits) az egyszerű módszert, amellyel vannak rendszerezve a felhasználók BHOLD szerepkör modell. Minden felhasználó legalább egy OrgUnit kell tartoznia. (Valójában a felhasználó a BHOLD szervezeti egységből eltávolítása után a felhasználói adatok bejegyzés törlődik a BHOLD-adatbázis.)
 
->[!Important]
-A BHOLD szerepkör modell szervezeti egység nem lehet összetéveszthető szervezeti egységek az Active Directory tartományi szolgáltatások (AD DS). Általában a BHOLD szerkezet alapján a szervezet és a vállalati házirendek nem a hálózati infrastruktúra követelményeinek.
+> [!Important]
+> A BHOLD szerepkör modell szervezeti egység nem lehet összetéveszthető szervezeti egységek az Active Directory tartományi szolgáltatások (AD DS). Általában a BHOLD szerkezet alapján a szervezet és a vállalati házirendek nem a hálózati infrastruktúra követelményeinek.
 
 Bár nem kötelező, a legtöbb esetben szervezeti egységek felépítése a tényleges szervezet, hasonló alább hierarchikus képviselő BHOLD:
 
@@ -127,8 +128,8 @@ Az első lépés a BHOLD modellhez generátor használatával, hogy importálja 
 - Javasolt szerepköröket, amelyek egy szervezeti egységhez kapcsolódik, de bizonyos felhasználók részére aktiválni kell
 - Adja meg egy szervezeti egység és a szerepkörök, amelynek tulajdonosa nincs megadva az importált fájlok a felhasználói vezérlése tulajdonjoga szerepkörök
 
->[!Important]
-Fájlok feltöltése, válassza ki a **meglévő modell megőrzése** jelölőnégyzetet csak tesztelési környezetben. Éles környezetben modellhez generátor kezdeti szerepkör modell létrehozásához kell használnia. Nem használható egy meglévő szerepkör modellt a BHOLD-adatbázis módosításához.
+> [!Important]
+> Fájlok feltöltése, válassza ki a **meglévő modell megőrzése** jelölőnégyzetet csak tesztelési környezetben. Éles környezetben modellhez generátor kezdeti szerepkör modell létrehozásához kell használnia. Nem használható egy meglévő szerepkör modellt a BHOLD-adatbázis módosításához.
 
 Miután modellhez generátor ezeket a szerepköröket a szerepkör modell hoz létre, majd exportálhatja a szerepkör modell XML-fájl formájában BHOLD-adatbázis.
 
@@ -241,7 +242,7 @@ A szabályok szűrők három típusa létezik, és használja a típusra, adott 
 - Attribútum
   - < és >
   - = és! =
-  - **Tartalmazza**
+  - **tartalmazza**
   - **Nem tartalmaz**
 - Száma
   - < és >
@@ -252,8 +253,8 @@ A szabályok szűrők három típusa létezik, és használja a típusra, adott 
   - **Csak rendelkezik ilyennel és egyszerre csak az összes**
   - **Kizárólag rendelkezik ilyennel, és kizárólag rendelkeznek**
 
->[!Note]
-Korlátozó szűrők a jelzett operátorok segítségével tesztelheti egy kulcs összehasonlítja a több értékkel.
+> [!Note]
+> Korlátozó szűrők a jelzett operátorok segítségével tesztelheti egy kulcs összehasonlítja a több értékkel.
 
 Például ha egy elkülönítése arról, hogy nincs támogatási kérelem jogosultsággal rendelkező felhasználó egyben jóváhagyása fizetési engedéllyel kell rendelkeznie azon (Gyeptéglázás) házirend végrehajtásának tesztelése, sikerült hozhat létre egy szabályt a következőhöz hasonló:
 
@@ -308,7 +309,7 @@ A beépített jelentések által kezelt kategóriák közé tartoznak a követke
 
 - Administration
 - Állapotigazolási
-- vezérlők
+- Vezérlők
 - Aktív hozzáférés-vezérlés
 - Naplózás
 - Modell

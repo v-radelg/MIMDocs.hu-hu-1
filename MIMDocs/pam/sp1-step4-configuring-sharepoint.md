@@ -1,7 +1,7 @@
 ---
-title: "4. lépés: A SharePoint konfigurálása"
-description: "Ez a PAM parancsfájlokkal történő konfigurálásának 4. lépése. Ebben a lépésben történik a SharePoint konfigurálása, hogy az használható legyen az üzembe helyezendő PAM részeként."
-keywords: 
+title: '4. lépés: A SharePoint konfigurálása'
+description: Ez a PAM parancsfájlokkal történő konfigurálásának 4. lépése. Ebben a lépésben történik a SharePoint konfigurálása, hogy az használható legyen az üzembe helyezendő PAM részeként.
+keywords: ''
 author: barclayn
 ms.author: barclayn
 manager: MBaldwin
@@ -10,19 +10,20 @@ ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
 ms.assetid: 4b524ae7-6610-40a0-8127-de5a08988a8a
-ms.reviewer: 
+ms.reviewer: ''
 ms.suite: ems
-ms.openlocfilehash: f8d033bec440c6efed26dd959acc713638258dd3
-ms.sourcegitcommit: 8edd380f54c3e9e83cfabe8adfa31587612e5773
+ms.openlocfilehash: e46b7cf75eb60930441e309448773353668ed454
+ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/19/2017
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36289628"
 ---
 # <a name="step-4-configuring-sharepoint"></a>4. lépés: A SharePoint konfigurálása
 
->[!div class="step-by-step"]
-[« 3. lépés](sp1-step3-installing-configuring-sql.md)
-[5. lépés »](sp1-step5-configuring-pam.md)
+> [!div class="step-by-step"]
+> [« 3. lépés](sp1-step3-installing-configuring-sql.md)
+> [5. lépés »](sp1-step5-configuring-pam.md)
 
 A SharePoint a SharePoint Foundation 2013-as verziója kell legyen az SP1 szervizcsomaggal.
 
@@ -51,6 +52,6 @@ A telepítést követően megnyílik a SharePoint-konfiguráció grafikus felhas
 
 A részletek a [3. lépés: A PAM-kiszolgáló előkészítése](/microsoft-identity-manager/pam/step-3-prepare-pam-server) **A SharePoint konfigurálása** című szakaszában találhatóak. Ha végzett vele, futtassa ismét a „.\PAMDeployment.ps1” szkriptet, és válassza a 4-es elemet (SharePoint beállítása) a lépés befejezéséhez.
 
->[!div class="step-by-step"]
-[« 3. lépés](sp1-step3-installing-configuring-sql.md)
-[5. lépés »](sp1-step5-configuring-pam.md)
+> [!div class="step-by-step"]
+> [« 3. lépés](sp1-step3-installing-configuring-sql.md)
+> [5. lépés »](sp1-step5-configuring-pam.md)

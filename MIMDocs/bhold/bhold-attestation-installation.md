@@ -10,11 +10,12 @@ ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: ''
-ms.openlocfilehash: 657c6ee8dd551f91f21636101f248f76977a12bc
-ms.sourcegitcommit: c773edc8262b38df50d82dae0f026bb49500d0a4
+ms.openlocfilehash: 6838355c05f7c19436d8a83839044ea5f4e2533d
+ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/25/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36290339"
 ---
 # <a name="bhold-attestation-installation"></a>BHOLD-tanúsítvány telepítése
 
@@ -24,8 +25,8 @@ A BHOLD igazolás modul lehetővé teszi a felülvizsgálók kijelölni, és vé
 
 Az igazolás BHOLD-modul telepítése előtt telepítenie kell a BHOLD Alap modulban a kiszolgáló, amelyen a BHOLD igazolás modul telepítését tervezi. A BHOLD Alap modulban telepítésével kapcsolatos információkért lásd: [BHOLD Core telepítés](https://technet.microsoft.com/library/jj134095(v=ws.10).aspx). BHOLD igazolás modul névjegyek küld e-mail-üzenetek a felhasználók számára, mert a környezet egy Simple Mail Transfer Protocol (SMTP) e-mail kiszolgálóhoz, például a Microsoft Exchange Server kell rendelkeznie.
 
->[!IMPORTANT]
-BHOLD jelentéskészítési és BHOLD igazolás telepítésekor, telepítenie kell BHOLD Reporting BHOLD tanúsítvány telepítése előtt.
+> [!IMPORTANT]
+> BHOLD jelentéskészítési és BHOLD igazolás telepítésekor, telepítenie kell BHOLD Reporting BHOLD tanúsítvány telepítése előtt.
 
 ## <a name="before-you-begin"></a>Előkészületek
 
@@ -42,7 +43,7 @@ BHOLD igazolás moduljának telepítése előtt kell készüljön fel a BHOLD ig
 
 BHOLD igazolás-modul telepítéséhez, jelentkezzen be a tartományi rendszergazdák csoport tagjaként, töltse le a következő fájlt, és futtassa rendszergazdaként a kiszolgálón, melyet a BHOLD igazolás modul telepítése:
 
-- BholdAttestation*\<verzió\>*\_Release.msi
+- BholdAttestation<em>\<verzió\></em>\_Release.msi
 
 Cserélje le *\<verzió\>* rendelkező a telepíteni kívánt BHOLD igazolás kiadás verziószáma.
 

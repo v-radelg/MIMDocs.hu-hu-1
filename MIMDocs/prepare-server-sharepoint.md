@@ -12,18 +12,19 @@ ms.technology: security
 ms.assetid: c01487f2-3de6-4fc4-8c3a-7d62f7c2496c
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 6922c3c2f66b6dbb0b0751420be9dd778206a3cf
-ms.sourcegitcommit: 8316fa41f06f137dba0739a8700910116b5575d8
+ms.openlocfilehash: f69648e7e4229ca7c8de895cdf10ccb2c5f368e2
+ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36289533"
 ---
 # <a name="set-up-an-identity-management-server-sharepoint"></a>Identitáskezelési kiszolgáló beállítása: SharePoint
 
->[!div class="step-by-step"]
-[«Az SQL Server 2016](prepare-server-sql2016.md)
-[Exchange-kiszolgáló»](prepare-server-exchange.md)
-
+> [!div class="step-by-step"]
+> [«Az SQL Server 2016](prepare-server-sql2016.md)
+> [Exchange-kiszolgáló»](prepare-server-exchange.md)
+> 
 > [!NOTE]
 > Ez az útmutató egy Contoso nevű fiktív vállalat neveit és értékeit használja szemléltetésként. Ezeket helyettesítse a saját neveivel és értékeivel. Például:
 > - Tartományvezérlő neve – **corpdc**
@@ -31,7 +32,7 @@ ms.lasthandoff: 05/04/2018
 > - MIM szolgáltatás kiszolgálójának neve – **corpservice**
 > - MIM Sync-kiszolgáló neve – **corpsync**
 > - SQL Server-neve - **corpsql**
-> - Jelszó – **Pass@word1**
+> - Jelszó – <strong>Pass@word1</strong>
 
 
 ## <a name="install-sharepoint-2016"></a>Telepítés **SharePoint 2016-ot**
@@ -97,25 +98,25 @@ A SharePoint és a MIM együttműködésének konfigurálásához kövesse a **S
 
 2. Indítsa el a SharePoint 2016 felügyeleti rendszerhéjat, és futtassa a következő PowerShell-parancsfájl létrehozásához egy **SharePoint-webhelycsoportot** webalkalmazáshoz társított.
 
-  ```
+   ```
     $t = Get-SPWebTemplate -compatibilityLevel 15 -Identity "STS#1"
     $w = Get-SPWebApplication http://mim.contoso.com/
     New-SPSite -Url $w.Url -Template $t -OwnerAlias contoso\miminstall -CompatibilityLevel 15 -Name "MIM Portal"
     $s = SpSite($w.Url)
     $s.CompatibilityLevel
-  ```
+   ```
 
-  > [!NOTE]
-  > Ellenőrizze, hogy eredményét a *CompatibilityLevel* változó "15". Ha az eredmény nem a "15", majd a webhelycsoport nem történt a megfelelő élmény verzió; a webhely törlése, és hozza létre újra.
+   > [!NOTE]
+   > Ellenőrizze, hogy eredményét a *CompatibilityLevel* változó "15". Ha az eredmény nem a "15", majd a webhelycsoport nem történt a megfelelő élmény verzió; a webhely törlése, és hozza létre újra.
 
 3. Tiltsa le a **SharePoint kiszolgálóoldali Viewstate** és a SharePoint "állapotelemzési feladat (óránként, a Microsoft SharePoint Foundation időzítő szolgáltatása, minden kiszolgáló)" futtassa a következő PowerShell-parancsok a a  **A SharePoint 2016-kezelőfelület**:
 
-  ```
-  $contentService = [Microsoft.SharePoint.Administration.SPWebService]::ContentService;
-  $contentService.ViewStateOnServer = $false;
-  $contentService.Update();
-  Get-SPTimerJob hourly-all-sptimerservice-health-analysis-job | disable-SPTimerJob
-  ```
+   ```
+   $contentService = [Microsoft.SharePoint.Administration.SPWebService]::ContentService;
+   $contentService.ViewStateOnServer = $false;
+   $contentService.Update();
+   Get-SPTimerJob hourly-all-sptimerservice-health-analysis-job | disable-SPTimerJob
+   ```
 
 4. Az identitáskezelési kiszolgálón, nyisson meg egy új böngészőlapot, lépjen http://mim.contoso.com/ majd jelentkezzen be *contoso\miminstall*.  Ekkor megjelenik egy üres SharePoint-webhely, *MIM Portal* néven.
 
@@ -129,6 +130,6 @@ A SharePoint és a MIM együttműködésének konfigurálásához kövesse a **S
 
 7. Indítsa el a **Felügyeleti eszközöket**, kattintson a **Szolgáltatások** elemre, keresse meg a SharePoint-felügyeleti szolgáltatást, és ha még nem fut, indítsa el.
 
->[!div class="step-by-step"]  
-[«Az SQL Server 2016](prepare-server-sql2016.md)
-[Exchange-kiszolgáló»](prepare-server-exchange.md)
+> [!div class="step-by-step"]  
+> [«Az SQL Server 2016](prepare-server-sql2016.md)
+> [Exchange-kiszolgáló»](prepare-server-exchange.md)

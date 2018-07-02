@@ -1,7 +1,7 @@
 ---
-title: "Tanúsítványok kérése a Tanúsítványkezelőben sablonokkal | Microsoft Docs"
-description: "Megtudhatja, hogyan hozhat létre és újíthat meg szoftvertanúsítványokat a Tanúsítványkezelőben profilsablonok segítségével."
-keywords: 
+title: Tanúsítványok kérése a Tanúsítványkezelőben sablonokkal | Microsoft Docs
+description: Megtudhatja, hogyan hozhat létre és újíthat meg szoftvertanúsítványokat a Tanúsítványkezelőben profilsablonok segítségével.
+keywords: ''
 author: billmath
 ms.author: barclayn
 manager: mbaldwin
@@ -13,10 +13,11 @@ ms.assetid: fed5ada9-d80f-4825-aad7-4172ac5d71d3
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: aebf5af709f4f775ce13be49d8f9075a94e864a2
-ms.sourcegitcommit: f077508b5569e2a96084267879c5b6551e1e0905
+ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36290322"
 ---
 # <a name="create-software-certificates-with-certificate-manager"></a>Szoftvertanúsítványok létrehozása a Tanúsítványkezelővel
 A szoftvertanúsítványok regisztrálásához és megújításához nem kell rendszergazdának lennie, és virtuális intelligens kártyára sincs szükség. A rendszer valamikor egy tanúsítványművelet engedélyezésére fogja kérni. Ez normális.

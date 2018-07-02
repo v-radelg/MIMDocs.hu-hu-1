@@ -1,7 +1,7 @@
 ---
-title: "A PAM üzembe helyezése, 4. lépés – A MIM telepítése | Microsoft Docs"
-description: "A MIM szolgáltatás és -portál telepítése és konfigurálása saját Privileged Access Management-kiszolgálón és munkaállomásokon."
-keywords: 
+title: A PAM üzembe helyezése, 4. lépés – A MIM telepítése | Microsoft Docs
+description: A MIM szolgáltatás és -portál telepítése és konfigurálása saját Privileged Access Management-kiszolgálón és munkaállomásokon.
+keywords: ''
 author: barclayn
 ms.author: barclayn
 manager: barclayn
@@ -13,17 +13,18 @@ ms.assetid: ef605496-7ed7-40f4-9475-5e4db4857b4f
 ROBOTS: noindex,nofollow
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: b69dfc39da63ec523fb09a58661b5f8367e6042c
-ms.sourcegitcommit: 2be26acadf35194293cef4310950e121653d2714
+ms.openlocfilehash: 81fe10b8fbf8ada08983c4bf3c58f85215cf1d66
+ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/14/2017
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36290033"
 ---
 # <a name="step-4--install-mim-components-on-pam-server-and-workstation"></a>4. lépés – MIM-összetevők telepítése PAM-kiszolgálóra és -munkaállomásra
 
->[!div class="step-by-step"]
-[« 3. lépés](step-3-prepare-pam-server.md)
-[5. lépés »](step-5-establish-trust-between-priv-corp-forests.md)
+> [!div class="step-by-step"]
+> [« 3. lépés](step-3-prepare-pam-server.md)
+> [5. lépés »](step-5-establish-trust-between-priv-corp-forests.md)
 
 A MIM szolgáltatásnak és portálnak, illetve a mintaportál webalkalmazásának telepítéséhez a PAMSRV kiszolgálón PRIV\Rendszergazda jogosultsággal kell bejelentkeznie.
 
@@ -36,30 +37,30 @@ Ha letöltötte a MIM szolgáltatást, bontsa ki a tömörített MIM-telepítőc
 
 Az útmutatást követve végezze el a telepítést.
 
-1.  A telepíteni kívánt összetevők közül mindenképpen jelölje ki a MIM Service szolgáltatást (a Privileged Access Managementtel együtt, de a MIM Reporting nélkül), valamint a MIM Portal (MIM portál) komponenst.  
+1. A telepíteni kívánt összetevők közül mindenképpen jelölje ki a MIM Service szolgáltatást (a Privileged Access Managementtel együtt, de a MIM Reporting nélkül), valamint a MIM Portal (MIM portál) komponenst.  
 
-    ![Egyéni telepítés – képernyőkép](./media/PAM_GS_MIM_2015_Service_Portal.png)
+   ![Egyéni telepítés – képernyőkép](./media/PAM_GS_MIM_2015_Service_Portal.png)
 
-2.  A közös szolgáltatások és a MIM-adatbázis kapcsolatának konfigurálásakor válassza a **Create a new database** (Új adatbázis létrehozása) beállítást.
+2. A közös szolgáltatások és a MIM-adatbázis kapcsolatának konfigurálásakor válassza a **Create a new database** (Új adatbázis létrehozása) beállítást.
 
-    > [!NOTE]
-    > Ha a MIM szolgáltatást többször, magas rendelkezésre állás céljából telepíti, minden további telepítésnél a **Use an existing database** (Meglévő adatbázis használata) lehetőséget állítsa be.
+   > [!NOTE]
+   > Ha a MIM szolgáltatást többször, magas rendelkezésre állás céljából telepíti, minden további telepítésnél a **Use an existing database** (Meglévő adatbázis használata) lehetőséget állítsa be.
 
-3.  Levelezőkiszolgálóval való kapcsolat konfigurálásakor a levelezőkiszolgálónál adja meg egy Exchange- vagy SMTP-kiszolgáló állomásnevét a CORP környezethez (ha nem rendelkezik levelezési kiszolgálóval, használja a corpdc.contoso.local nevet), és törölje a jelet a **Use SSL** (SSL használata), illetve a **Mail Server is Exchange Server 2007 or Exchange Server 2010** (A levelezési kiszolgáló az Exchange Server 2007 vagy az Exchange Server 2010) jelölőnégyzetből.
+3. Levelezőkiszolgálóval való kapcsolat konfigurálásakor a levelezőkiszolgálónál adja meg egy Exchange- vagy SMTP-kiszolgáló állomásnevét a CORP környezethez (ha nem rendelkezik levelezési kiszolgálóval, használja a corpdc.contoso.local nevet), és törölje a jelet a **Use SSL** (SSL használata), illetve a **Mail Server is Exchange Server 2007 or Exchange Server 2010** (A levelezési kiszolgáló az Exchange Server 2007 vagy az Exchange Server 2010) jelölőnégyzetből.
 
-4.  Válassza egy új önaláírt tanúsítvány létrehozásának lehetőségét.
+4. Válassza egy új önaláírt tanúsítvány létrehozásának lehetőségét.
 
-5.  Állítsa be az alábbi fiókhitelesítő adatokat:
-    - Service Account Name (Szolgáltatásfiók neve) – *MIMService*  
-    - Service Account Password (Szolgáltatásfiók jelszava): *Pass@word1* (vagy a 2. lépésben létrehozott jelszó)  
-    - Service Account Domain (Szolgáltatásfiók-tartomány): *PRIV*  
-    - Szolgáltatás e-mail-fiókja: *MIMService@priv.contoso.local*  
+5. Állítsa be az alábbi fiókhitelesítő adatokat:
+   - Service Account Name (Szolgáltatásfiók neve) – *MIMService*  
+   - Service Account Password (Szolgáltatásfiók jelszava): <em>Pass@word1</em> (vagy a 2. lépésben létrehozott jelszó)  
+   - Service Account Domain (Szolgáltatásfiók-tartomány): *PRIV*  
+   - Szolgáltatás e-mail-fiókja: <em>MIMService@priv.contoso.local</em>  
 
-6.  A szinkronizálási kiszolgáló állomásnevénél fogadja el az alapértelmezett beállításokat, a MIM Management Agent Account (MIM-kezelőügynök fiókja) mezőben pedig adja meg a *PRIV\MIMMA* fiókot. Egy megjelenő üzenet arra figyelmezteti, hogy a MIM szinkronizálási szolgáltatása nem létezik. Ez nem probléma, mivel ebben az esetben a MIM-szinkronizálási szolgáltatást nem használjuk.
+6. A szinkronizálási kiszolgáló állomásnevénél fogadja el az alapértelmezett beállításokat, a MIM Management Agent Account (MIM-kezelőügynök fiókja) mezőben pedig adja meg a *PRIV\MIMMA* fiókot. Egy megjelenő üzenet arra figyelmezteti, hogy a MIM szinkronizálási szolgáltatása nem létezik. Ez nem probléma, mivel ebben az esetben a MIM-szinkronizálási szolgáltatást nem használjuk.
 
-7.  A *PAMSRV* beállításánál adja meg a MIM szolgáltatás kiszolgálójának címét.
+7. A *PAMSRV* beállításánál adja meg a MIM szolgáltatás kiszolgálójának címét.
 
-8.  A SharePoint-webhelycsoport URL-címeként adja meg a következőt: *http://pamsrv.priv.contoso.local:82*.
+8. Állítsa be *http://pamsrv.priv.contoso.local:82* , a SharePoint webhely gyűjtemény URL-címe.
 
 9. A regisztrációs portál URL-címét hagyja üresen.
 
@@ -67,11 +68,11 @@ Az útmutatást követve végezze el a telepítést.
 
 11. A PAM REST API állomásnév maradjon üresen, a portszámot pedig állítsa be a *8086* értékre.
 
-  ![A PAM REST API kötési információi – képernyőkép](./media/PAM_GS_MIM_2015_Service_Portal_configure_application_pool.png)
+    ![A PAM REST API kötési információi – képernyőkép](./media/PAM_GS_MIM_2015_Service_Portal_configure_application_pool.png)
 
 12. A MIM PAM REST API-fiók konfigurációját úgy állítsa be, hogy ugyanazt a fiókot használja, mint a SharePoint (mivel a MIM-portál is ezen a kiszolgálón található):
     - Application Pool Account Name (Alkalmazáskészlet fiókneve): *SharePoint*  
-    - Application Pool Account Password (Alkalmazáskészlet fiókjának jelszava): *Pass@word1* (vagy a 2. lépésben létrehozott jelszó)  
+    - Application Pool Account Password (Alkalmazáskészlet fiókjának jelszava): <em>Pass@word1</em> (vagy a 2. lépésben létrehozott jelszó)  
     - Application Pool Account Domain (Alkalmazáskészlet-fiók tartománya): *PRIV*  
 
     ![Az alkalmazáskészlet fiókjának hitelesítő adatai – képernyőkép](./media/PAM_GS_Configure_Component_Service.png)
@@ -80,17 +81,17 @@ Az útmutatást követve végezze el a telepítést.
 
 13. A MIM PAM-összetevő szolgáltatásának konfigurálása:
     - Service Account Name (Szolgáltatásfiók neve): *MIMService*
-    - Service Account Password (Szolgáltatásfiók jelszava): *Pass@word1* (vagy a 2. lépésben létrehozott jelszó)  
+    - Service Account Password (Szolgáltatásfiók jelszava): <em>Pass@word1</em> (vagy a 2. lépésben létrehozott jelszó)  
     - Service Account Domain (Szolgáltatásfiók-tartomány): *PRIV*
 
-  ![A PAM-összetevő szolgáltatás fiókhitelesítő adatai – képernyőkép](./media/PAM_GS_Configure_MIM_PAM_component_service.png)
+    ![A PAM-összetevő szolgáltatás fiókhitelesítő adatai – képernyőkép](./media/PAM_GS_Configure_MIM_PAM_component_service.png)
 
 14. A PAM figyelőszolgáltatásának konfigurálása:
     - Service Account Name (Szolgáltatásfiók neve) – *MIMMonitor*  
-    - Service Account Password (Szolgáltatásfiók jelszava): *Pass@word1* (vagy a 2. lépésben létrehozott jelszó)  
+    - Service Account Password (Szolgáltatásfiók jelszava): <em>Pass@word1</em> (vagy a 2. lépésben létrehozott jelszó)  
     - Service Account Domain (Szolgáltatásfiók-tartomány): *PRIV*  
 
-  ![A PAM figyelőszolgáltatásának fiókhitelesítő adatai – képernyőkép](./media/PAM_GS_Configur_PAM_Monitoring_service.png)
+    ![A PAM figyelőszolgáltatásának fiókhitelesítő adatai – képernyőkép](./media/PAM_GS_Configur_PAM_Monitoring_service.png)
 
 15. Az Enter Information for MIM Password Portals (A MIM-jelszóportálokra vonatkozó adatok megadása) lapon hagyja üresen a jelölőnégyzeteket, és lépjen tovább. Kattintson a **Next** (Tovább) gombra a telepítés folytatásához.
 
@@ -100,7 +101,7 @@ A telepítés befejezése után a kiszolgáló újraindul, majd ellenőrzi, hogy
 
 1. Miután a PAMSRV újraindult, jelentkezzen be PRIV\Rendszergazda jogosultsággal.
 
-2. Indítsa el az Internet Explorert, és kapcsolódjon a MIM-portálhoz a következő címen: http://pamsrv.priv.contoso.local:82/identitymanagement. Előfordulhat, hogy az oldal első felkeresése hosszabb ideig tart.
+2. Indítsa el az Internet Explorert, és kapcsolódjon a MIM-portál a http://pamsrv.priv.contoso.local:82/identitymanagement. Előfordulhat, hogy az oldal első felkeresése hosszabb ideig tart.
 
 3. Szükség esetén jelentkezzen be PRIV\Administrator for Internet Explorer jogosultsággal.
 
@@ -133,37 +134,37 @@ A tűzfalnak engedélyeznie kell a bejövő kapcsolatokat az 5725-ös, az 5726-o
 
 Az útmutató ezen szakasza a MIM PAM REST API minta webalkalmazásának telepítéséhez és konfigurálásához nyújt segítséget.
 
-1.  A minta webalkalmazások archívumából töltse le az [Identity Management samples](https://github.com/Azure/identity-management-samples) (Identity Management-minták) csomagot .zip fájlként.
+1. A minta webalkalmazások archívumából töltse le az [Identity Management samples](https://github.com/Azure/identity-management-samples) (Identity Management-minták) csomagot .zip fájlként.
 
 2. Bontsa ki az **identity-management-samples-master\Privileged-Access-Management-Portal\src** mappa tartalmát egy új mappába, a **C:\Program Files\Microsoft Forefront Identity Manager\2010\Privileged Access Management Portal** helyre.
 
-3.  Hozzon létre az IIS-ben egy új webhelyet MIM Privileged Access felügyeleti példaportál néven, melynek fizikai elérési útja: C:\Program Files\Microsoft Forefront Identity Manager\2010\Privileged Access Management Portal, illetve a 8090-es port.  A beállítás a következő PowerShell-paranccsal végezhető el:
+3. Hozzon létre az IIS-ben egy új webhelyet MIM Privileged Access felügyeleti példaportál néven, melynek fizikai elérési útja: C:\Program Files\Microsoft Forefront Identity Manager\2010\Privileged Access Management Portal, illetve a 8090-es port.  A beállítás a következő PowerShell-paranccsal végezhető el:
 
-  ```PowerShell
-  New-WebSite -Name "MIM Privileged Access Management Example Portal" -Port 8090   -PhysicalPath "C:\Program Files\Microsoft Forefront Identity Manager\2010\Privileged Access Management Portal\"
-  ```
+   ```PowerShell
+   New-WebSite -Name "MIM Privileged Access Management Example Portal" -Port 8090   -PhysicalPath "C:\Program Files\Microsoft Forefront Identity Manager\2010\Privileged Access Management Portal\"
+   ```
 
-4.  Állítsa be úgy a minta webalkalmazást, hogy az a felhasználókat át tudja irányítani a MIM PAM REST API-hoz. Szövegszerkesztőben, például a Jegyzettömbben szerkessze a **C:\Program Files\Microsoft Forefront Identity Manager\2010\Privileged Access Management REST API\web.config** fájlt. A **< system.webServer >** területen írja be a következő sorokat:
+4. Állítsa be úgy a minta webalkalmazást, hogy az a felhasználókat át tudja irányítani a MIM PAM REST API-hoz. Szövegszerkesztőben, például a Jegyzettömbben szerkessze a **C:\Program Files\Microsoft Forefront Identity Manager\2010\Privileged Access Management REST API\web.config** fájlt. A **< system.webServer >** területen írja be a következő sorokat:
 
-  ```XML
-  <httpProtocol>
-    <customHeaders>
-      <add name="Access-Control-Allow-Credentials" value="true"  />
-      <add name="Access-Control-Allow-Headers" value="content-type" />
-      <add name="Access-Control-Allow-Origin" value="http://pamsrv:8090" />  
-    </customHeaders>
-  </httpProtocol>
-  ```
+   ```XML
+   <httpProtocol>
+   <customHeaders>
+     <add name="Access-Control-Allow-Credentials" value="true"  />
+     <add name="Access-Control-Allow-Headers" value="content-type" />
+     <add name="Access-Control-Allow-Origin" value="http://pamsrv:8090" />  
+   </customHeaders>
+   </httpProtocol>
+   ```
 
-5.  Konfigurálja a minta webalkalmazást. Szövegszerkesztőben, például a Jegyzettömbben szerkessze a **C:\Program Files\Microsoft Forefront Identity Manager\2010\Privileged Access Management Portal\js\utils.js** fájlt. A **pamRespApiUrl** értékénél adja meg a következőt: *http://pamsrv.priv.contoso.local:8086/api/pamresources/*.
+5. Konfigurálja a minta webalkalmazást. Szövegszerkesztőben, például a Jegyzettömbben szerkessze a **C:\Program Files\Microsoft Forefront Identity Manager\2010\Privileged Access Management Portal\js\utils.js** fájlt. Állítsa be a **pamRespApiUrl** való *http://pamsrv.priv.contoso.local:8086/api/pamresources/*.
 
-6.  A módosítások életbe léptetéséhez indítsa újra az IIS-t a következő paranccsal.
+6. A módosítások életbe léptetéséhez indítsa újra az IIS-t a következő paranccsal.
 
-  ```cmd
-  iisreset
-  ```
+   ```cmd
+   iisreset
+   ```
 
-7.  (Nem kötelező.) Győződjön meg arról, hogy a felhasználó hitelesíthető a REST API-val. Nyisson meg egy webböngészőt a PAMSRV rendszergazdájaként.  Lépjen a http://pamsrv.priv.contoso.local:8086/api/pamresources/pamroles/ URL-címen található webhelyre, szükség esetén végezze el a hitelesítést, és győződjön meg arról, hogy a letöltés megtörténik.
+7. (Nem kötelező.) Győződjön meg arról, hogy a felhasználó hitelesíthető a REST API-val. Nyisson meg egy webböngészőt a PAMSRV rendszergazdájaként.  Keresse meg a webhely URL-címe http://pamsrv.priv.contoso.local:8086/api/pamresources/pamroles/, szükség esetén, és győződjön meg arról, hogy a letöltés megtörténik.
 
 ## <a name="install-the-mim-pam-requestor-cmdlets"></a>A MIM PAM-kérelmező parancsmagjainak telepítése
 
@@ -185,6 +186,6 @@ A telepítés befejezése után indítsa újra a CORPWKSTN munkaállomást az ú
 
 A következő lépésben a PRIV és a CORP tartomány erdői közötti megbízható kapcsolatot hozhatja létre.
 
->[!div class="step-by-step"]
-[« 3. lépés](step-3-prepare-pam-server.md)
-[5. lépés »](step-5-establish-trust-between-priv-corp-forests.md)
+> [!div class="step-by-step"]
+> [« 3. lépés](step-3-prepare-pam-server.md)
+> [5. lépés »](step-5-establish-trust-between-priv-corp-forests.md)

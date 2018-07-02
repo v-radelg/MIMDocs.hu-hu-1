@@ -12,18 +12,19 @@ ms.technology: active-directory-domain-services
 ms.assetid: 82a9085c-9667-4b3b-8079-657eab1d1e58
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: b95e23c8beb4990c5649c9358ba85687f148de30
-ms.sourcegitcommit: c773edc8262b38df50d82dae0f026bb49500d0a4
+ms.openlocfilehash: c53d8cc815f792d1a1246a7434350f1cfb087844
+ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/25/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36288962"
 ---
 # <a name="hardware-and-software-requirements"></a>Hardver- és szoftverkövetelmények
 
 A mögöttes szoftverplatformok rendszerkövetelményein kívül a Privileged Access Management nem rendelkezik további hardverkövetelményekkel. Ügyeljen rá, hogy rendelkezésre álljon elegendő memória vagy lemezterület, és hogy elérhető legyen a hálózati kapcsolat.
 
->[!IMPORTANT]
-Ez a cikk az alapszintű telepítéshez szükséges minimális követelményeket ismerteti. Nem célja a teljesítmény, méretezhetőség és a magas rendelkezésre állás bemutatása. Mert nem felel meg a nagyvállalati vagy üzemi környezetben javasolt topológiát.
+> [!IMPORTANT]
+> Ez a cikk az alapszintű telepítéshez szükséges minimális követelményeket ismerteti. Nem célja a teljesítmény, méretezhetőség és a magas rendelkezésre állás bemutatása. Mert nem felel meg a nagyvállalati vagy üzemi környezetben javasolt topológiát.
 
 ## <a name="installing-from-software-packages"></a>Telepítés szoftvercsomagokból
 

@@ -1,7 +1,7 @@
 ---
-title: "A PAM üzembe helyezése, 3. lépés – PAM-kiszolgáló | Microsoft Docs"
-description: "Készítsen elő a Privileged Access Management számára egy PAM-kiszolgálót mind az SQL, mind a SharePoint üzemeltetéséhez."
-keywords: 
+title: A PAM üzembe helyezése, 3. lépés – PAM-kiszolgáló | Microsoft Docs
+description: Készítsen elő a Privileged Access Management számára egy PAM-kiszolgálót mind az SQL, mind a SharePoint üzemeltetéséhez.
+keywords: ''
 author: barclayn
 ms.author: barclayn
 manager: mbaldwin
@@ -13,17 +13,18 @@ ms.assetid: 68ec2145-6faa-485e-b79f-2b0c4ce9eff7
 ROBOTS: noindex,nofollow
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: fd52a191a0592441131249451011c4e2f026ea48
-ms.sourcegitcommit: 2be26acadf35194293cef4310950e121653d2714
+ms.openlocfilehash: 3eb79847baed69ef53a27e09443ff9bf4647b347
+ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/14/2017
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36289914"
 ---
 # <a name="step-3--prepare-a-pam-server"></a>3. lépés – PAM-kiszolgáló előkészítése
 
->[!div class="step-by-step"]
-[« 2. lépés](step-2-prepare-priv-domain-controller.md)
-[4. lépés »](step-4-install-mim-components-on-pam-server.md)
+> [!div class="step-by-step"]
+> [« 2. lépés](step-2-prepare-priv-domain-controller.md)
+> [4. lépés »](step-4-install-mim-components-on-pam-server.md)
 
 ## <a name="install-windows-server-2012-r2"></a>A Windows Server 2012 R2 telepítése
 
@@ -93,13 +94,13 @@ Ahhoz, hogy az alkalmazások számára engedélyezhesse a Windows-hitelesítési
 
 Ha a PowerShellt szeretné használni:
 
-1.  Kattintson jobb gombbal a PowerShellre, és válassza a **Futtatás rendszergazdaként** elemet.
-2.  Az alábbi parancsokkal állítsa le az IIS-t, és oldja fel az alkalmazásgazda beállításainak zárolását
-    ```CMD
-    iisreset /STOP
-    C:\Windows\System32\inetsrv\appcmd.exe unlock config /section:windowsAuthentication -commit:apphost
-    iisreset /START
-    ```
+1. Kattintson jobb gombbal a PowerShellre, és válassza a **Futtatás rendszergazdaként** elemet.
+2. Az alábbi parancsokkal állítsa le az IIS-t, és oldja fel az alkalmazásgazda beállításainak zárolását
+   ```CMD
+   iisreset /STOP
+   C:\Windows\System32\inetsrv\appcmd.exe unlock config /section:windowsAuthentication -commit:apphost
+   iisreset /START
+   ```
 
 Ha szövegszerkesztőt, például a Jegyzettömböt szeretné használni:
 
@@ -204,7 +205,7 @@ Most hozzon létre egy SharePoint-webhelycsoportot az imént készített webalka
 ## <a name="set-the-website-as-the-local-intranet"></a>A webhely beállítása helyi intranetként
 
 1. Indítsa el az Internet Explorert, és nyisson meg egy új böngészőlapot
-2. Nyissa meg a http://pamsrv.priv.contoso.local:82/ webhelyet, és jelentkezzen be PRIV\MIMAdmin felhasználóként.  Ekkor megjelenik egy üres SharePoint-webhely, „MIM Portal” néven.  
+2. Navigáljon a http://pamsrv.priv.contoso.local:82/ , és jelentkezzen be PRIV\MIMAdmin felhasználóként.  Ekkor megjelenik egy üres SharePoint-webhely, „MIM Portal” néven.  
 3. Az Internet Explorerben nyissa meg az **Internetbeállításokat**, lépjen a **Biztonság** lapra, válassza a **Helyi intranet** zónát, majd kattintson a `http://pamsrv.priv.contoso.local:82/` URL-címre.
 
 Ha a bejelentkezés sikertelen, előfordulhat, hogy a [2. lépésben](step-2-prepare-priv-domain-controller.md) korábban létrehozott Kerberos SPN-eket frissíteni kell.
@@ -215,6 +216,6 @@ A **Szolgáltatások** eszköz segítségével (mely a Felügyeleti eszközök k
 
 A 4. lépésben hozzákezdhet a MIM-összetevőknek a PAM-kiszolgálóra való telepítéséhez.
 
->[!div class="step-by-step"]
-[« 2. lépés](step-2-prepare-priv-domain-controller.md)
-[4. lépés »](step-4-install-mim-components-on-pam-server.md)
+> [!div class="step-by-step"]
+> [« 2. lépés](step-2-prepare-priv-domain-controller.md)
+> [4. lépés »](step-4-install-mim-components-on-pam-server.md)

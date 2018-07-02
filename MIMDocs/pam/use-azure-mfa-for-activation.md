@@ -1,7 +1,7 @@
 ---
-title: "Az Azure MFA használata a PAM aktiválásához | Microsoft Docs"
-description: "Állítsa be az Azure MFA-t második biztonsági szintként, ha a felhasználók szerepköröket aktiválnak a Privileged Access Managementben."
-keywords: 
+title: Az Azure MFA használata a PAM aktiválásához | Microsoft Docs
+description: Állítsa be az Azure MFA-t második biztonsági szintként, ha a felhasználók szerepköröket aktiválnak a Privileged Access Managementben.
+keywords: ''
 author: barclayn
 ms.author: fimguy
 manager: mbaldwin
@@ -12,15 +12,16 @@ ms.technology: active-directory-domain-services
 ms.assetid: 5134a112-f73f-41d0-a5a5-a89f285e1f73
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 1fb012034685257d35ba4f8a79468145187ae5b6
-ms.sourcegitcommit: 27a23142393bbb0f66a3d533d89a5a8366a29e41
+ms.openlocfilehash: 30e683a0bd13d911f73eca19c847a2c9cd10f36d
+ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/20/2017
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36289829"
 ---
 # <a name="using-azure-mfa-for-activation"></a>Aktiválás az Azure MFA használatával
->[!IMPORTANT]
-Miatt az Azure multi-factor Authentication Software Development Kit érvénytelenítése bejelentés. Az Azure MFA SDK használatból való kivonást időpontjáig 2018. November 14. a meglévő ügyfeleknek is támogatottak lesznek. Új ügyfelek és az aktuális ügyfelek nem tudnak többé letöltése SDK a klasszikus Azure portálon keresztül. Töltse le, akkor kell érheti el a generált MFA szolgáltatás hitelesítő adatait a csomagot fogadó Azure ügyfélszolgálathoz. <br> A Microsoft fejlesztői csapat dolgozik a többtényezős hitelesítés módosításai tervezési integrálja az MFA kiszolgáló SDK-val. Ez szerepelni fog a jövőbeli gyorsjavítás korai 2018.
+> [!IMPORTANT]
+> Miatt az Azure multi-factor Authentication Software Development Kit érvénytelenítése bejelentés. Az Azure MFA SDK használatból való kivonást időpontjáig 2018. November 14. a meglévő ügyfeleknek is támogatottak lesznek. Új ügyfelek és az aktuális ügyfelek nem tudnak többé letöltése SDK a klasszikus Azure portálon keresztül. Töltse le, akkor kell érheti el a generált MFA szolgáltatás hitelesítő adatait a csomagot fogadó Azure ügyfélszolgálathoz. <br> A Microsoft fejlesztői csapat dolgozik a többtényezős hitelesítés módosításai tervezési integrálja az MFA kiszolgáló SDK-val. Ez szerepelni fog a jövőbeli gyorsjavítás korai 2018.
 
 
 
@@ -132,10 +133,10 @@ Egy adott szerepkör esetében az „-MFAEnabled 0” paraméternek a `Set-PAMRo
 
 A következő események a Privileged Access Management eseménynaplójában jelenhetnek meg:
 
-| ID  | Severity | Létrehozója | Leírás |
+| ID  | Severity | Létrehozója | Description |
 |-----|----------|--------------|-------------|
 | 101 | Hiba       | MIM szolgáltatás            | A felhasználó nem végezte el az Azure MFA hitelesítést (például nem vette fel a telefont) |
-| 103 | Adatok | MIM szolgáltatás            | A felhasználó aktiválás közben hajtotta végre az Azure MFA hitelesítést                       |
+| 103 | Információ | MIM szolgáltatás            | A felhasználó aktiválás közben hajtotta végre az Azure MFA hitelesítést                       |
 | 825 | Figyelmeztetés     | A PAM figyelőszolgáltatása | A telefonszám megváltozott                                |
 
 A sikertelen telefonhívások okára (101-es esemény) vonatkozó további információkért megtekinthet vagy letölthet egy Azure MFA-jelentést is.

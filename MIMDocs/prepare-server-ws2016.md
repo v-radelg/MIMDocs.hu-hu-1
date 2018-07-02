@@ -12,18 +12,19 @@ ms.technology: security
 ms.assetid: 51507d0a-2aeb-4cfd-a642-7c71e666d6cd
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 7c77ed0ceb541b9b00ebb9954ce65a53f0f44442
-ms.sourcegitcommit: 32d9a963a4487a8649210745c97a3254645e8744
+ms.openlocfilehash: bfc79d27f015ee3d57c33c26ecae0f5b8ff38370
+ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36289489"
 ---
 # <a name="set-up-an-identity-management-servers-windows-server-2016"></a>Az identitás-felügyeleti kiszolgáló beállítása: Windows Server 2016
 
->[!div class="step-by-step"]
-[«Tartomány előkészítése](preparing-domain.md)
-[SQL Server 2016»](prepare-server-sql2016.md)
-
+> [!div class="step-by-step"]
+> [«Tartomány előkészítése](preparing-domain.md)
+> [SQL Server 2016»](prepare-server-sql2016.md)
+> 
 > [!NOTE]
 > Ez az útmutató egy Contoso nevű fiktív vállalat neveit és értékeit használja szemléltetésként. Ezeket helyettesítse a saját neveivel és értékeivel. Például:
 > - Tartományvezérlő neve – **corpdc**
@@ -31,7 +32,7 @@ ms.lasthandoff: 04/27/2018
 > - MIM szolgáltatás kiszolgálójának neve – **corpservice**
 > - MIM Sync-kiszolgáló neve – **corpsync**
 > - SQL Server-neve - **corpsql**
-> - Jelszó – **Pass@word1**
+> - Jelszó – <strong>Pass@word1</strong>
 
 ## <a name="join-windows-server-2016-to-your-domain"></a>Windows Server 2016 csatlakoztatása a tartományhoz
 
@@ -112,6 +113,6 @@ A kiszolgálói biztonsági házirendben engedélyezze az újonnan létrehozott 
     iisreset /START
     ```
 
->[!div class="step-by-step"]  
-[«Tartomány előkészítése](preparing-domain.md)
-[SQL Server 2016»](prepare-server-sql2016.md)
+> [!div class="step-by-step"]  
+> [«Tartomány előkészítése](preparing-domain.md)
+> [SQL Server 2016»](prepare-server-sql2016.md)

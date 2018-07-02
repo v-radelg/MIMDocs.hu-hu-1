@@ -1,7 +1,7 @@
 ---
-title: "Kapacitástervezési útmutató | Microsoft Docs"
-description: "Az útmutató azokat a tényezőket ismerteti, amelyeket célszerű figyelembe venni a MIM 2016 üzembe helyezése előtt – ilyenek például a terhelésszintek és a szabályozási döntések."
-keywords: 
+title: Kapacitástervezési útmutató | Microsoft Docs
+description: Az útmutató azokat a tényezőket ismerteti, amelyeket célszerű figyelembe venni a MIM 2016 üzembe helyezése előtt – ilyenek például a terhelésszintek és a szabályozási döntések.
+keywords: ''
 author: billmath
 ms.author: barclayn
 manager: mbaldwin
@@ -13,10 +13,11 @@ ms.assetid: 3ac5b990-1678-4996-996d-cbd84b8426b4
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: 32cdf03ffa0d0d282a6277af766f97e93e3a3f3a
-ms.sourcegitcommit: 06add1a636720f74bc0c0f25b4100b19f1bd31da
+ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36289013"
 ---
 # <a name="capacity-planning-guide"></a>Kapacitástervezési útmutató
 
@@ -49,7 +50,7 @@ A következő táblázat a fő kapacitás és a MIM 2016-környezet teljesítmé
 
 A Microsoft Identity Manager összetevőinek nem kell ugyanazon a számítógépen lenniük. Ezen összetevők, valamint a futtatásukra szolgáló fizikai vagy virtuális gépek számbavétele a kapacitástervezés fontos mozzanata.
 
-A hardveres tényezők befolyásolhatják a MIM-környezet teljesítményét. Példa:
+A hardveres tényezők befolyásolhatják a MIM-környezet teljesítményét. Például:
 
 - Milyen fizikai lemezkonfigurációt használ a MIM 2016-szolgáltatás SQL-adatbázisát futtató számítógép? A lemezkonfigurációt alkotó forgórészek száma, illetve a napló- és adatfájlok elosztása jelentős mértékben befolyásolhatja a rendszer teljesítményét.
 

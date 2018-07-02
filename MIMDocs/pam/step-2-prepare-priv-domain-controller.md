@@ -12,17 +12,18 @@ ms.technology: active-directory-domain-services
 ms.assetid: 0e9993a0-b8ae-40e2-8228-040256adb7e2
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 9cb36a52525c538d0ac323a3342a9dd6b7f6e42e
-ms.sourcegitcommit: c773edc8262b38df50d82dae0f026bb49500d0a4
+ms.openlocfilehash: 960ec81d822e02a848c3ef9ac1b65f5fa0d9e61a
+ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/25/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36289455"
 ---
 # <a name="step-2---prepare-the-first-priv-domain-controller"></a>2. lépés: A PRIV tartományvezérlő előkészítése
 
->[!div class="step-by-step"]
-[« 1. lépés](step-1-prepare-corp-domain.md)
-[3. lépés »](step-3-prepare-pam-server.md)
+> [!div class="step-by-step"]
+> [« 1. lépés](step-1-prepare-corp-domain.md)
+> [3. lépés »](step-3-prepare-pam-server.md)
 
 Ebben a lépésben egy új tartományt fog létrehozni, amely megerősített környezetet biztosít a rendszergazdai hitelesítéshez.  Ebben az erdőben szükség lesz legalább egy tartományvezérlőre és legalább egy tagkiszolgálóra. A tagkiszolgálót a következő lépésben fogja konfigurálni.
 
@@ -52,11 +53,11 @@ Vegye fel az Active Directory tartományi szolgáltatásokat (AD DS) és a DNS-
 
 2. A Windows Server Active Directory telepítésének előkészítéséhez írja be a következő parancsokat.
 
-  ```PowerShell
-  import-module ServerManager
+   ```PowerShell
+   import-module ServerManager
 
-  Install-WindowsFeature AD-Domain-Services,DNS –restart –IncludeAllSubFeature -IncludeManagementTools
-  ```
+   Install-WindowsFeature AD-Domain-Services,DNS –restart –IncludeAllSubFeature -IncludeManagementTools
+   ```
 
 ### <a name="configure-registry-settings-for-sid-history-migration"></a>A beállításjegyzék beállításainak megadása a SID-előzmények áttelepítéséhez
 
@@ -76,10 +77,10 @@ A jelen dokumentumban a priv.contoso.local név az új erdő tartományneve.  Az
 
 1. Az új tartomány létrehozásához írja be a következő parancsokat a PowerShell ablakban.  Ez egy DNS-delegálást is létrehoz az előző lépésben létrehozott felső szintű tartományban (contoso.local).  Ha azt tervezi, hogy később konfigurálja a DNS-t, akkor ne adja meg a következő paramétereket: `CreateDNSDelegation -DNSDelegationCredential $ca`.
 
-  ```PowerShell
-  $ca= get-credential
-  Install-ADDSForest –DomainMode 6 –ForestMode 6 –DomainName priv.contoso.local –DomainNetbiosName priv –Force –CreateDNSDelegation –DNSDelegationCredential $ca
-  ```
+   ```PowerShell
+   $ca= get-credential
+   Install-ADDSForest –DomainMode 6 –ForestMode 6 –DomainName priv.contoso.local –DomainNetbiosName priv –Force –CreateDNSDelegation –DNSDelegationCredential $ca
+   ```
 
 2. A megjelenő helyi menüben adja meg a CORP erdő rendszergazdájának hitelesítő adatait (például a CONTOSO\\Rendszergazda felhasználónevet és az ahhoz tartozó jelszót az 1. lépésből).
 
@@ -95,69 +96,69 @@ Hozzon létre felhasználói és szolgáltatásfiókokat a MIM szolgáltatás é
 
 2. Indítsa el a PowerShellt, és írja be következő parancsokat. A 'Pass@word1' jelszó csak példaként szolgál, a fiókokhoz használjon más jelszót.
 
-  ```PowerShell
-  import-module activedirectory
+   ```PowerShell
+   import-module activedirectory
 
-  $sp = ConvertTo-SecureString "Pass@word1" –asplaintext –force
+   $sp = ConvertTo-SecureString "Pass@word1" –asplaintext –force
 
-  New-ADUser –SamAccountName MIMMA –name MIMMA
+   New-ADUser –SamAccountName MIMMA –name MIMMA
 
-  Set-ADAccountPassword –identity MIMMA –NewPassword $sp
+   Set-ADAccountPassword –identity MIMMA –NewPassword $sp
 
-  Set-ADUser –identity MIMMA –Enabled 1 –PasswordNeverExpires 1
+   Set-ADUser –identity MIMMA –Enabled 1 –PasswordNeverExpires 1
 
-  New-ADUser –SamAccountName MIMMonitor –name MIMMonitor -DisplayName MIMMonitor
+   New-ADUser –SamAccountName MIMMonitor –name MIMMonitor -DisplayName MIMMonitor
 
-  Set-ADAccountPassword –identity MIMMonitor –NewPassword $sp
+   Set-ADAccountPassword –identity MIMMonitor –NewPassword $sp
 
-  Set-ADUser –identity MIMMonitor –Enabled 1 –PasswordNeverExpires 1
+   Set-ADUser –identity MIMMonitor –Enabled 1 –PasswordNeverExpires 1
 
-  New-ADUser –SamAccountName MIMComponent –name MIMComponent -DisplayName MIMComponent
+   New-ADUser –SamAccountName MIMComponent –name MIMComponent -DisplayName MIMComponent
 
-  Set-ADAccountPassword –identity MIMComponent –NewPassword $sp
+   Set-ADAccountPassword –identity MIMComponent –NewPassword $sp
 
-  Set-ADUser –identity MIMComponent –Enabled 1 –PasswordNeverExpires 1
+   Set-ADUser –identity MIMComponent –Enabled 1 –PasswordNeverExpires 1
 
-  New-ADUser –SamAccountName MIMSync –name MIMSync
+   New-ADUser –SamAccountName MIMSync –name MIMSync
 
-  Set-ADAccountPassword –identity MIMSync –NewPassword $sp
+   Set-ADAccountPassword –identity MIMSync –NewPassword $sp
 
-  Set-ADUser –identity MIMSync –Enabled 1 –PasswordNeverExpires 1
+   Set-ADUser –identity MIMSync –Enabled 1 –PasswordNeverExpires 1
 
-  New-ADUser –SamAccountName MIMService –name MIMService
+   New-ADUser –SamAccountName MIMService –name MIMService
 
-  Set-ADAccountPassword –identity MIMService –NewPassword $sp
+   Set-ADAccountPassword –identity MIMService –NewPassword $sp
 
-  Set-ADUser –identity MIMService –Enabled 1 –PasswordNeverExpires 1
+   Set-ADUser –identity MIMService –Enabled 1 –PasswordNeverExpires 1
 
-  New-ADUser –SamAccountName SharePoint –name SharePoint
+   New-ADUser –SamAccountName SharePoint –name SharePoint
 
-  Set-ADAccountPassword –identity SharePoint –NewPassword $sp
+   Set-ADAccountPassword –identity SharePoint –NewPassword $sp
 
-  Set-ADUser –identity SharePoint –Enabled 1 –PasswordNeverExpires 1
+   Set-ADUser –identity SharePoint –Enabled 1 –PasswordNeverExpires 1
 
-  New-ADUser –SamAccountName SqlServer –name SqlServer
+   New-ADUser –SamAccountName SqlServer –name SqlServer
 
-  Set-ADAccountPassword –identity SqlServer –NewPassword $sp
+   Set-ADAccountPassword –identity SqlServer –NewPassword $sp
 
-  Set-ADUser –identity SqlServer –Enabled 1 –PasswordNeverExpires 1
+   Set-ADUser –identity SqlServer –Enabled 1 –PasswordNeverExpires 1
 
-  New-ADUser –SamAccountName BackupAdmin –name BackupAdmin
+   New-ADUser –SamAccountName BackupAdmin –name BackupAdmin
 
-  Set-ADAccountPassword –identity BackupAdmin –NewPassword $sp
+   Set-ADAccountPassword –identity BackupAdmin –NewPassword $sp
 
-  Set-ADUser –identity BackupAdmin –Enabled 1 -PasswordNeverExpires 1
+   Set-ADUser –identity BackupAdmin –Enabled 1 -PasswordNeverExpires 1
 
-  New-ADUser -SamAccountName MIMAdmin -name MIMAdmin
+   New-ADUser -SamAccountName MIMAdmin -name MIMAdmin
 
-  Set-ADAccountPassword –identity MIMAdmin  -NewPassword $sp
+   Set-ADAccountPassword –identity MIMAdmin  -NewPassword $sp
 
-  Set-ADUser -identity MIMAdmin -Enabled 1 -PasswordNeverExpires 1
+   Set-ADUser -identity MIMAdmin -Enabled 1 -PasswordNeverExpires 1
 
-  Add-ADGroupMember "Domain Admins" SharePoint
+   Add-ADGroupMember "Domain Admins" SharePoint
 
-  Add-ADGroupMember "Domain Admins" MIMService
-  ```
+   Add-ADGroupMember "Domain Admins" MIMService
+   ```
 
 ### <a name="configure-auditing-and-logon-rights"></a>Naplózási és a bejelentkezési jogok konfigurálása
 
@@ -201,11 +202,11 @@ Be kell állítania a naplózást ahhoz, hogy létre lehessen hozni a PAM konfig
 
 19. Rendszergazdaként nyisson meg egy PowerShell-ablakot, és írja be a következő parancsot a tartományvezérlőnek a csoportházirend-beállításokkal történő frissítéséhez.
 
-  ```cmd
-  gpupdate /force /target:computer
-  ```
+    ```cmd
+    gpupdate /force /target:computer
+    ```
 
-  Egy perc elteltével a következő üzenet jelenik meg: „A számítógép-házirend frissítése sikeresen befejeződött.”
+    Egy perc elteltével a következő üzenet jelenik meg: „A számítógép-házirend frissítése sikeresen befejeződött.”
 
 
 ### <a name="configure-dns-name-forwarding-on-privdc"></a>A DNS-névátirányítás konfigurálása a PRIVDC számítógépen
@@ -216,11 +217,11 @@ A PRIVDC számítógépen a PowerShell használatával konfigurálja a DNS-név�
 
 2. Mindegyik tartománynál a meglévő erdők tetején írja be a következő parancsot, amely megadja a meglévő DNS-tartományt (például contoso.local), valamint az adott tartomány főkiszolgálójának IP-címét.  
 
-  Ha az előző lépésben az egyetlen contoso.local tartományt hozta létre, akkor adja meg a *10.1.1.31* értéket a CORPDC számítógép virtuális hálózati IP-címeként.
+   Ha az előző lépésben az egyetlen contoso.local tartományt hozta létre, akkor adja meg a *10.1.1.31* értéket a CORPDC számítógép virtuális hálózati IP-címeként.
 
-  ```PowerShell
-  Add-DnsServerConditionalForwarderZone –name "contoso.local" –masterservers 10.1.1.31
-  ```
+   ```PowerShell
+   Add-DnsServerConditionalForwarderZone –name "contoso.local" –masterservers 10.1.1.31
+   ```
 
 > [!NOTE]
 > A többi erdőnek is képesnek kell lennie arra, hogy a PRIV erdő DNS-kéréseit átirányítsa erre a tartományvezérlőre.  Több meglévő Active Directory-erdő esetén mindegyik erdőbe fel kell vennie egy feltételes DNS-továbbítót is.
@@ -229,12 +230,12 @@ A PRIVDC számítógépen a PowerShell használatával konfigurálja a DNS-név�
 
 1. A PowerShell használatával vegyen fel egyszerű szolgáltatásneveket (SPN), hogy a SharePoint, a PAM REST API és a MIM szolgáltatás használni tudja a Kerberos-hitelesítést.
 
-  ```cmd
-  setspn -S http/pamsrv.priv.contoso.local PRIV\SharePoint
-  setspn -S http/pamsrv PRIV\SharePoint
-  setspn -S FIMService/pamsrv.priv.contoso.local PRIV\MIMService
-  setspn -S FIMService/pamsrv PRIV\MIMService
-  ```
+   ```cmd
+   setspn -S http/pamsrv.priv.contoso.local PRIV\SharePoint
+   setspn -S http/pamsrv PRIV\SharePoint
+   setspn -S FIMService/pamsrv.priv.contoso.local PRIV\MIMService
+   setspn -S FIMService/pamsrv PRIV\MIMService
+   ```
 
 > [!NOTE]
 > A dokumentumban található következő lépések bemutatják, hogyan telepítheti a MIM 2016 kiszolgálói összetevőit egyetlen számítógépre. Ha a magas rendelkezésre állás érdekében további kiszolgáló hozzáadását tervezi, akkor a Kerberos további konfigurálására lesz szükség a [FIM 2010: A Kerberos-hitelesítés beállítása](http://social.technet.microsoft.com/wiki/contents/articles/3385.fim-2010-kerberos-authentication-setup.aspx) című témakörben leírtak szerint.
@@ -254,13 +255,13 @@ Végezze el a következő lépéseket a PRIVDC számítógépen tartományi rend
 8. A Felhasználók, számítógépek vagy csoportok kiválasztása ablakban adja meg a *MIMAdmin* nevet, és kattintson a **Névellenőrzés** gombra. Miután a nevek alatt megjelent az aláhúzás, kattintson az **OK**, majd a **Tovább** gombra.
 9. Válassza az **Egyéni feladat** lehetőséget, és alkalmazza az **Ez a mappa** elemre az **Általános engedélyek** beállítás megadásával.
 10. Az engedélyek listájában válassza a következőket:
-  - **Olvasás**
-  - **Írás**
-  - **Az összes gyermekobjektum létrehozása**
-  - **Az összes gyermekobjektum törlése**
-  - **Az összes tulajdonság olvasása**
-  - **Az összes tulajdonság írása**
-  - **Biztonsági azonosító előzményeinek áttelepítése** kattintson **következő** majd **Befejezés**.
+    - **Olvasás**
+    - **Írás**
+    - **Az összes gyermekobjektum létrehozása**
+    - **Az összes gyermekobjektum törlése**
+    - **Az összes tulajdonság olvasása**
+    - **Az összes tulajdonság írása**
+    - **Biztonsági azonosító előzményeinek áttelepítése** kattintson **következő** majd **Befejezés**.
 
 11. Kattintson ismét a jobb gombbal a **priv.contoso.local** tartományra, és válassza a **Vezérlés delegálása** parancsot.  
 12. A Kijelölt felhasználók és csoportok lapon kattintson a **Hozzáadás** gombra.  
@@ -271,9 +272,9 @@ Végezze el a következő lépéseket a PRIVDC számítógépen tartományi rend
 
 17. Nyisson meg egy parancssort.  
 18. Ellenőrizze az Admin SD Holder objektum hozzáférés-vezérlési listáját a PRIV tartományokban. Ha a tartomány például „priv.contoso.local” volt, írja be a következő parancsot:
-  ```cmd
-  dsacls "cn=adminsdholder,cn=system,dc=priv,dc=contoso,dc=local"
-  ```
+    ```cmd
+    dsacls "cn=adminsdholder,cn=system,dc=priv,dc=contoso,dc=local"
+    ```
 19. Ha szükséges, módosítsa a hozzáférés-vezérlési listát úgy, hogy a MIM szolgáltatás és a MIM összetevő frissíteni tudja az adott hozzáférés-vezérlési lista által védett csoportok tagságát.  Írja be a következő parancsot:
 
 ```cmd
@@ -303,6 +304,6 @@ A további részleteket [az emelt szintű hozzáféréssel rendelkező munkaáll
 
 A következő lépésben egy PAM-kiszolgáló előkészítésével foglalkozunk.
 
->[!div class="step-by-step"]
-[« 1. lépés](step-1-prepare-corp-domain.md)
-[3. lépés »](step-3-prepare-pam-server.md)
+> [!div class="step-by-step"]
+> [« 1. lépés](step-1-prepare-corp-domain.md)
+> [3. lépés »](step-3-prepare-pam-server.md)

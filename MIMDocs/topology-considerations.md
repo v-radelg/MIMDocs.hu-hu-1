@@ -1,7 +1,7 @@
 ---
-title: "Topológiai útmutató az üzembe helyezéshez | Microsoft Docs"
-description: "Ismerje meg a MIM 2016 összetevőit, és olvasson javaslatokat arról, hogyan telepheti őket a környezetben."
-keywords: 
+title: Topológiai útmutató az üzembe helyezéshez | Microsoft Docs
+description: Ismerje meg a MIM 2016 összetevőit, és olvasson javaslatokat arról, hogyan telepheti őket a környezetben.
+keywords: ''
 author: billmath
 ms.author: barclayn
 manager: mbaldwin
@@ -12,18 +12,19 @@ ms.technology: security
 ms.assetid: 735dc357-dfba-4f68-a5b3-d66d6c018803
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: e257a2e64225a4bc545d8a9384167819412e939b
-ms.sourcegitcommit: f077508b5569e2a96084267879c5b6551e1e0905
+ms.openlocfilehash: f67068709cf9910fa04110fce75623fd2f94ca4a
+ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36289812"
 ---
 # <a name="topology-considerations"></a>Topológiai szempontok
 A Microsoft Identity Manager (MIM) összetevőit ugyanarra a kiszolgálóra, vagy több különböző konfigurációjú kiszolgálóra is telepítheti. Az üzembe helyezéshez választott topológia hatással van a MIM-mel elérhető teljesítményre. Ez a cikk több lehetséges üzembe helyezési topológiát mutat be.
 
 
->[!NOTE]
-Ezek a lehetőségek kizárólag az identitáskezelésre szolgáló MIM Sync-re, a MIM szolgáltatásra és a MIM-portálra érvényesek.  A MIM CM vagy a MIM BHOLD Suite használatával, illetve a Privileged Access Management megoldáshoz történő üzembe helyezés esetén más lehetőségek közül választhat.
+> [!NOTE]
+> Ezek a lehetőségek kizárólag az identitáskezelésre szolgáló MIM Sync-re, a MIM szolgáltatásra és a MIM-portálra érvényesek.  A MIM CM vagy a MIM BHOLD Suite használatával, illetve a Privileged Access Management megoldáshoz történő üzembe helyezés esetén más lehetőségek közül választhat.
 
 
 ## <a name="mim-components"></a>A MIM összetevői
@@ -64,5 +65,5 @@ A hagyományos többrétegű topológiához hasonlóan a MIM-portál teljesítm�
 
 A MIM Synchronization Service és a MIM szolgáltatás adatbázisainak üzemeltetésére szolgáló SQL Servert futtató számítógépek drámai módon befolyásolják a MIM-környezet általános teljesítményét. Ennek megfelelően az adatbázisok teljesítményének optimalizálásához kövesse az SQL Server dokumentációjában foglalt javaslatokat. További tudnivalókért lásd a következő dokumentumokat:
 
-## <a name="see-also"></a>További információ
+## <a name="see-also"></a>Lásd még:
 - A letölthető [Forefront Identity Manager (FIM) 2010 kapacitástervezési útmutatóban](http://go.microsoft.com/fwlink/?LinkId=200180) részletes információkat olvashat egy tesztkörnyezetről és a kapcsolódó teljesítménytesztelési eredményekről.

@@ -10,11 +10,12 @@ ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: ''
-ms.openlocfilehash: 3d45d18042ccda83873aa929101222c15f36246a
-ms.sourcegitcommit: c773edc8262b38df50d82dae0f026bb49500d0a4
+ms.openlocfilehash: 90e7da2a1e39b802723ff0714bd0caccf9649440
+ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/25/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36289135"
 ---
 # <a name="bhold-model-generator-installation"></a>BHOLD modellhez generátor telepítése
 
@@ -28,8 +29,8 @@ A modellhez generátor BHOLD-modul telepítése előtt telepítenie kell a köve
 
 2. A Microsoft OLE DB Provider for Microsoft Jet telepítve kell lennie. További információ: [Ez a cikk](http://support.microsoft.com/kb/271908).
 
->[!WARNING]
-BHOLD modellhez generátor ne telepítse a termelési hálózat. BHOLD modellhez generátor offline tesztelési környezetben létrehozására szolgál, amelyet importálhat a vállalati szerepkör modellbe normalizált szerepkör modell célja. Az éles hálózattól BHOLD modellhez generátor fut a meglévő szerepkör-modell elvesztését eredményezheti.
+> [!WARNING]
+> BHOLD modellhez generátor ne telepítse a termelési hálózat. BHOLD modellhez generátor offline tesztelési környezetben létrehozására szolgál, amelyet importálhat a vállalati szerepkör modellbe normalizált szerepkör modell célja. Az éles hálózattól BHOLD modellhez generátor fut a meglévő szerepkör-modell elvesztését eredményezheti.
 
 ## <a name="before-you-begin"></a>Előkészületek
 
@@ -39,7 +40,7 @@ Microsoft Access-adatbázis Engine 2010 újraterjeszthető csomag
 
  
 
-*A \<*<http://daipvstf:8080/tfs/ActiveDirectory/IAM/_workitems>*\>*
+*a \<*<http://daipvstf:8080/tfs/ActiveDirectory/IAM/_workitems>*\>*
 
  
 

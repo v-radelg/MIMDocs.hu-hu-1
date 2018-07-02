@@ -1,7 +1,7 @@
 ---
-title: "A MIM 2016 konfigurálása a Privileged Access Management szolgáltatás használatához | Microsoft Docs"
-description: "Ütemterv a MIM telepítéséhez és konfigurálásához a Privileged Access Management szolgáltatáshoz."
-keywords: 
+title: A MIM 2016 konfigurálása a Privileged Access Management szolgáltatás használatához | Microsoft Docs
+description: Ütemterv a MIM telepítéséhez és konfigurálásához a Privileged Access Management szolgáltatáshoz.
+keywords: ''
 author: barclayn
 ms.author: barclayn
 manager: mbaldwin
@@ -12,11 +12,12 @@ ms.technology: active-directory-domain-services
 ms.assetid: c4ca5b58-ad0c-48af-a9eb-b71b22d0c67c
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 79de8ef08b49a41638a09e829efbd8c17301004b
-ms.sourcegitcommit: 210195369d2ecd610569d57d0f519d683ea6a13b
+ms.openlocfilehash: 5180d487dcaabcf024ba76cb86c9d849bdf1adc1
+ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/01/2017
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36289550"
 ---
 # <a name="configure-the-mim-environment-for-privileged-access-management"></a>A MIM-környezet konfigurálása a Privileged Access Management szolgáltatáshoz
 
@@ -38,5 +39,5 @@ Ezek a lépések úgy vannak felépítve, hogy segítségükkel a tesztkörnyeze
 
 7.  Védett erőforrásokhoz való privilegizált, emelt szintű hozzáférés kérelmezésének, fogadásának és felhasználásának bemutatása.
 
->[!div class="step-by-step"]
-[Indítás »](step-1-prepare-corp-domain.md)
+> [!div class="step-by-step"]
+> [Indítás »](step-1-prepare-corp-domain.md)

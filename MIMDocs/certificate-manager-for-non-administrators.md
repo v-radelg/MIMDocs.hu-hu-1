@@ -1,7 +1,7 @@
 ---
-title: "Az intelligens kártyák önkiszolgáló megújítása rendszergazdai hozzáférés nélkül a Microsoft Identity Managerben | Microsoft Docs"
-description: "Megtudhatja, hogyan regisztrálhat intelligens kártyákat a számítógépükhöz rendszergazdai hozzáféréssel nem rendelkező felhasználók számára, hogy használhassák a Tanúsítványkezelőt."
-keywords: 
+title: Az intelligens kártyák önkiszolgáló megújítása rendszergazdai hozzáférés nélkül a Microsoft Identity Managerben | Microsoft Docs
+description: Megtudhatja, hogyan regisztrálhat intelligens kártyákat a számítógépükhöz rendszergazdai hozzáféréssel nem rendelkező felhasználók számára, hogy használhassák a Tanúsítványkezelőt.
+keywords: ''
 author: billmath
 ms.author: barclayn
 manager: mbaldwin
@@ -13,10 +13,11 @@ ms.assetid: bfabc562-a2f0-4cff-ac31-36927f41e102
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: 39becb555d2efe17e60789453dbaf448c90a8b60
-ms.sourcegitcommit: 362475d4018e74e5a17ba574ccaec47a2caebaff
+ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36289162"
 ---
 # <a name="enroll-smart-cards-for-non-administrators"></a>Intelligens kártyák regisztrálása nem rendszergazdák számára
 Ha a felhasználó nem helyi rendszergazda, akkor alapesetben nem jogosult intelligens kártyát regisztrálni a saját számítógépén. A következő folyamat bemutatja, miként lehet áthidalni ezt a korlátozást.

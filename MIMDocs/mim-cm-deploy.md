@@ -10,11 +10,12 @@ ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: ''
-ms.openlocfilehash: 241ad68d3f4a692c87d0d2a0069781ad042453c7
-ms.sourcegitcommit: 39f34a38967baa9c0da6ae5b57734b222f5771a5
+ms.openlocfilehash: 25a511dc590b02019c65a688c9b2c8dc821fff50
+ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36290084"
 ---
 # <a name="deploying-microsoft-identity-manager-certificate-manager-2016-mim-cm"></a>A Microsoft Identity Manager Tanúsítványkezelő 2016 (MIM CM) üzembe helyezése
 
@@ -64,7 +65,7 @@ Az alábbi ábra azt szemlélteti, amelyeket felhasználhatunk környezet típus
 
 A MIM CM konfigurációs varázsló meg kell adni ahhoz, hogy az sikeres befejezéséhez menet információra van szüksége.
 
-![diagram](media/mim-cm-deploy/image003.png)
+![Diagram](media/mim-cm-deploy/image003.png)
 
 ### <a name="extending-the-schema"></a>A séma kiterjesztése
 
@@ -77,16 +78,16 @@ A folyamat a séma kiterjesztésének egyszerű, de visszafordíthatatlan jelleg
 
 2. A séma mappa másolása CORPDC, majd keresse meg a fájlt.
 
-    ![diagram](media/mim-cm-deploy/image005.png)
+    ![Diagram](media/mim-cm-deploy/image005.png)
 
 3. A parancsfájl resourceForestModifySchema.vbs egyetlen erdő forgatókönyv futtatása. Az erőforrás-erdő forgatókönyvhöz a parancsfájlok futtatása:
-    - TartomanyA – a felhasználók található (userForestModifySchema.vbs)
-    - ResourceForestB – (resourceForestModifySchema.vbs) CM telepítési helye.
+   - TartomanyA – a felhasználók található (userForestModifySchema.vbs)
+   - ResourceForestB – (resourceForestModifySchema.vbs) CM telepítési helye.
 
-    >[!NOTE]
-    >Sémaváltozások egyirányú művelettel és egy erdőt igényel a visszaállítás helyreállítási ezért győződjön meg arról, hogy a szükséges biztonsági másolatot. A módosításait a séma szerint ez a művelet végrehajtása a részleteket nézze át a [Forefront Identity Manager 2010 tanúsítvány felügyeleti sémaváltozások](https://technet.microsoft.com/library/jj159298(v=ws.10).aspx)
+     >[!NOTE]
+     >Sémaváltozások egyirányú művelettel és egy erdőt igényel a visszaállítás helyreállítási ezért győződjön meg arról, hogy a szükséges biztonsági másolatot. A módosításait a séma szerint ez a művelet végrehajtása a részleteket nézze át a [Forefront Identity Manager 2010 tanúsítvány felügyeleti sémaváltozások](https://technet.microsoft.com/library/jj159298(v=ws.10).aspx)
 
-    ![diagram](media/mim-cm-deploy/image007.png)
+     ![Diagram](media/mim-cm-deploy/image007.png)
 
 4. Futtassa a parancsfájlt, és sikeres kell kapnia egyszer jelenik meg, hogy a parancsfájl befejeződik.
 
@@ -355,12 +356,11 @@ A MIMCMWebAgent fiókkal fog futni a MIM Tanúsítványkezelő portálra. Alapé
 SETSPN -S http/cm.contoso.com contoso\MIMCMWebAgent
 #Delegation for certificate authority
 Get-ADUser CONTOSO\MIMCMWebAgent | Set-ADObject -Add @{"msDS-AllowedToDelegateTo"="rpcss/CORPCA","rpcss/CORPCA.contoso.com"}
-
 ```
 
 **Az IIS CORPCM frissítése**
 
-![diagram](media/mim-cm-deploy/image022.png)
+![Diagram](media/mim-cm-deploy/image022.png)
 
 ```powershell
 add-pssnapin WebAdministration
@@ -368,7 +368,6 @@ add-pssnapin WebAdministration
 Set-WebConfigurationProperty -Filter System.webServer/security/authentication/WindowsAuthentication -Location 'Default Web Site' -Name enabled -Value $true
 Set-WebConfigurationProperty -Filter System.webServer/security/authentication/WindowsAuthentication -Location 'Default Web Site' -Name useKernelMode -Value $false
 Set-WebConfigurationProperty -Filter System.webServer/security/authentication/WindowsAuthentication -Location 'Default Web Site' -Name useAppPoolCredentials -Value $true
-
 ```
 
 >[!NOTE]
@@ -465,10 +464,10 @@ CORPCM való bejelentkezés előtt vegye fel a MIMINSTALL **tartományi rendszer
 
    - Használjon egy meglévő felhasználó: **engedélyezve**
 
-    >[!NOTE]
-    >Korábban létrehozott ezeket a fiókokat. Győződjön meg arról, hogy az eljárások a 8. lépés ismétlődjenek-e az összes hat ügynök fiók lap.
+     >[!NOTE]
+     >Korábban létrehozott ezeket a fiókokat. Győződjön meg arról, hogy az eljárások a 8. lépés ismétlődjenek-e az összes hat ügynök fiók lap.
 
-    ![A MIM CM-fiókok](media/mim-cm-deploy/image030.png)
+     ![A MIM CM-fiókok](media/mim-cm-deploy/image030.png)
 
 10. Amikor befejeződött az összes ügynök fiók adatait, kattintson **OK**.
 
@@ -505,7 +504,7 @@ CORPCM való bejelentkezés előtt vegye fel a MIMINSTALL **tartományi rendszer
 
 20. Keresse fel a webhelyet CORPCM kiszolgálóról https://cm.contoso.com/certificatemanagement  
 
-    ![diagram](media/mim-cm-deploy/image035.png)
+    ![Diagram](media/mim-cm-deploy/image035.png)
 
 ### <a name="verify-the-cng-key-isolation-service"></a>Ellenőrizze a CNG-kulcs elkülönítése szolgáltatás
 
@@ -602,9 +601,9 @@ Ebben a lépésben az telepítjük és a FIM CM hitelesítésszolgáltató modul
 
 6. Az a **contoso-CORPCA-hitelesítésszolgáltató tulajdonságainak** párbeszédpanel, kattintson a **OK**.
 
-7. Kattintson a jobb gombbal **contoso-CORPCA-hitelesítésszolgáltató***,* mutasson **feladataival**, és kattintson a **szolgáltatás leállítása**. Várjon, amíg az Active Directory tanúsítványszolgáltatások leáll.
+7. Kattintson a jobb gombbal **contoso-CORPCA-hitelesítésszolgáltató** *,* mutasson **feladataival**, és kattintson a **szolgáltatás leállítása**. Várjon, amíg az Active Directory tanúsítványszolgáltatások leáll.
 
-8. Kattintson a jobb gombbal **contoso-CORPCA-hitelesítésszolgáltató***,* mutasson **feladataival**, és kattintson a **szolgáltatás indítása**.
+8. Kattintson a jobb gombbal **contoso-CORPCA-hitelesítésszolgáltató** *,* mutasson **feladataival**, és kattintson a **szolgáltatás indítása**.
 
 9. Minimalizálja a **hitelesítésszolgáltató** konzol.
 
@@ -668,7 +667,7 @@ Ebben a lépésben az telepítjük és a FIM CM hitelesítésszolgáltató modul
     - A tanúsítvány párbeszédpanelen kattintson a jobb gombbal a **hexadecimális kódolású tanúsítvány kivonatát adja meg** gombra, majd **Beillesztés**.
 
     - Az a **tanúsítvány** párbeszédpanel, kattintson a **OK**.
-    
+
         >[!Note]
         >Ha a **OK** gomb nincs engedélyezve, akkor véletlenül egy rejtett karakter a ujjlenyomat karakterláncban található a clmAgent tanúsítvány ujjlenyomata másolása során. Ismételje meg a-től kezdődő lépéseket **4. feladat: a Windows vágólapra másolása a MIMCMAgent tanúsítvány ujjlenyomata** ebben a gyakorlatban.
 
@@ -678,11 +677,11 @@ Ebben a lépésben az telepítjük és a FIM CM hitelesítésszolgáltató modul
 
 6. Az a **contoso-CORPCA-hitelesítésszolgáltató tulajdonságainak** párbeszédpanel, kattintson a **OK**.
 
-7. Kattintson a jobb gombbal **contoso-CORPCA-hitelesítésszolgáltató***,* mutasson **feladataival**, és kattintson a **szolgáltatás leállítása**.
+7. Kattintson a jobb gombbal **contoso-CORPCA-hitelesítésszolgáltató** *,* mutasson **feladataival**, és kattintson a **szolgáltatás leállítása**.
 
 8. Várjon, amíg az Active Directory tanúsítványszolgáltatások leáll.
 
-9. Kattintson a jobb gombbal **contoso-CORPCA-hitelesítésszolgáltató***,* mutasson **feladataival**, és kattintson a **szolgáltatás indítása**.
+9. Kattintson a jobb gombbal **contoso-CORPCA-hitelesítésszolgáltató** *,* mutasson **feladataival**, és kattintson a **szolgáltatás indítása**.
 
 10. Zárja be a **hitelesítésszolgáltató** konzol.
 
@@ -736,7 +735,7 @@ Első lépések: **szolgáltatáskapcsolódási pont és a cél csoportengedély
 6. Az a **Contoso engedélybejegyzés** párbeszédpanel a **alkalmazása** listáról válassza ki **leszármazott felhasználó objektumai** , majd engedélyezze a **engedélyezése**jelölőnégyzetét az alábbi **engedélyek**:
 
     - **Az összes tulajdonság olvasása**
-    
+
     - **Olvasási engedélyek**
 
     - **FIM CM naplózási**
@@ -889,7 +888,7 @@ Az OID tároló vonatkozó engedélyek meghatározásához:
 
 **Parancsfájlok: Az Objektumazonosító, profilsablon & tanúsítványsablonok tároló engedélyeinek**
 
-![diagram](media/mim-cm-deploy/image021.png)
+![Diagram](media/mim-cm-deploy/image021.png)
 
 ```powershell
 import-module activedirectory
@@ -904,7 +903,7 @@ $adace.GetEnumerator() | **Foreach-Object** {
 $acl = **Get-Acl** *-Path* $_.Value
 $sid=(**Get-ADGroup** "MIMCM-Managers").SID
 $p = **New-Object** System.Security.Principal.SecurityIdentifier($sid)
-##https://msdn.microsoft.com/en-us/library/system.directoryservices.activedirectorysecurityinheritance(v=vs.110).aspx
+##https://msdn.microsoft.com/library/system.directoryservices.activedirectorysecurityinheritance(v=vs.110).aspx
 $ace = **New-Object** System.DirectoryServices.ActiveDirectoryAccessRule
 ($p,[System.DirectoryServices.ActiveDirectoryRights]"GenericAll",[System.Security.AccessControl.AccessControlType]::Allow,
 [DirectoryServices.ActiveDirectorySecurityInheritance]::All)
@@ -915,7 +914,7 @@ $acl.AddAccessRule($ace)
 
 **Parancsfájlok: A meglévő tanúsítványsablonok engedélyeinek delegálása.**  
 
-![diagram](media/mim-cm-deploy/image039.png)
+![Diagram](media/mim-cm-deploy/image039.png)
 
 ```shell
 dsacls "CN=Administrator,CN=Certificate Templates,CN=Public Key

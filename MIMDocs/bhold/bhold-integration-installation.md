@@ -10,11 +10,12 @@ ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: ''
-ms.openlocfilehash: 86ab45d1deaac2a7d697bc9860764e598252a0ef
-ms.sourcegitcommit: c773edc8262b38df50d82dae0f026bb49500d0a4
+ms.openlocfilehash: 08a0aaa60891727482e80c8998cc075eacf042cf
+ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/25/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36290169"
 ---
 # <a name="bhold-fimmim-integration-installation"></a>BHOLD FIM vagy MIM-integráció telepítése
 
@@ -32,8 +33,8 @@ Az alábbiakban található a számítógépen kell lennie, mielőtt telepíthet
 
 Továbbá a BHOLD Core és az Access Management-összekötő modulok már telepíthető a környezetben a kiszolgálón, és a FIM egy vagy több BHOLD felügyeleti ügynököt kell konfigurálni. A BHOLD Alap modulban konfigurálásával kapcsolatos további információkért lásd: [BHOLD Core telepítés](https://technet.microsoft.com/library/jj134095(v=ws.10).aspx). Az Access Management-összekötő modullal kapcsolatos információkért lásd: [Access Management-összekötő telepítés](https://technet.microsoft.com/library/jj874042(v=ws.10).aspx) és [tesztlabor-Útmutató: BHOLD Access Management-összekötő](https://technet.microsoft.com/library/jj853085(v=ws.10).aspx).
 
->[!IMPORTANT]
-A FIM szolgáltatás adatbázisához neve FIMService kell lennie. BHOLD FIM-integráció telepítője sikertelen lesz, ha a FIM nem lett telepítve az alapértelmezett FIM szolgáltatás neve.
+> [!IMPORTANT]
+> A FIM szolgáltatás adatbázisához neve FIMService kell lennie. BHOLD FIM-integráció telepítője sikertelen lesz, ha a FIM nem lett telepítve az alapértelmezett FIM szolgáltatás neve.
 
 ## <a name="before-you-begin"></a>Előkészületek
 
@@ -73,7 +74,7 @@ Ezenkívül kell előkészíteni a BHOLD FIM-integráció telepítője varázsl�
 
 BHOLD FIM integrációs modul telepítéséhez, jelentkezzen be a tartományi rendszergazdák csoport tagjaként, töltse le a következő fájlt, és futtassa rendszergazdaként a kiszolgálón, melyet a BHOLD FIM integrációs modul telepítése:
 
-- BholdFIMIntegration*\<verzió\>*\_Release.msi
+- BholdFIMIntegration<em>\<verzió\></em>\_Release.msi
 
 Cserélje le *\<verzió\>* rendelkező a telepíteni kívánt BHOLD FIM-integráció kiadás verziószáma.
 
@@ -192,20 +193,20 @@ Ha a szerepkör önkiszolgáló kérelmek jóváhagyó ezen módszerek egyikéve
 19. Az a **attribútumok/root/szervezeti egység módosítása** lap **jóváhagyó**, írja be a tartomány és a felhasználó nevét hagyja jóvá a szerepkör-hozzárendelési kérelmek formátumú felhasználó  *\<tartomány\>*\\*\<felhasználói\>*, ahol *\<tartomány\>* van a (Rövid) NetBIOS-tartománynév és *\<felhasználói\>* a felhasználó bejelentkezési neve.
 20. Kattintson az **OK** gombra.
 
->[!IMPORTANT]
-A tartomány és a felhasználó nevének egyeznie kell az alapértelmezett alias a felhasználó a BHOLD Core adatbázisban.
+> [!IMPORTANT]
+> A tartomány és a felhasználó nevének egyeznie kell az alapértelmezett alias a felhasználó a BHOLD Core adatbázisban.
 
 A szervezeti egységek jóváhagyó megadása helyett a BHOLD Core adatbázis javasolt szerepkörök jóváhagyó adhat meg. Ehhez a approver1 attribútum létrehozása, adja hozzá azt attribútuma indexben a szerepkör típusú társított, és módosítsa a javasolt szerepkörönként, a jóváhagyó megadásához.
 
 Nagyobb biztonságot munkafolyamat, jóváhagyóknak, felül kell megadott további jóváhagyási mód és a felhasználók létrehozása és feltöltése az alábbi attribútumok OrgUnits és szerepkörök:
 
-- Mozgólépcső*\<n\>*
+- Mozgólépcső<em>\<n\></em>
 
-- tulajdonos*\<n\>*
+- tulajdonos<em>\<n\></em>
 
-- securityOfficer*\<n\>*
+- securityOfficer<em>\<n\></em>
 
-- értesítési*\<n\>*
+- értesítési<em>\<n\></em>
 
 Ha *\<n\>* arra, hogy több, ugyanolyan típusú attribútum egy választható numerikus utótagból jelzi.
 
@@ -213,8 +214,8 @@ Ha *\<n\>* arra, hogy több, ugyanolyan típusú attribútum egy választható n
 
 BHOLD FIM-integráció telepítése hoz létre a beállítása, a munkafolyamat-definícióhoz és a felügyeleti házirendszabályok (házirendszabályok) a FIM szolgáltatáshoz. Ha a FIM telepítési rendszergazdák csoportját, vagy a különböző felhasználók számára is küld kérelmeket kellett testreszabott, biztosítania kell, hogy a házirendszabályok hivatkoznak-e a megfelelő felhasználói beállítása.
 
->[!NOTE]
-A FIM-portál felhasználók használhatja BHOLD által nyújtott önkiszolgáló szolgáltatásokat, a felhasználói fiókok szinkronizálni kell a FIM szinkronizálási szolgáltatás BHOLD-adatbázisba. Különösen kell lennie a BHOLD Core-adatbázis és a FIM szolgáltatás adatbázisához összes felhasználója számára is önkiszolgáló kérés vagy jóváhagyó vagy Mozgólépcső önkiszolgáló kérelmeknél van megadva a felhasználói rekordban.
+> [!NOTE]
+> A FIM-portál felhasználók használhatja BHOLD által nyújtott önkiszolgáló szolgáltatásokat, a felhasználói fiókok szinkronizálni kell a FIM szinkronizálási szolgáltatás BHOLD-adatbázisba. Különösen kell lennie a BHOLD Core-adatbázis és a FIM szolgáltatás adatbázisához összes felhasználója számára is önkiszolgáló kérés vagy jóváhagyó vagy Mozgólépcső önkiszolgáló kérelmeknél van megadva a felhasználói rekordban.
 
 ## <a name="next-steps"></a>További lépések
 

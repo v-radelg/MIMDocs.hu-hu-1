@@ -1,7 +1,7 @@
 ---
-title: "7. lépés: SID-előzmények/SID-szűrés beállítása"
-description: "Ez a Privileged Identity Manager parancsfájlokkal történő konfigurálásának 7. lépése. Ehhez a lépéshez a SID-előzmények/SID-szűrés beállítása tartozik."
-keywords: 
+title: '7. lépés: SID-előzmények/SID-szűrés beállítása'
+description: Ez a Privileged Identity Manager parancsfájlokkal történő konfigurálásának 7. lépése. Ehhez a lépéshez a SID-előzmények/SID-szűrés beállítása tartozik.
+keywords: ''
 author: barclayn
 ms.author: barclayn
 manager: MBaldwin
@@ -10,19 +10,20 @@ ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
 ms.assetid: 4b524ae7-6610-40a0-8127-de5a08988a8a
-ms.reviewer: 
+ms.reviewer: ''
 ms.suite: ems
-ms.openlocfilehash: e3d8578e9d58ccc2f3dc3bb4ff437d124bf15291
-ms.sourcegitcommit: 8edd380f54c3e9e83cfabe8adfa31587612e5773
+ms.openlocfilehash: d2512690ce648767157a7417e5b41095c970b8eb
+ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/19/2017
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36289108"
 ---
 # <a name="step-7-set-up-sid-historysid-filtering"></a>7. lépés: SID-előzmények/SID-szűrés beállítása
 
->[!div class="step-by-step"]
-[« 6. lépés](sp1-step6-setup-pam-trust.md)
-[8. lépés »](sp1-step8-pam-deployment-verification.md)
+> [!div class="step-by-step"]
+> [« 6. lépés](sp1-step6-setup-pam-trust.md)
+> [8. lépés »](sp1-step8-pam-deployment-verification.md)
 
 **Ennek végrehajtása a kizárólag PRIV-környezetekben nem szükséges** Jelentkezzen be a PAMServer kiszolgálón a MIMAdmin-fiókkal.
 
@@ -38,6 +39,6 @@ SID-szűrés esetén: <br/></br>
 SID-előzményekhez: </br></br>
 „A biztonsági azonosítók előzményeinek engedélyezése ebben a megbízhatósági kapcsolatban” vagy „A biztonsági azonosítók előzményei már engedélyezettek ebben a megbízhatósági kapcsolatban”.
 
->[!div class="step-by-step"]
-[« 6. lépés](sp1-step6-setup-pam-trust.md)
-[8. lépés »](sp1-step8-pam-deployment-verification.md)
+> [!div class="step-by-step"]
+> [« 6. lépés](sp1-step6-setup-pam-trust.md)
+> [8. lépés »](sp1-step8-pam-deployment-verification.md)

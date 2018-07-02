@@ -1,7 +1,7 @@
 ---
-title: "A PAM üzembe helyezése, 1. lépés – CORP tartomány | Microsoft Docs"
-description: "CORP tartomány előkészítése létező vagy új identitásokkal a Privileged Identity Manager számára"
-keywords: 
+title: A PAM üzembe helyezése, 1. lépés – CORP tartomány | Microsoft Docs
+description: CORP tartomány előkészítése létező vagy új identitásokkal a Privileged Identity Manager számára
+keywords: ''
 author: barclayn
 ms.author: barclayn
 manager: mbaldwin
@@ -12,16 +12,17 @@ ms.technology: active-directory-domain-services
 ms.assetid: 4b524ae7-6610-40a0-8127-de5a08988a8a
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: d14d2f40972686305abea2426e20f4c13e3e267b
-ms.sourcegitcommit: 2be26acadf35194293cef4310950e121653d2714
+ms.openlocfilehash: f0d2ebd198ad6aee2b2b6ba07c83f5147243f598
+ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/14/2017
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36289601"
 ---
 # <a name="step-1---prepare-the-host-and-the-corp-domain"></a>1. lépés – A gazdagép és a CORP tartomány előkészítése
 
->[!div class="step-by-step"]
-[2. lépés »](step-2-prepare-priv-domain-controller.md)
+> [!div class="step-by-step"]
+> [2. lépés »](step-2-prepare-priv-domain-controller.md)
 
 Ebben a lépésben előkészíti a gazdagépet a megerősített környezet számára. Ha szükséges, létrehoz egy tartományvezérlőt és egy tag munkaállomást egy új tartományban és erdőben (a *CORP* erdőben) olyan identitásokkal, amelyeket a megerősített környezet kezel. A CORP erdő egy kezelendő erőforrásokat tartalmazó, meglévő erdőt szimulál. Ez a dokumentum egy védendő erőforrást, egy fájlmegosztást használ példaként.
 
@@ -56,15 +57,15 @@ Ebben a szakaszban be fogja állítani az Active Directory tartományi szolgált
 
 2. Írja be a következő parancsokat:
 
-  ```PowoerShell
-  import-module ServerManager
+   ```PowoerShell
+   import-module ServerManager
 
-  Add-WindowsFeature AD-Domain-Services,DNS,FS-FileServer –restart –IncludeAllSubFeature -IncludeManagementTools
+   Add-WindowsFeature AD-Domain-Services,DNS,FS-FileServer –restart –IncludeAllSubFeature -IncludeManagementTools
 
-  Install-ADDSForest –DomainMode Win2008R2 –ForestMode Win2008R2 –DomainName contoso.local –DomainNetbiosName contoso –Force -NoDnsOnNetwork
-  ```
+   Install-ADDSForest –DomainMode Win2008R2 –ForestMode Win2008R2 –DomainName contoso.local –DomainNetbiosName contoso –Force -NoDnsOnNetwork
+   ```
 
-  Ekkor megjelenik egy figyelmeztetés a csökkentett mód rendszergazdai jelszavának használatára vonatkozóan. A DNS-delegálással és a titkosítási beállításokkal kapcsolatosan figyelmeztető üzenetek fognak megjelenni. Ez nem rendellenes.
+   Ekkor megjelenik egy figyelmeztetés a csökkentett mód rendszergazdai jelszavának használatára vonatkozóan. A DNS-delegálással és a titkosítási beállításokkal kapcsolatosan figyelmeztető üzenetek fognak megjelenni. Ez nem rendellenes.
 
 3. Az erdő létrehozásának befejezése után jelentkezzen ki. A kiszolgáló automatikusan újraindul.
 
@@ -80,11 +81,11 @@ Minden tartományban jelentkezzen be egy tartományvezérlőre tartományi rends
 
 2. Írja be a következő parancsokat, de a „CONTOSO” szót cserélje ki a saját tartományának NetBIOS-nevével.
 
-  ```PowerShell
-  import-module activedirectory
+   ```PowerShell
+   import-module activedirectory
 
-  New-ADGroup –name 'CONTOSO$$$' –GroupCategory Security –GroupScope DomainLocal –SamAccountName 'CONTOSO$$$'
-  ```
+   New-ADGroup –name 'CONTOSO$$$' –GroupCategory Security –GroupScope DomainLocal –SamAccountName 'CONTOSO$$$'
+   ```
 
 Bizonyos esetekben előfordulhat, hogy a csoport már létezik – ami normális, ha a tartományt az AD áttelepítési forgatókönyveihez is használják.
 
@@ -99,23 +100,23 @@ Létre fogjuk hozni a *CorpAdmins* nevű biztonsági csoportot és a *Ilona* nev
 
 1. Indítsa el a PowerShellt.
 
-2. Írja be a következő parancsokat: Helyettesítse a „Pass@word1” jelszót egy másik jelszókarakterlánccal.
+2. Írja be a következő parancsokat: Helyettesítse a „Pass@word1” jelszót egy másik jelszósztringgel.
 
-  ```PowerShell
-  import-module activedirectory
+   ```PowerShell
+   import-module activedirectory
 
-  New-ADGroup –name CorpAdmins –GroupCategory Security –GroupScope Global –SamAccountName CorpAdmins
+   New-ADGroup –name CorpAdmins –GroupCategory Security –GroupScope Global –SamAccountName CorpAdmins
 
-  New-ADUser –SamAccountName Jen –name Jen
+   New-ADUser –SamAccountName Jen –name Jen
 
-  Add-ADGroupMember –identity CorpAdmins –Members Jen
+   Add-ADGroupMember –identity CorpAdmins –Members Jen
 
-  $jp = ConvertTo-SecureString "Pass@word1" –asplaintext –force
+   $jp = ConvertTo-SecureString "Pass@word1" –asplaintext –force
 
-  Set-ADAccountPassword –identity Jen –NewPassword $jp
+   Set-ADAccountPassword –identity Jen –NewPassword $jp
 
-  Set-ADUser –identity Jen –Enabled 1 -DisplayName "Jen"
-  ```
+   Set-ADUser –identity Jen –Enabled 1 -DisplayName "Jen"
+   ```
 
 ### <a name="configure-auditing"></a>Naplózás konfigurálása
 
@@ -139,9 +140,9 @@ Minden tartományban jelentkezzen be egy tartományvezérlőre tartományi rends
 
 8. A naplózási beállítások alkalmazásához nyisson meg egy PowerShell-ablakot, és írja be a következőt:
 
-  ```cmd
-  gpupdate /force /target:computer
-  ```
+   ```cmd
+   gpupdate /force /target:computer
+   ```
 
 Néhány perc elteltével **A számítógép-házirend frissítése sikeresen befejeződött** üzenetnek kell megjelennie.
 
@@ -153,11 +154,11 @@ Ebben a szakaszban konfigurálni fogja az SID-előzmények áttelepítéséhez s
 
 2. Írja be a következő parancsokat, amelyekkel beállíthatja, hogy a forrástartomány engedélyezze a távoli eljáráshívás (RPC) hozzáférését a biztonsági fiókkezelő (SAM) adatbázisához.
 
-  ```PowerShell
-  New-ItemProperty –Path HKLM:SYSTEM\CurrentControlSet\Control\Lsa –Name TcpipClientSupport –PropertyType DWORD –Value 1
+   ```PowerShell
+   New-ItemProperty –Path HKLM:SYSTEM\CurrentControlSet\Control\Lsa –Name TcpipClientSupport –PropertyType DWORD –Value 1
 
-  Restart-Computer
-  ```
+   Restart-Computer
+   ```
 
 Ez újraindítja a tartományvezérlőt, a CORPDC gépet. Ezzel a beállításjegyzék-beállítással kapcsolatban bővebben lásd: [How to troubleshoot inter-forest sIDHistory migration with ADMTv2 ](http://support.microsoft.com/kb/322970) (A SID-előzmények erdők között, ADMTv2-vel végzett áttelepítésekor jelentkező hibák elhárítása).
 
@@ -192,21 +193,21 @@ A PAM és a biztonságicsoport-alapú hozzáférés-vezérlés bemutatásához s
 
 4. Írja be a következő parancsokat:
 
-  ```PowerShell
-  mkdir c:\corpfs
+   ```PowerShell
+   mkdir c:\corpfs
 
-  New-SMBShare –Name corpfs –Path c:\corpfs –ChangeAccess CorpAdmins
+   New-SMBShare –Name corpfs –Path c:\corpfs –ChangeAccess CorpAdmins
 
-  $acl = Get-Acl c:\corpfs
+   $acl = Get-Acl c:\corpfs
 
-  $car = New-Object System.Security.AccessControl.FileSystemAccessRule( "CONTOSO\CorpAdmins", "FullControl", "Allow")
+   $car = New-Object System.Security.AccessControl.FileSystemAccessRule( "CONTOSO\CorpAdmins", "FullControl", "Allow")
 
-  $acl.SetAccessRule($car)
+   $acl.SetAccessRule($car)
 
-  Set-Acl c:\corpfs $acl
-  ```
+   Set-Acl c:\corpfs $acl
+   ```
 
 A következő lépésben a PRIV tartományvezérlő előkészítésével foglalkozunk.
 
->[!div class="step-by-step"]
-[2. lépés »](step-2-prepare-priv-domain-controller.md)
+> [!div class="step-by-step"]
+> [2. lépés »](step-2-prepare-priv-domain-controller.md)

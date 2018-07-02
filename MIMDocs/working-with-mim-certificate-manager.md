@@ -1,7 +1,7 @@
 ---
-title: "A MIM Tanúsítványkezelő Windows-alkalmazásának telepítése | Microsoft Docs"
-description: "Tájékozódjon arról, hogyan helyezheti üzembe a Tanúsítványkezelő alkalmazást, amely lehetővé teszi a felhasználók számára saját hozzáférési jogosultságaik kezelését."
-keywords: 
+title: A MIM Tanúsítványkezelő Windows-alkalmazásának telepítése | Microsoft Docs
+description: Tájékozódjon arról, hogyan helyezheti üzembe a Tanúsítványkezelő alkalmazást, amely lehetővé teszi a felhasználók számára saját hozzáférési jogosultságaik kezelését.
+keywords: ''
 author: billmath
 ms.author: barclayn
 manager: mbaldwin
@@ -12,11 +12,12 @@ ms.technology: security
 ms.assetid: 66060045-d0be-4874-914b-5926fd924ede
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: e472d7cdc07aa19464aa1f18447d8c5dc7d0f0ba
-ms.sourcegitcommit: 1e0626a366a41d610e6a117cdf684241eb65ec63
+ms.openlocfilehash: bf655d451e86261ffd3043117a56f4daccb4b460
+ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36289873"
 ---
 # <a name="mim-certificate-manager-windows-store-application-deployment"></a>MIM Tanúsítványkezelő a Windows áruházbeli alkalmazások központi telepítése
 
@@ -48,10 +49,10 @@ A Tanúsítványkezelő alkalmazáshoz a szokásos módon hozhat létre tanúsí
 
 7. A Kompatibilitás lapon a hitelesítésszolgáltató területen válassza ki a Windows Server 2008. A tanúsítvány kedvezményezettje területen válassza ki a Windows 8.1 és Windows Server 2012 R2-re. A verzió sablon verzió beállítása az első alkalommal hoz létre, és menti a tanúsítványsablont. Ha nem hozott létre a tanúsítványsablon ezzel a módszerrel nincs semmilyen módon nem módosítható a helyes verzióra.
 
-    >[!NOTE]
-    Ez a lépés elengedhetetlen, ez biztosítja ugyanis, hogy rendelkezik-e a 3-as (vagy magasabb) verziójú sablon. Csak a 3-as verziójú sablonokat a Tanúsítványkezelő alkalmazással együttműködve.
-    
-8.  Az **Általános** lap **Megjelenített név** mezőjébe írja be az alkalmazás kezelőfelületén megjeleníteni kívánt nevet; például: **Bejelentkezés virtuális intelligens kártyával**.
+   > [!NOTE]
+   >  Ez a lépés elengedhetetlen, ez biztosítja ugyanis, hogy rendelkezik-e a 3-as (vagy magasabb) verziójú sablon. Csak a 3-as verziójú sablonokat a Tanúsítványkezelő alkalmazással együttműködve.
+
+8. Az **Általános** lap **Megjelenített név** mezőjébe írja be az alkalmazás kezelőfelületén megjeleníteni kívánt nevet; például: **Bejelentkezés virtuális intelligens kártyával**.
 
 9. A **Kérelmek kezelése** lapon állítsa a **Felhasználási cél** beállítást **Aláírás és titkosítás** értékre, majd **A következő történjen...** beállításnál válassza a **Felhasználó értesítése az igénylés alatt** lehetőséget.
 
@@ -112,26 +113,28 @@ Amikor létrehozza a profilsablont, állítsa be a virtuális intelligens kárty
 
 3. Nyissa me a Custom.data fájlt, és szükség szerint módosítsa a paramétereket.
 
-    |||
-    |-|-|
-    |MIMCM URL|A Tanúsítványkezelő konfigurálására szolgáló portál teljes tartományneve, például: https://mimcmServerAddress/certificatemanagement|
-    |ADFS URL|Ha AD FS-t fog használni, adja meg az AD FS URL-címét, például: https://adfsServerSame/adfs </br> Ha az AD FS nem használ, konfigurálja ezt a beállítást az üres karakterlánc.  Például```<ADFS URL=""/>``` |
-    |PrivacyUrl|Megadhatja egy olyan weblap URL-címét, amely ismerteti, hogy mit tesz a tanúsítványigényléshez gyűjtött felhasználói adatokkal.|
-    |SupportMail|Megadhat egy e-mail címet támogatási problémák esetére.|
-    |LobComplianceEnable (LOB-megfelelőség engedélyezése)|True (igaz) vagy false (hamis) értéket állíthat be. Az alapértelmezett érték true (igaz).|
-    |MinimumPinLength (PIN minimális hossza)|Az alapértelmezett érték 6.|
-    |NonAdmin (Nem rendszergazda)|True (igaz) vagy false (hamis) értéket állíthat be. Az alapértelmezett érték false (hamis). Csak akkor módosítsa, ha a számítógépükön rendszergazdai jogosultsággal nem rendelkező felhasználók számára is lehetővé szeretné tenni a tanúsítványok igénylését és megújítását.|
->[!IMPORTANT]
-Értéket kell adni az AD FS URL-címet. Ha nincs érték megadva a Modern alkalmazás fogja ki az első használati hiba.
-4.  Mentse a fájlt, és zárja be a szerkesztőt.
 
-5.  A csomag aláírásával létrejön egy aláírásfájl, ezért az eredeti, AppxSignature.p7x nevű aláírásfájlt törölni kell.
+   |                     |                                                                                                                                                                                                          |
+   |---------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+   |      MIMCM URL      |                                              A Tanúsítványkezelő konfigurálására szolgáló portál teljes tartományneve, Például: https://mimcmServerAddress/certificatemanagement                                              |
+   |      ADFS URL       | Ha AD FS-t fog használni, adja meg az AD FS URL-címét, Például: <https://adfsServerSame/adfs> </br> Ha az AD FS nem használ, konfigurálja ezt a beállítást az üres karakterlánc.  Például  ```<ADFS URL=""/>``` |
+   |     PrivacyUrl      |                                         Megadhatja egy olyan weblap URL-címét, amely ismerteti, hogy mit tesz a tanúsítványigényléshez gyűjtött felhasználói adatokkal.                                          |
+   |     SupportMail     |                                                                           Megadhat egy e-mail címet támogatási problémák esetére.                                                                           |
+   | LobComplianceEnable (LOB-megfelelőség engedélyezése) |                                                                     True (igaz) vagy false (hamis) értéket állíthat be. Az alapértelmezett érték true (igaz).                                                                      |
+   |  MinimumPinLength (PIN minimális hossza)   |                                                                                        Az alapértelmezett érték 6.                                                                                         |
+   |      NonAdmin (Nem rendszergazda)       |           True (igaz) vagy false (hamis) értéket állíthat be. Az alapértelmezett érték false (hamis). Csak akkor módosítsa, ha a számítógépükön rendszergazdai jogosultsággal nem rendelkező felhasználók számára is lehetővé szeretné tenni a tanúsítványok igénylését és megújítását.            |
 
-6.  Az AppxManifest.xml fájlt határozza meg az aláíró tanúsítvány tulajdonosnevét. Nyissa meg a fájlt a szerkesztéshez.
+   > [!IMPORTANT]
+   > Értéket kell adni az AD FS URL-címet. Ha nincs érték megadva a Modern alkalmazás fogja ki az első használati hiba.
+4. Mentse a fájlt, és zárja be a szerkesztőt.
 
-7.  Mielőtt elkezdené a soron következő szakaszt, be kell szereznie egy aláíró tanúsítványt. Ehhez lásd az alábbi, „Intelligens kártya megújításának engedélyezése nem rendszergazda felhasználók számára az MIM 2016 Tanúsítványkezelőben” leírás 1. lépését.
+5. A csomag aláírásával létrejön egy aláírásfájl, ezért az eredeti, AppxSignature.p7x nevű aláírásfájlt törölni kell.
 
-8.  Az &lt;Identity&gt; (Identitás) elemnél módosítsa a Publisher (Kiállító) attribútum értékét úgy, hogy az megegyezzen az aláíró tanúsítványban feltüntetett tulajdonossal; például: „CN=SUBJECT”.
+6. Az AppxManifest.xml fájlt határozza meg az aláíró tanúsítvány tulajdonosnevét. Nyissa meg a fájlt a szerkesztéshez.
+
+7. Mielőtt elkezdené a soron következő szakaszt, be kell szereznie egy aláíró tanúsítványt. Ehhez lásd az alábbi, „Intelligens kártya megújításának engedélyezése nem rendszergazda felhasználók számára az MIM 2016 Tanúsítványkezelőben” leírás 1. lépését.
+
+8. Az &lt;Identity&gt; (Identitás) elemnél módosítsa a Publisher (Kiállító) attribútum értékét úgy, hogy az megegyezzen az aláíró tanúsítványban feltüntetett tulajdonossal; például: „CN=SUBJECT”.
 
 9. Mentse a fájlt, és zárja be a szerkesztőt.
 
@@ -151,102 +154,102 @@ Amikor létrehozza a profilsablont, állítsa be a virtuális intelligens kárty
 
 11. Az AD FS-alapú hitelesítés kezelése:
 
-    -  Indítsa el a Virtual Smart Card alkalmazást – így könnyebben megtalálhatja a következő lépéshez szükséges értékeket.
+    - Indítsa el a Virtual Smart Card alkalmazást – így könnyebben megtalálhatja a következő lépéshez szükséges értékeket.
 
-    -  Ahhoz, hogy az alkalmazást ügyfélként felvehesse az AD FS-kiszolgálón és a Tanúsítványkezelőt konfigurálhassa, indítsa el a Windows PowerShellt az AD FS-kiszolgálón, és futtassa a következő parancsot: `ConfigureMimCMClientAndRelyingParty.ps1 –redirectUri <redirectUriString> -serverFQDN <MimCmServerFQDN>`
+    - Ahhoz, hogy az alkalmazást ügyfélként felvehesse az AD FS-kiszolgálón és a Tanúsítványkezelőt konfigurálhassa, indítsa el a Windows PowerShellt az AD FS-kiszolgálón, és futtassa a következő parancsot: `ConfigureMimCMClientAndRelyingParty.ps1 –redirectUri <redirectUriString> -serverFQDN <MimCmServerFQDN>`
 
-        A következő a ConfigureMimCMClientAndRelyingParty.ps1 szkript:
+       A következő a ConfigureMimCMClientAndRelyingParty.ps1 szkript:
 
-       ```PowerShell
-        # HELP
+      ```PowerShell
+       # HELP
 
-        <#
-        .SYNOPSIS
-                        Configure ADFS for CM client app and server.
-        .DESCRIPTION
-           What the Script does:
-                                        a. Registers the MIM CM client app on the ADFS server.
-                                        b. Registers the MIM CM server relying party (Tells the ADFS server that it issues tokens for the CM server).
-                        For parameter information, see 'get-help -detailed'
-        .PARAMETER redirectUri
-                        The redirectUri for CM client app. Will be added to ADFS server.
-                        It can be found as follows:
-                        1. Open the settings panel. Under settings, there is a "Redirect Uri" text box (an ADFS server address must be configured in order for the text to display).
-                        2. Open MIM CM client app. Navigate to 'C:\Users\<your_username>\AppData\Local\Packages\CmModernAppv.<version>\LocalState', and open 'Logs_Virtual Smart Card Certificate Manager_<version>'. Search for "Redirect URI".
-        .PARAMETER serverFqdn
-                        Your deployed MIM CM server’s FQDN.
-        .EXAMPLE
-           .\ConfigureMimCMClientAndRelyingParty.ps1 -redirectUri ms-app://s-1-15-2-0123456789-0123456789-0123456789-0123456789-0123456789-0123456789-0123456789/ -serverFqdn WIN-TRUR24L4CFS.corp.cmteam.com
-        #>
+       <#
+       .SYNOPSIS
+                       Configure ADFS for CM client app and server.
+       .DESCRIPTION
+          What the Script does:
+                                       a. Registers the MIM CM client app on the ADFS server.
+                                       b. Registers the MIM CM server relying party (Tells the ADFS server that it issues tokens for the CM server).
+                       For parameter information, see 'get-help -detailed'
+       .PARAMETER redirectUri
+                       The redirectUri for CM client app. Will be added to ADFS server.
+                       It can be found as follows:
+                       1. Open the settings panel. Under settings, there is a "Redirect Uri" text box (an ADFS server address must be configured in order for the text to display).
+                       2. Open MIM CM client app. Navigate to 'C:\Users\<your_username>\AppData\Local\Packages\CmModernAppv.<version>\LocalState', and open 'Logs_Virtual Smart Card Certificate Manager_<version>'. Search for "Redirect URI".
+       .PARAMETER serverFqdn
+                       Your deployed MIM CM server’s FQDN.
+       .EXAMPLE
+          .\ConfigureMimCMClientAndRelyingParty.ps1 -redirectUri ms-app://s-1-15-2-0123456789-0123456789-0123456789-0123456789-0123456789-0123456789-0123456789/ -serverFqdn WIN-TRUR24L4CFS.corp.cmteam.com
+       #>
 
-        # Parameter declaration
-        [CmdletBinding()]
-        Param(
+       # Parameter declaration
+       [CmdletBinding()]
+       Param(
+         [Parameter(Mandatory=$True)]
+          [string]$redirectUri,
+
           [Parameter(Mandatory=$True)]
-           [string]$redirectUri,
+          [string]$serverFqdn
+       )
 
-           [Parameter(Mandatory=$True)]
-           [string]$serverFqdn
-        )
+       Write-Host "Configuring ADFS Objects for OAuth.."
 
-        Write-Host "Configuring ADFS Objects for OAuth.."
+       #Configure SSO to get persistent sign on cookie
+       Set-ADFSProperties -SsoLifetime 2880
 
-        #Configure SSO to get persistent sign on cookie
-        Set-ADFSProperties -SsoLifetime 2880
+       #Configure Authentication Policy
+       #Intranet to use Kerberos
+       #Extranet to use U/P
 
-        #Configure Authentication Policy
-        #Intranet to use Kerberos
-        #Extranet to use U/P
+       #Create Client Objects
 
-        #Create Client Objects
+       Write-Host "Creating Client Objects..."
 
-        Write-Host "Creating Client Objects..."
+       $existingClient = Get-ADFSClient -Name "MIM CM Modern App"
 
-        $existingClient = Get-ADFSClient -Name "MIM CM Modern App"
+       if ($existingClient -ne $null)
+       {
+           Write-Host "Found existing instance of the MIM CM Modern App, removing"
+           Remove-ADFSClient -TargetName "MIM CM Modern App"
+           Write-Host "Client object removed"
+       }
 
-        if ($existingClient -ne $null)
-        {
-            Write-Host "Found existing instance of the MIM CM Modern App, removing"
-            Remove-ADFSClient -TargetName "MIM CM Modern App"
-            Write-Host "Client object removed"
-        }
+       Write-Host "Adding Client Object for MIM CM Modern App client"
+       Add-ADFSClient -Name "MIM CM Modern App" -ClientId "70A8B8B1-862C-4473-80AB-4E55BAE45B4F" -RedirectUri $redirectUri
+       Write-Host "Client Object for MIM CM Modern App client Created"
 
-        Write-Host "Adding Client Object for MIM CM Modern App client"
-        Add-ADFSClient -Name "MIM CM Modern App" -ClientId "70A8B8B1-862C-4473-80AB-4E55BAE45B4F" -RedirectUri $redirectUri
-        Write-Host "Client Object for MIM CM Modern App client Created"
+       #Create Relying Parties
+       Write-Host "Creating Relying Party Objects"
 
-        #Create Relying Parties
-        Write-Host "Creating Relying Party Objects"
+       $existingRp = Get-ADFSRelyingPartyTrust -Name "MIM CM Service"
+       if ($existingRp -ne $null)
+       {
+           Write-Host "Found existing instance of the MIM CM Service RP, removing"
+           Remove-ADFSRelyingPartyTrust -TargetName "MIM CM Service"
+           Write-Host "RP object Removed"
+       }
 
-        $existingRp = Get-ADFSRelyingPartyTrust -Name "MIM CM Service"
-        if ($existingRp -ne $null)
-        {
-            Write-Host "Found existing instance of the MIM CM Service RP, removing"
-            Remove-ADFSRelyingPartyTrust -TargetName "MIM CM Service"
-            Write-Host "RP object Removed"
-        }
+       $authorizationRules =
+       "@RuleTemplate = `"AllowAllAuthzRule`"
+       => issue(Type = `"http://schemas.microsoft.com/authorization/claims/permit`", Value = `"true`");"
 
-        $authorizationRules =
-        "@RuleTemplate = `"AllowAllAuthzRule`"
-        => issue(Type = `"http://schemas.microsoft.com/authorization/claims/permit`", Value = `"true`");"
+       $issuanceRules =
+       "@RuleTemplate = `"LdapClaims`"
+       @RuleName = `"Emit UPN and common name`"
+       c:[Type == `"http://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname`", Issuer == `"AD AUTHORITY`"]
+       => issue(store = `"Active Directory`", types =
+       (`"http://schemas.xmlsoap.org/ws/2005/05/identity/claims/upn`",
+       `"http://schemas.xmlsoap.org/claims/CommonName`"), query =
+       `";userPrincipalName,cn;{0}`", param = c.Value);
 
-        $issuanceRules =
-        "@RuleTemplate = `"LdapClaims`"
-        @RuleName = `"Emit UPN and common name`"
-        c:[Type == `"http://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname`", Issuer == `"AD AUTHORITY`"]
-        => issue(store = `"Active Directory`", types =
-        (`"http://schemas.xmlsoap.org/ws/2005/05/identity/claims/upn`",
-        `"http://schemas.xmlsoap.org/claims/CommonName`"), query =
-        `";userPrincipalName,cn;{0}`", param = c.Value);
+       @RuleTemplate = `"PassThroughClaims`"
+       @RuleName = `"Pass through Windows Account Name`"
+       c:[Type ==`"http://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname`"] => issue(claim = c);"
 
-        @RuleTemplate = `"PassThroughClaims`"
-        @RuleName = `"Pass through Windows Account Name`"
-        c:[Type ==`"http://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname`"] => issue(claim = c);"
-
-        Write-Host "Creating RP Trust for MIM CM Service"
-        Add-ADFSRelyingPartyTrust -Name "MIM CM Service" -Identifier ("https://"+$serverFqdn+"/certificatemanagement") -IssuanceAuthorizationRules $authorizationRules -IssuanceTransformRules $issuanceRules
-        Write-Host "RP Trust for MIM CM Service has been created"
-        ```
+       Write-Host "Creating RP Trust for MIM CM Service"
+       Add-ADFSRelyingPartyTrust -Name "MIM CM Service" -Identifier ("https://"+$serverFqdn+"/certificatemanagement") -IssuanceAuthorizationRules $authorizationRules -IssuanceTransformRules $issuanceRules
+       Write-Host "RP Trust for MIM CM Service has been created"
+       ```
 
     - Módosítsa a redirectUri és a serverFQDN értékeit.
 
@@ -255,9 +258,9 @@ Amikor létrehozza a profilsablont, állítsa be a virtuális intelligens kárty
     - A serverFQDN (kiszolgáló teljes tartományneve) az MIMCM-kiszolgáló teljes számítógépneve önmagában.
 
     - Ha segítséget a **ConfigureMIimCMClientAndRelyingParty.ps1** parancsfájlok futtatásával: </br> 
-    ```Powershell
-     get-help  -detailed ConfigureMimCMClientAndRelyingParty.ps1
-    ```
+      ```Powershell
+      get-help  -detailed ConfigureMimCMClientAndRelyingParty.ps1
+      ```
 
 ## <a name="deploy-the-app"></a>Az alkalmazás üzembe helyezése
 

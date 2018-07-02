@@ -1,7 +1,7 @@
 ---
-title: "Microsoft Identity Manager 2016 – Gyakorlati tanácsok | Microsoft Docs"
-description: 
-keywords: 
+title: Microsoft Identity Manager 2016 – Gyakorlati tanácsok | Microsoft Docs
+description: ''
+keywords: ''
 author: barclayn
 ms.author: barclayn
 manager: mbaldwin
@@ -10,20 +10,21 @@ ms.topic: reference
 ms.prod: identity-manager-2016
 ms.service: microsoft-identity-manager
 ms.technology: security
-ms.assetid: 
-ms.openlocfilehash: bb967bfb43218384044e324c270d3d6b35d33afe
-ms.sourcegitcommit: b4513f0f72ac6efd5c2610863f4e3e8c8e65c860
+ms.assetid: ''
+ms.openlocfilehash: 9ef96b88942fd33107d9021ddddb90d0d80dbed1
+ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/08/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36290118"
 ---
 # <a name="microsoft-identity-manager-2016-best-practices"></a>Microsoft Identity Manager 2016 – Gyakorlati tanácsok
 
 A következőkben a Microsoft Identity Manager 2016 (MIM) telepítésével és működtetésével kapcsolatos ajánlott eljárásokat ismertetjük
 
 ## <a name="sql-setup"></a>SQL-telepítés
->[!NOTE]
-A következő, egy SQL-t futtató kiszolgáló telepítésére vonatkozó javaslatok dedikált SQL-példányok meglétét feltételezik a FIMService-hez és a FIMSynchronizationService adatbázishoz. Ha a FIMService-t összevont környezetben futtatja, akkor el kell végeznie a konfigurációhoz szükséges módosításokat.
+> [!NOTE]
+> A következő, egy SQL-t futtató kiszolgáló telepítésére vonatkozó javaslatok dedikált SQL-példányok meglétét feltételezik a FIMService-hez és a FIMSynchronizationService adatbázishoz. Ha a FIMService-t összevont környezetben futtatja, akkor el kell végeznie a konfigurációhoz szükséges módosításokat.
 
 A Structured Query Language- (SQL-) kiszolgáló konfigurálása alapvető fontosságú a rendszer optimális teljesítményéhez. Az optimális MIM teljesítmény elérése nagy léptékű környezetekben az SQL-t futtató kiszolgálókra vonatkozó ajánlott eljárások alkalmazásától függ. További információk az SQL-lel kapcsolatos ajánlott eljárásokról következő témakörökben olvashatók:
 
@@ -71,40 +72,40 @@ Fontos a helyreállítási modell lemezkövetelményeinek ismerete. Az egyszerű
 
 Attól függően, hogy mennyi memóriát használ az SQL Server, és hogy megosztja-e az SQL Servert más szolgáltatásokkal (azaz a MIM 2016 szolgáltatással és a MIM 2016 Synchronization Service-szel), előfordulhat, hogy korlátozni kell az SQL memóriahasználatát. Ez az alábbi lépések segítségével tehető meg.
 
-1.  Indítsa el az SQL Server Enterprise Managert.
+1. Indítsa el az SQL Server Enterprise Managert.
 
-2.  Válassza a New Query (Új lekérdezés) lehetőséget.
+2. Válassza a New Query (Új lekérdezés) lehetőséget.
 
-3.  Futtassa az alábbi lekérdezést:
+3. Futtassa az alábbi lekérdezést:
 
-  ```SQL
-  USE master
+   ```SQL
+   USE master
 
-  EXEC sp_configure 'show advanced options', 1
+   EXEC sp_configure 'show advanced options', 1
 
-  RECONFIGURE WITH OVERRIDE
+   RECONFIGURE WITH OVERRIDE
 
-  USE master
+   USE master
 
-  EXEC sp_configure 'max server memory (MB)', 12000--- max=12G RECONFIGURE
-  WITH OVERRIDE
-  ```
+   EXEC sp_configure 'max server memory (MB)', 12000--- max=12G RECONFIGURE
+   WITH OVERRIDE
+   ```
 
-  Ez a példa újrakonfigurálja az SQL-kiszolgáló legfeljebb 12 gigabájt (GB) memória használatával.
+   Ez a példa újrakonfigurálja az SQL-kiszolgáló legfeljebb 12 gigabájt (GB) memória használatával.
 
-4.  A beállítás ellenőrzésére használja a következő lekérdezést:
+4. A beállítás ellenőrzésére használja a következő lekérdezést:
 
-  ```SQL
-  USE master
+   ```SQL
+   USE master
 
-  EXEC sp_configure 'max server memory (MB)'--- verify the setting
+   EXEC sp_configure 'max server memory (MB)'--- verify the setting
 
-  USE master
+   USE master
 
-  EXEC sp_configure 'show advanced options', 0
+   EXEC sp_configure 'show advanced options', 0
 
-  RECONFIGURE WITH OVERRIDE
-  ```
+   RECONFIGURE WITH OVERRIDE
+   ```
 
 ### <a name="backup-and-recovery-configuration"></a>Biztonsági mentés és helyreállítás konfigurálása
 
@@ -169,11 +170,11 @@ Ajánlott letiltani a Microsoft Office SharePoint® indexelését. Nincsenek ind
 
 Ez a rész felsorolja a kezdeti adatok terhelés külső rendszer MIM teljesítményének javítása érdekében lépések egy sorozatát. Fontos megérteni, hogy ezeket a lépéseket számos csak végre a rendszer a kezdeti feltöltése során. Ezek betöltés befejezése után kell állítani. Ez egy egyszeri művelet, és nem folyamatos szinkronizálás.
 
->[!NOTE]
-További információ a felhasználók MIM és Active Directory tartományi szolgáltatások (AD DS) közötti szinkronizálás: [hogyan felhasználók szinkronizálása az Active Directoryból az FIM felé irányuló](http://go.microsoft.com/fwlink/?LinkID=188277) a FIM-dokumentáció.
-
->[!IMPORTANT]
-Győződjön meg arról, hogy alkalmazta a jelen útmutató SQL-telepítéssel foglalkozó szakaszában tárgyalt ajánlott eljárásokat. 
+> [!NOTE]
+> További információ a felhasználók MIM és Active Directory tartományi szolgáltatások (AD DS) közötti szinkronizálás: [hogyan felhasználók szinkronizálása az Active Directoryból az FIM felé irányuló](http://go.microsoft.com/fwlink/?LinkID=188277) a FIM-dokumentáció.
+> 
+> [!IMPORTANT]
+> Győződjön meg arról, hogy alkalmazta a jelen útmutató SQL-telepítéssel foglalkozó szakaszában tárgyalt ajánlott eljárásokat. 
 
 ### <a name="step-1-configure-the-sql-server-for-initial-data-load"></a>1. lépés: Az SQL Server konfigurálása a kezdeti adatbetöltéshez
 Az adatok kezdeti betöltés hosszadalmas folyamat lehet. Ha azt tervezi, először nagy mennyiségű adat betöltésére, lerövidíthető ideiglenesen teljes szöveges keresés kikapcsolásával, és kapcsolja be azt újra az exportálást a MIM 2016 management Agent (FIM MA) befejezése után az adatbázis feltöltéséhez szükséges idő.
@@ -191,8 +192,8 @@ ALTER FULLTEXT INDEX ON [fim].[ObjectValueString] SET CHANGE_TRACKING = MANUAL
 ALTER FULLTEXT INDEX ON [fim].[ObjectValueXml] SET CHANGE_TRACKING = MANUAL
 ```
 
->[!IMPORTANT]
-Ezen eljárások elmulasztása magas lemezterület-használatot eredményezhet, és előfordulhat, hogy elfogy a szabad lemezterület. További információt ebben a témakörben a [Recovery Model Overview](http://go.microsoft.com/fwlink/?LinkID=185370) (A helyreállítási modell áttekintése) című részben találhat. A [FIM biztonsági mentési és visszaállítási útmutatója](http://go.microsoft.com/fwlink/?LinkID=165864) további információkat tartalmaz (angol nyelven).
+> [!IMPORTANT]
+> Ezen eljárások elmulasztása magas lemezterület-használatot eredményezhet, és előfordulhat, hogy elfogy a szabad lemezterület. További információt ebben a témakörben a [Recovery Model Overview](http://go.microsoft.com/fwlink/?LinkID=185370) (A helyreállítási modell áttekintése) című részben találhat. A [FIM biztonsági mentési és visszaállítási útmutatója](http://go.microsoft.com/fwlink/?LinkID=165864) további információkat tartalmaz (angol nyelven).
 
 ### <a name="step-2-apply-the-minimum-necessary-mim-configuration-during-the-load-process"></a>2. lépés: A minimálisan szükséges MIM-konfiguráció alkalmazása a betöltési folyamat során
 
@@ -288,8 +289,8 @@ A szolgáltatásfiókok nem lehetnek a helyi Rendszergazdák csoport tagjai.
 
 A FIM szinkronizálási szolgáltatás szolgáltatásfiók nem lehet a FIM szinkronizálási szolgáltatáshoz való hozzáférés szabályozása használt biztonsági csoport (például a FIMSync kezdetű csoportok, mint a FIMSyncAdmins, és így tovább) tagja.
 
->[!IMPORTANT]
- Ha a készletekben ugyanazon fiók használatát választja mindkét szolgáltatási fiókhoz, és szétválasztja a FIM szolgáltatást és a FIM szinkronizációs szolgáltatást, akkor az mms Szinkronizációs szolgáltatás kiszolgálóján nem tilthatja le a hozzáférést ehhez a számítógéphez a hálózatról. Ha a hozzáférés meg lenne tagadva, ez megtiltaná a FIM szolgáltatás számára, hogy kapcsolatba lépjen a FIM szinkronizációs szolgáltatással a konfiguráció megváltoztatásához és a jelszavak kezeléséhez.
+> [!IMPORTANT]
+>  Ha a készletekben ugyanazon fiók használatát választja mindkét szolgáltatási fiókhoz, és szétválasztja a FIM szolgáltatást és a FIM szinkronizációs szolgáltatást, akkor az mms Szinkronizációs szolgáltatás kiszolgálóján nem tilthatja le a hozzáférést ehhez a számítógéphez a hálózatról. Ha a hozzáférés meg lenne tagadva, ez megtiltaná a FIM szolgáltatás számára, hogy kapcsolatba lépjen a FIM szinkronizációs szolgáltatással a konfiguráció megváltoztatásához és a jelszavak kezeléséhez.
 
 ### <a name="password-reset-deployed-to-kiosk-like-computers-should-set-local-security-to-clear-virtual-memory-pagefile"></a>A kioszkmódhoz hasonló módon üzemelő számítógépekre telepített jelszó-visszaállításnak helyi biztonsági beállítással kell rendelkeznie a virtuális memória lapozófájljának törléséhez
 
@@ -315,7 +316,7 @@ Az SSL implementálásához:
 
 7.  Mentse tetszőleges helyre a fájlt. A későbbi lépésekben szüksége lesz a hely elérésére.
 
-8.  Tallózással keresse meg a https://servername/certsrv. A „kiszolgálónév” részt cserélje le a tanúsítványokat kiállító kiszolgáló nevére.
+8.  Nyissa meg a https://servername/certsrv címet. A „kiszolgálónév” részt cserélje le a tanúsítványokat kiállító kiszolgáló nevére.
 
 9.  Kattintson az Új tanúsítvány kérése lehetőségre.
 
@@ -357,9 +358,9 @@ Az SSL implementálásához:
 
 28. Kattintson a Tevékenység, majd a Másodlagos címek leképezése elemre.
 
-29. Kattintson a http://kiszolgálónév elemre.
+29. Kattintson a http://servername.
 
-30. A http://kiszolgálónév helyett adja meg a https://kiszolgálónév formát, és kattintson az OK gombra.
+30. Változás http://servername való https://servername, majd kattintson az OK gombra.
 
 31. Kattintson a Start gombra, majd a Futtatás parancsra, írja be az iisreset parancsot, majd kattintson az OK gombra.
 
@@ -384,7 +385,7 @@ Alapértelmezés szerint a MIM 2016 kiüríti a lejárt rendszerobjektumokat, am
 
 A MIM kétféle MPR-t használ, a kérelmet és a készletátmenetet:
 
--  Kérelem-MPR (RMPR)
+- Kérelem-MPR (RMPR)
 
   - Az erőforrásokon végzett műveletek létrehozási, olvasási, frissítési vagy törlési (CRUD) hozzáférés-vezérlési házirendjének (hitelesítési, engedélyezési és műveleti) meghatározásához használatos.
   - Amikor egy CRUD művelet szemben a MIM-ben a cél erőforráson alkalmazza.
@@ -432,8 +433,8 @@ A mim szoftverben engedélyeket is meg van adva egy pozitív helyességi feltét
 
 Egyéni jogosultságok megadása helyett készletátmenet-MPR-eket (TMPR-eket) használjon. A TMPR-ek állapotalapú modellt biztosítanak a jogosultságok hozzárendeléséhez vagy eltávolításához a definiált átmeneti készletek tagsága, illetve a szerepkörök és hozzájuk tartozó munkafolyamat-tevékenységek alapján. A TMPR-eket mindig párokban kell meghatározni, az egyiket a befelé áthelyezett erőforrásokhoz, egyet pedig a kifelé áthelyezettek számára. Emellett minden átmeneti MPR-nek külön munkafolyamatokat kell tartalmaznia a kiépítési és megszüntetési tevékenységekhez.
 
->[!NOTE]
-Minden megszüntetési munkafolyamatnak biztosítania kell, hogy a Futtatás szabályzatfrissítéskor attribútum igaz értékű legyen.
+> [!NOTE]
+> Minden megszüntetési munkafolyamatnak biztosítania kell, hogy a Futtatás szabályzatfrissítéskor attribútum igaz értékű legyen.
 
 #### <a name="enable-the-set-transition-in-mpr-last"></a>Készletátmenet bejövő MPR-jének engedélyezése utolsóként
 
@@ -583,13 +584,13 @@ A mim szoftverben célszerű annak néhány reguláris kifejezések-és nagybet�
 
 A szinkronizáló vezérlő számára felfedett Tag attribútum ténylegesen a ComputedMembers attribútumnak van megfeleltetve. Ez a feltételek alapján és a manuálisan kijelölt tagok kombinációja. Még ha a mindhárom attribútumot (Filter, ExplicitMembers és ComputedMembers) is hozzáadja, a tag attribútum dinamikus számítása csak a csoport és a készlet erőforrástípusok esetében történik meg.
 
-#### <a name="leading-and-trailing-spaces-in-strings-are-ignored"></a>Kezdő és záró szóközök figyelmen kívül hagyása karakterláncokban
+#### <a name="leading-and-trailing-spaces-in-strings-are-ignored"></a>Kezdő és záró szóközök figyelmen kívül hagyása sztringekben
 
-A mim szoftverben megadhatja a kezdő és záró szóközök karakterláncok, de a MIM rendszer figyelmen kívül hagyja ezeket a szóközöket. Egy kezdő és záró szóközzel rendelkező karakterlánc elküldése esetén a szinkronizáló vezérlő és a webszolgáltatások figyelmen kívül hagyják ezeket a szóközöket.
+A mim szoftverben megadhatja a kezdő és záró szóközök karakterláncok, de a MIM rendszer figyelmen kívül hagyja ezeket a szóközöket. Egy kezdő és záró szóközzel rendelkező sztring elküldése esetén a szinkronizáló vezérlő és a webszolgáltatások figyelmen kívül hagyják ezeket a szóközöket.
 
-#### <a name="empty-strings-do-not-equal-null"></a>Az üres karakterlánc nem egyenlő a null értékkel
+#### <a name="empty-strings-do-not-equal-null"></a>Az üres sztring nem egyenlő a null értékkel
 
-Üres értékek a következők nem null, ebben a kiadásban a MIM egyenlő. Az üres karakterláncot tartalmazó bemeneti érték érvényes értéknek minősül. Ha nem található bemeneti érték, az null értéknek minősül.
+Üres értékek a következők nem null, ebben a kiadásban a MIM egyenlő. Az üres sztringet tartalmazó bemeneti érték érvényes értéknek minősül. Ha nem található bemeneti érték, az null értéknek minősül.
 
 ### <a name="workflow-and-request-processing"></a>Munkafolyamat- és a kérelemfeldolgozás
 

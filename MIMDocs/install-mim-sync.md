@@ -12,18 +12,19 @@ ms.technology: security
 ms.assetid: 2585e9c5-ce34-46c7-bdcf-8c08773901dc
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: d2f8c000205aacafaeb4e159ef692e9666b4b965
-ms.sourcegitcommit: a98a4c1aee12016d480c400f4ff2c6aadb6518ee
+ms.openlocfilehash: c68b33b2ff28d75b6f4e63fa8caf0c87727a5927
+ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36289397"
 ---
 # <a name="install-mim-2016-mim-synchronization-service"></a>A MIM 2016 telepítése: A MIM Synchronization Service
 
->[!div class="step-by-step"]
-[« Exchange Server](prepare-server-exchange.md)
-[MIM szolgáltatás és -portál »](install-mim-service-portal.md)
-
+> [!div class="step-by-step"]
+> [« Exchange Server](prepare-server-exchange.md)
+> [MIM szolgáltatás és -portál »](install-mim-service-portal.md)
+> 
 > [!NOTE]
 > Ez az útmutató egy Contoso nevű fiktív vállalat neveit és értékeit használja szemléltetésként. Ezeket helyettesítse a saját neveivel és értékeivel. Például:
 > - Tartományvezérlő neve – **corpdc**
@@ -31,7 +32,7 @@ ms.lasthandoff: 05/03/2018
 > - MIM szolgáltatás kiszolgálójának neve – **corpservice**
 > - MIM Sync-kiszolgáló neve – **corpsync**
 > - SQL Server-neve - **corpsql**
-> - Jelszó – **Pass@word1**
+> - Jelszó – <strong>Pass@word1</strong>
 
 A Microsoft Identity Manager 2016 összetevőinek telepítéséhez először készítse elő a telepítési csomagot.
 
@@ -55,37 +56,37 @@ A Microsoft Identity Manager 2016 összetevőinek telepítéséhez először ké
 
     ![Kép: Egyéni telepítés](media/install-mim-sync/MIM_Install2.png)
 
-6.  A Sync Service adatbázis-konfigurálási képernyőjén válassza a következő beállításokat:
+6. A Sync Service adatbázis-konfigurálási képernyőjén válassza a következő beállításokat:
 
-    1.  Az SQL Server található: **A távoli gép** nevű **corpsql.contoso.com**.
+   1.  Az SQL Server található: **A távoli gép** nevű **corpsql.contoso.com**.
 
-    2.  Az SQL Server-példány: **az alapértelmezett példányt**
+   2.  Az SQL Server-példány: **az alapértelmezett példányt**
 
-    ![Kép: Csatlakozás adatbázishoz](media/install-mim-sync/MIM_Install3.png)
+   ![Kép: Csatlakozás adatbázishoz](media/install-mim-sync/MIM_Install3.png)
 
-7.  A korábban létrehozott fióknak megfelelően állítsa be a Sync szolgáltatásfiókját:
+7. A korábban létrehozott fióknak megfelelően állítsa be a Sync szolgáltatásfiókját:
 
-    1.  Service account (Szolgáltatásfiók): *MIMSync*
+   1. Service account (Szolgáltatásfiók): *MIMSync*
 
-    2.  Jelszó: *Pass@word1*
+   2. Jelszó: <em>Pass@word1</em>
 
-    3.  Service Account Domain or local computer name (Szolgáltatásfiók tartománya vagy helyi számítógép neve): *contoso*
+   3. Service Account Domain or local computer name (Szolgáltatásfiók tartománya vagy helyi számítógép neve): *contoso*
 
-    ![Kép: Szolgáltatásfiók](media/install-mim-sync/MIM_Install4.png)
+   ![Kép: Szolgáltatásfiók](media/install-mim-sync/MIM_Install4.png)
 
-8.  Adja meg a MIM Sync Service telepítőjében a megfelelő biztonsági csoportokat:
+8. Adja meg a MIM Sync Service telepítőjében a megfelelő biztonsági csoportokat:
 
-    1. Administrator (Rendszergazda) = *contoso\MIMSyncAdmins*
+   1. Administrator (Rendszergazda) = *contoso\MIMSyncAdmins*
 
-    2. Operator (Operátor) = *contoso\MIMSyncOperators*
+   2. Operator (Operátor) = *contoso\MIMSyncOperators*
 
-    3. Joiner (Csatlakozó) = *contoso\MIMSyncJoiners*
+   3. Joiner (Csatlakozó) = *contoso\MIMSyncJoiners*
 
-    4. Connector Browse (Összekötő-tallózó) = *contoso\MIMSyncBrowse*
+   4. Connector Browse (Összekötő-tallózó) = *contoso\MIMSyncBrowse*
 
-    5. WMI Password Management (WMI-jelszókezelés) = *contoso\MIMSyncPasswordReset*
+   5. WMI Password Management (WMI-jelszókezelés) = *contoso\MIMSyncPasswordReset*
 
-    ![Kép: Biztonsági csoportok](media/install-mim-sync/MIM_Install5.png)
+   ![Kép: Biztonsági csoportok](media/install-mim-sync/MIM_Install5.png)
 
 9. A biztonsági beállítások képernyőjén jelölje be az **Enable firewall rules for inbound RPC communications** (Tűzfalszabályok engedélyezése a bejövő RPC-kommunikációhoz) négyzetet, majd kattintson a **Next** (Tovább) gombra.
 
@@ -103,6 +104,6 @@ A Microsoft Identity Manager 2016 összetevőinek telepítéséhez először ké
 
     5. A csoporttagsági változások életbelépéséhez ki kell jelentkeznie, majd újra be kell jelentkeznie. A kijelentkezéshez kattintson a **Yes** (Igen) gombra.
 
->[!div class="step-by-step"]  
-[« Exchange Server](prepare-server-exchange.md)
-[MIM szolgáltatás és -portál »](install-mim-service-portal.md)
+> [!div class="step-by-step"]  
+> [« Exchange Server](prepare-server-exchange.md)
+> [MIM szolgáltatás és -portál »](install-mim-service-portal.md)

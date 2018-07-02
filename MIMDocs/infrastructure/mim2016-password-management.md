@@ -1,7 +1,7 @@
 ---
-title: "Microsoft Identity Manager 2016 – Jelszókezelés| Microsoft Docs"
-description: 
-keywords: 
+title: Microsoft Identity Manager 2016 – Jelszókezelés| Microsoft Docs
+description: ''
+keywords: ''
 author: barclayn
 ms.author: barclayn
 manager: mbaldwin
@@ -10,12 +10,13 @@ ms.topic: reference
 ms.prod: identity-manager-2016
 ms.service: microsoft-identity-manager
 ms.technology: security
-ms.assetid: 
-ms.openlocfilehash: 156551f4083c71ee7059e817213751393db5833e
-ms.sourcegitcommit: 5ba5d916c0ca1e5aa501592af0cef714bfdc8afe
+ms.assetid: ''
+ms.openlocfilehash: 86b8b9bdf5c6441d0708cd874742fa48b65177fa
+ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/02/2017
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36289363"
 ---
 # <a name="microsoft-identity-manager-2016-password-management"></a>Microsoft Identity Manager 2016 – Jelszókezelés
 
@@ -61,8 +62,8 @@ Valahányszor ezek az ügynökök jelszómódosítási vagy jelszóbeállítási
 
 A jelszó-szinkronizálás az Active Directory-tartományok jelszóváltozás-értesítési szolgáltatásával együttműködve lehetővé teszi, hogy az Active Directoryból származó jelszóváltozások automatikusan eljussanak a csatlakoztatott adatforrásokhoz. A MIM úgy hajtja ezt végre, hogy egy távoli eljáráshívási kiszolgálót futtat, amely az Active Directory-tartományvezérlőktől érkező jelszóváltoztatási értesítéseket figyeli. A jelszóváltoztatási kérelem beérkezése és hitelesítése után a MIM feldolgozza azt, és eljuttatja a megfelelő kezelőügynökökhöz.
 
->[!IMPORTANT]
-A MIM nem támogatja a kétirányú jelszó-szinkronizálást. A kétirányú jelszó-szinkronizálás konfigurálása hurkot hozhat létre, amely fokozottan igénybe veszi a kiszolgáló erőforrásait, és negatívan befolyásolhatja az Active Directoryt és a MIM-et egyaránt.
+> [!IMPORTANT]
+> A MIM nem támogatja a kétirányú jelszó-szinkronizálást. A kétirányú jelszó-szinkronizálás konfigurálása hurkot hozhat létre, amely fokozottan igénybe veszi a kiszolgáló erőforrásait, és negatívan befolyásolhatja az Active Directoryt és a MIM-et egyaránt.
 
 A jelszóváltozás-értesítési szolgáltatás az Active Directory minden tartományvezérlőjén fut. A jelszóváltoztatási értesítést fogadó rendszert célnak nevezzük. A MIM-kiszolgálót a jelszóváltozás-értesítési szolgáltatás céljaként kell konfigurálni az Active Directoryban, még a jelszóváltoztatási értesítések kiküldése előtt. A jelszóváltoztatás-értesítési szolgáltatás konfigurációjában meg kell adni egy belefoglalási csoportot, és igény esetén egy kizárási csoportot. E csoportok használata korlátozza az érzékeny jelszavak kijutását a tartományból. Például ha minden felhasználónak jelszót kíván küldeni, a rendszergazdáknak azonban nem, akkor ajánlatos a tartományi felhasználókat belefoglalási csoportként, a tartománygazdákat pedig kizárási csoportként megadnia. A jelszómódosítás konfigurálásáról a [Using Password Synchronization](https://technet.microsoft.com/library/jj590288(v=ws.10).aspx) (Jelszó-szinkronizálás használata) című cikkben talál további információt.
 
@@ -149,9 +150,9 @@ Ideális esetben valahányszor egy felhasználó jelszót módosít, a módosít
 
 Egyes, súlyosabb meghibásodások esetén akárhány újrapróbálkozás esetén sem valószínű, hogy sikerül a művelet. Ilyenkor a rendszer naplózza a hibát, és leállítja a folyamatot. A következő eseményeknél nincs újrapróbálkozás:
 
-| Esemény | Severity    | Leírás                                                                                                                                                            |
+| Esemény | Severity    | Description                                                                                                                                                            |
 |-------|-------------|-----------|
-| 6919  | Adatok | A jelszó-szinkronizálás beállításának műveletét a rendszer nem hajtotta végre, mert az időbélyegző elavult.                                                                      |
+| 6919  | Információ | A jelszó-szinkronizálás beállításának műveletét a rendszer nem hajtotta végre, mert az időbélyegző elavult.                                                                      |
 | 6921  | Hiba       | A jelszó-szinkronizálás beállításának művelete nincs feldolgozva, mert a céloldali kezelőügynökön nincs engedélyezve a jelszókezelés.                                |
 | 6922  | Hiba       | A jelszó-szinkronizálás beállításának művelete nincs feldolgozva, mert a céloldali kezelőügynökön nincs konfigurálva a jelszókezelés.                             |
 | 6923  | Figyelmeztetés     | A jelszó-szinkronizálás beállításának művelete nincs feldolgozva, mert a céloldali összekötőtér objektuma nem található a csatlakoztatott címtárban.                  |

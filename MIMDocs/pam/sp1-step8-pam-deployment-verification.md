@@ -1,7 +1,7 @@
 ---
-title: "8. lépés: A PAM üzembe helyezésének ellenőrzése"
-description: "A PAM parancsfájlokkal történő üzembe helyezéséhez szükséges csomag ellenőrzési parancsfájlokat is tartalmaz, amelyekkel végrehajtható egy PAM-forgatókönyv, így ellenőrizhető, hogy a PAM-környezet a vártnak megfelelően működik-e."
-keywords: 
+title: '8. lépés: A PAM üzembe helyezésének ellenőrzése'
+description: A PAM parancsfájlokkal történő üzembe helyezéséhez szükséges csomag ellenőrzési parancsfájlokat is tartalmaz, amelyekkel végrehajtható egy PAM-forgatókönyv, így ellenőrizhető, hogy a PAM-környezet a vártnak megfelelően működik-e.
+keywords: ''
 author: barclayn
 ms.author: barclayn
 manager: MBaldwin
@@ -10,19 +10,20 @@ ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
 ms.assetid: 4b524ae7-6610-40a0-8127-de5a08988a8a
-ms.reviewer: 
+ms.reviewer: ''
 ms.suite: ems
-ms.openlocfilehash: 28fcbe10366df749796be76f83f608561b5f39d3
-ms.sourcegitcommit: 8edd380f54c3e9e83cfabe8adfa31587612e5773
+ms.openlocfilehash: b01980c020b1027c3b40eaf49b4431631ee041be
+ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/19/2017
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36289472"
 ---
 # <a name="step-8-pam-deployment-verification"></a>Nyolcadik lépés: A PAM üzembe helyezésének ellenőrzése
 
->[!div class="step-by-step"]
-[« 7. lépés](sp1-step7-setup-sidhistory-sidfiltering.md)
-[Kiegészítés »](sp1-pam-deployment-addendum.md)
+> [!div class="step-by-step"]
+> [« 7. lépés](sp1-step7-setup-sidhistory-sidfiltering.md)
+> [Kiegészítés »](sp1-pam-deployment-addendum.md)
 
 Az üzembehelyezési csomag tartalmazza az ellenőrzési szkripteket is, amelyekkel végrehajtható egy PAM-forgatókönyv, így ellenőrizhető, hogy a PAM-környezet a vártnak megfelelően működik-e.
 Az üzembe helyezés ellenőrzéséhez módosítsa a PAMDeploymentConfig.xml <PamValidation/> elnevezésű szakaszát.
@@ -76,6 +77,6 @@ A PowerShell ablakban írja be a következőt:
   Kezdetben a felhasználónak nincs hozzáférése az erőforráshoz. A felhasználó a szerepkörhöz való igényalapú hozzáadását követően kapja meg a hozzáférést. Miután a kérés időtartama lejár, a felhasználó ismét elveszti a hozzáférését.
   A szkript az alapértelmezett értéket (11 perc) használja a kérések elévülésére.
 
->[!div class="step-by-step"]
-[« 7. lépés](sp1-step7-setup-sidhistory-sidfiltering.md)
-[Kiegészítés »](sp1-pam-deployment-addendum.md)
+> [!div class="step-by-step"]
+> [« 7. lépés](sp1-step7-setup-sidhistory-sidfiltering.md)
+> [Kiegészítés »](sp1-pam-deployment-addendum.md)

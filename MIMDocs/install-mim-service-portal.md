@@ -12,23 +12,24 @@ ms.technology: security
 ms.assetid: b0b39631-66df-4c5f-80c9-a1774346f816
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: fcc137527d8326c82bf3b201039926699bd4e342
-ms.sourcegitcommit: a98a4c1aee12016d480c400f4ff2c6aadb6518ee
+ms.openlocfilehash: 562ca6a977509cad7c3423ef42d4b6f6705494d3
+ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36289516"
 ---
 # <a name="install-mim-2016-mim-service-and-portal"></a>A MIM 2016 telepítése: A MIM szolgáltatás és -portál
 
->[!div class="step-by-step"]
-[« MIM Synchronization Service](install-mim-sync.md)
-[Adatbázisok szinkronizálása »](install-mim-sync-ad-service.md)
-
+> [!div class="step-by-step"]
+> [« MIM Synchronization Service](install-mim-sync.md)
+> [Adatbázisok szinkronizálása »](install-mim-sync-ad-service.md)
+> 
 > [!NOTE]
 > Ez az útmutató egy Contoso nevű fiktív vállalat neveit és értékeit használja szemléltetésként. Ezeket helyettesítse a saját neveivel és értékeivel. Például:
 > - Tartományvezérlő neve – **mimservername**
 > - Tartománynév – **contoso**
-> - Jelszó – **Pass@word1**
+> - Jelszó – <strong>Pass@word1</strong>
 > - Szolgáltatásfiók neve – **MIMService**
 
 Ha a legutóbbi lépésben nem telepítette a MIM telepítőcsomagját, akkor a folytatás előtt lépjen vissza és telepítse a Microsoft Identity Manager 2016 összetevőit.
@@ -56,7 +57,7 @@ Ha a legutóbbi lépésben nem telepítette a MIM telepítőcsomagját, akkor a 
 
 8. Adja meg, hogy új önaláírt tanúsítványt szeretne-e generálni, vagy válassza ki a megfelelő tanúsítványt.
 
-9. A Service Account Name mezőben adja meg a használni kívánt szolgáltatásfiók nevét – például *MIMService* –, a Service Account Password mezőben a szolgáltatásfiók jelszavát – például *Pass@word1*, a Service Account Domain mezőben a szolgáltatásfiók tartományát – például *contoso*, a Service Email Account mezőben pedig az e-mail fiókot, például *contoso*.
+9. A Service Account Name mezőben adja meg a használni kívánt szolgáltatásfiók nevét – például *MIMService* –, a Service Account Password mezőben a szolgáltatásfiók jelszavát – például <em>Pass@word1</em>, a Service Account Domain mezőben a szolgáltatásfiók tartományát – például *contoso*, a Service Email Account mezőben pedig az e-mail fiókot, például *contoso*.
 
     ![Kép: A MIM szolgáltatás fiókjának konfigurálása](media/install-mim-service-portal/MIM_Install12.png)
 
@@ -78,25 +79,25 @@ Ha a legutóbbi lépésben nem telepítette a MIM telepítőcsomagját, akkor a 
 
 ## <a name="configure-mim-password-registration-portal"></a>A MIM jelszó-regisztrálási portál konfigurálása
 
-1.  Az önkiszolgáló jelszó-regisztrálási szolgáltatáshoz (SSPR) állítsa be a *contoso\MIMSSPR* fióknevet és a *Pass@word1* jelszót.
+1. Az önkiszolgáló jelszó-regisztrálási szolgáltatáshoz (SSPR) állítsa be a *contoso\MIMSSPR* fióknevet és a <em>Pass@word1</em> jelszót.
 
-2.  Adja meg *passwordregistration.contoso.com* a MIM jelszó-regisztrálási állomásnévként, és a port **80**. Jelölje be az **Open port in firewall** (Port nyitása a tűzfalon) négyzetet.
+2. Adja meg *passwordregistration.contoso.com* a MIM jelszó-regisztrálási állomásnévként, és a port **80**. Jelölje be az **Open port in firewall** (Port nyitása a tűzfalon) négyzetet.
 
-    ![Kép: Az IIS által használt konfigurációs információk megadása](media/install-mim-service-portal/MIM_Install14.png)
+   ![Kép: Az IIS által használt konfigurációs információk megadása](media/install-mim-service-portal/MIM_Install14.png)
 
-3.  Megjelenik egy figyelmeztető üzenet – olvassa el, majd kattintson a **Next** (Tovább) gombra.
+3. Megjelenik egy figyelmeztető üzenet – olvassa el, majd kattintson a **Next** (Tovább) gombra.
 
 4. Adja meg a MIM jelszó-regisztrálási portál következő konfigurációs képernyőjén *mim.contoso.com* a MIM szolgáltatás kiszolgálójának címeként a jelszó-regisztrálási portálhoz.
 
 ## <a name="configure-mim-password-reset-portal"></a>A MIM jelszó-változtatási portál konfigurálása
 
-1.  Állítsa be a szolgáltatásfiók neve SSPR regisztrálási *Contoso\MIMSSPR* és a jelszót *Pass@word1*.
+1. Állítsa be a szolgáltatásfiók neve SSPR regisztrálási *Contoso\MIMSSPR* és a jelszót <em>Pass@word1</em>.
 
-2.  Adja meg *passwordreset.contoso.com* MIM jelszó-változtatási portálhoz állomásnévként, és a port **80**. Jelölje be az **Open port in firewall** (Port nyitása a tűzfalon) négyzetet.
+2. Adja meg *passwordreset.contoso.com* MIM jelszó-változtatási portálhoz állomásnévként, és a port **80**. Jelölje be az **Open port in firewall** (Port nyitása a tűzfalon) négyzetet.
 
-    ![Kép: Az IIS által használt konfigurációs információk megadása](media/install-mim-service-portal/MIM_Install15.png)
+   ![Kép: Az IIS által használt konfigurációs információk megadása](media/install-mim-service-portal/MIM_Install15.png)
 
-3.  Megjelenik egy figyelmeztető üzenet – olvassa el, majd kattintson a **Next** (Tovább) gombra.
+3. Megjelenik egy figyelmeztető üzenet – olvassa el, majd kattintson a **Next** (Tovább) gombra.
 
 4. Adja meg a MIM jelszó-regisztrálási portál következő konfigurációs képernyőjén *mim.contoso.com* a MIM szolgáltatás kiszolgálójának címeként a jelszó-változtatási portálhoz.
 
@@ -144,7 +145,7 @@ A telepítést követően győződjön meg arról, hogy a MIM-portál aktív.
 
 > [!NOTE]
 > Nem kötelező: Ezek után igény szerint telepítheti a MIM beépülő moduljait és bővítményeit.
-
->[!div class="step-by-step"]  
-[« MIM Synchronization Service](install-mim-sync.md)
-[Adatbázisok szinkronizálása »](install-mim-sync-ad-service.md)
+> 
+> [!div class="step-by-step"]  
+> [« MIM Synchronization Service](install-mim-sync.md)
+> [Adatbázisok szinkronizálása »](install-mim-sync-ad-service.md)

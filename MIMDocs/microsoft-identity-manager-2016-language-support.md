@@ -10,11 +10,12 @@ ms.topic: get-started-article
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 50345fda-56d7-4b6e-a861-f49ff90a8376
-ms.openlocfilehash: 101f4110d6439cfc17f25c8880531e18f51920da
-ms.sourcegitcommit: 19ed53fa6af61086774a0429fd1520067caf4e93
+ms.openlocfilehash: 834343243dfeefa8d1874414fa369751288fd64d
+ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/23/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36288870"
 ---
 # <a name="supported-languages"></a>Támogatott nyelvek
 
@@ -30,41 +31,41 @@ A Microsoft a MIM szolgáltatás és portál nyelvi csomag támogatja a követke
 > [!IMPORTANT]
 > Az önkiszolgáló jelszó-Változtatási beépülő modul és -portál a szöveget is elérhető lesz, de nincs további feladata nélkül lesz a kérdések. Szüksége lesz AuthN munkafolyamatok (és kísérő beállítása és létrehozása, amelyekre őket házirendszabályok) cél kérdésekre minden nyelven, a célhelyre.
 
-|nyelv|FIM(4.3.x.x)/mim(4.4.xx)|MIM(4.5.x.x)
-|-----|-----|-----|
-|bolgár|bg-BG|BG|
-|Kínai (egyszerűsített)|zh-CN|zh-hans|
-|Kínai (Tajvan)|zh-TW|zh-hant|
-|horvát|hr-HR|HR|
-|cseh|cs-CZ|Tanúsítványszolgáltatások|
-|dán|da-DK|da|
-|holland|NL-NL|NL|
-|észt|et-VM –|et|
-|francia|FR-FR|FR|
-|finn|fi-FI|Fi|
-|német|de-DE|Németország|
-|görög|el-GR|el|
-|hindi|üdv-IN|szia|
-|magyar|hu-HU|hu|
-|olasz|it-IT|az|
-|Japán|ja-JP|japán|
-|koreai|ko-KR|ko|
-|litván|lt-LT|lt|
-|lett|lv-LV|LV|
-|norvég|nb-NO|nb-NO|
-|lengyel|pl-PL|pl|
-|portugál (Portugália)|PT-PT|PT|
-|Portugál (brazíliai)|pt-BR|pt-BR|
-|orosz|ru-RU|RU||SV|
-|román|ro-RO|ro|
-|spanyol|es-ES|Igen|
-|szlovák|SK-SK|SK|
-|svéd|SV-SE|SV|
-|szlovén|SA-SI|SA|
-|Szerb - szerb |sr-latn-CS(Depricated)|az SR-Latn-RS|
-|thai|cs-EDIK|TH|
-|török|tr-TR|TR|
-|ukrán|Egyesült Királyság-EE|Egyesült Királyság|
+|       nyelv        | FIM(4.3.x.x)/mim(4.4.xx) | MIM(4.5.x.x) |
+|-----------------------|--------------------------|--------------|
+|       bolgár       |          bg-BG           |      BG      |
+| Kínai (egyszerűsített)  |          zh-CN           |   zh-hans    |
+|   Kínai (Tajvan)    |          zh-TW           |   zh-hant    |
+|       horvát        |          hr-HR           |      HR      |
+|         cseh         |          cs-CZ           |      Tanúsítványszolgáltatások      |
+|        dán         |          da-DK           |      da      |
+|         holland         |          NL-NL           |      NL      |
+|       észt        |          et-VM –           |      et      |
+|        francia         |          FR-FR           |      FR      |
+|        finn        |          fi-FI           |      Fi      |
+|        német         |          de-DE           |      Németország      |
+|         görög         |          el-GR           |      el      |
+|         hindi         |          üdv-IN           |      szia      |
+|       magyar       |          hu-HU           |      hu      |
+|        olasz        |          it-IT           |      az      |
+|       Japán        |          ja-JP           |      japán      |
+|        koreai         |          ko-KR           |      ko      |
+|      litván       |          lt-LT           |      lt      |
+|        lett        |          lv-LV           |      LV      |
+|       norvég       |          nb-NO           |    nb-NO     |
+|        lengyel         |          pl-PL           |      pl      |
+| portugál (Portugália) |          PT-PT           |      PT      |
+|  Portugál (brazíliai)  |          pt-BR           |    pt-BR     |
+|        orosz        |          ru-RU           |      RU      |
+|       román        |          ro-RO           |      ro      |
+|        spanyol        |          es-ES           |      Igen      |
+|        szlovák         |          SK-SK           |      SK      |
+|        svéd        |          SV-SE           |      SV      |
+|       szlovén       |          SA-SI           |      SA      |
+|   Szerb - szerb    |  sr-latn-CS(Depricated)  |  az SR-Latn-RS  |
+|         thai          |          cs-EDIK           |      TH      |
+|        török        |          tr-TR           |      TR      |
+|       ukrán       |          Egyesült Királyság-EE           |      Egyesült Királyság      |
 
 ## <a name="certificate-management"></a>Tanúsítványkezelés 
 A Microsoft Tanúsítványkezelő a következő 9 nyelveket támogatja. 

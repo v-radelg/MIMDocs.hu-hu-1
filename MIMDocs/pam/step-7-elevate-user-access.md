@@ -1,6 +1,6 @@
 ---
-title: "A PAM üzembe helyezése, 7. lépés – felhasználói hozzáférés | Microsoft Docs"
-description: "Utolsó lépésként biztosítson ideiglenes rendszerjogosultságot egy felhasználónak, hogy tesztelhesse, sikeres volt-e a Privileged Access Management üzembe helyezése."
+title: A PAM üzembe helyezése, 7. lépés – felhasználói hozzáférés | Microsoft Docs
+description: Utolsó lépésként biztosítson ideiglenes rendszerjogosultságot egy felhasználónak, hogy tesztelhesse, sikeres volt-e a Privileged Access Management üzembe helyezése.
 author: barclayn
 ms.author: barclayn
 manager: mbaldwin
@@ -9,16 +9,17 @@ ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
 ms.assetid: 5325fce2-ae35-45b0-9c1a-ad8b592fcd07
-ms.openlocfilehash: 2d92be315547da1c352c0e60732f9aeecf0c2d90
-ms.sourcegitcommit: 3d8a2493eae1218bfdb75a399ffa4adc8c2a8fdf
+ms.openlocfilehash: 9515d17767a75b349b0d3150fb90c136c478baa2
+ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/20/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36289846"
 ---
 # <a name="step-7--elevate-a-users-access"></a>7. lépés – Felhasználó jogosultságszintjének emelése
 
->[!div class="step-by-step"]
-[« 6. lépés](step-6-transition-group-to-pam.md)
+> [!div class="step-by-step"]
+> [« 6. lépés](step-6-transition-group-to-pam.md)
 
 
 Ebben a lépésben azt mutatjuk be, hogyan kérhet egy felhasználó hozzáférést egy szerepkörhöz a MIM-en keresztül.
@@ -90,7 +91,7 @@ Aktiválja a szerepkört a PAM-mintaportálon keresztüli emelt szintű hozzáf�
     ```
 
 3. Amikor a rendszer kéri, írja be a PRIV.Ilona fiók jelszavát. Megnyílik egy új böngészőablak.
-4. Nyissa meg a http://pamsrv.priv.contoso.local:8090, és ellenőrizze, hogy látható-e a mintaportálról származó weblap.
+4. Navigáljon a http://pamsrv.priv.contoso.local:8090 , és győződjön meg arról, hogy látható-e a mintaportálról származó weblap.
 5. Az Internet Explorerben válassza az **Eszközök** > **Internetbeállítások** elemet, és kattintson a **Biztonság** fülre.
 6. Kattintson a **Helyi intranet zóna** > **Helyek** > **Speciális** elemre, majd adja hozzá a webhelyet a zónához.
 7. Zárja be az **Internetbeállítások** párbeszédpanelt.
@@ -103,5 +104,5 @@ Aktiválja a szerepkört a PAM-mintaportálon keresztüli emelt szintű hozzáf�
 
 Az útmutató lépéseinek végrehajtását követően egy olyan Privileged Access Management-forgatókönyvet ismerhet meg, amelyben a felhasználók emelt szintű jogosultságai csak korlátozott ideig érvényesek, és a védett erőforrásokhoz egy elkülönített, emelt jogosultsági szintű fiókon keresztül férhetnek hozzá. Amint a jogosultságszint-emelés időtartama lejár, a rendszerjogosultságú fiók már nem tud hozzáférni a védett erőforrásokhoz. Annak eldöntése, hogy mely biztonsági csoportok kaphatnak kiemelt szerepköröket, a PAM-rendszergazda feladata. A hozzáférési jogoknak a Privileged Access Management-rendszerbe való áttelepítését követően a korábban az eredeti felhasználói fiókok számára biztosított hozzáférések csak akkor lesznek érvényesek, ha a felhasználó egy speciális, rendszerjogosultságú fiókkal bejelentkezik, és újra megkéri ezeket az engedélyeket. Ennek eredményeképpen a magas jogosultsági szintű csoportokhoz tartozó csoporttagságok csak korlátozott ideig használhatók eredményesen.
 
->[!div class="step-by-step"]
-[« 6. lépés](step-6-transition-group-to-pam.md)
+> [!div class="step-by-step"]
+> [« 6. lépés](step-6-transition-group-to-pam.md)

@@ -1,7 +1,7 @@
 ---
-title: "A PAM üzembe helyezése, 5. lépés – Erdőkapcsolat | Microsoft Docs"
-description: "Megbízhatósági kapcsolat létrehozása a PRIV és CORP erdők között, hogy a PRIV rendszerjogosultságú felhasználói a CORP erőforrásaihoz is hozzáférjenek."
-keywords: 
+title: A PAM üzembe helyezése, 5. lépés – Erdőkapcsolat | Microsoft Docs
+description: Megbízhatósági kapcsolat létrehozása a PRIV és CORP erdők között, hogy a PRIV rendszerjogosultságú felhasználói a CORP erőforrásaihoz is hozzáférjenek.
+keywords: ''
 author: barclayn
 ms.author: barclayn
 manager: mbaldwin
@@ -12,17 +12,18 @@ ms.technology: active-directory-domain-services
 ms.assetid: eef248c4-b3b6-4b28-9dd0-ae2f0b552425
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: ba4b94c1f0f0879436e370a7f2f041c720bd1f60
-ms.sourcegitcommit: 362475d4018e74e5a17ba574ccaec47a2caebaff
+ms.openlocfilehash: df4294ca6dbc98ec684e690d3ce66765d27cc359
+ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36289091"
 ---
 # <a name="step-5--establish-trust-between-priv-and-corp-forests"></a>5. lépés – A CORP és a PRIV erdő közötti megbízhatósági kapcsolat létrehozása
 
->[!div class="step-by-step"]
-[« 4. lépés](step-4-install-mim-components-on-pam-server.md)
-[6. lépés »](step-6-transition-group-to-pam.md)
+> [!div class="step-by-step"]
+> [« 4. lépés](step-4-install-mim-components-on-pam-server.md)
+> [6. lépés »](step-6-transition-group-to-pam.md)
 
 Minden CORP tartománynál, így például a contoso.local tartomány esetében is, a PRIV és a CONTOSO tartományvezérlők között megbízhatósági kapcsolatnak kell fennállnia. Ez teszi lehetővé, hogy a PRIV tartomány felhasználói hozzáférhessenek a CORP tartományban lévő erőforrásokhoz.
 
@@ -70,17 +71,17 @@ A PAMSRV kiszolgálón hozzon létre egy egyirányú megbízhatósági kapcsolat
 
 A PRIV rendszergazdákon és a figyelőszolgáltatáson keresztül minden meglévő erdő számára olvasási hozzáférést biztosíthat az Active Directoryhoz.
 
-1.  Jelentkezzen be a meglévő CORP erdő tartományvezérlőjébe (CORPDC) az erdő legfelső szintű tartományának rendszergazdájaként (Contoso\Rendszergazda).  
-2.  Indítsa el az **Active Directory - felhasználók és számítógépek** beépülő modult.  
-3.  Kattintson a jobb gombbal a **contoso.local** tartományra, és válassza a **Vezérlés delegálása** parancsot.  
-4.  A Kijelölt felhasználók és csoportok lapon kattintson a **Hozzáadás** gombra.  
-5.  A Felhasználók, számítógépek vagy csoportok kiválasztása ablakban kattintson a **Helyek** elemre, és váltson át a *priv.contoso.local* helyre.  Az objektum nevéhez írja be a *Tartományi rendszergazdák* értéket, és kattintson a **Névellenőrzés** gombra. Amikor megjelenik egy előugró ablak, írja be a *priv\rendszergazda* felhasználónevet és a jelszavát.  
-6.  A Tartományi rendszergazdák név után írja be a „*; MIMMonitor*” értéket. Amikor megjelenik az aláhúzás a **Tartományi rendszergazdák** és a **MIMMonitor** név alatt, kattintson az **OK**, majd a **Tovább** gombra.  
-7.  A gyakori feladatok listáján jelölje ki **Az összes felhasználói információ olvasása** elemet, és kattintson a **Tovább**, majd a **Befejezés** gombra.  
-8.  Zárja be az Active Directory – felhasználók és számítógépek beépülő modult.
+1. Jelentkezzen be a meglévő CORP erdő tartományvezérlőjébe (CORPDC) az erdő legfelső szintű tartományának rendszergazdájaként (Contoso\Rendszergazda).  
+2. Indítsa el az **Active Directory - felhasználók és számítógépek** beépülő modult.  
+3. Kattintson a jobb gombbal a **contoso.local** tartományra, és válassza a **Vezérlés delegálása** parancsot.  
+4. A Kijelölt felhasználók és csoportok lapon kattintson a **Hozzáadás** gombra.  
+5. A Felhasználók, számítógépek vagy csoportok kiválasztása ablakban kattintson a **Helyek** elemre, és váltson át a *priv.contoso.local* helyre.  Az objektum nevéhez írja be a *Tartományi rendszergazdák* értéket, és kattintson a **Névellenőrzés** gombra. Amikor megjelenik egy előugró ablak, írja be a *priv\rendszergazda* felhasználónevet és a jelszavát.  
+6. A Tartományi rendszergazdák név után írja be a „*; MIMMonitor*” értéket. Amikor megjelenik az aláhúzás a **Tartományi rendszergazdák** és a **MIMMonitor** név alatt, kattintson az **OK**, majd a **Tovább** gombra.  
+7. A gyakori feladatok listáján jelölje ki **Az összes felhasználói információ olvasása** elemet, és kattintson a **Tovább**, majd a **Befejezés** gombra.  
+8. Zárja be az Active Directory – felhasználók és számítógépek beépülő modult.
 
-9.  Indítson el egy PowerShell-ablakot.
-10.  Használja a `netdom` parancsot a SID-előzmények engedélyezéséhez, illetve a SID-szűrés letiltásához. Írja be ezt a parancsot:
+9. Indítson el egy PowerShell-ablakot.
+10. Használja a `netdom` parancsot a SID-előzmények engedélyezéséhez, illetve a SID-szűrés letiltásához. Írja be ezt a parancsot:
     ```cmd
     netdom trust contoso.local /quarantine:no /domain priv.contoso.local
     netdom trust /enablesidhistory:yes /domain priv.contoso.local
@@ -104,6 +105,6 @@ A PRIV rendszergazdákon és a figyelőszolgáltatáson keresztül minden meglé
 
 A következő lépésben a csoportoknak a PAM szolgáltatásba való áthelyezésével ismerkedhet meg.
 
->[!div class="step-by-step"]
-[« 4. lépés](step-4-install-mim-components-on-pam-server.md)
-[6. lépés »](step-6-transition-group-to-pam.md)
+> [!div class="step-by-step"]
+> [« 4. lépés](step-4-install-mim-components-on-pam-server.md)
+> [6. lépés »](step-6-transition-group-to-pam.md)

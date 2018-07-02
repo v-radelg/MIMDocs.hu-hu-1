@@ -1,7 +1,7 @@
 ---
-title: "1. lépés: A PRIV-tartomány konfigurálása"
-description: "A CORP-tartomány előkészítése a Privileged Identity Manager által szkriptek útján kezelt meglévő vagy új identitásokkal"
-keywords: 
+title: '1. lépés: A PRIV-tartomány konfigurálása'
+description: A CORP-tartomány előkészítése a Privileged Identity Manager által szkriptek útján kezelt meglévő vagy új identitásokkal
+keywords: ''
 author: barclayn
 ms.author: barclayn
 manager: MBaldwin
@@ -10,21 +10,22 @@ ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
 ms.assetid: 4b524ae7-6610-40a0-8127-de5a08988a8a
-ms.reviewer: 
+ms.reviewer: ''
 ms.suite: ems
-ms.openlocfilehash: 40822bb7702cf3d7ac23ecd6e98ac392f2d3a480
-ms.sourcegitcommit: 8edd380f54c3e9e83cfabe8adfa31587612e5773
+ms.openlocfilehash: e5be140e7ffea7b0c7cacbc1c82d3b2883804203
+ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/19/2017
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36290305"
 ---
 # <a name="step-1-configuring-the-priv-domain"></a>1. lépés: A PRIV-tartomány konfigurálása
 
->[!div class="step-by-step"]
-[2. lépés »](sp1-step2-configuring-corp-domain.md)
+> [!div class="step-by-step"]
+> [2. lépés »](sp1-step2-configuring-corp-domain.md)
 
 1. Bejelentkezés a PRIVDC tartományvezérlőre rendszergazdaként
-  * Amennyiben ez egy csak PRIV környezet, a CORPDC tartományvezérlőre kell bejelentkeznie
+   * Amennyiben ez egy csak PRIV környezet, a CORPDC tartományvezérlőre kell bejelentkeznie
 2. A PowerShell futtatása rendszergazdaként
 3. cd $env:SYSTEMDRIVE\PAM
 4. .\PAMDeployment.ps1
@@ -41,5 +42,5 @@ A Windows Server 2016 alatti működési szintek esetén zárja be a figyelmezte
 Másolja az $env:SYSTEMDRIVE\PAM helyen létrehozott SIDs.txt fájlt az ugyanilyen mappába a CORPDC tartományvezérlőn. Ez azért szükséges, hogy a CORPDC be tudja állítani a PRIV-felhasználók jogosultságát a CORP-felhasználói tulajdonságok olvasásához.
 A szkript a futását befejezően arra kéri, hogy a módosítások hatályba léptetéséhez indítsa újra a gépet.
 
->[!div class="step-by-step"]
-[2. lépés »](sp1-step2-configuring-corp-domain.md)
+> [!div class="step-by-step"]
+> [2. lépés »](sp1-step2-configuring-corp-domain.md)
