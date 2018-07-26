@@ -204,16 +204,16 @@ Attribútumfolyam szabályok:
 
 | **Csak a kezdeti folyamata** | **Fenntartása teszt használata** | **Egymást követő (FIM érték ⇒ cél attribútum)**                          |
 |-----------------------|---------------------------|-----------------------------------------------------------------------|
-|                       |                           | [displayName⇒displayName] (javascript:void(0);)                        |
-|                       |                           | [Balra (azonosító, 20) ⇒accountName] (javascript:void(0);)                        |
-|                       |                           | [id⇒uid] (javascript:void(0);)                                         |
-|                       |                           | [userType⇒employeeType] (javascript:void(0);)                          |
-|                       |                           | [givenName⇒givenName] (javascript:void(0);)                            |
-|                       |                           | [surname⇒sn] (javascript:void(0);)                                     |
-|                       |                           | [userPrincipalName⇒userPrincipalName] (javascript:void(0);)            |
-|                       |                           | [id⇒cn] (javascript:void(0);)                                          |
-|                       |                           | [mail⇒mail] (javascript:void(0);)                                      |
-|                       |                           | [mobilePhone⇒mobilePhone] (javascript:void(0);)                        |
+|                       |                           | [displayName⇒displayName](javascript:void(0);)                        |
+|                       |                           | [Balra (azonosító, 20) ⇒accountName](javascript:void(0);)                        |
+|                       |                           | [id⇒uid](javascript:void(0);)                                         |
+|                       |                           | [userType⇒employeeType](javascript:void(0);)                          |
+|                       |                           | [givenName⇒givenName](javascript:void(0);)                            |
+|                       |                           | [surname⇒sn](javascript:void(0);)                                     |
+|                       |                           | [userPrincipalName⇒userPrincipalName](javascript:void(0);)            |
+|                       |                           | [id⇒cn](javascript:void(0);)                                          |
+|                       |                           | [mail⇒mail](javascript:void(0);)                                      |
+|                       |                           | [mobilePhone⇒mobilePhone](javascript:void(0);)                        |
 
 ### <a name="synchronization-rule-create-guest-user-account-to-active-directory"></a>Szinkronizálási szabály: Active Directory Vendég felhasználói fiók létrehozása 
 
@@ -229,14 +229,14 @@ Attribútumfolyam szabályok:
 
 | **Csak a kezdeti folyamata** | **Fenntartása teszt használata** | **Egymást követő (FIM érték ⇒ cél attribútum)**                          |
 |-----------------------|---------------------------|-----------------------------------------------------------------------|
-|                       |                           | [accountName⇒sAMAccountName] (javascript:void(0);)                     |
-|                       |                           | [givenName⇒givenName] (javascript:void(0);)                            |
-|                       |                           | [mail⇒mail] (javascript:void(0);)                                      |
-|                       |                           | [sn⇒sn] (javascript:void(0);)                                          |
-|                       |                           | [userPrincipalName⇒userPrincipalName] (javascript:void(0);)            |
-| **Y**                 |                           | ["CN ="+ uid +", OU = B2BGuest, DC = scontoso, DC = com" ⇒dn] (javascript:void(0);) |
-| **Y**                 |                           | [RandomNum (0,999) + userPrincipalName⇒unicodePwd] (javascript:void(0);)  |
-| **Y**                 |                           | [262656⇒userAccountControl] (javascript:void(0);)                      |
+|                       |                           | [accountName⇒sAMAccountName](javascript:void(0);)                     |
+|                       |                           | [givenName⇒givenName](javascript:void(0);)                            |
+|                       |                           | [mail⇒mail](javascript:void(0);)                                      |
+|                       |                           | [sn⇒sn](javascript:void(0);)                                          |
+|                       |                           | [userPrincipalName⇒userPrincipalName](javascript:void(0);)            |
+| **Y**                 |                           | ["CN ="+ uid +", OU = B2BGuest, DC = scontoso, DC = com" ⇒dn](javascript:void(0);) |
+| **Y**                 |                           | [RandomNum (0,999) + userPrincipalName⇒unicodePwd](javascript:void(0);)  |
+| **Y**                 |                           | [262656⇒userAccountControl](javascript:void(0);)                      |
 
 ### <a name="synchronization-rule-import-b2b-guest-user-objects-sid-to-allow-for-login-to-mim"></a>Szinkronizálási szabály: Import B2B Vendég felhasználói objektumok SID való bejelentkezéshez mim-mel engedélyezése 
 
@@ -278,9 +278,9 @@ Is ezután a felhasználó manuálisan hozzáadni a a felhasználók és csoport
 
 | **Csak a kezdeti folyamata** | **Fenntartása teszt használata** | **Egymást követő (FIM érték ⇒ cél attribútum)**                          |
 |-----------------------|---------------------------|-----------------------------------------------------------------------|
-|                       |                           | [sAMAccountName⇒accountName] (javascript:void(0);)                     |
-|                       |                           | [A "CONTOSO" ⇒domain] (javascript:void(0);)                            |
-|                       |                           | [objectSid⇒objectSid] (javascript:void(0);)                                      |
+|                       |                           | [sAMAccountName⇒accountName](javascript:void(0);)                     |
+|                       |                           | [A "CONTOSO" ⇒domain](javascript:void(0);)                            |
+|                       |                           | [objectSid⇒objectSid](javascript:void(0);)                                      |
 
 Amennyiben az összes konfigurálása
 
