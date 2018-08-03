@@ -119,7 +119,7 @@ BHOLD Core moduljának telepítése előtt kell készüljön fel a BHOLD Core te
 
 BHOLD Core-modul telepítéséhez, jelentkezzen be a tartományi rendszergazdák csoport tagjaként, töltse le a következő fájlt, és futtassa rendszergazdaként a kiszolgálón, melyet a BHOLD Core modul telepítése: 
 
-- BholdCore  *\<verzió\>*\_Release.msi
+- BholdCore *\<Version\>*\_Release.msi
 
 Cserélje le *\<verzió\>* rendelkező a telepíteni kívánt BHOLD Core kiadás verziószáma.
 
@@ -167,22 +167,22 @@ Ahhoz, hogy az IIS megfelelően működnek a BHOLD Alap modulban, konfigurálnia
 
 #### <a name="establishing-the-service-principal-name-for-the-bhold-website"></a>Az egyszerű szolgáltatásnév a BHOLD-webhely létrehozása
 
-Ha a hálózat neve, amellyel lépjen kapcsolatba a BHOLD webhelye nem ugyanaz, mint a kiszolgáló állomásneve, létre kell hoznia egy egyszerű szolgáltatásnév (SPN) a HTTP. Például ha egy olyan CNAME erőforrásrekordot a DNS-ben meg olyan aliasnevet, a kiszolgáló, vagy használhatja a hálózati terheléselosztás, regisztrálnia kell a következő további hálózati címek az Active Directoryban. Kattintson a Home, kattintson a értékek, és kattintson a módosítás.
+Ha a hálózat neve, amellyel lépjen kapcsolatba a BHOLD webhelye nem ugyanaz, mint a kiszolgáló állomásneve, létre kell hoznia egy egyszerű szolgáltatásnév (SPN) a HTTP. Például ha egy olyan CNAME erőforrásrekordot a DNS-ben meg olyan aliasnevet, a kiszolgáló, vagy használhatja a hálózati terheléselosztás, regisztrálnia kell a következő további hálózati címek az Active Directoryban. Ha nem sikerül, az Internet Explorer nem használható a Kerberos protokoll, amikor kapcsolatba lép a BHOLD webhelyet.
 
 > [!IMPORTANT]
-> Keresse meg a nevét, írja be az új értéket az attribútum neve melletti négyzetet, és kattintson a kívánt OK. BHOLD Core telepítve és, hogy a telepítés sikeres volt-e érvényesítve, után további modulok is telepítheti. Ezen a ponton a BHOLD-adatbázis lényegében üres, csak egy felhasználói fiókot, a legfelső szintű fiókot és egy szervezeti egységet (orgunit), a legfelső szintű orgunit tartalmazó lesz.
+> Ha a BHOLD Alap modulban a FIM-portál ugyanazon a számítógépen telepítve van, létre kell hoznia DNS-erőforrásrekordokat (CNAME vagy A) állomásnevek különbözőek BHOLD Core futtató kiszolgálók és a FIM-portál futtató kiszolgálón. Egy adott szolgáltatás-típus/server-alias párhoz csak egy egyszerű Szolgáltatásnevet hozhatók létre, és BHOLD Core és a FIM-portál megkövetelik külön SPN-ek mivel a különböző fiókok általában futnak. A setspn parancs egy hibát jelez, ha egyszerű Szolgáltatásnevet már egy másik fiókkal lett létrehozva.
 
-Több felhasználó hozzáadása a BHOLD-adatbázis, vagy telepítheti a Access Management-összekötő modul vagy a BHOLD modellhez generátor modul igényeitől függően.
+Tagság a **Tartománygazdák**, vagy egy ezzel egyenértékű, ez a művelet elvégzéséhez.
 
-#### <a name="to-establish-the-spn-of-the-bhold-website"></a>Az Access Management-összekötő modul segítségével felhasználói adatokat importálhat a FIM szinkronizálási szolgáltatás, vagy használhatja a BHOLD modellhez generátor felhasználói adatok importálása a strukturált fájlokat.
+#### <a name="to-establish-the-spn-of-the-bhold-website"></a>Az egyszerű Szolgáltatásnevet a BHOLD webhely létrehozásához
 
-1.  Az Access Management-összekötő modullal kapcsolatos további információkért lásd: **tesztlabor-Útmutató: BHOLD Access Management-összekötő**.
+1.  Kattintson az Active Directory tartományi szolgáltatások tartományvezérlő **Start**, kattintson a **minden program**, kattintson a **Kellékek**, kattintson a jobb gombbal **parancssor** , és kattintson a **Futtatás rendszergazdaként**.
 
-2.  Az BHOLD modellhez generátor modullal kapcsolatos további információkért lásd:
+2.  A parancssorba írja be a következő parancsot, és nyomja le az ENTER BILLENTYŰT: setspn – S HTTP / *\<networkalias\>\<tartomány\>*\\*\<accountname\>* ahol:
 
-    -   *\<Microsoft BHOLD Suite TechnicalReference\<.
+    -   *\<networkalias\>* használó ügyfelek csatlakozni a BHOLD webhely-címe
 
-    -   *\<tartomány\>*\\*\<accountname\>*  BHOLD központi telepítésekor létrehozott BHOLD Core szolgáltatásfiók tartomány és a felhasználó neve.
+    -   *\<tartomány\>*\\*\<accountname\>* BHOLD központi telepítésekor létrehozott BHOLD Core szolgáltatásfiók tartomány és a felhasználó neve.
 
 3.  Ismételje meg az előző lépést minden egyéb kiderül, hogy az ügyfelek használják a BHOLD webhely, például kapcsolódni, CNAME aliasok, egy teljesen minősített tartománynevet tartalmazó neveket vagy neve (rövid) NetBIOS-tartománynév tartalmaz.
 
@@ -198,7 +198,7 @@ Ahhoz, hogy ellenőrizze, hogy a BHOLD Core modul telepítése sikeres volt, a B
 | **ABA futtassa a kezdő óra**    | Egy kétjegyű egész számot adjon meg egy attribútum-alapú engedélyezési futása közben a óra beállítása történik. Például annak meghatározása, hogy a Futtatás ABA kerül sor. 11:00 órakor 23 (23:00), adja meg.                                                                                                             |
 | **Rendszer kardinalitása**       | Állítsa be az N, ha nem szeretné, hogy a rendszer számossága négyzet BHOLD. Az alapértelmezett érték: Y.                                                                                                                                                                                                                             |
 | **Logging**                  | Állítsa be az N, ha nem szeretné, hogy be kell jelentkezniük a módosításokat. Az alapértelmezett érték: Y.                                                                                                                                                                                                                                            |
-| **SystemQueue feldolgozása**   | Állítsa be az N, ha nem szeretné, hogy rendszer várólista feldolgozása. Ne módosítsa ezt az értéket, kivéve, ha ehhez a terméktámogatási szolgálathoz által vezérelt.                                                                                                                                                                                           |
+| **SystemQueue Processing**   | Állítsa be az N, ha nem szeretné, hogy rendszer várólista feldolgozása. Ne módosítsa ezt az értéket, kivéve, ha ehhez a terméktámogatási szolgálathoz által vezérelt.                                                                                                                                                                                           |
 
 A művelet végrehajtásához a Tartománygazdák csoport tagjaként kell bejelentkeznie.
 
