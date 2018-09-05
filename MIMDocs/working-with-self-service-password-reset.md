@@ -1,37 +1,48 @@
 ---
-title: Az Önkiszolgáló jelszóváltoztatás portál kezelése | Microsoft Docs
+title: Az önkiszolgáló jelszóváltoztatás kezelése |} A Microsoft Docs
 description: Ismerje meg, hogy milyen újdonságokat kínál a MIM 2016 önkiszolgáló jelszó-változtatási összetevője, például hogy miként képes együttműködni a többtényezős hitelesítéssel.
 keywords: ''
 author: billmath
 ms.author: billmath
 manager: mtillman
-ms.reviewer: davidste
-ms.date: 06/26/2018
+ms.date: 08/30/2018
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 94a74f1c-2192-4748-9a25-62a526295338
-ms.openlocfilehash: b1b30b744a5f735512f31d98184a561ce3f9b047
-ms.sourcegitcommit: 03617b441135a55b664e0d81cce4d17541bee93b
+ms.openlocfilehash: a7314aaf559836fb77b32ae191527917c4854417
+ms.sourcegitcommit: acb2c61831cb634278acc439d6d9496ff51a6a54
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/26/2018
-ms.locfileid: "36963375"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43694622"
 ---
-# <a name="working-with-self-service-password-reset"></a>Az önkiszolgáló jelszóváltoztatás kezelése
+# <a name="self-service-password-reset-deployment-options"></a>Az önkiszolgáló jelszó-visszaállítási üzembe helyezési beállítások
 
-> [!IMPORTANT]
-> Miatt az Azure multi-factor Authentication Software Development Kit érvénytelenítése bejelentés. Az Azure MFA SDK használatból való kivonást időpontjáig 2018. November 14. a meglévő ügyfeleknek is támogatottak lesznek. Új ügyfelek és az ügyfelek aktuális fog tudni többé SDK letöltése a klasszikus Azure portálon keresztül. Töltse le, akkor kell érheti el a generált MFA szolgáltatás hitelesítő adatait a csomagot fogadó Azure ügyfélszolgálathoz. <br> A Microsoft fejlesztői csapat dolgozik MFA módosításai integrálja az MFA kiszolgáló SDK-val.  Ez szerepelni fog egy jövőbeli gyorsjavítás tekintse meg [korábbi verzióinak](/reference/version-history.md) hirdetmények.
+Az új ügyfelek, akik [jogosult az Azure Active Directory Premium](https://docs.microsoft.com/azure/active-directory/authentication/concept-sspr-licensing), javasoljuk a [az Azure AD önkiszolgáló jelszó-visszaállítás](https://docs.microsoft.com/azure/active-directory/authentication/concept-sspr-howitworks.md) a végfelhasználói élményt.  Az Azure AD önkiszolgáló jelszó alaphelyzetbe állítása mindkét webes és a Windows-alapú felületet biztosít a felhasználó számára a saját jelszó visszaállítása, és számos, a MIM, beleértve a másodlagos e-mail-cím és a Q & A kapuk megegyező funkciókat támogatja.  Amikor üzembe helyezése az Azure AD önkiszolgáló jelszó-visszaállítás, az Azure AD Connect támogatja [az új jelszavak írása Active Directory tartományi szolgáltatások](https://docs.microsoft.com/azure/active-directory/authentication/concept-sspr-writeback.md), és a MIM [jelszóváltozás-értesítési szolgáltatás](deploying-mim-password-change-notification-service-on-domain-controller.md) segítségével továbbíthatja a más rendszerekre, például más gyártó által címtárkiszolgálóra, valamint a jelszavakat.  A MIM üzembe helyezésekor [jelszókezelés](infrastructure/mim2016-password-management.md) nincs szükség a MIM szolgáltatás vagy a MIM önkiszolgáló jelszó-visszaállítási vagy regisztrációs portálok üzembe helyezni.  Ehelyett is kövesse az alábbi lépéseket:
 
-A Microsoft Identity Manager 2016 önkiszolgáló jelszó-változtatási funkciója új lehetőségeket kínál. A funkcionalitást több fontos elemmel bővítettük:
+- Első, ha kíván küldeni a jelszavak címtárakhoz eltérő Azure AD és az AD DS-összekötőkkel az Active Directory Domain Servicesben, és minden olyan további célrendszereket MIM Sync telepítése, konfigurálása a MIM [jelszókezelés](infrastructure/mim2016-password-management.md) és üzembe helyezése a [jelszóváltozás-értesítési szolgáltatás](deploying-mim-password-change-notification-service-on-domain-controller.md).
+- Ezt követően kell az Azure AD-től eltérő címtárak jelszavak küldése, ha konfigurálja az Azure AD Connect [az új jelszavak írása Active Directory tartományi szolgáltatások](https://docs.microsoft.com/azure/active-directory/authentication/concept-sspr-writeback.md).
+- Másik lehetőségként [előzetes regisztráció felhasználók](https://docs.microsoft.com/azure/active-directory/authentication/howto-sspr-authenticationdata.md).
+- Végül [az Azure AD önkiszolgáló jelszóátállítás bevezetése a végfelhasználók számára](https://docs.microsoft.com/azure/active-directory/authentication/howto-sspr-deployment.md).
 
--   Az önkiszolgáló jelszóváltoztatás portálon és a Windows bejelentkezési képernyőt mostantól lehetővé teszik a felhasználók a jelszavuk módosítása és a támogatási rendszergazdák nélkül is feloldhatják fiókjukat. Felhasználók ártatlan tévedéssel fiókjukat sok jogos okokból, például ha azok adjon meg egy régi jelszót, kétnyelvű számítógépen pedig a billentyűzet nem megfelelő nyelvre értékre, vagy egy megosztott munkaállomás-bejelentkezési kísérlet már nyitva valaki más fiókja.
+Meglévő ügyfeleink korábban telepítette a Forefront Identity Manager (FIM) az önkiszolgáló jelszó-visszaállítási, és az Azure Active Directory Premium-licencek, javasoljuk, hogy az Azure AD önkiszolgáló jelszó-re való áttérés megtervezése alaphelyzetbe állítása.  Átválthat a végfelhasználók számára, hogy az Azure AD önkiszolgáló jelszó-visszaállítás nélkül őket az újbóli regisztrációt, a [szinkronizálása, vagy a PowerShell beállítása a felhasználó másodlagos e-mail-cím vagy a mobiltelefon száma](https://docs.microsoft.com/azure/active-directory/authentication/howto-sspr-authenticationdata.md). Miután a felhasználók regisztrálva vannak az Azure AD önkiszolgáló jelszó-visszaállítás, a FIM jelszó-visszaállítási portál leszerelhetők.
 
--   Az összetevő egy új hitelesítési kapuval, a Telefonos kapuval bővült. Erre a kapura lehetővé teszi, hogy a felhasználó hitelesítése egy telefonhívással.
+Azon ügyfeleink esetében, amelyek még nem telepítették az Azure AD önkiszolgáló jelszó-visszaállítást a felhasználók számára, a MIM emellett önkiszolgáló jelszó-visszaállítási portál.  FIM képest, a MIM 2016 tartalmazza a következő módosításokat:
 
--   Már támogatja a Microsoft Azure multi-factor Authentication (MFA) szolgáltatás. Ez a szolgáltatás vagy a meglévő SMS egy egyszeri jelszó kapuhoz és az új telefonos kapuhoz használható.
+- A MIM önkiszolgáló jelszóváltoztatás portálon és a Windows bejelentkezési képernyőjéről lehetővé teszik a felhasználók feloldhatják fiókjukat jelszavuk módosítása nélkül.
+- Egy új hitelesítési kapuval telefonos kapu, a MIM lett hozzáadva. Ez lehetővé teszi a felhasználói hitelesítést telefonhíváson keresztül a Microsoft Azure multi-factor Authentication (MFA) szolgáltatás.
 
-## <a name="azure-for-multi-factor-authentication"></a>Többtényezős hitelesítés az Azure-ral
+A MIM 2016 kibocsátási buildek 4.5.26.0 verzióra támaszkodnak az ügyfél letöltése az Azure multi-factor Authentication Software Development Kitet (az Azure MFA SDK).  Adott SDK elavult, és az Azure MFA SDK támogatja a meglévő ügyfeleknek csak a másnapi 2018. November 14., a kivezetési dátum. Eddig a dátumig ügyfelek kapcsolatba kell lépnie a létrehozott csomagot MFA szolgáltatás hitelesítő adatait az Azure ügyfélszolgálatához, azokat nem lehet az Azure MFA SDK letöltése. 
+
+#### <a name="new-update-current-azure-mfa-configuration-to-azure-multi-factor-authentication-server"></a>ÚJ! Az Azure multi-factor Authentication-kiszolgáló aktuális Azure MFA konfigurációjának frissítése
+
+Ez [cikk](working-with-mfaserver-for-mim.md) ismerteti, hogyan frissítse a központi telepítési MIM önkiszolgáló jelszó-visszaállítási portál és a PAM konfigurációját, a többtényezős hitelesítés az Azure multi-factor Authentication-kiszolgáló használatával.
+
+## <a name="deploying-mim-self-service-password-reset-portal-using-azure-mfa-for-multi-factor-authentication"></a>Központi telepítése a MIM az önkiszolgáló jelszó-változtatási portál a többtényezős hitelesítés az Azure MFA használatával
+
+Az alábbi szakasz központi telepítése a MIM az önkiszolgáló jelszó-visszaállítási portál, a többtényezős hitelesítés az Azure MFA használatával.  Ezeket a lépéseket csak akkor szükség, ügyfelek esetében, akik az Azure AD önkiszolgáló jelszó-visszaállítás nem használ a felhasználók számára.
+
 A Microsoft Azure Multi-Factor Authentication egy olyan hitelesítési szolgáltatás, amely a bejelentkezési kísérletek mobilalkalmazással, telefonhívással vagy szöveges üzenettel történő megerősítését kéri a felhasználóktól. A szolgáltatás a Microsoft Azure Active Directoryval, valamint felhőalapú és helyszíni nagyvállalati alkalmazásokkal is használható.
 
 Az Azure MFA olyan kiegészítő hitelesítési módszert kínál, amely megerősítheti a már meglévő hitelesítési folyamatokat, például a MIM által az önkiszolgáló bejelentkezési segéddel végzett hitelesítést.
@@ -39,7 +50,8 @@ Az Azure MFA olyan kiegészítő hitelesítési módszert kínál, amely megerő
 Az Azure MFA használata esetén a felhasználók annak érdekében hitelesítik magukat a rendszerrel, hogy igazolják az identitásukat, amikor megpróbálnak újra hozzáférést nyerni fiókjukhoz és erőforrásaikhoz. A hitelesítés történhet SMS-ben vagy telefonhívással.   Minél erősebb a hitelesítés, annál biztosabb, hogy a hozzáférést igénylő felhasználó ténylegesen az adott identitás tulajdonosa. A hitelesítést követően a felhasználó új jelszót választhat a régi helyett.
 
 ## <a name="prerequisites-to-set-up-self-service-account-unlock-and-password-reset-using-mfa"></a>Az MFA szolgáltatással végzett önkiszolgáló fiókzárfeloldás és jelszóváltoztatás beállításának előfeltételei
-Jelen szakaszban feltételezzük, hogy már letöltötte és sikeresen üzembe helyezte a Microsoft Identity Manager 2016-ot, a következő összetevőkkel és szolgáltatásokkal együtt:
+
+Ez a szakasz azt feltételezi, hogy letöltötte és sikeresen a Microsoft Identity Manager 2016 üzembe [MIM Sync, a MIM szolgáltatás és a MIM-portál összetevők](microsoft-identity-manager-deploy.md), többek között a következő összetevők és szolgáltatások:
 
 -   Egy Active Directory-kiszolgálóként beállított Windows Server 2008 R2-alapú kiszolgáló, AD tartományi szolgáltatások és tartományvezérlő szerepkörrel, kijelölt („vállalati”) tartománnyal.
 
@@ -57,44 +69,22 @@ Jelen szakaszban feltételezzük, hogy már letöltötte és sikeresen üzembe h
 
     -   A MIM-portál szinkronizálási szabályai úgy vannak beállítva, hogy lehetővé teszik a felhasználói adatok szinkronizálását, és támogatják a MIM szolgáltatás szinkronizálásra épülő tevékenységeit.
 
--   A MIM 2016 beépülő moduljai &amp; bővítményei – többek között az SSPR Windows bejelentkezési integrált ügyfél központi telepítése a kiszolgálón vagy egy különálló ügyfélszámítógépen.
+-   A MIM 2016 beépülő moduljai és bővítményei – többek között a Windows-bejelentkezésbe integrált önkiszolgáló jelszó-változtatási (SSPR-) ügyfél – telepítve vannak a kiszolgálón vagy egy különálló ügyfélszámítógépen.
+
+Ebben a forgatókönyvben, amelyekhez a MIM CAL-eszközök a felhasználók, valamint az Azure MFA-előfizetés szükséges.
 
 ## <a name="prepare-mim-to-work-with-multi-factor-authentication"></a>A MIM és a többtényezős hitelesítés együttműködésének előkészítése
 Állítsa be a MIM Sync szolgáltatást a jelszó-átállítási és fiókfeloldási funkció támogatásához. További információért lásd: [A FIM beépülő moduljainak és bővítményeinek telepítése](https://technet.microsoft.com/library/ff512688%28v=ws.10%29.aspx), [A FIM SSPR telepítése](https://technet.microsoft.com/library/hh322891%28v=ws.10%29.aspx), [Az SSPR hitelesítési kapui](https://technet.microsoft.com/library/jj134288%28v=ws.10%29.aspx), illetve [Tesztlabor-útmutató az SSPR-hez](https://technet.microsoft.com/library/hh826057%28v=ws.10%29.aspx).
 
-A következő szakaszban az Azure MFA szolgáltató Microsoft Azure Active Directoryben történő beállításához nyújt útmutatást. A fájl tartalmazza a többtényezős hitelesítés szükséges, hogy hozzá tud csatlakozni az Azure MFA hitelesítési anyagokat hoz létre.  A folyamat végrehajtásához Azure-előfizetés szükséges.
+A következő szakaszban az Azure MFA szolgáltató Microsoft Azure Active Directoryben történő beállításához nyújt útmutatást. Ennek keretében létre fog hozni egy fájlt, amely tartalmazza az MFA által az Azure MFA-hoz való kapcsolódáshoz szükséges hitelesítési anyagokat.  A folyamat végrehajtásához Azure-előfizetés szükséges.
 
 ### <a name="register-your-multi-factor-authentication-provider-in-azure"></a>A többtényezős hitelesítési szolgáltató regisztrálása az Azure-ban
 
-1.  Hozzon létre egy [MFA-szolgáltatóra](https://docs.microsoft.com/azure/multi-factor-authentication/multi-factor-authentication-get-started-auth-provider).
+1.  Hozzon létre egy [MFA szolgáltató](https://docs.microsoft.com/en-us/azure/multi-factor-authentication/multi-factor-authentication-get-started-auth-provider.md).
 
-2. Nyissa meg a támogatási esetet, és a közvetlen SDK for ASP.net 2.0 C# kérelem. Az SDK-t csak kell adni a multi-factor Authentication szolgáltatás MIM aktuális felhasználóinak, mert a közvetlen SDK elavult. Új felhasználók a multi-factor Authentication kiszolgáló integrálódó MIM következő verziójában el kell fogadnia.
+2. Nyisson meg egy támogatási esetet, és az közvetlen SDK-val igényelni az ASP.net 2.0 C#. Az SDK-t csak adható meg aktuális felhasználók a MIM az MFA, mert a közvetlen SDK elavult. Új ügyfeleknek el kell fogadnia, hogy az MFA-kiszolgálóval integrálni a MIM következő verziójára.
 
-3.  Válassza az **App Services &gt; Active Directory &gt; Multi-Factor Auth Provider &gt; Quick Create** (Alkalmazásszolgáltatások > Active Directory > Többtényezős hitelesítési szolgáltató > Gyors létrehozás) lehetőséget.
-
-![Az Azure portálon gyorsan MFA lemezkép létrehozása](media/MIM-SSPR-Azureportal.png)
-
-4.  A **Name** (Név) mezőbe írja be, hogy **SSPRMFA**, majd kattintson a **Create** (Létrehozás) gombra.
-
-![Kép: Többtényezős hitelesítési szolgáltató az Azure-portálon](media/MIM-SSPR-Azureportal-2.png)
-
-5.  A klasszikus Azure-portál menüjében kattintson az **Active Directory** elemre, majd lépjen a **Multi-Factor Auth Providers** (Többtényezős hitelesítési szolgáltatók) lapra.
-
-6.  Kattintson az **SSPRMFA** elemre, majd a **Manage** (Kezelés) gombra a képernyő alján.
-
-    ![Ikon: A Manage gomb az Azure-portálon](media/MIM-SSPR-ManageButton.png)
-
-7.  Az új ablakban a **Configure** (Konfigurálás) felirat alatti bal oldali panelen kattintson a **Settings** (Beállítások) lehetőségre.
-
-8.  A **csalási riasztás**, törölje a jelet ** felhasználó blokkolása visszaélés jelentésekor. A jelölőnégyzet jelölésének törlése célja esetben a teljes szolgáltatás letiltását.
-
-9. A megjelenő **Azure Multi-Factor Authentication** (Azure többtényezős hitelesítés) ablakban a bal oldali menüben kattintson az **SDK** elemre a **Downloads** (Letöltések) területen.
-
-10. Kattintson a **Download** (Letöltés) hivatkozásra az **SDK for ASP.net 2.0 C#** nyelvű fájl ZIP oszlopában.
-
-    ![Kép: Azure MFA ZIP-fájl letöltése](media/MIM-SSPR-Azure-MFA.png)
-
-11. A letöltött ZIP-fájlt másolja minden rendszerre, ahol a MIM szolgáltatás telepítve van.  Vegye figyelembe, hogy a ZIP-fájl az Azure MFA szolgáltatással való hitelesítésre szolgáló kulcskezelő anyagokat tartalmaz.
+3. A letöltött ZIP-fájlt másolja minden rendszerre, ahol a MIM szolgáltatás telepítve van.  Vegye figyelembe, hogy a ZIP-fájl az Azure MFA szolgáltatással való hitelesítésre szolgáló kulcskezelő anyagokat tartalmaz.
 
 ### <a name="update-the-configuration-file"></a>A konfigurációs fájl frissítése
 
@@ -118,13 +108,13 @@ A következő szakaszban az Azure MFA szolgáltató Microsoft Azure Active Direc
 
 9. A `<username>` elemben adjon meg egy tetszőleges felhasználónevet.
 
-10. A `<DefaultCountryCode>` elemben adja meg az alapértelmezett országkódját. Azokban az esetekben, ahol a felhasználók országkód nélkül telefonszám regisztrált a felhasználók ezt a kódot fog kapni. Azokban az esetekben, ahol a felhasználó rendelkezik-e a különböző előhívószámmal rendelkezik a regisztrált telefonszámban szerepelnie.
+10. A `<DefaultCountryCode>` elemben adja meg az alapértelmezett országkódját. Országkód nélkül telefonszám bejegyzése esetén a rendszer ezt az országkódot fogja használni. Amennyiben a felhasználó nemzetközi országkóddal rendelkezik, azt fel kell tüntetni a regisztrált telefonszámban.
 
 11. Mentse az MfaSettings.xml fájlt, ezen a néven, ugyanarra a helyre.
 
 #### <a name="configure-the-phone-gate-or-the-one-time-password-sms-gate"></a>A Telefonos kapu vagy az Egyszeri SMS-jelszó kapu beállítása
 
-1.  Indítsa el az Internet Explorert és keresse meg a MIM-portálra, hitelesítse magát a MIM-rendszergazdai fiókkal, majd kattintson a **munkafolyamatok** a bal oldali navigációs sávon.
+1.  Az Internet Explorerben lépjen a MIM-portálra, hitelesítse magát a MIM-rendszergazdai fiókkal, majd a bal oldali navigációs sávon kattintson a **Workflows** (Munkafolyamatok) elemre.
 
     ![Kép: Navigáció a MIM-portálon](media/MIM-SSPR-workflow.jpg)
 
@@ -140,7 +130,7 @@ A szervezeti felhasználók ezután már regisztrálhatnak a jelszóváltoztatá
 
 #### <a name="register-users-for-password-reset"></a>Felhasználók regisztrálása jelszóváltoztatásra
 
-1.  A felhasználó fogja elindítani a webböngészőt, és keresse meg a MIM jelszó-változtatási regisztrációs portálra.  (A portál jellemzően Windows-hitelesítésre van konfigurálva.)  Identitása megerősítéséhez a portálon ismét meg kell adnia felhasználónevét és jelszavát.
+1.  A felhasználó elindít egy böngészőt, és a MIM jelszó-változtatási regisztrációs portálra lép.  (A portál jellemzően Windows-hitelesítésre van konfigurálva.)  Identitása megerősítéséhez a portálon ismét meg kell adnia felhasználónevét és jelszavát.
 
     Be kell lépnie a jelszó-regisztrálási portálra, és hitelesítenie kell magát a felhasználónevével és jelszavával.
 
@@ -157,7 +147,7 @@ A felhasználó kétféleképpen használhatja a jelszó-változtatási és fió
 
 Ha a MIM beépülő moduljait és bővítményeit olyan tartományhoz csatlakoztatott számítógépen telepíti, amely a szervezeti hálózaton keresztül a MIM szolgáltatáshoz csatlakozik, a felhasználó az asztali bejelentkezési környezetből megváltoztathatja az elfelejtett jelszavát.  Ezen a folyamaton a következő lépésekkel haladhat végig.
 
-#### <a name="windows-desktop-login-integrated-password-reset"></a>Windows asztali bejelentkezési integrált jelszó alaphelyzetbe állítása
+#### <a name="windows-desktop-login-integrated-password-reset"></a>A Windows bejelentkezési felülettel integrált jelszó-átállítási funkció
 
 1.  Ha a felhasználó többször is helytelen jelszót ad meg, a bejelentkezési képernyőn megjelenik a **Nem tud bejelentkezni?** hivatkozás. .
 
@@ -169,7 +159,7 @@ Ha a MIM beépülő moduljait és bővítményeit olyan tartományhoz csatlakozt
 
 2.  A rendszer hitelesítésre kéri a felhasználót. Ha a többtényezős hitelesítés be lett állítva, a felhasználó telefonhívást kap.
 
-3.  A háttérben mi történik az adott Azure MFA a felhasználó telefonhívást megadott, amikor azok a szolgáltatásra regisztrált.
+3.  Ebben az esetben az Azure MFA szolgáltatás a háttérben felhívja azt a telefonszámot, amelyet a felhasználó megadott, amikor a szolgáltatásra regisztrált.
 
 4.  Amikor a felhasználó felveszi a telefont, a rendszer arra kéri, hogy nyomja meg a kettőskereszt (#) gombot a készüléken. A felhasználónak ezután a **Next** (Tovább) gombra kell kattintania a portálon.
 
@@ -186,7 +176,7 @@ Ha a MIM beépülő moduljait és bővítményeit olyan tartományhoz csatlakozt
 
 1.  A felhasználó böngészőben a **jelszó-változtatási portálra** lép, megadja a felhasználónevét, majd a **Next** (Tovább) gombra kattint.
 
-    Ha a többtényezős hitelesítés be lett állítva, a felhasználó telefonhívást kap. A háttérben mi történik az adott Azure MFA a felhasználó telefonhívást megadott, amikor azok a szolgáltatásra regisztrált.
+    Ha a többtényezős hitelesítés be lett állítva, a felhasználó telefonhívást kap. Ebben az esetben az Azure MFA szolgáltatás a háttérben felhívja azt a telefonszámot, amelyet a felhasználó megadott, amikor a szolgáltatásra regisztrált.
 
     Amikor a felhasználó felveszi a telefont, a rendszer arra kéri, hogy nyomja meg a kettőskereszt (#) gombot a készüléken. A felhasználónak ezután a **Next** (Tovább) gombra kell kattintania a portálon.
 
@@ -201,8 +191,7 @@ Ha a MIM beépülő moduljait és bővítményeit olyan tartományhoz csatlakozt
 
 4.  Sikeres hitelesítést követően a felhasználó két lehetőség közül választhat: megtarthatja a jelenlegi jelszavát, vagy új jelszót állíthat be.
 
-5.  ![Kép: Fiók zárolásának sikeres feloldása a MIM-ben](media/MIM-SSPR-account-unlock.JPG)
+5.  ! [A MIM ac
+6.  zárolásának sikeres image](media/MIM-SSPR-account-unlock.JPG) száma
 
 6.  Ha a felhasználó úgy dönt, hogy megváltoztatja a jelszavát, a módosításhoz kétszer be kell írnia az új jelszót, majd a **Next** (Tovább) gombra kell kattintania.
-
-    ![Kép: Jelszóváltoztatás a MIM Bejelentkezési segéddel](media/MIM-SSPR-PR1.JPG)
