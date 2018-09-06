@@ -2,20 +2,20 @@
 title: Az Azure multi-factor Authentication kiszolgáló SDK használata a PAM-re vagy az SSPR forgatókönyvek aktiválásához |} A Microsoft Docs
 description: Állítsa be az Azure multi-factor Authentication kiszolgáló SDK egy második biztonsági réteggel, amikor a felhasználók szerepköröket aktiválnak a Privileged Access Management és az önkiszolgáló jelszó-visszaállítás.
 keywords: ''
-author: billmath
+author: fimguy
 ms.author: billmath
 manager: mtillman
-ms.date: 08/31/2018
+ms.date: 09/02/2018
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 94a74f1c-2192-4748-9a25-62a526295338
-ms.openlocfilehash: a2a3becab4fbef1126a96ade46b85ef10c0c6291
-ms.sourcegitcommit: acb2c61831cb634278acc439d6d9496ff51a6a54
+ms.openlocfilehash: 7191e445688cc9e3c5c02b9c6852c869a28a937a
+ms.sourcegitcommit: ad0690bd57e3d056397108bf1c8417965d69a32c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43694921"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43772678"
 ---
 # <a name="use-azure-multi-factor-authentication-server-to-activate-pam-or-sspr"></a>Azure multi-factor Authentication-kiszolgáló használata a PAM-re vagy az SSPR aktiválásához
 A következő dokumentum ismerteti, hogyan állíthatja be az Azure MFA-kiszolgáló egy második biztonsági réteggel, amikor a felhasználók szerepköröket aktiválnak a jogosultságra hozzáférés-kezelés és önkiszolgáló jelszó-változtatási.
@@ -57,7 +57,8 @@ Miután letöltötte a kiszolgálót [telepítése](https://docs.microsoft.com/e
 4. Egyszer varázslók, kattintson a konfiguráció, a Select "MIM MFASDK" és az alkalmazáskészlet
 
 > [!NOTE] 
-> Varázsló kell létrehozni egy felügyeleti csoportot. További információ az Azure többtényezős hitelesítés az Azure multi-factor Authentication-kiszolgáló dokumentációjában találhatók.
+> Varázsló kell létrehozni egy felügyeleti csoportot. További információ az Azure-ban található >> többtényezős hitelesítés az Azure multi-factor Authentication kiszolgáló dokumentációját.
+
 5. Ezután a MIM szolgáltatás fiók nyissa meg a multi-factor Authentication konzolon válassza a "Felhasználók" importálni kell egy. Kattintson a "Importálás az Active Directory" b. Keresse meg a szolgáltatásfiókot, más néven "contoso\mimservice" c. Kattintson a "Importálása" és "Bezárás" ![működő-az-mfaserver-az-mim_importmimserviceaccount. PNG](media/working-with-mfaserver-for-mim/working-with-mfaserver-for-mim_importmimserviceaccount.PNG) 
 6. A MIM szolgáltatás fiók engedélyezése a multi-factor Authentication konzolon szerkesztésével ![működő-az-mfaserver-az-mim_enableserviceaccount. PNG](media/working-with-mfaserver-for-mim/working-with-mfaserver-for-mim_enableserviceaccount.PNG)
 7. Frissítse az IIS-hitelesítés, a "MIM MFASDK" webhelyen. Először letiltjuk a "Névtelen", majd a Windows-hitelesítés engedélyezése" ![működő-az-mfaserver-az-mim_iisconfig. PNG](media/working-with-mfaserver-for-mim/working-with-mfaserver-for-mim_iisconfig.PNG)
@@ -65,7 +66,7 @@ Miután letöltötte a kiszolgálót [telepítése](https://docs.microsoft.com/e
 
 ## <a name="configuring-the-mim-service-for-azure-multi-factor-authentication-server"></a>A MIM szolgáltatás az Azure multi-factor Authentication-kiszolgáló konfigurálása 
 
-### <a name="step-1-patch-server-to-452000"></a>1. lépés: Patch kiszolgáló 4.5.200.0
+### <a name="step-1-patch-server-to-452020"></a>1. lépés: Patch kiszolgáló 4.5.202.0
  
 ### <a name="step-2-backup-and-open-the-mfasettingsxml-located-in-the-cprogram-filesmicrosoft-forefront-identity-manager2010service"></a>2. lépés: Biztonsági mentés, és nyissa meg az MfaSettings.xml található a "C:\Program Files\Microsoft Forefront Identity Manager\2010\Service"
 
