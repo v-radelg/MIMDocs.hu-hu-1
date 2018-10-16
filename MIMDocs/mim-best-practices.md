@@ -7,16 +7,15 @@ ms.author: barclayn
 manager: mbaldwin
 ms.date: 01/05/2018
 ms.topic: reference
-ms.prod: identity-manager-2016
-ms.service: microsoft-identity-manager
+ms.prod: microsoft-identity-manager
 ms.technology: security
 ms.assetid: ''
-ms.openlocfilehash: 9ef96b88942fd33107d9021ddddb90d0d80dbed1
-ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
+ms.openlocfilehash: 1765dfe20abd43808249480ab3701d5722c51c24
+ms.sourcegitcommit: ace4d997c599215e46566386a1a3d335e991d821
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36290118"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49334176"
 ---
 # <a name="microsoft-identity-manager-2016-best-practices"></a>Microsoft Identity Manager 2016 – Gyakorlati tanácsok
 
@@ -91,7 +90,7 @@ Attól függően, hogy mennyi memóriát használ az SQL Server, és hogy megosz
    WITH OVERRIDE
    ```
 
-   Ez a példa újrakonfigurálja az SQL-kiszolgáló legfeljebb 12 gigabájt (GB) memória használatával.
+   Ez a példa újrakonfigurálja az SQL server legfeljebb 12 gigabájt (GB) memória használatára.
 
 4. A beállítás ellenőrzésére használja a következő lekérdezést:
 
@@ -109,16 +108,16 @@ Attól függően, hogy mennyi memóriát használ az SQL Server, és hogy megosz
 
 ### <a name="backup-and-recovery-configuration"></a>Biztonsági mentés és helyreállítás konfigurálása
 
-Általában a rendszergazdát, hogy egy biztonsági mentési és helyreállítási stratégia kialakítása együtt kell működnie. Bizonyos ajánlások a következők:
-- Az adatbázisról biztonsági mentést, a szervezet biztonsági házirendjének megfelelően. 
+Általánosságban véve együttműködve kell az adatbázis-rendszergazdája, egy biztonsági mentési és helyreállítási stratégia tervezésekor. Néhány javaslat a következők:
+- Hajtsa végre az adatbázisok biztonsági mentése a szervezet biztonsági házirendjének megfelelően. 
 - Ha a növekményes naplófájlok biztonsági mentései nem tervezettek, az egyszerű helyreállítási módot kell beállítani az adatbázishoz. 
-- Győződjön meg arról, hogy tudomásul veszi a különböző helyreállítási modellek következményekkel járhat a biztonsági mentési stratégia megvalósítása előtt. Ismerje meg, a lemezterületre vonatkozó követelményei ezek a modellek. A teljes helyreállítási modell a naplók gyakori biztonsági mentéseit igényli a magas lemezterület-használat elkerülése érdekében. 
+- Győződjön meg arról, hogy a biztonsági mentési stratégia megvalósítása előtt tisztában a különböző helyreállítási modellek következményekkel járhat. Ismerje meg, hogy az ezen modellek lemezterület-igénye. A teljes helyreállítási modell a naplók gyakori biztonsági mentéseit igényli a magas lemezterület-használat elkerülése érdekében. 
 
 További információt a [Recovery Model Overview](http://go.microsoft.com/fwlink/?LinkID=185370) (A helyreállítási modell áttekintése) és a [FIM 2010 Backup and Restore Guide](http://go.microsoft.com/fwlink/?LinkID=165864) (FIM 2010 biztonsági mentési és visszaállítási útmutató) című részben talál.
 
 ## <a name="create-a-backup-administrator-account-for-the-fim-service-after-installation"></a>Biztonsági mentés rendszergazdai fiók létrehozása a FIM szolgáltatás telepítése után
 
-A rendszergazdák FIMService készlet tagjait engedélye egyedi alapvető fontosságú a MIM-környezet működését. Ha nem tud bejelentkezni a fiókkal részei a Rendszergazdák csoportnak, a csak megoldás lehet, a visszaállítás egy korábbi biztonsági mentés, a rendszer. Ezen helyzet elkerülése érdekében javasolt, hogy a telepítés utáni konfiguráció részeként adjon hozzá más felhasználókat a FIM rendszergazdai csoporthoz.
+A FIMService-rendszergazdák csoport tagjai a MIM-környezet működését fontosságú egyedi engedélyekkel rendelkeznek. Ha Ön nem lehet bejelentkezni a Rendszergazdák csoport részeként, egyetlen megoldás az végezheti el a visszaállítást egy korábbi biztonsági másolattal a rendszer. Ezen helyzet elkerülése érdekében javasolt, hogy a telepítés utáni konfiguráció részeként adjon hozzá más felhasználókat a FIM rendszergazdai csoporthoz.
 
 ## <a name="fim-service"></a>FIM szolgáltatás
 
@@ -148,7 +147,7 @@ További információkért lásd: [Configure Message Delivery Restrictions](http
 
 ### <a name="disable-sharepoint-indexing"></a>SharePoint-indexelés letiltása
 
-Ajánlott letiltani a Microsoft Office SharePoint® indexelését. Nincsenek indexelése igénylő. Indexelő hatására hány potenciális problémákat és hiba naplóbejegyzések a MIM-ben. Tiltsa le a SharePoint-indexelés hajtsa végre az alábbi lépéseket:
+Ajánlott letiltani a Microsoft Office SharePoint® indexelését. Nincsenek indexelendő dokumentumok. Indexelő hatására számos hibanapló-bejegyzést és esetleges teljesítményproblémákat okozhat a mim szoftverben. Tiltsa le a SharePoint-indexelés hajtsa végre az alábbi lépéseket:
 
 1.  A MIM 2016 portált futtató kiszolgálón kattintson a Start gombra.
 
@@ -168,16 +167,16 @@ Ajánlott letiltani a Microsoft Office SharePoint® indexelését. Nincsenek ind
 
 ## <a name="mim-2016-initial-data-load"></a>A MIM 2016 kezdeti adatbetöltése
 
-Ez a rész felsorolja a kezdeti adatok terhelés külső rendszer MIM teljesítményének javítása érdekében lépések egy sorozatát. Fontos megérteni, hogy ezeket a lépéseket számos csak végre a rendszer a kezdeti feltöltése során. Ezek betöltés befejezése után kell állítani. Ez egy egyszeri művelet, és nem folyamatos szinkronizálás.
+Ez a szakasz felsorolja a kezdeti adatbetöltés külső rendszerből a MIM teljesítményének növelése érdekében végrehajtandó lépéseket. Fontos megérteni, hogy ezeket a lépéseket több csak végre a rendszer kezdeti feltöltése során. Ezek betöltés befejezése után kell állítani. Ez egy egyszeri művelet, és nem folyamatos szinkronizálás.
 
 > [!NOTE]
-> További információ a felhasználók MIM és Active Directory tartományi szolgáltatások (AD DS) közötti szinkronizálás: [hogyan felhasználók szinkronizálása az Active Directoryból az FIM felé irányuló](http://go.microsoft.com/fwlink/?LinkID=188277) a FIM-dokumentáció.
+> További információ a felhasználók a MIM és az Active Directory Domain Services (AD DS) közötti szinkronizálása: [hogyan hajthatom végre felhasználók szinkronizálása az Active Directoryból a FIM](http://go.microsoft.com/fwlink/?LinkID=188277) a FIM-dokumentációban.
 > 
 > [!IMPORTANT]
 > Győződjön meg arról, hogy alkalmazta a jelen útmutató SQL-telepítéssel foglalkozó szakaszában tárgyalt ajánlott eljárásokat. 
 
 ### <a name="step-1-configure-the-sql-server-for-initial-data-load"></a>1. lépés: Az SQL Server konfigurálása a kezdeti adatbetöltéshez
-Az adatok kezdeti betöltés hosszadalmas folyamat lehet. Ha azt tervezi, először nagy mennyiségű adat betöltésére, lerövidíthető ideiglenesen teljes szöveges keresés kikapcsolásával, és kapcsolja be azt újra az exportálást a MIM 2016 management Agent (FIM MA) befejezése után az adatbázis feltöltéséhez szükséges idő.
+Az adatok kezdeti betöltés hosszadalmas folyamat lehet. Ha szeretne kezdetben betölteni a nagy mennyiségű adatot, lerövidítheti ideiglenesen kikapcsolásával a teljes szöveges keresést, és újbóli bekapcsolásával a MIM 2016 kezelőügynökbe (FIM MA) exportálás befejezése után az adatbázis feltöltéséhez szükséges idő.
 
 A teljes szöveges keresés átmeneti kikapcsolásához:
 
@@ -201,7 +200,7 @@ A kezdeti betöltése során csak a FIM-konfigurációhoz a felügyeletiháziren
 
 ### <a name="step-3-configure-and-populate-the-fim-service-with-external-identity-data"></a>3. lépés: A FIM szolgáltatás konfigurálása és feltöltése külső azonosító adatokkal
 
-Ezen a ponton érdemes követnie eljárások ismertetik a How Do I felhasználók szinkronizálása az Active Directory tartományi szolgáltatásokból FIM útmutató konfigurálását, és szinkronizálja a rendszer a felhasználókat az Active Directoryból. Adatait szinkronizálni kell, ha a folyamat eljárásait ismerteti a [hogyan csoportok szinkronizálásához Active Directory tartományi szolgáltatásokból az FIM felé irányuló](https://technet.microsoft.com/library/ff686936(v=ws.10).aspx) útmutató.
+Ezen a ponton követendő eljárásokat ismerteti a How Do I felhasználók szinkronizálása az Active Directory Domain Services konfigurálása, és a rendszer szinkronizálja a felhasználókat az Active Directoryból a FIM útmutatóját. Csoport adatait szinkronizálni kell, ha a folyamat eljárásait ismerteti a [hogyan Do I Synchronize Groups az Active Directory tartományi szolgáltatásokból az FIM](https://technet.microsoft.com/library/ff686936(v=ws.10).aspx) útmutató.
 
 #### <a name="synchronization-and-export-sequences"></a>A szinkronizálás és az exportálás sorrendje
 
@@ -358,7 +357,7 @@ Az SSL implementálásához:
 
 28. Kattintson a Tevékenység, majd a Másodlagos címek leképezése elemre.
 
-29. Kattintson a http://servername.
+29. Kattintson a http://servernamelehetőségre.
 
 30. Változás http://servername való https://servername, majd kattintson az OK gombra.
 
@@ -370,9 +369,9 @@ Az optimális teljesítménykonfigurációhoz:
 
 -   Alkalmazza a jelen a dokumentum SQL-telepítő szakaszában leírt ajánlott eljárásokat.
 
--   Kapcsolja ki a SharePoint-indexelés meg a MIM-portál webhelyéhez. További tudnivalókat a jelen dokumentum SharePoint-indexelés letiltása című szakaszában találhat.
+-   Kapcsolja ki a SharePoint-indexelés a MIM-portál webhelyen. További tudnivalókat a jelen dokumentum SharePoint-indexelés letiltása című szakaszában találhat.
 
-## <a name="feature-specific-best-practices"></a>A szolgáltatás adott gyakorlati tanácsok 
+## <a name="feature-specific-best-practices"></a>A szolgáltatás Funkcióspecifikus ajánlott eljárások 
 
 
 ### <a name="request-management"></a>Kérelmek kezelése
@@ -388,7 +387,7 @@ A MIM kétféle MPR-t használ, a kérelmet és a készletátmenetet:
 - Kérelem-MPR (RMPR)
 
   - Az erőforrásokon végzett műveletek létrehozási, olvasási, frissítési vagy törlési (CRUD) hozzáférés-vezérlési házirendjének (hitelesítési, engedélyezési és műveleti) meghatározásához használatos.
-  - Amikor egy CRUD művelet szemben a MIM-ben a cél erőforráson alkalmazza.
+  - Alkalmazza, ha egy CRUD-művelet kiadására kerül sor egy cél-erőforrásra a mim szoftverben.
   - Hatóköre a szabályban megadott megfelelési feltételek, azaz hogy mely CRUD-kérelmekre vonatkozik a szabály.
 
 - Készletátmenet-MPR (TMPR)
@@ -400,7 +399,7 @@ A MIM kétféle MPR-t használ, a kérelmet és a készletátmenetet:
 
 #### <a name="only-enable-mprs-as-necessary"></a>Csak szükség esetén engedélyezze az MPR-eket
 
-A konfiguráció alkalmazásakor használja a legalacsonyabb jogosultsági szint elvét. Házirendszabályok szabályozhatja a hozzáférési házirendet a MIM-környezet. Csak a felhasználók többsége által használt szolgáltatásokat engedélyezze. Például nem minden felhasználónak a MIM az eszközcsoport-kezelés, ezért társított csoport felügyeleti házirendszabályok le kell tiltani. Alapértelmezés szerint a MIM részét képező legtöbb nem rendszergazdai engedélyek le van tiltva.
+A konfiguráció alkalmazásakor használja a legalacsonyabb jogosultsági szint elvét. MPR-EK, a MIM-környezet hozzáférési szabályzatát szabályozzák. Csak a felhasználók többsége által használt szolgáltatásokat engedélyezze. Például nem minden felhasználó használhatja a MIM csoportfelügyelet, így a társított csoportkezelési MPR-EK le kell tiltani. Alapértelmezés szerint le van tiltva a legtöbb nem rendszergazdai engedélyek a MIM tartalmaz.
 
 #### <a name="duplicate-built-in-mprs-instead-of-directly-modifying"></a>A beépített MPR-ek közvetlen módosítása helyett másolja azokat
 Ha módosítani szeretné a beépített MPR-eket, létre kell hoznia egy új MPR-t a szükséges konfigurációval és ki kell kapcsolnia a beépített MPR-t. Ez biztosítja, hogy a beépített MPR-ek a frissítési folyamaton keresztül bevezetett jövőbeli módosításai nem lesznek negatív hatással a rendszerkonfigurációra.
@@ -427,7 +426,7 @@ Olyan azonos hozzáférési követelményekkel rendelkező attribútumok esetén
 
 #### <a name="avoid-giving-unrestricted-access-even-to-selected-principal-groups"></a>Kerülje a korlátlan hozzáférés megadását még a kiválasztott egyszerű rendszercsoportokhoz is
 
-A mim szoftverben engedélyeket is meg van adva egy pozitív helyességi feltételt. MIM nem támogatja a megtagadási engedélyeket, adjon korlátlan hozzáférést egy erőforráshoz növeli a kizárások az engedélyek biztosítása. Ajánlott eljárásként azt javasoljuk, hogy csak a szükséges engedélyeket adja meg.
+A MIM-ben egy pozitív helyességi feltétel engedélyek vannak meghatározva. A MIM nem támogatja a megtagadási engedélyeket, mert erőforrásokhoz való korlátlan hozzáférés megadását bonyolítja bármely kizárás megadását az engedélyek megadása. Ajánlott eljárásként azt javasoljuk, hogy csak a szükséges engedélyeket adja meg.
 
 #### <a name="use-tmprs-to-define-custom-entitlements"></a>Használjon TMPR-eket az egyéni jogosultságok megadásához
 
@@ -466,7 +465,7 @@ A jogosultság eltávolításához a rendszerből (és visszavonásához a jelen
 
 3.  Tiltsa le a készletátmenet kimenő MPR-jét.
 
-Egy jogosultság eltávolítása, de a jelenlegi tagok különálló hagyjon (például a MIM használatával felügyeli a jogosultság stop):
+A jogosultság eltávolításához, de a jelenlegi tagok önállóan hagyja (például jogosultságkezelésre való MIM használatának leállítása):
 
 1.  Tiltsa le a készletátmenet bejövő MPR-jét. Ezzel elkerülhetők az új jogosultság-megadások.
 
@@ -500,11 +499,11 @@ A többértékű referenciaattribútumokon alapuló feltételek használata ker�
 
 #### <a name="kiosk-like-computers-that-are-used-for-password-reset-should-set-local-security-to-clear-the-virtual-memory-pagefile"></a>A jelszó-visszaállításhoz használt kioszkmódban üzemelő számítógépeknél a helyi biztonságot a virtuális memória lapozófájljának törlésére kell beállítani
 
-A MIM jelszó-változtatási céljuk, hogy a teljes képernyős munkaállomáson való telepítésekor, azt javasoljuk, hogy a leállítási: törölje a virtuális memória lapozófájl helyi biztonsági házirend beállítása be kell kapcsolni győződjön meg arról, hogy a bizalmas adatok nem érhető el jogosulatlan felhasználók.
+A MIM jelszó-visszaállítást egy teljes képernyős feltétlenül munkaállomáson, javasoljuk, hogy a Leállítás: virtuális memória lapozófájljának törlése a helyi biztonsági házirend-beállítást be kell kapcsolni győződjön meg arról, hogy a folyamat memóriájából származó érzékeny információkhoz nem elérhető jogosulatlan felhasználók.
 
 #### <a name="users-should-always-register-for-a-password-reset-on-a-computer-that-they-are-logged-on-to"></a>A felhasználóknak mindig azon a számítógépen kell regisztrálniuk a jelszó-visszaállításra, amelyen bejelentkeztek
 
-Amikor a felhasználó megkísérli regisztrálni a jelszó alaphelyzetbe webes portálon keresztül, a MIM mindig a bejelentkezett felhasználó nevében, függetlenül attól, akik van bejelentkezve a webhely kezdeményezi a regisztráció. A felhasználóknak mindig azon a számítógépen kell regisztrálniuk a jelszó-visszaállításra, amelyen bejelentkeztek.
+Amikor egy felhasználó megpróbál regisztrálni a jelszó-visszaállításra egy webportálon keresztül, a MIM mindig a bejelentkezett felhasználó nevében, függetlenül attól, ki van bejelentkezve a webhelyen kezdeményezi a regisztrációt. A felhasználóknak mindig azon a számítógépen kell regisztrálniuk a jelszó-visszaállításra, amelyen bejelentkeztek.
 
 #### <a name="do-not-set-the-avoidpdconwan-registry-key-to-true"></a>Ne állítsa az AvoidPdcOnWan beállításkulcsot igaz értékre
 
@@ -552,7 +551,7 @@ Bár a Személy és Csoport erőforrástípusok nem alapvető erőforrástípuso
 
 -   DeletedTime
 
--   Description
+-   Leírás
 
 -   DetectedRulesList • DisplayName
 
@@ -576,7 +575,7 @@ Ne töröljön sémaerőforrásokat, amíg fennálló naplózási követelménye
 
 #### <a name="making-regular-expressions-case-insensitive"></a>Kis-és nagybetűk megkülönböztetésének kikapcsolása a reguláris kifejezésekben
 
-A mim szoftverben célszerű annak néhány reguláris kifejezések-és nagybetűket. A ?!: operátor használatával figyelmen kívül hagyhatja a kis- és nagybetűket. Például az alkalmazott típusa esetén használja az alábbi kifejezést:
+A MIM-ben hasznos lehet, hogy bizonyos reguláris kifejezések megkülönbözteti a kis-és nagybetű nincs megkülönböztetve. A ?!: operátor használatával figyelmen kívül hagyhatja a kis- és nagybetűket. Például az alkalmazott típusa esetén használja az alábbi kifejezést:
 
 `\^(?!:contractor\|full time employee)%.`
 
@@ -586,17 +585,17 @@ A szinkronizáló vezérlő számára felfedett Tag attribútum ténylegesen a C
 
 #### <a name="leading-and-trailing-spaces-in-strings-are-ignored"></a>Kezdő és záró szóközök figyelmen kívül hagyása sztringekben
 
-A mim szoftverben megadhatja a kezdő és záró szóközök karakterláncok, de a MIM rendszer figyelmen kívül hagyja ezeket a szóközöket. Egy kezdő és záró szóközzel rendelkező sztring elküldése esetén a szinkronizáló vezérlő és a webszolgáltatások figyelmen kívül hagyják ezeket a szóközöket.
+A MIM-ben megadhat kezdő és záró szóközökkel rendelkező karakterláncokat, de a MIM rendszer figyelmen kívül hagyja ezeket a szóközöket. Egy kezdő és záró szóközzel rendelkező sztring elküldése esetén a szinkronizáló vezérlő és a webszolgáltatások figyelmen kívül hagyják ezeket a szóközöket.
 
 #### <a name="empty-strings-do-not-equal-null"></a>Az üres sztring nem egyenlő a null értékkel
 
-Üres értékek a következők nem null, ebben a kiadásban a MIM egyenlő. Az üres sztringet tartalmazó bemeneti érték érvényes értéknek minősül. Ha nem található bemeneti érték, az null értéknek minősül.
+Üres karakterláncok, amelyek nem egyenlő a null MIM ezen kiadásában. Az üres sztringet tartalmazó bemeneti érték érvényes értéknek minősül. Ha nem található bemeneti érték, az null értéknek minősül.
 
 ### <a name="workflow-and-request-processing"></a>Munkafolyamat- és a kérelemfeldolgozás
 
 #### <a name="do-not-delete-default-workflows-that-are-shipped-with-mim-2016"></a>Ne törölje a MIM 2016-tal szállított alapértelmezett munkafolyamatokat
 
-A következő munkafolyamatok a MIM szállítják, és nem törölhető:
+A következő munkafolyamatok a MIM ellátott, és nem törölhető:
 
 -   Lejárati munkafolyamat
 
@@ -630,11 +629,11 @@ Kerülje a MIM-erőforrásokat, például a függvénykiértékelői tevékenys�
 
 ### <a name="understanding-fim-service-partitions"></a>A FIM szolgáltatás partícióinak ismertetése
 
-A MIM célkitűzése dolgozza fel kérelmeket, melyek elindíthatóak különböző MIM ügyfelekről, például a FIM szinkronizálási szolgáltatás és az önkiszolgáló összetevők az üzleti konfigurált házirendek alapján. A kialakításból fakadóan mindegyik FIM-szolgáltatáspéldány egy logikai csoporthoz tartozik, amely egy vagy több FIM-szolgáltatáspéldányból, más néven FIM-szolgáltatáspartícióból áll. Ha csak egy FIM-szolgáltatáspéldány van telepítve az összes kérelem kezelésére, akkor előfordulhat, hogy feldolgozási késéseket tapasztal. Egyes műveletek akár az önkiszolgáló műveletekhez megfelelő alapértelmezett időtúllépési értékeket is meghaladhatják. A FIM-szolgáltatáspartíciók segíthetnek e probléma megoldásában.
+A MIM célja, különböző MIM-ügyfelek, például a FIM szinkronizálási szolgáltatás és a konfigurált üzleti szabályzatok szerint az önkiszolgáló összetevők által kezdeményezhető kérelmek feldolgozása. A kialakításból fakadóan mindegyik FIM-szolgáltatáspéldány egy logikai csoporthoz tartozik, amely egy vagy több FIM-szolgáltatáspéldányból, más néven FIM-szolgáltatáspartícióból áll. Ha csak egy FIM-szolgáltatáspéldány van telepítve az összes kérelem kezelésére, akkor előfordulhat, hogy feldolgozási késéseket tapasztal. Egyes műveletek akár az önkiszolgáló műveletekhez megfelelő alapértelmezett időtúllépési értékeket is meghaladhatják. A FIM-szolgáltatáspartíciók segíthetnek e probléma megoldásában.
 
-További információ: [ismertetése FIM szolgáltatás partíciók](https://social.technet.microsoft.com/wiki/contents/articles/2363.understanding-fim-service-partitions.aspx).
+További információkért lásd: [ismertetése a FIM szolgáltatás partícióinak](https://social.technet.microsoft.com/wiki/contents/articles/2363.understanding-fim-service-partitions.aspx).
 
 ## <a name="next-steps"></a>További lépések
 - [FIM biztonsági mentési és visszaállítási útmutató](http://go.microsoft.com/fwlink/?LinkID=165864)
-- [Hogyan készíthetek felhasználók szinkronizálása az Active Directoryból az FIM felé](http://go.microsoft.com/fwlink/?LinkID=188277) 
-- [Helyreállítási modell áttekintése](http://go.microsoft.com/fwlink/?LinkID=185370).
+- [Hogyan hajthatom végre felhasználók szinkronizálása az Active Directoryból a FIM](http://go.microsoft.com/fwlink/?LinkID=188277) 
+- [A helyreállítási modell áttekintése](http://go.microsoft.com/fwlink/?LinkID=185370).

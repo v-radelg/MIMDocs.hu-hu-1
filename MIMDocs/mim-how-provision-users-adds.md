@@ -7,15 +7,15 @@ ms.author: barclayn
 manager: mbaldwin
 ms.date: 08/18/2017
 ms.topic: article
-ms.service: microsoft-identity-manager
+ms.prod: microsoft-identity-manager
 ms.technology: security
 ms.assetid: ''
-ms.openlocfilehash: a12a8436d70b3ae866df0f615e10a3d76f791168
-ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
+ms.openlocfilehash: 032f3cb68214dcdb7008b4b771a8b66c05ebe890
+ms.sourcegitcommit: ace4d997c599215e46566386a1a3d335e991d821
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36290101"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49333972"
 ---
 # <a name="how-do-i-provision-users-to-ad-ds"></a>Felhasználók kiépítése az AD DS-ben
 
@@ -195,7 +195,7 @@ Az alábbi táblázatban azok a forgatókönyvre jellemző legfontosabb beállí
 | A kezelőügynök tervezőoldala | Configuration |
 |------------|------------------------------------|
 | Kezelőügynök létrehozása | 1. **Management agent for** (Kezelőügynök a következőhöz): FIM Service management agent (A FIM szolgáltatás kezelőügynöke) <br/> 2. **Name** (Név): Fabrikam FIMMA |
-| Kapcsolódás az adatbázishoz     | Használja a következő beállításokat: <br/> &#183; **Server** (Kiszolgáló): localhost <br/> &#183; **Database** (Adatbázis): FIMService <br/> &#183;**FIM szolgáltatás alapcím:** http://localhost:5725 <br/> <br/> A kezelőügynökhöz létrehozott fiók adatainak megadása |
+| Kapcsolódás az adatbázishoz     | Használja a következő beállításokat: <br/> &#183; **Server** (Kiszolgáló): localhost <br/> &#183; **Database** (Adatbázis): FIMService <br/> &#183;**FIM szolgáltatás základní adresa:** http://localhost:5725 <br/> <br/> A kezelőügynökhöz létrehozott fiók adatainak megadása |
 | Objektumtípusok kiválasztása                                     | A már kijelölt objektumtípusok mellett jelölje ki a **Person** (Személy) elemet.   |
 | Objektumtípus-leképezések konfigurálása                          | A már meglévő objektumtípus-leképezések mellett adja hozzá Person (Személy) **Data Source Object Type** (Adatforrás objektumtípusa) a **Metaverse** (Metaverzum) Objektumtípusú személyekre való leképezését. |
 | Attribútumfolyam konfigurálása                                | A már meglévő attribútumfolyam-leképezések mellett adja hozzá a következő attribútumfolyam-leképezéseket is: <br/><br/> ![Attribútumfolyam](media/how-provision-users-adds/image018.jpg) |
@@ -232,7 +232,7 @@ Hozza létre az egyes kezelőügynökökhöz tartozó futtatási profilokat a fe
 > 
 > 
 > [!Important]
->  Ellenőrizze, hogy a kiépítés engedélyezett-e a környezetben. Ehhez futtassa a parancsfájlt, a Windows PowerShell segítségével történő rendszerbe állításához engedélyezése (http://go.microsoft.com/FWLink/p/?LinkId=189660).
+>  Ellenőrizze, hogy a kiépítés engedélyezett-e a környezetben. Ezt megteheti a parancsfájl, a Windows PowerShell to Enable Provisioning futtatásával is (http://go.microsoft.com/FWLink/p/?LinkId=189660).
 
 
 ## <a name="configuring-the-fim-service"></a>A FIM szolgáltatás konfigurálása
@@ -244,7 +244,7 @@ Az útmutatóban felvázolt forgatókönyvhöz az alábbi ábrán látható mód
 
 A kiépítési szabályzat célja, hogy csoportokat vonjon be az AD-felhasználó kimenő szinkronizálási szabályának hatókörébe. Azáltal, hogy bevonja az erőforrást a szinkronizálási szabály hatókörébe, engedélyezi a szinkronizáló vezérlő számára, hogy a konfigurációjának megfelelően építse ki az erőforrást az AD DS-ben.
 
-A FIM szolgáltatás konfigurálásához, keresse meg a Windows Internet Explorer® http://localhost/identitymanagement. A kiépítési szabályzat létrehozásához a MIM-portál oldalán lépjen az Adminisztráció terület kapcsolódó oldalaira. A konfiguráció ellenőrzéséhez futtassa a [Using Windows PowerShell to document your provisioning policy configuration](http://go.microsoft.com/FWLink/p/?LinkId=189661) (A Windows PowerShell használata a kiépítési szabályzat konfigurálásának dokumentálására) című oldalon található szkriptet.
+A FIM szolgáltatás konfigurálásához nyissa meg a Windows Internet Explorer® http://localhost/identitymanagement. A kiépítési szabályzat létrehozásához a MIM-portál oldalán lépjen az Adminisztráció terület kapcsolódó oldalaira. A konfiguráció ellenőrzéséhez futtassa a [Using Windows PowerShell to document your provisioning policy configuration](http://go.microsoft.com/FWLink/p/?LinkId=189661) (A Windows PowerShell használata a kiépítési szabályzat konfigurálásának dokumentálására) című oldalon található szkriptet.
 
 ### <a name="step-6-create-the-synchronization-rule"></a>6. lépés: A szinkronizálási szabály létrehozása
 
@@ -253,7 +253,7 @@ Az alábbi táblázatokban a Fabrikam számára szükséges kiépítési szinkro
 | A szinkronizálási szabály konfigurációja                                                                         |                                                                             |                                                           
 |------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------|-----------------------------------------------------------|
 | Név                                                                                                       | Az Active Directory-felhasználóra vonatkozó kimenő szinkronizálási szabály                         |                                                          
-| Description                                                                                               |                                                                             |                                                           
+| Leírás                                                                                               |                                                                             |                                                           
 | Prioritás                                                                                                | 2                                                                           |                                                           
 | Adatfolyam iránya   | Kimenő             |       
 | Függőség       |         |                                         
@@ -304,7 +304,7 @@ Az AD-kiépítési munkafolyamat célja a Fabrikam kiépítési szinkronizálás
 | Munkafolyamat-konfiguráció               |                                                                 |
 |--------------------------------------|-----------------------------------------------------------------|
 | Név                                 | Az Active Directory-felhasználó kiépítési munkafolyamata                     |
-| Description                          |                                                                 |
+| Leírás                          |                                                                 |
 | Munkafolyamat típusa                        | Művelet                                                          |
 | Futtatás szabályzatfrissítéskor                 | Hamis                                                           |
 
@@ -323,7 +323,7 @@ A szükséges MPR Set Transition (Készletváltás) típusú, és akkor aktivál
 | MPR-konfiguráció                    |                                                             |
 |--------------------------------------|-------------------------------------------------------------|
 | Név                                 | AD-felhasználó kiépítésére vonatkozó felügyeletiházirend-szabály                 |
-| Description                          |                                                             |
+| Leírás                          |                                                             |
 | Típus                                 | Set Transition (Készletváltás)                                              |
 | Engedélyeket biztosít                   | Hamis                                                       |
 | Letiltva                             | Hamis                                                       |
@@ -460,7 +460,7 @@ A fenti feladatok elvégzéséhez futtassa a következő futtatási profilokat.
 | Fabrikam FIMMA   | 1. Exportálás <br/> 2. Különbözeti importálás       |
 
 
-Az importálás a FIM szolgáltatás adatbázisához, Britta Simon és az, hogy az AD-felhasználó kimenő szinkronizálási szabály Britta hivatkozások elő van készítve a Fabrikam FIMMA kapcsolódási térbe ExpectedRuleEntry objektum. Amikor a kapcsolódási térbe melletti attribútumértékek az FIM portálon beállított Britta tartozó tulajdonságok is található a várt szabály bejegyzés objektum érvényes hivatkozás. A következő képernyőfelvételen erre láthat példát.
+A FIM szolgáltatás adatbázisához, Britta Simon és a ExpectedRuleEntry objektumot az importálást követően Britta, az AD-felhasználó kimenő szinkronizálási szabályának hivatkozást elő van készítve a Fabrikam FIMMA összekötőterében. Amikor Britta tulajdonságait az összekötőtérben, a FIM-portálon konfigurált attribútumértékek mellett a Várhatószabály-objektum egy érvényes hivatkozása is megtalálhatja. A következő képernyőfelvételen erre láthat példát.
 
 ![Összekötőtér-objektum tulajdonságai](media/how-provision-users-adds/image025.jpg)
 

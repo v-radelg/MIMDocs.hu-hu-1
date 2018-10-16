@@ -7,17 +7,17 @@ ms.author: barclayn
 manager: mbaldwin
 ms.date: 08/30/2017
 ms.topic: article
-ms.service: microsoft-identity-manager
+ms.prod: microsoft-identity-manager
 ms.technology: active-directory-domain-services
 ms.assetid: c6e3cd02-1e32-4194-a8ed-3a0b3d022a43
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: b6598857d5704accbee461366838bb8efb9b2fc0
-ms.sourcegitcommit: c049dceaf02ab8b6008fe440daae4d07b752ca2e
+ms.openlocfilehash: 0d4ae72b897af3c6e737b412b7f8971b249ffa23
+ms.sourcegitcommit: ace4d997c599215e46566386a1a3d335e991d821
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/31/2017
-ms.locfileid: "21942731"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49334244"
 ---
 # <a name="tier-model-for-partitioning-administrative-privileges"></a>A rendszergazdai jogosultságok felosztásának rétegmodellje
 
@@ -25,7 +25,7 @@ Ebben a cikkben egy olyan biztonsági modellel ismerkedhet meg, amely a jogok ki
 
 ## <a name="elevation-of-privilege-in-active-directory-forests"></a>A jogok kiterjesztése az Active Directory-erdőkben
 
-A Windows Server Active Directory- (AD-) erdőkhöz állandó rendszergazdai jogosultságokkal rendelkező felhasználók, szolgáltatások és alkalmazások fiókjai komoly kockázatot jelentenek a szervezet céljaira és üzleti tevékenységeire nézve. Ezek a fiókok gyakran válnak a támadók, mert ha sérül a biztonságuk, a támadó rendelkezik-e csatlakozni más kiszolgálóihoz vagy alkalmazásaihoz a tartomány jogosultságokkal.
+A Windows Server Active Directory- (AD-) erdőkhöz állandó rendszergazdai jogosultságokkal rendelkező felhasználók, szolgáltatások és alkalmazások fiókjai komoly kockázatot jelentenek a szervezet céljaira és üzleti tevékenységeire nézve. Ezek a fiókok gyakran válnak a támadók, mert ha sérül a biztonságuk, a támadó jogosultsága csatlakozni más kiszolgálóihoz vagy alkalmazásaihoz a tartományban.
 
 A rétegmodell annak alapján választja szét egymástól a rendszergazdákat, hogy milyen erőforrásokat kezelnek. A felhasználói munkaállomások felett irányítással rendelkező rendszergazdák elkülönülnek azoktól, akik alkalmazásokat vagy vállalati identitásokat kezelnek. A modellel kapcsolatos további tudnivalók a [Securing privileged access reference material](http://aka.ms/tiermodel) (A rendszerjogosultságú hozzáférés biztonságossá tételének referenciaanyagai) című témakörben olvashatók.
 
@@ -39,7 +39,7 @@ A rendszergazdai fiókokhoz tartozó hitelesítő adatok ellopásának kockázat
 
 A következő lépés a bejelentkezési korlátozások megvalósítása, illetve a rétegmodell követelményeit kielégítő folyamatok és műveletek feltételeinek megteremtése. Ideális esetben a hitelesítő adatokhoz való hozzáférést is le kell csökkenteni az egyes rétegeken belül az adott szerepkörhöz szükséges legalacsonyabb jogosultsági szintre.
 
-Bejelentkezési korlátozásokat kell érvényesíteni annak érdekében, hogy a kiemelt jogosultságokkal rendelkező fiókok ne férjenek hozzá a kevésbé biztonságos erőforrásokhoz. Példa:
+Bejelentkezési korlátozásokat kell érvényesíteni annak érdekében, hogy a kiemelt jogosultságokkal rendelkező fiókok ne férjenek hozzá a kevésbé biztonságos erőforrásokhoz. Például:
 
 - A tartományi rendszergazdák (0. szint) nem tudnak bejelentkezni a vállalati kiszolgálókra (1. szint) és a normál felhasználói munkaállomásokra (2. szint).
 - A kiszolgálói rendszergazdák (1. szint) nem tudnak bejelentkezni a normál felhasználói munkaállomásokra (2. szint).
@@ -61,4 +61,4 @@ A bejelentkezési korlátozásokat a következőkkel lehet érvényesíteni:
 ## <a name="next-steps"></a>További lépések
 
 - A következő, a [Megerősített környezet tervezése](planning-bastion-environment.md) című cikkben a Microsoft Identity Manager rendszergazdai fiókjainak létrehozásához szükséges dedikált felügyeleti erdőinek létrehozásáról olvashat.
-- [Végrehajtását kísérelte meg hozzáféréssel rendelkező munkaállomások](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/privileged-access-workstations) adjon meg egy dedikált operációs rendszer, amely védett az Internet támadások és fenyegetési vektoroknak enged utat kényes feladatokhoz.
+- [Végrehajtását kísérelte meg hozzáféréssel rendelkező munkaállomások](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/privileged-access-workstations) dedikált operációs rendszert biztosítanak a védett internetes támadások és fenyegetési vektoroknak a bizalmas feladatokhoz.

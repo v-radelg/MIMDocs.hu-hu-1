@@ -7,17 +7,17 @@ ms.author: barclayn
 manager: mbaldwin
 ms.date: 10/12/2017
 ms.topic: article
-ms.service: microsoft-identity-manager
+ms.prod: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 3ac5b990-1678-4996-996d-cbd84b8426b4
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 32cdf03ffa0d0d282a6277af766f97e93e3a3f3a
-ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
+ms.openlocfilehash: 5a54cd60f8ccee51d3bdb9cdb4770ff659afe854
+ms.sourcegitcommit: ace4d997c599215e46566386a1a3d335e991d821
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36289013"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49333802"
 ---
 # <a name="capacity-planning-guide"></a>Kapacitástervezési útmutató
 
@@ -29,22 +29,22 @@ Ha még nem ismeri a MIM 2016 szoftvert és összetevőit, a folytatás előtt i
 
 ## <a name="overview"></a>Áttekintés
 
-Számos általános kapacitását és a Microsoft Identity Manager-környezet teljesítményét befolyásoló tényezők:
+Számos olyan tényezőt, amelyek hatással lehetnek a teljes kapacitás és a Microsoft Identity Manager üzembe helyezési teljesítményét:
 
-- Az üzembe helyezésének módja, fizikailag a MIM-összetevők (topológia).
-- A hardver, amelyen ezek az összetevők futni.
-- A száma és összetettsége a MIM házirend-konfigurációs objektumai jelentős tényezőt jelent a kapacitástervezés során figyelembe kell venni.
-- A központi telepítés és a tervezett terhelés várható mérete jellemzően viszonylag kézenfekvő tényezőt jelent a teljesítmény és kapacitás szempontjából is.
+- A módszerek fizikailag központi telepítését a MIM-összetevők (topológia).
+- A hardver, amelyen futtatja ezen összetevők.
+- Száma és összetettsége, a MIM házirend-konfigurációs objektumai is jelentős kapacitás tervezése során megfontolandó tényezőt.
+- Az üzembe helyezés és a várható terhelés várható mérete jellemzően viszonylag kézenfekvő tényezőt, amelyek befolyásolják a teljesítmény és kapacitás.
 
-A következő táblázat a fő kapacitás és a MIM 2016-környezet teljesítményét befolyásoló tényezők ismertetnek:
+A kapacitás és a egy a MIM 2016 üzembe helyezés teljesítményét érintő főbb tényezőket a következő táblázatban terjed ki:
 
 | Tervezési tényező | Szempontok |
 | ------------- | -------------- |
 | Topológia | A MIM-szolgáltatások eloszlása a hálózaton található számítógépek között. |
-| Hardver | A fizikai hardver (fizikai vagy virtuális) MIM egyes összetevőihez, beleértve a CPU, a memória, a hálózati adapter és a merevlemez konfigurációja. |
+| Hardver | A fizikai hardver (fizikai vagy virtuális) az egyes MIM-összetevők többek között a CPU, memória, hálózati adapter és merevlemez-konfigurációja. |
 | A MIM házirend-konfigurációs objektumai | A MIM házirend-konfigurációs objektumainak száma és típusa – ide tartoznak a halmazok, a felügyeleti házirend-szabályok és a munkafolyamatok. |
 | Méretezés | A felhasználók, csoportok, számított csoportok és egyéni objektumtípusok a MIM 2016 által kezelt. Vegye figyelembe a dinamikus csoportok összetettségét is, és vegye ezt számításba a csoportok beágyazásakor. |
-| Terhelés | A használat gyakorisága, Műveletek, például új csoport vagy felhasználó létrehozása, a jelszó alaphelyzetbe állítása, vagy a portál meglátogat / perc vagy óra. Vegye figyelembe, hogy a terhelés egy adott óra, nap, hét vagy év alatt változhat. Az összetevőtől függően tervezhet a csúcsterheléssel vagy az átlagos terheléssel is. |
+| Terhelés | A használat gyakorisága, Műveletek, például új csoport vagy felhasználó létrehozása, a jelszó alaphelyzetbe állítása, vagy a portál látogatások / perc vagy óra. Vegye figyelembe, hogy a terhelés egy adott óra, nap, hét vagy év alatt változhat. Az összetevőtől függően tervezhet a csúcsterheléssel vagy az átlagos terheléssel is. |
 
 ## <a name="hosting-microsoft-identity-manager-components"></a>A Microsoft Identity Manager összetevőinek üzemeltetése
 
@@ -68,7 +68,7 @@ A környezetben található felhasználók és csoportok száma jellemzően font
 
 ## <a name="expected-load-levels"></a>Várható terhelési szintek
 
-Vegye számításba a MIM-összetevők várható terhelésének típusát is. Szüksége lesz a terhelés becsléséhez a környezetben jelenleg futó alkalmazások felmérésével. Célszerű megfontolni többek között a következő kérdéseket:
+Vegye számításba a MIM-összetevők várható terhelésének típusát is. Szüksége lesz a terhelés megbecsülni azáltal, hogy megtekinti a környezetben jelenleg futó alkalmazások. Célszerű megfontolni többek között a következő kérdéseket:
 
 - Milyen gyakran várhatók a csoporthoz való csatlakozásra és a csoport elhagyására irányuló kérések?
 
@@ -76,17 +76,17 @@ Vegye számításba a MIM-összetevők várható terhelésének típusát is. Sz
 
 - Hány nem felhasználói művelet várható? Ilyen lehet például a változások szinkronizálása külső rendszerekből. Fontos számításba venni az identitásadatok külső rendszerekkel való szinkronizálása által előidézett terhelést is.
 
-- Milyen jellegű alkalmazási helyzetekben tervezi használni a rendszert? Különböző alkalmazási helyzetek eltérő terhelési mintázatokkal függ. A MIM 2016-ügyféllel rendszeresen rendelkező ügyfélszámítógépek például ellenőrzik, hogy e regisztráció a bejelentkezéshez szükséges.
+- Milyen jellegű alkalmazási helyzetekben tervezi használni a rendszert? A különböző helyzetekhez eltérő terhelési közreműködés. Időközönként a MIM 2016-ügyféllel rendelkező ügyfélszámítógépek például, ha regisztrációs szükség, jelentkezzen be ellenőrzése.
 
-- Várhatók-e nagy változások a terhelési szintben a normál és a csúcsterhelés között? Például hogy általában sok jelszó-átállításra szünnap időszakot követően. Ügyeljen arra, hogy a rendszer karbantartási és szinkronizálási ütemezése elkerülje a várható csúcsterheléseket. A kapacitástervezés során mindenképpen vegye figyelembe a csúcsterhelési időszakokat.
+- Várhatók-e nagy változások a terhelési szintben a normál és a csúcsterhelés között? Ha például van általában munkaszüneti időszakok után sok jelszó-visszaállítási. Ügyeljen arra, hogy a rendszer karbantartási és szinkronizálási ütemezése elkerülje a várható csúcsterheléseket. A kapacitástervezés során mindenképpen vegye figyelembe a csúcsterhelési időszakokat.
 
 ## <a name="policy-configuration-objects"></a>Házirend-konfigurációs objektumok
 
-A MIM házirend-konfigurációs objektumai a házirendszabályok, a beállítása, a munkafolyamatok és a központi telepítés szinkronizálási szabályait tartalmazza. A MIM-példány minden ügyfélnél egyedi, hiszen a házirend-konfiguráció az adott környezet igényeinek megfelelően változik. Legfontosabb teljesítményi szempontok közé tartozik a következő MIM házirend-konfigurációs objektumai:
+A MIM házirend-konfigurációs objektumainak belefoglalása az MPR-EK, csoportok, a munkafolyamatok és szinkronizálási szabályok központi telepítés. A MIM-példány minden ügyfélnél egyedi, hiszen a házirend-konfiguráció az adott környezet igényeinek megfelelően változik. Legfontosabb teljesítményi szempontok a következő a MIM házirend-konfigurációs objektumainak belefoglalása:
 
-- **Halmazok** A rendszerben minden műveletet a meglévő halmaztagságok és az ezekben változást előidéző tényezők fényében kell értékelni. Például egy adott iroda épületszámának épület számának módosítása nem túl nagy hatással lehet. Más változásoknak azonban fokozatos közvetett hatásai lehetnek: egy vezetőváltás például több szinten több objektumra is hatással lehet.
+- **Halmazok** A rendszerben minden műveletet a meglévő halmaztagságok és az ezekben változást előidéző tényezők fényében kell értékelni. Például egy adott iroda épület számának módosítása nem lehet nagy hatással vannak. Más változásoknak azonban fokozatos közvetett hatásai lehetnek: egy vezetőváltás például több szinten több objektumra is hatással lehet.
 
-- **Felügyeleti házirendszabályok** A felügyeleti házirendszabályok a hozzáférés-vezérlési szabályok kezelésére és munkafolyamatok indítására szolgálnak. A házirendszabályok létrehozása szükség van a halmazok számát növelésére, hogy a különböző átmeneti objektumállapotok rögzítése hozhasson létre. Az új halmazok újabb munkafolyamatokat indíthatnak, és minden munkafolyamat egyedi kérésekhez kapcsolódik a rendszerben. Mindez újabb megfontolandó tényezőt jelent a kapacitás tervezésekor.
+- **Felügyeleti házirendszabályok** A felügyeleti házirendszabályok a hozzáférés-vezérlési szabályok kezelésére és munkafolyamatok indítására szolgálnak. Létrehozás az MPR-EK csoportok számának növelésére, így a különböző átmeneti objektumállapotok rögzítése kell hozhat létre. Az új halmazok újabb munkafolyamatokat indíthatnak, és minden munkafolyamat egyedi kérésekhez kapcsolódik a rendszerben. Mindez újabb megfontolandó tényezőt jelent a kapacitás tervezésekor.
 
 A MIM házirend-konfigurációjában emellett a környezet kiépítési tevékenységeivel kapcsolatos döntések is érvényre jutnak. Gondolja át a következőket:
 
@@ -97,4 +97,4 @@ A MIM házirend-konfigurációjában emellett a környezet kiépítési tevéken
 ## <a name="next-steps"></a>További lépések
 
 - [Topológiai szempontok a MIM üzembe helyezésekor](topology-considerations.md)
-- A letölthető [Forefront Identity Manager (FIM) 2010 kapacitásának tervezési útmutatója](http://go.microsoft.com/fwlink/?LinkId=200180) hiányzóra változik, részletes információkat olvashat egy tesztkörnyezetről és teljesítménytesztelési eredményekről.
+- A letölthető [Forefront Identity Manager (FIM) 2010 kapacitástervezési útmutató](http://go.microsoft.com/fwlink/?LinkId=200180) kerül részletes információkat olvashat egy tesztkörnyezetről és teljesítménytesztelési eredményekről.

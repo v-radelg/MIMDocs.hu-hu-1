@@ -1,26 +1,26 @@
 ---
-title: Értesítés és jóváhagyás adott MIM-szolgáltatások fiókjainak frissítése, ha engedélyezve van a csoportosan felügyelt szolgáltatásfiók |} Microsoft Docs
-description: Csoportosan felügyelt szolgáltatásfiók konfigurálásához szükséges alapvető lépéseket ismertető témakörben.
+title: A MIM egyes szolgáltatások fiókok értesítés és jóváhagyás frissítése, ha engedélyezve van a csoportosan felügyelt szolgáltatásfiók |} A Microsoft Docs
+description: Csoportosan felügyelt szolgáltatásfiók konfigurálása alapvető lépéseit ismertető témakör.
 author: fimguy
 ms.author: billmath
 manager: mtillman
 ms.date: 06/27/2018
 ms.topic: article
-ms.service: microsoft-identity-manager
+ms.prod: microsoft-identity-manager
 ms.technology: security
-ms.openlocfilehash: cc33293c0a836f9e5118fc372abc5d96c1a5373d
-ms.sourcegitcommit: c6cb2556bb9f2256b959a3c95db7ca5bbfc2b437
+ms.openlocfilehash: d989f9dc3a3b1dbde8290c2b4588a9beb8142949
+ms.sourcegitcommit: ace4d997c599215e46566386a1a3d335e991d821
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37065175"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49333258"
 ---
-# <a name="update-of-mim-specific-service-account-for-notifications-to-gmsa"></a>A csoportosan felügyelt szolgáltatásfiók értesítések adott MIM szolgáltatás fiókjának frissítés
+# <a name="update-of-mim-specific-service-account-for-notifications-to-gmsa"></a>A MIM szolgáltatás fiókjának értesítéseket csoportosan felügyelt szolgáltatásfiók frissítése
 ===========================================
 
-Frissítés a jelszót a fiókokhoz, tárolt alatt a powershell, így a felhasználók nem rendelkeznek a módváltás futtatásához
+A jelszót a fiókokhoz, tárolt alábbi frissítés a powershell, így az ügyfelek nem módváltás futtatása
 
-PowerShell: Office365 Szolgáltatásfiók frissítése:
+PowerShell: Office 365-fiók frissítése:
 
 ```powershell
 #O365update.ps1

@@ -7,17 +7,17 @@ ms.author: barclayn
 manager: mbaldwin
 ms.date: 10/12/2017
 ms.topic: article
-ms.service: microsoft-identity-manager
+ms.prod: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 735dc357-dfba-4f68-a5b3-d66d6c018803
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: f67068709cf9910fa04110fce75623fd2f94ca4a
-ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
+ms.openlocfilehash: f59b40f79c58ea5e34fbe090ac9c4a224c561654
+ms.sourcegitcommit: ace4d997c599215e46566386a1a3d335e991d821
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36289812"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49333275"
 ---
 # <a name="topology-considerations"></a>Topológiai szempontok
 A Microsoft Identity Manager (MIM) összetevőit ugyanarra a kiszolgálóra, vagy több különböző konfigurációjú kiszolgálóra is telepítheti. Az üzembe helyezéshez választott topológia hatással van a MIM-mel elérhető teljesítményre. Ez a cikk több lehetséges üzembe helyezési topológiát mutat be.

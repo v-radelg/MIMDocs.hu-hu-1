@@ -1,25 +1,25 @@
 ---
-title: Konfigurálja a Windows Server 2016 a MIM 2016 SP1 |} Microsoft Docs
-description: A lépései és minimumkövetelményei előkészítése a MIM 2016 SP1 működéséhez Windows Server 2016 beolvasása.
+title: Konfigurálja a MIM 2016 SP1-et a Windows Server 2016 |} A Microsoft Docs
+description: A lépéseket és a Windows Server 2016-ra való együttműködéshez a MIM 2016 SP1-et előkészítési beolvasása.
 keywords: ''
 author: fimguy
 ms.author: davidste
 manager: mbaldwin
 ms.date: 04/26/2018
 ms.topic: get-started-article
-ms.service: microsoft-identity-manager
+ms.prod: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 51507d0a-2aeb-4cfd-a642-7c71e666d6cd
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: bfc79d27f015ee3d57c33c26ecae0f5b8ff38370
-ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
+ms.openlocfilehash: 2f6daf62e568a0a4ac6ca899d28589537369b2bb
+ms.sourcegitcommit: ace4d997c599215e46566386a1a3d335e991d821
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36289489"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49334227"
 ---
-# <a name="set-up-an-identity-management-servers-windows-server-2016"></a>Az identitás-felügyeleti kiszolgáló beállítása: Windows Server 2016
+# <a name="set-up-an-identity-management-servers-windows-server-2016"></a>Az identitás-felügyeleti kiszolgáló beállítása: Windows Server 2016-ban
 
 > [!div class="step-by-step"]
 > [«Tartomány előkészítése](preparing-domain.md)
@@ -27,24 +27,24 @@ ms.locfileid: "36289489"
 > 
 > [!NOTE]
 > Ez az útmutató egy Contoso nevű fiktív vállalat neveit és értékeit használja szemléltetésként. Ezeket helyettesítse a saját neveivel és értékeivel. Például:
-> - Tartományvezérlő neve – **corpdc**
+> - Tartományvezérlő neve – **corpdc-re**
 > - Tartománynév – **contoso**
 > - MIM szolgáltatás kiszolgálójának neve – **corpservice**
 > - MIM Sync-kiszolgáló neve – **corpsync**
-> - SQL Server-neve - **corpsql**
+> - Az SQL Server neve – **corpsql**
 > - Jelszó – <strong>Pass@word1</strong>
 
-## <a name="join-windows-server-2016-to-your-domain"></a>Windows Server 2016 csatlakoztatása a tartományhoz
+## <a name="join-windows-server-2016-to-your-domain"></a>A Windows Server 2016 csatlakoztatása a tartományhoz
 
-Készítsen elő egy Windows Server 2016 számítógépet legalább 8 – 12GB RAM-mal. A telepítéskor válassza "A Windows Server 2016 Standard vagy Datacenter (kiszolgáló grafikus felhasználói Felülettel rendelkező) x 64" kiadást.
+Indítsa el a Windows Server 2016 számítógépet legalább 8 – 12GB RAM. A telepítéskor válassza a "Windows Server 2016 Standard vagy Datacenter (kiszolgáló grafikus felhasználói felülettel) x 64" kiadást.
 
 1. Rendszergazdaként jelentkezzen be az új számítógépre.
 
-2. A Vezérlőpulton osszon ki a számítógépnek egy statikus IP-címet a hálózaton. Konfigurálja, hogy a hálózati illesztő DNS-lekérdezéseket küldjön az előző lépésben a tartományvezérlő IP-címét, és a számítógép neve **CORPSERVICE**.  Ehhez a kiszolgáló újraindítása szükséges.
+2. A Vezérlőpulton osszon ki a számítógépnek egy statikus IP-címet a hálózaton. Konfigurálja a hálózati adapter DNS-lekérdezéseket küldjön az előző lépésben a tartományvezérlő IP-címet, majd állítsa be a számítógép nevét **CORPSERVICE**.  Ehhez a kiszolgáló újraindítása szükséges.
 
-3. Nyissa meg a Vezérlőpultot, és a számítógép csatlakoztatása a tartományhoz, a legutóbbi lépésben konfigurált *contoso.com*.  Ehhez meg kell adnia a tartományi rendszergazdai fiók – például *Contoso\Rendszergazda* felhasználónevét és hitelesítő adatait.  Miután az üdvözlő üzenet megjelenik, zárja be a párbeszédpanelt, és még egyszer indítsa újra a kiszolgálót.
+3. Nyissa meg a Vezérlőpultot, és csatlakoztassa a számítógépet a tartományhoz, a legutóbbi lépésben konfigurált *contoso.com*.  Ehhez meg kell adnia a tartományi rendszergazdai fiók – például *Contoso\Rendszergazda* felhasználónevét és hitelesítő adatait.  Miután az üdvözlő üzenet megjelenik, zárja be a párbeszédpanelt, és még egyszer indítsa újra a kiszolgálót.
 
-4. Jelentkezzen be a számítógépre *CORPSERVICE* tartományi fiókként a helyi számítógép rendszergazdai például *Contoso\MIMINSTALL*.
+4. Jelentkezzen be a számítógép *CORPSERVICE* tartományi fiókként a helyi számítógép rendszergazdák például *Contoso\MIMINSTALL*.
 
 
 5. Rendszergazdaként nyisson meg egy PowerShell-ablakot, és írja be a következő parancsot a számítógép frissítéséhez a csoportházirend-beállításokkal.
@@ -70,7 +70,7 @@ Készítsen elő egy Windows Server 2016 számítógépet legalább 8 – 12GB R
 
 A kiszolgálói biztonsági házirendben engedélyezze az újonnan létrehozott fiókok szolgáltatásként történő futtatását.
 > [!NOTE] 
-> Attól függően, hogy a konfigurációs egyetlen server(all-in-one) vagy csak kell hozzáadnia az elosztott kiszolgáló szerepköre alapján a tag gép például szinkronizálási kiszolgáló. 
+> Konfigurációjától függően egyetlen server(all-in-one) vagy csak hozzá kell elosztott kiszolgáló szerepkör alapján a tag gép például a szinkronizálási kiszolgáló. 
 
 1. A Helyi biztonsági házirend program elindítása
 
@@ -80,13 +80,13 @@ A kiszolgálói biztonsági házirendben engedélyezze az újonnan létrehozott 
 
     ![Kép: Helyi biztonsági házirend](media/MIM-DeployWS3.png)
 
-4. Kattintson a **felhasználó vagy csoport hozzáadása**, és a szövegmezőben típus a következő szerepkör alapján `contoso\MIMSync; contoso\MIMMA; contoso\MIMService; contoso\SharePoint; contoso\SqlServer; contoso\MIMSSPR`, kattintson a **Névellenőrzés**, és kattintson a **OK**.
+4. Kattintson a **felhasználó vagy csoport hozzáadása**, és a szövegmezőbe írja be a következő szerepkör alapján `contoso\MIMSync; contoso\MIMMA; contoso\MIMService; contoso\SharePoint; contoso\SqlServer; contoso\MIMSSPR`, kattintson a **Névellenőrzés**, és kattintson a **OK**.
 
 5. Kattintson az **OK** gombra a **Bejelentkezés szolgáltatásként – tulajdonságok** ablak bezárásához.
 
-6.  A részletek panelen kattintson a jobb gombbal **megtagadja a hozzáférést a hálózati**, és válassza ki **tulajdonságok**. >
+6.  A részletező ablaktáblán a jobb gombbal a **megtagadja a hozzáférést ehhez a számítógéphez a hálózatról**, és válassza ki **tulajdonságok**. >
 
-[!NOTE] Ha külön szerepkör kiszolgálók ebben a lépésben megszakítja néhány megfeleltetésével, mint SSPR-szolgáltatás.
+[!NOTE] Ha a kiszolgálókat különálló szerepkör ebben a lépésben megszakítja a bizonyos funkcionalitást, mint például az SSPR funkciót.
 
 7. Kattintson a **Felhasználó vagy csoport hozzáadása** gombra, a szövegmezőbe írja be a következőt: `contoso\MIMSync; contoso\MIMService`, majd kattintson az **OK** gombra.
 
@@ -101,7 +101,7 @@ A kiszolgálói biztonsági házirendben engedélyezze az újonnan létrehozott 
 12. Zárja be a Helyi biztonsági házirend ablakot.
 
 
-## <a name="change-the-iis-windows-authentication-mode-if-needed"></a>Az IIS Windows-hitelesítés üzemmód módosítása, szükség esetén
+## <a name="change-the-iis-windows-authentication-mode-if-needed"></a>Ha szükséges, módosítsa az IIS Windows-hitelesítési mód
 
 1.  Indítson el egy PowerShell-ablakot.
 

@@ -7,17 +7,17 @@ ms.author: barclayn
 manager: mbaldwin
 ms.date: 05/01/2018
 ms.topic: get-started-article
-ms.service: microsoft-identity-manager
+ms.prod: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 2585e9c5-ce34-46c7-bdcf-8c08773901dc
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: c68b33b2ff28d75b6f4e63fa8caf0c87727a5927
-ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
+ms.openlocfilehash: 0c6f980aea883ef4e76b9a21e4492c4c21532b9f
+ms.sourcegitcommit: ace4d997c599215e46566386a1a3d335e991d821
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36289397"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49332867"
 ---
 # <a name="install-mim-2016-mim-synchronization-service"></a>A MIM 2016 telepítése: A MIM Synchronization Service
 
@@ -27,16 +27,16 @@ ms.locfileid: "36289397"
 > 
 > [!NOTE]
 > Ez az útmutató egy Contoso nevű fiktív vállalat neveit és értékeit használja szemléltetésként. Ezeket helyettesítse a saját neveivel és értékeivel. Például:
-> - Tartományvezérlő neve – **corpdc**
+> - Tartományvezérlő neve – **corpdc-re**
 > - Tartománynév – **contoso**
 > - MIM szolgáltatás kiszolgálójának neve – **corpservice**
 > - MIM Sync-kiszolgáló neve – **corpsync**
-> - SQL Server-neve - **corpsql**
+> - Az SQL Server neve – **corpsql**
 > - Jelszó – <strong>Pass@word1</strong>
 
 A Microsoft Identity Manager 2016 összetevőinek telepítéséhez először készítse elő a telepítési csomagot.
 
-1. Jelentkezzen be a *contoso\miminstall* identitáskezelési szinkronizálás kiszolgáló használ a kiszolgálóhoz **corpsync**.
+1. Jelentkezzen be, *contoso\miminstall* identitáskezelési szinkronizálás kiszolgáló használ a kiszolgálóhoz **corpsync**.
 
 2. Bontsa ki a MIM telepítési csomagját vagy csatlakoztassa a MIM DVD-lemezképét.
 
@@ -58,9 +58,9 @@ A Microsoft Identity Manager 2016 összetevőinek telepítéséhez először ké
 
 6. A Sync Service adatbázis-konfigurálási képernyőjén válassza a következő beállításokat:
 
-   1.  Az SQL Server található: **A távoli gép** nevű **corpsql.contoso.com**.
+   1.  Az SQL Server található: **egy távoli gép** nevű **corpsql.contoso.com**.
 
-   2.  Az SQL Server-példány: **az alapértelmezett példányt**
+   2.  Az SQL Server-példány: **az alapértelmezett példány**
 
    ![Kép: Csatlakozás adatbázishoz](media/install-mim-sync/MIM_Install3.png)
 

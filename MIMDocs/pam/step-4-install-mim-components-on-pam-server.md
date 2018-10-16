@@ -7,18 +7,18 @@ ms.author: barclayn
 manager: barclayn
 ms.date: 09/13/2017
 ms.topic: article
-ms.service: microsoft-identity-manager
+ms.prod: microsoft-identity-manager
 ms.technology: active-directory-domain-services
 ms.assetid: ef605496-7ed7-40f4-9475-5e4db4857b4f
 ROBOTS: noindex,nofollow
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 81fe10b8fbf8ada08983c4bf3c58f85215cf1d66
-ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
+ms.openlocfilehash: 3f5ee3e2a6bdbd1ab203ffcf406b4ca3b991b6f5
+ms.sourcegitcommit: ace4d997c599215e46566386a1a3d335e991d821
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36290033"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49334006"
 ---
 # <a name="step-4--install-mim-components-on-pam-server-and-workstation"></a>4. lépés – MIM-összetevők telepítése PAM-kiszolgálóra és -munkaállomásra
 
@@ -60,7 +60,7 @@ Az útmutatást követve végezze el a telepítést.
 
 7. A *PAMSRV* beállításánál adja meg a MIM szolgáltatás kiszolgálójának címét.
 
-8. Állítsa be *http://pamsrv.priv.contoso.local:82* , a SharePoint webhely gyűjtemény URL-címe.
+8. Állítsa be *http://pamsrv.priv.contoso.local:82* , a SharePoint webhely a gyűjtemény URL-címe.
 
 9. A regisztrációs portál URL-címét hagyja üresen.
 
@@ -156,7 +156,7 @@ Az útmutató ezen szakasza a MIM PAM REST API minta webalkalmazásának telepí
    </httpProtocol>
    ```
 
-5. Konfigurálja a minta webalkalmazást. Szövegszerkesztőben, például a Jegyzettömbben szerkessze a **C:\Program Files\Microsoft Forefront Identity Manager\2010\Privileged Access Management Portal\js\utils.js** fájlt. Állítsa be a **pamRespApiUrl** való *http://pamsrv.priv.contoso.local:8086/api/pamresources/*.
+5. Konfigurálja a minta webalkalmazást. Szövegszerkesztőben, például a Jegyzettömbben szerkessze a **C:\Program Files\Microsoft Forefront Identity Manager\2010\Privileged Access Management Portal\js\utils.js** fájlt. Állítsa az értékét **pamRespApiUrl** való *http://pamsrv.priv.contoso.local:8086/api/pamresources/*.
 
 6. A módosítások életbe léptetéséhez indítsa újra az IIS-t a következő paranccsal.
 
@@ -164,7 +164,7 @@ Az útmutató ezen szakasza a MIM PAM REST API minta webalkalmazásának telepí
    iisreset
    ```
 
-7. (Nem kötelező.) Győződjön meg arról, hogy a felhasználó hitelesíthető a REST API-val. Nyisson meg egy webböngészőt a PAMSRV rendszergazdájaként.  Keresse meg a webhely URL-címe http://pamsrv.priv.contoso.local:8086/api/pamresources/pamroles/, szükség esetén, és győződjön meg arról, hogy a letöltés megtörténik.
+7. (Nem kötelező.) Győződjön meg arról, hogy a felhasználó hitelesíthető a REST API-val. Nyisson meg egy webböngészőt a PAMSRV rendszergazdájaként.  Keresse meg a webhely URL-címe http://pamsrv.priv.contoso.local:8086/api/pamresources/pamroles/, hitelesítéshez, ha szükséges, és győződjön meg arról, hogy a letöltés megtörténik.
 
 ## <a name="install-the-mim-pam-requestor-cmdlets"></a>A MIM PAM-kérelmező parancsmagjainak telepítése
 

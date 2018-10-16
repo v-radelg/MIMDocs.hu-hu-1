@@ -7,16 +7,15 @@ ms.author: barclayn
 manager: mbaldwin
 ms.date: 08/01/2017
 ms.topic: reference
-ms.prod: identity-manager-2016
-ms.service: microsoft-identity-manager
+ms.prod: microsoft-identity-manager
 ms.technology: security
 ms.assetid: ''
-ms.openlocfilehash: 86b8b9bdf5c6441d0708cd874742fa48b65177fa
-ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
+ms.openlocfilehash: def1be943b4f2f919a079e3fc4aa544af10463aa
+ms.sourcegitcommit: ace4d997c599215e46566386a1a3d335e991d821
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36289363"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49333394"
 ---
 # <a name="microsoft-identity-manager-2016-password-management"></a>Microsoft Identity Manager 2016 – Jelszókezelés
 
@@ -150,7 +149,7 @@ Ideális esetben valahányszor egy felhasználó jelszót módosít, a módosít
 
 Egyes, súlyosabb meghibásodások esetén akárhány újrapróbálkozás esetén sem valószínű, hogy sikerül a művelet. Ilyenkor a rendszer naplózza a hibát, és leállítja a folyamatot. A következő eseményeknél nincs újrapróbálkozás:
 
-| Esemény | Severity    | Description                                                                                                                                                            |
+| Esemény | Severity    | Leírás                                                                                                                                                            |
 |-------|-------------|-----------|
 | 6919  | Információ | A jelszó-szinkronizálás beállításának műveletét a rendszer nem hajtotta végre, mert az időbélyegző elavult.                                                                      |
 | 6921  | Hiba       | A jelszó-szinkronizálás beállításának művelete nincs feldolgozva, mert a céloldali kezelőügynökön nincs engedélyezve a jelszókezelés.                                |

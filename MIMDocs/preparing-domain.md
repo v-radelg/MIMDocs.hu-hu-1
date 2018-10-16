@@ -7,22 +7,22 @@ ms.author: barclayn
 manager: mbaldwin
 ms.date: 10/26/2017
 ms.topic: get-started-article
-ms.service: microsoft-identity-manager
+ms.prod: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 50345fda-56d7-4b6e-a861-f49ff90a8376
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: ddab5b1ab57d3d332d5cd36ecc5a29abd83222ec
-ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
+ms.openlocfilehash: c4fd7d2e8cc6e5efc092d92bc4a97a9516fe7d4c
+ms.sourcegitcommit: ace4d997c599215e46566386a1a3d335e991d821
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36289030"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49333241"
 ---
 # <a name="set-up-a-domain"></a>Tartomány beállítása
 
 > [!div class="step-by-step"]
-> [Windows Server 2016»](prepare-server-ws2016.md)
+> [A Windows Server 2016»](prepare-server-ws2016.md)
 
 A Microsoft Identity Manager (MIM) az Ön Active Directory- (AD-) tartományával együtt is használható. Az AD-nek már telepítve kell lennie, és győződjön meg arról is, hogy a környezetében rendelkezik egy tartományvezérlővel egy felügyelhető tartományhoz.
 
@@ -34,11 +34,11 @@ A MIM-telepítés minden összetevőjének saját identitással kell rendelkezni
 
 > [!NOTE]
 > Ez az útmutató egy Contoso nevű fiktív vállalat neveit és értékeit használja szemléltetésként. Ezeket helyettesítse a saját neveivel és értékeivel. Például:
-> - Tartományvezérlő neve – **corpdc**
+> - Tartományvezérlő neve – **corpdc-re**
 > - Tartománynév – **contoso**
 > - MIM szolgáltatás kiszolgálójának neve – **corpservice**
 > - MIM Sync-kiszolgáló neve – **corpsync**
-> - SQL Server-neve - **corpsql**
+> - Az SQL Server neve – **corpsql**
 > - Jelszó – <strong>Pass@word1</strong>
 
 1. Jelentkezzen be a tartományvezérlőbe tartományi rendszergazdaként (*pl.: Contoso\Administrator*).
@@ -100,11 +100,11 @@ A MIM-telepítés minden összetevőjének saját identitással kell rendelkezni
     setspn -S FIMService/mim.contoso.com Contoso\MIMService
     setspn -S FIMService/corpservice.contoso.com Contoso\MIMService
     ```
-5.  A telepítés során adja hozzá a következő "A" DNS-rekordokat a megfelelő név feloldásához kell
+5.  Telepítés során hozzá kell adnunk a megfelelő névfeloldást a következő "A" DNS-rekordjait
 
-- mim.contoso.com pont corpservice fizikai IP-cím
-- passwordreset.contoso.com pont corpservice fizikai IP-cím
-- passwordregistration.contoso.com pont corpservice fizikai IP-cím
+- Pont mim.contoso.com corpservice fizikai ip-címre
+- Pont passwordreset.contoso.com corpservice fizikai ip-címre
+- Pont passwordregistration.contoso.com corpservice fizikai ip-címre
 
 > [!div class="step-by-step"]
-> [Windows Server 2016»](prepare-server-ws2016.md)
+> [A Windows Server 2016»](prepare-server-ws2016.md)

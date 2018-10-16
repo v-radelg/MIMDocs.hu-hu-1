@@ -1,56 +1,56 @@
 ---
-title: BHOLD reporting telepítésére |} Microsoft Docs
-description: BHOLD Jelentéskezelő modul lehetővé teszi a szerepkörök és engedélyezési házirendeket vonatkozó jelentések létrehozásához
+title: A BHOLD reporting telepítése |} A Microsoft Docs
+description: A BHOLD reporting modul lehetővé teszi a szerepkörökről és engedélyezési házirendeket jelentéseket generálhat
 keywords: ''
 author: barclayn
 ms.author: barclayn
 manager: mbaldwin
 ms.date: 09/07/2017
 ms.topic: article
-ms.service: microsoft-identity-manager
+ms.prod: microsoft-identity-manager
 ms.technology: security
 ms.assetid: ''
-ms.openlocfilehash: deb43aeb9133d7eed958730b0eb2cbd22fe3a0ef
-ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
+ms.openlocfilehash: 7c95529bf1cd227bee8f1dde11c94a810b44fc8c
+ms.sourcegitcommit: ace4d997c599215e46566386a1a3d335e991d821
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36289305"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49332255"
 ---
-# <a name="bhold-reporting-installation"></a>BHOLD reporting telepítésére
+# <a name="bhold-reporting-installation"></a>A BHOLD reporting telepítése
 
-A BHOLD Jelentéskezelő modul lehetővé teszi a szerepkörök és a többi engedélyezési házirendek BHOLD létrehozni. Ezek a jelentések gyakran hasznosak, a naplózás vagy a megfelelőség szabályozási követelmények a bemutatásához. Ez a modul is, mivel szerepköreik tagsága elemzéséhez szükséges információt a felhasználók számára a szervezeten belüli fiókonkénti arra a képességére, terjeszti ki. A jelentések is korlátozott nézeteket, győződjön meg arról, hogy a felhasználókat, akik jelentések jelennek meg információk csak azok csatlakozhatnának a megtekintéséhez.
+A BHOLD Reporting modul teszi lehetővé a BHOLD-szerepkörökről és egyéb engedélyezési szabályzatok jelentéskészítéshez. Ezek a jelentések gyakran hasznosak, a naplózás vagy a szabályozási követelményeknek való megfelelés bemutatásához. Ez a modul is, a hitelesítés a szervezeten belüli felhasználók szerepkörökhöz tagsága elemezheti az adatokat, így az képes terjeszti ki. A jelentések is korlátozott nézetek, győződjön meg arról, hogy a felhasználók, akik jelentéseket hozhat létre látható információk csak általuk megtekintéséhez.
 
-## <a name="bhold-reporting-installation-requirements"></a>BHOLD-jelentéskészítés telepítési követelmények
+## <a name="bhold-reporting-installation-requirements"></a>A BHOLD Reporting telepítési követelményei
 
-A BHOLD Jelentéskezelő modul telepítése, előtt telepítenie kell a BHOLD Alap modulban a kiszolgáló, amelyen a BHOLD Jelentéskezelő modul telepítésének megtervezése. A BHOLD Alap modulban telepítésével kapcsolatos információkért lásd: [BHOLD Core telepítés](https://technet.microsoft.com/library/jj134095(v=ws.10).aspx).
+A BHOLD Reporting modul a telepítés előtt telepítenie kell a BHOLD Core-modul a kiszolgálón, amelyen a BHOLD Reporting modul telepítését tervezi. A BHOLD Core modul telepítésével kapcsolatos információkért lásd: [BHOLD Core telepítése](https://technet.microsoft.com/library/jj134095(v=ws.10).aspx).
 
 > [!IMPORTANT]
-> BHOLD jelentéskészítési és BHOLD igazolás telepítésekor, telepítenie kell BHOLD Reporting BHOLD tanúsítvány telepítése előtt.
+> A BHOLD Reporting és BHOLD igazolási telepítésekor, telepítenie kell a BHOLD Reporting BHOLD igazolási telepítése előtt.
 
 ## <a name="before-you-begin"></a>Előkészületek
 
-A BHOLD Jelentéskezelő modul telepítésének megkezdése előtt kell előkészíteni az adatok a BHOLD Reporting telepítővarázsló számára szükséges a telepítés befejezéséhez. A következő munkalapra jegyezze fel ezt az információt, készen áll, hogy szükség esetén nyújt segítséget.
+A BHOLD Reporting modul telepítése előtt kell a BHOLD Reporting telepítővarázsló a telepítés befejezéséhez szükséges információk megadására. A következő munkalap segítségével fel ezt az információt, hogy készen áll a szükséges megadni.
 
 | **Elem**                                    | **Leírás**                                                                                                                                                                                                           | **Érték**                                                                                                                                                                                                                                                                                                            |
 |---------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Tartomány/gépen biztonsági szolgáltató használata** | Kiválasztásakor határozza meg, hogy az Active Directory tartományi szolgáltatások biztonsági szabályozza a BHOLD Core elérésére.                                                                                                                | Jelölje be a jelölőnégyzetet. </br>**Fontos:** a telepítés sikertelen lesz, ha a jelölőnégyzet nincs bejelölve.                                                                                                                                                                                                                   |
-| **Tartomány**                                  | Megadja azt a BHOLD központi telepítésekor létrehozott szolgáltatási fiókot tartalmazó tartományt. További információkért lásd: [BHOLD Core telepítés](https://technet.microsoft.com/library/jj134095(v=ws.10).aspx). | A varázsló automatikusan rendelkezik a tartomány nevét. Módosítsa a nevét, ha az nem megfelelő. **Fontos:** adja meg a tartomány nevét (rövid) NetBIOS-nevét, nem a teljes tartománynevét (FQDN) használatával. Például fabrikam.com esetén a a teljes Tartománynevét adja meg a tartománynév FABRIKAM. |
+| **Tartomány/gépen biztonsági szolgáltató használata** | Kiválasztott, itt adhatja meg, hogy az Active Directory Domain Services biztonsági fog férhet hozzá a BHOLD Core.                                                                                                                | Jelölje be a jelölőnégyzetet. </br>**Fontos:** a telepítés sikertelen lesz, ha a jelölőnégyzet nincs bejelölve.                                                                                                                                                                                                                   |
+| **Tartomány**                                  | Megadja azt a tartományt, amely tartalmazza a szolgáltatásfiókhoz, amelyet a BHOLD Core telepítése során létrehozott. További információkért lásd: [BHOLD Core telepítése](https://technet.microsoft.com/library/jj134095(v=ws.10).aspx). | A tartomány nevét a varázsló által automatikusan történik. Módosítsa a nevét, csak akkor, ha annak értéke helytelen. **Fontos:** adja meg a tartomány nevét (rövid) NetBIOS-neve, nem a teljesen minősített tartománynevét (FQDN) használatával. Például ha a tartomány teljes Tartománynevét a fabrikam.com, adja meg a tartomány nevét, a FABRIKAM. |
 | **Felhasználó**                                    | Megadja a BHOLD Core szolgáltatásfiók-felhasználó bejelentkezési nevét.                                                                                                                                                          | Írás a felhasználói fiók nevét itt:                                                                                                                                                                                                                                                                                    |
-| **Jelszó**                                | A szolgáltatás felhasználói fiók jelszavát adja meg.                                                                                                                                                                       | Írási ide: </br>**Fontos:** mindenképp ezt a jelszót rejtett, biztonságos helyen.                                                                                                                                                                                                                  |
+| **Jelszó**                                | A szolgáltatás felhasználói fiók jelszava.                                                                                                                                                                       | Írás a jelszót kell megadnia: </br>**Fontos:** mindenképp Ez a jelszó egy rejtett, biztonságos helyen.                                                                                                                                                                                                                  |
 
-## <a name="bhold-reporting-installation"></a>BHOLD Reporting telepítése
+## <a name="bhold-reporting-installation"></a>A BHOLD Reporting telepítése
 
-A BHOLD Jelentéskezelő modul telepítésének, jelentkezzen be a tartományi rendszergazdák csoport tagjaként, töltse le a következő fájlt, és futtassa rendszergazdaként a kiszolgálón, melyet a BHOLD Jelentéskezelő modul telepítése:
+BHOLD Reporting-modul telepítéséhez, jelentkezzen be a tartományi rendszergazdák csoport tagjaként, töltse le a következő fájl, és futtassa rendszergazdaként a kiszolgálón, melyet a BHOLD Reporting modul telepítése:
 
 - BholdReporting<em>\<verzió\></em>\_Release.msi
 
-Cserélje le *\<verzió\>* rendelkező a telepíteni kívánt BHOLD Reporting kiadás verziószáma.
+Cserélje le *\<verzió\>* a BHOLD Reporting kiadás, amely telepíti a verziószámával.
 
-A program fájlt rendszergazdaként futtatni, kattintson jobb gombbal a fájlra, és kattintson a **Futtatás rendszergazdaként**.
+A program rendszergazdaként futtatni, kattintson jobb gombbal a fájlra, és kattintson a **Futtatás rendszergazdaként**.
 
 ## <a name="next-steps"></a>További lépések
 
-- [BHOLD a telepítési útmutató](bhold-installation-guide.md)
+- [A BHOLD telepítési útmutató](bhold-installation-guide.md)
 - [BHOLD fejlesztői leírás](../reference/mim2016-bhold-developer-reference.md)
 - [A BHOLD korábbi verziói](../reference/version-bhold-history.md)

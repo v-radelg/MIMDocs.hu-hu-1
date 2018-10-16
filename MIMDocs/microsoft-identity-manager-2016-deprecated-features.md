@@ -1,78 +1,77 @@
 ---
-title: A MIM elavult funkciók és a jövőben megtervezése |} Microsoft Docs
-description: Ez a cikk dokumentumok elavult funkciók a MIM Identity Manager 2016 SP1.
+title: A MIM elavult funkciók és a jövőben tervezése |} A Microsoft Docs
+description: Ez a cikk dokumentumok elavult funkciói a MIM Identity Manager 2016 SP1-et.
 keywords: ''
 author: barclayn
 ms.author: davidste
 manager: mbaldwin
 ms.date: 2/28/2018
 ms.topic: reference
-ms.prod: identity-manager-2016
-ms.service: microsoft-identity-manager
+ms.prod: microsoft-identity-manager
 ms.technology: security
 ms.assetid: ''
-ms.openlocfilehash: a4239f1d69d8a43d70dd38af16e9ef8be62bd33c
-ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
+ms.openlocfilehash: a7acf38f877b34582acf83c636a866b35ecf733a
+ms.sourcegitcommit: ace4d997c599215e46566386a1a3d335e991d821
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36288911"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49334278"
 ---
 # <a name="deprecated-features"></a>Elavult funkciók
 
-Ez a cikk ismerteti a Microsoft Identity Manager 2016 SP1 elavult szolgáltatások. Ha a szolgáltatás továbbra is megtalálhatók a Microsoft Identity Manager, az továbbra is támogatott. Funkciók nem támogatottak az új központi telepítéseknél, a szolgáltatás kiadás eltávolíthatók.  A fejlesztők számára ajánlott nem használata elavult funkciók bármely új alkalmazások és a megoldások.
+Ez a cikk ismerteti az elavult funkciók a Microsoft Identity Manager 2016 SP1. Ha a szolgáltatás a Microsoft Identity Manager továbbra is megtalálható, továbbra is támogatott. Akkor lehet, hogy eltávolítja az új funkciók nem ajánlott új példányok üzembe helyezéséhez.  A fejlesztők javasoljuk, hogy nem minden olyan új alkalmazások vagy megoldások funkcióit használó elavult.
 
 > [!NOTE]
-> Szolgáltatások és funkciók a Microsoft Identity Manager SP1 távolítva azonosítják **. <br>
-> További információ a támogatási [életciklusa a Microsoft Identity Manager](https://support.microsoft.com/en-us/lifecycle/search?alpha=Microsoft%20Forefront%20Identity%20Manager%202010%20R2%20Service%20Pack%201,Microsoft%20Identity%20Manager%202016,Microsoft%20Forefront%20Identity%20Manager%202010)
+> Szolgáltatások és funkciók a Microsoft Identity Manager SP1 eltávolítva az azonosított **. <br>
+> További információ a támogatási [életciklus Microsoft Identity Manager](https://support.microsoft.com/en-us/lifecycle/search?alpha=Microsoft%20Forefront%20Identity%20Manager%202010%20R2%20Service%20Pack%201,Microsoft%20Identity%20Manager%202016,Microsoft%20Forefront%20Identity%20Manager%202010)
 
 
 ## <a name="bhold"></a>BHOLD 
 
-A Microsoft nem javasolja az ügyfelek indítsa el a Microsoft BHOLD Suite összetevői a új központi telepítéséhez. BHOLD a meglévő telepítések továbbra is támogatja. Mostantól az Azure AD biztosít [értékelést hozzáférési](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-azure-ad-controls-access-reviews-overview) BHOLD igazolás kampány lehetőségei a helyébe lép.
+A Microsoft nem javasolja a vásárló először a Microsoft a BHOLD Suite összetevők új központi telepítéséhez. A BHOLD a meglévő telepítések továbbra is támogatottak. Most már az Azure AD biztosítja [hozzáférési felülvizsgálatokkal](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-azure-ad-controls-access-reviews-overview) BHOLD igazolási kampány funkcióit cserélje le.
 
 ## <a name="certificate-management"></a>Tanúsítványkezelés 
 
-| **Kategória**                | **Elavult funkció**              | **Csere és leírását**           |
+| **Kategória**                | **Elavult funkció**              | **Csere és Megjegyzés**           |
 |-----------------------------|-------------------------------------|----------------------------------------------|
-| Kezelőügynökök | ** FIM tanúsítványkezelés | A MIM 2016 a FIM tanúsítvány kezelőügynök el lett távolítva.                                                             |
+| Felügyeleti ügynökök | ** FIM tanúsítványkezelés | FIM tanúsítvány felügyeleti ügynök el lett távolítva a MIM 2016-ban.                                                             |
 
 ## <a name="service-and-portal"></a>Szolgáltatás és portál
 
-| **Kategória**                | **Elavult funkció**              | **Csere és leírását**           |
+| **Kategória**                | **Elavult funkció**              | **Csere és Megjegyzés**           |
 |-----------------------------|-------------------------------------|----------------------------------------------|
-| Programozható konfigurációja | Webes szolgáltatás konfigurációs felülete (ma-adatok és mv-adatok) | A következő verzió eltávolítják az ügyfélgépek konfigurálására a FIM szinkronizálási szolgáltatás FIM szolgáltatás webes szolgáltatáson keresztül.
+| Programozható konfigurációja | Webalkalmazás-szolgáltatás konfigurációs felület (ma-adatok és mv-adatok) | A FIM szinkronizálási szolgáltatás FIM szolgáltatás webszolgáltatással beállításával egy következő verziójában törlődni fog.
 |
 
 ## <a name="synchronization-service"></a>Synchronization Service 
 
-| **Kategória**                | **Elavult funkció**              | **Csere és leírását**           |
+| **Kategória**                | **Elavult funkció**              | **Csere és Megjegyzés**           |
 |-----------------------------|-------------------------------------|----------------------------------------------|
-| Programozható konfigurációja | Webes szolgáltatás konfigurációs felülete | A következő verzió eltávolítják az ügyfélgépek konfigurálására a FIM szinkronizálási szolgáltatás a FIM szolgáltatással.                                                          |
-| Kezelőügynökök           | Beépített MAs                        | A MIM 2016 el lettek távolítva a következő MAs: </br> 1. ** MA a FIM tanúsítványkezelés </br>2. ** a Lotus Notes MA</br> 3. ** az SAP R/3 MA </br> Lotus Notes és SAP R/3 MAs új verziók helyett. További információkért lásd: [legújabb összekötő Verziókiadások & letöltése](https://docs.microsoft.com/en-us/azure/active-directory/connect/active-directory-aadconnectsync-connector-version-history)                                                                                                                                                                                                                                              |
-| Kezelőügynökök           | ECMA1                               | A ECMA1/XMA bővítési keretrendszer az ECMA 2.0 lett lecserélve. Meglévő ECMA1 felügyeleti ügynökök frissítése ECMA2.0 összekötőkkel szükség.                                                                                                                                          |
-| Kezelőügynökök           | Összekötők a folyamaton fut      | Ez a szolgáltatás nem fogja helyettesíteni. A szinkronizálási szolgáltatás mindig hívja az összekötő ugyanabban a folyamatban. A feladata az összekötő indíthatja el és kezelheti a másik folyamat. |
-| Kezelőügynökök           | Konfigurálja a partíció megjelenített neve    | Ez a szolgáltatás nem fogja helyettesíteni. Ez a beállítás csak használatával egy alternatív név megadása a WMI felületeket a partíció.                                                                                                                                                                       |
-| Futtatási profilok                | Kombinált profilok                   | A kombinált profilok különbözeti importálás vagy szinkronizálás, a teljes importálás/eltérés szinkronizálása és a teljes importálás vagy szinkronizálás törlődni fog. Akkor kell használni futtatási profilok két lépésben. 
+| Programozható konfigurációja | Webalkalmazás-szolgáltatás konfigurációs felület | Lehetővé teszi a FIM szinkronizálási szolgáltatás a FIM szolgáltatás konfigurálása a következő verzió törlődni fog.                                                          |
+| Felügyeleti ügynökök           | Beépített MAs                        | A következő MAs el lettek távolítva a MIM 2016-ban: </br> 1. ** a tanúsítványok kezeléséhez FIM MA </br>2. ** a Lotus Notes MA</br> 3. ** MA az SAP R/3 </br> Lotus Notes és SAP R/3 MAs az új verziók helyett. További információkért lásd: [legújabb Connector Verziókiadásai és letöltés](https://docs.microsoft.com/en-us/azure/active-directory/connect/active-directory-aadconnectsync-connector-version-history)                                                                                                                                                                                                                                              |
+| Felügyeleti ügynökök           | ECMA1                               | A ECMA1/XMA bővíthetőségi keretrendszerét felváltotta a ECMA 2.0. Meglévő ECMA1 felügyeleti ügynökök frissítése a ECMA2.0 összekötőkkel szükség.                                                                                                                                          |
+| Felügyeleti ügynökök           | Összekötők – folyamaton kívüli fut      | Ez a funkció nem pótolhatók. A szinkronizálási szolgáltatás mindig meghívja az összekötő ugyanabban a folyamatban. A feladata az összekötő elindításához és a többi folyamat kezeléséhez. |
+| Felügyeleti ügynökök           | Konfigurálja a partíció megjelenített neve    | Ez a funkció nem pótolhatók. Ez a beállítás csak használt adjon meg egy alternatív nevet egy partíciónak a WMI felületeket.                                                                                                                                                                       |
+| Futtatási profilok                | Kombinált profilok                   | A kombinált profilok különbözeti importálás vagy szinkronizálás, a teljes importálás/különbözeti szinkronizálás és a teljes importálás vagy szinkronizálás törlődni fog. Futtatási profilok inkább két lépést ajánlott használni. 
 
 > [!NOTE]
-> Csak olyan környezetekben, ahol a teljesítmény csökkenhet volna meglévő disconnectors nagy számú kombinált futtatási profil legyen.
+> Csak olyan környezetekben, ahol a lenne lehet a teljesítményre meglévő disconnectors nagy számú kombinált futtatási profilokat kell tartania.
 
 
-| **Kategória**                | **Elavult funkció**              | **Csere és leírását**           |
+| **Kategória**                | **Elavult funkció**              | **Csere és Megjegyzés**           |
 |--------|-------|---|    
-| Attribútumsorrend | Multi-kezelésére/egyenlő sorrendje                       | Egyenlő sorrend törlődni fog. Ez a funkció nem váltja fel van. Manuális sorrend helyette úgy kell konfigurálni. Továbbra is használja ezt a szolgáltatást, ha a környezetben telepített FIM szolgáltatás felügyeleti ügynök. Ez a kezelőügynök nem export-nem-hivatkozási a deklaratív kiépítés elkerülése érdekében manuális precedenciát biztosítanak. |
-| Csatlakozás a szabályok           | A "Bármely" objektumtípus csatlakozás                             | Ez a szolgáltatás nem fogja helyettesíteni. Csatlakozás a szabályok kell definiálhat explicit módon a csatlakoztatni kívánt metaverzum-objektum típusaként.       |
-| Attribútumfolyamok      | Törölje a "engedélyezheti a null értékeket" exportált értékek            | Ez a szolgáltatás nem fogja helyettesíteni. "Engedélyezheti a null értékeket" mindig kijelöli. Meg kell győződnie arról, hogy rendelkezik-e "Üres megengedett" a kijelölt az aktuális környezetben.  |
-| Attribútumfolyamok      | "Attribútumok visszahívása nem"                            | Ez a szolgáltatás nem fogja helyettesíteni. Attribútumok lesz mindig hívható, amelyek az ajánlott eljárás szerint.  |
-| Szabályok bővítmény      | Bővítmény a folyamaton metaverse és ma futtató szabályok | Ez a szolgáltatás nem fogja helyettesíteni. A metaverse és attribútum folyamata szabályok a Szinkronizáló vezérlő meg fog futni.       |
-| Szabályok bővítmény      | Tranzakció tulajdonságai                                | Ez a szolgáltatás nem fogja helyettesíteni. Ne adatok átadására a segédprogram osztály használatával bejövő, kiépítési és kimenő szinkronizálási között.  |
-| Szabályok bővítmény      | ExchangeUtils: Create55\* módszerek                     | Exchange 5.5 kiszolgálók objektumok létrehozásának törlődni fog.        |
-| Illesztő            | Mms_Metaverse                                        | ClmUtils osztály összes tag a következő verziójában törlődni fog.   |
+| Attribútumsorrend | Multi-kapcsolatos szakismeretek/egyenlő sorrend                       | Azonos prioritású törlődni fog. Ez a funkció nincs helyettesítő van. Manuális elsőbbséget ehelyett kell konfigurálni. Továbbra is használják ezt a funkciót, ha a környezetben van üzembe helyezve a FIM szolgáltatás kezelőügynöke. Ez a kezelőügynök nem biztosít manuális elsőbbséget export-not-hivatkozási a deklaratív kiépítés elkerülése érdekében. |
+| Csatlakozzon a szabályok           | Csatlakozás a "Bármely" Objektumtípus                             | Ez a funkció nem pótolhatók. Az összes illesztési szabályok explicit módon meg kell határoznia a csatlakoztatni kívánt metaverzum-objektum típusaként.       |
+| Attribútumfolyamok      | Törölje a "engedélyezheti a null értékeket" exportált értékek            | Ez a funkció nem pótolhatók. "Engedélyezheti a null értékeket" mindig legyen kiválasztva. Győződjön meg arról, hogy a "NULL értékek engedélyezése" az aktuális környezet kiválasztott.  |
+| Attribútumfolyamok      | "Attribútumok visszahívása nem"                            | Ez a funkció nem pótolhatók. Attribútumok fog mindig hívhatók vissza, amelynek ez az ajánlott eljárás.  |
+| Szabályok bővítmény      | Metaverzum és ma-bővítmény – folyamaton kívüli szabályok | Ez a funkció nem pótolhatók. A metaverzum és attribútum szabályok ugyanabban a folyamatban, a Szinkronizáló vezérlő fog futni.       |
+| Szabályok bővítmény      | Tranzakció tulajdonságai                                | Ez a funkció nem pótolhatók. Ez az osztály segédprogram használatával a bejövő, a kiépítési és a kimenő szinkronizálási közötti adatok átadására kerülendő.  |
+| Szabályok bővítmény      | ExchangeUtils: Create55\* módszerek                     | 5.5-ös Exchange-kiszolgálók objektumok létrehozásának törlődni fog.        |
+| Kapcsolat            | Mms_Metaverse                                        | A következő verzió összes ClmUtils osztálytagjaihoz törlődni fog.   |
 
 ## <a name="next-steps"></a>További lépések
 További információk az alábbiakról:
 
 - A Microsoft Identity Manager számos közös vonást mutat elődjével, a Forefront Identity Managerrel. Ha még FIM-et használ, vagy ha további dokumentációra van szüksége, tekintse meg a [FIM 2010 R2 dokumentáció - áttekintés](https://technet.microsoft.com/library/jj133885.aspx) című oldalt.
-- [Topológiai szempontok a MIM üzembe helyezésekor](topology-considerations.md) Ez a cikk több üzembe helyezési topológiát mutat, előfordulhat, hogy végrehajtási be.
-- [Kapacitástervezési útmutató](capacity-planning-guide.md) ebben az útmutatóban és a tesztkörnyezet használatával megérthetik, hogy az üzembe helyezéshez megfelelő hatókörét.
+- [Topológiai szempontok a MIM üzembe helyezésekor](topology-considerations.md) Ez a cikk több lehetséges telepítési topológiákat be.
+- [Kapacitástervezési útmutató](capacity-planning-guide.md) ebben az útmutatóban és a tesztkörnyezet segítségével ismerje meg az üzembe helyezés megfelelő hatókörét.
