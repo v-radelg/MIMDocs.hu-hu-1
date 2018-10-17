@@ -2,20 +2,19 @@
 title: Az Azure multi-factor Authentication kiszolgáló SDK használata a PAM-re vagy az SSPR forgatókönyvek aktiválásához |} A Microsoft Docs
 description: Állítsa be az Azure multi-factor Authentication kiszolgáló SDK egy második biztonsági réteggel, amikor a felhasználók szerepköröket aktiválnak a Privileged Access Management és az önkiszolgáló jelszó-visszaállítás.
 keywords: ''
-author: fimguy
+author: billmath
 ms.author: billmath
 manager: mtillman
 ms.date: 09/02/2018
 ms.topic: article
 ms.prod: microsoft-identity-manager
-ms.technology: security
 ms.assetid: 94a74f1c-2192-4748-9a25-62a526295338
-ms.openlocfilehash: 868e5c543fb55257f7de903eade69529d90ec895
-ms.sourcegitcommit: ace4d997c599215e46566386a1a3d335e991d821
+ms.openlocfilehash: b92a217dd86d9e4de177ebec9ecec7c76222d7b1
+ms.sourcegitcommit: 7de35aaca3a21192e4696fdfd57d4dac2a7b9f90
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49334363"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49358278"
 ---
 # <a name="use-azure-multi-factor-authentication-server-to-activate-pam-or-sspr"></a>Azure multi-factor Authentication-kiszolgáló használata a PAM-re vagy az SSPR aktiválásához
 A következő dokumentum ismerteti, hogyan állíthatja be az Azure MFA-kiszolgáló egy második biztonsági réteggel, amikor a felhasználók szerepköröket aktiválnak a jogosultságra hozzáférés-kezelés és önkiszolgáló jelszó-változtatási.

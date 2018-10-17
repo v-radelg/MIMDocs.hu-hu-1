@@ -4,18 +4,17 @@ author: fimguy
 description: A Microsoft Identity Manager-összekötő a Microsoft Graph lehetővé teszi, hogy a külső felhasználót AD fiókok életciklusának kezelése. Ebben a forgatókönyvben egy szervezet meghívta a vendégek be az Azure AD-címtárhoz, és meg kívánja szüntetni ezeket vendégek hozzáférési helyszíni Windows-Integrated hitelesítés és Kerberos-alapú alkalmazások
 keywords: ''
 ms.author: billmath
-manager: bhu
+manager: mtillman
 ms.date: 10/02/2018
 ms.topic: article
 ms.prod: microsoft-identity-manager
-ms.technology: security
 ms.assetid: 94a74f1c-2192-4748-9a25-62a526295338
-ms.openlocfilehash: 121b4f3759ef57a9b80d0c1f68c605542e72ae24
-ms.sourcegitcommit: ace4d997c599215e46566386a1a3d335e991d821
+ms.openlocfilehash: 2e376bcc88518b911f93ce9cd4ab920eb428815b
+ms.sourcegitcommit: 7de35aaca3a21192e4696fdfd57d4dac2a7b9f90
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49333598"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49358652"
 ---
 <a name="microsoft-identity-manager-connector-for-microsoft-graph"></a>A Microsoft Graph-összekötő a Microsoft Identity Manager
 =======================================================================================
