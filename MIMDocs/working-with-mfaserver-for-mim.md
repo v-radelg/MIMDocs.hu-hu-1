@@ -5,16 +5,16 @@ keywords: ''
 author: billmath
 ms.author: billmath
 manager: mtillman
-ms.date: 09/02/2018
+ms.date: 10/29/2018
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: 94a74f1c-2192-4748-9a25-62a526295338
-ms.openlocfilehash: b92a217dd86d9e4de177ebec9ecec7c76222d7b1
-ms.sourcegitcommit: 7de35aaca3a21192e4696fdfd57d4dac2a7b9f90
+ms.openlocfilehash: 69b7f8f4b94f9f94b2aef6afd9573ad8173e148e
+ms.sourcegitcommit: 44a2293ff17c50381a59053303311d7db8b25249
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49358278"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50379794"
 ---
 # <a name="use-azure-multi-factor-authentication-server-to-activate-pam-or-sspr"></a>Azure multi-factor Authentication-kiszolgáló használata a PAM-re vagy az SSPR aktiválásához
 A következő dokumentum ismerteti, hogyan állíthatja be az Azure MFA-kiszolgáló egy második biztonsági réteggel, amikor a felhasználók szerepköröket aktiválnak a jogosultságra hozzáférés-kezelés és önkiszolgáló jelszó-változtatási.
@@ -22,7 +22,7 @@ A következő dokumentum ismerteti, hogyan állíthatja be az Azure MFA-kiszolg�
 > [!IMPORTANT]
 > Miatt elévülése az Azure multi-factor Authentication hitelesítés szoftverfejlesztői közleményt. Az Azure MFA SDK ügyfeleink 2018. November 14., a kivezetési dátum másnapi támogatott lesz. Új ügyfelek és a meglévő ügyfelek nem tudják SDK letöltéséhez már a klasszikus Azure portálon keresztül. Töltse le, hogy kell keresse fel a létrehozott csomagot biztosítunk MFA szolgáltatás hitelesítő adatai az Azure ügyfélszolgálatához. <br> A Microsoft fejlesztői csapat dolgozik MFA módosításai és az Azure multi-factor Authentication kiszolgáló SDK integrálásával.
 
-Az alábbi cikkre szerkezeti lesz, a konfigurációjának frissítése és a egy egyszerű kapcsoló engedélyezésének lépései az Azure MFA SDK-t az Azure multi-factor Authentication kiszolgáló SDK kiadásakor, mert ez egy soron következő gyorsjavítás fognak szerepelni lásd [korábbi verziók ](/reference/version-history.md) hirdetmények. 
+Az alábbi cikkre szerkezeti lesz, a konfigurációjának frissítése és a egy egyszerű kapcsoló engedélyezésének lépései az Azure MFA SDK-t az Azure multi-factor Authentication kiszolgáló SDK kiadásakor, mert ez egy soron következő gyorsjavítás fognak szerepelni lásd [korábbi verziók ](./reference/version-history.md) hirdetmények. 
 
 ## <a name="prerequisites"></a>Előfeltételek
 
@@ -33,7 +33,7 @@ A MIM az Azure multi-factor Authentication-kiszolgáló használatához szüksé
 - Telepítés már használja az Azure MFA SDK-val
 - Azure Active Directory Premium licenc vagy valamilyen alternatív, Azure MFA-licencet biztosító megoldás a jelölt felhasználóknál
 - Telefonszám az összes jelölt felhasználó esetén
-- A MIM gyorsjavítás 4.5-ös verzióját. vagy nagyobb lásd [korábbi verziók](/reference/version-history.md) hirdetmények
+- A MIM gyorsjavítás 4.5-ös verzióját. vagy nagyobb lásd [korábbi verziók](./reference/version-history.md) hirdetmények
 
 ## <a name="azure-multi-factor-authentication-server-configuration"></a>Az Azure multi-factor Authentication kiszolgáló konfigurációja 
 > [!NOTE] 

@@ -1,23 +1,20 @@
 ---
 title: Dinamikus naplózás a MIM szolgáltatásban | Microsoft Docs
 description: A MIM szolgáltatás dinamikus naplózásának engedélyezése a felügyeleti szolgáltatás újraindítása nélkül
-keywords: ''
-author: fimguy
-ms.author: davidste
-manager: mbaldwin
-ms.date: 06/25/2018
+author: billmath
+ms.author: billmath
+manager: mtillman
+ms.date: 10/29/2018
 ms.topic: article
-ms.prod: microsoft-identity-manager
-ms.technology: active-directory-domain-services
-ms.assetid: ''
-ms.openlocfilehash: ff82b2fce31abe417509347ce7b477dd1b4056f2
-ms.sourcegitcommit: ace4d997c599215e46566386a1a3d335e991d821
+ms.openlocfilehash: e5d8bcc640ad77b71a515b13bcb3bcf6985654f5
+ms.sourcegitcommit: 44a2293ff17c50381a59053303311d7db8b25249
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49332337"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50380085"
 ---
 # <a name="mim-sp1-4414360--service-dynamic-logging"></a>Dinamikus naplózás a MIM SP1-es (4.4.1436.0-s) verziójában
+
 A 4.4.1436.0-s verzióban új naplózási funkció mutatkozott be, amellyel a rendszergazdák és a támogatási szakemberek a felügyeleti szolgáltatás újraindítása nélkül kapcsolhatják be a naplózást.
 
 A telepítés után a  Microsoft.ResourceManagement.Service.exe.config fájlban a következő új sorok lesznek láthatóak:
@@ -55,9 +52,11 @@ A nyomkövetés megtekintéséhez használja a [Service Trace viewer eszközzel]
 
 A build 4.5.x.x kideríti, hogy a naplózási szolgáltatás az alapértelmezett naplózási szint megadásához a **"Figyelmeztetés"**. A szolgáltatás két fájlt (a "00" és "01" indexek bővítmény előtt kerülnek) ír üzeneteket. A fájlokat a "C:\Program Files\Microsoft Forefront Identity Manager\2010\Service" könyvtárban találhatók. Ha a fájl maximális mérete meghaladja a szolgáltatás elindul egy másik fájlba írja. Ha egy másik fájl létezik, felülírja. A fájl alapértelmezett maximális mérete 1 GB-os. Alapértelmezett maximális méretének módosításához hozzáadásához szükség a **"maxOutputFileSizeKB"** paraméter értékével, a figyelő a KB-os maximális fájlméret (lásd az alábbi példát), majd indítsa újra a MIM szolgáltatás. A szolgáltatás indításakor azt fűzi hozzá újabb fájl-naplók (lemezterület-korlát túllépése azt felülírni a legrégebbi fájl). 
 
-> [!NOTE] A szolgáltatás ellenőrzése fájl méretét, az üzenet íródik, mielőtt fájl mérete lehet nagyobb, mint a maximális méretét, egy üzenet mérete a. Alapértelmezés szerint a naplók mérete körülbelül 6 GB is lehet (három > figyelő, egy GB-os méret esetén két fájlt).
+> [!NOTE] 
+> A szolgáltatás ellenőrzése fájl méretét, az üzenet íródik, mielőtt fájl mérete lehet nagyobb, mint a maximális méretét, egy üzenet mérete a. Alapértelmezés szerint a naplók mérete körülbelül 6 GB is lehet (három > figyelő, egy GB-os méret esetén két fájlt).
 
-> [!NOTE] A szolgáltatásfiókot írási jogosultsággal kell rendelkeznie > "C:\Program Files\Microsoft Forefront Identity Manager\2010\Service" > könyvtár. Abban az esetben, ha a fiók nem rendelkezik ilyen jogosultságokkal a > fájlok nem lesz létrehozva.
+> [!NOTE] 
+> A szolgáltatásfiókot írási jogosultsággal kell rendelkeznie > "C:\Program Files\Microsoft Forefront Identity Manager\2010\Service" > könyvtár. Abban az esetben, ha a fiók nem rendelkezik ilyen jogosultságokkal a > fájlok nem lesz létrehozva.
 
 Például hogyan állíthatja be a maximális mérete 200 MB-ot (200-as * 1024 KB) svclog fájlok és 100 MB-os * (100 * 1024 KB-os) a txt-fájlokat
 

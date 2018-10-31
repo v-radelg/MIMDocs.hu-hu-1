@@ -2,22 +2,21 @@
 title: A PAM üzembe helyezése, 6. lépés – Csoport áthelyezése | Microsoft Docs
 description: Telepítse át a csoportot a PRIV erdőbe, hogy a Privilege Access Management által kezelhető legyen.
 keywords: ''
-author: barclayn
-ms.author: barclayn
-manager: mbaldwin
+author: billmath
+ms.author: billmath
+manager: mtillman
 ms.date: 09/13/2017
 ms.topic: article
 ms.prod: microsoft-identity-manager
-ms.technology: active-directory-domain-services
 ms.assetid: 7b689eff-3a10-4f51-97b2-cb1b4827b63c
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: f449ca475d8b1fe72203bf4cd3b5dd3c65329d13
-ms.sourcegitcommit: ace4d997c599215e46566386a1a3d335e991d821
+ms.openlocfilehash: 0473ea9e01a44aeb4acbebe01e6e6f989c8581d0
+ms.sourcegitcommit: 44a2293ff17c50381a59053303311d7db8b25249
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49332935"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50379311"
 ---
 # <a name="step-6--transition-a-group-to-privileged-access-management"></a>6. lépés – Csoport áthelyezése a Privileged Access Management szolgáltatásba
 

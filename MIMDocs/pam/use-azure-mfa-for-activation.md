@@ -9,14 +9,13 @@ manager: mtillman
 ms.date: 07/06/2018
 ms.topic: article
 ms.prod: microsoft-identity-manager
-ms.technology: active-directory-domain-services
 ms.assetid: 5134a112-f73f-41d0-a5a5-a89f285e1f73
-ms.openlocfilehash: 10c8d4246122daa507d79a3f2e26e945c6ab5709
-ms.sourcegitcommit: ace4d997c599215e46566386a1a3d335e991d821
+ms.openlocfilehash: 9cb1e37f966db5c663694aaccd71f2b4c799dd4b
+ms.sourcegitcommit: 44a2293ff17c50381a59053303311d7db8b25249
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49333722"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50379939"
 ---
 # <a name="using-azure-mfa-for-activation"></a>Aktiválás az Azure MFA használatával
 > [!IMPORTANT]
@@ -43,7 +42,7 @@ A MIM az Azure MFA használatához szükséges:
 
 ## <a name="creating-an-azure-mfa-provider"></a>Azure MFA-szolgáltató létrehozása
 
-Ebben a szakaszban beállíthatja az Azure MFA-szolgáltató a Microsoft Azure Active Directoryban.  Ha már használja az Azure MFA-t – akár önállóan, akár az Azure Active Directory Premiummal konfigurálva – ugorjon a következő bekezdéshez.
+Ebben a szakaszban beállíthatja az Azure MFA-szolgáltató a Microsoft Azure Active Directoryban.  Ha már használja az Azure MFA-t – akár önállóan, akár az Azure Active Directory Premiummal konfigurálva – ugorjon a következő bekezdéshez.
 
 1.  Nyisson meg egy webböngészőt, és jelentkezzen be a [klasszikus Azure portálra](https://manage.windowsazure.com) Azure előfizetés-adminisztrátorként.
 
@@ -71,7 +70,7 @@ A következő lépésben létre fog hozni egy fájlt, amely tartalmazza a PAM-ne
 
 ![A Multi-Factor Authentication SDK letöltése – képernyőkép](media/PAM-Azure-MFA-Activation-Image-1.png)
 
-7.  A letöltött ZIP-fájlt másolja minden rendszerre, ahol a MIM szolgáltatás telepítve van. 
+7.  A letöltött ZIP-fájlt másolja minden rendszerre, ahol a MIM szolgáltatás telepítve van. 
 
 >[!NOTE]
 > A ZIP-fájl az Azure MFA szolgáltatással való hitelesítésre szolgáló kulcsanyagokat tartalmazza.

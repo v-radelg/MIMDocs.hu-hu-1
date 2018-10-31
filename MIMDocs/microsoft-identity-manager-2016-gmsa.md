@@ -7,12 +7,12 @@ manager: mtillman
 ms.date: 06/27/2018
 ms.topic: article
 ms.prod: microsoft-identity-manager
-ms.openlocfilehash: d3c0b6677c42d4f14d4f6255a2a661d3ef23661d
-ms.sourcegitcommit: 7de35aaca3a21192e4696fdfd57d4dac2a7b9f90
+ms.openlocfilehash: 63f2509d35355a8fe3a59b173756257298079a92
+ms.sourcegitcommit: 6374aa4f7d58b7218626d36d0fc2dc4b38cb8332
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49358295"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50237230"
 ---
 # <a name="conversion-of-mim-specific-services-to-gmsa"></a>A MIM egyes szolgáltatások átalakítása csoportosan felügyelt szolgáltatásfiók
 
@@ -82,9 +82,9 @@ Első lépésként a windows tartományvezérlő
 
     -   Keresse meg a kiszolgálót, amelyet a szinkronizálási szolgáltatás telepítve van a szinkronizálási szolgáltatás kulcskezelés eszköz
 
-    -   Alapértelmezés szerint a ** már be van jelölve exportálási key set **
+    -   Alapértelmezés szerint a **kulcskészletben exportálása** már be van jelölve
 
-    -   Kattintson a **tovább**
+    -   Kattintson a **tovább**
 
     -   Most kéri, adja meg a meglévő szinkronizálási fiókadatok
 
@@ -96,13 +96,13 @@ Első lépésként a windows tartományvezérlő
 
         -   Tartomány - tartományt, amely a szinkronizálási szolgáltatásfiókot az egymástól
 
-    -   Kattintson a **tovább**
+    -   Kattintson a **tovább**
 
     -   Ha valami nem megfelelően, akkor a következő hibaüzenetet kap
 
     -   Sikeresen megadta a fiók adatait, most megjelenik, hogy a titkosítási kulcs biztonsági mentése (Exportálás elérési útja) céljának módosítása
 
-        -   Alapértelmezés szerint az exportálási fájl helye a **C:\\Windows\\system32**\\miiskeys-1.bin.
+        -   Alapértelmezés szerint az exportálási fájl helye a **C:\\Windows\\system32**\\miiskeys-1.bin.
 
 4. Telepítse a Microsoft Identity Manager SP1 szinkronizálási szolgáltatás build 4.4.1302.0. a mennyiségi licenc letöltőközpontból vagy MSDN letöltése helyen találhatók. Telepítés befejezése után ellenőrizze, hogy, kulcskészlet miiskeys.bin menti.
 
@@ -152,7 +152,7 @@ Első lépésként a windows tartományvezérlő
 
 ![](media/0201f0281325c80eb70f91cbf0ac4d5b.jpg)
 
-3.  **MEGJEGYZÉS:**.  Ismert hiba, amely miatt a Microsoft kulcsszolgáltató szolgáltatás újraindítása után lefagy felügyelt fiókot használó szolgáltatások a Windows újraindítása után nem indult el. Nem sikerült elindítani a szolgáltatást, és a Windows nem indítható túl. A hiba csak reprodukálható legalább Windows Server 2012 R2 rendszeren. A probléma megoldása futtatása paranccsal 
+3.  **MEGJEGYZÉS:**.  Ismert hiba, amely miatt a Microsoft kulcsszolgáltató szolgáltatás újraindítása után lefagy felügyelt fiókot használó szolgáltatások a Windows újraindítása után nem indult el. Nem sikerült elindítani a szolgáltatást, és a Windows nem indítható túl. A hiba csak reprodukálható legalább Windows Server 2012 R2 rendszeren. A probléma megoldása futtatása paranccsal 
 
 -   **sc start/triggerinfo kdssvc networkon**
 
