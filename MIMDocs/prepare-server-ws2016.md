@@ -11,14 +11,14 @@ ms.prod: microsoft-identity-manager
 ms.assetid: 51507d0a-2aeb-4cfd-a642-7c71e666d6cd
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 49e549913a5fd87528df2205b8d5b0a83f3d2b24
-ms.sourcegitcommit: 7de35aaca3a21192e4696fdfd57d4dac2a7b9f90
+ms.openlocfilehash: a0fa1e837fd73872043748ee73f19a29d1d1412f
+ms.sourcegitcommit: 3b514aba69af203f176b40cdb7c2a51c477c944a
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49358244"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "51718336"
 ---
-# <a name="set-up-an-identity-management-servers-windows-server-2016"></a>Az identitás-felügyeleti kiszolgáló beállítása: Windows Server 2016-ban
+# <a name="set-up-an-identity-management-server-windows-server-2016"></a>Identitáskezelési kiszolgáló beállítása: Windows Server 2016-ban
 
 > [!div class="step-by-step"]
 > [«Tartomány előkészítése](preparing-domain.md)
@@ -39,9 +39,9 @@ Indítsa el a Windows Server 2016 számítógépet legalább 8 – 12GB RAM. A t
 
 1. Rendszergazdaként jelentkezzen be az új számítógépre.
 
-2. A Vezérlőpulton osszon ki a számítógépnek egy statikus IP-címet a hálózaton. Konfigurálja a hálózati adapter DNS-lekérdezéseket küldjön az előző lépésben a tartományvezérlő IP-címet, majd állítsa be a számítógép nevét **CORPSERVICE**.  Ehhez a kiszolgáló újraindítása szükséges.
+2. A Vezérlőpulton osszon ki a számítógépnek egy statikus IP-címet a hálózaton. Konfigurálja a hálózati adapter DNS-lekérdezéseket küldjön az előző lépésben a tartományvezérlő IP-címet, majd állítsa be a számítógép nevét **CORPSERVICE**.  Ez a művelet egy kiszolgáló újraindítást igényel.
 
-3. Nyissa meg a Vezérlőpultot, és csatlakoztassa a számítógépet a tartományhoz, a legutóbbi lépésben konfigurált *contoso.com*.  Ehhez meg kell adnia a tartományi rendszergazdai fiók – például *Contoso\Rendszergazda* felhasználónevét és hitelesítő adatait.  Miután az üdvözlő üzenet megjelenik, zárja be a párbeszédpanelt, és még egyszer indítsa újra a kiszolgálót.
+3. Nyissa meg a Vezérlőpultot, és csatlakoztassa a számítógépet a tartományhoz, a legutóbbi lépésben konfigurált *contoso.com*.  Ez a művelet tartalmaz, a felhasználónév és a egy tartományi rendszergazda hitelesítő adatait például így *contoso\rendszergazda*.  Miután az üdvözlő üzenet megjelenik, zárja be a párbeszédpanelt, és még egyszer indítsa újra a kiszolgálót.
 
 4. Jelentkezzen be a számítógép *CORPSERVICE* tartományi fiókként a helyi számítógép rendszergazdák például *Contoso\MIMINSTALL*.
 
@@ -69,13 +69,13 @@ Indítsa el a Windows Server 2016 számítógépet legalább 8 – 12GB RAM. A t
 
 A kiszolgálói biztonsági házirendben engedélyezze az újonnan létrehozott fiókok szolgáltatásként történő futtatását.
 > [!NOTE] 
-> Konfigurációjától függően egyetlen server(all-in-one) vagy csak hozzá kell elosztott kiszolgáló szerepkör alapján a tag gép például a szinkronizálási kiszolgáló. 
+> Attól függően, a konfiguráció egyetlen server(all-in-one) elosztott-kiszolgálók, vagy csak hozzá kell a tag gép, például a szinkronizálási kiszolgáló szerepköre alapján. 
 
 1. A Helyi biztonsági házirend program elindítása
 
 2. Keresse meg a **Helyi házirend > Felhasználói jogok kiosztása** csomópontot.
 
-3. A Részletek panelen kattintson a jobb gombbal a **Bejelentkezés szolgáltatásként** lehetőségre, majd válassza a **Tulajdonságok** pontot.
+3. A részletek ablaktábláján kattintson a jobb gombbal a **szolgáltatásként jelentkezzen be**, és válassza ki **tulajdonságok**.
 
     ![Kép: Helyi biztonsági házirend](media/MIM-DeployWS3.png)
 
@@ -83,15 +83,15 @@ A kiszolgálói biztonsági házirendben engedélyezze az újonnan létrehozott 
 
 5. Kattintson az **OK** gombra a **Bejelentkezés szolgáltatásként – tulajdonságok** ablak bezárásához.
 
-6.  A részletező ablaktáblán a jobb gombbal a **megtagadja a hozzáférést ehhez a számítógéphez a hálózatról**, és válassza ki **tulajdonságok**. >
+6.  A részletek ablaktábláján kattintson a jobb gombbal a **megtagadja a hozzáférést ehhez a számítógéphez a hálózatról**, és válassza ki **tulajdonságok**. >
 
-[!NOTE] Ha a kiszolgálókat különálló szerepkör ebben a lépésben megszakítja a bizonyos funkcionalitást, mint például az SSPR funkciót.
+[!NOTE] Kiszolgálók szerepkör szétválasztása megszakítja a bizonyos funkciók, például az SSPR.
 
 7. Kattintson a **Felhasználó vagy csoport hozzáadása** gombra, a szövegmezőbe írja be a következőt: `contoso\MIMSync; contoso\MIMService`, majd kattintson az **OK** gombra.
 
 8. Az **OK** gombbal zárja be **A számítógép hálózati elérésének megtagadása – tulajdonságok** ablakot.
 
-9. A Részletek panelen kattintson a jobb gombbal a **Helyi bejelentkezés megtagadása** elemre, majd a **Tulajdonságok** pontra.
+9. A részletek ablaktábláján kattintson a jobb gombbal a **helyi bejelentkezés megtagadása**, és válassza ki **tulajdonságok**.
 
 10. Kattintson a **Felhasználó vagy csoport hozzáadása** gombra, a szövegmezőbe írja be a következőt: `contoso\MIMSync; contoso\MIMService`, majd kattintson az **OK** gombra.
 

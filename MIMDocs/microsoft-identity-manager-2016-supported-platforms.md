@@ -12,12 +12,12 @@ ms.assetid: 4978f60d-044d-4e84-8d93-65801fce1144
 ms.reviewer: ''
 ms.suite: ems
 ms.custom: mim
-ms.openlocfilehash: 0501dbeb279dc37655d1d9a5e99545b07eea0623
-ms.sourcegitcommit: 7de35aaca3a21192e4696fdfd57d4dac2a7b9f90
+ms.openlocfilehash: 077a0330e3a9169583331854525d19cee2d9eaf4
+ms.sourcegitcommit: 3b514aba69af203f176b40cdb7c2a51c477c944a
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49358686"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "51718311"
 ---
 # <a name="supported-platforms-for-mim-2016"></a>A MIM 2016 által támogatott platformok
 
@@ -47,7 +47,7 @@ Ez a tábla a Microsoft Identity Manager 2016 egyes összetevői által támogat
 | **A MIM jelszó-változtatási és -regisztrálási portáljai** | Windows Server | Windows Server 2008 R2 SP1<br/>Windows Server 2012<br/>Windows Server 2012 R2 <br/> Windows Server 2016* |
 | | Webböngésző | Az összes fő támogatott böngészők |
 | **A MIM beépülő moduljai és bővítményei** | Windows | Windows 7<br/>Windows 8<br/>Windows 8.1<br/>Windows 10 |
-| | Outlook-integráció (opcionális) | Outlook 2010<br/>Outlook 2013 <br/> Outlook 2016 (Windows 10 rendszeren)* |
+| | Outlook-integráció (opcionális) | Az Outlook 2010 (a Windows, kivéve a kattintásra)<br/>Az Outlook 2013 (a Windows, kivéve a kattintásra) <br/> Az Outlook 2016 (a Windows 10, kivéve a kattintásra) * |
 | | A PAM PowerShell-kérelmező parancsmagjai (opcionális) | Windows 8.1<br/>Windows 10 |
 | **MIM Tanúsítványkezelő** (kiszolgáló és hitelesítésszolgáltató integrációja) | Windows Server | Windows Server 2008 R2 SP1<br/>Windows Server 2012 R2 <br/> Windows Server 2016* |
 | | Hitelesítésszolgáltató | Windows Server 2008 R2 SP1<br/>Windows Server 2012<br/>Windows Server 2012 R2 <br/> Windows Server 2016* |

@@ -1,6 +1,5 @@
 # [Ismertetés és felfedezés](../microsoft-identity-manager-2016.md)
 ## [Mi az a MIM 2016?](../microsoft-identity-manager-2016.md)
-## [A Service Pack 1 újdonságai](../Microsoft-identity-manager-2016-sp1-release-notes.md)
 ### [MIM2016 SP1 PAM üzembe helyezési szkriptek](../sp1-deployment-scripts.md)
 ## [A PAM megismerése](../pam/privileged-identity-management-for-active-directory-domain-services.md)
 ## [Hibrid jelentéskészítés az Azure-ban](../identity-manager-hybrid-reporting-azure.md)
