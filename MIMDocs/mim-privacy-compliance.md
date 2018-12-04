@@ -5,21 +5,23 @@ keywords: ''
 author: billmath
 ms.author: billmath
 manager: mtillman
-ms.date: 05/22/2018
+ms.date: 12/02/2018
 ms.topic: get-started-article
 ms.prod: microsoft-identity-manager
 ms.assetid: b0b39631-66df-4c5f-80c9-a1774346f816
 ms.suite: ems
-ms.openlocfilehash: 4102ffc450b993faaa62da66bb25f242b7e39280
-ms.sourcegitcommit: 7de35aaca3a21192e4696fdfd57d4dac2a7b9f90
+ms.openlocfilehash: f75eb69360852c9f629b60d4900638c8b51e068a
+ms.sourcegitcommit: 9e420840815adb133ac014a8694de9af4d307815
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49358720"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "52825790"
 ---
 # <a name="microsoft-identity-manager-data-handling"></a>A Microsoft Identity Manager-adatok kezelése 
 
-Ez a cikk útmutatást nyújtanak a hogyan regisztrálhatja keresztül a keresés, törlés, frissítés és a jelentés üzemeltetési döntéseket tudunk hozni a szervezet vagy meg kell megoldás megvalósításához számos csatlakoztatott adatforrások között. Mielőtt eldönti, a törlés vagy frissítése egy-egy megközelítés a jelenlegi kialakítás és az identity manager rendszer (MIM) konfigurációját, kritikus fontosságú. Az alábbiakban néhány forgatókönyv-ügyfeleknek kell gondolja át, és a következő kérdések megválaszolásával: 
+Ez a cikk útmutatást nyújtanak a hogyan szervezetek döntéseket hozhat, amely több csatlakoztatott adatforrások között is alkalmazható.  Ez lehet elérni, a keresés, törlés, frissítés és a jelentés az operations.  Mielőtt eldönti, frissítése és törlése a megközelítést, a jelenlegi kialakítás és az identity manager rendszer (MIM) konfigurációjának megértését, kritikus fontosságú. 
+
+Az alábbiakban néhány forgatókönyv-ügyfeleknek kell gondolja át, és a következő kérdések megválaszolásával: 
 
 - Milyen adatokat kell, identity Management az üzleti folyamat segítségével?
 - Hol aktuális adatokat fog tárolni a MIM-ben?
