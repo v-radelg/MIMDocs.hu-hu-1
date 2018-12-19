@@ -90,7 +90,7 @@ Ha a legutóbbi lépésben nem telepítette a MIM telepítőcsomagját, akkor a 
 
 ## <a name="configure-mim-password-reset-portal"></a>A MIM jelszó-változtatási portál konfigurálása
 
-1. A szolgáltatásfiók neve SSPR regisztráció beállítása *Contoso\MIMSSPR* és a hozzá tartozó jelszót <em> Pass@word1 </em>.
+1. A szolgáltatásfiók neve SSPR regisztráció beállítása *Contoso\MIMSSPR* és a hozzá tartozó jelszót <em>Pass@word1</em>.
 
 2. Adja meg *passwordreset.contoso.com* , a MIM jelszó-változtatási portál Host Name, és állítsa a port **80-as**. Jelölje be az **Open port in firewall** (Port nyitása a tűzfalon) négyzetet.
 
@@ -106,7 +106,7 @@ Ha végzett a telepítés előtti teendőkkel, kattintson az **Install** (Telep�
 
 A telepítést követően győződjön meg arról, hogy a MIM-portál aktív.
 
-1. Indítsa el az Internet Explorert, és kapcsolódjon a MIM-portál a * http://mim.contoso.com/identitymanagement *. Az oldal első látogatásakor némi késedelem lehet tapasztalható.
+1. Indítsa el az Internet Explorert, és kapcsolódjon a MIM-portál a *http://mim.contoso.com/identitymanagement*. Az oldal első látogatásakor némi késedelem lehet tapasztalható.
 
     - Szükség esetén hitelesítse magát *contoso\miminstall* az Internet Explorer böngészőbe.
 
