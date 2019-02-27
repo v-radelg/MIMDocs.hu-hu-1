@@ -1,5 +1,5 @@
 ---
-title: Microsoft Identity Manager 2016 | Microsoft Docs
+title: A Microsoft Identity Manager 2016 az AD felhasználók átadásának |} A Microsoft Docs
 description: A felhasználók az AD DS-ben, a Microsoft Identity Manager 2016 használatával való létrehozási folyamatának áttekintése
 keywords: ''
 author: billmath
@@ -9,16 +9,16 @@ ms.date: 08/18/2017
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: ''
-ms.openlocfilehash: 88473df88271937b07450df409353c0b3ca08684
-ms.sourcegitcommit: 7de35aaca3a21192e4696fdfd57d4dac2a7b9f90
+ms.openlocfilehash: 5e259df617c5a95fcd54f49c9cbb70f9cd0c36a4
+ms.sourcegitcommit: 486f860f0951413aed335138eb6ad4ce6c50ed4d
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49358788"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56852663"
 ---
 # <a name="how-do-i-provision-users-to-ad-ds"></a>Felhasználók kiépítése az AD DS-ben
 
-A következőre vonatkozik: Microsoft Identity Manager 2016 SP1 (MIM)
+A következőkre vonatkozik: A Microsoft Identity Manager 2016 SP1 (MIM)
 
 Az egyik alapvető követelmény az identitáskezelési rendszerekkel szemben, hogy az erőforrások kiépíthetők legyenek valamely külső rendszerre.
 
@@ -102,7 +102,7 @@ A következő táblázatban az útmutatóban ismertetett forgatókönyv részét
 | ![Kezelőügynökök és futtatási profilok](media/how-provision-users-adds/image007.jpg)  | Kezelőügynökök és futtatási profilok | &#183; **Fabrikam ADMA** – Az AD DS-sel adatokat cserélő kezelőügynök. <br/> &#183; Fabrikam FIMMA – A MIM szolgáltatással adatokat cserélő kezelőügynök.                                                                                 |
 | ![Szinkronizálási szabályok](media/how-provision-users-adds/image008.jpg)  | Szinkronizálási szabályok              | A Fabrikam csoport kimenő szinkronizálási szabálya – Az AD DS-be felhasználókat kiépítő kimenő szinkronizálási szabály.                                     |
 | ![Készletek](media/how-provision-users-adds/image009.jpg)   | Készletek                               | Összes alvállalkozó – Dinamikus tagsággal rendelkező készlet, mely minden Alvállalkozó értékű EmployeeType attribútummal rendelkező objektumot tartalmaz.                                |
-| ![Munkafolyamatok](media/how-provision-users-adds/image010.jpg)  | Munkafolyamatok                          | AD-kiépítési munkafolyamat – A MIM-felhasználót az AD kimenő szinkronizálási szabályának hatókörébe vonó munkafolyamat.                                |
+| ![A munkafolyamatok](media/how-provision-users-adds/image010.jpg)  | Munkafolyamatok                          | AD-kiépítési munkafolyamat – A MIM-felhasználót az AD kimenő szinkronizálási szabályának hatókörébe vonó munkafolyamat.                                |
 | ![Felügyeletiházirend-szabályok](media/how-provision-users-adds/image011.jpg)   | Felügyeletiházirend-szabályok            | Az AD-kiépítés felügyeletiházirend-szabálya – Egy felügyeletiházirend-szabály (MPR), amely akkor lép érvénybe, ha az adott erőforrás az Összes alvállalkozó készlet tagjává válik. |
 | ![MIM-felhasználók](media/how-provision-users-adds/image012.jpg) | MIM-felhasználók                          | Britta Simon – Az AD DS-ben kiépítendő MIM-felhasználó.                                                                                             |
 
@@ -128,7 +128,7 @@ A szervezeti egységre a kiépített mintafelhasználó tárolójaként van szü
 
 Hozzon létre egy szervezeti egységet az AD DS-ben MIMObjects néven.
 
-### <a name="step-2-create-the-active-directory-user-accounts"></a>2. lépés: Az Active Directory-beli felhasználói fiókok létrehozása
+### <a name="step-2-create-the-active-directory-user-accounts"></a>2. lépés: Az Active Directory felhasználói fiókok létrehozása
 
 Az útmutatóban ismertetett forgatókönyv esetében két Active Directory-beli felhasználói fiókra van szükség:
 
@@ -167,10 +167,10 @@ Amikor jelszót állít be AD DS-fiókok számára, létre kell hoznia egy enged
 
 Az alábbi táblázatban azok a forgatókönyvre jellemző legfontosabb beállítások szerepelnek, amelyek konfigurálását el kell végeznie.
 
-| A kezelőügynök tervezőoldala                          | Configuration                                                  |
+| A kezelőügynök tervezőoldala                          | Konfiguráció                                                  |
 |---------------------------------------------------------|----------------------------------------------------------------|
-| Kezelőügynök létrehozása                                 | 1. **Management agent for** (Kezelőügynök a következőhöz): – AD DS  <br/> 2.  **Name** (Név): Fabrikam ADMA |
-| Kapcsolódás az Active Directory-erdőhöz                      | 1. **Select directory partitions** (Címtárpartíciók kiválasztása): „DC = Fabrikam, DC = com”   <br/>   2. A **Select Containers** (Tárolók kiválasztása) párbeszédpanel megnyitásához kattintson a **Containers** (Tárolók) lehetőségre, majd győződjön meg róla, hogy a **MIMObjects** az egyetlen kijelölt szervezeti egység.        |
+| Kezelőügynök létrehozása                                 | 1. **A kezelőügynök:** AD DS  <br/> 2.  **név:** Fabrikam ADMA |
+| Kapcsolódás az Active Directory-erdőhöz                      | 1. **Címtárpartíciók kiválasztása:** “DC=Fabrikam,DC=com”   <br/>   2. A **Select Containers** (Tárolók kiválasztása) párbeszédpanel megnyitásához kattintson a **Containers** (Tárolók) lehetőségre, majd győződjön meg róla, hogy a **MIMObjects** az egyetlen kijelölt szervezeti egység.        |
 | Objektumtípusok kiválasztása                                     | A már kijelölt objektumtípusok mellett jelölje ki a **user** (felhasználó) elemet. |
 | Attribútumok kiválasztása                                       | 1. Kattintson a **Show All** (Az összes megjelenítése) elemre. <br/>   2. Jelölje ki az alábbi attribútumokat: <br/> &nbsp;&nbsp;&nbsp;&#176; **displayName** <br/> &nbsp;&nbsp;&nbsp;&#176; **givenName** <br/> &nbsp;&nbsp;&nbsp;&#176;  **sn** <br/> &nbsp;&nbsp;&nbsp;&#176;  **SamAccountName** <br/> &nbsp;&nbsp;&nbsp;&#176;  **unicodePwd** <br/> &nbsp;&nbsp;&nbsp;&#176;  **userAccountControl**     
 
@@ -191,10 +191,10 @@ Ehhez normál felhasználói fiókot célszerű használni. A fióknak azonosnak
 
 Az alábbi táblázatban azok a forgatókönyvre jellemző legfontosabb beállítások szerepelnek, amelyek konfigurálását el kell végeznie. Hozza létre a kezelőügynököt az alábbi táblázatban szereplő információk alapján.  
 
-| A kezelőügynök tervezőoldala | Configuration |
+| A kezelőügynök tervezőoldala | Konfiguráció |
 |------------|------------------------------------|
-| Kezelőügynök létrehozása | 1. **Management agent for** (Kezelőügynök a következőhöz): FIM Service management agent (A FIM szolgáltatás kezelőügynöke) <br/> 2. **Name** (Név): Fabrikam FIMMA |
-| Kapcsolódás az adatbázishoz     | Használja a következő beállításokat: <br/> &#183; **Server** (Kiszolgáló): localhost <br/> &#183; **Database** (Adatbázis): FIMService <br/> &#183;**FIM szolgáltatás základní adresa:** http://localhost:5725 <br/> <br/> A kezelőügynökhöz létrehozott fiók adatainak megadása |
+| Kezelőügynök létrehozása | 1. **A kezelőügynök:** FIM szolgáltatás Kezelőügynöke. <br/> 2. **Name** (Név): Fabrikam FIMMA |
+| Kapcsolódás az adatbázishoz     | Használja a következő beállításokat: <br/> &#183; **Server** (Kiszolgáló): localhost <br/> &#183;**Adatbázis:** FIMService <br/> &#183;**FIM szolgáltatás základní adresa:** http://localhost:5725 <br/> <br/> A kezelőügynökhöz létrehozott fiók adatainak megadása |
 | Objektumtípusok kiválasztása                                     | A már kijelölt objektumtípusok mellett jelölje ki a **Person** (Személy) elemet.   |
 | Objektumtípus-leképezések konfigurálása                          | A már meglévő objektumtípus-leképezések mellett adja hozzá Person (Személy) **Data Source Object Type** (Adatforrás objektumtípusa) a **Metaverse** (Metaverzum) Objektumtípusú személyekre való leképezését. |
 | Attribútumfolyam konfigurálása                                | A már meglévő attribútumfolyam-leképezések mellett adja hozzá a következő attribútumfolyam-leképezéseket is: <br/><br/> ![Attribútumfolyam](media/how-provision-users-adds/image018.jpg) |
@@ -251,7 +251,7 @@ Az alábbi táblázatokban a Fabrikam számára szükséges kiépítési szinkro
 
 | A szinkronizálási szabály konfigurációja                                                                         |                                                                             |                                                           
 |------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------|-----------------------------------------------------------|
-| Név                                                                                                       | Az Active Directory-felhasználóra vonatkozó kimenő szinkronizálási szabály                         |                                                          
+| Name (Név)                                                                                                       | Az Active Directory-felhasználóra vonatkozó kimenő szinkronizálási szabály                         |                                                          
 | Leírás                                                                                               |                                                                             |                                                           
 | Prioritás                                                                                                | 2                                                                           |                                                           
 | Adatfolyam iránya   | Kimenő             |       
@@ -269,7 +269,7 @@ Az alábbi táblázatokban a Fabrikam számára szükséges kiépítési szinkro
 | Relationship ||
 |------------|---------|
 | Erőforrás létrehozása külső rendszerben                                                                         | Igaz                                                                        |                                                           
-| Megszüntetés engedélyezése                                                                                      | Hamis                                                                       |                                                           
+| Megszüntetés engedélyezése                                                                                      | False (Hamis)                                                                       |                                                           
 
 | Kapcsolati feltételek                                                                                      | |
 |------------|----------|
@@ -280,16 +280,16 @@ Az alábbi táblázatokban a Fabrikam számára szükséges kiépítési szinkro
 |-------------------|---------------------- |---------------|
 | Null értékek engedélyezése                 | Cél                                                                 | Forrás                                                    |
 | hamis                       | megkülönböztető név                                                                          | \+(„CN=”,displayName,„,OU=MIMObjects,DC=fabrikam,DC=com”) |
-| hamis                       | userAccountControl                                                          | **Constant** (Állandó): 512                                         |
-| hamis                                                                     | unicodePwd                    | Constant (Állandó): P\@\$\$W0rd                                    |
+| false                       | userAccountControl                                                          | **Állandó:** 512                                         |
+| false                                                                     | unicodePwd                    | Állandó: P\@\$\$W0rd                                    |
 
 | Állandó kimenő attribútumfolyamok  |                                                                     |                                                           |
 |--------------------------------------|---------------------------------------------------------------------|-----------------------------------------------------------|
 | Null értékek engedélyezése                                                                                                | Cél                                                                 | Forrás                                                    |
-| hamis                                                                                                      | sAMAccountName                                                              | accountName                                               |
-| hamis                                                                                                      | displayName                                                                 | displayName                                               |
-| hamis                                                                                                      | givenName                                                                   | firstName                                                 |
-| hamis                                                                                                      | sn                                                                          | lastName                                                  |
+| false                                                                                                      | sAMAccountName                                                              | accountName                                               |
+| false                                                                                                      | displayName                                                                 | displayName                                               |
+| false                                                                                                      | givenName                                                                   | firstName                                                 |
+| false                                                                                                      | sorozatszám                                                                          | lastName                                                  |
 
 
 
@@ -302,14 +302,14 @@ Az AD-kiépítési munkafolyamat célja a Fabrikam kiépítési szinkronizálás
 
 | Munkafolyamat-konfiguráció               |                                                                 |
 |--------------------------------------|-----------------------------------------------------------------|
-| Név                                 | Az Active Directory-felhasználó kiépítési munkafolyamata                     |
+| Name (Név)                                 | Az Active Directory-felhasználó kiépítési munkafolyamata                     |
 | Leírás                          |                                                                 |
-| Munkafolyamat típusa                        | Művelet                                                          |
-| Futtatás szabályzatfrissítéskor                 | Hamis                                                           |
+| Munkafolyamat típusa                        | Műveletek                                                          |
+| Futtatás szabályzatfrissítéskor                 | False (Hamis)                                                           |
 
 | Szinkronizálási szabály                 |                                                                 |
 |--------------------------------------|-----------------------------------------------------------------|
-| Név                                 | Az Active Directory-felhasználóra vonatkozó kimenő szinkronizálási szabály             |
+| Name (Név)                                 | Az Active Directory-felhasználóra vonatkozó kimenő szinkronizálási szabály             |
 | Művelet                               | Hozzáadás                                                             |
 
 
@@ -321,10 +321,10 @@ A szükséges MPR Set Transition (Készletváltás) típusú, és akkor aktivál
 
 | MPR-konfiguráció                    |                                                             |
 |--------------------------------------|-------------------------------------------------------------|
-| Név                                 | AD-felhasználó kiépítésére vonatkozó felügyeletiházirend-szabály                 |
+| Name (Név)                                 | AD-felhasználó kiépítésére vonatkozó felügyeletiházirend-szabály                 |
 | Leírás                          |                                                             |
-| Típus                                 | Set Transition (Készletváltás)                                              |
-| Engedélyeket biztosít                   | Hamis                                                       |
+| Typo                                 | Set Transition (Készletváltás)                                              |
+| Engedélyeket biztosít                   | False (Hamis)                                                       |
 | Letiltva                             | Hamis                                                       |
 
 | A váltás meghatározása                |                                                             |
@@ -334,8 +334,8 @@ A szükséges MPR Set Transition (Készletváltás) típusú, és akkor aktivál
 
 | Szabályzat-munkafolyamatok                     |                                                             |
 |--------------------------------------|-------------------------------------------------------------|
-| Típus                                 | Művelet                                                      |
-| Megjelenített név                         | Az Active Directory-felhasználó kiépítési munkafolyamata                 |
+| Typo                                 | Műveletek                                                      |
+| Megjelenítendő név                         | Az Active Directory-felhasználó kiépítési munkafolyamata                 |
 
 
 
@@ -349,11 +349,11 @@ Az inicializálási fázis céljai a következők:
 
 -   Az Active Directory-struktúra beemelése az Active Directory-összekötőtérbe.
 
-### <a name="step-9-run-the-run-profiles"></a>9. lépés: A futtatási profilok futtatása
+### <a name="step-9-run-the-run-profiles"></a>9. lépés: Futtassa a futtatási profilokat
 
 A következő táblázatban az inicializálási fázis részét képező futtatási profilok szerepelnek.  Futtassa a futtatási profilokat az alábbi táblázatban leírtak szerint.
 
-| Futtatás                                                                                                           | Kezelőügynök                                      | Futtatási profil          |
+| Futtassa a következőt:                                                                                                           | Kezelőügynök                                      | Futtatási profil          |
 |---------------------------------------------------------------------------------------------------------------|-------------------------------------------------------|----------------------|
 | 1                                                                                                             | Fabrikam FIMMA                                        | Teljes importálás          |
 | 2                                                                                                             |                                                       | Teljes szinkronizálás |
@@ -381,7 +381,7 @@ Ezen szakasz célja a tényleges konfiguráció tesztelése. A konfiguráció te
 
 4.  Annak ellenőrzése, hogy a felhasználó létezik az AD DS-ben.
 
-### <a name="step-10-create-a-sample-user-in-mim"></a>10. lépés: Mintafelhasználó létrehozása a MIM szolgáltatásban
+### <a name="step-10-create-a-sample-user-in-mim"></a>10. lépés: Mintafelhasználó létrehozása a MIM-ben
 
 
 Az alábbi táblázatban a mintafelhasználó tulajdonságai szerepelnek. Hozzon létre egy mintafelhasználót az alábbi táblázatban leírtaknak megfelelően.
@@ -390,7 +390,7 @@ Az alábbi táblázatban a mintafelhasználó tulajdonságai szerepelnek. Hozzon
 |----------------------------------------|----------------------------------------------------------------|
 | Utónév                             | Britta                                                         |
 | Vezetéknév                              | Simon                                                          |
-| Megjelenített név                           | Britta Simon                                                   |
+| Megjelenítendő név                           | Britta Simon                                                   |
 | Fióknév                           | BSimon                                                         |
 | Domain                                 | Fabrikam                                                       |
 | Alkalmazott típusa                          | Alvállalkozó                                                     |
@@ -406,14 +406,14 @@ A mintafelhasználó AD DS-ben való kiépítéséhez két előfeltételnek kell
 
 2.  A készletbeli felhasználónak a kimenő szinkronizálási szabály hatókörébe kell tartoznia.
 
-### <a name="step-11-verify-the-user-is-a-member-of-all-contractors"></a>11. lépés: Annak ellenőrzése, hogy a felhasználó az Összes alvállalkozó készlet tagja-e
+### <a name="step-11-verify-the-user-is-a-member-of-all-contractors"></a>11. lépés: Ellenőrizze a felhasználó az összes alvállalkozó készlet tagja
 
 Annak ellenőrzéséhez, hogy a felhasználó az Összes alvállalkozó készlet tagja-e, nyissa meg a készletet, majd kattintson a View Members (Tagok megtekintése) elemre.
 
 ![Annak ellenőrzése, hogy a felhasználó az Összes alvállalkozó készlet tagja-e](media/how-provision-users-adds/image022.jpg)
 
 
-### <a name="step-12-verify-the-user-is-in-the-scope-of-the-outbound-synchronization-rule"></a>12. lépés: Annak ellenőrzése, hogy a felhasználó a kimenő szinkronizálási szabály hatókörében van-e
+### <a name="step-12-verify-the-user-is-in-the-scope-of-the-outbound-synchronization-rule"></a>12. lépés: Ellenőrizze, hogy a felhasználó a kimenő szinkronizálási szabály hatókörében van.
 
 Annak ellenőrzéséhez, hogy a felhasználó a szinkronizálási szabály hatókörében van-e, nyissa meg felhasználó tulajdonságlapját, majd a Provisioning (Kiépítés) lapon tekintse át az Expected Rules List (Elvárt szabályok listája) attribútumot. Az Expected Rules List (Elvárt szabályok listája) attribútumban szerepelnie kell az AD-felhasználóra vonatkozó
 
@@ -499,7 +499,7 @@ A mintafelhasználó AD DS-ben való kiépítésének sikerességét a FIMObject
 
 ![annak ellenőrzése, hogy a felhasználó a FIMObjects szervezeti egységben található-e](media/how-provision-users-adds/image033.jpg)
 
-<a name="summary"></a>Összefoglalás
+<a name="summary"></a>Összegzés
 =======
 
 Jelen dokumentum célja, hogy megismertesse Önnel a felhasználók a MIM-ben, az AD DS segítségével való szinkronizálásához szükséges építőelemeket. A kezdeti tesztelés során először az adott feladat végrehajtásához szükséges minimális attribútumokkal kell kezdenie, majd további attribútumokat kell hozzáadnia a forgatókönyvhöz, amennyiben az általános lépések az várt módon működnek. A bonyolultság minimális szinten tartása egyszerűbbé teszi a hibák elhárításának folyamatát.
@@ -524,7 +524,7 @@ Az adott felhasználó FIM-portálra való bejelentkezésének engedélyezéséh
 
 [How Can I Manage My FIM MA Account](http://go.microsoft.com/FWLink/p/?LinkId=189672) (Saját FIM MA-fiók kezelése)
 
-[Detecting Nonauthoritative Accounts – Part 1: Envisioning](http://go.microsoft.com/FWLink/p/?LinkId=189673) (A nem mérvadó fiókok észlelése – 1. rész: Alapvető tervezés)
+[Annak ellenőrzése, hogy nem mérvadó fiókok – 1. rész: Alapvető tervezés](http://go.microsoft.com/FWLink/p/?LinkId=189673)
 
 [The Poor Man’s Version of a Connector Detection Mechanism](http://go.microsoft.com/FWLink/p/?LinkId=189674) (Az összekötő-észlelési mechanizmus egyszerű változata)
 
