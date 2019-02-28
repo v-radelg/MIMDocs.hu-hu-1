@@ -11,12 +11,12 @@ ms.prod: microsoft-identity-manager
 ms.assetid: 9471ccc1-bafe-46ee-b169-1464262380e1
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 07998c20fcdc325cd33d8f9ee3d06c9c8572b654
-ms.sourcegitcommit: 7de35aaca3a21192e4696fdfd57d4dac2a7b9f90
+ms.openlocfilehash: 36b5e97675d5900bf3b5348ad4857827c426e60e
+ms.sourcegitcommit: 4f0b2883922bcb8fbef6b4284c35c6ca62c11565
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49358670"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "56952162"
 ---
 # <a name="upgrade-from-forefront-identity-manager-2010-r2"></a>Frissítés a Forefront Identity Manager 2010 R2-ről
 
@@ -41,7 +41,7 @@ Ez az útmutató feltételezi, hogy az alábbiak már be vannak állítva:
 
 2.  A Contoso\Rendszergazda fiókkal jelentkezzen be azokon a számítógépeken, ahol telepítve vannak a FIM 2010 R2 összetevői – például a *CORPIDM*. Ezen telepítési példában rendszergazdai jogosultságok szükségesek a FIM 2010 R2 **MIM-re** való frissítéséhez.
 
-3.  Töltse le vagy csomagolja ki a MIM szoftvert.
+3.  Töltse le vagy csomagolja ki a MIM szoftvert.  Ha nem rendelkezik a szoftverrel, [Microsoft Identity Manager licencelése és letöltések](microsoft-identity-manager-licensing.md).
 
 ## <a name="upgrade-the-synchronization-service"></a>A Synchronization Service frissítése
 
@@ -135,11 +135,11 @@ Ez az útmutató feltételezi, hogy az alábbiak már be vannak állítva:
 
 13. A MIM-portál telepítésekor adja meg a MIM szolgáltatás kiszolgálójának címét. Kattintson a **Tovább** gombra.
 
-14. A MIM-portál telepítésekor adja meg annak a SharePoint-webhelycsoportnak az URL-címét, amelyben a FIM-portál jelenleg üzemel. Kattintson a **Tovább**gombra.
+14. A MIM-portál telepítésekor adja meg annak a SharePoint-webhelycsoportnak az URL-címét, amelyben a FIM-portál jelenleg üzemel. Kattintson a **Tovább** gombra.
 
 ## <a name="install-the-mim-password-registration-portal"></a>A MIM jelszó-regisztrálási portál telepítése
 
-1. A MIM jelszó-regisztrálási portál telepítésekor adja meg a kért URL-t a jelszó-regisztrációs portálhoz. Kattintson a **Tovább**gombra.
+1. A MIM jelszó-regisztrálási portál telepítésekor adja meg a kért URL-t a jelszó-regisztrációs portálhoz. Kattintson a **Tovább** gombra.
 
 2. Állítsa be, hogy az ügyfelek és a végfelhasználók használhassák a szolgáltatást és a portált.
 
@@ -159,7 +159,7 @@ Ez az útmutató feltételezi, hogy az alábbiak már be vannak állítva:
 
     3.  Jelölje be az **Open port in firewall** (Port nyitása a tűzfalon) négyzetet.
 
-    4.  Kattintson a **Tovább**gombra.
+    4.  Kattintson a **Tovább** gombra.
 
 4. A MIM jelszó-regisztrálási portál következő konfigurációs képernyőjén:
 
@@ -179,7 +179,7 @@ Ez az útmutató feltételezi, hogy az alábbiak már be vannak állítva:
 
     3.  Jelölje be az **Open port in firewall** (Port nyitása a tűzfalon) négyzetet.
 
-    4.  Kattintson a **Tovább**gombra.
+    4.  Kattintson a **Tovább** gombra.
 
 2. A MIM jelszó-változtatási portál következő konfigurációs képernyőjén:
 
@@ -197,6 +197,6 @@ Ez az útmutató feltételezi, hogy az alábbiak már be vannak állítva:
 
 4. A **Forefront Identity Manager Service** szolgáltatás újraindult.
 
-Megjegyzés: Ha a FIM beépülő moduljai és bővítményei jelenleg telepítve vannak a felhasználók számítógépein az önkiszolgáló jelszó-változtatási (SSPR) szolgáltatáshoz, abban az esetben az új MFA telefonos jelszó-változtatási kapuk konfigurálásával várjon addig, amíg a FIM valamennyi beépülő modulját és bővítményét frissítette a MIM 2016-os verzióra.  A FIM 2010 és a FIM 2010 R2 beépülő moduljai és bővítményei nem ismerik fel az új kapukat, így hibaüzenetet fognak megjeleníteni, a felhasználók pedig nem fogják tudni megváltoztatni a jelszavukat.
+Megjegyezés: Ha a FIM beépülő moduljai és bővítményei jelenleg telepítve vannak a felhasználók számítógépein az SSPR, ne konfigurálja a jelszó-visszaállításhoz amíg, miután minden FIM beépülő moduljai és bővítményei frissítette a MIM 2016 új MFA telefonos kapu.  A FIM 2010 és a FIM 2010 R2 beépülő moduljai és bővítményei nem ismerik fel az új kapukat, így hibaüzenetet fognak megjeleníteni, a felhasználók pedig nem fogják tudni megváltoztatni a jelszavukat.
 
 A Microsoft Identity Manager 2016 SP1 frissítési útmutatása a [Microsoft Identity Manager 2016 Service Pack 1 frissítési csomagban található](https://blogs.technet.microsoft.com/iamsupport/2016/11/08/microsoft-identity-manager-2016-service-pack-1-update-package/)
