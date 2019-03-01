@@ -12,6 +12,7 @@
 ## [A PAM bevezetésének megtervezése](./pam/environment-overview.md)
 # [Üzembe helyezés és használat](microsoft-identity-manager-deploy.md)
 ## [Elavult funkciók:](microsoft-identity-manager-2016-deprecated-features.md)
+## [Licencelés és letöltés](microsoft-identity-manager-licensing.md)
 ## [Adatlkezelés](mim-privacy-compliance.md)
 ## [Első üzembe helyezés](microsoft-identity-manager-deploy.md)
 ### [Tartomány beállítása](preparing-domain.md)
@@ -84,7 +85,7 @@
 ### [Exportálási teljesítmény-útmutató](https://technet.microsoft.com/library/hh322883)
 ## Jelentéskészítés
 ### [Jelentéskészítés – egyéni jelentések és bővíthetőség](https://technet.microsoft.com/library/jj133861)
-## [A Microsoft identitásszoftverei: nyilvános megjelenések és buildszámok](https://blogs.technet.microsoft.com/iamsupport/idmbuildversions/)
+## [A Microsoft identitásszoftverei: Nyilvános megjelenések és buildszámok](https://blogs.technet.microsoft.com/iamsupport/idmbuildversions/)
 # [Hivatkozás](./reference/microsoft-identity-manager-2016-developer-reference.md)
 ## Fejlesztői leírás
 ### [MIM 2016 fejlesztői leírás](./reference/microsoft-identity-manager-2016-developer-reference.md)
