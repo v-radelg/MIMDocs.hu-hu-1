@@ -45,11 +45,11 @@ A Microsoft Identity Manager 2016 összetevőinek telepítéséhez először ké
 
 2. Indítsa el a **MIM Synchronization Service telepítőjét**. Az útmutatást követve végezze el a telepítést.TEST
 
-3. Az üdvözlőképernyőn kattintson a **Next** (Tovább) gombra.TEST
+3. Az üdvözlőképernyőn kattintson a **Next** (Tovább) gombra.
 
     ![Kép: A MIM-telepítővarázsló üdvözlőképernyője](media/install-mim-sync/MIM_Install1.png)
 
-4. Olvassa el és a **Next** (Tovább) gombbal fogadja el a licencfeltételeket.TEST
+4. Olvassa el és a **Next** (Tovább) gombbal fogadja el a licencfeltételeket.
 
 5. A **Custom Setup** (Egyéni telepítés) képernyőn kattintson a **Next** (Tovább) gombra.
 
