@@ -35,15 +35,15 @@ ms.locfileid: "56952179"
 
 A Microsoft Identity Manager 2016 összetevőinek telepítéséhez először készítse elő a telepítési csomagot.
 
-1. Jelentkezzen be, *contoso\miminstall* identitáskezelési szinkronizálás kiszolgáló használ a kiszolgálóhoz **corpsync**.
+1. Jelentkezzen be, *contoso\miminstall* identitáskezelési szinkronizálás kiszolgáló használ a kiszolgálóhoz **corpsync**.TEST
 
 2. Bontsa ki a MIM telepítési csomagját vagy csatlakoztassa a MIM DVD-lemezképét.  Ha nem rendelkezik a DVD-t, tekintse meg [Microsoft Identity Manager licencelése és letöltések](microsoft-identity-manager-licensing.md).
 
 ## <a name="install-mim-2016-sp1-synchronization-service"></a>A MIM 2016 SP1 Synchronization Service telepítése
 
-1. A kibontott MIM telepítési mappában nyissa meg a **Synchronization Service** mappát.
+1. A kibontott MIM telepítési mappában nyissa meg a **Synchronization Service** mappát.TEST
 
-2. Indítsa el a **MIM Synchronization Service telepítőjét**. Az útmutatást követve végezze el a telepítést.
+2. Indítsa el a **MIM Synchronization Service telepítőjét**. Az útmutatást követve végezze el a telepítést.TEST
 
 3. Az üdvözlőképernyőn kattintson a **Next** (Tovább) gombra.
 
