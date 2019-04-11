@@ -16,8 +16,7 @@ ms.contentlocale: hu-HU
 ms.lasthandoff: 02/26/2019
 ms.locfileid: "56852629"
 ---
-
-# <a name="microsoft-identity-manager-2016-news-and-updates"></a>A Microsoft Identity Manager 2016 hírek és frissítések <!--linea desfazada-->
+# <a name="microsoft-identity-manager-2016-news-and-updates"></a>A Microsoft Identity Manager 2016 hírek és frissítések
 
 A Microsoft Identity Manager (MIM) 2016 identitás- és hozzáférés-kezelési képességeire a Forefront Identity Manager hoz létre. Elődjéhez hasonlóan a MIM a szervezeti felhasználók, hitelesítő adatok, házirendek és hozzáférési jogosultságok kezelésében nyújt segítséget.  A MIM 2016 emellett hibrid funkciókat és az emelt szintű hozzáférések felügyeletére szolgáló képességeket biztosít, és új platformokat is támogat.
 
@@ -29,11 +28,11 @@ A MIM-szervezet identitás életciklus-felügyelet automatizált munkafolyamatok
 
 A jelenlegi kiadásban alapvető technikai támogatása a MIM 2016 Service Pack 1 (SP1).  Ebben a kiadásban a 2017 augusztus frissítések MIM-portálhoz, a PAM-forgatókönyv tartalmazza, és új platformokat támogatja.  A MIM 2016 SP1 előtti verziókban a FIM vagy MIM verziót futtató ügyfelek a MIM 2016 SP1-et vagy újabb gyorsjavítást kell frissíteni.  Tudjon meg többet [a MIM 2016 SP1 verzióra történő frissítéshez](./reference/version-history.md).
 
-## <a name="updates-since-mim-2016-sp1"></a>A MIM 2016 SP1 óta frissítések <!--sugerencia rechazada1-->
+## <a name="updates-since-mim-2016-sp1"></a>A MIM 2016 SP1 óta frissítések
 
 A Microsoft rendszeresen továbbítja a MIM-fejlesztések az ügyfelek kéréseire és hibajavításokat tartalmaz, beleértve egy folyamatban lévő kiadási ciklus a frissítéseket.
 
-### <a name="major-new-and-updated-scenarios"></a>Fő új és frissített forgatókönyvek <!--sugerencia rechazada2-->
+### <a name="major-new-and-updated-scenarios"></a>Fő új és frissített forgatókönyvek
 
 - [Az Azure AD B2B együttműködés a MIM Graph-összekötő és az Azure-proxy a GA](microsoft-identity-manager-2016-graph-b2b-scenario.md), az utoljára frissített 2018. április
 - [A MIM hibrid jelentéskészítés a GA](https://cloudblogs.microsoft.com/enterprisemobility/2018/02/23/hybrid-mim-reporting-now-available-in-azure-active-directory/), az utoljára frissített 2018. február
