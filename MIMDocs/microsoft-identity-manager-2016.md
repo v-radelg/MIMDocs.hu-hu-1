@@ -38,7 +38,7 @@ A Microsoft rendszeresen továbbítja a MIM-fejlesztések az ügyfelek kérései
 - [A MIM hibrid jelentéskészítés a GA](https://cloudblogs.microsoft.com/enterprisemobility/2018/02/23/hybrid-mim-reporting-now-available-in-azure-active-directory/), az utoljára frissített 2018. február
 - [Javított témakör már tartalmazza a MIM elavult funkció lista](microsoft-identity-manager-2016-deprecated-features.md), az utoljára frissített 2018. február
 
-### <a name="recent-software-releases"></a>Legutóbbi elhárítása
+### <a name="recent-software-releases"></a>Legutóbbi elhárítása <!--sugerencia aceptada1-->
 
 - [MIM-összekötő kiadások](./reference/microsoft-identity-manager-2016-connector-version-history.md), az utoljára frissített 2018. március
 - [MIM Sync, a szolgáltatás, a portál, CM, bővítmények és az ügyfél-kiadások](./reference/version-history.md) utoljára frissítve 2017. November
@@ -47,7 +47,7 @@ A Microsoft rendszeresen továbbítja a MIM-fejlesztések az ügyfelek kérései
 
 
 
-## <a name="related-topics"></a>Kapcsolódó témakörök
+## <a name="related-topics"></a>Kapcsolódó témakörök <!--sugerencia aceptada2-->
 
 Ismerje meg, más a forgatókönyvekben a MIM 2016 hozzáadott és a korábbi [a Microsoft Identity manager 2016](microsoft-identity-manager-2016.md).
 
