@@ -26,7 +26,7 @@ A Forefront Identity Manager szoftver az összekötőket kezelőügynöknek neve
 
 Ez a cikk ismerteti az összekötő tartalmazza a & a MIM-ben támogatott, de az Extensible Connectivity 2.0-összekötő lehetővé teszi a további adatforrásokhoz is kapcsolódhat. Egyes partnerek saját összekötőket hoztak létre ezzel a módszerrel, és a egy teljes listája megtalálható a wikin [FIM 2010: Partnerek Kezelőügynökei](http://social.technet.microsoft.com/wiki/contents/articles/1589.fim-2010-management-agents-from-partners.aspx).
 
-## <a name="supported-connectors-in-mim-2016-sp1"></a>A MIM 2016 SP1 támogatott összekötők <!--rejected-->
+## <a name="supported-connectors-in-mim-2016-sp1"></a>A MIM 2016 SP1 támogatott összekötők
 
 | Name (Név) | A csatlakoztatott adatforrás & műszaki hivatkozások támogatott verziói |
 | ---- | ----------------------------------------------- |
