@@ -18,7 +18,7 @@ ms.contentlocale: hu-HU
 ms.lasthandoff: 02/22/2019
 ms.locfileid: "56667199"
 ---
-# <a name="connect-to-your-directories"></a>Csatlakozás a címtárakhoz
+# <a name="connect-to-your-directories"></a>Csatlakozás a címtárakhoz <!--accepted-->
 
 Összekötők a Microsoft Identity Manager SP1 (MIM) hivatkozás az adott csatlakoztatott adatforrásokat. A csatlakoztatott adatforrásból az összekötő adatokat helyez át az MIM alkalmazásba. Ha az MIM alkalmazásban az adatok módosulnak, az összekötő exportálja az adatokat a csatlakoztatott adatforráshoz, hogy szinkronizálja azt az MIM alkalmazással. Általában elmondható, hogy minden csatlakoztatott címtárhoz legalább egy összekötő tartozik.
 
