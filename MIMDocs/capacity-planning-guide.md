@@ -18,7 +18,7 @@ ms.contentlocale: hu-HU
 ms.lasthandoff: 10/16/2018
 ms.locfileid: "49358387"
 ---
-# <a name="capacity-planning-guide"></a>Kapacitástervezési útmutató
+# <a name="capacity-planning-guide"></a>Kapacitástervezési útmutató <!--rejected-->
 
 A Microsoft Identity Manager (MIM) segítségével létrehozhatja, frissítheti és eltávolíthatja a szervezetében lévő felhasználói fiókokat. Emellett a segítségével a végfelhasználók kezelhetik a saját fiókjuk önkiszolgáló szolgáltatásait. Ezek a műveletek még egy kis környezetben is gyorsan összeadódhatnak.
 
@@ -26,7 +26,7 @@ A MIM használatának megkezdése előtt a jelen útmutató és a tesztkörnyeze
 
 Ha még nem ismeri a MIM 2016 szoftvert és összetevőit, a folytatás előtt ismerje meg közelebbről a [Microsoft Identity Manager 2016-ot](microsoft-identity-manager-2016.md).
 
-## <a name="overview"></a>Áttekintés
+## <a name="overview"></a>Áttekintés <!--rejected-->
 
 Számos olyan tényezőt, amelyek hatással lehetnek a teljes kapacitás és a Microsoft Identity Manager üzembe helyezési teljesítményét:
 
