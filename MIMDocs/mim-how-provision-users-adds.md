@@ -16,7 +16,7 @@ ms.contentlocale: hu-HU
 ms.lasthandoff: 02/26/2019
 ms.locfileid: "56852663"
 ---
-# <a name="how-do-i-provision-users-to-ad-ds"></a>Felhasználók kiépítése az AD DS-ben
+# <a name="how-do-i-provision-users-to-ad-ds"></a>Felhasználók kiépítése az AD DS-ben <!--accepted-->
 
 A következőkre vonatkozik: A Microsoft Identity Manager 2016 SP1 (MIM)
 
@@ -24,7 +24,7 @@ Az egyik alapvető követelmény az identitáskezelési rendszerekkel szemben, h
 
 Ez az útmutató a felhasználók a Microsoft® Identity Manager (MIM) 2016 szolgáltatásról az Active Directory® Domain Services (AD DS) szolgáltatásba való kiépítési folyamatának főbb építőelemeiről nyújt áttekintést, és ismerteti, hogyan ellenőrizhető, hogy a forgatókönyv az elvárásoknak megfelelően működik-e. Az útmutató továbbá javaslatokkal szolgál az Active Directory-felhasználók a MIM 2016 használatával történő kezelésével kapcsolatban, valamint további információforrásokat is tartalmaz.
 
-## <a name="before-you-begin"></a>A telepítés megkezdése előtt
+## <a name="before-you-begin"></a>A telepítés megkezdése előtt <!--rejected-->
 
 
 Ez a szakasz a dokumentum hatókörével kapcsolatos információkat tartalmaz. A gyakorlati útmutatók általában olyan olvasóknak szólnak, akik már rendelkeznek alapvető ismertekkel az objektumok a MIM szolgáltatással való, [Az első lépéseket ismertető útmutatókban](http://go.microsoft.com/FWLink/p/?LinkId=190486) foglaltak szerinti szinkronizálásáról.
