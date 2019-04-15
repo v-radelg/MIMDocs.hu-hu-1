@@ -19,9 +19,9 @@ ms.lasthandoff: 10/16/2018
 ms.locfileid: "49358216"
 ---
 # <a name="enroll-smart-cards-for-non-administrators"></a>Intelligens kártyák regisztrálása nem rendszergazdák számára
-Ha a felhasználó nem helyi rendszergazda, akkor alapesetben nem jogosult intelligens kártyát regisztrálni a saját számítógépén. A következő folyamat bemutatja, miként lehet áthidalni ezt a korlátozást.
+Ha a felhasználó nem helyi rendszergazda, akkor alapesetben nem jogosult intelligens kártyát regisztrálni a saját számítógépén. A következő folyamat bemutatja, miként lehet áthidalni ezt a korlátozást. <!--reject-->
 
-## <a name="enabling-smart-card-renewal-for-non-admins-in-mim-2016-certificate-manager"></a>Intelligens kártya megújításának engedélyezése nem rendszergazda felhasználók számára az MIM 2016 Tanúsítványkezelőben
+## <a name="enabling-smart-card-renewal-for-non-admins-in-mim-2016-certificate-manager"></a>Intelligens kártya megújításának engedélyezése nem rendszergazda felhasználók számára az MIM 2016 Tanúsítványkezelőben <!--reject-->
 
 1.  **Csomagolja ki az appx-fájlt**
 
