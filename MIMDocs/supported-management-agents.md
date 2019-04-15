@@ -18,7 +18,7 @@ ms.contentlocale: hu-HU
 ms.lasthandoff: 02/22/2019
 ms.locfileid: "56667199"
 ---
-# <a name="connect-to-your-directories"></a>Csatlakozás a címtárakhoz
+# <a name="connect-to-your-directories"></a>Csatlakozás a címtárakhoz <!--accepted-->
 
 Összekötők a Microsoft Identity Manager SP1 (MIM) hivatkozás az adott csatlakoztatott adatforrásokat. A csatlakoztatott adatforrásból az összekötő adatokat helyez át az MIM alkalmazásba. Ha az MIM alkalmazásban az adatok módosulnak, az összekötő exportálja az adatokat a csatlakoztatott adatforráshoz, hogy szinkronizálja azt az MIM alkalmazással. Általában elmondható, hogy minden csatlakoztatott címtárhoz legalább egy összekötő tartozik.
 
@@ -26,7 +26,7 @@ A Forefront Identity Manager szoftver az összekötőket kezelőügynöknek neve
 
 Ez a cikk ismerteti az összekötő tartalmazza a & a MIM-ben támogatott, de az Extensible Connectivity 2.0-összekötő lehetővé teszi a további adatforrásokhoz is kapcsolódhat. Egyes partnerek saját összekötőket hoztak létre ezzel a módszerrel, és a egy teljes listája megtalálható a wikin [FIM 2010: Partnerek Kezelőügynökei](http://social.technet.microsoft.com/wiki/contents/articles/1589.fim-2010-management-agents-from-partners.aspx).
 
-## <a name="supported-connectors-in-mim-2016-sp1"></a>A MIM 2016 SP1 támogatott összekötők
+## <a name="supported-connectors-in-mim-2016-sp1"></a>A MIM 2016 SP1 támogatott összekötők <!--rejected-->
 
 | Name (Név) | A csatlakoztatott adatforrás & műszaki hivatkozások támogatott verziói |
 | ---- | ----------------------------------------------- |
