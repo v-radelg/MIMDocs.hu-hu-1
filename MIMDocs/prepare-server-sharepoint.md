@@ -11,12 +11,12 @@ ms.prod: microsoft-identity-manager
 ms.assetid: c01487f2-3de6-4fc4-8c3a-7d62f7c2496c
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 466f5eb7d4aee27336948e15f96087d6ba898170
-ms.sourcegitcommit: 7de35aaca3a21192e4696fdfd57d4dac2a7b9f90
+ms.openlocfilehash: 5beee58388c12abbe8e3245ff610d3528b03786a
+ms.sourcegitcommit: f58926a9e681131596a25b66418af410a028ad2c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49358635"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67690772"
 ---
 # <a name="set-up-an-identity-management-server-sharepoint"></a>Identitáskezelési kiszolgáló beállítása: SharePoint
 
@@ -25,12 +25,12 @@ ms.locfileid: "49358635"
 > [Exchange Server»](prepare-server-exchange.md)
 > 
 > [!NOTE]
-> Ez az útmutató egy Contoso nevű fiktív vállalat neveit és értékeit használja szemléltetésként. Ezeket helyettesítse a saját neveivel és értékeivel. Például:
+> Ez az útmutató egy Contoso nevű fiktív vállalat neveit és értékeit használja szemléltetésként. Ezeket helyettesítse a saját neveivel és értékeivel. Példa:
 > - Tartományvezérlő neve – **corpdc-re**
 > - Tartománynév – **contoso**
 > - MIM szolgáltatás kiszolgálójának neve – **corpservice**
 > - MIM Sync-kiszolgáló neve – **corpsync**
-> - Az SQL Server neve – **corpsql**
+> - SQL Server name - **corpsql**
 > - Jelszó – <strong>Pass@word1</strong>
 
 
@@ -45,7 +45,7 @@ Kövesse az alábbi lépéseket a SharePoint 2016 telepítéséhez. A telepíté
 
     -   Váltson arra a könyvtárra, amelybe a SharePointot kicsomagolta.
 
-    -   Írja be a következő parancsot:
+    -   Írja be a következő parancsot.
 
         ```
         .\prerequisiteinstaller.exe
@@ -70,7 +70,7 @@ A SharePoint és a MIM együttműködésének konfigurálásához kövesse a **S
 2. Adja meg ezen a kiszolgálón, például adatbázis-kiszolgálóként **corpsql** a konfigurációs adatbázishoz, és *Contoso\SharePoint* SharePoint használandó adatbázis-hozzáférési fiókként.
 3. Hozza létre a farm biztonsági jelszavát.
 
-4. A konfigurációs varázsló az javasoljuk, hogy válassza [MinRole](https://docs.microsoft.com/sharepoint/install/overview-of-minrole-server-roles-in-sharepoint-server-2016) típusú **előtér**
+4. A konfigurációs varázsló az javasoljuk, hogy válassza [MinRole](/sharepoint/install/overview-of-minrole-server-roles-in-sharepoint-server) típusú **előtér**
 
 5. Ha a konfigurációs varázsló végrehajtotta mind a 10 10 konfigurációs lépést, kattintson a Befejezés gombra egy webes böngészőben nyílik meg...
 

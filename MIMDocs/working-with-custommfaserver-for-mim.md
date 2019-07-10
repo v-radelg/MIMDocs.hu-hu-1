@@ -9,12 +9,12 @@ manager: mtillman
 ms.date: 09/04/2018
 ms.topic: article
 ms.prod: microsoft-identity-manager
-ms.openlocfilehash: 750947d04f540e2c8317861c5826c2145deba1fd
-ms.sourcegitcommit: 7de35aaca3a21192e4696fdfd57d4dac2a7b9f90
+ms.openlocfilehash: 7fb111520f94541672fc56d0fd2ee95bfcd3a49e
+ms.sourcegitcommit: f58926a9e681131596a25b66418af410a028ad2c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49358397"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67690746"
 ---
 # <a name="use-a-custom-multi-factor-authentication-provider-via-an-api-during-pam-role-activation-or-in-sspr"></a>Egy API-val egyéni multi-factor Authentication-szolgáltatót használ, a PAM-szerepkör aktiválása során, vagy az SSPR-ben
 
@@ -32,16 +32,16 @@ Ez a cikk ismerteti a MIM használata egy egyéni többtényezős hitelesítési
 A MIM egy egyéni többtényezős hitelesítési szolgáltató API használatához szükséges:
 
 - Telefonszám az összes jelölt felhasználó esetén
-- A MIM-gyorsjavítás [4.5.202.0](https://www.microsoft.com/download/details.aspx?id=57278) vagy újabb – tekintse meg a [korábbi verziók](/reference/version-history.md) hirdetmények
+- A MIM-gyorsjavítás [4.5.202.0](https://www.microsoft.com/download/details.aspx?id=57278) vagy újabb – tekintse meg a [korábbi verziók](reference/version-history.md) hirdetmények
 - Konfigurált SSPR vagy a PAM MIM szolgáltatás
 
 ## <a name="approach-using-custom-multi-factor-authentication-code"></a>Egyéni többtényezős hitelesítési kód segítségével módszert
 
-### <a name="step-1-ensure-mim-service-is-at-version-452020-or-later"></a>1. lépés: Győződjön meg, hogy a MIM szolgáltatás nem 4.5.202.0 verzió vagy újabb
+### <a name="step-1-ensure-mim-service-is-at-version-452020-or-later"></a>1\. lépés: Győződjön meg, hogy a MIM szolgáltatás 4.5.202.0 verzió vagy újabb
 
 Töltse le és telepítse a MIM-gyorsjavítás [4.5.202.0](https://www.microsoft.com/download/details.aspx?id=57278) vagy újabb verziója.
 
-### <a name="step-2-create-a-dll-which-implements-the-iphoneserviceprovider-interface"></a>2. lépés: Hozzon létre egy IPhoneServiceProvider illesztő implementálását végző DLL
+### <a name="step-2-create-a-dll-which-implements-the-iphoneserviceprovider-interface"></a>2\. lépés: Hozzon létre egy IPhoneServiceProvider illesztő implementálását végző DLL
 
 A dll-fájlt egy osztály, amely három módszert kell tartalmaznia:
 
@@ -135,9 +135,9 @@ namespace CustomPhoneGate
     }
 }
 ```
-### <a name="step-3-backup-the-mfasettingsxml-located-in-the-cprogram-filesmicrosoft-forefront-identity-manager2010service"></a>3. lépés: Biztonsági mentés az MfaSettings.xml található a "C:\Program Files\Microsoft Forefront Identity Manager\2010\Service"
+### <a name="step-3-backup-the-mfasettingsxml-located-in-the-cprogram-filesmicrosoft-forefront-identity-manager2010service"></a>3\. lépés: Biztonsági mentés az MfaSettings.xml található a "C:\Program Files\Microsoft Forefront Identity Manager\2010\Service"
 
-### <a name="step-4-edit-the-mfasettingsxml-file"></a>4. lépés: Az MfaSettings.xml fájl szerkesztése
+### <a name="step-4-edit-the-mfasettingsxml-file"></a>4\. lépés: Edit the MfaSettings.xml file
 
 Frissítés, vagy törölje a következő sorokat:
 
@@ -146,7 +146,7 @@ Frissítés, vagy törölje a következő sorokat:
 - Frissítés vagy a következő sorokat ad hozzá a következő MfaSettings.xml a egyéni telefonszám-szolgáltatónál <br>
 `<CustomPhoneProvider>C:\Program Files\Microsoft Forefront Identity Manager\2010\Service\CustomPhoneGate.dll</CustomPhoneProvider>`
 
-### <a name="step-5-restart-mim-service"></a>5. lépés: A MIM szolgáltatás újraindítása
+### <a name="step-5-restart-mim-service"></a>5\. lépés: A MIM szolgáltatás újraindítása
 
 A szolgáltatás újraindulása után használja az SSPR és/vagy a PAM funkciók az egyéni identitásszolgáltató ellenőrzése.
 

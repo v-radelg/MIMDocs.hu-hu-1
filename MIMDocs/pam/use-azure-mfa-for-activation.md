@@ -10,16 +10,16 @@ ms.date: 07/06/2018
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: 5134a112-f73f-41d0-a5a5-a89f285e1f73
-ms.openlocfilehash: 9cb1e37f966db5c663694aaccd71f2b4c799dd4b
-ms.sourcegitcommit: 44a2293ff17c50381a59053303311d7db8b25249
+ms.openlocfilehash: 72dd1d3cf34e28567fa672b747a04347b150797e
+ms.sourcegitcommit: f58926a9e681131596a25b66418af410a028ad2c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50379939"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67690786"
 ---
 # <a name="using-azure-mfa-for-activation"></a>Aktiválás az Azure MFA használatával
 > [!IMPORTANT]
-> Miatt elévülése az Azure multi-factor Authentication hitelesítés szoftverfejlesztői közleményt. Az Azure MFA SDK ügyfeleink 2018. November 14., a kivezetési dátum másnapi támogatott lesz. Új ügyfelek és a meglévő ügyfelek nem tudják SDK letöltéséhez már a klasszikus Azure portálon keresztül. Töltse le, hogy kell keresse fel a létrehozott csomagot biztosítunk MFA szolgáltatás hitelesítő adatai az Azure ügyfélszolgálatához. <br> A Microsoft fejlesztői csapat dolgozik MFA módosításai és az MFA-kiszolgáló SDK integrálásával.  Ez része lesz egy közelgő gyorsjavítás lásd: [korábbi verziók](/reference/version-history.md) hirdetmények. 
+> Miatt elévülése az Azure multi-factor Authentication hitelesítés szoftverfejlesztői közleményt. Az Azure MFA SDK ügyfeleink 2018. November 14., a kivezetési dátum másnapi támogatott lesz. Új ügyfelek és a meglévő ügyfelek nem tudják SDK letöltéséhez már a klasszikus Azure portálon keresztül. Töltse le, hogy kell keresse fel a létrehozott csomagot biztosítunk MFA szolgáltatás hitelesítő adatai az Azure ügyfélszolgálatához. <br> A Microsoft fejlesztői csapat dolgozik MFA módosításai és az MFA-kiszolgáló SDK integrálásával.  Ez része lesz egy közelgő gyorsjavítás lásd: [korábbi verziók](../reference/version-history.md) hirdetmények. 
 
 
 A PAM-szerepkörök konfigurálásakor kiválaszthatja, hogyan szeretné engedélyekkel felruházni azokat a felhasználókat, akik a szerepkör aktiválását kérik. A PAM-engedélyezés a következő választási lehetőségeket nyújtja:

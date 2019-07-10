@@ -5,27 +5,27 @@ keywords: ''
 author: billmath
 ms.author: billmath
 manager: mtillman
-ms.date: 08/30/2018
+ms.date: 05/11/2019
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: 94a74f1c-2192-4748-9a25-62a526295338
-ms.openlocfilehash: 3a86569a8de77f4cf4d5aeafe0cd01dab40232b3
-ms.sourcegitcommit: 7de35aaca3a21192e4696fdfd57d4dac2a7b9f90
+ms.openlocfilehash: 90452391170114270765e9a7fe08e98eea0747e4
+ms.sourcegitcommit: f58926a9e681131596a25b66418af410a028ad2c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49358466"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67690699"
 ---
 # <a name="self-service-password-reset-deployment-options"></a>Az önkiszolgáló jelszó-visszaállítási üzembe helyezési beállítások
 
-Az új ügyfelek, akik [jogosult az Azure Active Directory Premium](https://docs.microsoft.com/azure/active-directory/authentication/concept-sspr-licensing), javasoljuk a [az Azure AD önkiszolgáló jelszó-visszaállítás](https://docs.microsoft.com/azure/active-directory/authentication/concept-sspr-howitworks.md) a végfelhasználói élményt.  Az Azure AD önkiszolgáló jelszó alaphelyzetbe állítása mindkét webes és a Windows-alapú felületet biztosít a felhasználó számára a saját jelszó visszaállítása, és számos, a MIM, beleértve a másodlagos e-mail-cím és a Q & A kapuk megegyező funkciókat támogatja.  Amikor üzembe helyezése az Azure AD önkiszolgáló jelszó-visszaállítás, az Azure AD Connect támogatja [az új jelszavak írása Active Directory tartományi szolgáltatások](https://docs.microsoft.com/azure/active-directory/authentication/concept-sspr-writeback.md), és a MIM [jelszóváltozás-értesítési szolgáltatás](deploying-mim-password-change-notification-service-on-domain-controller.md) segítségével továbbíthatja a más rendszerekre, például más gyártó által címtárkiszolgálóra, valamint a jelszavakat.  A MIM üzembe helyezésekor [jelszókezelés](infrastructure/mim2016-password-management.md) nincs szükség a MIM szolgáltatás vagy a MIM önkiszolgáló jelszó-visszaállítási vagy regisztrációs portálok üzembe helyezni.  Ehelyett is kövesse az alábbi lépéseket:
+Az új ügyfelek, akik [jogosult az Azure Active Directory Premium](https://docs.microsoft.com/azure/active-directory/authentication/concept-sspr-licensing), javasoljuk a [az Azure AD önkiszolgáló jelszó-visszaállítás](/azure/active-directory/authentication/concept-sspr-howitworks) a végfelhasználói élményt.  Az Azure AD önkiszolgáló jelszó alaphelyzetbe állítása mindkét webes és a Windows-alapú felületet biztosít a felhasználó számára a saját jelszó visszaállítása, és számos, a MIM, beleértve a másodlagos e-mail-cím és a Q & A kapuk megegyező funkciókat támogatja.  Amikor üzembe helyezése az Azure AD önkiszolgáló jelszó-visszaállítás, az Azure AD Connect támogatja [az új jelszavak írása Active Directory tartományi szolgáltatások](/azure/active-directory/authentication/concept-sspr-writeback), és a MIM [jelszóváltozás-értesítési szolgáltatás](deploying-mim-password-change-notification-service-on-domain-controller.md) segítségével továbbíthatja a más rendszerekre, például más gyártó által címtárkiszolgálóra, valamint a jelszavakat.  A MIM üzembe helyezésekor [jelszókezelés](infrastructure/mim2016-password-management.md) nincs szükség a MIM szolgáltatás vagy a MIM önkiszolgáló jelszó-visszaállítási vagy regisztrációs portálok üzembe helyezni.  Ehelyett is kövesse az alábbi lépéseket:
 
 - Első, ha kíván küldeni a jelszavak címtárakhoz eltérő Azure AD és az AD DS-összekötőkkel az Active Directory Domain Servicesben, és minden olyan további célrendszereket MIM Sync telepítése, konfigurálása a MIM [jelszókezelés](infrastructure/mim2016-password-management.md) és üzembe helyezése a [jelszóváltozás-értesítési szolgáltatás](deploying-mim-password-change-notification-service-on-domain-controller.md).
-- Ezt követően kell az Azure AD-től eltérő címtárak jelszavak küldése, ha konfigurálja az Azure AD Connect [az új jelszavak írása Active Directory tartományi szolgáltatások](https://docs.microsoft.com/azure/active-directory/authentication/concept-sspr-writeback.md).
-- Másik lehetőségként [előzetes regisztráció felhasználók](https://docs.microsoft.com/azure/active-directory/authentication/howto-sspr-authenticationdata.md).
-- Végül [az Azure AD önkiszolgáló jelszóátállítás bevezetése a végfelhasználók számára](https://docs.microsoft.com/azure/active-directory/authentication/howto-sspr-deployment.md).
+- Ezt követően kell az Azure AD-től eltérő címtárak jelszavak küldése, ha konfigurálja az Azure AD Connect [az új jelszavak írása Active Directory tartományi szolgáltatások](/azure/active-directory/authentication/concept-sspr-writeback).
+- Másik lehetőségként [előzetes regisztráció felhasználók](/azure/active-directory/authentication/howto-sspr-authenticationdata).
+- Végül [az Azure AD önkiszolgáló jelszóátállítás bevezetése a végfelhasználók számára](/azure/active-directory/authentication/howto-sspr-deployment).
 
-Meglévő ügyfeleink korábban telepítette a Forefront Identity Manager (FIM) az önkiszolgáló jelszó-visszaállítási, és az Azure Active Directory Premium-licencek, javasoljuk, hogy az Azure AD önkiszolgáló jelszó-re való áttérés megtervezése alaphelyzetbe állítása.  Átválthat a végfelhasználók számára, hogy az Azure AD önkiszolgáló jelszó-visszaállítás nélkül őket az újbóli regisztrációt, a [szinkronizálása, vagy a PowerShell beállítása a felhasználó másodlagos e-mail-cím vagy a mobiltelefon száma](https://docs.microsoft.com/azure/active-directory/authentication/howto-sspr-authenticationdata.md). Miután a felhasználók regisztrálva vannak az Azure AD önkiszolgáló jelszó-visszaállítás, a FIM jelszó-visszaállítási portál leszerelhetők.
+Meglévő ügyfeleink korábban telepítette a Forefront Identity Manager (FIM) az önkiszolgáló jelszó-visszaállítási, és az Azure Active Directory Premium-licencek, javasoljuk, hogy az Azure AD önkiszolgáló jelszó-re való áttérés megtervezése alaphelyzetbe állítása.  Átválthat a végfelhasználók számára, hogy az Azure AD önkiszolgáló jelszó-visszaállítás nélkül őket az újbóli regisztrációt, a [szinkronizálása, vagy a PowerShell beállítása a felhasználó másodlagos e-mail-cím vagy a mobiltelefon száma](/azure/active-directory/authentication/howto-sspr-authenticationdata). Miután a felhasználók regisztrálva vannak az Azure AD önkiszolgáló jelszó-visszaállítás, a FIM jelszó-visszaállítási portál leszerelhetők.
 
 Azon ügyfeleink esetében, amelyek még nem telepítették az Azure AD önkiszolgáló jelszó-visszaállítást a felhasználók számára, a MIM emellett önkiszolgáló jelszó-visszaállítási portál.  FIM képest, a MIM 2016 tartalmazza a következő módosításokat:
 
@@ -79,7 +79,7 @@ A következő szakaszban az Azure MFA szolgáltató Microsoft Azure Active Direc
 
 ### <a name="register-your-multi-factor-authentication-provider-in-azure"></a>A többtényezős hitelesítési szolgáltató regisztrálása az Azure-ban
 
-1.  Hozzon létre egy [MFA szolgáltató](https://docs.microsoft.com/en-us/azure/multi-factor-authentication/multi-factor-authentication-get-started-auth-provider.md).
+1.  Hozzon létre egy [MFA szolgáltató](/azure/multi-factor-authentication/multi-factor-authentication-get-started-auth-provider).
 
 2. Nyisson meg egy támogatási esetet, és az közvetlen SDK-val igényelni az ASP.net 2.0 C#. Az SDK-t csak adható meg aktuális felhasználók a MIM az MFA, mert a közvetlen SDK elavult. Új ügyfeleknek el kell fogadnia, hogy az MFA-kiszolgálóval integrálni a MIM következő verziójára.
 
@@ -99,7 +99,7 @@ A következő szakaszban az Azure MFA szolgáltató Microsoft Azure Active Direc
 
     ![Kép: A pf_auth.cs fájl kódja](media/MIM-SSPR-pFile.png)
 
-6.  A **C:\Program Files\Microsoft Forefront Identity Manager\2010\Service** mappában nyissa meg az **MfaSettings.xml** fájlt.
+6.  A **C:\Program Files\Microsoft Forefront Identity Manager\2010\Service**, nyissa meg a fájlt: **MfaSettings**.xml.
 
 7.  A pf_aut.cs fájlból a `LICENSE_KEY, GROUP_KEY, CERT_PASSWORD` paraméterek értékeit másolja a megfelelő XML-elemekbe az MfaSettings.xml fájlban.
 
@@ -124,6 +124,8 @@ A következő szakaszban az Azure MFA szolgáltató Microsoft Azure Active Direc
 3.  Kattintson az **Activities** (Tevékenységek) lapra, majd görgessen le az **Add Activity** (Tevékenység felvétele) elemhez.
 
 4.  Válassza a **Phone Gate** (Telefonos kapu) vagy a **One-Time Password SMS Gate** (Egyszeri SMS-jelszavas kapu) elemet, majd kattintson a **Select** (Kiválasztás) lehetőségre, végül pedig az **OK** gombra.
+
+Megjegyzés: Ha az Azure MFA-kiszolgáló vagy a saját maga egyszeri jelszót hoz létre egy másik szolgáltatót használ, győződjön meg arról a fent konfigurált hossz mező hossza a megegyezik az MFA-szolgáltató által generált.  A 6 pedig az Azure MFA-kiszolgáló lehet.  Az Azure MFA-kiszolgáló is a saját üzenet szövege állít elő, ezért a rendszer figyelmen kívül hagyja az SMS-üzenetben.
 
 A szervezeti felhasználók ezután már regisztrálhatnak a jelszóváltoztatásra.  A folyamat során meg kell adniuk munkahelyi vagy mobiltelefonszámukat, hogy a rendszer tudja, hol keresheti őket (vagy küldhet nekik SMS-t).
 

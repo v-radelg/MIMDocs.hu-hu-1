@@ -9,12 +9,12 @@ ms.date: 09/19/2017
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: ''
-ms.openlocfilehash: 7ab76d386d8633de8919167c6b8f26b5137323e5
-ms.sourcegitcommit: 9e420840815adb133ac014a8694de9af4d307815
+ms.openlocfilehash: 9a9e00f7dca118627a5140967a104d13273cbc26
+ms.sourcegitcommit: f58926a9e681131596a25b66418af410a028ad2c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "52825841"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67690803"
 ---
 # <a name="deploying-microsoft-identity-manager-certificate-manager-2016-mim-cm"></a>A Microsoft Identity Manager Tanúsítványkezelő 2016 (MIM CM) üzembe helyezése
 
@@ -28,7 +28,7 @@ Az alábbi ábrán egy példa a használni kívánt környezet típusát mutatja
 2. CORPCM – a MIM CM-kiszolgáló
 3. CORPCA – hitelesítésszolgáltató
 4. CORPCMR – a MIM CM Rest API webes – Tanúsítványkezelő portálra a Rest API – használatos később
-5. CORPSQL1 – AZ SQL 2016 SP1-ET
+5. CORPSQL1 – SQL 2016 SP1
 6. CORPWK1 – Windows 10-tartományhoz
 
 ## <a name="deployment-overview"></a>Üzembe helyezés – áttekintés
@@ -38,7 +38,7 @@ Az alábbi ábrán egy példa a használni kívánt környezet típusát mutatja
     A tesztkörnyezet windows 2016 Datacenter kiszolgálók áll.
 
     >[!NOTE]
-    >A további részleteket a MIM 2016 által támogatott platformok vessen egy pillantást című cikkben [a MIM 2016 által támogatott platformok](/microsoft-identity-manager/microsoft-identity-manager-2016-supported-platforms.md)
+    >A további részleteket a MIM 2016 által támogatott platformok vessen egy pillantást című cikkben [a MIM 2016 által támogatott platformok](microsoft-identity-manager-2016-supported-platforms.md).
 
 1. Központi telepítés előtti lépések
 
@@ -50,7 +50,7 @@ Az alábbi ábrán egy példa a használni kívánt környezet típusát mutatja
 
     - IIS
 
-    - A Kerberos konfigurálása
+    - Configuring Kerberos
 
     - Adatbázissal kapcsolatos lépések
 
@@ -90,7 +90,7 @@ A séma kiterjesztésének folyamata nagyon egyszerű, de annak végleges jelleg
 
 4. Futtassa a szkriptet, és meg kell kapnia a siker egyszer jelenik meg, hogy a parancsfájl futása befejeződött.
 
-    ![A sikert jelző üzenet](media/mim-cm-deploy/image009.png)
+    ![Sikeres műveletről tájékoztató üzenet](media/mim-cm-deploy/image009.png)
 
 Az Active Directory-séma már ki van bővítve a MIM CM támogatásához.
 
@@ -123,7 +123,7 @@ Csoportok:
 | **Szerepkör**               | **Csoport**         |
 |------------------------|-------------------|
 | CM segélyszolgálat tagjai    | mimcm-ügyfélszolgálat    |
-| CM Manager tagok     | MIMCM-kezelők    |
+| CM Manager tagok     | MIMCM-Managers    |
 | CM előfizető tagjai | MIMCM-előfizetők |
 
 PowerShell: Az ügynök fiókok:
@@ -343,7 +343,7 @@ Annak érdekében, hogy a webhely üzemeltetése a CM, telepítse és konfigurá
 >[!NOTE]
 >Alapértelmezett webhely nevű webhelyhez az IIS 7 alapértelmezés szerint telepítve van. Ha a hely átnevezte vagy nevű hely eltávolítása Default Web Site kell érhető el a MIM Tanúsítványkezelő telepítése előtt.
 
-#### <a name="configuring-kerberos"></a>A Kerberos konfigurálása
+#### <a name="configuring-kerberos"></a>Configuring Kerberos
 
 A MIMCMWebAgent fiókot fog futni a MIM Tanúsítványkezelő portálra. Az IIS-ben és az akár kernel alapértelmezés szerint módú hitelesítés alapértelmezés szerint használatos IIS-ben. Tiltsa le a Kerberos rendszermag módú hitelesítést, és SPN-ek konfigurálása a MIMCMWebAgent fiók helyett. Néhány parancsot emelt szintű engedélyekkel az active Directoryban és CORPCM kiszolgáló szükséges.
 
@@ -455,13 +455,13 @@ Vegyen fel MIMINSTALL, mielőtt bejelentkezne abba CORPCM **tartományi rendszer
 
 9. Az a **ügynökök – FIM CM** többlapos párbeszédpanelen, az egyes lapokon írja be a következő információkat:
 
-   - Felhasználónév: **Update**
+   - Felhasználónév: **Frissítés**
 
-   - Jelszó: **átadni\@word1**
+   - Jelszó: **Adja át\@word1**
 
-   - Jelszó megerősítése: **átadni\@word1**
+   - Jelszó megerősítése: **Adja át\@word1**
 
-   - Használjon egy meglévő felhasználó: **engedélyezve**
+   - Használjon egy meglévő felhasználó: **Engedélyezve van**
 
      >[!NOTE]
      >Korábban létrehozott ezeket a fiókokat. Győződjön meg arról, hogy az eljárások a 8. lépés az összes hat ügynök fiók lap megismétlődnek.
@@ -476,9 +476,9 @@ Vegyen fel MIMINSTALL, mielőtt bejelentkezne abba CORPCM **tartományi rendszer
 
     - A helyreállítási kulcs-helyreállítási megbízott ügynöktanúsítványa használandó tanúsítványsablon: **MIMCMKeyRecoveryAgent**.
 
-    - A FIM CM-ügynök tanúsítvány használható tanúsítvány sablonjának: **MIMCMSigning**.
+    - Tanúsítványsablon a FIM CM-ügynök tanúsítvány használható: **MIMCMSigning**.
 
-    - Tanúsítványsablon a tanúsítványigénylő ügynök tanúsítványával használandó: **FIMCMEnrollmentAgent**.
+    - Tanúsítványsablon a tanúsítványigénylő ügynök tanúsítványával használható: **FIMCMEnrollmentAgent**.
 
 13. Az a **beállítás kiszolgálói tanúsítványok** kattintson **tovább**.
 
@@ -488,7 +488,7 @@ Vegyen fel MIMINSTALL, mielőtt bejelentkezne abba CORPCM **tartományi rendszer
 
 16. Az a **konfigurációs varázsló – Microsoft Forefront Identity Manager 2010 R2** figyelmeztető párbeszédpanel, kattintson a **OK** gombra annak megerősítéséhez, hogy az SSL nincs engedélyezve az IIS virtuális könyvtár.
 
-    ![Media/image17.png](media/mim-cm-deploy/image032.png)
+    ![media/image17.png](media/mim-cm-deploy/image032.png)
 
     >[!NOTE] 
     >A konfigurációs varázsló végrehajtása befejezéséig ne kattintson a Befejezés gombra. Naplózás a varázslóban itt találja: **% programfiles %\\Microsoft Forefront Identity Management\\2010\\tanúsítványkezelés\\config.log**
@@ -536,7 +536,7 @@ Ebben a lépésben azt telepíti és a FIM CM hitelesítésszolgáltató modulok
 
 6. Zárja be a **keresés és csere** párbeszédpanel bezárásához.
 
-7. A sorban kell  **\<key="Clm.RequestSecurity.Flags hozzáadása" érték "UseUser UseGroups" = /\>**. Módosítsa a sort beolvasni  **\<key="Clm.RequestSecurity.Flags hozzáadása" érték "UseUser" = /\>**.
+7. A sorban kell  **\<key="Clm.RequestSecurity.Flags hozzáadása" érték "UseUser UseGroups" = /\>** . Módosítsa a sort beolvasni  **\<key="Clm.RequestSecurity.Flags hozzáadása" érték "UseUser" = /\>** .
 
 8. Zárja be a fájlt, az összes módosításainak mentése folyamatban van.
 
@@ -554,7 +554,7 @@ Ebben a lépésben azt telepíti és a FIM CM hitelesítésszolgáltató modulok
 
 15. Kattintson a jobb gombbal **bejelentkezések**, és kattintson a **új bejelentkezés**.
 
-16. Az a **általános** lap a **bejelentkezési név** mezőbe írja be **contoso\\CORPCA\$**. Válassza ki **Windows-hitelesítés**. Alapértelmezett adatbázis **FIMCertificateManagement**.
+16. Az a **általános** lap a **bejelentkezési név** mezőbe írja be **contoso\\CORPCA\$** . Válassza ki **Windows-hitelesítés**. Alapértelmezett adatbázis **FIMCertificateManagement**.
 
 17. A bal oldali panelen válassza ki a **Felhasználóleképezés**. Kattintson a jobb oldali ablaktáblában található jelölőnégyzetek bejelölésével a **térkép** oszlop melletti **FIMCertificateManagement**. Az a **adatbázis-szerepköri tagság a következőhöz: FIMCertificateManagement** listázása, engedélyezze a **clmApp** szerepkör.
 
@@ -668,7 +668,7 @@ Ebben a lépésben azt telepíti és a FIM CM hitelesítésszolgáltató modulok
     - Az a **tanúsítvány** párbeszédpanelen kattintson a **OK**.
 
         >[!Note]
-        >Ha a **OK** gomb nincs engedélyezve, akkor véletlenül szerepel egy rejtett karakter az ujjlenyomat karakterláncát clmAgent tanúsítvány ujjlenyomata másolása során. Ismételje meg a kezdő lépéseket **4. feladat: a MIMCMAgent tanúsítvány ujjlenyomata másolása a Windows vágólapra** ebben a gyakorlatban.
+        >Ha a **OK** gomb nincs engedélyezve, akkor véletlenül szerepel egy rejtett karakter az ujjlenyomat karakterláncát clmAgent tanúsítvány ujjlenyomata másolása során. Ismételje meg a kezdő lépéseket **4. feladat: Másolja a MIMCMAgent tanúsítvány ujjlenyomata Windows vágólapra** ebben a gyakorlatban.
 
 4. Az a **konfigurációs tulajdonságok** párbeszédpanelen ellenőrizze, hogy, hogy az ujjlenyomat megjelenik a **érvényes aláíró tanúsítványok** listában, és kattintson **OK**.
 
@@ -688,7 +688,7 @@ Ebben a lépésben azt telepíti és a FIM CM hitelesítésszolgáltató modulok
 
 **A központi telepítésben az utolsó lépés** , szeretnénk biztosítani, hogy a CONTOSO\\MIMCM-kezelők telepítheti és sablonok létrehozása és konfigurálása a rendszer anélkül, hogy a séma- és tartományi rendszergazdák. A következő szkriptet fogja ACL a dsacls használt tanúsítványsablonok engedélyeket. Futtassa a fiókkal, amely biztonsági módosításához szükséges teljes körű jogosultsággal rendelkezik olvasási és írási engedélyek az erdő minden meglévő tanúsítványsablont.
 
-Első lépések: **szolgáltatáskapcsolódási pont és a cél biztonságicsoport-engedélyeit konfigurálásával & sablon Tanúsítványprofil-kezelésének delegálása**
+Első lépések: **Szolgáltatáskapcsolódási pont és a cél biztonságicsoport-engedélyeit konfigurálásával & sablon Tanúsítványprofil-kezelésének delegálása**
 
 1. Engedélyek konfigurálása a szolgáltatáskapcsolódási pont (SCP).
 
@@ -712,8 +712,8 @@ Első lépések: **szolgáltatáskapcsolódási pont és a cél biztonságicsopo
 
     | Csoport          | Engedélyek      |
     |----------------|------------------|
-    | mimcm-kezelők | Olvasás </br> FIM CM naplózása</br> FIM CM tanúsítványigénylő ügynök</br> FIM CM kérelem regisztrálása</br> FIM CM-kérelem helyreállítása</br> FIM CM kérelem megújítása</br> FIM CM-kérelem visszavonása </br> FIM CM kérelem intelligens kártya letiltásának feloldása |
-    | mimcm-ügyfélszolgálat | Olvasás</br> FIM CM tanúsítványigénylő ügynök</br> FIM CM-kérelem visszavonása</br> FIM CM kérelem intelligens kártya letiltásának feloldása |
+    | mimcm-Managers | Olvasás </br> FIM CM naplózása</br> FIM CM tanúsítványigénylő ügynök</br> FIM CM kérelem regisztrálása</br> FIM CM-kérelem helyreállítása</br> FIM CM kérelem megújítása</br> FIM CM-kérelem visszavonása </br> FIM CM kérelem intelligens kártya letiltásának feloldása |
+    | mimcm-HelpDesk | Olvasás</br> FIM CM tanúsítványigénylő ügynök</br> FIM CM-kérelem visszavonása</br> FIM CM kérelem intelligens kártya letiltásának feloldása |
 
 11. Az a **CORPDC tulajdonságok** párbeszédpanelen kattintson a **OK**.
 
@@ -835,7 +835,7 @@ Első lépések: **szolgáltatáskapcsolódási pont és a cél biztonságicsopo
 
 14. Hagyja **Active Directory – felhasználók és számítógépek** megnyitásához.
 
-Második lépései: **tanúsítványsablonok felügyeleti engedélyeinek delegálása \<parancsfájl\>**
+Második lépéseket: **Tanúsítványsablonok felügyeleti engedélyeinek delegálása \<parancsfájl\>**
 
 - A tanúsítványsablonok tároló-engedélyek delegálása.
 
@@ -885,7 +885,7 @@ Engedélyek megadása az OID tárolón:
 
 8. Bezárás **az Active Directory – helyek és szolgáltatások**.
 
-**Parancsprogramokat: Az Objektumazonosító, profilsablon & tanúsítványsablonok tároló engedélyeinek**
+**Parancsfájlok: Az Objektumazonosító, profilsablon & tanúsítványsablonok tároló engedélyeit**
 
 ![Diagram](media/mim-cm-deploy/image021.png)
 

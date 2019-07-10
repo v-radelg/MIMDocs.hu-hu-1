@@ -11,14 +11,14 @@ ms.prod: microsoft-identity-manager
 ms.assetid: 8bc2f6d2-9f53-4db6-aee6-a937ae468163
 ms.reviewer: ''
 ms.suite: ems
-ms.openlocfilehash: 023232b9ddb3cb0a299cbc14ab4c311b8c63fc47
-ms.sourcegitcommit: fa30a8eb9c3a7f1ed6f8ce0f67362ca32751e00d
+ms.openlocfilehash: 1f7d4150ce7012cd4726126ba50b1ab0f94f474c
+ms.sourcegitcommit: f58926a9e681131596a25b66418af410a028ad2c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56667199"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67690673"
 ---
-# <a name="connect-to-your-directories"></a>Csatlakozás a címtárakhoz <!--accepted-->
+# <a name="connect-to-your-directories"></a>Csatlakozás a címtárakhoz
 
 Összekötők a Microsoft Identity Manager SP1 (MIM) hivatkozás az adott csatlakoztatott adatforrásokat. A csatlakoztatott adatforrásból az összekötő adatokat helyez át az MIM alkalmazásba. Ha az MIM alkalmazásban az adatok módosulnak, az összekötő exportálja az adatokat a csatlakoztatott adatforráshoz, hogy szinkronizálja azt az MIM alkalmazással. Általában elmondható, hogy minden csatlakoztatott címtárhoz legalább egy összekötő tartozik.
 
@@ -43,8 +43,8 @@ Ez a cikk ismerteti az összekötő tartalmazza a & a MIM-ben támogatott, de az
 | Oracle (korábban Sun és Netscape) Directory Server kiszolgálók | Sun Directory Server 6.x, 7.x és Oracle 11 |
 | [Windows PowerShell-összekötő](https://msdn.microsoft.com/library/dn640417.aspx) | Windows PowerShell 2.0 vagy újabb |
 | [A Microsoft Azure Active Directory-összekötő](https://msdn.microsoft.com/library/dn511001.aspx) | A Microsoft Azure Active Directory (az új központi telepítéseknél nem ajánlott) |
-| [Általános LDAP-összekötő](https://msdn.microsoft.com/library/dn510997.aspx) | [LDAP v3-as kiszolgáló (RFC 4510 szabványnak megfelelő)](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnectsync-connector-genericldap) |
-| [Általános SQL-összekötő](./reference/microsoft-identity-manager-2016-connector-genericsql.md) | [Az összekötő támogatott minden 64 bites ODBC-illesztőprogram](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnectsync-connector-genericsql.md) |
+| [Általános LDAP-összekötő](https://msdn.microsoft.com/library/dn510997.aspx) | [LDAP v3-as kiszolgáló (RFC 4510 szabványnak megfelelő)](reference/microsoft-identity-manager-2016-connector-genericldap.md#overview-of-the-generic-ldap-connector) |
+| [Általános SQL-összekötő](reference/microsoft-identity-manager-2016-connector-genericsql.md) | [Az összekötő támogatott minden 64 bites ODBC-illesztőprogram](reference/microsoft-identity-manager-2016-connector-genericsql.md#overview-of-the-generic-sql-connector) |
 | [Lotus Domino-összekötő](https://msdn.microsoft.com/library/hh859750.aspx) | Lotus Notes kiadási v8.5.x kiadás |
 | [SharePoint Services-összekötő UPA](https://msdn.microsoft.com/library/dn511003.aspx) | SharePoint Server 2013 vagy 2016 felhasználóiprofil-szolgáltatási alkalmazással (UPA) |
 | [Web Services-összekötő](https://www.microsoft.com/en-us/download/details.aspx?id=51495) | [SAP ECC 5.0 vagy 6.0; Oracle PeopleSoft 9.1; Oracle eBusiness 12.1 és más SOAP és REST API-k](https://docs.microsoft.com/microsoft-identity-manager/reference/microsoft-identity-manager-2016-ma-ws) |
