@@ -19,6 +19,9 @@ ms.contentlocale: hu-HU
 ms.lasthandoff: 04/26/2019
 ms.locfileid: "64518751"
 ---
+
+
+<!--br test2-->
 # <a name="microsoft-identity-manager-2016-licensing-and-downloads"></a>A Microsoft Identity Manager 2016 licencelése és letöltések
 
 Ez a cikk ismerteti a megközelítések a szoftverek letöltési helye a Microsoft Identity Manager (MIM) 2016 a mutatók licenckezeléshez.
