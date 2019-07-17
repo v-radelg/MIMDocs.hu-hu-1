@@ -111,7 +111,7 @@ A Microsoft tanúsítvány Management Modern alkalmazás a következő 33 nyelve
 |spanyol|es-ES|Igen|
 |svéd|SV-SE|sv|
 |török|tr-TR|TR|
-
+<!--br test-->
 ## <a name="next-steps"></a>További lépések
 
 - [Első üzembe helyezés](microsoft-identity-manager-deploy.md)
