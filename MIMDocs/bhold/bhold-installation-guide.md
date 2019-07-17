@@ -1,6 +1,6 @@
 ---
-title: A BHOLD SP1 telepítése |} A Microsoft Docs
-description: A BHOLD SP1 dokumentáció
+title: BHOLD SP1 – telepítés | Microsoft Docs
+description: A BHOLD SP1 telepítési dokumentációja
 keywords: ''
 author: billmath
 ms.author: billmath
@@ -9,107 +9,106 @@ ms.date: 09/11/2017
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: ''
-ms.openlocfilehash: d5edf4c16f32c401db32abb9bab1fa7e9e23e4a5
-ms.sourcegitcommit: 7de35aaca3a21192e4696fdfd57d4dac2a7b9f90
+ms.openlocfilehash: 05eb2afc0ddbf6104e27a5c24e121a55bd805292
+ms.sourcegitcommit: 4c4bc7aa42cd5984c838abdd302490355ddcb4ea
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49358501"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68238905"
 ---
-# <a name="microsoft-bhold-suite-sp1-60-installation-guide"></a>A Microsoft a BHOLD Suite SP1 (6.0) telepítési útmutató
+# <a name="microsoft-bhold-suite-sp1-60-installation-guide"></a>Microsoft BHOLD Suite SP1 (6,0) – telepítési útmutató
 
-Microsoft® BHOLD Suite Service Pack 1 (SP1) alkalmazások gyűjteménye, amely a Microsoft Identity Manager 2016 SP1 (MIM) használatakor ad hozzá hatékony szerepkörkezelés, elemzési és állapotigazolási MIM. A Microsoft BHOLD Suite SP1 a következő modulok áll:
+A Microsoft® BHOLD Suite Service Pack 1 (SP1) olyan alkalmazások gyűjteménye, amelyek a Microsoft Identity Manager 2016 SP1 () használata esetén hatékony szerepkör-felügyeletet, elemzést és igazolást biztosítanak a felügyeleti csomaghoz. A Microsoft BHOLD Suite SP1 a következő modulokból áll:
 
-- A BHOLD Core
-- Access Management-összekötő
-- BHOLD FIM vagy MIM-integráció
-- A BHOLD Model Generator
-- A BHOLD Analytics
-- A BHOLD Reporting
-- A BHOLD-igazolás
+- BHOLD mag
+- Hozzáférés-kezelési összekötő
+- BHOLD FIM/-integráció
+- BHOLD Model Generator
+- BHOLD-elemzés
+- BHOLD-jelentéskészítés
+- BHOLD igazolása
 
 
 > [!NOTE]
-> **Érvényes**: a Microsoft Identity Manager 2016 SP1-et
+> **A**következőkre vonatkozik: Microsoft Identity Manager 2016 SP1
 
-## <a name="what-this-document-covers"></a>Ez a dokumentum ismerteti
+## <a name="what-this-document-covers"></a>A dokumentum tartalma
 
-Ez a dokumentum ismerteti, hogyan lehet az üzleti igényeknek, és minden BHOLD-modul telepítéséhez az BHOLD üzembe helyezésének megtervezése. Minden modul, a megfelelő hardver, az infrastruktúra és a szoftverkövetelményekről előtelepítési hálózat konfigurálására a telepítés során szükséges információkat, és teendőkkel lépéseket, ha van ilyen, részletes leírást talál.
+Ez a dokumentum azt ismerteti, hogyan tervezze meg az BHOLD üzemelő példányát az üzleti igények kielégítéséhez és az egyes BHOLD-modulok telepítéséhez. Minden modulhoz a kapcsolódó hardver-, infrastruktúra-és szoftver-követelmények, előtelepítési hálózati konfiguráció, a telepítés során szükséges információk és a telepítés utáni teendőkkel lépések (ha vannak) részletesek.
 
-## <a name="pre-requisite-knowledge"></a>Előfeltételként Tudásbázis
+## <a name="pre-requisite-knowledge"></a>Előfeltételek ismerete
 
-Jelen dokumentum céljából feltételezzük, hogy miként telepíthet szoftvereket a kiszolgáló-számítógépek alapvető ismeretekkel. Azt is feltételezi, hogy rendelkezik-e az Active Directory® tartományi szolgáltatások, a Microsoft Identity Manager SP1 (FIM) és a Microsoft SQL Server 2008 adatbázis-szoftver alapszintű ismerete. A leírás és függő technológiák, például Active Directory tartományi szolgáltatások és a FIM beállítása a ebben a dokumentációban hatókörén kívül esik. A Microsoft a BHOLD-modulok végző függvényeivel kapcsolatos további információkért lásd: [fogalmak útmutató a Microsoft a BHOLD suite](https://technet.microsoft.com/library/jj134102(v=ws.10).aspx).
+Ez a dokumentum azt feltételezi, hogy a szoftverek kiszolgáló számítógépekre történő telepítésének alapvető ismerete. Azt is feltételezi, hogy a Active Directory® tartományi szolgáltatások, a Microsoft Identity Manager SP1 (FIM) és a Microsoft SQL Server 2012 adatbázis-szoftver alapvető ismeretekkel rendelkezik. A jelen dokumentáció hatókörén kívül a függő technológiák (például a AD DS és a FIM) beállításának és konfigurálásának leírása. További információ a Microsoft BHOLD-modulok által végrehajtott függvényekről: [a Microsoft BHOLD Suite fogalmi útmutatója](https://technet.microsoft.com/library/jj134102(v=ws.10).aspx).
 
 ## <a name="audience"></a>Célközönség
 
-Ez a dokumentum szól IT-tervezők, rendszermérnököknek, technológiai döntéshozók, tanácsadók, infrastruktúra-tervezők és informatikai munkatársak, akik a Microsoft a BHOLD Suite telepítése.
+Ez a dokumentum az informatikai tervezők, rendszerfejlesztők, technológiai döntéshozók, tanácsadók, infrastruktúra-tervezők és informatikai szakemberek számára készült, akik a Microsoft BHOLD Suite üzembe helyezését tervezik.
 
-## <a name="bhold-infrastructure-considerations"></a>A BHOLD infrastruktúrával kapcsolatos szempontok
+## <a name="bhold-infrastructure-considerations"></a>A BHOLD-infrastruktúra szempontjai
 
-Leggyakrabban a BHOLD és a FIM szolgálnak a nagyméretű infrastruktúrával környezetben. A BHOLD és a FIM architektúra üzleti igényei szerint testre szabhatja. Az alábbiakban néhány lehetséges architekturális megoldásokat. Ez az Áttekintés nem minden lehetséges beállítást átfogó listáját, de a hálózaton telepítheti a BHOLD módszereket javasol.
+Leggyakrabban a BHOLD és a FIM-t használják nagy infrastrukturális környezetben. Az adott üzleti igényeknek megfelelően testre szabhatja a BHOLD és a FIM-architektúrát. A következő szakaszokban néhány lehetséges építészeti megoldás található. Ez az Áttekintés nem tartalmazza az összes lehetséges beállítást, de azt is sugallja, hogyan telepíthet BHOLD a hálózatban.
  
-Ez a szakasz témakörei a következők:
+Ez a szakasz a következő témaköröket tartalmazza:
 
-- Egyetlen kiszolgálóból álló architektúra
-- Kettős-kiszolgáló architektúra
-- Kétrétegű architektúrája
+- Egykiszolgálós architektúra
+- Kettős kiszolgáló architektúrája
+- Kétrétegű architektúra
 - Javaslatok az SQL Serverhez
 
-### <a name="single-server-architecture"></a>Egyetlen kiszolgálóból álló architektúra
+### <a name="single-server-architecture"></a>Egykiszolgálós architektúra
 
-Központi telepítés kisebb szervezetek vagy fejlesztési célokra telepíthető BHOLD és a FIM ugyanarra a kiszolgálóra, az SQL Server és Active Directory tartományi szolgáltatások, az alábbi ábrán látható módon.
+A kis szervezeteknél vagy fejlesztési célokra történő üzembe helyezéshez a BHOLD és a FIM-t telepítheti ugyanarra a kiszolgálóra, mint SQL Server és AD DS, ahogy az a következő ábrán látható.
  
 ![Egyetlen kiszolgáló architektúrája](media/bhold-installation-guide/single.png)
 
-BHOLD Suite SP1 együtt települnek a FIM-portálon, egyetlen kiszolgálón, amikor kell létrehoznia különböző gazdagép aliasok (CNAME és a egy rekord) a DNS-ben BHOLD és a FIM. Ez lehetővé teszi a külön szolgáltatás egyszerű szolgáltatásnevét (SPN) a BHOLD és a FIM szolgáltatás kell létrehozni. További információkért lásd: [BHOLD Core telepítése](https://technet.microsoft.com/library/jj134095(v=ws.10).aspx).
-FIM egykiszolgálós konfiguráció telepítését, tekintse át [gyakran alkalmazott konfiguráció az első lépéseket ismertető útmutatókban](https://technet.microsoft.com/library/ff575965.aspx) a Microsoft TechNet Library.
+Ha a BHOLD Suite SP1 és a FIM Portal egyetlen kiszolgálón van telepítve, akkor a BHOLD és a FIM esetében eltérő gazdagép-aliasokat (CNAME vagy rekordokat) kell létrehoznia a DNS-ben. Ez lehetővé teszi, hogy a BHOLD és a FIM-szolgáltatásokhoz külön egyszerű szolgáltatásnév (SPN) legyen létrehozva. További információ: [BHOLD Core telepítés](https://technet.microsoft.com/library/jj134095(v=ws.10).aspx).
+A FIM egykiszolgálós konfigurációban való telepítésével kapcsolatos útmutatásért lásd: [első lépések útmutatók általános konfigurációja](https://technet.microsoft.com/library/ff575965.aspx) a Microsoft TechNet könyvtárban.
 
-### <a name="dual-server-architecture"></a>Kettős-kiszolgáló architektúra
+### <a name="dual-server-architecture"></a>Kettős kiszolgáló architektúrája
 
-A BHOLD Core és a FIM telepítése különálló kiszolgálón biztosít a nagyobb teljesítmény- és közepes méretű szervezetek számára, amelyek nem igényelnek egy összetettebb központi telepítési, például a többrétegű architektúrák által biztosított rugalmasság. A következő ábrán látható BHOLD és a FIM-kiszolgálókra telepített saját; a FIM-kiszolgáló is fut az SQL Server és a BHOLD FIM adatbázis-szolgáltatások biztosításához. A FIM szinkronizálási szolgáltatás a FIM-kiszolgálón futó szinkronizálja a módosításokat a FIM és BHOLD-adatbázis között. Vegye figyelembe, hogy a végfelhasználói önkiszolgáló szükség, ha a BHOLD FIM integrációs modulnak telepítve kell lennie a FIM szolgáltatás és a FIM-portál ugyanazon a kiszolgálón. A BHOLD FIM integrációs modul megköveteli, hogy a FIM szolgáltatás és a BHOLD FIM integrációs modul telepítve ugyanarra a kiszolgálóra.
+A BHOLD Core és a FIM külön kiszolgálókon való telepítése nagyobb teljesítményt és rugalmasságot biztosít a közepes méretű szervezetek számára, amelyek nem igényelnek összetettebb üzembe helyezést, például a többrétegű architektúrák által biztosított szolgáltatásokat. Az alábbi ábrán a saját kiszolgálókon telepített BHOLD és FIM látható. a FIM-kiszolgáló a SQL Server is futtatja, hogy az adatbázis-szolgáltatásokat BHOLD és FIM-ként szolgáltassa. A FIM-kiszolgálón futó FIM synchronization Service szinkronizálja a FIM és a BHOLD adatbázisok változásait. Vegye figyelembe, hogy ha a végfelhasználói önkiszolgáló szolgáltatásra van szükség, a BHOLD FIM-integrációs modult ugyanarra a kiszolgálóra kell telepíteni, mint a FIM szolgáltatás és a FIM Portal. A BHOLD FIM integrációs modulja megköveteli, hogy a FIM szolgáltatás és a BHOLD FIM integrációs modul ugyanarra a kiszolgálóra legyen telepítve.
 
 ![Kettős kiszolgáló architektúrája](media/bhold-installation-guide/dual.png)
 
 > [!IMPORTANT]
-> A BHOLD FIM integrációs modul a jelentési szolgáltatás szükséges a BHOLD és a FIM adatbázisok SQL Server-példányon kell telepíteni, és a BHOLD szolgáltatásfióknak kell rendelkeznie a FIM szolgáltatás adatbázisához való hozzáférési jogosultságok.
+> A BHOLD FIM integrációs modul jelentéskészítési funkciója megköveteli, hogy a BHOLD és FIM-adatbázisok ugyanarra a SQL Server példányra legyenek telepítve, és a BHOLD-szolgáltatásfiók hozzáférési jogokkal kell rendelkeznie a FIM szolgáltatás adatbázisához.
 
-### <a name="two-tier-architecture"></a>Kétrétegű architektúrája
+### <a name="two-tier-architecture"></a>Kétrétegű architektúra
 
-A legtöbb környezetben, különösen fontos a teljesítmény, ahol kell futtatásakor a BHOLD Suite SP1, a FIM és az SQL Server eltérő kiszolgálókra (kétrétegű architektúra). Kétrétegű architektúrával memória- és Processzor-erőforrások dedikált az egyes rétegekhez. Az alábbi ábrán egy kétrétegű architektúrát konfigurálásának egyik lehetséges módja. A FIM szinkronizálási szolgáltatás a FIM-kiszolgálón futó szinkronizálja a módosításokat a FIM és BHOLD-adatbázis között. Vegye figyelembe, hogy a végfelhasználói önkiszolgáló szükség, ha a BHOLD FIM integrációs modulnak telepítve kell lennie a FIM szolgáltatás és portál ugyanazon a kiszolgálón.
+A legtöbb környezetben, különösen azoknál, ahol a teljesítmény fontos, a BHOLD Suite SP1, a FIM és a SQL Servert külön kiszolgálókon kell futtatnia (kétrétegű architektúra). A kétrétegű architektúrában a memória-és a CPU-erőforrások minden réteghez külön vannak kijelölve. Az alábbi ábrán a kétrétegű architektúra konfigurálásának egyik lehetséges módja látható. A FIM-kiszolgálón futó FIM synchronization Service szinkronizálja a FIM és a BHOLD adatbázisok változásait. Vegye figyelembe, hogy ha a végfelhasználói önkiszolgáló szolgáltatásra van szükség, a BHOLD FIM-integrációs modult ugyanarra a kiszolgálóra kell telepíteni, amelyen a FIM szolgáltatás és a portál található.
 
-![kétrétegű architektúrája](media/bhold-installation-guide/two-tier.png)
+![kétrétegű architektúra](media/bhold-installation-guide/two-tier.png)
 
 ### <a name="sql-server-recommendations"></a>Javaslatok az SQL Serverhez
 
-Ha egy nagy szervezet BHOLD helyez üzembe, azt javasoljuk, hogy ezeket az irányelveket a Microsoft SQL Server-adatbázis beállításához kövesse:
+Ha nagyméretű szervezetekben helyez üzembe BHOLD, erősen ajánlott a Microsoft SQL Server-adatbázis beállításához kövesse az alábbi irányelveket:
 
-- Az SQL Server telepítése a FIM vagy BHOLD szolgáltatások külön kiszolgálón.
-- Különítse el a naplófájl a fizikai lemez szintjén az adatfájlból.
-- Ha a RAID használatával adja meg a tárhely-redundancia, használja a RAID-szinteket követelnek 10 (1 + 0). Ne használjon RAID 5. szint.
-- Mindenképpen adja meg a megfelelő beállításokat, több mint 2 GB fizikai memória az SQL Servert futtató kiszolgáló használatakor.
-- A BHOLD optimális teljesítményt, használja a Microsoft SQL Server 2008 R2 vagy újabb.
+- A SQL Server üzembe helyezése egy olyan kiszolgálón, amely a FIM-vagy BHOLD-szolgáltatásoktól eltér.
+- A naplófájl elkülönítése az adatfájlból a fizikai lemez szintjén.
+- Ha RAID-t használ a tárolási redundancia biztosításához, használja a 10 (1 + 0) RAID-szintet. Ne használja az 5. RAID-szintet.
+- Győződjön meg arról, hogy a megfelelő beállításokat konfigurálja, ha a SQL Servert futtató kiszolgálóhoz több mint 2 GB-nyi fizikai memóriát használ.
 
-Az SQL Server ajánlott eljárásokkal kapcsolatos további információkért lásd: [tárolási Top 10 – gyakorlati tanácsok](https://www.microsoft.com/technet/prodtechnol/sql/bestpractice/storage-top-10.mspx) a Microsoft TechNet Library.
+Az SQL Server ajánlott eljárásaival kapcsolatos további információkért lásd: a Microsoft TechNet Library [10 legjobb](https://www.microsoft.com/technet/prodtechnol/sql/bestpractice/storage-top-10.mspx) megoldás a Storage-ban.
 
-### <a name="trusted-certificates-list-update"></a>A megbízható tanúsítványok lista frissítése
+### <a name="trusted-certificates-list-update"></a>Megbízható tanúsítványok listájának frissítése
 
-Windows beállítható úgy, hogy a szolgáltatás indítása előtt tanúsítványláncok ellenőrzése. Az ilyen rendszerek a szolgáltatás nem indítható el, ha a szolgáltatás a végrehajtható kód írták-e olyan tanúsítványt, amely nem szerepel a megbízható tanúsítványok listája (TCL) annak a kiszolgálónak. A Microsoft BHOLD Suite SP1 szoftver használatával kódaláíró tanúsítványláncra, amely származik, a Microsoft legfelső szintű tanúsítvány hatóság 2010 tanúsítvánnyal aláírt kód.
-Windows legfelső szintű tanúsítványok lekérése a Microsoft internetkapcsolatra keresztül konfigurálhatók. Egy kapcsolat nélküli rendszerben azonban a Windows Server tartalmaz a csak azok a tanúsítványok jelen, a legfelső szintű programban egyszerre előtt kiadott Windows volt. A Windows Server a Windows Server 2010 előtti kiadásaiban ezek a tanúsítványok nem tartalmazza a legfelső szintű tanúsítvány szükséges a BHOLD Suite SP1 code aláíró tanúsítványlánc érvényesítésekor. Ha azt tervezi, a rendszer, amely egy naprakész TCL előfordulhat, hogy rendelkezik egy vagy több Microsoft BHOLD Suite SP1 moduljainak telepítése, meg kell letöltése és telepítése a főtanúsítvány-csomag, vagy egy BHOLD Suite SP1 telepítése előtt a gyökér-frissítési csomag telepítése a csoportházirenddel a modul. További információkért lásd: [Windows legfelső szintű tanúsítvány program tagjai](http://support.microsoft.com/kb/931125).
+A Windows konfigurálható úgy, hogy a szolgáltatás elindítása előtt érvényesítse a tanúsítványláncot. Ilyen rendszerek esetén a szolgáltatás nem indítható el, ha a szolgáltatás végrehajtható kódját olyan tanúsítvánnyal írták alá, amely nem szerepel a kiszolgáló megbízható tanúsítványok listájában (TCL). A Microsoft BHOLD Suite SP1 szoftver kódja a Microsoft Root Certificate Authority 2010 tanúsítvánnyal rendelkező kód-aláíró tanúsítványlánc használatával van aláírva.
+A Windows konfigurálható úgy, hogy a Microsoft legfelső szintű tanúsítványait internetes kapcsolaton keresztül kérje le. A leválasztott rendszereken azonban a Windows Server csak azokat a tanúsítványokat tartalmazza, amelyek a rendszerindító programban voltak elérhetők a Windows megjelenése előtt. A Windows Server 2010 előtti kiadásaiban ezek a tanúsítványok nem tartalmazzák a BHOLD Suite SP1-kód aláírási láncának ellenőrzéséhez szükséges főtanúsítványt. Ha egy vagy több Microsoft BHOLD Suite SP1-modult szeretne telepíteni egy olyan rendszeren, amely nem rendelkezik naprakész TCL, le kell töltenie és telepítenie kell a legfelső szintű frissítési csomagot, vagy az Csoportházirend használatával telepítenie kell a legfelső szintű frissítési csomagot a BHOLD Suite SP1 telepítése előtt. modul. További információ: a [Windows Root Certificate program tagjai](http://support.microsoft.com/kb/931125).
 
-### <a name="installing-bhold-suite-sp1-on-windows-server-20122016-required-step"></a>A BHOLD Suite SP1 telepítése a Windows Server 2012/2016 szükséges lépés 
+### <a name="installing-bhold-suite-sp1-on-windows-server-20122016-required-step"></a>A BHOLD Suite SP1 telepítése a Windows Server 2012/2016 szükséges lépésével 
 
-![Az IIS telepítése a BHOLD](media/bhold-installation-guide/iis-install-bhold.png)
+![IIS telepítése BHOLD](media/bhold-installation-guide/iis-install-bhold.png)
 
-A Windows Server 2012 vagy 2016 BHOLD Suite SP1 telepítése esetén a BHOLD weblapok nem lesz elérhető amíg nem módosítja az applicationHost.config fájlban található ```C:\Windows\System32\inetsrv\config```. Az a ```<globalModules>``` területen ```preCondition="bitness64``` -bejegyzést, amely a kezdődik ```<add name="SPNativeRequestModule"``` úgy, hogy azt a következőképpen:
+Ha a BHOLD Suite SP1 szervizcsomagot a Windows Server 2012-es vagy 2016-es ```C:\Windows\System32\inetsrv\config```verziójára telepíti, a BHOLD-weblapok addig nem lesznek elérhetők, amíg nem módosítja a applicationHost. config fájlt. A ```<globalModules>``` (z) szakaszban ```preCondition="bitness64``` adja hozzá a szöveget a ```<add name="SPNativeRequestModule"``` következő megkezdéséhez:
 
 ```<add name="SPNativeRequestModule" image="C:\Program Files\Common Files\Microsoft Shared\Web Server Extensions\15\isapi\spnativerequestmodule.dll" preCondition="bitness64"/>```
 
-Szerkesztése, és a fájl mentése után futtassa az iisreset parancsot alaphelyzetbe az IIS-kiszolgálón.
+A fájl szerkesztése és mentése után futtassa az IISRESET parancsot az IIS-kiszolgáló alaphelyzetbe állításához.
 
 
-## <a name="upgrading-bhold-suite"></a>A BHOLD Suite frissítése
+## <a name="upgrading-bhold-suite"></a>BHOLD Suite frissítése
 
-Egy meglévő BHOLD Suite telepítése nem frissíthető. Ehelyett el kell távolítania egy meglévő BHOLD Suite telepítése BHOLD-modulok frissítése előtt. Ha rendelkezik egy meglévő BHOLD szerepkör modell, a BHOLD-adatbázis frissítése, és használja azt a frissített BHOLD Core-modul telepítésekor. További információkért lásd: [BHOLD Suite cseréje BHOLD Suite SP1](https://technet.microsoft.com/library/jj874043(v=ws.10).aspx).
+Meglévő BHOLD Suite-telepítés nem frissíthető. Ehelyett el kell távolítania egy meglévő BHOLD Suite-telepítést, mielőtt frissíteni tudja a BHOLD modulokat. Ha rendelkezik meglévő BHOLD-modellel, a BHOLD-adatbázist frissítheti, és a frissített BHOLD Core modul telepítésekor használhatja azt. További információ: [a BHOLD Suite cseréje a BHOLD Suite SP1 verzióra](https://technet.microsoft.com/library/jj874043(v=ws.10).aspx).
 
 
 ## <a name="next-steps"></a>További lépések
