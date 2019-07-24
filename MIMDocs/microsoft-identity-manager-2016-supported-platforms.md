@@ -21,7 +21,7 @@ ms.locfileid: "68238921"
 ---
 # <a name="supported-platforms-for-mim-2016"></a>A MIM 2016 által támogatott platformok
 
-Ez a tábla a Microsoft Identity Manager 2016 egyes összetevői által támogatott platformokat és verziókat ismerteti. A * *-val jelölt verziók csak a webszolgáltatások 2016 Service Pack 1 verziójában támogatottak a legújabb gyorsjavítással.  Az "NR" jelölésű, nem javasolt verziók használata támogatott, de nem ajánlott, ha az adott platform új központi telepítését indítja.
+Ez a tábla a Microsoft Identity Manager 2016 egyes összetevői által támogatott platformokat és verziókat ismerteti. A * -val jelölt verziók csak a webszolgáltatások 2016 Service Pack 1 verziójában támogatottak a legújabb gyorsjavítással.  Az "NR" jelölésű, nem javasolt verziók használata támogatott, de nem ajánlott, ha az adott platform új központi telepítését indítja.
 
 
 | **MIM-összetevő** | **Platform** | **Verzió** |
