@@ -1,347 +1,348 @@
 ---
-title: A Microsoft a BHOLD Suite fogalmak útmutató |} A Microsoft Docs
+title: A Microsoft BHOLD Suite fogalmi útmutatója | Microsoft Docs
 description: Első lépések a MIM 2016 összetevői kapcsán – a Synchronization Service telepítése és konfigurálása
 keywords: ''
 author: billmath
 ms.author: billmath
 manager: mtillman
 ms.date: 09/14/2017
+ms.topic: conceptual
 ms.assetid: ''
 ms.prod: microsoft-identity-manager
-ms.openlocfilehash: 32bd77140cf70047eaa02d363a1348e73783f87a
-ms.sourcegitcommit: 7de35aaca3a21192e4696fdfd57d4dac2a7b9f90
+ms.openlocfilehash: 3749b74fd867601ee05f8e45d273ad2de9144b5b
+ms.sourcegitcommit: 65e11fd639464ed383219ef61632decb69859065
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49358839"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68701424"
 ---
-# <a name="microsoft-bhold-suite-concepts-guide"></a>A Microsoft a BHOLD Suite fogalmak útmutató
+# <a name="microsoft-bhold-suite-concepts-guide"></a>A Microsoft BHOLD Suite fogalmi útmutatója
 
-A Microsoft Identity Manager 2016 (MIM) segítségével a szervezetek teljes életciklusára vonatkozóan a felhasználói identitások és azok kapcsolódó hitelesítő adatok kezeléséhez. Az identitások szinkronizálásával, központilag kezelheti a tanúsítványokat és a jelszavakat és konfigurálta a felhasználókat a heterogén rendszerekből konfigurálható. A MIM-informatikai szervezetek határozza meg, és az identitások kezeléséhez a létrehozástól a használatból való kivonást egyaránt használt folyamatok automatizálásához.
+Microsoft Identity Manager 2016 (a Rendszerfelügyeleti webszolgáltatások) lehetővé teszi a szervezetek számára a felhasználói identitások és a hozzájuk tartozó hitelesítő adatok teljes életciklusának kezelését. Beállítható úgy, hogy az identitásokat szinkronizálja, központilag kezelje a tanúsítványokat és a jelszavakat, és a felhasználókat a heterogén rendszerek között lehessen kiépíteni. A felügyeleti webszolgáltatások segítségével az IT-szervezetek meghatározhatják és automatizálják a létrehozástól a kivonulásig az identitások kezeléséhez használt folyamatokat.
 
-BHOLD Suite a Microsoft ezeket a képességeket a MIM szerepköralapú hozzáférés-vezérlés hozzáadásával terjeszti ki. A BHOLD lehetővé teszi a szervezetek felhasználói szerepkörök definiálása, és a bizalmas adatokhoz és alkalmazásokhoz való hozzáférés szabályozásához. A hozzáférés-alapú megfelelően ezeket a szerepköröket. BHOLD Suite magában foglalja a szolgáltatások és eszközök, amelyek egyszerűbbé teszik a modellezést, a szerepkör-kapcsolatok a szervezeten belül. A BHOLD képezi le ezeket a szerepköröket, jogosultságokkal, és győződjön meg arról, hogy a szerepkör-definíciók és a társított jogosultságok megfelelően alkalmazzák a felhasználók számára. Ezek a képességek teljesen integrálva van a MIM-zökkenőmentes élményt biztosít a végfelhasználók és informatikai munkatársak egyaránt.
+A Microsoft BHOLD Suite szerepkör-alapú hozzáférés-vezérlés hozzáadásával kiterjeszti a felügyeleti csomag képességeit. A BHOLD lehetővé teszi a szervezetek számára a felhasználói szerepkörök definiálását, valamint a bizalmas adatokhoz és alkalmazásokhoz való hozzáférés szabályozását. A hozzáférés ezen szerepkörökhöz megfelelő. A BHOLD Suite olyan szolgáltatásokat és eszközöket tartalmaz, amelyek leegyszerűsítik a szerepkör-kapcsolatok modellezését a szervezeten belül. A BHOLD leképezi a szerepköröket, és ellenőrzi, hogy a szerepkör-definíciók és a hozzájuk tartozó jogosultságok megfelelően vannak-e alkalmazva a felhasználókra Ezek a képességek teljes mértékben integrálva vannak a felhasználói felülettel, zökkenőmentes élményt biztosítva a végfelhasználók és az informatikai szakemberek számára.
 
-Ez az útmutató segítségével megismerheti a mim BHOLD Suite működését, és a következő témakörökkel foglalkozik:
+Ez az útmutató segít megérteni, hogyan működik együtt a BHOLD Suite, és hogyan fedi le a következő témákat:
 
 - Szerepköralapú hozzáférés-vezérlés
-- Állapotigazolás
+- Igazolás
 - Elemzés
 - Jelentéskészítés
-- Access Management-összekötő
-- A MIM-integráció
+- Hozzáférés-kezelési összekötő
+- Webalkalmazás-integráció
 
 ## <a name="role-based-access-control"></a>Szerepköralapú hozzáférés-vezérlés
 
-A leggyakrabban használt módszer az adatokhoz és alkalmazásokhoz való felhasználói hozzáférés szabályozása a tulajdonosi hozzáférés-vezérlés (DAC) keresztül történik. A leggyakoribb megvalósításokban minden jelentős objektum van azonosított tulajdonosa. A tulajdonos képes engedélyezheti vagy megtagadhatja a hozzáférést az objektum, melyet más egyéni identitás vagy csoporttagság alapján. A gyakorlatban DAC általában eredményezi, biztonsági csoportokat néhány tükrözik, szervezeti felépítése, mások (például feladattípusok vagy projekt-hozzárendelések) működési csoportosításokat képviselő és egyéb olyan makeshift felhasználóból álló gyűjteményekbe áll, és eszközök, amelyek több ideiglenes célokra van csatolva. Szervezet növekedésével egyre nehezen kezelhető válik az ilyen csoportok tagságát. Például ha egy alkalmazott a másikra át a projektek, a csoportokat, amelyek a projektek eszközökhöz való hozzáférést szabályozzák, hogy manuálisan kell frissíteni. Ezekben az esetekben nem ritka, hogy megtörténjen, hibák, amelyek akadályozhatják a projekt biztonság és hatékonyság hibákkal.
+Az adatkezeléshez és az alkalmazásokhoz való felhasználói hozzáférés szabályozásának leggyakoribb módja a tulajdonosi hozzáférés-vezérlés (DAC). A leggyakoribb implementációkban minden jelentős objektum rendelkezik egy azonosított tulajdonossal. A tulajdonos lehetősége van arra, hogy egyéni identitás vagy csoporttagság alapján megadjon vagy megtagadja az objektum elérését másoknak. A gyakorlatban a DAC általában számos biztonsági csoportot eredményez, amelyek a szervezeti struktúrát tükrözik, mások pedig a funkcionális csoportokat (például a feladattípusokat vagy a projekt-hozzárendeléseket), mások pedig a felhasználók és a a további ideiglenes célokra csatolt eszközök. A szervezetek növekedésével a csoportokba való csatlakozás egyre nehezebbé válik. Ha például egy alkalmazott átkerül egyik projektből a másikba, a projektek eszközeihez való hozzáférés szabályozásához használt csoportokat manuálisan kell frissíteni. Ilyen esetekben nem ritka, hogy hibák történnek, ami akadályozhatja a projekt biztonságát vagy a termelékenységet.
 
-A MIM szolgáltatásokat tartalmaz, amelyek azáltal, hogy csoport és a terjesztési lista tagsági automatizált szabályozhatja a probléma mérséklése érdekében. Azonban ez nem oldja meg, amely nem feltétlenül kapcsolódnak egymáshoz strukturált módon proliferáló csoportok belső bonyolultságát.
+A felügyeleti csomag olyan szolgáltatásokat tartalmaz, amelyek segítenek a probléma megoldásában azáltal, hogy automatizált vezérlést biztosítanak a csoport-és terjesztési listák tagságához. Ez azonban nem teszi lehetővé a nem szükségszerűen egymással összekapcsolt csoportok strukturált módon való összeépítésének összetettségét.
 
-Jelentősen csökkentheti a elterjedése egyik módja, szerepköralapú hozzáférés-vezérlés (RBAC) üzembe helyezésével. Az RBAC nem helyettesítik DAC.  RBAC épülő DAC keretrendszer azáltal, hogy a felhasználók és informatikai erőforrások osztályozásához. Ez lehetővé teszi, hogy explicit kapcsolataikat, és megfelelően a besorolást megfelelő hozzáférési jogosultságokat. Például rendel egy felhasználói attribútum, amely meghatározza a felhasználók beosztás és projekt hozzárendelések, a felhasználó is hozzáférést kell biztosítani a felhasználói feladat és a felhasználó hozzájárul, hogy egy adott projekt szükséges adatokat a szükséges eszközöket. Amikor a felhasználó feltételezi, hogy egy másik feladat és -hozzárendelések más projekthez, módosítja az attribútumokat, amelyek adja meg a felhasználó beosztása és projektek automatikusan letiltja a hozzáférést a felhasználók előző pozíciónál csak szükséges erőforrásokat.
+A proliferáció jelentős csökkentésének egyik módja a szerepköralapú hozzáférés-vezérlés (RBAC) üzembe helyezése. A RBAC nem végzi el a DAC kitörését.  A RBAC a DAC-ra épül, és keretet biztosít a felhasználók és az IT-erőforrások besorolásához. Így explicit módon megadhatja a kapcsolatát és az adott besorolás szerint megfelelő hozzáférési jogosultságokat. Ha például egy olyan felhasználói attribútumhoz rendel hozzá felhasználókat, amely megadja a felhasználók feladatának címét és a projekt-hozzárendeléseket, akkor a felhasználó számára elérhetővé teheti azokat az eszközöket, amelyekre a felhasználónak szüksége van ahhoz, hogy egy adott projekthez hozzájáruljanak. Ha a felhasználó egy másik feladatot és a projekt különböző hozzárendeléseit feltételezi, akkor a felhasználó beosztását és projektjeit megadó attribútumok módosítása automatikusan letiltja az erőforrásokhoz való hozzáférést a korábbi felhasználók számára szükséges erőforrások eléréséhez.
 
-Mert a szerepkörök üzemelteti, amely hierarchikus struktúrában kapcsolódhatnak, szerepkörök (például az értékesítési igazgató és értékesítési képviselőjével szerepkörök is lehet a további általános szerepben található az értékesítés), egyes szerepkörök megfelelő jogosultságokat rendelhet hozzá, és továbbra is még meg egyszerűen Mindenki, aki a szélesebb körű szerepkör megfelelő jogosultságokkal. Például kórházban, orvosi munkatársak sikerült jogot kell adni a betegek rekordok megtekintéséhez, de csak orvosok (orvosi szerepkör alszerepkört) sikerült kell megadni a jogot arra, hogy adja meg a beteggel kapcsolatos előírásokat. Hasonlóképpen az irodai szerepkörhöz tartozó felhasználók sikerült megtagadja a hozzáférést a betegek kartonjai írnokok (egy alszerepkört irodai szerepkör), akik sikerült számára hozzáférést biztosítani a betegek rekordok, amelyek szükségesek a szolgáltatások beteg számlázási belső számlázási kivételével a kórházi által biztosított.
+Mivel a szerepkörök hierarchikus módon is szerepelhetnek a szerepkörökben (például az értékesítési vezető és az értékesítési képviselő szerepkörei az értékesítések általánosabb szerepkörében is szerepelhetnek), könnyen hozzárendelhetők a megfelelő jogosultságok az adott szerepkörökhöz, és még mindig biztosítanak megfelelő jogosultságok mindenki számára, akik a több befogadó szerepkört is megosztják. Például egy kórházban minden egészségügyi szakember jogosult lehet megtekinteni a betegeket, de csak az orvosok (az orvosi szerepkör alszerepköre) jogosultak a beteg előírásának megadására. Hasonlóképpen, a tulajdonosi szerepkörhöz tartozó felhasználókat nem lehet megtagadni a beteg-nyilvántartásokhoz való hozzáférést, kivéve a számlázási hivatalnokok (az elírásos szerepkör alszerepköre) számára, akik hozzáférést kaphatnak a betegeknek a szolgáltatásokhoz való számlázásához szükséges adatrekordokhoz. a kórház által biztosított.
 
-Az RBAC további előnye meghatározó és betartató feladatkörök (gyeptégla) lehetővé teszi. Ez lehetővé teszi a szervezetek szerepkörök, engedélyek, amelyek nem ugyanahhoz a felhasználóhoz, birtokában kell, hogy egy adott felhasználó nem rendelhető szerepköröket, amelyek lehetővé teszik a felhasználó egy fizetési kezdeményezéséhez és díjfizetést egy, például kombinációja határozza meg. RBAC automatikusan kikényszerítheti az ilyen szabályzatot, ahelyett, hogy a szabályzat, felhasználónkénti alapon hatékony végrehajtásának kiértékelheti, hogy itt.
+A RBAC további előnyei a feladatok elkülönítésének (SoD) meghatározása és kikényszerített lehetősége. Ez lehetővé teszi, hogy a szervezet olyan szerepköröket határozzon meg, amelyek olyan engedélyeket biztosítanak, amelyek nem ugyanazon felhasználó birtokában vannak, így egy adott felhasználó nem rendelhet hozzá olyan szerepköröket, amelyek lehetővé teszik a felhasználó számára a fizetés elindítását és a fizetések engedélyezését, például:. A RBAC lehetővé teszi, hogy az ilyen szabályzatok automatikusan érvénybe lépjenek ahelyett, hogy a házirendet felhasználónként kiértékelje.
 
-### <a name="bhold-role-model-objects"></a>A BHOLD szerepkör adatmodell-objektumokat
+### <a name="bhold-role-model-objects"></a>BHOLD szerepkör-objektumok
 
-A BHOLD Suite adja meg, és rendszerezheti a szerepkörök a szervezetben, térkép a felhasználók szerepkörökhöz, és a térkép megfelelő engedélyekkel szerepkörök. Ez a struktúra úgynevezett szerepkör modellt, és tartalmaz, és kapcsolódik az öt típusú objektumokat: 
+A BHOLD Suite segítségével megadhatja és rendszerezheti a szervezeten belüli szerepköröket, leképezheti a felhasználókat a szerepkörökre, és leképezheti a megfelelő engedélyeket a szerepkörökhöz. Ezt a struktúrát szerepkör-modellnek nevezzük, amely öt típusú objektumot tartalmaz és kapcsol össze: 
 
 - Szervezeti egységek
-- Users
+- Felhasználók
 - Szerepkörök
 - Engedélyek
 - Alkalmazások
 
 #### <a name="organizational-units"></a>Szervezeti egységek
 
-Szervezeti egységek (OrgUnits) az egyszerű azt jelenti, hogy mely szerint a BHOLD szerepkör modellben felhasználók vannak rendszerezve. Minden felhasználónak legalább egy OrgUnit kell tartoznia. (Tulajdonképpen egy felhasználó eltávolításakor a BHOLD szervezeti egységből a felhasználói adatok rekord törlődik a BHOLD-adatbázis.)
+A szervezeti egységek (OrgUnits) az a fő módszer, amellyel a felhasználók a BHOLD szerepkör-modellben vannak rendszerezve. Minden felhasználónak legalább egy OrgUnit kell tartoznia. (Valójában, ha egy felhasználó el lett távolítva a BHOLD-beli utolsó szervezeti egységből, a rendszer törli a felhasználó adatrekordját a BHOLD-adatbázisból.)
 
 > [!Important]
-> A BHOLD szerepkör modellben szervezeti egység nem lehet a szervezeti egységek az Active Directory Domain Servicesben (AD DS). Általában a szervezeti egység struktúra, a BHOLD alapján a szervezet és az üzleti szabályzatok nem a hálózati infrastruktúra követelményeinek.
+> A BHOLD szerepkör-modell szervezeti egységei nem tévesztendő össze a szervezeti egységekkel Active Directory tartományi szolgáltatások (AD DS). A BHOLD szervezeti egységének szerkezete jellemzően a vállalat szervezetén és házirendjein alapul, nem pedig a hálózati infrastruktúra követelményeinek.
 
-Bár ez nem szükséges, a legtöbb esetben szervezeti egységek felépítése a BHOLD, amely a tényleges, az alábbihoz hasonló szervezet hierarchikus struktúráját jelöli:
+Bár ez nem kötelező, a legtöbb esetben a szervezeti egységek strukturálva vannak a BHOLD, hogy a tényleges szervezet hierarchikus struktúráját képviseljék, az alábbihoz hasonlóan:
 
 ![](media/bhold-concepts-guide/org-chart.png)
 
-Ebben a példában a szerepkör modell lenne organizationalganizatinal egység a vállalat egésze (a elnök, képviseli, mivel a elnöke nem egy mororganizationalganizatinal egységnek a része) vagy a BHOLD legfelső szintű szervezeti egység (amely minden esetben létezik) erre a célra használható. A vállalati részlegek a alelnökök élén jelölő OrgUnits kerül a vállalati szervezeti egységet. A marketing és értékesítés igazgatók tartozó következő, a szervezeti egységek kell hozzáadni a marketing és értékesítés szervezeti egységek, és a regionális értékesítési vezetők jelölő szervezeti egységek kerül a szervezeti egységet a a keleti régió értékesítési vezető. Nem kezelheti más felhasználók, akik értékesítési hozzárendeli a keleti régió értékesítési vezető a szervezeti egység tagjai kerül sor. Vegye figyelembe, hogy a felhasználók bármilyen szintű szervezeti egység tagjai lehetnek. Ha például egy asszisztens, aki nem a manager és a jelentéseket közvetlenül a alelnök, lenne a alelnök szervezeti egységben tag.
+Ebben a példában a szerepkör-modell a vállalat teljes organizationalganizatinal egysége lesz (amelyet az elnök képvisel, mert az elnök nem része egy mororganizationalganizatinal egységnek) vagy a BHOLD gyökérszintű szervezeti egységnek (amely mindig létezik) erre a célra használható. Az alelnökök által vezetett vállalati részlegek OrgUnits a vállalati szervezeti egységbe kerül. Ezután a marketing-és értékesítési igazgatóknak megfelelő szervezeti egységek hozzáadódnak a marketing-és értékesítési szervezeti egységekhez, és a regionális értékesítési vezetőket képviselő szervezeti egységek a szervezeti egységbe kerülnek a Kelet-régió Sales Manager. A többi felhasználót nem kezelő Sales Associates a keleti régió Sales Manager szervezeti egységének tagjai lesznek. Vegye figyelembe, hogy a felhasználók bármilyen szinten tagjai lehetnek egy szervezeti egységnek. Például egy olyan felügyeleti segéd, amely nem felettes, és nem közvetlenül egy alelnök, a alelnöke szervezeti egységének tagja lenne.
 
-Mellett a szervezeti felépítés jelölő, szervezeti egységek is segítségével csoportosítsa a felhasználók és más szervezeti egységek működési feltételek szerint többek között a projektek vagy a specializáció. A következő ábra bemutatja, hogyan szervezeti egységek használni kívánt csoporthoz értékesítési hozzárendeli az ügyfél típusa alapján:
+A szervezeti struktúrán kívül a szervezeti egységek a felhasználók és más szervezeti egységek csoportosítására is használhatók a funkcionális feltételek szerint, például projektekhez vagy specializációhoz. Az alábbi ábra bemutatja, hogyan használhatók a szervezeti egységek az értékesítési munkatársak csoportosításához az ügyfél típusa szerint:
 
 ![](media/bhold-concepts-guide/org-chart-02.png)
 
-Ebben a példában minden egyes értékesítési társítása két szervezeti egységre lenne tartozik: egy a szervezet felügyeleti struktúra a társítás helyet jelölő, és a egy jelölő a társítás rátába (kiskereskedelmi vagy vállalati). Egyes szervezeti egységek, amelyek ezután lehet engedélyeket különböző eléréséhez a szervezet különböző szerepkörök rendelhetők informatikai erőforrásra lenne szükség. Emellett szerepkörök öröklődnek a szülő szervezeti egységek, való propagálása a szerepköröket a felhasználókhoz. Másrészről egyes szerepkörök megakadályozható folyamatban örökölt, amely biztosítja, hogy egy adott szerepkörrel csak a megfelelő szervezeti egységekhez tartozó.
+Ebben a példában az egyes értékesítési hozzárendelések két szervezeti egységhez tartoznak: a szervezet felügyeleti struktúrájában a munkatárs helyét, a másik pedig a munkatárs ügyfélkörét (kereskedelmi vagy vállalati) jelképezi. Minden szervezeti egység különböző szerepkörökhöz rendelhető, amelyek viszont különböző engedélyeket rendelhetnek a szervezet informatikai erőforrásaihoz való hozzáféréshez. Emellett a szerepkörök örökölhető a szülő szervezeti egységektől, így egyszerűbbé válik a szerepkörök felhasználók számára történő propagálásának folyamata. Másfelől előfordulhat, hogy bizonyos szerepköröket nem lehet örökölni, így biztosítható, hogy egy adott szerepkör csak a megfelelő szervezeti egységekhez legyen társítva.
 
-OrgUnits BHOLD Suite használatával a BHOLD Core webes portálon vagy a BHOLD Model Generator használatával létrehozhatók.
+A OrgUnits a BHOLD Suite-ban a BHOLD Core webportál vagy a BHOLD Model Generator használatával hozhatók létre.
 
-#### <a name="users"></a>Users
+#### <a name="users"></a>Felhasználók
 
-Fent felsorolt minden felhasználónak legalább egy szervezeti egységhez (OrgUnit) kell tartoznia. Mivel a felhasználó társítását ahhoz szerepkörök egyszerű mechanizmusa szervezeti egységek, a szervezetek többsége az egy adott felhasználó tartozik több OrgUnits, hogy egyszerűbb legyen a felhasználói szerepkörök társítása. Bizonyos esetekben azonban szükségessé válhat a szerepkör társítása egy felhasználót, hogy a felhasználó tartozik minden olyan OrgUnits szereplőkkel. Ennek következtében a felhasználó is közvetlen hozzárendelését egy szerepkör, valamint beszerzését szerepkörök a OrgUnits, amely a felhasználó tartozik a.
+Ahogy fent említettük, minden felhasználónak legalább egy szervezeti egységhez (OrgUnit) kell tartoznia. Mivel a szervezeti egységek a felhasználók szerepkörrel való társításának fő mechanizmusa, az adott felhasználó többsége több OrgUnits tartozik, így egyszerűbbé válik a szerepkörök hozzárendelése a felhasználóhoz. Bizonyos esetekben azonban szükséges lehet egy szerepkört hozzárendelni egy felhasználóhoz a felhasználóhoz tartozó összes OrgUnits. Ennek következtében a felhasználók közvetlenül is hozzárendelhetők egy szerepkörhöz, valamint olyan szerepkörök beszerzéséhez a OrgUnits, amelyekhez a felhasználó tartozik.
 
-Amikor a felhasználó nem aktív, a szervezet (ideig azonnal orvosi hagyja, a példában), a felhasználó felfüggeszthető, amely visszavonja a felhasználói engedélyek anélkül, hogy eltávolítaná a felhasználó a szerepkör-modellből. Alapján ad vissza, a vámot, a felhasználó újraaktiválhatóak a, amely visszaállítja a felhasználói szerepkörök által nyújtott összes engedélyt.
+Ha a felhasználó nem aktív a szervezeten belül (az orvosi elhagyás ideje alatt például), a felhasználó felfüggeszthető, amely visszavonja a felhasználó engedélyeit anélkül, hogy el kellene távolítania a felhasználót a szerepkör-modellből. A feladathoz való visszatérés után a felhasználó újraaktiválható, amely a felhasználó szerepkörei által biztosított összes engedélyt visszaállítja.
 
-Felhasználók objektumokat hozhat létre külön-külön BHOLD a BHOLD Core webes portálon keresztül, vagy importálni is lehet tömegesen BHOLD Model Generator, vagy a FIM szinkronizálási szolgáltatás lévő felhasználói adatok importálása az Access Management-összekötő használata ilyen adatforrások Active Directory Domain Services vagy az emberi erőforrások alkalmazásokként.
+A felhasználók számára a BHOLD Core webportálon keresztül önállóan hozhatók létre objektumok, vagy a BHOLD Model Generator használatával tömegesen importálhatók, vagy a hozzáférés-kezelési összekötővel a FIM szinkronizációs szolgáltatással BHOLD importálhatók a következő helyről: ilyen források Active Directory tartományi szolgáltatások vagy emberi erőforrások alkalmazásaiban.
 
-Felhasználók közvetlenül a BHOLD FIM szinkronizálási szolgáltatás használata nélkül is létrehozható. Ez akkor hasznos, ha a modellezési szerepkörök üzem előtti környezet vagy a tesztelési környezetben. Is engedélyezheti a külső felhasználók (például az alkalmazottak számára az alvállalkozónak) szerepkört, és így megadott anélkül, hogy az alkalmazottak adatbázis; hozzáadandó informatikai erőforrásokhoz való hozzáférés Ezek a felhasználók azonban nem lesz a BHOLD önkiszolgálói szolgáltatást is használhatja.
+A felhasználók közvetlenül a BHOLD hozhatók létre a FIM szinkronizációs szolgáltatás használata nélkül. Ez akkor lehet hasznos, ha az előkészítési vagy tesztelési környezetben a szerepkörök modellezése folyamatban van. Azt is lehetővé teheti, hogy a külső felhasználók (például az alvállalkozó alkalmazottai) szerepköröket rendelnek hozzá, és így hozzáférést kapjanak az informatikai erőforrásokhoz anélkül, hogy az alkalmazott adatbázishoz hozzá kellene adni őket. Ezek a felhasználók azonban nem fogják tudni használni a BHOLD önkiszolgáló funkcióit.
 
 #### <a name="roles"></a>Szerepkörök
 
-Fent említetteknek a szerepköralapú hozzáférés-vezérlés (RBAC) modellben engedélyek tartoznak az egyéni felhasználók helyett szerepköröket. Ez lehetővé teszi a felhasználói szerepkörök módosítása helyett külön megadásával vagy tagadja meg a beállított felhasználói engedélyeit a felhasználói feladatok elvégzéséhez szükséges engedélyek kiosztása az összes felhasználó. A hozzárendelés az engedélyek következtében már nem igényel az informatikai részleg részvételi, de helyette az üzleti kezelésének részeként végezhető. Egy szerepkör összesítheti közvetlenül vagy alszerepkörök, tovább csökkentve a informatikai kérelemfeldolgozásban való részvételének felhasználói engedélyek kezelése révén a különböző rendszerek való hozzáférésre vonatkozó engedélyeket.
+Ahogy azt korábban említettük, a szerepköralapú hozzáférés-vezérlés (RBAC) modellben az engedélyek az egyéni felhasználók helyett szerepkörökhöz vannak társítva. Ez lehetővé teszi, hogy minden felhasználó számára engedélyezze a felhasználó feladatainak elvégzéséhez szükséges engedélyeket úgy, hogy a felhasználó szerepköreit nem külön adja meg vagy tagadja meg a felhasználói engedélyek megadását vagy elutasítását. Ennek következményeként az engedélyek hozzárendelése már nem igényli az IT-részleg részvételét, hanem a vállalat felügyeletének részeként is elvégezhető. Egy szerepkör összesítheti a különböző rendszerek elérésére vonatkozó engedélyeket közvetlenül vagy alszerepkörök használatával, így tovább csökkentve a felhasználói engedélyek kezelésének szükségességét.
 
-Fontos megjegyezni, hogy szerepkörök érhetők el az RBAC-modellben szerepkörök általában nem lesznek kiépítve, célként megadott alkalmazásokat. Ez lehetővé teszi, hogy a meglévő alkalmazásokat, amely nem úgy tervezték, szerepkörök vagy a szerepkör-definíciók kell módosítani együtt lehet használni az RBAC igényeinek a változó üzleti modellek maguk az alkalmazások módosítása nélkül. Ha egy cél alkalmazás szerepkörök használatára lett kialakítva, majd is a BHOLD szerepkör modellben, megfelelő alkalmazás-szerepkörökhöz társított szerepköröket való az alkalmazás-specifikus szerepkörökhöz kezelésével engedélyekként.
+Fontos megjegyezni, hogy a szerepkörök a RBAC-modell egyik funkciója; jellemzően a szerepkörök nincsenek kiépítve az alkalmazásokhoz. Ez lehetővé teszi, hogy a RBAC olyan meglévő alkalmazások mellett legyenek használhatók, amelyek nem szerepkörök használatára vagy a szerepkör-definíciók módosítására szolgálnak az üzleti modellek módosításának igénye nélkül, anélkül, hogy az alkalmazásokat módosítani kellene. Ha a célalkalmazás szerepkörök használatára van kialakítva, akkor a szerepköröket a BHOLD szerepkör-modellben társíthatja a megfelelő alkalmazás-szerepkörökkel, ha az alkalmazásspecifikus szerepköröket engedélyként kezeli.
 
-A BHOLD rendelhet egy szerepkört a felhasználó elsődlegesen két mechanizmusokon keresztül:
+A BHOLD-ben a szerepköröket elsődlegesen két mechanizmussal rendelheti hozzá a felhasználóhoz:
 
-- Egy szerepkört rendel egy szervezeti egység (szervezeti egység), amely a felhasználó tagja
-- Szerepkör hozzárendelése közvetlenül a felhasználó által
+- Szerepkör kiosztása egy olyan szervezeti egységhez (szervezeti egységhez), amelynek a felhasználó tagja
+- Szerepkör közvetlen kiosztása egy felhasználóhoz
 
-A szülő szervezeti egység igény szerint rendelt szerepkör által a tag szervezeti egységeket is örökölhetők. Ha egy szerepkörhöz rendelt vagy öröklik a szervezeti egység, azt egy hatékony vagy javasolt szerepkörként lehet jelölni. Ha egy hatékony szerepkör, a szervezeti egységben lévő összes felhasználó számára a szerepkörhöz vannak hozzárendelve. Ha a javasolt szerepkör, aktiválnia kell minden egyes felhasználó- vagy tag szervezeti egység válik, hogy a felhasználó vagy szervezeti egység tagjai. Ez lehetővé teszi a felhasználók hozzárendelése egy részét a szerepköröket egy szervezeti egységhez társított, mint az automatikus összes szerepkör a szervezeti egység összes tagjára. Emellett szerepkörök kaphatnak a kezdő és záró dátuma, és korlátozások is helyezhető, amelyhez a szerepkör hatékony lehet egy szervezeti egységben lévő felhasználók aránya.
+A szülő szervezeti egységhez rendelt szerepkört a tag szervezeti egységei öröklik. Ha egy szervezeti egység hozzárendeli vagy örökli a szerepkört, akkor a rendszer érvényes vagy javasolt szerepkörként jelöli ki. Ha ez egy hatékony szerepkör, a szervezeti egységben lévő összes felhasználó hozzá lesz rendelve a szerepkörhöz. Ha ez egy javasolt szerepkör, akkor minden egyes felhasználó vagy tag szervezeti egység számára aktiválva kell lennie ahhoz, hogy az adott felhasználó vagy szervezeti egység tagjai számára érvénybe váljanak. Ez lehetővé teszi a felhasználók számára a szervezeti egységhez társított szerepkörök egy részhalmazának hozzárendelését ahelyett, hogy automatikusan hozzárendelje az összes szervezeti egység szerepkörét az összes taghoz. Emellett a szerepkörök is megadhatják a kezdő és a befejező dátumokat, a korlátok pedig egy olyan szervezeti egységben lévő felhasználók százalékos arányára helyezhetők el, amelyekhez a szerepkör érvényes lehet.
 
-A következő ábra szemlélteti, hogy egy adott felhasználó rendelhető egy szerepkörhöz a BHOLD:
+Az alábbi ábra azt szemlélteti, hogyan lehet egy adott felhasználóhoz hozzárendelni egy szerepkört a BHOLD-ben:
 
 ![](media/bhold-concepts-guide/org-chart-flow.png)
 
-Ez az ábra A szerepkör egy szervezeti egységhez, mint egy örökölt szerepkör hozzá van rendelve, és így öröklik a tag szervezeti egységeket és az adott szervezeti egységekhez tartozó összes felhasználó. B szerepkör hozzá van rendelve egy javasolt szerepkör egy szervezeti egység. Mielőtt a szervezeti egység egy felhasználó jogosult-e a szerepkör engedélyeivel kell aktiválni. Szerepkör C az hatékony szerepet, így a hozzá kapcsolódó jogosultságok azonnal érvénybe lépnek a szervezeti egységben lévő összes felhasználó számára. Szerepkör D közvetlenül a felhasználó kapcsolódik, és így engedélyeinek azonnal érvénybe lépnek, hogy a felhasználó.
+Ebben a diagramban az A szerepkör örökölhető szerepkörként van hozzárendelve egy szervezeti egységhez, ezért a tag szervezeti egységei és a szervezeti egységben lévő összes felhasználó örökli. A B szerepkör a szervezeti egységhez javasolt szerepkörként van hozzárendelve. Aktiválni kell, mielőtt a szervezeti egységben lévő felhasználó engedélyt kaphat a szerepkör engedélyeire. A C szerepkör érvényes szerepkör, így az engedélyei azonnal érvényesek a szervezeti egységben lévő összes felhasználóra. A D szerepkör közvetlenül a felhasználóhoz van csatolva, így az engedélyei azonnal érvényesek a felhasználóra.
 
-Ezenkívül a szerepkör egy felhasználó a felhasználói attribútumok alapján aktiválható. További információkért lásd: attribútum-alapú hitelesítést.
+Emellett a felhasználók a felhasználó attribútumai alapján is aktiválhatja a szerepköröket. További információ: attribútum-alapú hitelesítés.
 
 #### <a name="permissions"></a>Engedélyek
 
-A BHOLD szereplő egyik engedély egy cél-alkalmazás importálása engedélyezési felel meg. Azt jelenti amikor BHOLD konfigurálva van egy alkalmazással, kap az engedélyeket, BHOLD kapcsolat szerepkörök listáját. Például az Active Directory Domain Services (AD DS) való felvételekor BHOLD alkalmazást, kap, amelyek biztonsági csoportok, a BHOLD engedélyekként lehet kapcsolódni a BHOLD-szerepkörök listáját.
+A BHOLD engedély a célalkalmazás által importált engedélynek felel meg. Vagyis ha a BHOLD úgy van konfigurálva, hogy egy alkalmazással működjön, megkapja azon engedélyek listáját, amelyeket a BHOLD a szerepkörökhöz tud kapcsolni. Ha például Active Directory tartományi szolgáltatások (AD DS) van hozzáadva a BHOLD alkalmazáshoz, akkor megkapja azon biztonsági csoportok listáját, amelyeket a BHOLD engedélyeivel társíthat a BHOLD szerepköreihez.
 
-Alkalmazások engedélyek vonatkoznak. A BHOLD engedélyek egységes áttekintést nyújt a így engedélyeket is lehet társítva anélkül, hogy a szerepkör-kezelők az engedélyek a gyakorlati kivitelezés részleteinek megismeréséhez. A gyakorlatban a különböző rendszerek léptethet engedély eltérően. Az alkalmazás-specifikus-összekötő az alkalmazásnak a FIM szinkronizálási szolgáltatás határozza meg, hogyan biztosított, amelyek a felhasználó engedélyeinek módosítása. 
+Az engedélyek egyediek az alkalmazásokra. A BHOLD egyetlen, egységesített nézetet biztosít az engedélyek számára, hogy az engedélyek társítva legyenek a szerepkörökhöz anélkül, hogy a szerepkör-kezelők megértsék az engedélyek megvalósítási részleteit. A gyakorlatban a különböző rendszerek eltérő jogosultságokat igényelhetnek. Az alkalmazás-specifikus összekötő a FIM synchronization Service-ből az alkalmazásba meghatározza, hogy az adott alkalmazás milyen módosításokat biztosít a felhasználók számára. 
 
 #### <a name="applications"></a>Alkalmazások
 
-A BHOLD szerepköralapú hozzáférés-vezérlés (RBAC) alkalmazására külső alkalmazások metódus valósítja meg. Azt jelenti amikor BHOLD ki van építve a felhasználók és a egy alkalmazás engedélyeit, BHOLD társíthatja ezeket az engedélyeket a felhasználók szerepkörök hozzárendelése a felhasználókhoz és az engedélyek majd összekapcsolása a szerepkörök. Az alkalmazás háttérfolyamat leképezheti a megfelelő engedélyeket a felhasználóknak a szerepkör vagy engedély-leképezéssel a BHOLD alapján.
+A BHOLD megvalósítja a szerepköralapú hozzáférés-vezérlés (RBAC) külső alkalmazásokba való alkalmazásának módszerét. Vagyis ha a BHOLD-t egy alkalmazás felhasználóinak és engedélyeinek megfelelően kiépítik, a BHOLD a felhasználókhoz szerepkörök hozzárendelésével, majd a szerepkörökhöz való csatolásával társíthatja ezeket az engedélyeket a felhasználóhoz. Az alkalmazás háttérbeli folyamata ezután leképezheti a megfelelő engedélyeket a felhasználók számára a BHOLD szerepkör/engedélyek leképezése alapján.
 
-### <a name="developing-the-bhold-suite-role-model"></a>A BHOLD Suite szerepkör modell fejlesztése
+### <a name="developing-the-bhold-suite-role-model"></a>A BHOLD Suite szerepkör-modell fejlesztése
 
-Fejlesztés a szerepkör-modell segítségével BHOLD Suite Model Generator, egy eszköz, amely könnyen használható és átfogó biztosít.
+A BHOLD Suite lehetővé teszi a modell fejlesztését, amely könnyen használható és átfogó megoldás.
 
-Mielőtt Model Generator használ, létre kell hoznia, amelyek meghatározzák az objektumok Model Generator létrehozni a szerepkör modellt használó fájlok sorozatát. Ezek a fájlok létrehozásával kapcsolatos további információkért lásd: Microsoft BHOLD Suite – technikai útmutató.
+A Model Generator használata előtt létre kell hoznia egy olyan fájl-sorozatot, amely meghatározza, hogy a Model Generator milyen objektumokat állít össze a szerepkör-modell létrehozásához. További információ a fájlok létrehozásáról: a Microsoft BHOLD Suite technikai útmutatója.
 
-Az első lépés a BHOLD Model Generator használatával a rendszer ezeket a fájlokat az alapvető alkotóelemeket-ba való betöltésének Model Generator importálja. Ha a fájlok sikeresen lett betöltve, Model Generator hozhat létre szerepköröket több osztályt használó feltétel majd adhatja meg:
+A BHOLD Model Generator használatának első lépéseként importálnia kell ezeket a fájlokat, hogy betöltse az alapszintű építőelemeket a Model Generatorba. A fájlok sikeres betöltése után megadhatja azokat a feltételeket, amelyeket a Model Generator használ a szerepkörök több osztályának létrehozásához:
 
-- Tagsági szerepkörök rendelt felhasználó alapján, hogy a felhasználó tartozik OrgUnits (szervezeti egység)
-- A BHOLD-adatbázis a felhasználói attribútumok alapján, a felhasználó hozzárendelt szerepkörök attribútum
-- Javasolt olyan szerepköröket, amelyek egy szervezeti egységhez kapcsolódik, de a megadott felhasználók számára aktiválni kell
-- Adja meg a szervezeti egységek és a szerepkörök, amelynek tulajdonosa nincs megadva az importált fájl a felhasználó szabályozhatja tulajdonosi szerepkörök
+- A felhasználóhoz tartozó OrgUnits (szervezeti egységek) alapján a felhasználókhoz rendelt tagsági szerepkörök
+- A felhasználóhoz a BHOLD-adatbázisban a felhasználó attribútumai alapján hozzárendelt attribútumok szerepkörei
+- Szervezeti egységhez kapcsolódó javasolt szerepkörök, de bizonyos felhasználók számára aktiválva kell őket
+- Olyan tulajdonosi szerepkörök, amelyek felhasználói ellenőrzést biztosítanak a szervezeti egységek és a szerepkörök számára, amelyekhez nincs megadva a tulajdonos az importált fájlokban
 
 > [!Important]
-> Fájlok feltöltésekor válassza ki a **megőrizheti a létező modell** jelölőnégyzet csak tesztelési környezeteket. Éles környezetben a kezdeti szerepkör modell létrehozásához Model Generator kell használnia. Nem használhatja a BHOLD-adatbázis egy meglévő szerepkör-modell módosítására.
+> Fájlok feltöltésekor jelölje be a **meglévő modell megőrzése** jelölőnégyzetet csak tesztelési környezetekben. Éles környezetekben a modell generátort kell használnia a kezdeti szerepkör-modell létrehozásához. A BHOLD-adatbázisban nem használható meglévő szerepkör-modell módosítására.
 
-Miután a Model Generator ezeket a szerepköröket a szerepkör-modellben, majd exportálhatja a szerepkör-modellt a BHOLD-adatbázis egy XML-fájl formájában.
+Miután a Model Generator létrehozza ezeket a szerepköröket a szerepkör-modellben, XML-fájl formájában exportálhatja a szerepkör-modellt a BHOLD-adatbázisba.
 
-### <a name="advanced-bhold-features"></a>A BHOLD speciális funkciók
+### <a name="advanced-bhold-features"></a>Speciális BHOLD funkciók
 
-Korábbi szakaszokban ismertetett szerepköralapú hozzáférés-vezérlés (RBAC) a BHOLD alapvető szolgáltatásait. Ez a szakasz ismerteti a BHOLD fokozott biztonságot és a szervezet megvalósítását RBAC rugalmasságot biztosító szolgáltatások. Ez a szakasz tartalmazza a következő BHOLD-funkciók áttekintésével:
+Az előző szakaszokban a szerepköralapú hozzáférés-vezérlés (RBAC) alapszintű funkciói szerepelnek a BHOLD-ben. Ez a szakasz a BHOLD további szolgáltatásait ismerteti, amelyek fokozott biztonságot és rugalmasságot biztosítanak a szervezet RBAC megvalósításához. Ez a szakasz áttekintést nyújt a következő BHOLD-funkciókról:
 
-- számossága
-- A feladatkörök elkülönítése
-- Testreszabható környezetet engedélyek
-- Attribútum-alapú hitelesítést
-- Rugalmas Attribútumtípusok
+- Számosság
+- A feladatok elkülönítése
+- Környezetfüggő engedélyek
+- Attribútum-alapú hitelesítés
+- Rugalmas attribútumok típusai
 
 
-#### <a name="cardinality"></a>számossága
+#### <a name="cardinality"></a>Számosság
 
-*Számosság* korlátozza, hogy hányszor két entitás kapcsolódhat egymással kialakított üzleti szabályok alkalmazása hivatkozik. A BHOLD, esetén Számosság szabályok szerepkörök, engedélyek és a felhasználók hozható létre.
+A *kardinális* az üzleti szabályok megvalósítására szolgál, amelyek célja, hogy korlátozza a két entitás egymáshoz való kapcsolódásának időtartamát. BHOLD esetén a rendszer a szerepkörök, engedélyek és felhasználók számára is létrehozhatja a kardinális szabályokat.
 
-Konfigurálhat egy szerepkör korlátozása a következő:
+Beállíthat egy szerepkört a következők korlátozására:
 
-- A javasolt szerepkör aktiválhatja felhasználók maximális száma
-- A szerepkör csatolható alszerepkörök maximális száma
-- Az engedélyeket, amelyek a szerepkör lehet kapcsolódni a maximális számát
+- Azoknak a felhasználóknak a maximális száma, amelyekhez javasolt szerepkört lehet aktiválni
+- A szerepkörhöz kapcsolható alszerepkörek maximális száma
+- A szerepkörhöz hozzárendelhető engedélyek maximális száma
 
-Korlátozhatja a következő engedély konfigurálhatja:
+Beállíthat egy engedélyt a következők korlátozására:
 
-- A maximális számát, amely lehet kapcsolódni az engedély szerepkörök
-- A maximális számát, akik engedéllyel is kell rendelkezni
+- Az engedélyhez társítható szerepkörök maximális száma
+- Az engedélyt megadható felhasználók maximális száma
 
-A felhasználót, hogy korlátozza a következőket konfigurálhatja:
+Beállíthatja, hogy a felhasználó korlátozza a következőket:
 
-- A maximális számát, amely lehet kapcsolódni a felhasználói szerepkörök
-- A felhasználó leállította a szerepkör-hozzárendelésekkel rendelhet engedélyeket maximális száma
+- A felhasználóhoz hozzárendelhető szerepkörök maximális száma
+- A felhasználóhoz szerepkör-hozzárendeléseken keresztül hozzárendelhető engedélyek maximális száma
 
-#### <a name="separation-of-duties"></a>A feladatkörök elkülönítése
+#### <a name="separation-of-duties"></a>A feladatok elkülönítése
 
-Feladatkörök (gyeptégla) egy üzleti alapelvet, amely arra törekszik, hogy megakadályozza, hogy a felhasználók eszközeikre, amely nem lehet egyetlen személy számára elérhető műveletek elvégzésére. Például egy alkalmazott kell egy fizetési igénylése és a fizetési engedélyezése nem sikerült. Gyeptégla elvének köszönhetően a szervezeteknek ellenőrzések és egyensúlyok megfelelő minimalizálása érdekében alkalmazott hiba vagy kötelezettségszegést való kockázati kitettség rendszert megvalósításához.
+A feladatok elkülönítése (SoD) olyan üzleti elv, amely arra törekszik, hogy megakadályozza, hogy a felhasználók olyan műveleteket hajtsanak végre, amelyeknek nem szabad egyetlen személy számára elérhetővé tenniük. Egy alkalmazott például nem igényelhet fizetést, és engedélyezheti a fizetést. A SoD elve lehetővé teszi a szervezetek számára az ellenőrzések és egyensúlyok rendszerének megvalósítását, hogy az alkalmazotti hiba vagy a kötelességszegés miatti kockázatokat csökkentsék.
 
-A BHOLD gyeptégla azáltal, hogy nem kompatibilis engedélyeket határozhat meg valósítja meg. Ha ezek az engedélyek vannak definiálva, BHOLD gyeptégla kényszerít megakadályozzák, hogy a kapcsolódó inkompatibilis engedélyek kapcsolódnak közvetlenül vagy öröklés útján, és megakadályozzák, hogy a felhasználók legyenek hozzárendelve több szerepkört, szerepkörök létrehozása során kombinált, akkor engedélyek nem kompatibilis, újra közvetlen hozzárendelés vagy öröklés útján. Szükség esetén az ütközések felülbírálható.
+A BHOLD nem kompatibilis engedélyek definiálásával valósítja meg a SoD-t. Ha ezek az engedélyek meg vannak adva, a BHOLD úgy kényszeríti a SoD-t, hogy megakadályozza a nem kompatibilis engedélyekhez kapcsolódó szerepkörök létrehozását, függetlenül attól, hogy közvetlenül vagy örökléssel vannak-e társítva, valamint hogy a felhasználók nem kapnak-e több olyan szerepkört, amely a kombinált szolgáltatás nem kompatibilis engedélyeket ad vissza közvetlen hozzárendeléssel vagy örökléssel. Az ütközések felülbírálása is lehetséges.
 
-#### <a name="context-adaptable-permissions"></a>Testreszabható környezetet engedélyek
+#### <a name="context-adaptable-permissions"></a>Környezetfüggő engedélyek
 
-Az engedélyeket, amelyek automatikusan módosítható egy objektum attribútum alapján hoz létre, csökkentheti az engedélyek kezelése teljes száma. Környezet testreszabható engedélyek (nagybetűs) segítségével meghatározhatja a képletet, amely módosítja az engedélyt az alkalmazás az engedélyhez tartozó alkalmazásának módja engedély attribútumaként. Például létrehozhat egy képletet, amely a hozzáférési engedéllyel egy fájl mappába (keresztül egy biztonsági csoportot, a mappa hozzáférés-vezérlési lista társított) alapján, hogy a felhasználó módosítások tartozik egy szervezeti egység (szervezeti egység) tartalmazó teljes munkaidejű alkalmazottak vagy. Ha a felhasználó egy szervezeti egységből a másikba helyezik, az új engedély a rendszer automatikusan alkalmazza, és a régi engedély aktiválva. 
+Az objektumok attribútuma alapján automatikusan módosítható engedélyek létrehozásával csökkentheti a felügyelni kívánt engedélyek teljes számát. A környezetfüggő engedélyek (CAPs) lehetővé teszik a képletek engedélyezési attribútumként való definiálását, amely módosítja, hogy a rendszer hogyan alkalmazza az engedélyt az engedélyhez társított alkalmazás. Létrehozhat például egy olyan képletet, amely módosítja a hozzáférési engedélyt egy fájl mappájára (a mappa hozzáférés-vezérlési listájához társított biztonsági csoporton keresztül) attól függően, hogy a felhasználó a következőt tartalmazó szervezeti egységhez (szervezeti egységhez) tartozik-e: teljes idejű vagy szerződéses alkalmazottak. Ha a felhasználót az egyik szervezeti egységről egy másikra helyezi át, a rendszer automatikusan alkalmazza az új engedélyt, és a régi engedély inaktiválva lesz. 
 
-A Tengelysapka képlet lekérdezheti a attribútumának értéke, amely az alkalmazások, engedélyek, szervezeti egységek és felhasználók lettek alkalmazva.
+A CAP-képlet az alkalmazásokra, engedélyekre, szervezeti egységekre és felhasználókra alkalmazott attribútumok értékeit kérdezi le.
 
-#### <a name="attribute-based-authorization"></a>Attribútum-alapú hitelesítést
+#### <a name="attribute-based-authorization"></a>Attribútum-alapú hitelesítés
 
-Egyirányú szabályozhatja, hogy egy szerepkör, amely egy szervezeti egységhez kapcsolódik (szervezeti egység) aktiválódik egy adott felhasználó a szervezeti egység attribútum-alapú hitelesítést (ABA) használatára van. ABA használatával automatikusan aktiválhatja a szerepkört csak bizonyos szabályokat a felhasználói attribútumok alapján teljesülése esetén. Például egy szerepkör kapcsolhat egy szervezeti egységhez, aktiválódik egy felhasználó, csak akkor, ha a felhasználó munkaköre megegyezik a beosztás a ABA szabályban. Ez így nem kell a manuálisan a felhasználó egy javasolt szerepkör aktiválásához. Ehelyett egy szerepkör a szervezeti egység összes olyan felhasználó számára, amely eleget tesz a szerepkör ABA szabály attribútum értéke aktiválható. Szabályok kombinálhatók, úgy, hogy a szerepkör aktiválásakor csak akkor, ha a felhasználói attribútumok felel meg a szerepkörhöz megadott ABA szabályok.
+Az egyik módszer annak szabályozására, hogy egy szervezeti egységhez (szervezeti egységhez) kapcsolódó szerepkör aktiválva van-e egy adott felhasználó számára a szervezeti egységben, az attribútum-alapú hitelesítés (ABA) használata. Az ABA-k használatával automatikusan aktiválhat egy szerepkört, ha a felhasználó attribútumain alapuló bizonyos szabályok teljesülnek. Például összekapcsolhat egy szerepkört egy olyan szervezeti egységhez, amely csak akkor válik aktívvá a felhasználó számára, ha a felhasználó beosztása megegyezik az ABA-szabályban szereplő feladat címével. Így nem kell manuálisan aktiválni egy javasolt szerepkört a felhasználó számára. Ehelyett egy szerepkör aktiválható egy olyan szervezeti egység összes felhasználója számára, aki attribútum értéke megfelel a szerepkör ABA-szabályának. A szabályok kombinálhatók, így egy szerepkör csak akkor aktiválódik, ha a felhasználó attribútumai megfelelnek a szerepkörhöz megadott összes ABA-szabálynak.
 
-Fontos megjegyezni, hogy ABA szabály tesztek eredményét Számosság beállítások korlátozza. Például ha egy szabály a számossági beállítást határozza meg, hogy legfeljebb két felhasználót rendelhet hozzá egy szerepkörhöz, és a egy ABA szabály más módon kell aktiválnia egy szerepkört a négy felhasználó, a szerepkör az csak az első két olyan felhasználó, hogy a ABA teszt esetén aktiválódik.
+Fontos megjegyezni, hogy az ABA-szabályok tesztelésének eredményei a kardinális beállításokkal vannak korlátozva. Ha például egy szabály kardinális beállítása azt adja meg, hogy legfeljebb két felhasználó rendelhető hozzá egy szerepkörhöz, és ha egy ABA-szabály nem aktiválja a szerepkört négy felhasználó számára, akkor a szerepkör csak az ABA-tesztet áthaladó első két felhasználó számára aktiválódik.
 
-#### <a name="flexible-attribute-types"></a>Rugalmas Attribútumtípusok
+#### <a name="flexible-attribute-types"></a>Rugalmas attribútumok típusai
 
-BHOLD attribútumokat a rendszer nagy mértékben bővíthetők. Megadhat új attribútumtípusokat, az ilyen objektumok felhasználóként, szervezeti egység (szervezeti egység) és -szerepkörök. Attribútumok megadhatók rendelkezik értékek, amelyek az egész szám, logikai (Igen/nem), csak alfanumerikus karakterek, dátum, idő és e-mail címek. Attribútumok egyetlen értékként vagy értéklista adható meg.
+A BHOLD-ben lévő attribútumok rendszere nagyon bővíthető. Az ilyen objektumokhoz a felhasználók, szervezeti egységek (szervezeti egységek) és szerepkörök használatával adhat meg új attribútum-típusokat. Az attribútumok meghatározhatók úgy, hogy egész számok, logikai (igen/nem), alfanumerikus, dátum, idő és e-mail-címek legyenek. Az attribútumok meghatározhatók egyetlen értékként vagy értéklistaként.
 
-## <a name="attestation"></a>Állapotigazolás
+## <a name="attestation"></a>Igazolás
 
-A BHOLD Suite eszközöket biztosít, amelyek segítségével győződjön meg arról, hogy egyes felhasználók kapott megfelelő engedélyeket az azok üzleti műveletekhez. A rendszergazda-kezelés az igazolási folyamat tervezése a portálon a BHOLD igazolási modul által biztosított használhatja.
+A BHOLD Suite olyan eszközöket biztosít, amelyekkel ellenőrizheti, hogy az egyes felhasználók megfelelő engedélyekkel rendelkeznek-e az üzleti feladatok elvégzéséhez. A rendszergazda a BHOLD igazolási modul által biztosított portál használatával megtervezheti az igazolási folyamat kezelését.
 
-Az igazolási folyamat melyik kampány az megbízott lehetőséget kap a kampányok útján történik, és azt jelenti, hogy ellenőrizze, hogy a felhasználóknak, amelynek ők felelnek van-e a megfelelő hozzáférése legyen a BHOLD által kezelt alkalmazások és a megfelelő engedélyekkel Ezeket az alkalmazásokat. A kampány tulajdonosa ki van jelölve, a kampány felügyeletére, és győződjön meg arról, hogy a kampány végeznek megfelelően. A kampány egyszer vagy rendszeres hozható létre.
+Az igazolási folyamat olyan kampányok keretében zajlik, amelyekben a reklámkampányok lehetőséget kapnak, és azt, hogy a felelős felhasználók megfelelő hozzáféréssel rendelkezzenek a BHOLD által felügyelt alkalmazásokhoz és a megfelelő engedélyekhez Ezek az alkalmazások. A kampány tulajdonosa a kampány felügyeletére van kijelölve, és gondoskodik arról, hogy a kampány megfelelően legyen végrehajtva. Létrehozhat egy kampányt, amely egyszer vagy ismétlődő módon történhet.
 
-Általában a kampány steward lesz egy vezető, aki tanúsítja tartozó egy vagy több szervezeti egységet, amelynek a kezelő feladata felhasználókat a hozzáférési jogosultságokat. Megbízott automatikusan kijelölt folyamatban van a felhasználói attribútumok alapján kampány igazolt felhasználója számára, vagy a megbízott kampány egy fájlban, amely leképezi a minden felhasználó a kampányban résztvevő igazolt folyamatban van, a steward listázásával adható meg.
+A kampányok kezelőjének jellemzően egy felettese lesz, aki tanúsítja az egy vagy több olyan szervezeti egységhez tartozó felhasználók hozzáférési jogosultságait, amelyekhez a vezető felelős. A rendszer automatikusan kiválaszthatja azokat a felhasználókat, akik a felhasználói attribútumok alapján tanúsítják a kampányban, vagy ha a kampányhoz tartozó gondnokok megadhatók olyan fájlban, amely a kampányban tanúsító összes felhasználót leképezi.
 
-Kezdődik, amikor a BHOLD e-mailben értesítési üzenetet küld a kampány megbízott és a tulajdonos, és könnyebben karbantartása folyamatban van a kampányban résztvevő rendszeres időközönként emlékeztetőket küld. Megbízott irányítja a kampány portálra, ahol megjelenik, amelyhez felhasználókat és a felhasználókhoz rendelt szerepkörök listáját. A megbízott majd ellenőrizheti, hogy azok a listán szereplő felhasználók felelős és jóváhagyására a hozzáférési jogosultságokat az egyes a listán szereplő felhasználók.
+Amikor elindul egy kampány, a BHOLD e-mailben értesítést küld a kampány sáfárai és tulajdonosa számára, majd rendszeres emlékeztetőket küld, hogy segítsen nekik fenntartani a kampány előrehaladását. Az stewardok egy kampány portálra vannak irányítva, ahol megtekinthetik azoknak a felhasználóknak a listáját, akik felelősek, valamint az adott felhasználókhoz rendelt szerepköröket. A kezelők megtekinthetik, hogy a felsorolt felhasználók felelősek-e, és jóváhagyják vagy megtagadják a felsorolt felhasználók hozzáférési jogosultságait.
 
-Kampány tulajdonosok is a portál használatával nyomon követheti a kampány, és így kampány tulajdonosok elemezheti a kampány során végrehajtott műveletek naplózott tevékenységekről kampány.
+A kampány tulajdonosai a portál használatával is nyomon követik a kampány előrehaladását, és naplózzák a kampány tevékenységeit, így a kampányok tulajdonosai elemezni tudják a kampány során elvégzett műveleteket.
 
 ## <a name="analytics"></a>Elemzés
 
-A legfontosabb szempontok, ha végrehajtási egy átfogó rights-alapú hozzáférés-vezérlés (RBAC) rendszert a szigorú hozzáférés-vezérlés fenntartása, és kerülje a szükségtelen (vagy rosszabb, váratlan) közötti egyensúly egyik korlátok eléréséhez. Ez gyakran fenn részéről az erőfeszítés egy hozzáférés-vezérlési struktúra, hogy szinte elkerülhetetlen-e váratlan interakciók a házirendek között összetett eredményez.
+Az átfogó, jogosultságokon alapuló hozzáférés-vezérlési (RBAC) rendszerek megvalósításának egyik fontos szempontja a szigorú hozzáférés-vezérlés fenntartása és a szükségtelen (vagy, rosszabb, váratlan) korlátok közötti egyensúly elérése. Az egyensúly fenntartására irányuló erőfeszítés gyakran olyan hozzáférés-vezérlési struktúrát eredményez, amely annyira összetett, hogy a házirendek közötti váratlan interakciók szinte elkerülhetetlenek.
 
-Éppen ezért fontos lehet képes lesz elemezni a hozzáférés-vezérlési házirendek hatásait, mielőtt ténylegesen vezetnek be. A BHOLD Suite Analytics modul fejlesztése a szabályzatok képviselő szabályok, ami lehetővé teszi, és ezután engedélyeiket megjelenítése a felhasználók ehhez az elemzéshez képességével felelnek meg, vagy a szabály ütközik biztosít. Az elemzés alapján módosíthatja a szabályzatot, vagy módosíthatja azon szerepköröket és engedélyeket kiküszöbölése az ütközéseket a szabályzattal.
+Ezért fontos, hogy a tényleges üzembe helyezésük előtt elemezze a hozzáférés-vezérlési házirendek hatásait. A BHOLD Suite elemzési modulja lehetővé teszi az elemzés végrehajtását, ha olyan szabályokat fejleszt, amelyek megfelelnek a szabályzatoknak, majd megjeleníti azokat a felhasználókat, akiknek az engedélyei megegyeznek vagy ütköznek a szabállyal. Ezen elemzés alapján módosíthatja a szabályzatot, vagy módosíthatja a szerepköröket és engedélyeket a szabályzattal való ütközések elkerülése érdekében.
 
-A BHOLD Analytics-portálon teszi lehetővé, amelyek egy vagy több szabályt annak hoz létre, tesztelheti egy adott szabályzat vagy szabályzatok állnak szabálykészletek létrehozására. A szabály a következő nagyobb részekből áll:
+A BHOLD Analytics-portál lehetővé teszi olyan szabályrendszerek összeállítását, amelyek egy vagy több olyan szabályból állnak, amelyet egy adott szabályzat vagy csoport tesztelésére hozott létre. A szabály a következő fő részekből áll:
 
-- Cím és leírás, amelyek lehetővé teszik azonosíthatja és a szabály leírása
-- Egy állapot, amely azt jelzi, hogy tekintse át, készen áll-e a szabály alatt tekintse át, vagy jóváhagyott
-- Egy elem (például a felhasználók vagy engedélyek) állítsa be, amely a szabály tesztelése
-- Kifejezések, amelyek segítségével válassza ki a megfelelő alcsoport meg kell vizsgálni az elem nem kötelező részét szűrők
-- Egy vagy több szabály szűrők, amelyek a kifejezések, amelyek a vizsgált házirendet.
+- Cím és leírás, amely lehetővé teszi a szabály azonosítását és ismertetését
+- Olyan állapot, amely jelzi, hogy a szabály készen áll-e véleményezésre, felülvizsgálatra vagy jóváhagyásra
+- Egy elem (például felhasználók vagy engedélyek), amelyeket a szabály tesztelésre terveztek
+- Választható részhalmazi szűrők, amelyek olyan kifejezések, amelyek segítségével kiválaszthatja a vizsgálandó elem megfelelő alcsoportját
+- Egy vagy több olyan szabálykészlet, amely a tesztelt szabályzatot jelölő kifejezés.
 
-A szabály a következő elem készletek közül bármelyik tesztelheti:
+Egy szabály a következő elemek egyikét tesztelheti:
 
-- Users
+- Felhasználók
 - Szervezeti egységek
 - Szerepkörök
 - Engedélyek
 - Alkalmazások
 - Fiókok
 
-Az alábbi ábra egy egyszerű szabályt két részhalmazát szabályok és két Állapotszűrő szabályok:
+Az alábbi ábra egy egyszerű szabályt ábrázol, amely két részhalmazi szabályból és két szűrési szabályból áll:
 
 ![](media/bhold-concepts-guide/rules.png)
 
-Vegye figyelembe a különbség a hatás, a sikertelen egy részhalmazát szűrőt, és a sikertelen szabályt szűrő: sikertelen volt egy részhalmazát szűrő távolít el elemobjektum tesztelése a soron következő szűrői során sikertelen szabály szűrő a legyen nem megfelelőként jelentett objektumot. Csak azokat az objektumokat, amelyek a részhalmazát-szűrők és a szabály az összes szűrő megfelelőként jelenti.
+Figyelje meg, hogy milyen hatással van az alhalmazok szűrésének és a szabályok szűrésének sikertelensége: Ha egy részhalmaz szűrője nem sikerül, a rendszer eltávolítja az elem objektumot a további szűrők alapján, a szabályok szűrésének sikertelensége esetén pedig nem megfelelőként fogja jelenteni az objektumot. Csak azok az objektumok felelnek meg, amelyek az összes részhalmaz szűrőt és az összes szabály szűrőjét továbbítják.
 
-Minden szűrő áll egy, az operátornak (Ez a függő típusa), egy kulcsot (egy-egy elem) és egy értéket, amelyre vonatkozóan a kulcs az operátor lett tesztelve. Például a következő szűrő lenne megállapítására, hogy a felhasználók egy elem bejuthat száma meghaladja a 10:
+Mindegyik szűrő egy típusból, egy operátorból (amely típustól függ), egy kulcsból (az egyik elemből) és egy olyan értékből áll, amellyel a kezelő a kulcsot teszteli. Például a következő szűrő azt teszteli, hogy az elem részhalmazában lévő felhasználók száma meghaladja-e a 10 értéket:
 
 
 |   |   |   |   |   |
 |---|---|---|---|---|
 |**Írja be:**   | Száma   |
-| **Kulcs:**  | Users  |
+| **Kulcs**  | Felhasználók  |
 | **Operátor**  | >  |
 | **Érték:** | 10 |
 
-A szabályok szűrők három típusa létezik, és adott a a típusuk, operátorok használata jelöli:
+A szabályok szűrői három típusból állnak, és a típusuk alapján meghatározott operátorokat is használhatnak:
 
 - Attribútum
   - < és >
   - = és! =
-  - **tartalmaz**
+  - **Tartalmaz**
   - **Nem tartalmazza**
 - Száma
   - < és >
   - = és! =
 - Korlátozó
-  - **Bármely és kell rendelkeznie az összes**
-  - **Nem rendelkezik ilyennel, és nem rendelkeznek**
-  - **Csak rendelkezik, és csak lehet az összes**
-  - **Kizárólag rendelkezik, és kizárólag rendelkeznek**
+  - **Rendelkeznie kell minden**
+  - **Nem lehet az összes**
+  - **Csak egyetlen, és csak az összesnek lehet**
+  - **Kizárólag bármilyen és kizárólag**
 
 > [!Note]
-> Korlátozó szűrők a jelzett operátorok használatával több érték összevetéssel kulcs teszteléséhez.
+> A korlátozó szűrők használatával a jelzett operátorok több értékkel is ellenőrizhetik a kulcsokat.
 
-Például ha szeretne egy feladatkörök (gyeptégla) szabályzatot, amely arról tájékoztatja, hogy nincs felhasználó, aki jogosult a támogatási kérelem jóváhagyása fizetési engedélyre is nem elkülönítése végrehajtásának tesztelése, sikerült hozhat létre egy szabályt a következőhöz hasonló:
+Ha például azt szeretné, hogy a feladatok elkülönítésének (SoD) szabályzata egy olyan felhasználó számára, aki nem kér fizetési engedélyt, akkor is jóvá kell hagynia a fizetési engedélyt, a következőhöz hasonló szabályt hozhat létre:
 
 |   |  |
 |---|--|
-|Név:| Fizetési gyeptégla teszt|
-|Elem:| Users|
-|Részhalmazát szűrő:| Kellene bármilyen engedélye támogatási kérelem|
-|A szabály szűrő: | Nem lehet bármilyen engedéllyel jóváhagyás fizetési|
+|Név:| Fizetési SoD-teszt|
+|Elem| Felhasználók|
+|Részhalmaz szűrője:| Engedéllyel kapcsolatos kérelem fizetése|
+|Szabály szűrője: | Nem lehet engedélyt jóváhagyni|
 
-Ez a szabály futtatásakor a BHOLD Analytics modul a kiválasztott részhalmazát (a támogatási kérelem engedéllyel rendelkező felhasználók száma) a felhasználók száma, amelyek megfelelnek a szabály a felhasználók száma és, amelyek nem felelnek meg a szabály felhasználók számát jeleníti meg. A nem megfelelő felhasználók ezután meg tudja jeleníteni, így kiküszöbölheti a inkonzisztenciát.
+A szabály futtatásakor a BHOLD Analytics modul megjeleníti a kiválasztott részhalmazban lévő felhasználók számát (a kéréses fizetési engedéllyel rendelkező felhasználók számát), a szabálynak megfelelő felhasználók számát és azon felhasználók számát, akik nem felelnek meg a szabálynak. Ezután megjelenítheti a nem megfelelő felhasználókat, hogy kijavítsa az inkonzisztenciát.
 
-Az eredmények megjelenítése, mellett is mentheti a jelentés vesszővel tagolt (CSV) vagy XML-fájlt, hogy később elemezze az eredményeket. Az eredményül kapott jelentést, hogy további információkat, amelyek segítségével jobban megismerheti a hatását is testreszabhatja. Például ha felhasználók teszteli, Ön is megjelenítéséhez (vagy jelentés) a fiókokat a megfelelő vagy nem megfelelő felhasználók, így láthatja, hogy mely alkalmazásokat is érint.
+Az eredmények megjelenítése mellett a jelentést vesszővel tagolt értékként (CSV) vagy XML-fájlként is mentheti, így később is elemezheti az eredményeket. Az eredményül kapott jelentést úgy is testreszabhatja, hogy további információkat jelenítsen meg, amelyek segíthetnek a hatás jobb megismerésében. Ha például a felhasználókat teszteli, megtekintheti (vagy bejelentheti) a megfelelő vagy nem megfelelő felhasználók fiókjait, így láthatja, hogy mely alkalmazások vesznek részt.
 
-Szabály több szűrőket is tartalmazhatnak, mert a kapcsolódás tesztelése, hogy hogy létezik-e egy adott feltételek kombinációja. Alapértelmezés szerint az eredmény a termék-és a logikai vizsgálat az összes szűrőt, de megadhatja, hogy a szűrő kombináció egy OR teszt hajtható végre.
+Mivel a szabályok több szűrőt is tartalmazhatnak, a szűrők összekapcsolásával ellenőrizheti, hogy léteznek-e bizonyos feltételek. Alapértelmezés szerint az eredmény az összes szűrő egy és logikai tesztének szorzata, de megadható, hogy a szűrő kombinációja vagy tesztelése elvégezhető-e.
 
-Például ha a szabályzat van szüksége a kezelők vagy a fizetési módosítása engedéllyel, vagy a fizetési jóváhagyása engedéllyel rendelkezik, majd tesztelhet a házirendnek való megfelelőség hozhat létre egy szabályt a következőhöz hasonló:
+Ha például az üzleti szabályzat megköveteli, hogy a vezetők vagy a fizetési engedély módosítása vagy a kifizetés jóváhagyása engedéllyel rendelkezzenek, akkor tesztelheti a szabályzat megfelelőségét egy olyan szabály létrehozásával, amely a következőhöz hasonló:
 
-
-|  |  |
-|--|--|
-|Név: | Fizetési gyeptégla teszt módosítása|
-|Elem: | Users |
-|Részhalmazát szűrő: | Bármely szerepkör Manager kellene|
-| A szabály szűrők: |Bármilyen módosítás fizetési engedéllyel kell rendelkeznie. </br> Bármely jóváhagyás fizetési engedéllyel kell rendelkeznie|
-
-Alapértelmezés szerint minden olyan felhasználó, aki egy vezető, aki módosítása fizetés és a fizetési kérése engedéllyel is rendelkezik kerülnek megfelelőnek. Azonban a szabályzat megköveteli, hogy a kezelő vagy engedély, nem feltétlenül is. Tényleges megfelelőségi szabályzat teszteléséhez kell használnia vagy logikai operátor a szabályt meghatározni, hogy vannak-e bármilyen vezetők, akik nem rendelkeznek a fizetési módosítása engedéllyel vagy a fizetési jóváhagyása engedéllyel.
-
-Ellentétben más operátorokkal a **kizárólag rendelkezik** és a **kizárólag rendelkeznek** operátorok azt jelzik, ellenkező esetben lenne egy részhalmazát szűrő által kizárt objektumok megfelelőségét. Például, hogy minden vezetők (és csak menedzserek) engedélye jóváhagyása felülvizsgálatok házirend tesztelése sikerült hozhat létre egy szabályt a következő:
 
 |  |  |
 |--|--|
-|Név: | Felülvizsgálati jóváhagyás teszt|
-|Elem: | Users|
-| Részhalmazát szűrő: | Bármely szerepkör Manager kellene
-|A szabály szűrő: | Kizárólag a minden engedélyt jóvá felülvizsgálatra van|
+|Név: | Fizetési SoD-teszt módosítása|
+|Elem | Felhasználók |
+|Részhalmaz szűrője: | Szerepkör-kezelő|
+| Szabály szűrői: |A kifizetés módosítására vonatkozó engedéllyel kell rendelkeznie </br> Jóvá kell hagynia a fizetési engedélyt|
 
-Ez a szabály megfelelő felhasználók kezelők jelentés, és a jóváhagyása felülvizsgálatok engedély és felhasználók, akik nem kezelők, és akiknél nincs telepítve a jóváhagyása felülvizsgálatok engedéllyel rendelkezik. Ezzel szemben a vezetők, akik nem rendelkeznek engedéllyel, és a felhasználók, akik nem kezelők, de a engedélye jelentésen nem megfelelőként.
+Alapértelmezés szerint minden olyan felhasználó, aki felettes, aki rendelkezik a módosítási és a kéréses fizetési engedéllyel, megfelelőként fog jelenteni. Azonban a szabályzat megköveteli, hogy a kezelőnek legyen engedélye, nem feltétlenül mindkettőre. A szabályzat tényleges megfelelőségének teszteléséhez a (vagy a szabályhoz tartozó) logikai operátort kell használnia annak megállapításához, hogy vannak-e olyan vezetők, akik nem rendelkeznek a fizetési engedély módosításával vagy a fizetési engedély jóváhagyásával.
 
-Ahogy korábban említettük, kombinálható szabályok egy szabálykészletben egyszerűbben kategorizálása és az üzleti szükségletek kielégítése céljából szabályok kezelése.
+A többi operátortól eltérően a **kizárólag** a és a **kizárólag az összes** operátor jelzi az olyan objektumok megfelelőségét, amelyeket egy részhalmaz szűrője egyébként kizár. Ha például egy olyan szabályzatot szeretne tesztelni, amelyet az összes kezelő (és csak a kezelők) jóváhagy, a következőképpen hozhat létre egy szabályt:
 
-Azt is megadhatja, globális készlete, amely szűri, ha engedélyezve van, bármilyen tesztelni kívánt szabály vonatkozik. Milyen gyakran szeretne kizárni egy adott részét rekordok különböző szabálykészletek szabályok tesztelésekor, ha a globális szűrők, amelyek engedélyezik, vagy tiltsa le, igény szerint is megadhat.
+|  |  |
+|--|--|
+|Név: | Jóváhagyási teszt áttekintése|
+|Elem | Felhasználók|
+| Részhalmaz szűrője: | Szerepkör-kezelő
+|Szabály szűrője: | Kizárólag engedélyekkel rendelkező engedélyek jóváhagyása|
+
+Ez a szabály olyan megfelelő felhasználókként fog jelentést készíteni, akik felettesek, és rendelkeznek a jóváhagyások jóváhagyása engedéllyel, valamint azokkal a felhasználókkal, akik nem a felettesek, és akik nem rendelkeznek jóváhagyás-felülvizsgálati engedéllyel Ezzel ellentétben azok a vezetők, akik nem rendelkeznek az engedéllyel és a nem kezelő felhasználókkal, de nem megfelelőnek minősülnek.
+
+Amint azt korábban említettük, a szabályokat egy szabályrendszert egyesítheti, így könnyebben kategorizálhatja és kezelheti az üzleti igényeknek megfelelő szabályokat.
+
+Megadhat olyan globális szűrőket is, amelyek engedélyezve vannak, és minden tesztelt szabályra érvényesek. Ha gyakran kell kizárnia a rekordok egy részhalmazát a különböző szabályrendszerek lévő szabályok tesztelésekor, megadhatja azokat a globális szűrőket, amelyeket igény szerint engedélyezhet vagy letilthat.
 
 ## <a name="reporting"></a>Jelentéskészítés
 
-A BHOLD Reporting modul teszi lehetővé a jelentések különböző szerepkör modellben információk megtekintéséhez. A BHOLD Reporting modul képletkategória olyan beépített jelentést biztosít, valamint tartalmaz egy varázslót, amely segítségével alapvető és speciális egyéni jelentéseket hozhat létre. A jelentés futtatásakor azonnal megjeleníti az eredményeket vagy a-eredményeket menteni egy Microsoft Excel (.xlsx) fájlban. Ez a fájl megtekintéséhez használja a Microsoft Excel 2000, a Microsoft Excel 2002-es vagy a Microsoft Excel 2003, töltse le és telepítse a Microsoft Office kompatibilitási csomagot a Word, Excel és PowerPoint-fájl formázza.
+Az BHOLD jelentéskészítő modul lehetővé teszi, hogy különböző jelentéseken keresztül megtekinthesse a szerepkör-modell információit. Az BHOLD jelentéskészítő modul a beépített jelentések széles körét biztosítja, valamint egy varázslót is tartalmaz, amely az alapszintű és a speciális egyéni jelentések létrehozásához használható. A jelentések futtatásakor azonnal megjelenítheti az eredményeket, vagy mentheti az eredményeket egy Microsoft Excel (. xlsx) fájlban. Ha a fájlt a Microsoft Excel 2000, a Microsoft Excel 2002 vagy a Microsoft Excel 2003 használatával szeretné megtekinteni, letöltheti és telepítheti a Word-, Excel-és PowerPoint-fájlformátumokhoz készült Microsoft Office kompatibilitási csomagot.
 
 
-Használatával a BHOLD Reporting modul többnyire aktuális szerepköradatok alapuló jelentések előállítása érdekében. Azonosító adatok módosításait naplózási jelentések létrehozását, a Forefront Identity Manager 2010 R2 jelentéskészítő képességgel rendelkezik a FIM szolgáltatás, amely implementálva van a System Center Service Manager adatraktár. A FIM reporting kapcsolatos további információkért lásd: a Forefront Identity Manager 2010 és a Forefront Identity Manager 2010 R2 dokumentáció a Forefront Identity Management technikai könyvtárban.
+A BHOLD jelentéskészítési modulja elsősorban olyan jelentések előállítására szolgál, amelyek az aktuális szerepkör adatain alapulnak. Az azonosító adatok változásainak naplózására szolgáló jelentések létrehozásához a Forefront Identity Manager 2010 R2 jelentéskészítési képességgel rendelkezik a System Center Service Manager adattárházban megvalósított FIM szolgáltatáshoz. A FIM jelentéskészítéssel kapcsolatos további információkért tekintse meg a Forefront Identity Manager 2010 és a Forefront Identity Manager 2010 R2 dokumentációját a Forefront Identity Management technikai könyvtárában.
 
-A beépített jelentések által kezelt kategóriák a következők:
+A beépített jelentések a következő kategóriákba tartoznak:
 
 - Administration
-- Állapotigazolás
-- vezérlők
-- Aktív hozzáférés-vezérlés
+- Igazolás
+- Vezérlők
+- Befelé Access Control
 - Naplózás
 - Modell
-- statisztika
+- Statisztikák
 - Munkafolyamat
 
-Jelentéseket hozhat létre, és hozzáadhatja őket a kategóriák, vagy megadhatja saját kategóriákkal, ahol egyéni és beépített jelentések helyezheti.
+Jelentéseket hozhat létre, és felveheti ezeket a kategóriákat, vagy megadhatja saját kategóriáit is, amelyekben egyéni és beépített jelentéseket helyezhet el.
 
-Jelentések létrehozása, a varázsló végigvezeti Önt a következő paraméterek megadása:
+A jelentés készítése során a varázsló végigvezeti a következő paraméterek megadásán:
 
-- Azonosító információkat, beleértve a nevét, leírását, kategória, használati, és a célközönség
-- A jelentésben megjeleníteni kívánt mező
-- Adja meg, hogy mely elemek szerepelnek a vizsgálandó lekérdezések
-- Sorrendje sorok rendezni kívánt
-- Bontsa a jelentést szakaszokra mezőket
-- Annak érdekében, hogy finomíthatja a jelentésben visszaadott elemek
+- Azonosítási adatok, beleértve a nevet, a leírást, a kategóriát, a használatot és a célközönséget
+- A jelentésben megjelenítendő mezők
+- Az elemezni kívánt elemeket megadó lekérdezések
+- A sorok rendezésének sorrendje
+- A jelentés csoportokba való tördeléséhez használt mezők
+- A jelentésben visszaadott elemek pontosítására szolgáló szűrők
 
-A varázsló minden fázisban megtekintheti a jelentést, amennyiben definiált, és mentheti, ha nem szeretne további paraméterek megadását. Is áthelyezheti vissza az előző lépést, amely korábban a varázslóban megadott paraméterek módosításához.
+A varázsló minden egyes szakaszában előzetesen megtekintheti a jelentést, és mentheti, ha nem kell további paramétereket megadnia. Visszatérhet az előző lépésekhez is, hogy megváltoztassa a varázslóban korábban megadott paramétereket.
 
-## <a name="access-management-connector"></a>Access Management-összekötő
+## <a name="access-management-connector"></a>Hozzáférés-kezelési összekötő
 
-A BHOLD Suite Access Management-összekötő modul BHOLD be az adatok kezdeti és a folyamatban lévő szinkronizálás támogatja. Az Access Management-összekötő működik a FIM szinkronizálási szolgáltatás többek között a BHOLD Core adatbázis, a MIM metaverzum, és a célként megadott alkalmazások és a identitástárolók adatok áthelyezéséhez.
+A BHOLD Suite hozzáférés-vezérlési összekötő modulja az adatok kezdeti és folyamatos szinkronizálását is támogatja a BHOLD-ben. A hozzáférés-kezelési összekötő a FIM synchronization Service segítségével helyezi át az adatátvitelt a BHOLD Core adatbázisba, a felügyeleti csomag metaverse-ba, valamint a cél alkalmazások és az identitások tárolói közé.
 
-A BHOLD korábbi verziói több MAs szabályozhatja a MIM és a köztes BHOLD-adatbázis tábláinak közötti adatáramlás szükséges. A BHOLD Suite SP1 az Access Management-összekötő lehetővé teszi, hogy felügyeleti ügynökök (MAs) meghatározhatja a mim szoftverben, amelyek közvetlenül a BHOLD és a MIM közötti adatátvitelt.
+A BHOLD korábbi verziói több MAs-t igényeltek az adatáramlás vezérléséhez a BHOLD és a köztes adatbázis-táblák között. A BHOLD Suite SP1-ben a hozzáférés-kezelési összekötő lehetővé teszi, hogy olyan felügyeleti ügynököket (MAs) határozzon meg, amelyek az adatátvitelt közvetlenül a BHOLD és a felügyeleti csomag között biztosítják.
 
-## <a name="mim-integration"></a>A MIM-integráció
+## <a name="mim-integration"></a>Webalkalmazás-integráció
 
-Egy fontos és hatékony funkció, a Forefront Identity Manager 2010 és a Forefront Identity Manager 2010 R2-ről, amely lehetővé teszi a végfelhasználók számára, hogy megtekintése és kezelése az identitás- és csoporttagság adataikat az önkiszolgáló portál. A MIM-integráció a MIM portál felügyeleti önkiszolgáló szerepkörrel rendelkező terjeszti ki. Például a MIM-portál a BHOLD-funkciók révén a felhasználó kérheti a szerepkör-hozzárendelés, és megtekintheti az aktív szerepkörök és a függőben lévő kérelmek. További funkciókat, például a kérés szerepkör-hozzárendelések más felhasználók, delegált rendszergazdák is megadható.
+A Forefront Identity Manager 2010 és a Forefront Identity Manager 2010 R2 fontos és hatékony funkciója az önkiszolgáló portál, amely lehetővé teszi a végfelhasználók számára az identitások és a tagsági információk megtekintését és kezelését. A Rendszerfelügyeleti webszolgáltatások integrációja kiterjeszti a webkiszolgálói szerepkör-kezelést. Például a BHOLD funkcióinak használatával a felhasználók igényelhetik a szerepkör-hozzárendelést, és megtekinthetik az aktív szerepköröket és a függőben lévő kéréseket. További funkciók is megadhatók a delegált rendszergazdák számára, például a szerepkör-hozzárendelések más felhasználók számára való kérelmezésének lehetősége.
 
-Vegye figyelembe, hogy a MIM-portálhoz a BHOLD-bővítmények támogatják-e a önkiszolgáló szerepkört és a munkafolyamat felügyeleti és jelentéskészítési. Más BHOLD felügyeleti funkciókat, valamint a tanúsítvány, a webes portálok a BHOLD-modulok, amelyre a MIM-portál a külön-külön üzemeltetett által biztosított.
+Fontos megjegyezni, hogy a BHOLD-bővítmények támogatják az önkiszolgáló szerepkört és a munkafolyamatok kezelését, valamint a jelentéskészítést. Az egyéb BHOLD-felügyeleti funkciókat, valamint az igazolásokat a BHOLD-modulok webes portálai biztosítják, amelyek a webhelyeken külön futnak a webszolgáltatások portálján.
 
 ## <a name="next-steps"></a>További lépések
 
-- [A BHOLD telepítési útmutató](bhold-installation-guide.md)
+- [BHOLD telepítési útmutató](bhold-installation-guide.md)
 - [BHOLD fejlesztői leírás](../reference/mim2016-bhold-developer-reference.md)
 - [A BHOLD korábbi verziói](../reference/version-bhold-history.md)

@@ -6,42 +6,42 @@ author: billmath
 ms.author: billmath
 manager: mtillman
 ms.date: 04/26/2018
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.prod: microsoft-identity-manager
 ms.assetid: c01487f2-3de6-4fc4-8c3a-7d62f7c2496c
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 5beee58388c12abbe8e3245ff610d3528b03786a
-ms.sourcegitcommit: f58926a9e681131596a25b66418af410a028ad2c
+ms.openlocfilehash: 46080360dd0ad6c3554e2d9b3418ac518b75a5cd
+ms.sourcegitcommit: 65e11fd639464ed383219ef61632decb69859065
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67690772"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68701384"
 ---
-# <a name="set-up-an-identity-management-server-sharepoint"></a>Identitáskezelési kiszolgáló beállítása: SharePoint
+# <a name="set-up-an-identity-management-server-sharepoint"></a>Identitáskezelés-felügyeleti kiszolgáló beállítása: SharePoint
 
 > [!div class="step-by-step"]
-> [«Az SQL Server 2016](prepare-server-sql2016.md)
+> [«SQL Server 2016](prepare-server-sql2016.md)
 > [Exchange Server»](prepare-server-exchange.md)
 > 
 > [!NOTE]
 > Ez az útmutató egy Contoso nevű fiktív vállalat neveit és értékeit használja szemléltetésként. Ezeket helyettesítse a saját neveivel és értékeivel. Példa:
-> - Tartományvezérlő neve – **corpdc-re**
+> - Tartományvezérlő neve – **corpdc**
 > - Tartománynév – **contoso**
-> - MIM szolgáltatás kiszolgálójának neve – **corpservice**
-> - MIM Sync-kiszolgáló neve – **corpsync**
-> - SQL Server name - **corpsql**
+> - **Corpservice** -kiszolgáló neve
+> - **Corpsync** -szinkronizálási kiszolgáló neve
+> - SQL Server neve – **corpsql**
 > - Jelszó – <strong>Pass@word1</strong>
 
 
-## <a name="install-sharepoint-2016"></a>Telepítés **SharePoint 2016-ot**
+## <a name="install-sharepoint-2016"></a>A **SharePoint 2016** telepítése
 
 > [!NOTE]
 > A telepítő előfeltételeinek letöltéséhez internetkapcsolat szükséges. Ha a számítógép olyan virtuális hálózaton található, amely nem biztosít internetkapcsolatot, akkor bővítse a számítógépet internetkapcsolatot biztosító hálózati illesztővel. Ez a telepítés befejezése után letiltható.
 
-Kövesse az alábbi lépéseket a SharePoint 2016 telepítéséhez. A telepítés befejezése után a kiszolgáló újraindul.
+A SharePoint 2016 telepítéséhez kövesse az alábbi lépéseket. A telepítés befejezése után a kiszolgáló újraindul.
 
-1.  Indítsa el a **PowerShell** tartományi fiókként a helyi rendszergazda a **corpservice** és **SysAdmin (rendszergazda)** az SQL database-kiszolgálót használjuk, hogy ki **contoso\ miminstall**.
+1.  Indítsa el a PowerShellt tartományi fiókként helyi rendszergazdaként a **corpservice** és a **sysadmin** on SQL Database-kiszolgálón. a **contoso\miminstall**-t fogjuk használni.
 
     -   Váltson arra a könyvtárra, amelybe a SharePointot kicsomagolta.
 
@@ -51,7 +51,7 @@ Kövesse az alábbi lépéseket a SharePoint 2016 telepítéséhez. A telepíté
         .\prerequisiteinstaller.exe
         ```
 
-2.  Miután **SharePoint** előfeltétel telepítve van, telepítse **SharePoint 2016** a következő parancs beírásával:
+2.  A **SharePoint** előfeltételeinek telepítését követően telepítse a **SharePoint 2016** alkalmazást a következő parancs beírásával:
 
     ```
     .\setup.exe
@@ -67,16 +67,16 @@ A SharePoint és a MIM együttműködésének konfigurálásához kövesse a **S
 
 1. A **Csatlakozás kiszolgálófarmhoz** lapon adja meg, hogy új kiszolgálófarmot szeretne kialakítani.
 
-2. Adja meg ezen a kiszolgálón, például adatbázis-kiszolgálóként **corpsql** a konfigurációs adatbázishoz, és *Contoso\SharePoint* SharePoint használandó adatbázis-hozzáférési fiókként.
+2. Ezt a kiszolgálót állítsa be az adatbázis-kiszolgálóként, például a konfigurációs adatbázis **corpsql** , a *Contoso\SharePoint* pedig a sharepointhoz készült adatbázis-hozzáférési fiókként.
 3. Hozza létre a farm biztonsági jelszavát.
 
-4. A konfigurációs varázsló az javasoljuk, hogy válassza [MinRole](/sharepoint/install/overview-of-minrole-server-roles-in-sharepoint-server) típusú **előtér**
+4. A konfigurációs varázslóban javasoljuk, hogy válassza ki az **előtér-** [MinRole](/sharepoint/install/overview-of-minrole-server-roles-in-sharepoint-server) típusát
 
-5. Ha a konfigurációs varázsló végrehajtotta mind a 10 10 konfigurációs lépést, kattintson a Befejezés gombra egy webes böngészőben nyílik meg...
+5. Amikor a konfigurációs varázsló befejezi a 10-es konfigurációs feladatot, kattintson a Befejezés gombra, és megnyílik egy webböngésző.
 
-6. Ha a rendszer kéri az Internet Explorer előugró ablak, hitelesítse magát *Contoso\miminstall* (vagy a megfelelő rendszergazdai fiók) a folytatáshoz.
+6. Ha a rendszer felszólítja az Internet Explorer előugró ablakára, akkor a folytatáshoz hitelesítse magát *Contoso\miminstall* (vagy a megfelelő rendszergazdai fiókkal).
 
-7. Kattintson a webes varázslóban (a webalkalmazáson) belül **Mégse/Skip**.
+7. A web Wizard (a webalkalmazáson belül) kattintson a **Mégse/kihagyás**gombra.
 
 
 ## <a name="prepare-sharepoint-to-host-the-mim-portal"></a>A SharePoint előkészítése a MIM-portál futtatására
@@ -84,7 +84,7 @@ A SharePoint és a MIM együttműködésének konfigurálásához kövesse a **S
 > [!NOTE]
 > Az SSL-t a rendszer nem konfigurálja előre. A portálhoz való hozzáférés engedélyezése előtt konfiguráljon SSL vagy azzal egyenértékű protokollt.
 
-1. Indítsa el a **SharePoint 2016 felügyeleti rendszerhéj** , és futtassa a következő PowerShell-parancsprogram létrehozása egy **SharePoint 2016 webes alkalmazás**.
+1. Indítsa el a **sharepoint 2016 felügyeleti rendszerhéját** , és futtassa a következő PowerShell-szkriptet egy **SharePoint 2016**-webalkalmazás létrehozásához.
 
     ```
     New-SPManagedAccount ##Will prompt for new account enter contoso\mimpool 
@@ -93,9 +93,9 @@ A SharePoint és a MIM együttműködésének konfigurálásához kövesse a **S
     ```
 
     > [!NOTE]
-    > Ekkor megjelenik egy figyelmeztető üzenet arról, hogy a rendszer klasszikus Windows-hitelesítést használ, és több percig is eltarthat, míg a záró parancs sikeresen lefut. Ha a parancs futása befejeződött, a kimenetben megjelenik az új portál URL-címe. Tartsa a **SharePoint 2016 felügyeleti rendszerhéj** ablakban nyissa meg a hivatkozás később.
+    > Ekkor megjelenik egy figyelmeztető üzenet arról, hogy a rendszer klasszikus Windows-hitelesítést használ, és több percig is eltarthat, míg a záró parancs sikeresen lefut. Ha a parancs futása befejeződött, a kimenetben megjelenik az új portál URL-címe. A **SharePoint 2016 felügyeleti rendszerhéj** ablakának megnyitásához nyissa meg a hivatkozást később.
 
-2. Indítsa el a SharePoint 2016 felügyeleti rendszerhéjat, és futtassa a következő PowerShell-parancsprogram létrehozása egy **SharePoint-webhelycsoport** készített webalkalmazáshoz tartozó.
+2. Indítsa el a SharePoint 2016 felügyeleti rendszerhéját, és futtassa a következő PowerShell-szkriptet egy, a webalkalmazáshoz társított **SharePoint-webhelycsoport** létrehozásához.
 
    ```
     $t = Get-SPWebTemplate -compatibilityLevel 15 -Identity "STS#1"
@@ -106,9 +106,9 @@ A SharePoint és a MIM együttműködésének konfigurálásához kövesse a **S
    ```
 
    > [!NOTE]
-   > Ellenőrizze, hogy eredményét a *CompatibilityLevel* változó értéke "15". Ha az eredmény nem a "15", majd a webhelycsoport nem jött létre a megfelelő felhasználói élményt verzió; Törölje és hozza létre újból.
+   > Ellenőrizze, hogy a *CompatibilityLevel* változó eredménye "15". Ha az eredmény eltér a "15" értéktől, akkor a webhelycsoport nem lett létrehozva a megfelelő verziójú felülettel; törölje a webhelycsoportot, és hozza létre újból.
 
-3. Tiltsa le **SharePoint kiszolgálóoldali Viewstate** és a SharePoint-feladat "Állapotelemzési feladat (óránként, a Microsoft SharePoint Foundation időzítő szolgáltatása, minden kiszolgáló)" futtassa a következő PowerShell-parancsokat a a  **A SharePoint 2016 felügyeleti rendszerhéj**:
+3. Tiltsa le a **SharePoint kiszolgálóoldali Viewstate** és az "Health Analysis Task (óránként, Microsoft SharePoint Foundation időzítő, minden kiszolgáló)" SharePoint-feladatot a következő PowerShell-parancsok futtatásával a **SharePoint 2016 felügyeleti rendszerhéjban**:
 
    ```
    $contentService = [Microsoft.SharePoint.Administration.SPWebService]::ContentService;
@@ -117,9 +117,9 @@ A SharePoint és a MIM együttműködésének konfigurálásához kövesse a **S
    Get-SPTimerJob hourly-all-sptimerservice-health-analysis-job | disable-SPTimerJob
    ```
 
-4. Az identitás-felügyeleti kiszolgálón nyisson meg egy új böngészőlapot, lépjen a http://mim.contoso.com/ , és jelentkezzen be *contoso\miminstall*.  Ekkor megjelenik egy üres SharePoint-webhely, *MIM Portal* néven.
+4. Nyisson meg egy új webböngésző lapot http://mim.contoso.com/ az Identity Management-kiszolgálón, és jelentkezzen be *contoso\miminstall*néven.  Ekkor megjelenik egy üres SharePoint-webhely, *MIM Portal* néven.
 
-    ![A MIM-portál http://mim.contoso.com/ kép](media/prepare-server-sharepoint/MIM_DeploySP1new.png)
+    ![A webalkalmazási portál a http://mim.contoso.com/ rendszerképen](media/prepare-server-sharepoint/MIM_DeploySP1new.png)
 
 5. Másolja az URL-t, majd az Internet Explorerben nyissa meg az **Internetbeállításokat**, lépjen a **Biztonság** lapra, válassza a **Helyi intranet** zónát, majd kattintson a **Helyek** gombra.
 
@@ -130,5 +130,5 @@ A SharePoint és a MIM együttműködésének konfigurálásához kövesse a **S
 7. Indítsa el a **Felügyeleti eszközöket**, kattintson a **Szolgáltatások** elemre, keresse meg a SharePoint-felügyeleti szolgáltatást, és ha még nem fut, indítsa el.
 
 > [!div class="step-by-step"]  
-> [«Az SQL Server 2016](prepare-server-sql2016.md)
+> [«SQL Server 2016](prepare-server-sql2016.md)
 > [Exchange Server»](prepare-server-exchange.md)

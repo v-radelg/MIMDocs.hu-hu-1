@@ -1,183 +1,183 @@
 ---
-title: A Microsoft Identity Manager adatkezeléssel |} A Microsoft Docs
-description: Megismerheti a Microsoft Identity Manager adatkezelési felismerést és a jelentés a környezeti adatok, a művelet végrehajtása a megadott system üzemeltetési funkciókat és követelmény alapján.
+title: Az adatkezelés Microsoft Identity Manager | Microsoft Docs
+description: Ismerje meg Microsoft Identity Manager az adatkezelést, hogy indentify és jelentsen a környezetre vonatkozó adatokról, az adott rendszeren az operatív funkciók és a követelmények alapján végezze el a műveleteket.
 keywords: ''
 author: billmath
 ms.author: billmath
 manager: mtillman
 ms.date: 12/02/2018
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.prod: microsoft-identity-manager
 ms.assetid: b0b39631-66df-4c5f-80c9-a1774346f816
 ms.suite: ems
-ms.openlocfilehash: f75eb69360852c9f629b60d4900638c8b51e068a
-ms.sourcegitcommit: 9e420840815adb133ac014a8694de9af4d307815
+ms.openlocfilehash: 6f861c5b1984de70a91edcac89276402f289e355
+ms.sourcegitcommit: 65e11fd639464ed383219ef61632decb69859065
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "52825790"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68701483"
 ---
-# <a name="microsoft-identity-manager-data-handling"></a>A Microsoft Identity Manager-adatok kezelése 
+# <a name="microsoft-identity-manager-data-handling"></a>Az adatkezelés Microsoft Identity Manager 
 
-Ez a cikk útmutatást nyújtanak a hogyan szervezetek döntéseket hozhat, amely több csatlakoztatott adatforrások között is alkalmazható.  Ez lehet elérni, a keresés, törlés, frissítés és a jelentés az operations.  Mielőtt eldönti, frissítése és törlése a megközelítést, a jelenlegi kialakítás és az identity manager rendszer (MIM) konfigurációjának megértését, kritikus fontosságú. 
+Ez a cikk útmutatást nyújt arról, hogy a szervezetek hogyan hozhatnak döntéseket, amelyek számos összekapcsolt adatforrásra alkalmazhatók.  Ez a keresési, törlési, frissítési és jelentési műveleteken keresztül érhető el.  Mielőtt döntene a törlésről vagy a frissítésről, fontos, hogy megértse az Identity Manager-rendszer aktuális kialakítását és konfigurációját. 
 
-Az alábbiakban néhány forgatókönyv-ügyfeleknek kell gondolja át, és a következő kérdések megválaszolásával: 
+Az alábbiakban néhány forgatókönyv szerint az ügyfeleknek meg kell fontolniuk és meg kell válaszolniuk a következő kérdéseket: 
 
-- Milyen adatokat kell, identity Management az üzleti folyamat segítségével?
-- Hol aktuális adatokat fog tárolni a MIM-ben?
-- Hogyan fogja használják ezeket az adatokat a rendszer?
-- Osztanak-e bármilyen külső partnerekkel adatok sources(Exporting) ezeket az adatokat
-- Mi az a mérvadó forrás, az adatok és a feldolgozásuk korlátozását?
-- Mi lesz az adatok megőrzésére és az adatok törlésének terv?
-- Azonosított kell feldolgozni és adatkezelés minden technológiát?
+- Milyen adatokra van szüksége a személyazonosság kezeléséhez az üzleti folyamatok segítése érdekében?
+- Hol lesznek a jelenleg tárolt adattárolók?
+- Hogyan fogja használni ezeket az adatfájlokat a rendszeren?
+- Ezeket az adatforrásokat a külső partnerek adatforrásaival (exportálással) osztja meg.
+- Mi az az adatforrások mérvadó forrása és a feldolgozásuk?
+- Mi lesz az adatmegőrzési és adattörlési terv?
+- Azonosította az összes olyan technológiát, amelyre szüksége van az adatfeldolgozáshoz és az adatkezeléshez?
 
-Segítségével megismerheti az aktuális MIM-környezet a MIM-környezet dokumentálása, vagy megvalósítási terv dokumentumaira késlelteti a következő eszközt használhat.
-- [MIM dokumentáló – lehetővé teszi, hogy a jelenlegi konfiguráció exportálása](https://github.com/Microsoft/MIMConfigDocumenter)
+Az aktuális webszolgáltatási környezet megismerése érdekében a következő eszköz használatával dokumentálhatja a webalkalmazási környezetét, vagy elhalaszthatja a megvalósítási terv dokumentumait.
+- [Webkiszolgáló-dokumentáló – lehetővé teszi az aktuális konfiguráció exportálását](https://github.com/Microsoft/MIMConfigDocumenter)
 
-## <a name="searching-for-and-identifying-personal-data"></a>Keresse meg, majd a személyes adatok azonosítása
-A MIM adatok keresése a konfigurációs és beállítási függ lesz. A legtöbb környezetben vannak összekapcsolva, de az átláthatóság érdekében azt érvénytelenítése őket magas szintű összetevő.
+## <a name="searching-for-and-identifying-personal-data"></a>Személyes adatkeresés és-azonosítás
+A munkaterületen belüli keresés a konfigurációtól és a beállítástól függ. A legtöbb környezet összekapcsolódik, de az érthetőség érdekében magas szintű összetevővel szakítottuk ki őket.
 
 ### <a name="synchronization-service"></a>Synchronization Service
 
-Minden adat, amely kapcsolódik a felhasználók a MIM az Active Directory (AD) és a HR-adatforrások származik. Személyes adatok keresése, érdemes lehet a Keresés az első hely AD vagy csatlakoztatott adatforrások. 
+A rendszer a felhasználókhoz kapcsolódó összes olyan adatforrást Active Directory (AD) és HR-adatforrásokból származtatja. Személyes adatkereséskor érdemes megfontolni az AD vagy a csatlakoztatott adatforrások keresését. 
 
-Ha nem biztos a mérvadó forrás lehet nyomon követheti ezt a felhasználót a MIM Synchronization Service Manager konzol, kattintson a Keresés a Metaverzumban sávon az azonosítható az adatbázisban tárolt személyes adatok megtekintéséhez. Felhasználók egy adott felhasználó vagy az attribútum kereshet.
+Ha nem biztos abban, hogy a szolgáltatói forrás nyomon követheti ezt a felhasználót a Synchronization Service Manager-konzolon, kattintson a metaverse keresési sávjára az adatbázisban tárolt azonosítható személyes adatok megtekintéséhez. A felhasználók egy adott felhasználót vagy attribútumot kereshetnek.
 
-- Tekintse át vagy a felhasználói objektumok adatok keresése
-    - Nyissa meg a szinkronizálási szolgáltatás ügyfele
-        - Használatával a metaverzumba designer lehetővé teszik, megtekintheti az attribútum a folyamat importálja a és a fontossági sorrend.
-![a mim-adatvédelem-compliance_1.PNG](media/mim-privacy-compliance/mim-privacy-compliance_1.PNG)
-        - A Keresés a metaverzumban használata lehetővé teszi bármely olyan objektum, és az adatbázison belül attribútum keresésére ![mim-adatvédelem-compliance_2.PNG](media/mim-privacy-compliance/mim-privacy-compliance_2.PNG)
+- Felhasználói objektumok adatai felülvizsgálatának vagy keresésének elvégzése
+    - A szinkronizálási szolgáltatás ügyfelének megnyitása
+        - A metaverse Designer használatával megtekintheti az attribútumok folyamatának importálását és elsőbbségét.
+![MIM-Privacy-compliance_1. PNG](media/mim-privacy-compliance/mim-privacy-compliance_1.PNG)
+        - A metaverse Search használatával bármely objektumra és attribútumra rákereshet a MIM-Privacy-compliance_2. png ![adatbázison belül.](media/mim-privacy-compliance/mim-privacy-compliance_2.PNG)
  
-Miután megtalálta az objektum, az objektum kattint nyílik meg a felhasználói profil oldalához. Az objektum részletei, és a teljes körű részleteit, az attribútumokat, az utolsó módosítás és felügyeleti ügynök konfigurációja az alábbi példa származó mérvadó forrás és a kapcsolódó csatlakoztatott adatforráshoz adja meg.
+Az objektum megkeresése után az objektumra kattintva megnyílik a felhasználói profil oldal. Az objektum részletes adatai az objektumra, annak attribútumaira, utolsó módosítására és forrására, valamint a kapcsolódó csatlakoztatott adatforrásokra vonatkozó részletes információkat tartalmazzák az alábbi felügyeleti ügynök konfigurációs példából származtatva.
 
-![a mim-adatvédelem-megfelelőségi. PNG](media/mim-privacy-compliance/mim-privacy-compliance.PNG)
+![webszolgáltatások – adatvédelem – megfelelőség. PNG](media/mim-privacy-compliance/mim-privacy-compliance.PNG)
 
-### <a name="service-and-portal--pam"></a>Szolgáltatás és portál / PAM
-Ha egy példányát a szolgáltatás és portál vagy a PAM telepítése folyamatban lehet keresni a felhasználók fontos. 
+### <a name="service-and-portal--pam"></a>Szolgáltatás és portál/PAM
+Ha a szolgáltatás egy példánya, a portál vagy a PAM telepítve van, akkor fontos, hogy a felhasználók keressenek rá. 
 
-Ha telepítette a portálon, a felhasználói felület segítségével bármely attribútum vagy a lekérdezés egy adott felhasználó keresése.
+Ha telepítette a portált, a felhasználói felületen keresheti meg az adott felhasználóhoz tartozó összes attribútumot vagy lekérdezést.
 
-Ha csak akkor a szolgáltatás kiszolgáló (nélkül a portál felhasználói Felületét) telepítve van egy keresési szintaxist a [FIMAutomation PSSnapin] alapján is futtathatja, a példában található [Itt](https://social.technet.microsoft.com/wiki/contents/articles/22713.fim-portals-use-powershell-to-find-all-users-without-a-manager.aspx).
+Ha csak a szolgáltatási kiszolgáló (a portál felhasználói felületének használata nélkül) van telepítve, futtathat egy keresési szintaxist a [FIMAutomation PSSnapin parancsmaggal] alapján, amely például [itt](https://social.technet.microsoft.com/wiki/contents/articles/22713.fim-portals-use-powershell-to-find-all-users-without-a-manager.aspx)található.
 
-A PAM használhatja a fenti ugyanazt a szintaxist, vagy használhatja a [MIMPAM modul](https://docs.microsoft.com/powershell/module/mimpam/get-pamuser?view=idm-ps-2016sp1) kifejezetten a get-PAM-felhasználó parancsmag és keresse meg a felhasználót a PAM-környezetben.
+A PAM használhatja ugyanazt a szintaxist, vagy használhatja a [MIMPAM modult](https://docs.microsoft.com/powershell/module/mimpam/get-pamuser?view=idm-ps-2016sp1) , amely kifejezetten a Get-pamuser parancsmaggal keresi a felhasználót a PAM-környezeten belül.
 
-A szolgáltatás és -portál van más jelentéskészítési lehetőségek a rendelkezésre álló adatok kereséséhez.
-- [A hibrid jelentéskészítés?](https://docs.microsoft.com/microsoft-identity-manager/identity-manager-hybrid-reporting-azure)
-- [SCSM-jelentéskészítés](https://docs.microsoft.com/previous-versions/mim/jj133853%28v%3dws.10%29)
+Az elérhető adatkeresésre vonatkozó egyéb jelentési lehetőségek a szolgáltatásban és a portálon találhatók.
+- [Hibrid jelentéskészítés](https://docs.microsoft.com/microsoft-identity-manager/identity-manager-hybrid-reporting-azure)
+- [Jelentéskészítés a SCSM](https://docs.microsoft.com/previous-versions/mim/jj133853%28v%3dws.10%29)
 
 ### <a name="bhold"></a>BHOLD
-A Bhold Core szolgáltatás egy felhasználói felület, amely lehetővé teszi, hogy a keresés egy felhasználó vagy attribútumok rendelkezik. 
+A bhold Core szolgáltatás olyan felhasználói FELÜLETtel rendelkezik, amely lehetővé teszi a felhasználók vagy attribútumok keresését. 
 
-![a bhold-keresés](media/mim-privacy-compliance/mim-privacy-compliance-bhold.PNG)
+![bhold keresés](media/mim-privacy-compliance/mim-privacy-compliance-bhold.PNG)
 
-Ha a BHOLD szinkronizál [elérésére a management-összekötő](https://docs.microsoft.com/microsoft-identity-manager/bhold/bhold-access-management-connector-install) szinkronizálási szolgáltatás a BHOLD core küld a csatlakoztatott felhasználói objektumok és attribútumok látni fogja.
+Ha szinkronizálási szolgáltatáshoz a [hozzáférés-kezelési összekötővel](https://docs.microsoft.com/microsoft-identity-manager/bhold/bhold-access-management-connector-install) szinkronizálja a BHOLD, láthatja a csatlakoztatott felhasználói objektumokat és a BHOLD Core-ra küldött attribútumokat.
 
-A BHOLD Reporting modul is betöltheti.
+Emellett betöltheti a BHOLD jelentési modulját is.
 
-- [A BHOLD Reporting](https://docs.microsoft.com/microsoft-identity-manager/bhold/bhold-concepts-guide#reporting)
+- [BHOLD-jelentéskészítés](https://docs.microsoft.com/microsoft-identity-manager/bhold/bhold-concepts-guide#reporting)
 
 ### <a name="certificate-management"></a>Tanúsítványkezelés
-Tanúsítvány-felügyeleti szolgáltatás keresés a felhasználói felület be van építve. A rendszergazda elindul, és válassza ki a "felhasználói és a nézet vagy azok adatainak kezelése"  
+A Tanúsítványkezelő szolgáltatás keresése be van építve a felhasználói felületen. A rendszergazda elindítja és kiválasztja a "felhasználó megkeresése és megtekintése vagy kezelése" lehetőséget.  
 
-![cm-keresés](media/mim-privacy-compliance/mim-privacy-compliance-cm.PNG)
+![cm keresés](media/mim-privacy-compliance/mim-privacy-compliance-cm.PNG)
 
 ## <a name="exporting-personal-data"></a>Személyes adatok exportálása
-Az MIM-ben entitásokkal kapcsolatos adatok több forrásból származnak, mert a szinkronizálási szolgáltatás adatbázisban tárolt legtöbb adatot. Ebből kifolyólag a MIM Sync objektum kapcsolatos adatokat kell exportálnia, vagy megadhatja, hogy ezek az adatok tulajdonosa.
+Mivel a következő helyen található entitásokhoz kapcsolódó adatok több forrásból származnak, a legtöbb adat tárolása a szinkronizációs szolgáltatás adatbázisában történik. Emiatt exportálnia kell az objektumokkal kapcsolatos adatait a felhasználói adatok szinkronizálása szolgáltatásból, vagy megadhatja az adatok tulajdonosát.
 
 ### <a name="synchronization-service"></a>Synchronization Service
-Szinkronizálási szolgáltatások esetén az adatok exportálása egyszerűen válassza ki az adatokat a keresési felhasználói felület és a példányt, és illessze be a fürt megosztott kötetei szolgáltatás vagy az előnyben részesített formátumban. Exportálja az adatokat egy másik módja, ha egy fájl alapú MA szükséges a lényeges megjelölt felhasználókkal kapcsolatos jelenlegi adatokat. Egy fájl alapú MA a példában található [Itt](https://blogs.msdn.microsoft.com/connector_space/2016/11/17/management-agent-configuration-part-4-delimited-text-file-management-agent/).
+Az adatok exportálására szolgáló szinkronizációs szolgáltatások egyszerűen kiválaszthatják a keresési felület adatait, és a másolást és beillesztést a CSV vagy az előnyben részesített formátumba. Ezen információk exportálásának másik módja, ha egy fájl-alapú MA-t hoz létre, hogy eldobja a megjelölt felhasználóhoz szükséges aktuális adatmennyiséget. [Itt](https://blogs.msdn.microsoft.com/connector_space/2016/11/17/management-agent-configuration-part-4-delimited-text-file-management-agent/)található egy példában, amely a fájl alapú ma-t használja.
 
 
-### <a name="service-and-portal--pam"></a>Szolgáltatás és portál / PAM
-Szolgáltatás és portál exportálhatja az adatokat, futtassa a [FIMAutomation PSSnapin] alapján keresési szintaxist PAM együtt, a példában található [Itt](https://social.technet.microsoft.com/wiki/contents/articles/22713.fim-portals-use-powershell-to-find-all-users-without-a-manager.aspx) és átadhatja azt [csv](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/export-csv?view=powershell-6).
+### <a name="service-and-portal--pam"></a>Szolgáltatás és portál/PAM
+A szolgáltatás és a portál a PAM-val együtt exportálhatja ezeket az adatkeresési szintaxist a [FIMAutomation PSSnapin parancsmaggal] alapján, példaként [itt](https://social.technet.microsoft.com/wiki/contents/articles/22713.fim-portals-use-powershell-to-find-all-users-without-a-manager.aspx) található, és áthelyezheti a [CSV](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/export-csv?view=powershell-6)-be.
 
-A PAM használhatja a fenti ugyanazt a szintaxist, vagy használhatja a [MIMPAM modul](https://docs.microsoft.com/powershell/module/mimpam/get-pamuser?view=idm-ps-2016sp1) kifejezetten a get-PAM-felhasználó keresse meg a felhasználót a PAM-környezetben, és átadhatja azt egy CSV kötethez.
+A PAM használhatja ugyanazt a szintaxist, vagy használhatja a [MIMPAM modult](https://docs.microsoft.com/powershell/module/mimpam/get-pamuser?view=idm-ps-2016sp1) , amely kifejezetten a Get-pamuser segítségével keresi a felhasználót a PAM-környezetben, és áthelyezi azt egy CSV-fájlba.
 
-- [Példa a PowerShell használatával a MIM szolgáltatás lekérdezése](https://gallery.technet.microsoft.com/Querying-The-FIMMIM-dcb82de3)
+- [Példa a fakiszolgálói szolgáltatás a PowerShell használatával történő lekérdezésére](https://gallery.technet.microsoft.com/Querying-The-FIMMIM-dcb82de3)
 
 ### <a name="bhold"></a>BHOLD
-A Bhold-adatok használata a bhold reporting modul az előnyben részesített formátumban exportálhatók.
+A bhold-adatait a bhold jelentéskészítő modul használatával exportálhatja az előnyben részesített formátumba.
 
 ### <a name="certificate-management"></a>Tanúsítványkezelés
-Személyes adatokkal kapcsolatos felügyeleti tanúsítványadatokat az active directory csatlakozik. A rendszergazda exportálhatja ezeket az adatokat az Active Directory powershell-lel.
+A személyes adathoz kapcsolódó tanúsítványkezelői adat kapcsolódik az Active Directoryhoz. A rendszergazdák Active Directory PowerShell használatával is exportálhatunk ezeket az adatfájlokat.
 
 ## <a name="updating-personal-data"></a>Személyes adatok frissítése
 
-Felhasználók és a MIM-megoldások objektumokról személyes adatokat általában származik a felhasználói objektum a szervezet csatlakoztatott adatforrások. Mivel a végrehajtott módosítások a felhasználói profilhoz a HR-forrás, vagy egy másik mérvadó rendszerben, például az AD majd a MIM Synchronization Service is megjelennek.
+A felhasználókra és az objektumokra vonatkozó személyes adatok általában a szervezet csatlakoztatott adatforrásaiban lévő felhasználó objektumból származnak. Mivel a HR-forrás felhasználói profiljában vagy más mérvadó rekordban, például az AD-ben végrehajtott módosítások megjelennek a webkiszolgáló-szinkronizálási szolgáltatásban.
 
 ### <a name="synchronization-service"></a>Synchronization Service
 
-Kezelési műveletek végrehajtásához a rendszergazdák a szinkronizálási műveletek vagy a rendszergazda meghatározott részét kell [Itt](https://docs.microsoft.com/previous-versions/mim/jj590183(v%3dws.10)).
+A felügyeleti műveletek végrehajtásához a rendszergazdáknak az [itt](https://docs.microsoft.com/previous-versions/mim/jj590183(v%3dws.10))megadott szinkronizálási műveletek vagy adminisztrátorok részének kell lenniük.
 
-Adatok frissítését végzi el a forrás-hitelesítésszolgáltató szabályok definiálása. Felügyeleti konzol segítségével azonosítsa a forrást, így a forrásnál frissíteni. Egy másik lehetőség, hozzon létre a szinkronizálási szabály vagy a szabály által szabályozhatja az adatok frissítése Ha forrásokhoz, például a HR-adatok továbbra is kell maradnia. Ezek a beállítások avialible támogatott.
+Az adatok frissítése a szolgáltatótól származó szabályok meghatározásával történik. A felügyeleti konzol segít azonosítani a szolgáltató forrását, hogy frissítse azt a forrásnál. Egy másik lehetőség a szinkronizálási szabály vagy a szabály kiterjedésének szabályozása az Adatfrissítés vezérléséhez, ha a HR-adatforrást továbbra is meg kell őrizni. Ezek a avialible által támogatott beállítások.
 
-Attribútum frissítése különböző módjairól további információkért lásd az alábbi. 
+További információ az attribútumok frissítésének különböző módjairól: alább. 
 
-- [Szabályok bővítményekkel](https://msdn.microsoft.com/library/windows/desktop/ms698810(v=vs.100).aspx)
+- [Szabályok bővítmények használata](https://msdn.microsoft.com/library/windows/desktop/ms698810(v=vs.100).aspx)
 - [A külső rendszerekkel való adatszinkronizálás ismertetése](https://docs.microsoft.com/previous-versions/mim/jj133850(v%3dws.10))
 
-### <a name="service-and-portal--pam"></a>Szolgáltatás és portál / PAM
+### <a name="service-and-portal--pam"></a>Szolgáltatás és portál/PAM
 
-Szolgáltatás és -portál a PAM-adatait tartalmazzák a FIMAutomation vagy a PAM-parancsmagok használatával lehet frissíteni. Ha a portálon, közvetlenül is frissítheti a kereséssel és módosítani az objektumot. Egy dolog, vegye figyelembe, és egyszerűen frissítésével a portálról konfigurációjától függően nem jelenti azt, megmarad. Mivel a mérvadó forrás nagymértékben függ a teljes konfigurációs.
+A PAM-adatbázisokat tartalmazó szolgáltatás és portál a FIMAutomation vagy a PAM-parancsmagok használatával frissíthető. Ha a portálon van, közvetlenül is frissítheti az objektum keresésével és módosításával. Az egyik lehetőség, hogy a konfigurációtól függően egyszerűen csak a portálról frissít, nem azt jelenti, hogy továbbra is megmarad. A szolgáltató forrása nagymértékben függ a teljes konfigurációtól.
 
 ### <a name="bhold"></a>BHOLD
 
-Felhasználók közvetlenül lehet frissíteni a BHOLD Core felhasználói felület vagy az access management-összekötő.
+A felhasználók közvetlenül frissíthetők a BHOLD Core felhasználói felülettel vagy a hozzáférés-kezelési összekötővel.
 
 ### <a name="certificate-management"></a>Tanúsítványkezelés
 
-A felügyeleti szolgáltatás a felhasználók olyan tükre az active Directoryból. Használja az objektum adatainak módosítása az Active Directory frissítéséhez.
+A Tanúsítványkezelő szolgáltatásban a felhasználók az Active Directoryból is tükröződnek. Ha frissíteni szeretné a használati Active Directory az objektum adatainak módosításához.
 
 ## <a name="deleting-personal-data"></a>Személyes adatok törléséről
 
 >[!Note] 
-> Ez a cikk útmutatást nyújt a személyes adatok törlése a Microsoft Identity Managerből módjai, és támogatja a GDPR szerint Ön nem használható. A GDPR-ral kapcsolatos általános információt a [Service Trust Portal GDPR szakaszában](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted) talál.
+> Ez a cikk útmutatást nyújt a személyes adatok Microsoft Identity Managerból való törlésének módjairól, és felhasználható a GDPR tartozó kötelezettségek támogatásához is. A GDPR-ral kapcsolatos általános információt a [Service Trust Portal GDPR szakaszában](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted) talál.
 
-A MIM-ben adatok szinkronizálva és mindig a csatlakoztatott adatforrás frissítve lett. Ha egy objektumot törölnek a célhelyen, az objektum adatainak a MIM-ben lehessen őrizni az biztonsági vizsgálat céljából. Objektumtörlés egy csatlakoztatott data source szabályok vagy szabály extension(code) és/vagy objektumtörlési szabályok van konfigurálva.
+A többhelyes adatok szinkronizálva vannak, és mindig frissülnek a csatlakoztatott adatforrásból. Ha egy objektumot törölnek a célhelyen, a rendszer a biztonsági vizsgálat céljára megtarthatja az objektum adatait a munkaterületen. Az objektum törlése csatlakoztatott adatforrás-szabályok vagy szabály-kiterjesztési (kód) és/vagy objektum-törlési szabályok szerint van konfigurálva.
 
 ### <a name="synchronization-service"></a>Synchronization Service
-Szinkronizálási szolgáltatás az adatok kezeléséhez, vagy töröljön adatokat, attól függően, üzleti folyamatok, számos módon. Hogy jobban elképzelhesse, az alábbiakban néhány cikkeket, amelyek segítségével, törlése és frissítése az attribútumok lehetőségek ismertetése: 
+A szinkronizációs szolgáltatás az adatkezelés számos módja, vagy az üzleti folyamatoktól függően az adattörlés. Az alábbiakban néhány cikk segítséget nyújt az attribútumok törlésével és frissítésével kapcsolatos lehetőségek megismeréséhez: 
 
 - [A megszüntetés ismertetése](https://social.technet.microsoft.com/wiki/contents/articles/1270.understanding-deprovisioning-in-fim.aspx)
-- [Szabályok bővítményekkel](https://msdn.microsoft.com/library/windows/desktop/ms698810(v=vs.100).aspx)
-- [A MIM-ajánlott eljárások](https://docs.microsoft.com/microsoft-identity-manager/mim-best-practices)
+- [Szabályok bővítmények használata](https://msdn.microsoft.com/library/windows/desktop/ms698810(v=vs.100).aspx)
+- [Gyakorlati tanácsok](https://docs.microsoft.com/microsoft-identity-manager/mim-best-practices)
 
-### <a name="service-and-portal--pam"></a>Szolgáltatás és portál / PAM
+### <a name="service-and-portal--pam"></a>Szolgáltatás és portál/PAM
 
-A szolgáltatás és portál, hogy őrizze meg az alapértelmezett 30 napig system resource megőrzésének konfigurálása ajánlott. Ez tájékoztatja a szolgáltatást, ha törli, nem csak a kérelem adatai, de az is, amelyet a rendszer törölni kell minden olyan objektum. A folyamat akkor fordul elő, ha ehhez az objektumhoz társított minden adatot az törlődni fog ez az összes SSPR regisztrációs adatait tartalmazza. Ez az objektum törlése a fenti konfigurációs be játszik le. Van egy olyan táblát is tároljuk az objektumok GUID azonosítóját. A build 4.4.1459 hozzáadtunk egy FIM_DeleteExpiredSystemObjectsJob részletek nevű ezt a folyamatot a folyamat tekintheti meg a tábla teljes méretének csökkentése érdekében [Itt](https://support.microsoft.com/en-us/help/4012498/hotfix-rollup-package-build-4-4-1459-0-is-available-for-microsoft-iden).
+Javasoljuk, hogy a Service &-portálon tartsa meg az alapértelmezett 30 nap rendszererőforrás-megőrzési konfigurációt. Ez azt jelzi, hogy a szolgáltatás Mikor törlődik, nem csak az adatok kérelmezését, hanem minden olyan objektumot, amelyet törölni kell a rendszerből. A folyamat elvégzése után a rendszer törli az objektumhoz csatolt összes adatkapcsolatot, amely tartalmazza az összes SSPR regisztrációs adattal. Ez a művelet az objektum törlési konfigurációját játssza le. Az objektumok GUID azonosítóját egyetlen táblázat tárolja. Ha csökkenteni szeretné a tábla teljes méretét a Build 4.4.1459, akkor a folyamathoz hozzáadott egy FIM_DeleteExpiredSystemObjectsJob nevű folyamatot, amely [itt](https://support.microsoft.com/en-us/help/4012498/hotfix-rollup-package-build-4-4-1459-0-is-available-for-microsoft-iden)található.
 
-![a mim-adatvédelem – megfelelőség – srrc. PNG](media/mim-privacy-compliance/mim-privacy-compliance-srrc.PNG)
+![srrc – adatvédelem – megfelelőség – adatvédelmi nyilatkozat. PNG](media/mim-privacy-compliance/mim-privacy-compliance-srrc.PNG)
 
 
 ### <a name="bhold"></a>BHOLD
 
-Bhold, például a legtöbb rendszer csatlakozik a szinkronizálási szolgáltatás beállítható úgy, hogy egyszer az adatforrás-objektum törlése, például a HR törlődik. Ez a felügyeleti ügynök van konfigurálva. és a Objektumtörlés szabályok leírtaknak megfelelően a szinkronizálást szolgáltatásai által szabályozható.
+A szinkronizálási szolgáltatáshoz kapcsolódó legtöbb rendszer bhold úgy is konfigurálható, hogy a forrás objektum, például a HR eltávolítása után törölje a törlést. Ez a felügyeleti ügynökön van konfigurálva. és az objektum-törlési szabályok vezérlik a szinkronizálási szolgáltatás funkciói című témakörben leírtak szerint.
 
-Egy másik lehetőség, hogy távolítsa el a user objektum közvetlenül a BHOLD Core felhasználói felületen. Telepítő függően ez sikerült jól működnek, azonban vegye figyelembe a logikai kiépítés sikerült újra létrehozni a felhasználó, ha nem törölte a forráson.
-![a mim-adatvédelem – megfelelőség – bholdr. PNG](media/mim-privacy-compliance/mim-privacy-compliance-bholdr.PNG)
+Egy másik lehetőség, hogy a felhasználói objektumot közvetlenül a BHOLD Core felhasználói felületről távolítsa el. A telepítéstől függően ez megfelelően működhet, de vegye figyelembe, hogy a kiépítési logika újból létrehozhatja ezt a felhasználót, ha nem törölte a forrást.
+![bholdr – adatvédelem – megfelelőség – adatvédelmi nyilatkozat. PNG](media/mim-privacy-compliance/mim-privacy-compliance-bholdr.PNG)
 
 
 ### <a name="certificate-management"></a>Tanúsítványkezelés
-Felhasználó eltávolítása a CM, a felhasználó törlése az active directory szerepel.
+Ha törölni szeretne egy felhasználót a CM-ből, törölje a felhasználót az Active Directoryban.
 
-A tanúsítványkezelés, mert csak a profil uid a tanúsítványszolgáltatás a tartomány sAMAccountName tárolja. Miután a felhasználó AD a felhasználói gyorsítótár nem csak a tanúsítványok jelen regisztrálnak váltás törlődik. Nem ajánlott törlése semmit az adatbázisban, mivel ez a művelet a környezet általános kárt okozhat.
+A Tanúsítványkezelő, mert csak a tanúsítványszolgáltatásokból származó profilt fogja tárolni a sAMAccountName. Miután a felhasználó törölve lett az AD-ből, a felhasználó gyorsítótára csak a tanúsítványokhoz van regisztrálva. Az adatbázisban nem ajánlott törölni semmit, mivel ez a környezet működésének általános károsodását okozhatja.
 
-## <a name="opt-out-of-telemetry"></a>Az elutasítás telemetria
-FIM vagy MIM használt előző buildek minden egyes üzembe helyezéssel kapcsolatos anonimizált telemetriai adatokat gyűjt, és HTTPS-kapcsolaton keresztül továbbítja ezeket az adatokat a Microsoft-kiszolgálók. Ezeket az adatokat a Microsoft által használt segítheti a FIM vagy MIM későbbi verzióiban az elmúlt.
+## <a name="opt-out-of-telemetry"></a>Telemetria
+A korábbi buildek az egyes központi telepítésekhez tartozó névtelen telemetria gyűjtésére használt FIM/a rendszerkiszolgálói adatok, és HTTPS-kapcsolaton keresztül továbbítják a Microsoft-kiszolgálókra. Ezeket az adatmennyiségeket a Microsoft használta fel a FIM/a Windows későbbi verzióinak fejlesztéséhez a múltban.
 
 >[!Note] 
-> A későbbi 4.5.x.x vagy nagyobb, adatok gyűjtése letiltásra kerül.
+> A 4.5. x. x vagy újabb verziókban a későbbi kiadásokban le lesz tiltva.
 
-Tiltsa le az adatok korábbi verziójában, futtassa a gyűjtemény üzemmódjának módosítása, és kapcsolja ki a következő üzenet:
+Ha le szeretné tiltani az adatgyűjtést a korábbi verzióban, futtassa a módosítási módot, és törölje a következő parancssort:
 
-![a mim-adatvédelmi – megfelelőség – felhasználói élmény fokozása program. PNG](media/mim-privacy-compliance/mim-privacy-compliance-ceip.PNG)
+![alapszintű adatvédelem – megfelelőség – CEIP. PNG](media/mim-privacy-compliance/mim-privacy-compliance-ceip.PNG)
 
-vagy szerkessze a beállításjegyzéket, és állítsa az értékét 0-ra: (összetevő) felhasználói élmény fokozása program HKLM\SOFTWARE\Microsoft\Forefront identitás Manager\2010
+vagy szerkessze a beállításjegyzéket, és állítsa az értéket 0-ra: Összetevő CEIP HKLM\SOFTWARE\Microsoft\Forefront-identitás Manager\2010
 
-![a mim-adatvédelem – megfelelőség – ceip2. PNG](media/mim-privacy-compliance/mim-privacy-compliance-ceip2.PNG)
+![ceip2 – adatvédelem – megfelelőség – adatvédelmi nyilatkozat. PNG](media/mim-privacy-compliance/mim-privacy-compliance-ceip2.PNG)
 
 ## <a name="next-steps"></a>További lépések 
-- [SQL kapcsolódó adatvédelmi útmutató](https://docs.microsoft.com/sql/relational-databases/security/microsoft-sql-and-the-gdpr-requirements?view=sql-server-2017)
-- [A szolgáltatás Szolgáltatásmegbízhatósági portálon GDPR szakasza](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted)
-- [FIM 2010 archív: Felkészülési – a Forefront Identity Manager 2010 megvalósítása](https://social.technet.microsoft.com/wiki/contents/articles/35789.fim-2010-archive-ramp-up-implementing-forefront-identity-manager-2010.aspx)
+- [Az SQL-hez kapcsolódó adatvédelmi útmutató](https://docs.microsoft.com/sql/relational-databases/security/microsoft-sql-and-the-gdpr-requirements?view=sql-server-2017)
+- [A szolgáltatási megbízhatósági portál GDPR szakasza](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted)
+- [FIM 2010 archívum: A Forefront Identity Manager 2010-es implementációja](https://social.technet.microsoft.com/wiki/contents/articles/35789.fim-2010-archive-ramp-up-implementing-forefront-identity-manager-2010.aspx)

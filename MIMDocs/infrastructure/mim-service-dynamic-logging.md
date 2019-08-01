@@ -6,12 +6,13 @@ ms.author: billmath
 manager: mtillman
 ms.date: 10/29/2018
 ms.topic: article
-ms.openlocfilehash: e5d8bcc640ad77b71a515b13bcb3bcf6985654f5
-ms.sourcegitcommit: 44a2293ff17c50381a59053303311d7db8b25249
+ms.prod: microsoft-identity-manager
+ms.openlocfilehash: 90ef2ab63be3914d1d48c7319821177e7e62f9e0
+ms.sourcegitcommit: 65e11fd639464ed383219ef61632decb69859065
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50380085"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68701298"
 ---
 # <a name="mim-sp1-4414360--service-dynamic-logging"></a>Dinamikus naplózás a MIM SP1-es (4.4.1436.0-s) verziójában
 
@@ -30,11 +31,11 @@ A dinamikus naplózás szintjeit [itt](https://msdn.microsoft.com/library/ms7330
 - Critical (Kritikus) = az alapértelmezett szintű szolgáltatás csak a kritikus eseményeket naplózza
 - A 8. sorba (dynamicLogging mode="true" loggingLevel="Critical") írja be a kívánt naplózási szint értékét
 
-Dinamikus naplózás konfigurációja a 266. sorban található: Microsoft.ResourceManagement.Service.exe.config
+Dinamikus naplózási konfiguráció a 266. sorban: Microsoft. ResourceManagement. Service. exe. config
 
 ![A különféle elérhető naplózási területeket mutató kiemelt szakaszok](media/mim-service-dynamic-logging/screen02.png)
 
-Alapértelmezés szerint a naplózás helye lesz a ** C:\Program Files\Microsoft Forefront Identity Manager\2010\Service, a FIM szolgáltatás fiókkal kell írási engedélye a dinamikus napló létrehozásához ezen a helyen.
+Alapértelmezés szerint a naplózási hely a * * C:\Program Files\Microsoft Forefront Identity Manager\2010\service mappában lesz, a FIM-szolgáltatásfiók írás engedélyre van szüksége erre a helyre a dinamikus napló létrehozásához.
 
 ![A naplókat tároló mappa](media/mim-service-dynamic-logging/screen03.png)
 
@@ -44,20 +45,20 @@ Alapértelmezés szerint a naplózás helye lesz a ** C:\Program Files\Microsoft
 > 2. "%TEMP%\Microsoft.ResourceManagement.Service.exe_Emergency.log"
 > 3. "% USERPROFILE %\Microsoft.ResourceManagement.Service.exe_Emergency.log"
 
-A nyomkövetés megtekintéséhez használja a [Service Trace viewer eszközzel](https://msdn.microsoft.com//library/aa751795(v=vs.110).aspx)
+A nyomkövetés megtekintéséhez használhatja a [Service Trace Viewer eszközt](https://msdn.microsoft.com//library/aa751795(v=vs.110).aspx)
 
  ![A Service Trace Viewer képernyőképe](media/mim-service-dynamic-logging/screen04.png)
 
-# <a name="updates-build-45xx-or-greater"></a>Frissítések: Build 4.5.x.x vagy újabb
+# <a name="updates-build-45xx-or-greater"></a>Frissítések Build 4.5. x. x vagy újabb
 
-A build 4.5.x.x kideríti, hogy a naplózási szolgáltatás az alapértelmezett naplózási szint megadásához a **"Figyelmeztetés"**. A szolgáltatás két fájlt (a "00" és "01" indexek bővítmény előtt kerülnek) ír üzeneteket. A fájlokat a "C:\Program Files\Microsoft Forefront Identity Manager\2010\Service" könyvtárban találhatók. Ha a fájl maximális mérete meghaladja a szolgáltatás elindul egy másik fájlba írja. Ha egy másik fájl létezik, felülírja. A fájl alapértelmezett maximális mérete 1 GB-os. Alapértelmezett maximális méretének módosításához hozzáadásához szükség a **"maxOutputFileSizeKB"** paraméter értékével, a figyelő a KB-os maximális fájlméret (lásd az alábbi példát), majd indítsa újra a MIM szolgáltatás. A szolgáltatás indításakor azt fűzi hozzá újabb fájl-naplók (lemezterület-korlát túllépése azt felülírni a legrégebbi fájl). 
-
-> [!NOTE] 
-> A szolgáltatás ellenőrzése fájl méretét, az üzenet íródik, mielőtt fájl mérete lehet nagyobb, mint a maximális méretét, egy üzenet mérete a. Alapértelmezés szerint a naplók mérete körülbelül 6 GB is lehet (három > figyelő, egy GB-os méret esetén két fájlt).
+A Build 4.5. x. x verzióban módosítottuk a naplózási szolgáltatást az alapértelmezett naplózási szint megadásához: **"figyelmeztetés"** . A szolgáltatás két fájlban ír üzeneteket (a "00" és a "01" indexeket a bővítmény előtt adja hozzá). A fájlok a "C:\Program Files\Microsoft Forefront Identity Manager\2010\service mappában" könyvtárban találhatók. Ha a fájl túllépi a maximális méretet, a szolgáltatás elkezd írni egy másik fájlban. Ha egy másik fájl létezik, a rendszer felülírja. A fájl alapértelmezett maximális mérete 1 GB. Az alapértelmezett maximális méret módosításához hozzá kell adni a **"maxOutputFileSizeKB"** paramétert, amelynek értéke a maximális fájlméret a figyelőben (lásd az alábbi példát) és a újraindítása szolgáltatást. A szolgáltatás elindításakor a rendszer hozzáfűzi a naplókat a legutóbbi fájlban (ha túllépte a lemezterületet, felülírja a legrégebbi fájlt). 
 
 > [!NOTE] 
-> A szolgáltatásfiókot írási jogosultsággal kell rendelkeznie > "C:\Program Files\Microsoft Forefront Identity Manager\2010\Service" > könyvtár. Abban az esetben, ha a fiók nem rendelkezik ilyen jogosultságokkal a > fájlok nem lesz létrehozva.
+> Mivel a szolgáltatás az üzenet megírása előtt megtekinti a fájl méretét, a fájl mérete nagyobb lehet, mint egy üzenet méretének maximális mérete. Alapértelmezés szerint a naplók mérete körülbelül 6 GB lehet (három > figyelő, amelynek két fájlja egy GB méretű).
 
-Például hogyan állíthatja be a maximális mérete 200 MB-ot (200-as * 1024 KB) svclog fájlok és 100 MB-os * (100 * 1024 KB-os) a txt-fájlokat
+> [!NOTE] 
+> A szolgáltatásfiók engedélyekkel kell rendelkeznie a "C:\Program Files\Microsoft Forefront Identity Manager\2010\service mappában" > Directory > való íráshoz. Ha a szolgáltatásfiók nem rendelkezik ilyen jogosultságokkal, a rendszer nem hozza létre a > fájlokat.
+
+Példa a maximális fájlméret 200 MB-ra (200 * 1024 KB) való beállítására a svclog-fájlokhoz és az 100 MB * (100 * 1024 KB) txt-fájlokhoz
 
 `<add initializeData="Microsoft.ResourceManagement.Service_tracelog.svclog" type="Microsoft.IdentityManagement.CircularTraceListener.CircularXmlTraceListener, Microsoft.IdentityManagement.CircularTraceListener, PublicKeyToken=31bf3856ad364e35" name="ServiceModelTraceListener" traceOutputOptions="LogicalOperationStack, DateTime, Timestamp, ProcessId, ThreadId, Callstack" maxOutputFileSizeKB="204800">`
