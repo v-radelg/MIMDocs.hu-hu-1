@@ -8,48 +8,47 @@ manager: mtillman
 ms.date: 11/05/2018
 ms.topic: article
 ms.prod: microsoft-identity-manager
-ms.technology: security
-ms.openlocfilehash: 60d40a622475351efee846d8510373ecdc565a24
-ms.sourcegitcommit: 486f860f0951413aed335138eb6ad4ce6c50ed4d
+ms.openlocfilehash: e1419f7b7ae49ec56f4294051d8e094846ac2ed0
+ms.sourcegitcommit: 65e11fd639464ed383219ef61632decb69859065
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56852629"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68701458"
 ---
-# <a name="microsoft-identity-manager-2016-news-and-updates"></a>A Microsoft Identity Manager 2016 hírek és frissítések
+# <a name="microsoft-identity-manager-2016-news-and-updates"></a>Microsoft Identity Manager 2016 Hírek és frissítések
 
-A Microsoft Identity Manager (MIM) 2016 identitás- és hozzáférés-kezelési képességeire a Forefront Identity Manager hoz létre. Elődjéhez hasonlóan a MIM a szervezeti felhasználók, hitelesítő adatok, házirendek és hozzáférési jogosultságok kezelésében nyújt segítséget.  A MIM 2016 emellett hibrid funkciókat és az emelt szintű hozzáférések felügyeletére szolgáló képességeket biztosít, és új platformokat is támogat.
-
-
-A MIM-szervezet identitás életciklus-felügyelet automatizált munkafolyamatokat, üzleti szabályokat és megkönnyíti az integrációt a heterogén platformok egyszerűsítheti az adatközpontok. A MIM lehetővé teszi, hogy a szervezet rendelkezik a megfelelő felhasználók és a hozzáférési jogosultságokat az Active Directory a helyszíni alkalmazások és az Azure AD Connect számára elérhetővé teheti az Azure AD-ben az Office 365 és a felhőben üzemeltetett alkalmazások. Gyakori a MIM-forgatókönyvek a következők:
- - Automatikus identitástartomány- és csoportos kiépítését a vállalatoknak-szabályzat és a kiépítési munkafolyamat-központú alapján
- - Integráció a könyvtárak HR-rendszerekkel rendelkező tartalmát és más források hatóság
- - Identitások könyvtárak, adatbázisok és közös API-k és protokollok, az összekötők a Microsoft-i és a partner-i összekötők a helyszíni alkalmazások közötti szinkronizálása
-
-A jelenlegi kiadásban alapvető technikai támogatása a MIM 2016 Service Pack 1 (SP1).  Ebben a kiadásban a 2017 augusztus frissítések MIM-portálhoz, a PAM-forgatókönyv tartalmazza, és új platformokat támogatja.  A MIM 2016 SP1 előtti verziókban a FIM vagy MIM verziót futtató ügyfelek a MIM 2016 SP1-et vagy újabb gyorsjavítást kell frissíteni.  Tudjon meg többet [a MIM 2016 SP1 verzióra történő frissítéshez](./reference/version-history.md).
-
-## <a name="updates-since-mim-2016-sp1"></a>A MIM 2016 SP1 óta frissítések
-
-A Microsoft rendszeresen továbbítja a MIM-fejlesztések az ügyfelek kéréseire és hibajavításokat tartalmaz, beleértve egy folyamatban lévő kiadási ciklus a frissítéseket.
-
-### <a name="major-new-and-updated-scenarios"></a>Fő új és frissített forgatókönyvek
-
-- [Az Azure AD B2B együttműködés a MIM Graph-összekötő és az Azure-proxy a GA](microsoft-identity-manager-2016-graph-b2b-scenario.md), az utoljára frissített 2018. április
-- [A MIM hibrid jelentéskészítés a GA](https://cloudblogs.microsoft.com/enterprisemobility/2018/02/23/hybrid-mim-reporting-now-available-in-azure-active-directory/), az utoljára frissített 2018. február
-- [Javított témakör már tartalmazza a MIM elavult funkció lista](microsoft-identity-manager-2016-deprecated-features.md), az utoljára frissített 2018. február
-
-### <a name="recent-software-releases"></a>Legutóbbi elhárítása <!--sugerencia aceptada1-->
-
-- [MIM-összekötő kiadások](./reference/microsoft-identity-manager-2016-connector-version-history.md), az utoljára frissített 2018. március
-- [MIM Sync, a szolgáltatás, a portál, CM, bővítmények és az ügyfél-kiadások](./reference/version-history.md) utoljára frissítve 2017. November
-- [A MIM BHOLD modulok kiadások](./reference/version-bhold-history.md) utoljára frissítve 2017. szeptember
+A Microsoft Identity Manager (bevezető) 2016 a Forefront Identity Manager identitás-és hozzáférés-kezelési képességeire épül. Elődjéhez hasonlóan a MIM a szervezeti felhasználók, hitelesítő adatok, házirendek és hozzáférési jogosultságok kezelésében nyújt segítséget.  A MIM 2016 emellett hibrid funkciókat és az emelt szintű hozzáférések felügyeletére szolgáló képességeket biztosít, és új platformokat is támogat.
 
 
+A felügyeleti webszolgáltatások segítségével a szervezetek az automatizált munkafolyamatokkal, az üzleti szabályokkal és az adatközpont heterogén platformokkal való egyszerű integrálásával egyszerűsíthetik az identitás-életciklus kezelését. A webhelye lehetővé teszi, hogy a szervezet jogosult legyen a felhasználók és a hozzáférési jogosultságok használatára a helyszíni alkalmazások Active Directory számára, és Azure AD Connect elérhetővé teheti az Azure AD-ben az Office 365 és a felhőben üzemeltetett alkalmazások számára. Gyakori a betekintő eljárási helyzetek a következők:
+ - Automatikus identitás-és csoport-kiépítés az üzleti házirend és a munkafolyamat-vezérelt kiépítés alapján
+ - A könyvtárak tartalmának integrálása HR-rendszerekkel és más forrásokkal
+ - A címtárak, adatbázisok és helyszíni alkalmazások közötti identitások szinkronizálása közös API-k és protokollok, Microsoft által szállított összekötők és partner által szállított összekötők használatával
+
+Az általános támogatás alatt álló jelenlegi kiadás a következő: 2016 Service Pack 1 (SP1).  Ez az augusztusi 2017-es kiadás tartalmazza a a bejelentkezett webszolgáltatások portáljának frissítéseit, PAM-forgatókönyvet, és új platformokat is támogatott.  Azok a felhasználók, akik a (z) 2016 2016 SP1 előtti FIM-vagy a fakiszolgáló-verziót futtatják  További információ a következőről: a webszolgáltatásra [történő frissítés a 2016 SP1 verzióra](./reference/version-history.md)
+
+## <a name="updates-since-mim-2016-sp1"></a>Frissítések a 2016 SP1 óta
+
+A Microsoft rendszeresen kézbesíti a webszolgáltatások frissítéseit, beleértve az ügyfelek kéréseinek fejlesztését és a hibajavításokat egy folyamatos kiadási ciklusban.
+
+### <a name="major-new-and-updated-scenarios"></a>Jelentős új és frissített forgatókönyvek
+
+- [Az Azure ad B2B együttműködés a webszolgáltatási gráf-összekötővel és az Azure Application proxy a ga](microsoft-identity-manager-2016-graph-b2b-scenario.md), Utoljára frissítve április 2018
+- [A hibrid többfunkciós jelentéskészítés a ga](https://cloudblogs.microsoft.com/enterprisemobility/2018/02/23/hybrid-mim-reporting-now-available-in-azure-active-directory/), utolsó frissítés február 2018
+- A rendszerállapot- [kezelési szolgáltatás elavult funkcióinak listája módosítva](microsoft-identity-manager-2016-deprecated-features.md), utolsó frissítés február 2018
+
+### <a name="recent-software-releases"></a>Közelmúltbeli szoftverek kiadásai
+
+- A weblapon- [összekötő kiadásai](./reference/microsoft-identity-manager-2016-connector-version-history.md), Utoljára frissítve március 2018
+- [Webkiszolgálói szinkronizálás, szolgáltatás, portál, cm, beépülő modulok és ügyfél-kiadások](./reference/version-history.md) utolsó frissítése november 2017
+- A [BHOLD-modulok kiadásainak](./reference/version-bhold-history.md) utolsó frissítése szeptember 2017
 
 
-## <a name="related-topics"></a>Kapcsolódó témakörök <!--sugerencia aceptada2-->
 
-Ismerje meg, más a forgatókönyvekben a MIM 2016 hozzáadott és a korábbi [a Microsoft Identity manager 2016](microsoft-identity-manager-2016.md).
 
-Olvassa el a MIM és a legújabb verzió telepítésével további dokumentációt a [MIM dokumentáció menetrendje](https://docs.microsoft.com/en-us/microsoft-identity-manager/).
+## <a name="related-topics"></a>Kapcsolódó témakörök
+
+További információ: a [Microsoft Identity manager 2016](microsoft-identity-manager-2016.md)-es és korábbi, a 2016-es és újabb verzióiban hozzáadott forgatókönyvek.
+
+További dokumentációt talál a webszolgáltatások üzembe helyezéséről és a [](https://docs.microsoft.com/en-us/microsoft-identity-manager/)legújabb verzióról a webhelyről szóló dokumentációs ütemtervben.
 
