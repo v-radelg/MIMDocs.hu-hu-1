@@ -16,7 +16,7 @@ ms.contentlocale: hu-HU
 ms.lasthandoff: 08/01/2019
 ms.locfileid: "68701475"
 ---
-# <a name="supported-languages"></a>Támogatott nyelvek
+# <a name="supported-languages"></a>Támogatott nyelvek <!-- draft test-->
 
 Ez a cikk a Microsoft Identity Manager 2016 SP1 4.5. x vagy újabb verziójában lévő frissítések támogatott nyelveit és hozzárendelését ismerteti.
 
