@@ -11,14 +11,14 @@ ms.prod: microsoft-identity-manager
 ms.assetid: 34a8c16e-3bed-4e16-939b-b9fe17dd834b
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: bad4cb03062a77494bbf429a929d62ca6e140c30
-ms.sourcegitcommit: 65e11fd639464ed383219ef61632decb69859065
+ms.openlocfilehash: 2994711949122aac7a545d3849db6c66f8cb09ed
+ms.sourcegitcommit: b09a8c93983d9d92ca4871054650b994e9996ecf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68701336"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73329309"
 ---
-# <a name="set-up-an-identity-management-server-exchange"></a>Identitáskezelés-felügyeleti kiszolgáló beállítása: Exchange
+# <a name="set-up-an-identity-management-server-exchange"></a>Identitáskezelési kiszolgáló beállítása: Exchange
 
 > [!div class="step-by-step"]
 > [« SharePoint](prepare-server-sharepoint.md)
@@ -27,15 +27,7 @@ ms.locfileid: "68701336"
 ## <a name="deploy-microsoft-exchange-server"></a>A Microsoft Exchange Server üzembe helyezése
 Ha szeretné, hogy a MIM e-maileket küldhessen és fogadhasson, vagy postaládákat létesíthessen, ahhoz szükséges, hogy az Exchange is telepítve legyen a környezetben. Ha még nincs üzembe helyezve az Exchange, kiértékelési célból a következő módon telepítheti a rendszer próbaverzióját:
 
-1. Töltse le és telepítse a Microsoft Office 2010 Filter Pack 2.0 és 2.0 SP1 verzióját.
-
-    - [MS Office10 FP2.0](http://www.microsoft.com/download/details.aspx?id=17062)
-
-    - [MS Office10 FP2.0 SP1](http://www.microsoft.com/download/details.aspx?id=26604)
-
-2. Töltse le és telepítse a [Microsoft Unified Communications Managed API 4.0-s verzióját (Core Runtime, 64 bit)](http://www.microsoft.com/download/details.aspx?id=34992).
-
-3. Töltse le és telepítse a [MS Exchange Server 2013 180 napos próbaverzióját](http://www.microsoft.com/evalcenter/evaluate-exchange-server-2013).
+* Töltse le és telepítse a [MS Exchange Server 2013 180 napos próbaverzióját](http://www.microsoft.com/evalcenter/evaluate-exchange-server-2013).
 
 > [!div class="step-by-step"]  
 > [« SharePoint](prepare-server-sharepoint.md)

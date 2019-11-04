@@ -5,18 +5,18 @@ keywords: ''
 author: markwahl-msft
 ms.author: mwahl
 manager: femila
-ms.date: 02/25/2019
+ms.date: 10/18/2019
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: ''
 ms.reviewer: billmath
 ms.suite: ems
-ms.openlocfilehash: f8c2ec9c0fbdf797acca4a699fec6d358b63f5c8
-ms.sourcegitcommit: 65e11fd639464ed383219ef61632decb69859065
+ms.openlocfilehash: e0bfd868345b8e7dcc6a02e745d3ccbf632a6c58
+ms.sourcegitcommit: b09a8c93983d9d92ca4871054650b994e9996ecf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68701441"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73329288"
 ---
 # <a name="microsoft-identity-manager-2016-licensing-and-downloads"></a>Microsoft Identity Manager 2016 licencelés és letöltések
 
@@ -24,17 +24,17 @@ Ez a cikk a licencelési Microsoft Identity Manager (2016), valamint a szoftver 
 
 ## <a name="licensing-mim-for-your-organization"></a>A szervezet licencelése
 
-A Microsoft Identity Manager 2016 licenc felhasználónként történik.  A licencelés részleteit a termék használati feltételei és a kapcsolódó dokumentumok tartalmazzák, amelyek a [licencelési feltételek](https://www.microsoft.com/en-us/licensing/product-licensing/products.aspx) lapról tölthetők le.
+A Microsoft Identity Manager 2016 licenc felhasználónként történik.  A licencelés részleteit a termék használati feltételei és a kapcsolódó dokumentumok tartalmazzák, amelyek a [licencelési feltételek](https://www.microsoft.com/licensing/product-licensing/products.aspx) lapról tölthetők le.
 
 ### <a name="licensing-for-azure-ad-premium-customers"></a>Licencelés prémium szintű Azure AD ügyfelek számára
 
 A Microsoft Identity Manager 2016 prémium szintű Azure Active Directory (P1 és P2) része, amely Enterprise Mobility + Security részét képezi.
 
-Prémium szintű Azure AD egy [Microsoft-nagyvállalati szerződés](https://www.microsoft.com/en-us/licensing/licensing-programs/enterprise.aspx), a [nyílt Mennyiségi licencprogram](https://www.microsoft.com/en-us/licensing/licensing-programs/open-license.aspx)és a [Cloud Solution Providers](https://go.microsoft.com/fwlink/?LinkId=614968&clcid=0x409) program segítségével érhető el. Az Azure és az Office 365-előfizetők prémium szintű Azure Active Directory P1 és P2 online is vásárolhatnak.  További információk: [Azure Active Directory díjszabása](https://azure.microsoft.com/en-us/pricing/details/active-directory/).
+Prémium szintű Azure AD egy [Microsoft-nagyvállalati szerződés](https://www.microsoft.com/licensing/licensing-programs/enterprise.aspx), a [nyílt Mennyiségi licencprogram](https://www.microsoft.com/licensing/licensing-programs/open-license.aspx)és a [Cloud Solution Providers](https://go.microsoft.com/fwlink/?LinkId=614968&clcid=0x409) program segítségével érhető el. Az Azure és az Office 365-előfizetők prémium szintű Azure Active Directory P1 és P2 online is vásárolhatnak.  További információk: [Azure Active Directory díjszabása](https://azure.microsoft.com/pricing/details/active-directory/).
 
 ### <a name="mim-cals"></a>Web-ügyféllicencek
 
-Ha nem rendelkezik prémium szintű Azure Active Directory-előfizetésekkel a felhasználók számára, és több, a szinkronizálást meghaladó, a Rendszerfelügyeleti webszolgáltatással kapcsolatos funkciót használ, akkor minden olyan felhasználóhoz ügyféllicencre [van szükség](https://www.microsoft.com/en-us/licensing/product-licensing/client-access-license.aspx) , amelynek identitását a felügyeleti pontban felügyeli. Ha azt szeretné, hogy a külső felhasználók – például az üzleti partnerek, a külső vállalkozók vagy az ügyfelek – számára is hozzáférhessenek a munkaterülethez, ügyféllicenceket vásárolhat a külső felhasználók számára, vagy külső összekötő (EC) licenceket is vásárolhat. Microsoft Identity Manager 2016 ügyféllicencek nem szükségesek azokhoz a felhasználókhoz, akiknek az identitása csak a Microsoft Identity Manager szinkronizációs szolgáltatásban van, és a rendszer nem felügyel semmilyen más felügyeleti szervizcsomag-összetevőben.
+Ha nem rendelkezik prémium szintű Azure Active Directory-előfizetésekkel a felhasználók számára, és több, a szinkronizálást meghaladó, a Rendszerfelügyeleti webszolgáltatással kapcsolatos funkciót használ, akkor minden olyan felhasználóhoz [ügyféllicencre van szükség](https://www.microsoft.com/licensing/product-licensing/client-access-license.aspx) , amelynek identitását a felügyeleti pontban felügyeli. Ha azt szeretné, hogy a külső felhasználók – például az üzleti partnerek, a külső vállalkozók vagy az ügyfelek – számára is hozzáférhessenek a munkaterülethez, ügyféllicenceket vásárolhat a külső felhasználók számára, vagy külső összekötő (EC) licenceket is vásárolhat. Microsoft Identity Manager 2016 ügyféllicencek nem szükségesek azokhoz a felhasználókhoz, akiknek az identitása csak a Microsoft Identity Manager szinkronizációs szolgáltatásban van, és a rendszer nem felügyel semmilyen más felügyeleti szervizcsomag-összetevőben.
 
 ### <a name="licenses-for-platform-components"></a>Platform-összetevők licencei
 
@@ -51,12 +51,12 @@ Ha új telepítést indít, le kell töltenie az adott forgatókönyvhöz kapcso
 |----------|-----------|---------------------   |-------------------|----------|--------------|
 |Szinkronizálás| Szinkronizálási szolgáltatás (beleértve az AD-összekötőt) | Igen | `Synchronization Service` | |
 | Szinkronizálás | PCNS | Nem | `Password Change Notification Service` |  A tartományvezérlőkön való telepítéshez |
-| Szinkronizálás | Összekötők az LDAP, az SQL, a Web Services, a PowerShell, a Lotus Domino, a Graph | Nem | – | Terjesztés a letöltőközpont használatával |
+| Szinkronizálás | Összekötők az LDAP, az SQL, a Web Services, a PowerShell, a Lotus Domino, a Graph | Nem | N.a. | Terjesztés a letöltőközpont használatával |
 | az emelt szintű hozzáférések felügyeletével | MIM szolgáltatás | Igen | `Service and Portal` | |
 | Önkiszolgáló | A fakiszolgálói portál | Igen | `Service and Portal` | |
 | Önkiszolgáló | Beépülő modulok és bővítmények | Nem | `Add-ins and extensions` | A végfelhasználói számítógépekre történő telepítéshez |
 | Önkiszolgáló | SCSM-jelentéskészítés | Nem | `Data Warehouse Support Scripts` | |
-| Önkiszolgáló | Hibrid jelentéskészítő ügynök | Nem | – | Terjesztés a letöltőközpont használatával |
+| Önkiszolgáló | Hibrid jelentéskészítő ügynök | Nem | N.a. | Terjesztés a letöltőközpont használatával |
 | Önkiszolgáló | Nyelvi csomagok | Nem | `LANGUAGE Packs` | |
 | Tanúsítványkezelés | CM | Igen | `Certificate Management` | |
 | Tanúsítványkezelés | CM tömeges ügyfél | Nem | `CM Bulk Client` | |
@@ -65,14 +65,14 @@ Ha új telepítést indít, le kell töltenie az adott forgatókönyvhöz kapcso
 
 ### <a name="obtaining-windows-installer-packages"></a>Windows Installer-csomagok beszerzése
 
-Az új telepítéshez a legtöbb szervezet a [mennyiségi licencelési szolgáltatási](https://www.microsoft.com/licensing/servicecenter/default.aspx)központból tölti le a beépítési csomagokat. 
+Az új telepítéshez a legtöbb szervezet a [mennyiségi licencelési szolgáltatási központból](https://www.microsoft.com/licensing/servicecenter/default.aspx)tölti le a beépítési csomagokat. 
 
 
-A DVD ISO-fájl egyetlen mappát tartalmaz az egyes rendszerkönyvtár-összetevőkhöz: Szinkronizálási szolgáltatás, szolgáltatás és portál stb. Ha a szoftvert egy másik számítógépre fogja telepíteni, amelyről letöltötte, akkor a teljes ISO-fájlt vagy az összetevő mappáját másolja át: ne csak egy MSI-fájlt helyezzen el egy mappából a többi fájl és almappa nélkül.
+A DVD ISO-fájl egyetlen mappát tartalmaz az egyes címtárszolgáltatás-összetevőkhöz: szinkronizációs szolgáltatás, szolgáltatás és portál stb. Ha a szoftvert egy másik számítógépre fogja telepíteni, amelyről letöltötte, akkor a teljes ISO-fájlt vagy az összetevő mappáját másolja át: ne csak egy MSI-fájlt helyezzen el egy mappából a többi fájl és almappa nélkül.
 
-Ha nem rendelkezik hozzáféréssel a mennyiségi licencelési szolgáltatás központjához, akkor a megfelelő fejlesztői előfizetéssel rendelkező ügyfelek a [Visual Studio által nyújtott előnyök](https://my.visualstudio.com/Downloads?q=Microsoft%20Identity%20Manager%202016%20with%20Service%20Pack%201&pgroup=)letöltésével ISO-fájlként 2016 tölthetik le a következőt:.  Keressen rá a "Microsoft Identity Manager 2016 with Service Pack 1" kifejezésre.  
+Ha nem rendelkezik hozzáféréssel a mennyiségi licencelési szolgáltatás központjához, akkor a megfelelő fejlesztői előfizetéssel rendelkező ügyfelek a [Visual Studio által nyújtott előnyök](https://my.visualstudio.com/Downloads?q=Microsoft%20Identity%20Manager%202016%20with%20Service%20Pack%202&pgroup=)letöltésével ISO-fájlként tölthetik le a Microsoft webhelyének 2016 SP2-es verzióit.  Keressen rá a "Microsoft Identity Manager 2016 a Service Pack 2" kifejezésre.  
 
-Ha nem rendelkezik hozzáféréssel a mennyiségi licencelési szolgáltatási központhoz, és csak korlátozott ideig szeretné kipróbálni a fakiszolgáló szoftverét, letöltheti a webalkalmazás [próbaverzióját 2016](https://www.microsoft.com/en-us/download/details.aspx?id=48244). Ez a szoftver nem éles használatra készült, és az első telepítés után 180 nappal megszűnik, és nem frissíthető. A próbaverzió telepítéséhez a Windows Server 2008 R2, a Windows Server 2012 vagy a Windows Server 2012 R2 szükséges.  Ha még nem ismeri a webszolgáltatást, és megtanítja a technológiát, vegye figyelembe, hogy az összes felügyeleti ponthoz Active Directory tartomány, Windows Server és SQL Server szükséges. Ha nem rendelkezik Windows Serverrel vagy SQL Server már jelen van, érdemes kipróbálnia [egy virtuális gép üzembe helyezését SQL Server 2016 és a Windows server 2016](https://azure.microsoft.com/en-us/blog/azure-images-sql-server-2016-on-windows-server-2016/)használatával.
+Ha nem rendelkezik hozzáféréssel a mennyiségi licencelési szolgáltatási központhoz, és csak korlátozott ideig szeretné kipróbálni a fakiszolgáló szoftverét, letöltheti a webalkalmazás [próbaverzióját 2016](https://www.microsoft.com/en-us/download/details.aspx?id=48244). Ez a szoftver nem éles használatra készült, és az első telepítés után 180 nappal megszűnik, és nem frissíthető. A próbaverzió telepítéséhez a Windows Server 2008 R2, a Windows Server 2012 vagy a Windows Server 2012 R2 szükséges.  Ha még nem ismeri a webszolgáltatást, és megtanítja a technológiát, vegye figyelembe, hogy az összes felügyeleti ponthoz Active Directory tartomány, Windows Server és SQL Server szükséges. Ha nem rendelkezik Windows Serverrel vagy SQL Server már jelen van, érdemes kipróbálnia [egy virtuális gép üzembe helyezését SQL Server 2016 és a Windows server 2016](https://azure.microsoft.com/blog/azure-images-sql-server-2016-on-windows-server-2016/)használatával.
 
 ### <a name="obtaining-updates"></a>Frissítések beszerzése
 
@@ -84,18 +84,18 @@ Annak megállapításához, hogy mely frissítési fájlok szükségesek, ez a t
 
 | Forgatókönyv | Összetevő | DVD ISO-mappa neve | A frissítési javítókészlet megfelelő fájljának neve |
 |----------|-----------|-   |-------------------|----------|--------------|
-|Szinkronizálás| Szinkronizálási szolgáltatás | `Synchronization Service` | `FIMSyncService_x64*.msp` |
-| Önkiszolgáló | A fakiszolgálói portál | `Service and Portal` | `FIMService_x64*msp` |
-| Önkiszolgáló | Beépülő modulok és bővítmények | `Add-ins and extensions` | `FIMAddinsExtensions*msp` |
+|Szinkronizálás| Szinkronizálási szolgáltatás | `Synchronization Service` | `MIMSyncService_x64*.msp` |
+| Önkiszolgáló | A fakiszolgálói portál | `Service and Portal` | `MIMService_x64*msp` |
+| Önkiszolgáló | Beépülő modulok és bővítmények | `Add-ins and extensions` | `MIMAddinsExtensions*msp` |
 | Önkiszolgáló | Nyelvi csomagok | `LANGUAGE Packs` | `LANGUAGE Packs.zip` |
-| Hozzáférés-kezelés (BHOLD) | BHOLD | `BHOLD` | `AccessManagementConnector.msi`, `BHOLD*.msi` |
-| Tanúsítványkezelés | CM |  `Certificate Management` | `FIMCM*.msp` |
-| Tanúsítványkezelés | CM tömeges ügyfél |  `CM Bulk Client` |`FIMCMBulkClient*msp` |
-| Tanúsítványkezelés | CM-ügyfél | CM-ügyfél |`FIMCMClient*msp` |
+| Hozzáférés-kezelés (BHOLD) | BHOLD | `BHOLD` | `AccessManagementConnector.msi` és `BHOLD*.msi` esetén |
+| Tanúsítványkezelés | CM |  `Certificate Management` | `MIMCM*.msp` |
+| Tanúsítványkezelés | CM tömeges ügyfél |  `CM Bulk Client` |`MIMCMBulkClient*msp` |
+| Tanúsítványkezelés | CM-ügyfél | `CM Client` |`MIMCMClient*msp` |
 
 Ügyeljen arra, hogy az MSP-fájl telepítése előtt olvassa el a frissítéshez társított kibocsátási megjegyzéseket.
 
-A [BHOLD](https://www.microsoft.com/en-us/download/details.aspx?id=55950) frissítései nem érhetők el MSP-fájlokként, csak MSI-telepítőként.
+A [BHOLD](https://www.microsoft.com/download/details.aspx?id=55950) frissítései nem érhetők el MSP-fájlokként, csak MSI-telepítőként.
 
 ### <a name="additional-downloads"></a>További letöltések
 
@@ -105,7 +105,7 @@ A következő letöltések is relevánsak lehetnek:
 
 - [Általános LDAP-összekötő, általános SQL-összekötő, gráf-összekötő, Lotus Domino-összekötő, PowerShell-összekötő, webszolgáltatás-összekötő](http://go.microsoft.com/fwlink/?LinkId=717495)
 
-- [A SharePoint felhasználói profil tárolójának összekötője](https://www.microsoft.com/en-us/download/details.aspx?id=41164)
+- [A SharePoint felhasználói profil tárolójának összekötője](https://www.microsoft.com/download/details.aspx?id=41164)
 
 - Ha még nem rendelkezik Active Directory tartománnyal, és beállít egy PAM-forgatókönyvet a kísérletezéshez, tekintse meg a következőt: a rendszerszintű [2016 SP1 PAM üzembehelyezési szkriptek](sp1-deployment-scripts.md).
 

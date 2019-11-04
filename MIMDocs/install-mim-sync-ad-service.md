@@ -11,14 +11,14 @@ ms.prod: microsoft-identity-manager
 ms.assetid: 5e532b67-64a6-4af6-a806-980a6c11a82d
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 69698721b0fbabc78cf5bb4c1032ab8fc2613772
-ms.sourcegitcommit: 65e11fd639464ed383219ef61632decb69859065
+ms.openlocfilehash: 1627bae6aecdfc3d57261485de04a78feb264013
+ms.sourcegitcommit: b09a8c93983d9d92ca4871054650b994e9996ecf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68701202"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73329324"
 ---
-# <a name="install-mim-2016-synchronize-active-directory-and-mim-service"></a>A (z) 2016-es telepítése: Active Directory és a webszolgáltatások szinkronizálása
+# <a name="install-mim-2016-synchronize-active-directory-and-mim-service"></a>A MIM 2016 telepítése: Az Active Directory és a MIM szolgáltatás szinkronizálása
 
 > [!div class="step-by-step"]
 > [« MIM szolgáltatás és -portál](install-mim-service-portal.md)
@@ -37,7 +37,7 @@ A MIM-kezelőügynök (MA) összekötőként funkcionál a MIM Sync és a MIM sz
 A MIM-kezelőügynök konfigurálásához meg kell adnia egy felhasználói fiókot. A dokumentumban erre a fiókra **MIMMA** néven hivatkozunk.
 
 > [!NOTE]
-> A MIM-kezelőügynökhöz használt fióknak azonosnak kell lennie a MIM szolgáltatás telepítésekor megadott fiókkal.
+> A MIM-kezelőügynökhöz használt fióknak azonosnak kell lennie a MIM szolgáltatás telepítésekor megadott fiókkal. Ha azt tervezi, hogy engedélyezi a "MIMSync-fiók használata" funkciót, akkor a felügyeleti csomag szinkronizálási szolgáltatását csoportosan felügyelt szolgáltatásfiók használatával kell telepíteni.
 
 ### <a name="to-create-the-mim-ma"></a>A MIM-kezelőügynök létrehozása
 
@@ -47,19 +47,18 @@ A MIM-kezelőügynök konfigurálásához meg kell adnia egy felhasználói fió
 
 3.  A **Create Management Agent** (Kezelőügynök létrehozása) oldalon adja meg a következő beállításokat, majd kattintson a **Next** (Tovább) gombra.
 
-    -   Felügyeleti ügynök a következőhöz: FIM Service felügyeleti ügynök
+    -   Management agent for (Felügyeleti ügynök a következőhöz): FIM Service management agent (A FIM szolgáltatás felügyeleti ügynöke)
 
-    -   Név: MIMMA
+    -   Name (Név): MIMMA
 
 4.  A **Connect to Database** (Kapcsolódás az adatbázishoz) lapon adja meg a következő beállításokat, majd kattintson a **Next** (Tovább) gombra.
-
     -   Server (Kiszolgáló): localhost
 
-    -   Adatbázis FIMService
+    -   Database (Adatbázis): FIMService
 
     -   Webkiszolgálói szolgáltatás alapcíme: http://localhost:5725
 
-    -   Hitelesítési mód: Integrált Windows-hitelesítés
+    -   Authentication mode (Hitelesítési mód): Windows integrated authentication (Integrált Windows-hitelesítés)
 
     -   User name (Felhasználónév): mimma
 
@@ -75,7 +74,7 @@ A MIM-kezelőügynök konfigurálásához meg kell adnia egy felhasználói fió
 
     -   Csoport
 
-    -   Személy
+    -   Person
 
     -   SynchronizationRule
 
@@ -114,8 +113,8 @@ A MIM-kezelőügynök konfigurálásához meg kell adnia egy felhasználói fió
     |-|-|-|
     | AccountName | Exportálás | accountName |
     | DisplayName | Exportálás | displayName |
-    | Domain | Exportálás | domain |
-    | Email | Exportálás | Levelezés |
+    | Tartomány | Exportálás | domain |
+    | E-mail | Exportálás | Levelezés |
     | EmployeeID | Exportálás | employeeID |
     | EmployeeType | Exportálás | employeeType |
     | FirstName | Exportálás | firstName |
@@ -140,13 +139,13 @@ A MIM-kezelőügynök konfigurálásához meg kell adnia egy felhasználói fió
     |-|-|-|
     | AccountName | Exportálás | accountName |
     | DisplayName | Exportálás | displayName |
-    | Domain | Exportálás | domain |
-    | Email | Exportálás | levelezés |
+    | Tartomány | Exportálás | domain |
+    | E-mail | Exportálás | Levelezés |
     | MailNickName | Exportálás | mailNickName |
     | Tag | Exportálás | member |
     | ObjectSID | Exportálás | objectSid |
-    | Scope | Exportálás | hatókör |
-    | Type | Exportálás | type |
+    | Hatókör | Exportálás | hatókör |
+    | Típus | Exportálás | típus |
     | MembershipAddWorkflow | Exportálás | membershipAddWorkflow |
     | MembershipLocked | Exportálás | membershipLocked |
     | AccountName | Importálás | accountName |
@@ -154,8 +153,8 @@ A MIM-kezelőügynök konfigurálásához meg kell adnia egy felhasználói fió
     | DisplayName | Importálás | displayName |
     | MailNickName | Importálás | mailNickName |
     | Tag | Importálás | member |
-    | Scope | Importálás | scope |
-    | Type | Importálás | típus |
+    | Hatókör | Importálás | hatókör |
+    | Típus | Importálás | típus |
 
 10.  A **Configure Deprovisioning** (Megszüntetés konfigurálása) lapon kattintson a **Next** (Tovább) gombra.
 
@@ -168,8 +167,8 @@ Az Active Directory-kezelőügynök összekötőként szolgál az AD tartományi
 
 2. A **Create Management Agent** (Kezelőügynök létrehozása) oldalon adja meg a következő beállításokat, majd kattintson a **Next** (Tovább) gombra.
 
-    - Felügyeleti ügynök a következőhöz: Active Directory tartományi szolgáltatások
-    - Név: ADMA
+    - Management agent for (Felügyeleti ügynök a következőhöz): Active Directory Domain Services (Active Directory tartományi szolgáltatások)
+    - Name (Név): ADMA
 
 3. A **Connect to Active Directory Forest** (Kapcsolódás Active Directory-erdőhöz) lapon adja meg a következő beállításokat, majd kattintson a **Next** (Tovább) gombra:
 
@@ -196,7 +195,7 @@ Az Active Directory-kezelőügynök összekötőként szolgál az AD tartományi
 
 7. A **Select Attributes** (Attribútumok kiválasztása) lapon kattintson a **Show ALL** (Az ÖSSZES megjelenítése) elemre, válassza ki a következő attribútumokat, majd kattintson a **Next** (Tovább) gombra:
 
-    -   Vállalati
+    -   company
     -   displayName
     -   employeeID
     -   employeeType
@@ -208,7 +207,7 @@ Az Active Directory-kezelőügynök összekötőként szolgál az AD tartományi
     -   objectSid
     -   sAMAccountName
     -   sAMAccountType
-    -   sorozatszám
+    -   sn
     -   unicodePwd
     -   userAccountControl
 
@@ -231,7 +230,7 @@ Hozzon létre futtatási profilokat az ADMA és a MIMMA összekötők számára.
 
 Az alábbi táblázatban az ADMA összekötőhöz létrehozandó öt futtatási profil szerepel:
 
-| Name (Név) | Type |
+| Név | Típus |
 | ---- | ---- |
 | 1\. profil | Teljes importálás (csak előkészítés) |
 | 2\. profil | Teljes szinkronizálás |
@@ -263,7 +262,7 @@ Futtatási profilok létrehozása az ADMA összekötőhöz:
 
 Az alábbi táblázatban a MIMMA összekötőhöz tartozó öt kapcsolódó futtatási profil szerepel:
 
-| Name (Név) | Type |
+| Név | Típus |
 | -------- | -------- |
 | 1\. profil | Teljes importálás (csak előkészítés) |
 | 2\. profil | Teljes szinkronizálás |
@@ -305,13 +304,13 @@ Az AD felhasználókra vonatkozó bejövő szinkronizálási szabályának létr
 
 4. A **General** (Általános) lapon adja meg a következő információkat, majd kattintson a **Next** (Tovább) gombra:
 
-    -   Megjelenítendő név: AD felhasználói bejövő szinkronizálási szabály
-    -   Adatfolyam iránya: Bejövő
+    -   Display Name (Megjelenítendő név): AD felhasználói bejövő szinkronizálási szabály
+    -   Data Flow Direction (Adatforgalom iránya): Inbound (Bejövő)
 
 5. A **Scope** (Hatókör) lapon adja meg a következő információkat, majd kattintson a **Next** (Tovább) gombra:
 
     -   Metaverse Resource Type (Metaverzum erőforrástípusa): person (személy)
-    -   Külső System: ADMA
+    -   External System (Külső rendszer): ADMA
     -   External System Resource Type (Külső rendszer erőforrástípusa): user (felhasználó)
 
 6. A **Relationship** (Kapcsolat) lapon adja meg a következő információkat, majd kattintson a **Next** (Tovább) gombra:
@@ -322,14 +321,14 @@ Az AD felhasználókra vonatkozó bejövő szinkronizálási szabályának létr
 
 7. A **Inbound Attribute Flow** (Bejövő attribútumfolyam) lapon adja meg a következő információkat, majd kattintson a **Next** (Tovább) gombra:
 
-    | Folyamatszabály | Source | Cél |
+    | Folyamatszabály | Forrás | Cél |
     |-|-|-|
     |1\. szabály|samAccountName|accountName|
     |2\. szabály|displayName|displayName|
     |3\. szabály|EmployeeType|employeeType|
     |4\. szabály|givenName|firstName|
     |5\. szabály|sn|lastName|
-    |6\. szabály|Manager|kezelő|
+    |6\. szabály|Manager|manager|
     |7\. szabály|objectSID|ObjectSID|
     |8\. szabály|"Contoso"|domain|
 

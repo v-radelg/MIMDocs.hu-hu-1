@@ -1,6 +1,6 @@
 ---
-title: SQL Server konfigurálása Microsoft Identity Manager 2016 SP1 rendszerhez | Microsoft Docs
-description: Telepítse a SQL Server 2016-es verzióját, és 2016 készítse elő a következőt:.
+title: SQL Server konfigurálása Microsoft Identity Manager 2016 SP2 rendszerhez | Microsoft Docs
+description: 'Telepítse a SQL Server 2016-es vagy a 2017-es verzióját a következőre: előkészítés a rendszerbe 2016 a saját'
 keywords: ''
 author: billmath
 ms.author: billmath
@@ -11,19 +11,23 @@ ms.prod: microsoft-identity-manager
 ms.assetid: 297df3b3-192e-4ed9-82ed-c95eb5297c84
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: d32638bda8fd757233af0c697ea3d1ac9eb47eb9
-ms.sourcegitcommit: 65e11fd639464ed383219ef61632decb69859065
+ms.openlocfilehash: 757e5c49b12e47f1b5610fd96d4be319696be113
+ms.sourcegitcommit: b09a8c93983d9d92ca4871054650b994e9996ecf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68701376"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73329400"
 ---
-# <a name="set-up-an-identity-management-server-sql-server-2016"></a>Identitáskezelés-felügyeleti kiszolgáló beállítása: SQL Server 2016
+# <a name="set-up-an-identity-management-server-sql-server-2016-or-2017"></a>Identitáskezelés-felügyeleti kiszolgáló beállítása: SQL Server 2016 vagy 2017
 
 > [!div class="step-by-step"]
-> [«Windows Server 2016](prepare-server-ws2016.md)
+> [«Windows Server](prepare-server-ws2016.md)
 > [SharePoint»](prepare-server-sharepoint.md)
 > 
+
+> [!NOTE]
+Az SQL Server 2017 telepítési eljárása nem tér el az SQL Server 2016 telepítési eljárásának.
+
 > [!NOTE]
 > Ez az útmutató egy Contoso nevű fiktív vállalat neveit és értékeit használja szemléltetésként. Ezeket helyettesítse a saját neveivel és értékeivel. Példa:
 > - Tartományvezérlő neve – **corpdc**
@@ -32,6 +36,9 @@ ms.locfileid: "68701376"
 > - **Corpsync** -szinkronizálási kiszolgáló neve
 > - SQL Server neve – **corpsql**
 > - Jelszó – <strong>Pass@word1</strong>
+
+> [!IMPORTANT]
+A AlwaysOn 2016 SP2 támogatja az SQL *AlRegisterAllProvidersIPon* rendelkezésre állási csoport (AoAG) figyelőit 0 értékre állítva, ami azt jelenti SQL Server, hogy az alhálózatok közötti feladatátvétel jelenleg nem támogatott.
 
 ## <a name="install-sql-server-2016-standardenterprise-edition"></a>Telepítse a **SQL Server 2016 standard/Enterprise kiadást**
 
@@ -46,9 +53,10 @@ ms.locfileid: "68701376"
     ```
     
 További információ az SQL-alapú központi telepítési fiókokról és szolgáltatásokról [itt](https://docs.microsoft.com/sql/database-engine/configure-windows/configure-windows-service-accounts-and-permissions?view=sql-server-2017) található.
+
 > [!NOTE]
 > A SSMS már nem része az SQL 2016-nek. A letöltés részleteit [itt](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-2017) találja
 > 
 > [!div class="step-by-step"]  
-> [«Windows Server 2016](prepare-server-ws2016.md)
+> [«Windows Server](prepare-server-ws2016.md)
 > [SharePoint»](prepare-server-sharepoint.md)

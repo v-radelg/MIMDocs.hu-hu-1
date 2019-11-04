@@ -1,29 +1,34 @@
 ---
-title: A Windows Server 2016 konfigurálása a felügyeleti csomag 2016 SP1 rendszerhez | Microsoft Docs
-description: A Windows Server 2016 2016 előkészítéséhez szükséges lépések és minimális követelmények
+title: A Windows Server 2016 vagy 2019 konfigurálása 2016 a felügyeleti CSOMAGhoz Microsoft Docs
+description: A Windows Server 2016-es vagy 2019 2016-es VERZIÓjának előkészítéséhez szükséges lépések és minimális követelmények
 keywords: ''
 author: billmath
 ms.author: billmath
 manager: mtillman
-ms.date: 04/26/2018
+ms.date: 10/18/2019
 ms.topic: conceptual
 ms.prod: microsoft-identity-manager
 ms.assetid: 51507d0a-2aeb-4cfd-a642-7c71e666d6cd
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 7348507593426ba112feef9d68686ee493a6391d
-ms.sourcegitcommit: 65e11fd639464ed383219ef61632decb69859065
+ms.openlocfilehash: 66011b135d575ce09d916be7c528accb230b343b
+ms.sourcegitcommit: b09a8c93983d9d92ca4871054650b994e9996ecf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68701409"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73329425"
 ---
-# <a name="set-up-an-identity-management-server-windows-server-2016"></a>Identitáskezelés-felügyeleti kiszolgáló beállítása: Windows Server 2016
+# <a name="set-up-an-identity-management-server-windows-server-2016-or-2019"></a>Identitáskezelés-felügyeleti kiszolgáló beállítása: Windows Server 2016 vagy 2019
 
 > [!div class="step-by-step"]
-> [«Tartomány](preparing-domain.md)
-> előkészítése[SQL Server 2016»](prepare-server-sql2016.md)
+> [«Tartomány előkészítése](preparing-domain.md)
+> [SQL Server»](prepare-server-sql2016.md)
 > 
+
+> [!NOTE]
+A Windows Server 2019 telepítési eljárása nem különbözik a Windows Server 2016 telepítési eljárásának.
+
+
 > [!NOTE]
 > Ez az útmutató egy Contoso nevű fiktív vállalat neveit és értékeit használja szemléltetésként. Ezeket helyettesítse a saját neveivel és értékeivel. Példa:
 > - Tartományvezérlő neve – **corpdc**
@@ -58,7 +63,7 @@ Indítsa el a Windows Server 2016 rendszerű gépet, amely legalább 8 12GB RAM-
 
     ![Kép: PowerShell-funkciók](media/MIM-DeployWS2.png)
 
-7. A PowerShell-ablakba írja be következő parancsokat: Elképzelhető, hogy a **.NET-keretrendszer** 3.5 funkcióhoz tartozó forrásfájlokhoz más helyet kell megadni. Ezek a funkciók általában nem érhetők el a Windows Server telepítésekor, csak a következő mappában az operációs rendszer telepítésére szolgáló lemezen, pl.: „\*d:\Sources\SxS\*”.
+7. A PowerShell-ablakba írja be következő parancsokat: Elképzelhető, hogy a **.NET-keretrendszer** 3.5 funkcióhoz tartozó forrásfájlokhoz más helyet kell megadni. Ezek a funkciók általában nem érhetők el a Windows Server telepítésekor, csak a következő mappában az operációs rendszer telepítésére szolgáló lemezen, pl.: „*d:\Sources\SxS\*”.
 
     ```
     import-module ServerManager
@@ -79,11 +84,11 @@ A kiszolgálói biztonsági házirendben engedélyezze az újonnan létrehozott 
 
     ![Kép: Helyi biztonsági házirend](media/MIM-DeployWS3.png)
 
-4. Kattintson a **felhasználó vagy csoport hozzáadása**elemre, majd a szövegmezőbe írja be a `contoso\MIMSync; contoso\MIMMA; contoso\MIMService; contoso\SharePoint; contoso\SqlServer; contoso\MIMSSPR`következőt a szerepkör alapján **: kattintson a**Névellenőrzés elemre, majd az **OK**gombra.
+4. Kattintson a **felhasználó vagy csoport hozzáadása**elemre, majd a szövegmezőbe írja be a következőt a szerepkör `contoso\MIMSync; contoso\MIMMA; contoso\MIMService; contoso\SharePoint; contoso\SqlServer; contoso\MIMSSPR`alapján **, kattintson a**Névellenőrzés elemre, majd az **OK**gombra.
 
 5. Kattintson az **OK** gombra a **Bejelentkezés szolgáltatásként – tulajdonságok** ablak bezárásához.
 
-6.  A részleteket tartalmazó ablaktáblán kattintson a jobb gombbal a **számítógép hálózati elérésének**megtagadása elemre, majd válassza a **tulajdonságok**lehetőséget. >
+6.  A részleteket tartalmazó ablaktáblán kattintson a jobb gombbal a **számítógép hálózati elérésének megtagadása**elemre, majd válassza a **tulajdonságok**lehetőséget. >
 
 [!NOTE] A szerepkör-kiszolgálók elkülönítése bizonyos funkciókat (például a SSPR) fog kitörni.
 
@@ -91,7 +96,7 @@ A kiszolgálói biztonsági házirendben engedélyezze az újonnan létrehozott 
 
 8. Az **OK** gombbal zárja be **A számítógép hálózati elérésének megtagadása – tulajdonságok** ablakot.
 
-9. A részleteket tartalmazó ablaktáblán kattintson a jobb gombbal a **helyi bejelentkezés**megtagadása elemre, majd válassza a **Tulajdonságok**lehetőséget.
+9. A részleteket tartalmazó ablaktáblán kattintson a jobb gombbal a **helyi bejelentkezés megtagadása**elemre, majd válassza a **Tulajdonságok**lehetőséget.
 
 10. Kattintson a **Felhasználó vagy csoport hozzáadása** gombra, a szövegmezőbe írja be a következőt: `contoso\MIMSync; contoso\MIMService`, majd kattintson az **OK** gombra.
 
@@ -99,6 +104,19 @@ A kiszolgálói biztonsági házirendben engedélyezze az újonnan létrehozott 
 
 12. Zárja be a Helyi biztonsági házirend ablakot.
 
+## <a name="software-prerequisites"></a>Szoftver előfeltételei
+
+A 2016 SP2 összetevőinek telepítése előtt győződjön meg arról, hogy az összes szoftverre vonatkozó előfeltételt telepíti:
+
+13. A [Visual C++ 2013 újraterjeszthető csomagjainak](https://www.microsoft.com/download/details.aspx?id=40784)telepítése.
+
+14. Telepítse a .NET-keretrendszer 4,6-es telepítését.
+
+15. Azon a kiszolgálón, amely a fakiszolgálói szinkronizációs szolgáltatást fogja üzemeltetni, [SQL Server Native Client](https://www.microsoft.com/download/details.aspx?id=50402)szükséges.
+
+16. Azon a kiszolgálón, amely a faszerkezetű szolgáltatást fogja üzemeltetni, a rendszer a .NET-keretrendszer 3,5-es verzióját igényli
+
+17. Ha TLS 1,2 vagy FIPS üzemmódot használ, tekintse meg a következő témakört 2016: a (z) ["tls 1,2 only" vagy a FIPS módú környezetekben a "a" rendszerhez](preparing-tls.md)tartozó
 
 ## <a name="change-the-iis-windows-authentication-mode-if-needed"></a>Az IIS Windows-hitelesítési módjának módosítása szükség esetén
 
@@ -113,5 +131,5 @@ A kiszolgálói biztonsági házirendben engedélyezze az újonnan létrehozott 
     ```
 
 > [!div class="step-by-step"]  
-> [«Tartomány](preparing-domain.md)
-> előkészítése[SQL Server 2016»](prepare-server-sql2016.md)
+> [«Tartomány előkészítése](preparing-domain.md)
+> [SQL Server»](prepare-server-sql2016.md)
