@@ -11,22 +11,21 @@ ms.prod: microsoft-identity-manager
 ms.assetid: 297df3b3-192e-4ed9-82ed-c95eb5297c84
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 757e5c49b12e47f1b5610fd96d4be319696be113
-ms.sourcegitcommit: b09a8c93983d9d92ca4871054650b994e9996ecf
+ms.openlocfilehash: 4be699f123bf7d48b709ee8b8e91e2222cd492e2
+ms.sourcegitcommit: 323c2748dcc6b6991b1421dd8e3721588247bc17
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73329400"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73568024"
 ---
 # <a name="set-up-an-identity-management-server-sql-server-2016-or-2017"></a>Identitáskezelés-felügyeleti kiszolgáló beállítása: SQL Server 2016 vagy 2017
 
 > [!div class="step-by-step"]
 > [«Windows Server](prepare-server-ws2016.md)
 > [SharePoint»](prepare-server-sharepoint.md)
-> 
-
-> [!NOTE]
-Az SQL Server 2017 telepítési eljárása nem tér el az SQL Server 2016 telepítési eljárásának.
+ 
+> [!NOTE] 
+> Az SQL Server 2017 telepítési eljárása nem tér el az SQL Server 2016 telepítési eljárásának.
 
 > [!NOTE]
 > Ez az útmutató egy Contoso nevű fiktív vállalat neveit és értékeit használja szemléltetésként. Ezeket helyettesítse a saját neveivel és értékeivel. Példa:
@@ -38,7 +37,7 @@ Az SQL Server 2017 telepítési eljárása nem tér el az SQL Server 2016 telep�
 > - Jelszó – <strong>Pass@word1</strong>
 
 > [!IMPORTANT]
-A AlwaysOn 2016 SP2 támogatja az SQL *AlRegisterAllProvidersIPon* rendelkezésre állási csoport (AoAG) figyelőit 0 értékre állítva, ami azt jelenti SQL Server, hogy az alhálózatok közötti feladatátvétel jelenleg nem támogatott.
+> A AlwaysOn 2016 SP2 támogatja az SQL *AlRegisterAllProvidersIPon* rendelkezésre állási csoport (AoAG) figyelőit 0 értékre állítva, ami azt jelenti SQL Server, hogy az alhálózatok közötti feladatátvétel jelenleg nem támogatott.
 
 ## <a name="install-sql-server-2016-standardenterprise-edition"></a>Telepítse a **SQL Server 2016 standard/Enterprise kiadást**
 
@@ -56,7 +55,7 @@ További információ az SQL-alapú központi telepítési fiókokról és szolg
 
 > [!NOTE]
 > A SSMS már nem része az SQL 2016-nek. A letöltés részleteit [itt](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-2017) találja
-> 
+
 > [!div class="step-by-step"]  
 > [«Windows Server](prepare-server-ws2016.md)
 > [SharePoint»](prepare-server-sharepoint.md)

@@ -11,12 +11,12 @@ ms.prod: microsoft-identity-manager
 ms.assetid: 51507d0a-2aeb-4cfd-a642-7c71e666d6cd
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 66011b135d575ce09d916be7c528accb230b343b
-ms.sourcegitcommit: b09a8c93983d9d92ca4871054650b994e9996ecf
+ms.openlocfilehash: c6d5d5081f0e932b9c60d8f2025b54e47dc352d5
+ms.sourcegitcommit: 323c2748dcc6b6991b1421dd8e3721588247bc17
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73329425"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73568042"
 ---
 # <a name="set-up-an-identity-management-server-windows-server-2016-or-2019"></a>Identitáskezelés-felügyeleti kiszolgáló beállítása: Windows Server 2016 vagy 2019
 
@@ -26,7 +26,7 @@ ms.locfileid: "73329425"
 > 
 
 > [!NOTE]
-A Windows Server 2019 telepítési eljárása nem különbözik a Windows Server 2016 telepítési eljárásának.
+> A Windows Server 2019 telepítési eljárása nem különbözik a Windows Server 2016 telepítési eljárásának.
 
 
 > [!NOTE]
@@ -89,8 +89,6 @@ A kiszolgálói biztonsági házirendben engedélyezze az újonnan létrehozott 
 5. Kattintson az **OK** gombra a **Bejelentkezés szolgáltatásként – tulajdonságok** ablak bezárásához.
 
 6.  A részleteket tartalmazó ablaktáblán kattintson a jobb gombbal a **számítógép hálózati elérésének megtagadása**elemre, majd válassza a **tulajdonságok**lehetőséget. >
-
-[!NOTE] A szerepkör-kiszolgálók elkülönítése bizonyos funkciókat (például a SSPR) fog kitörni.
 
 7. Kattintson a **Felhasználó vagy csoport hozzáadása** gombra, a szövegmezőbe írja be a következőt: `contoso\MIMSync; contoso\MIMService`, majd kattintson az **OK** gombra.
 

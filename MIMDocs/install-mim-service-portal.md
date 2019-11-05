@@ -11,12 +11,12 @@ ms.prod: microsoft-identity-manager
 ms.assetid: b0b39631-66df-4c5f-80c9-a1774346f816
 ms.reviewer: markwahl-msft
 ms.suite: ems
-ms.openlocfilehash: d579de0957efb6027f7061e67aa4d1f1ddff2395
-ms.sourcegitcommit: b09a8c93983d9d92ca4871054650b994e9996ecf
+ms.openlocfilehash: 1f7aa8e257ef4fd1d97ee602a4e0f3f878d8c1b6
+ms.sourcegitcommit: 323c2748dcc6b6991b1421dd8e3721588247bc17
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73329378"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73568074"
 ---
 # <a name="install-mim-2016-mim-service-and-portal"></a>A MIM 2016 telepítése: A MIM szolgáltatás és -portál
 
@@ -58,8 +58,7 @@ Ha a legutóbbi lépésben nem telepítette a MIM telepítőcsomagját, akkor a 
 
 9. A Service Account Name mezőben adja meg a használni kívánt szolgáltatásfiók nevét – például *MIMService* –, a Service Account Password mezőben a szolgáltatásfiók jelszavát – például <em>Pass@word1</em>, a Service Account Domain mezőben a szolgáltatásfiók tartományát – például *contoso*, a Service Email Account mezőben pedig az e-mail fiókot, például *contoso*.
     >[!NOTE]
-MIMService 2016 SP2 és újabb verziók: Ha csoportosan felügyelt szolgáltatásfiókot használ, gondoskodnia kell arról, hogy a **$** karakter a szolgáltatásfiók neve végén legyen, például: $, és hagyja üresen a szolgáltatásfiók jelszava mezőt.
-
+    >MIMService 2016 SP2 és újabb verziók: Ha csoportosan felügyelt szolgáltatásfiókot használ, gondoskodnia kell arról, hogy a **$** karakter a szolgáltatásfiók neve végén legyen, például: $, és hagyja üresen a szolgáltatásfiók jelszava mezőt.
 
     ![Kép: A MIM szolgáltatás fiókjának konfigurálása](media/install-mim-service-portal/MIM_Install12.png)
 
@@ -67,7 +66,7 @@ MIMService 2016 SP2 és újabb verziók: Ha csoportosan felügyelt szolgáltatá
 
 11. Fogadja el az alapértelmezett értékeket a szinkronizációs kiszolgáló helyéhez, és a *contoso\MIMMA*.
     >[!NOTE]
-GMSA 2016 SP2 és újabb verziók: Ha a felügyeleti pont szinkronizálása szolgáltatás csoportosan felügyelt szolgáltatásfiókot kíván használni a-ben, és engedélyezni szeretné a "-szinkronizálási fiók használata" funkciót, akkor a következőt adja meg, mint a (z) *contoso\MIMSync $* .
+    >GMSA 2016 SP2 és újabb verziók: Ha a felügyeleti pont szinkronizálása szolgáltatás csoportosan felügyelt szolgáltatásfiókot kíván használni a-ben, és engedélyezni szeretné a "-szinkronizálási fiók használata" funkciót, akkor a következőt adja meg, mint a (z) *contoso\MIMSync $* .
 
     ![Kép: A MIM szolgáltatás és -portál konfigurálása](media/install-mim-service-portal/MIM_Install13.png)
 

@@ -11,12 +11,12 @@ ms.prod: microsoft-identity-manager
 ms.assetid: 9471ccc1-bafe-46ee-b169-1464262380e1
 ms.reviewer: markwahl-msft
 ms.suite: ems
-ms.openlocfilehash: 35c4dc2aa3c933a729d3503527eca03c68bf02b5
-ms.sourcegitcommit: b09a8c93983d9d92ca4871054650b994e9996ecf
+ms.openlocfilehash: bdf34be4841b1a911fdb61673e5a3855e66e7320
+ms.sourcegitcommit: 323c2748dcc6b6991b1421dd8e3721588247bc17
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73383960"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73568054"
 ---
 # <a name="mim-2016-sp2-upgrade--from-forefront-identity--or-microsoft-identity-manager"></a>A webhelyről 2016 SP2 frissítése a Forefront Identity vagy Microsoft Identity Manager
 
@@ -30,7 +30,7 @@ Több frissítési lehetőség is rendelkezésre áll. Ha már 2016 futtatta a S
 ## <a name="upgrade-from-fim-2010-r2-sp1-or-later-fim-builds"></a>Frissítés FIM 2010 R2 SP1 vagy újabb FIM-buildről
 
 > [!NOTE]
-A Forefront Identity Manager minimális támogatott verziója, amely közvetlenül a be2016 SP2-re frissíthető, FIM 2010 R2 SP1 (Build 4.1.3419.0). A rendszer nem támogatja a a FIM korábbi verzióiból származó, a 2016-es verzióra történő közvetlen frissítést. Ha a 4.1.3419.0-nél korábbi FIM-buildeket futtat, akkor a következőre kell frissítenie a FIM 2010 R2 SP1 verzióra, mielőtt a rendszer a következőre 2016 frissítené a következőt:-
+> A Forefront Identity Manager minimális támogatott verziója, amely közvetlenül a be2016 SP2-re frissíthető, FIM 2010 R2 SP1 (Build 4.1.3419.0). A rendszer nem támogatja a a FIM korábbi verzióiból származó, a 2016-es verzióra történő közvetlen frissítést. Ha a 4.1.3419.0-nél korábbi FIM-buildeket futtat, akkor a következőre kell frissítenie a FIM 2010 R2 SP1 verzióra, mielőtt a rendszer a következőre 2016 frissítené a következőt:-
 
 1. **1. lehetőség: teljes telepítés meglévő adatbázisok használatával**
     1. Készítsen biztonsági másolatot a FIMSynchronizationService és a FIMService adatbázisairól.
@@ -69,6 +69,6 @@ A Forefront Identity Manager minimális támogatott verziója, amely közvetlen�
     1. A webszolgáltatások frissítése 2016 bővítmény-és jelszó-visszaállítási ügyfelek esetén adja meg az új rendszerállapot-szolgáltatási kiszolgáló nevét, ha a rendszer megváltoztatta a következőt:
 
 > [!NOTE]
-A nyelvi csomagok frissítései a 2016 SP2 után gyorsjavításként (. msp fájlok) lesznek terjesztve, így nincs szükség a nyelvi csomagok eltávolítására/újratelepítésére.
+> A nyelvi csomagok frissítései a 2016 SP2 után gyorsjavításként (. msp fájlok) lesznek terjesztve, így nincs szükség a nyelvi csomagok eltávolítására/újratelepítésére.
 
 A frissítéssel és az adatbázisokkal kapcsolatos biztonsági mentési eljárásokkal kapcsolatos részletesebb információkat a [frissítés a fim 2010 R2](https://docs.microsoft.com/previous-versions/mim/jj134291%28v%3dws.10%29) -re című cikkben talál, amely a FIM-vagy a rendszerállapot-frissítési folyamatokra is érvényes.

@@ -11,12 +11,12 @@ ms.prod: microsoft-identity-manager
 ms.assetid: 2585e9c5-ce34-46c7-bdcf-8c08773901dc
 ms.reviewer: markwahl-msft
 ms.suite: ems
-ms.openlocfilehash: 0a8fd7fb4d36beffde86b020522ccd52287b5806
-ms.sourcegitcommit: b09a8c93983d9d92ca4871054650b994e9996ecf
+ms.openlocfilehash: b9bc580710a13b3a0868b0580d55469a753e7f33
+ms.sourcegitcommit: 323c2748dcc6b6991b1421dd8e3721588247bc17
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73329271"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73568086"
 ---
 # <a name="install-mim-2016-mim-synchronization-service"></a>A MIM 2016 telepítése: A MIM Synchronization Service
 
@@ -74,9 +74,9 @@ A Microsoft Identity Manager 2016 összetevőinek telepítéséhez először ké
    3. Service Account Domain or local computer name (Szolgáltatásfiók tartománya vagy helyi számítógép neve): *contoso*
 
     >[!NOTE]
-Felügyeleti csomag 2016 SP2 és újabb verziók: csoportosan felügyelt szolgáltatásfiókok esetén győződjön meg arról, hogy a **$** karakter a szolgáltatásfiók neve végén található, például MIMSync $, és hagyja üresen a jelszó mezőt.
+    >Felügyeleti csomag 2016 SP2 és újabb verziók: csoportosan felügyelt szolgáltatásfiókok esetén győződjön meg arról, hogy a **$** karakter a szolgáltatásfiók neve végén található, például MIMSync $, és hagyja üresen a jelszó mezőt.
 
-   ![Kép: Szolgáltatásfiók](media/install-mim-sync/MIM_Install4.png)
+    ![Kép: Szolgáltatásfiók](media/install-mim-sync/MIM_Install4.png)
 
 8. Adja meg a MIM Sync Service telepítőjében a megfelelő biztonsági csoportokat:
 

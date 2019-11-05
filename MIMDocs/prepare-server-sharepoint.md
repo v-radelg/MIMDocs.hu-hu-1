@@ -11,12 +11,12 @@ ms.prod: microsoft-identity-manager
 ms.assetid: c01487f2-3de6-4fc4-8c3a-7d62f7c2496c
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 46320c8c2d1ae7c530c4670159e393ee1be7165c
-ms.sourcegitcommit: b09a8c93983d9d92ca4871054650b994e9996ecf
+ms.openlocfilehash: 62ef8796717dbcaea18d21bc3d28248efdeef92e
+ms.sourcegitcommit: 323c2748dcc6b6991b1421dd8e3721588247bc17
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73329452"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73568112"
 ---
 # <a name="set-up-an-identity-management-server-sharepoint"></a>Identitáskezelési kiszolgáló beállítása: SharePoint
 
@@ -26,7 +26,7 @@ ms.locfileid: "73329452"
 > 
 
 > [!NOTE]
-A SharePoint Server 2019 telepítési eljárása nem különbözik a SharePoint Server 2016 telepítési eljárástól, **kivéve azokat** a további lépéseket, amelyeket el kell végezni a ASHX-fájlok a webkiszolgálói portál által használt feloldásához.
+> A SharePoint Server 2019 telepítési eljárása nem különbözik a SharePoint Server 2016 telepítési eljárástól, **kivéve azokat** a további lépéseket, amelyeket el kell végezni a ASHX-fájlok a webkiszolgálói portál által használt feloldásához.
 
 > [!NOTE]
 > Ez az útmutató egy Contoso nevű fiktív vállalat neveit és értékeit használja szemléltetésként. Ezeket helyettesítse a saját neveivel és értékeivel. Példa:
@@ -50,13 +50,13 @@ A SharePoint 2016 telepítéséhez kövesse az alábbi lépéseket. A telepíté
     -   Váltson arra a könyvtárra, amelybe a SharePointot kicsomagolta.
 
     -   Írja be a következő parancsot:
-    ```CMD
+    ```
     .\prerequisiteinstaller.exe
     ```
 
 2.  A **SharePoint** előfeltételeinek telepítését követően telepítse a **SharePoint 2016** alkalmazást a következő parancs beírásával:
 
-    ```CMD
+    ```
     .\setup.exe
     ```
 
@@ -99,26 +99,26 @@ A SharePoint és a MIM együttműködésének konfigurálásához kövesse a **S
     > Ekkor megjelenik egy figyelmeztető üzenet arról, hogy a rendszer klasszikus Windows-hitelesítést használ, és több percig is eltarthat, míg a záró parancs sikeresen lefut. Ha a parancs futása befejeződött, a kimenetben megjelenik az új portál URL-címe. A **SharePoint 2016 felügyeleti rendszerhéj** ablakának megnyitásához nyissa meg a hivatkozást később.
 
 2. Indítsa el a SharePoint 2016 felügyeleti rendszerhéját, és futtassa a következő PowerShell-szkriptet egy, a webalkalmazáshoz társított **SharePoint-webhelycsoport** létrehozásához.
-   ```PowerShell
+    ```PowerShell
     $t = Get-SPWebTemplate -compatibilityLevel 15 -Identity "STS#1"
     $w = Get-SPWebApplication http://mim.contoso.com/
     New-SPSite -Url $w.Url -Template $t -OwnerAlias contoso\miminstall -CompatibilityLevel 15 -Name "MIM Portal"
     $s = SpSite($w.Url)
     $s.CompatibilityLevel
-   ```
-   > [!NOTE]
-   > Ellenőrizze, hogy a *CompatibilityLevel* változó eredménye "15". Ha az eredmény eltér a "15" értéktől, akkor a webhelycsoport nem lett létrehozva a megfelelő verziójú felülettel; törölje a webhelycsoportot, és hozza létre újból.
+    ```
+    > [!NOTE]
+    > Ellenőrizze, hogy a *CompatibilityLevel* változó eredménye "15". Ha az eredmény eltér a "15" értéktől, akkor a webhelycsoport nem lett létrehozva a megfelelő verziójú felülettel; törölje a webhelycsoportot, és hozza létre újból.
 
     > [!IMPORTANT]
-A SharePoint Server 2019 különböző webalkalmazás-tulajdonságot használ a letiltott fájlkiterjesztések listájának megtartására. Ezért a tiltás feloldásához. A ASHX-fájlok három további parancsát manuálisan kell végrehajtani a SharePoint felügyeleti rendszerhéjból.
-<br/>
+    > A SharePoint Server 2019 különböző webalkalmazás-tulajdonságot használ a letiltott fájlkiterjesztések listájának megtartására. Ezért a tiltás feloldásához. A ASHX-fájlok három további parancsát manuálisan kell végrehajtani a SharePoint felügyeleti rendszerhéjból.
+    <br/>
     **Hajtsa végre a következő három parancsot a SharePoint 2019-hoz:**
 
-   ```PowerShell
+    ```PowerShell
     $w.BlockedASPNetExtensions.Remove("ashx")
     $w.Update()
     $w.BlockedASPNetExtensions
-   ```
+    ```
    > [!NOTE]
    > Győződjön meg arról, hogy a *BlockedASPNetExtensions* lista nem tartalmazza a ASHX bővítményt, különben több, a rendszer nem tudja helyesen megjeleníteni a bejelentkező-portál lapjait.
 
