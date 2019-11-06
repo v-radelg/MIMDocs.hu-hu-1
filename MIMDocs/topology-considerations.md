@@ -11,12 +11,12 @@ ms.prod: microsoft-identity-manager
 ms.assetid: 735dc357-dfba-4f68-a5b3-d66d6c018803
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 42562e92b3fe0daa63110d33d8952a3a1fc3de17
-ms.sourcegitcommit: 7de35aaca3a21192e4696fdfd57d4dac2a7b9f90
+ms.openlocfilehash: d9d749029d52c7e685e581ffe603aca63752ca3e
+ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49358080"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73636996"
 ---
 # <a name="topology-considerations"></a>Topológiai szempontok
 A Microsoft Identity Manager (MIM) összetevőit ugyanarra a kiszolgálóra, vagy több különböző konfigurációjú kiszolgálóra is telepítheti. Az üzembe helyezéshez választott topológia hatással van a MIM-mel elérhető teljesítményre. Ez a cikk több lehetséges üzembe helyezési topológiát mutat be.
@@ -37,7 +37,7 @@ Az üzembe helyezési topológia megtervezéséhez fontos tudni, hogy melyik ös
 
 A következő táblázat ismerteti a lehetőségeket a MIM egyes összetevőinek üzemeltetésére. Az összetevők üzemeltethetők ugyanazon a számítógépen, vagy eloszthatók több kiszolgáló és fürt között.
 
-| | MIM-portál | MIM szolgáltatás | MIM Sync Service | SQL Server |
+| | MIM-portál | MIM szolgáltatás | MIM Sync Service | SQL-kiszolgáló |
 | --- | --- | --- | --- | --- |
 | Ugyanaz a számítógép | Igen | Igen | Igen | Igen |
 | Külön kiszolgáló | Igen | Igen | Igen | Igen |
@@ -64,5 +64,6 @@ A hagyományos többrétegű topológiához hasonlóan a MIM-portál teljesítm�
 
 A MIM Synchronization Service és a MIM szolgáltatás adatbázisainak üzemeltetésére szolgáló SQL Servert futtató számítógépek drámai módon befolyásolják a MIM-környezet általános teljesítményét. Ennek megfelelően az adatbázisok teljesítményének optimalizálásához kövesse az SQL Server dokumentációjában foglalt javaslatokat. További tudnivalókért lásd a következő dokumentumokat:
 
-## <a name="see-also"></a>Lásd még:
-- A letölthető [Forefront Identity Manager (FIM) 2010 kapacitástervezési útmutatóban](http://go.microsoft.com/fwlink/?LinkId=200180) részletes információkat olvashat egy tesztkörnyezetről és a kapcsolódó teljesítménytesztelési eredményekről.
+## <a name="see-also"></a>További információ
+
+- A [Forefront Identity Manager (FIM) 2010 kapacitás-tervezési útmutatója](https://www.microsoft.com/en-us/download/details.aspx?id=7437) részletesebben ismerteti a tesztelési buildek és a teljesítmény tesztelésének eredményét.
