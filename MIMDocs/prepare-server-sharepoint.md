@@ -29,7 +29,7 @@ ms.locfileid: "73568112"
 > A SharePoint Server 2019 telepítési eljárása nem különbözik a SharePoint Server 2016 telepítési eljárástól, **kivéve azokat** a további lépéseket, amelyeket el kell végezni a ASHX-fájlok a webkiszolgálói portál által használt feloldásához.
 
 > [!NOTE]
-> Ez az útmutató egy Contoso nevű fiktív vállalat neveit és értékeit használja szemléltetésként. Ezeket helyettesítse a saját neveivel és értékeivel. Példa:
+> Ez az útmutató egy Contoso nevű fiktív vállalat neveit és értékeit használja szemléltetésként. Ezeket helyettesítse a saját neveivel és értékeivel. Például:
 > - Tartományvezérlő neve – **corpdc**
 > - Tartománynév – **contoso**
 > - **Corpservice** -kiszolgáló neve
@@ -49,7 +49,7 @@ A SharePoint 2016 telepítéséhez kövesse az alábbi lépéseket. A telepíté
 
     -   Váltson arra a könyvtárra, amelybe a SharePointot kicsomagolta.
 
-    -   Írja be a következő parancsot:
+    -   Írja be a következő parancsot.
     ```
     .\prerequisiteinstaller.exe
     ```

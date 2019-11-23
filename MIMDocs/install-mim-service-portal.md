@@ -25,7 +25,7 @@ ms.locfileid: "73568074"
 > [Adatbázisok szinkronizálása »](install-mim-sync-ad-service.md)
  
 > [!NOTE]
-> Ez az útmutató egy Contoso nevű fiktív vállalat neveit és értékeit használja szemléltetésként. Ezeket helyettesítse a saját neveivel és értékeivel. Példa:
+> Ez az útmutató egy Contoso nevű fiktív vállalat neveit és értékeit használja szemléltetésként. Ezeket helyettesítse a saját neveivel és értékeivel. Például:
 > - Tartományvezérlő neve – **mimservername**
 > - Tartománynév – **contoso**
 > - Jelszó – <strong>Pass@word1</strong>
@@ -110,7 +110,7 @@ Ha végzett a telepítés előtti teendőkkel, kattintson az **Install** (Telep�
 
 A telepítést követően győződjön meg arról, hogy a MIM-portál aktív.
 
-1. Indítsa el az Internet Explorert, és kapcsolódjon a *http://mim.contoso.com/identitymanagement* -beli webalkalmazási portálhoz. Vegye figyelembe, hogy az oldal első látogatásakor előfordulhat, hogy rövid idő múlva.
+1. Indítsa el az Internet Explorert, és kapcsolódjon a MIM-portál a *http://mim.contoso.com/identitymanagement* . Vegye figyelembe, hogy az oldal első látogatásakor előfordulhat, hogy rövid idő múlva.
     - Ha szükséges, hitelesítse magát *contoso\miminstall* az Internet Explorerben.
 
 2. Az Internet Explorerben nyissa meg az **Internetbeállításokat**, lépjen a **Biztonság** lapra, és ha még nem szerepel ott, vegye fel a webhelyet a **Helyi intranet** zónába.  Zárja be az **Internetbeállítások** párbeszédpanelt.
