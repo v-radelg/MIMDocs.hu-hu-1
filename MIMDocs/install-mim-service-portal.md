@@ -12,10 +12,10 @@ ms.assetid: b0b39631-66df-4c5f-80c9-a1774346f816
 ms.reviewer: markwahl-msft
 ms.suite: ems
 ms.openlocfilehash: 1f7aa8e257ef4fd1d97ee602a4e0f3f878d8c1b6
-ms.sourcegitcommit: 323c2748dcc6b6991b1421dd8e3721588247bc17
+ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "73568074"
 ---
 # <a name="install-mim-2016-mim-service-and-portal"></a>A MIM 2016 telepítése: A MIM szolgáltatás és -portál
@@ -25,7 +25,7 @@ ms.locfileid: "73568074"
 > [Adatbázisok szinkronizálása »](install-mim-sync-ad-service.md)
  
 > [!NOTE]
-> Ez az útmutató egy Contoso nevű fiktív vállalat neveit és értékeit használja szemléltetésként. Ezeket helyettesítse a saját neveivel és értékeivel. Például:
+> Ez az útmutató egy Contoso nevű fiktív vállalat neveit és értékeit használja szemléltetésként. Ezeket helyettesítse a saját neveivel és értékeivel. Példa:
 > - Tartományvezérlő neve – **mimservername**
 > - Tartománynév – **contoso**
 > - Jelszó – <strong>Pass@word1</strong>
@@ -110,7 +110,7 @@ Ha végzett a telepítés előtti teendőkkel, kattintson az **Install** (Telep�
 
 A telepítést követően győződjön meg arról, hogy a MIM-portál aktív.
 
-1. Indítsa el az Internet Explorert, és kapcsolódjon a MIM-portál a *http://mim.contoso.com/identitymanagement* . Vegye figyelembe, hogy az oldal első látogatásakor előfordulhat, hogy rövid idő múlva.
+1. Indítsa el az Internet Explorert, és kapcsolódjon a *http://mim.contoso.com/identitymanagement* -beli webalkalmazási portálhoz. Vegye figyelembe, hogy az oldal első látogatásakor előfordulhat, hogy rövid idő múlva.
     - Ha szükséges, hitelesítse magát *contoso\miminstall* az Internet Explorerben.
 
 2. Az Internet Explorerben nyissa meg az **Internetbeállításokat**, lépjen a **Biztonság** lapra, és ha még nem szerepel ott, vegye fel a webhelyet a **Helyi intranet** zónába.  Zárja be az **Internetbeállítások** párbeszédpanelt.

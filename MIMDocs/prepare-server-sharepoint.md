@@ -12,10 +12,10 @@ ms.assetid: c01487f2-3de6-4fc4-8c3a-7d62f7c2496c
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: 62ef8796717dbcaea18d21bc3d28248efdeef92e
-ms.sourcegitcommit: 323c2748dcc6b6991b1421dd8e3721588247bc17
+ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "73568112"
 ---
 # <a name="set-up-an-identity-management-server-sharepoint"></a>Identitáskezelési kiszolgáló beállítása: SharePoint
@@ -29,7 +29,7 @@ ms.locfileid: "73568112"
 > A SharePoint Server 2019 telepítési eljárása nem különbözik a SharePoint Server 2016 telepítési eljárástól, **kivéve azokat** a további lépéseket, amelyeket el kell végezni a ASHX-fájlok a webkiszolgálói portál által használt feloldásához.
 
 > [!NOTE]
-> Ez az útmutató egy Contoso nevű fiktív vállalat neveit és értékeit használja szemléltetésként. Ezeket helyettesítse a saját neveivel és értékeivel. Például:
+> Ez az útmutató egy Contoso nevű fiktív vállalat neveit és értékeit használja szemléltetésként. Ezeket helyettesítse a saját neveivel és értékeivel. Példa:
 > - Tartományvezérlő neve – **corpdc**
 > - Tartománynév – **contoso**
 > - **Corpservice** -kiszolgáló neve
@@ -49,7 +49,7 @@ A SharePoint 2016 telepítéséhez kövesse az alábbi lépéseket. A telepíté
 
     -   Váltson arra a könyvtárra, amelybe a SharePointot kicsomagolta.
 
-    -   Írja be a következő parancsot.
+    -   Írja be a következő parancsot:
     ```
     .\prerequisiteinstaller.exe
     ```

@@ -12,10 +12,10 @@ ms.assetid: 51507d0a-2aeb-4cfd-a642-7c71e666d6cd
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: c6d5d5081f0e932b9c60d8f2025b54e47dc352d5
-ms.sourcegitcommit: 323c2748dcc6b6991b1421dd8e3721588247bc17
+ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "73568042"
 ---
 # <a name="set-up-an-identity-management-server-windows-server-2016-or-2019"></a>Identitáskezelés-felügyeleti kiszolgáló beállítása: Windows Server 2016 vagy 2019
@@ -30,7 +30,7 @@ ms.locfileid: "73568042"
 
 
 > [!NOTE]
-> Ez az útmutató egy Contoso nevű fiktív vállalat neveit és értékeit használja szemléltetésként. Ezeket helyettesítse a saját neveivel és értékeivel. Például:
+> Ez az útmutató egy Contoso nevű fiktív vállalat neveit és értékeit használja szemléltetésként. Ezeket helyettesítse a saját neveivel és értékeivel. Példa:
 > - Tartományvezérlő neve – **corpdc**
 > - Tartománynév – **contoso**
 > - **Corpservice** -kiszolgáló neve
@@ -63,7 +63,7 @@ Indítsa el a Windows Server 2016 rendszerű gépet, amely legalább 8 12GB RAM-
 
     ![Kép: PowerShell-funkciók](media/MIM-DeployWS2.png)
 
-7. A PowerShell-ablakba írja be következő parancsokat: Elképzelhető, hogy a **.NET-keretrendszer** 3.5 funkcióhoz tartozó forrásfájlokhoz más helyet kell megadni. Ezek a funkciók általában nem érhetők el a Windows Server telepítésekor, csak a következő mappában az operációs rendszer telepítésére szolgáló lemezen, pl.: „\*d:\Sources\SxS\*”.
+7. A PowerShell-ablakba írja be következő parancsokat: Elképzelhető, hogy a **.NET-keretrendszer** 3.5 funkcióhoz tartozó forrásfájlokhoz más helyet kell megadni. Ezek a funkciók általában nem érhetők el a Windows Server telepítésekor, csak a következő mappában az operációs rendszer telepítésére szolgáló lemezen, pl.: „*d:\Sources\SxS\*”.
 
     ```
     import-module ServerManager

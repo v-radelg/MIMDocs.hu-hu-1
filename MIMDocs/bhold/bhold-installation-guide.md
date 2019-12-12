@@ -10,10 +10,10 @@ ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: ''
 ms.openlocfilehash: 05eb2afc0ddbf6104e27a5c24e121a55bd805292
-ms.sourcegitcommit: 4c4bc7aa42cd5984c838abdd302490355ddcb4ea
+ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/16/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "68238905"
 ---
 # <a name="microsoft-bhold-suite-sp1-60-installation-guide"></a>Microsoft BHOLD Suite SP1 (6,0) – telepítési útmutató
@@ -40,7 +40,7 @@ Ez a dokumentum azt ismerteti, hogyan tervezze meg az BHOLD üzemelő példány�
 
 Ez a dokumentum azt feltételezi, hogy a szoftverek kiszolgáló számítógépekre történő telepítésének alapvető ismerete. Azt is feltételezi, hogy a Active Directory® tartományi szolgáltatások, a Microsoft Identity Manager SP1 (FIM) és a Microsoft SQL Server 2012 adatbázis-szoftver alapvető ismeretekkel rendelkezik. A jelen dokumentáció hatókörén kívül a függő technológiák (például a AD DS és a FIM) beállításának és konfigurálásának leírása. További információ a Microsoft BHOLD-modulok által végrehajtott függvényekről: [a Microsoft BHOLD Suite fogalmi útmutatója](https://technet.microsoft.com/library/jj134102(v=ws.10).aspx).
 
-## <a name="audience"></a>Célközönség
+## <a name="audience"></a>Közönség
 
 Ez a dokumentum az informatikai tervezők, rendszerfejlesztők, technológiai döntéshozók, tanácsadók, infrastruktúra-tervezők és informatikai szakemberek számára készült, akik a Microsoft BHOLD Suite üzembe helyezését tervezik.
 
@@ -53,7 +53,7 @@ Ez a szakasz a következő témaköröket tartalmazza:
 - Egykiszolgálós architektúra
 - Kettős kiszolgáló architektúrája
 - Kétrétegű architektúra
-- Javaslatok az SQL Serverhez
+- Az SQL Serverre vonatkozó ajánlások
 
 ### <a name="single-server-architecture"></a>Egykiszolgálós architektúra
 
@@ -79,7 +79,7 @@ A legtöbb környezetben, különösen azoknál, ahol a teljesítmény fontos, a
 
 ![kétrétegű architektúra](media/bhold-installation-guide/two-tier.png)
 
-### <a name="sql-server-recommendations"></a>Javaslatok az SQL Serverhez
+### <a name="sql-server-recommendations"></a>Az SQL Serverre vonatkozó ajánlások
 
 Ha nagyméretű szervezetekben helyez üzembe BHOLD, erősen ajánlott a Microsoft SQL Server-adatbázis beállításához kövesse az alábbi irányelveket:
 
@@ -99,7 +99,7 @@ A Windows konfigurálható úgy, hogy a Microsoft legfelső szintű tanúsítvá
 
 ![IIS telepítése BHOLD](media/bhold-installation-guide/iis-install-bhold.png)
 
-Ha a BHOLD Suite SP1 szervizcsomagot a Windows Server 2012-es vagy 2016-es ```C:\Windows\System32\inetsrv\config```verziójára telepíti, a BHOLD-weblapok addig nem lesznek elérhetők, amíg nem módosítja a applicationHost. config fájlt. A ```<globalModules>``` (z) szakaszban ```preCondition="bitness64``` adja hozzá a szöveget a ```<add name="SPNativeRequestModule"``` következő megkezdéséhez:
+Ha a BHOLD Suite SP1 szervizcsomagot a Windows Server 2012-es vagy 2016-es verziójára telepíti, a BHOLD-weblapok addig nem lesznek elérhetők, amíg nem módosítja a applicationHost. config fájlt ```C:\Windows\System32\inetsrv\config```. A ```<globalModules>``` szakaszban adja hozzá a ```preCondition="bitness64```t a ```<add name="SPNativeRequestModule"``` megkezdő bejegyzéshez, hogy az a következőképpen legyen beolvasva:
 
 ```<add name="SPNativeRequestModule" image="C:\Program Files\Common Files\Microsoft Shared\Web Server Extensions\15\isapi\spnativerequestmodule.dll" preCondition="bitness64"/>```
 

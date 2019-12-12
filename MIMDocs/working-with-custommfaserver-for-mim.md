@@ -1,6 +1,6 @@
 ---
-title: Használjon egy másik többtényezős hitelesítési szolgáltató PAM aktiválásához egy API-n keresztül vagy az SSPR forgatókönyvben |} A Microsoft Docs
-description: Állíthatja be egyéni többtényezős hitelesítés API-t egy második biztonsági szintként, ha a felhasználók szerepköröket aktiválnak a Privileged Access Management és az önkiszolgáló jelszó-visszaállítás használatához.
+title: Alternatív Multi-Factor Authentication szolgáltató használata egy API-n keresztül a PAM vagy a SSPR forgatókönyv aktiválásához | Microsoft Docs
+description: Állítsa be az egyéni MFA API-t második biztonsági rétegként, amikor a felhasználók a szerepköröket aktiválja Privileged Access Management és az önkiszolgáló jelszó-visszaállítást használják.
 keywords: ''
 author: billmath
 ms.author: billmath
@@ -10,50 +10,50 @@ ms.date: 09/04/2018
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.openlocfilehash: 7fb111520f94541672fc56d0fd2ee95bfcd3a49e
-ms.sourcegitcommit: f58926a9e681131596a25b66418af410a028ad2c
+ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/09/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67690746"
 ---
-# <a name="use-a-custom-multi-factor-authentication-provider-via-an-api-during-pam-role-activation-or-in-sspr"></a>Egy API-val egyéni multi-factor Authentication-szolgáltatót használ, a PAM-szerepkör aktiválása során, vagy az SSPR-ben
+# <a name="use-a-custom-multi-factor-authentication-provider-via-an-api-during-pam-role-activation-or-in-sspr"></a>Egyéni Multi-Factor Authentication-szolgáltató használata egy API-n keresztül a PAM szerepkör aktiválása vagy a SSPR
 
-Ügyfeleink az Azure AD prémium vagy az Azure MFA is integrálhatja az Azure MFA két MIM forgatókönyv – a Privileged Access Management (PAM) szerepkör-aktiválás és az önkiszolgáló jelszó alaphelyzetbe állítása (SSPR).
+Az prémium szintű Azure AD vagy az Azure MFA ügyfelei az Azure MFA-t két, a Privileged Access Management (PAM) szerepkör-aktiválással és az önkiszolgáló jelszó-visszaállítással (SSPR) integrálják.
 
-A MIM-ügyfelek két további lehetősége van:
+A felhasználók két további lehetőség közül választhatnak:
 
- - Használjon egy egyéni egy egyszeri jelszó kézbesítési szolgáltató, amely csak a MIM SSPR esetben értelmezhető és útmutató dokumentált [konfigurálása az önkiszolgáló jelszó-visszaállítási az OTP SMS-kapu](https://docs.microsoft.com/en-us/previous-versions/mim/hh824692(v=ws.10))
- - A telefonos egyéni többtényezős hitelesítési szolgáltatót használ. Ez egyaránt vonatkozik az ebben a cikkben leírt a MIM SSPR és a PAM forgatókönyveket
+ - Egyéni egyszeri jelszavas kézbesítési szolgáltató használata, amely csak a SSPR-forgatókönyvben alkalmazható, és az [önkiszolgáló jelszó-visszaállítás az OTP SMS Gate](https://docs.microsoft.com/en-us/previous-versions/mim/hh824692(v=ws.10)) szolgáltatással való konfigurálásának útmutatójában szerepel.
+ - Használjon egyéni multi-Factor Authentication telefonos szolgáltatót. Ez a jelen cikkben ismertetett SSPR és PAM-forgatókönyvekben is alkalmazható.
 
-Ez a cikk ismerteti a MIM használata egy egyéni többtényezős hitelesítési szolgáltató API-k és SDK-t az ügyfél által fejlesztett integrációs keresztül.  
+Ez a cikk azt ismerteti, hogyan használható a többtényezős hitelesítés egy egyéni multi-Factor Authentication-szolgáltatóval egy API-n keresztül, valamint egy, az ügyfél által fejlesztett integrációs SDK használatával.  
 
 ## <a name="prerequisites"></a>Előfeltételek
 
-A MIM egy egyéni többtényezős hitelesítési szolgáltató API használatához szükséges:
+Ha egyéni Multi-Factor Authentication szolgáltatói API-t kíván használni a felhasználói felülettel, a következőkre lesz szüksége:
 
 - Telefonszám az összes jelölt felhasználó esetén
-- A MIM-gyorsjavítás [4.5.202.0](https://www.microsoft.com/download/details.aspx?id=57278) vagy újabb – tekintse meg a [korábbi verziók](reference/version-history.md) hirdetmények
-- Konfigurált SSPR vagy a PAM MIM szolgáltatás
+- [4.5.202.0](https://www.microsoft.com/download/details.aspx?id=57278) -gyorsjavítás vagy újabb – a bejelentések [előzményeinek](reference/version-history.md) megtekintése
+- SSPR vagy PAM-hoz konfigurált webkiszolgáló-szolgáltatás
 
-## <a name="approach-using-custom-multi-factor-authentication-code"></a>Egyéni többtényezős hitelesítési kód segítségével módszert
+## <a name="approach-using-custom-multi-factor-authentication-code"></a>Megközelítés egyéni multi-Factor Authentication-kód használatával
 
-### <a name="step-1-ensure-mim-service-is-at-version-452020-or-later"></a>1\. lépés: Győződjön meg, hogy a MIM szolgáltatás 4.5.202.0 verzió vagy újabb
+### <a name="step-1-ensure-mim-service-is-at-version-452020-or-later"></a>1\. lépés: Győződjön meg arról, hogy a 4.5.202.0 vagy újabb verzióban van
 
-Töltse le és telepítse a MIM-gyorsjavítás [4.5.202.0](https://www.microsoft.com/download/details.aspx?id=57278) vagy újabb verziója.
+Töltse le és telepítse a [4.5.202.0](https://www.microsoft.com/download/details.aspx?id=57278) vagy újabb verziót.
 
-### <a name="step-2-create-a-dll-which-implements-the-iphoneserviceprovider-interface"></a>2\. lépés: Hozzon létre egy IPhoneServiceProvider illesztő implementálását végző DLL
+### <a name="step-2-create-a-dll-which-implements-the-iphoneserviceprovider-interface"></a>2\. lépés: hozzon létre egy DLL-t, amely megvalósítja a IPhoneServiceProvider felületet
 
-A dll-fájlt egy osztály, amely három módszert kell tartalmaznia:
+A DLL-nek tartalmaznia kell egy osztályt, amely három módszert valósít meg:
 
-- `InitiateCall`: A MIM szolgáltatás meghívja ezt a módszert. A szolgáltatás továbbítja a telefon száma és a kérés azonosítója paraméterekként.  A módszert kell visszaadnia egy `PhoneCallStatus` értékét `Pending`, `Success` vagy `Failed`.
-- `GetCallStatus`: Ha egy korábbi hívása `initiateCall` visszaadott `Pending`, a MIM szolgáltatás meghívja ezt a módszert. Ez a módszer emellett adja vissza `PhoneCallStatus` értékét `Pending`, `Success` vagy `Failed`.
-- `GetFailureMessage`: Ha egy előző meghívását `InitiateCall` vagy `GetCallStatus` visszaadott `Failed`, a MIM szolgáltatás meghívja ezt a módszert. Ez a módszer egy diagnosztikai üzenetet adja vissza.
+- `InitiateCall`: a rendszerkiszolgáló szolgáltatás ezt a metódust fogja meghívni. A szolgáltatás paraméterként továbbítja a telefonszámot és a kérelem AZONOSÍTÓját.  A metódusnak `Pending`, `Success` vagy `Failed``PhoneCallStatus` értéket kell visszaadnia.
+- `GetCallStatus`: Ha `initiateCall` visszaadott egy korábbi hívást `Pending`, a rendszerkiszolgálói szolgáltatás ezt a metódust fogja meghívni. Ez a metódus `Pending`, `Success` vagy `Failed``PhoneCallStatus` értékét is visszaadja.
+- `GetFailureMessage`: Ha `InitiateCall` vagy `GetCallStatus` előző meghívása `Failed`, a rendszerkiszolgálói szolgáltatás ezt a metódust fogja meghívni. Ez a metódus egy diagnosztikai üzenetet ad vissza.
 
-Ezek a metódusok implementációiban szálbiztos, kell lennie, és emellett megvalósítása a `GetCallStatus` és `GetFailureMessage` kell nem feltételezi, hogy azok fogja meghívni, egy korábbi hívása elemmel azonos szálban `InitiateCall`.
+Ezeknek a módszereknek a megvalósításának a szál biztonságosnek kell lennie, továbbá a `GetCallStatus` és `GetFailureMessage` megvalósításának nem feltételezhető, hogy ugyanazt a szálat fogja meghívni, mint a `InitiateCall`korábbi hívása.
 
-A dll-Store a `C:\Program Files\Microsoft Forefront Identity Manager\2010\Service\` könyvtár.
+Tárolja a DLL-t a `C:\Program Files\Microsoft Forefront Identity Manager\2010\Service\` könyvtárban.
 
-A mintakód, amely lehet lefordított használatával a Visual Studio 2010 vagy újabb.
+A Visual Studio 2010-es vagy újabb verziójával összeállítható mintakód.
 
 ```csharp
 using System;
@@ -135,27 +135,27 @@ namespace CustomPhoneGate
     }
 }
 ```
-### <a name="step-3-backup-the-mfasettingsxml-located-in-the-cprogram-filesmicrosoft-forefront-identity-manager2010service"></a>3\. lépés: Biztonsági mentés az MfaSettings.xml található a "C:\Program Files\Microsoft Forefront Identity Manager\2010\Service"
+### <a name="step-3-backup-the-mfasettingsxml-located-in-the-cprogram-filesmicrosoft-forefront-identity-manager2010service"></a>3\. lépés: a "C:\Program Files\Microsoft Forefront Identity Manager\2010\service mappában" mappában található MfaSettings. xml fájl biztonsági mentése
 
-### <a name="step-4-edit-the-mfasettingsxml-file"></a>4\. lépés: Edit the MfaSettings.xml file
+### <a name="step-4-edit-the-mfasettingsxml-file"></a>4\. lépés: a MfaSettings. xml fájl szerkesztése
 
-Frissítés, vagy törölje a következő sorokat:
+Frissítse vagy törölje a következő sorokat:
 
-- Az összes konfigurációs bejegyzéseket sor eltávolítása/törlése 
+- Az összes konfigurációs bejegyzés sorainak eltávolítása/törlése 
 
-- Frissítés vagy a következő sorokat ad hozzá a következő MfaSettings.xml a egyéni telefonszám-szolgáltatónál <br>
+- Frissítse vagy adja hozzá a következő sorokat a MfaSettings. xml fájlhoz az egyéni telefonos szolgáltatóval <br>
 `<CustomPhoneProvider>C:\Program Files\Microsoft Forefront Identity Manager\2010\Service\CustomPhoneGate.dll</CustomPhoneProvider>`
 
-### <a name="step-5-restart-mim-service"></a>5\. lépés: A MIM szolgáltatás újraindítása
+### <a name="step-5-restart-mim-service"></a>5\. lépés: a rendszerindítási szolgáltatás újraindítása
 
-A szolgáltatás újraindulása után használja az SSPR és/vagy a PAM funkciók az egyéni identitásszolgáltató ellenőrzése.
+A szolgáltatás újraindítása után a SSPR és/vagy a PAM használatával érvényesítheti az egyéni identitás-szolgáltató funkcióit.
 
 > [!NOTE] 
-> Vissza a beállítás MfaSettings.xml cserélje a 3. lépésben a biztonságimásolat-fájl
+> Ha vissza szeretné állítani a beállítást, cserélje le a MfaSettings. xml fájlt a biztonságimásolat-fájlra a 3. lépésben
 
 
-## <a name="next-steps"></a>További lépések
+## <a name="next-steps"></a>Következő lépések
 
-- [Ismerkedés az Azure multi-factor Authentication-kiszolgálón](https://docs.microsoft.com/en-us/azure/active-directory/authentication/howto-mfaserver-deploy)
-- [Mi az Azure multi-factor Authentication](https://docs.microsoft.com/azure/multi-factor-authentication/multi-factor-authentication)
-- [A MIM verziókiadásai](./reference/version-history.md)
+- [Első lépések az Azure Multi-Factor Authentication-kiszolgálóval](https://docs.microsoft.com/en-us/azure/active-directory/authentication/howto-mfaserver-deploy)
+- [Mi az Azure Multi-Factor Authentication](https://docs.microsoft.com/azure/multi-factor-authentication/multi-factor-authentication)
+- [A rendszerfrissítési csomag verziószáma](./reference/version-history.md)

@@ -11,15 +11,15 @@ ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: 5134a112-f73f-41d0-a5a5-a89f285e1f73
 ms.openlocfilehash: 72dd1d3cf34e28567fa672b747a04347b150797e
-ms.sourcegitcommit: f58926a9e681131596a25b66418af410a028ad2c
+ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/09/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67690786"
 ---
 # <a name="using-azure-mfa-for-activation"></a>Aktiválás az Azure MFA használatával
 > [!IMPORTANT]
-> Miatt elévülése az Azure multi-factor Authentication hitelesítés szoftverfejlesztői közleményt. Az Azure MFA SDK ügyfeleink 2018. November 14., a kivezetési dátum másnapi támogatott lesz. Új ügyfelek és a meglévő ügyfelek nem tudják SDK letöltéséhez már a klasszikus Azure portálon keresztül. Töltse le, hogy kell keresse fel a létrehozott csomagot biztosítunk MFA szolgáltatás hitelesítő adatai az Azure ügyfélszolgálatához. <br> A Microsoft fejlesztői csapat dolgozik MFA módosításai és az MFA-kiszolgáló SDK integrálásával.  Ez része lesz egy közelgő gyorsjavítás lásd: [korábbi verziók](../reference/version-history.md) hirdetmények. 
+> Az Azure Multi-Factor Authentication szoftverfejlesztői készlet elavult felmondásának bejelentése miatt. Az Azure MFA SDK a meglévő ügyfelek számára a 2018. november 14-én érvényes. Az új ügyfelek és a jelenlegi ügyfelek többé nem tölthetik le az SDK-t a klasszikus Azure portálon keresztül. A letöltéshez el kell érnie az Azure ügyfélszolgálatát, hogy megkapja a generált MFA szolgáltatás hitelesítő adatait tartalmazó csomagot. <br> A Microsoft fejlesztői csapata a többtényezős hitelesítésen dolgozik a MFA Server SDK integrálásával.  Ez egy közelgő gyorsjavítás részét képezi, amely a bejelentések [korábbi verzióiban](../reference/version-history.md) található. 
 
 
 A PAM-szerepkörök konfigurálásakor kiválaszthatja, hogyan szeretné engedélyekkel felruházni azokat a felhasználókat, akik a szerepkör aktiválását kérik. A PAM-engedélyezés a következő választási lehetőségeket nyújtja:
@@ -29,11 +29,11 @@ A PAM-szerepkörök konfigurálásakor kiválaszthatja, hogyan szeretné engedé
 
 Ha egyik ellenőrzési mód sincs engedélyezve, a jelölt felhasználók szerepköre automatikusan aktiválódik.
 
-A Microsoft Azure Multi-Factor Authentication (MFA) olyan hitelesítési szolgáltatás, amely a bejelentkezési kísérletek mobilalkalmazással, telefonhívással vagy SMS-sel történő megerősítését kéri a felhasználóktól. A szolgáltatás a Microsoft Azure Active Directoryval, valamint felhőalapú és helyszíni nagyvállalati alkalmazásokkal is használható. A PAM-forgatókönyv az Azure MFA olyan kiegészítő hitelesítési módszert biztosít. Az Azure MFA hitelesítést, függetlenül attól, hogyan hitelesíti a felhasználók a Windows PRIV tartományhoz használható.
+A Microsoft Azure Multi-Factor Authentication (MFA) olyan hitelesítési szolgáltatás, amely a bejelentkezési kísérletek mobilalkalmazással, telefonhívással vagy SMS-sel történő megerősítését kéri a felhasználóktól. A szolgáltatás a Microsoft Azure Active Directoryval, valamint felhőalapú és helyszíni nagyvállalati alkalmazásokkal is használható. A PAM-forgatókönyv esetén az Azure MFA további hitelesítési mechanizmust biztosít. Az Azure MFA használható hitelesítésre, függetlenül attól, hogy a felhasználók hogyan hitelesítve vannak a Windows PRIV-tartományba.
 
 ## <a name="prerequisites"></a>Előfeltételek
 
-A MIM az Azure MFA használatához szükséges:
+Ahhoz, hogy az Azure MFA-t a webszolgáltatással együtt használhassa, a következőkre lesz szüksége:
 
 - Internet-hozzáférés minden, a PAM megoldást használó MIM szolgáltatás esetén az Azure MFA szolgáltatás eléréséhez
 - Azure-előfizetés
@@ -42,7 +42,7 @@ A MIM az Azure MFA használatához szükséges:
 
 ## <a name="creating-an-azure-mfa-provider"></a>Azure MFA-szolgáltató létrehozása
 
-Ebben a szakaszban beállíthatja az Azure MFA-szolgáltató a Microsoft Azure Active Directoryban.  Ha már használja az Azure MFA-t – akár önállóan, akár az Azure Active Directory Premiummal konfigurálva – ugorjon a következő bekezdéshez.
+Ebben a szakaszban az Azure MFA-szolgáltatót Microsoft Azure Active Directoryban állíthatja be.  Ha már használja az Azure MFA-t, vagy önálló vagy prémium szintű Azure Active Directory van konfigurálva, ugorjon a következő szakaszra.
 
 1.  Nyisson meg egy webböngészőt, és jelentkezzen be a [klasszikus Azure portálra](https://manage.windowsazure.com) Azure előfizetés-adminisztrátorként.
 
@@ -81,9 +81,9 @@ A következő lépésben létre fog hozni egy fájlt, amely tartalmazza a PAM-ne
 
 2.  Hozzon létre egy új mappát abban a könyvtárban, ahová a MIM szolgáltatás telepítve van, például: ```C:\Program Files\Microsoft Forefront Identity Manager\2010\Service\MfaCerts```.
 
-3.  A Windows Intézőben keresse meg a ```pf\certs``` az előző szakaszban letöltött ZIP-fájlban mappát. Másolja a fájlt ```cert\_key.p12``` az új címtárra.
+3.  A Windows Intéző használatával navigáljon az előző szakaszban letöltött ZIP-fájl ```pf\certs``` mappájába. Másolja a fájlt ```cert\_key.p12``` az új könyvtárba.
 
-4.  A Windows Intézőben keresse meg a ```pf``` a ZIP, és nyissa meg a mappa ```pf\_auth.cs``` WordPadben egy szövegszerkesztőben.
+4.  A Windows Intéző segítségével navigáljon a ZIP ```pf``` mappájába, és nyissa meg a ```pf\_auth.cs``` fájlt egy szövegszerkesztőben, például a WordPadben.
 
 5. Keresse meg a következő három paramétert: ```LICENSE\_KEY```, ```GROUP\_KEY```, ```CERT\_PASSWORD```.
 
@@ -130,10 +130,10 @@ Egy adott szerepkör esetében az „-MFAEnabled 0” paraméternek a `Set-PAMRo
 
 A következő események a Privileged Access Management eseménynaplójában jelenhetnek meg:
 
-| ID  | Severity | Létrehozója | Leírás |
+| ID  | Súlyosság | Létrehozója | Description |
 |-----|----------|--------------|-------------|
 | 101 | Hiba       | MIM szolgáltatás            | A felhasználó nem végezte el az Azure MFA hitelesítést (például nem vette fel a telefont) |
-| 103 | Információ | MIM szolgáltatás            | A felhasználó aktiválás közben hajtotta végre az Azure MFA hitelesítést                       |
+| 103 | Információk | MIM szolgáltatás            | A felhasználó aktiválás közben hajtotta végre az Azure MFA hitelesítést                       |
 | 825 | Figyelmeztetés     | A PAM figyelőszolgáltatása | A telefonszám megváltozott                                |
 
 A sikertelen telefonhívások okára (101-es esemény) vonatkozó további információkért megtekinthet vagy letölthet egy Azure MFA-jelentést is.
@@ -150,7 +150,7 @@ A sikertelen telefonhívások okára (101-es esemény) vonatkozó további infor
 
 6.  A jelentést a létrehozását követően megtekintheti a portálon, illetve, ha az MFA-jelentés túl hosszú, letöltheti CSV-fájlként. Az **AUTH TYPE** oszlopban található **SDK**-értékek jelölik azokat a sorokat, amelyek a PAM-aktivációs kérésekhez kapcsolódnak: ezek a MIM-től vagy más helyszíni szoftvertől származó események. A **USERNAME** mező a MIM szolgáltatás adatbázisában található felhasználóobjektum GUID-azonosítója. Ha egy hívás sikertelen volt, az **AUTHD** oszlop értéke **No** lesz, a **CALL RESULT** oszlop pedig tartalmazza a hiba okát, és annak részleteit.
 
-## <a name="next-steps"></a>További lépések
+## <a name="next-steps"></a>Következő lépések
 
-- [Mi az Azure multi-factor Authentication](https://docs.microsoft.com/azure/multi-factor-authentication/multi-factor-authentication)
-- [Ingyenes Azure-fiók létrehozása még ma](https://azure.microsoft.com/free/)
+- [Mi az Azure Multi-Factor Authentication](https://docs.microsoft.com/azure/multi-factor-authentication/multi-factor-authentication)
+- [Hozzon létre ingyenes Azure-fiókot még ma](https://azure.microsoft.com/free/)

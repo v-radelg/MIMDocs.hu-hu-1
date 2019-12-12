@@ -12,10 +12,10 @@ ms.assetid: 5e532b67-64a6-4af6-a806-980a6c11a82d
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: 1627bae6aecdfc3d57261485de04a78feb264013
-ms.sourcegitcommit: b09a8c93983d9d92ca4871054650b994e9996ecf
+ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/31/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "73329324"
 ---
 # <a name="install-mim-2016-synchronize-active-directory-and-mim-service"></a>A MIM 2016 telepítése: Az Active Directory és a MIM szolgáltatás szinkronizálása
@@ -232,11 +232,11 @@ Az alábbi táblázatban az ADMA összekötőhöz létrehozandó öt futtatási 
 
 | Név | Típus |
 | ---- | ---- |
-| 1\. profil | Teljes importálás (csak előkészítés) |
-| 2\. profil | Teljes szinkronizálás |
-| 3\. profil | Különbözeti importálás (csak előkészítés) |
-| 4\. profil | Különbözeti szinkronizálás |
-| 5\. profil | Exportálás |
+| 1. profil | Teljes importálás (csak előkészítés) |
+| 2. profil | Teljes szinkronizálás |
+| 3. profil | Különbözeti importálás (csak előkészítés) |
+| 4. profil | Különbözeti szinkronizálás |
+| 5. profil | Exportálás |
 
 Futtatási profilok létrehozása az ADMA összekötőhöz:
 
@@ -264,11 +264,11 @@ Az alábbi táblázatban a MIMMA összekötőhöz tartozó öt kapcsolódó futt
 
 | Név | Típus |
 | -------- | -------- |
-| 1\. profil | Teljes importálás (csak előkészítés) |
-| 2\. profil | Teljes szinkronizálás |
-| 3\. profil | Különbözeti importálás (csak előkészítés) |
-| 4\. profil | Különbözeti szinkronizálás |
-| 5\. profil | Exportálás |
+| 1. profil | Teljes importálás (csak előkészítés) |
+| 2. profil | Teljes szinkronizálás |
+| 3. profil | Különbözeti importálás (csak előkészítés) |
+| 4. profil | Különbözeti szinkronizálás |
+| 5. profil | Exportálás |
 
 Futtatási profilok létrehozása a MIMMA összekötőhöz:
 
@@ -323,14 +323,14 @@ Az AD felhasználókra vonatkozó bejövő szinkronizálási szabályának létr
 
     | Folyamatszabály | Forrás | Cél |
     |-|-|-|
-    |1\. szabály|samAccountName|accountName|
-    |2\. szabály|displayName|displayName|
-    |3\. szabály|EmployeeType|employeeType|
-    |4\. szabály|givenName|firstName|
-    |5\. szabály|sn|lastName|
-    |6\. szabály|Manager|manager|
-    |7\. szabály|objectSID|ObjectSID|
-    |8\. szabály|"Contoso"|domain|
+    |1. szabály|samAccountName|accountName|
+    |2. szabály|displayName|displayName|
+    |3. szabály|EmployeeType|employeeType|
+    |4. szabály|givenName|firstName|
+    |5. szabály|sn|lastName|
+    |6. szabály|Manager|manager|
+    |7. szabály|objectSID|ObjectSID|
+    |8. szabály|"Contoso"|domain|
 
     A táblázatban minden egyes sorhoz kapcsolódóan végezze el a következő lépéseket:
 

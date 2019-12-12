@@ -1,6 +1,6 @@
 ---
-title: BHOLD access management connector telepítése |} A Microsoft Docs
-description: A BHOLD összekötő modul támogatja az adatok kezdeti és folyamatos szinkronizálása
+title: A BHOLD hozzáférés-kezelési összekötő telepítése | Microsoft Docs
+description: Az BHOLD-összekötő modul támogatja az adatkezdeti és folyamatos szinkronizálást
 keywords: ''
 author: billmath
 ms.author: billmath
@@ -10,32 +10,32 @@ ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: ''
 ms.openlocfilehash: 60886a84c6105e94a2cd3d42f17b86b2d69c8c0a
-ms.sourcegitcommit: 7de35aaca3a21192e4696fdfd57d4dac2a7b9f90
+ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49358601"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "64516064"
 ---
-# <a name="access-management-connector-installation"></a>Access Management Connector telepítése
+# <a name="access-management-connector-installation"></a>Hozzáférés-kezelési összekötő telepítése
 
-A BHOLD Suite Access Management-összekötő modul BHOLD be az adatok kezdeti és a folyamatban lévő szinkronizálás támogatja. Az Access Management-összekötő együttműködik a Microsoft Identity Manager (MIM) szinkronizálási szolgáltatás többek között a BHOLD Core adatbázis, a FIM 2010 metaverzum, és a cél alkalmazások és a identitástárolók adatok áthelyezéséhez. Az Access Management-összekötő modul telepítése után lesz FIM felügyeleti ügynökök, amelyek vezérlik a BHOLD és a MIM között az adatfolyam létrehozásához.
+A BHOLD Suite hozzáférés-vezérlési összekötő modulja az adatok kezdeti és folyamatos szinkronizálását is támogatja a BHOLD-ben. A hozzáférés-vezérlési összekötő a Microsoft Identity Manager (BHOLD Core adatbázis, a FIM 2010 metaverse és a TARGET Applications and Identity Stores) közötti adatáthelyezést is támogatja. A hozzáférés-kezelési összekötő modul telepítése után létrehozhat olyan FIM felügyeleti ügynököket, amelyek vezérlik az BHOLD és a felügyeleti csomag közötti adatforgalmat.
 
-## <a name="access-management-connector-software-requirements"></a>Access Management-összekötő szoftverkövetelmények
+## <a name="access-management-connector-software-requirements"></a>Hozzáférés-kezelési összekötő szoftverre vonatkozó követelmények
 
-Az Access Management-összekötő modul telepítése előtt telepítenie kell a Microsoft .NET-keretrendszer 4. .NET-keretrendszer 4 és telepítésével kapcsolatos további információkért lásd: a [a Microsoft .NET-kezdőlap](http://www.microsoft.com/net).
-A FIM szinkronizálási szolgáltatás a mim-et futtató számítógépen telepítenie kell az Access Management-összekötő.
+A hozzáférés-kezelési összekötő modul telepítése előtt telepítenie kell a Microsoft .NET Framework 4 alkalmazást. A .NET-keretrendszer 4-es és a telepítési utasításokkal kapcsolatos további információkért tekintse meg a [Microsoft .net kezdőlapját](http://www.microsoft.com/net).
+Telepítenie kell a hozzáférés-vezérlési összekötőt egy olyan számítógépre, amelyen a (z) rendszer a famodul FIM synchronization szolgáltatását futtatja
 
-## <a name="access-management-connector-setup"></a>Access Management-összekötő beállítása
+## <a name="access-management-connector-setup"></a>Hozzáférés-kezelési összekötő beállítása
 
-A hozzáférés-vezérlés felügyeleti modul telepítése, jelentkezzen be a tartományi rendszergazdák csoport tagjaként, töltse le a következő fájlt, és futtassa rendszergazdaként a kiszolgálón, melyet a BHOLD FIM integrációs modul telepítése:
+A hozzáférés-vezérlési modul telepítéséhez jelentkezzen be a Tartománygazdák csoport tagjaként, töltse le a következő fájlt, és futtassa rendszergazdaként azon a kiszolgálón, amelyre telepíteni kívánja a BHOLD FIM integrációs modulját:
 
-- AccessManagementConnector.msi
+- AccessManagementConnector. msi
 
-A program rendszergazdaként futtatni, kattintson jobb gombbal a fájlra, és kattintson a **Futtatás rendszergazdaként**.
+A programfájl rendszergazdaként való futtatásához kattintson a jobb gombbal a fájlra, majd kattintson a **Futtatás rendszergazdaként**parancsra.
 
 ## <a name="next-steps"></a>További lépések
 
-- [BHOLD FIM integration telepítése](https://technet.microsoft.com/library/jj134093(v=ws.10).aspx) ahhoz, hogy a végfelhasználók önkiszolgáló munkafolyamataihoz szerepkörök, telepítheti a BHOLD FIM integrációs modul
-- [A BHOLD telepítési útmutató](bhold-installation-guide.md)
+- [BHOLD FIM-integráció telepítése](https://technet.microsoft.com/library/jj134093(v=ws.10).aspx) A szerepkörök végfelhasználói önkiszolgáló szolgáltatásának engedélyezéséhez telepítheti a BHOLD FIM integrációs modulját.
+- [BHOLD telepítési útmutató](bhold-installation-guide.md)
 - [BHOLD fejlesztői leírás](../reference/mim2016-bhold-developer-reference.md)
 - [A BHOLD korábbi verziói](../reference/version-bhold-history.md)

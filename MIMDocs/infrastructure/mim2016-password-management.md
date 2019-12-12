@@ -10,11 +10,11 @@ ms.topic: reference
 ms.prod: microsoft-identity-manager
 ms.assetid: ''
 ms.openlocfilehash: 45b46ed10f7eda506fe1fc1af94c4be06a1a37b9
-ms.sourcegitcommit: 44a2293ff17c50381a59053303311d7db8b25249
+ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50380192"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "64516585"
 ---
 # <a name="microsoft-identity-manager-2016-password-management"></a>Microsoft Identity Manager 2016 – Jelszókezelés
 
@@ -109,7 +109,7 @@ A jelszó-szinkronizálás beállításáról a Using Password Synchronization (
 
 Az alábbi ábrán egy Active Directory-beli tartományvezérlő által a csatlakoztatott adatforrásokhoz küldött jelszóváltoztatási kérelem szinkronizálási folyamata látható:
 
-1.  A felhasználó a Ctrl+Alt+Del billentyűkombináció lenyomásával elindítja a jelszóváltoztatási kérelmet. A rendszer a jelszóváltoztatási kérelmet az új jelszóval együtt elküldi a legközelebbi tartományvezérlőre.
+1.  A felhasználó a Ctrl + Alt + Del billentyűkombináció lenyomásával kezdeményezi a jelszó-módosítási kérést. A jelszó-módosítási kérést, beleértve az új jelszót is, a rendszer a legközelebbi tartományvezérlőnek küldi el.
 
 2.  A tartományvezérlő rögzíti a jelszóváltoztatási kérelmet, és értesíti a jelszóváltoztatás-értesítési szűrőt (Pcnsflt.dll).
 
@@ -148,9 +148,9 @@ Ideális esetben valahányszor egy felhasználó jelszót módosít, a módosít
 
 Egyes, súlyosabb meghibásodások esetén akárhány újrapróbálkozás esetén sem valószínű, hogy sikerül a művelet. Ilyenkor a rendszer naplózza a hibát, és leállítja a folyamatot. A következő eseményeknél nincs újrapróbálkozás:
 
-| Esemény | Severity    | Leírás                                                                                                                                                            |
+| Esemény | Súlyosság    | Description                                                                                                                                                            |
 |-------|-------------|-----------|
-| 6919  | Információ | A jelszó-szinkronizálás beállításának műveletét a rendszer nem hajtotta végre, mert az időbélyegző elavult.                                                                      |
+| 6919  | Információk | A jelszó-szinkronizálás beállításának műveletét a rendszer nem hajtotta végre, mert az időbélyegző elavult.                                                                      |
 | 6921  | Hiba       | A jelszó-szinkronizálás beállításának művelete nincs feldolgozva, mert a céloldali kezelőügynökön nincs engedélyezve a jelszókezelés.                                |
 | 6922  | Hiba       | A jelszó-szinkronizálás beállításának művelete nincs feldolgozva, mert a céloldali kezelőügynökön nincs konfigurálva a jelszókezelés.                             |
 | 6923  | Figyelmeztetés     | A jelszó-szinkronizálás beállításának művelete nincs feldolgozva, mert a céloldali összekötőtér objektuma nem található a csatlakoztatott címtárban.                  |

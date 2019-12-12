@@ -12,17 +12,17 @@ ms.assetid: 9471ccc1-bafe-46ee-b169-1464262380e1
 ms.reviewer: markwahl-msft
 ms.suite: ems
 ms.openlocfilehash: bdf34be4841b1a911fdb61673e5a3855e66e7320
-ms.sourcegitcommit: 323c2748dcc6b6991b1421dd8e3721588247bc17
+ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "73568054"
 ---
 # <a name="mim-2016-sp2-upgrade--from-forefront-identity--or-microsoft-identity-manager"></a>A webhelyről 2016 SP2 frissítése a Forefront Identity vagy Microsoft Identity Manager
 
 A szervezetek a Microsoft Identity Manager vagy a Forefront Identity Manager korábbi verzióiról Microsoft Identity Manager 2016 SP2-re frissíthetnek.  A cikk minden szakasza egy támogatott frissítési útvonalra terjed ki.
 
-Több frissítési lehetőség is rendelkezésre áll. Ha már 2016 futtatta a SCSM-t, és nem kell frissítenie a mögöttes platformot (Windows Server, SQL, SharePoint, DW), vagy nem kell a Rendszerfelügyeleti webszolgáltatásokat futtató szolgáltatásokat használnia csoportosan felügyelt szolgáltatásfiókok használatával, és nem használ a felhasználói felület nyelvi csomagjait, akkor a legegyszerűbb lehetőség helyben lesz frissítés/gyorsjavítás (. msp) telepítése. Ellenkező esetben a teljes telepítés ajánlott.
+Több frissítési lehetőség is rendelkezésre áll. Ha már 2016 futtatta a SCSM-t, és nem kell frissítenie a mögöttes platformot (Windows Server, SQL, SharePoint, DW), vagy egy csoportosan felügyelt szolgáltatásfiókok használatával szeretné futtatni a SAML-szolgáltatásokat, és nem használja a felhasználói felület nyelvi csomagjait, akkor a legegyszerűbb lehetőség a helyben történő frissítés/gyorsjavítás (. msp) telepítése. Ellenkező esetben a teljes telepítés ajánlott.
 
 > [!IMPORTANT]
 > A következő témakörben található frissített [szoftverek előfeltételeinek](prepare-server-ws2016.md#software-prerequisites) ellenőrzése a webalkalmazás 2016 SP2 telepítése előtt
