@@ -12,11 +12,11 @@ ms.assetid: 9471ccc1-bafe-46ee-b169-1464262380e1
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: 36b5e97675d5900bf3b5348ad4857827c426e60e
-ms.sourcegitcommit: 4f0b2883922bcb8fbef6b4284c35c6ca62c11565
+ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "56952162"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "64519673"
 ---
 # <a name="upgrade-from-forefront-identity-manager-2010-r2"></a>Frissítés a Forefront Identity Manager 2010 R2-ről
 
@@ -41,7 +41,7 @@ Ez az útmutató feltételezi, hogy az alábbiak már be vannak állítva:
 
 2.  A Contoso\Rendszergazda fiókkal jelentkezzen be azokon a számítógépeken, ahol telepítve vannak a FIM 2010 R2 összetevői – például a *CORPIDM*. Ezen telepítési példában rendszergazdai jogosultságok szükségesek a FIM 2010 R2 **MIM-re** való frissítéséhez.
 
-3.  Töltse le vagy csomagolja ki a MIM szoftvert.  Ha nem rendelkezik a szoftverrel, [Microsoft Identity Manager licencelése és letöltések](microsoft-identity-manager-licensing.md).
+3.  Töltse le vagy csomagolja ki a MIM szoftvert.  Ha nem rendelkezik ezzel a szoftverrel, tekintse meg a [Microsoft Identity Manager licencelés és letöltések](microsoft-identity-manager-licensing.md)című témakört.
 
 ## <a name="upgrade-the-synchronization-service"></a>A Synchronization Service frissítése
 
@@ -101,7 +101,7 @@ Ez az útmutató feltételezi, hogy az alábbiak már be vannak állítva:
 
     ![Kép: Egyéni telepítés](media/MIM-UpgSP4.png)
 
-    1.  **MIM Service (MIM szolgáltatás)**: kötelezően telepítendő legalább egy kiszolgálón, és SQL Server adatbázis-kiszolgálót is igényel ugyanazon vagy másik számítógépen.
+    1.  **MIM Service (MIM szolgáltatás)** : kötelezően telepítendő legalább egy kiszolgálón, és SQL Server adatbázis-kiszolgálót is igényel ugyanazon vagy másik számítógépen.
 
     2.  **MIM Portal (MIM-portál):** kötelezően telepítendő legalább egy kiszolgálón; előfeltétele a SharePoint 2013 Foundation telepítése.
 
@@ -113,7 +113,7 @@ Ez az útmutató feltételezi, hogy az alábbiak már be vannak állítva:
 
 8. Ha bejelölte a meglévő adatbázis újrafelhasználására vonatkozó beállítást, megjelenik egy emlékeztető az adatbázis biztonsági mentéséről.
 
-9. Adja meg a levelezőkiszolgáló adatait. Ha a levelezőkiszolgáló az aktuális kiszolgálón található, helyként írja be, hogy „localhost”. A folytatáshoz kattintson a **Next** (Tovább) gombra.
+9. Adja meg a levelezőkiszolgáló adatait. Ha a levelezőkiszolgáló az aktuális kiszolgálón található, helyként írja be, hogy „localhost”. A folytatáshoz kattintson a **Tovább** gombra.
 
     ![Kép: A levelezőkiszolgálóval való kapcsolat beállítása](media/MIM-UpgSP6.png)
 
@@ -133,13 +133,13 @@ Ez az útmutató feltételezi, hogy az alábbiak már be vannak állítva:
 
     ![Kép: A MIM szolgáltatás és -portál szinkronizálásának konfigurálása](media/MIM-UpgSP10.png)
 
-13. A MIM-portál telepítésekor adja meg a MIM szolgáltatás kiszolgálójának címét. Kattintson a **Tovább** gombra.
+13. A MIM-portál telepítésekor adja meg a MIM szolgáltatás kiszolgálójának címét. Kattintson a **Tovább**gombra.
 
-14. A MIM-portál telepítésekor adja meg annak a SharePoint-webhelycsoportnak az URL-címét, amelyben a FIM-portál jelenleg üzemel. Kattintson a **Tovább** gombra.
+14. A MIM-portál telepítésekor adja meg annak a SharePoint-webhelycsoportnak az URL-címét, amelyben a FIM-portál jelenleg üzemel. Kattintson a **Tovább**gombra.
 
 ## <a name="install-the-mim-password-registration-portal"></a>A MIM jelszó-regisztrálási portál telepítése
 
-1. A MIM jelszó-regisztrálási portál telepítésekor adja meg a kért URL-t a jelszó-regisztrációs portálhoz. Kattintson a **Tovább** gombra.
+1. A MIM jelszó-regisztrálási portál telepítésekor adja meg a kért URL-t a jelszó-regisztrációs portálhoz. Kattintson a **Tovább**gombra.
 
 2. Állítsa be, hogy az ügyfelek és a végfelhasználók használhassák a szolgáltatást és a portált.
 
@@ -159,7 +159,7 @@ Ez az útmutató feltételezi, hogy az alábbiak már be vannak állítva:
 
     3.  Jelölje be az **Open port in firewall** (Port nyitása a tűzfalon) négyzetet.
 
-    4.  Kattintson a **Tovább** gombra.
+    4.  Kattintson a **Tovább**gombra.
 
 4. A MIM jelszó-regisztrálási portál következő konfigurációs képernyőjén:
 
@@ -179,7 +179,7 @@ Ez az útmutató feltételezi, hogy az alábbiak már be vannak állítva:
 
     3.  Jelölje be az **Open port in firewall** (Port nyitása a tűzfalon) négyzetet.
 
-    4.  Kattintson a **Tovább** gombra.
+    4.  Kattintson a **Tovább**gombra.
 
 2. A MIM jelszó-változtatási portál következő konfigurációs képernyőjén:
 
@@ -197,6 +197,6 @@ Ez az útmutató feltételezi, hogy az alábbiak már be vannak állítva:
 
 4. A **Forefront Identity Manager Service** szolgáltatás újraindult.
 
-Megjegyezés: Ha a FIM beépülő moduljai és bővítményei jelenleg telepítve vannak a felhasználók számítógépein az SSPR, ne konfigurálja a jelszó-visszaállításhoz amíg, miután minden FIM beépülő moduljai és bővítményei frissítette a MIM 2016 új MFA telefonos kapu.  A FIM 2010 és a FIM 2010 R2 beépülő moduljai és bővítményei nem ismerik fel az új kapukat, így hibaüzenetet fognak megjeleníteni, a felhasználók pedig nem fogják tudni megváltoztatni a jelszavukat.
+Megjegyzés: Ha a FIM beépülő moduljai és bővítményei jelenleg telepítve vannak a felhasználók számítógépein az önkiszolgáló jelszó-változtatási (SSPR) szolgáltatáshoz, abban az esetben az új MFA telefonos jelszó-változtatási kapuk konfigurálásával várjon addig, amíg a FIM valamennyi beépülő modulját és bővítményét frissítette a MIM 2016-os verzióra.  A FIM 2010 és a FIM 2010 R2 beépülő moduljai és bővítményei nem ismerik fel az új kapukat, így hibaüzenetet fognak megjeleníteni, a felhasználók pedig nem fogják tudni megváltoztatni a jelszavukat.
 
 A Microsoft Identity Manager 2016 SP1 frissítési útmutatása a [Microsoft Identity Manager 2016 Service Pack 1 frissítési csomagban található](https://blogs.technet.microsoft.com/iamsupport/2016/11/08/microsoft-identity-manager-2016-service-pack-1-update-package/)

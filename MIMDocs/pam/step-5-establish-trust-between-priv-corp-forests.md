@@ -12,13 +12,13 @@ ms.assetid: eef248c4-b3b6-4b28-9dd0-ae2f0b552425
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: 04195febdb721291e9dcf72f5bbda04923075596
-ms.sourcegitcommit: 44a2293ff17c50381a59053303311d7db8b25249
+ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50379767"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "64518266"
 ---
-# <a name="step-5--establish-trust-between-priv-and-corp-forests"></a>5. lépés – A CORP és a PRIV erdő közötti megbízhatósági kapcsolat létrehozása
+# <a name="step-5--establish-trust-between-priv-and-corp-forests"></a>5\. lépés – A CORP és a PRIV erdő közötti megbízhatósági kapcsolat létrehozása
 
 > [!div class="step-by-step"]
 > [« 4. lépés](step-4-install-mim-components-on-pam-server.md)
@@ -71,11 +71,11 @@ A PAMSRV kiszolgálón hozzon létre egy egyirányú megbízhatósági kapcsolat
 A PRIV rendszergazdákon és a figyelőszolgáltatáson keresztül minden meglévő erdő számára olvasási hozzáférést biztosíthat az Active Directoryhoz.
 
 1. Jelentkezzen be a meglévő CORP erdő tartományvezérlőjébe (CORPDC) az erdő legfelső szintű tartományának rendszergazdájaként (Contoso\Rendszergazda).  
-2. Indítsa el az **Active Directory - felhasználók és számítógépek** beépülő modult.  
+2. Jelenítse meg az **Active Directory - felhasználók és számítógépek** ablakot.  
 3. Kattintson a jobb gombbal a **contoso.local** tartományra, és válassza a **Vezérlés delegálása** parancsot.  
 4. A Kijelölt felhasználók és csoportok lapon kattintson a **Hozzáadás** gombra.  
 5. A Felhasználók, számítógépek vagy csoportok kiválasztása ablakban kattintson a **Helyek** elemre, és váltson át a *priv.contoso.local* helyre.  Az objektum nevéhez írja be a *Tartományi rendszergazdák* értéket, és kattintson a **Névellenőrzés** gombra. Amikor megjelenik egy előugró ablak, írja be a *priv\rendszergazda* felhasználónevet és a jelszavát.  
-6. A Tartományi rendszergazdák név után írja be a „*; MIMMonitor*” értéket. Amikor megjelenik az aláhúzás a **Tartományi rendszergazdák** és a **MIMMonitor** név alatt, kattintson az **OK**, majd a **Tovább** gombra.  
+6. A Tartományi rendszergazdák név után írja be a „ *; MIMMonitor*” értéket. Amikor megjelenik az aláhúzás a **Tartományi rendszergazdák** és a **MIMMonitor** név alatt, kattintson az **OK**, majd a **Tovább** gombra.  
 7. A gyakori feladatok listáján jelölje ki **Az összes felhasználói információ olvasása** elemet, és kattintson a **Tovább**, majd a **Befejezés** gombra.  
 8. Zárja be az Active Directory – felhasználók és számítógépek beépülő modult.
 

@@ -12,13 +12,13 @@ ms.assetid: 4b524ae7-6610-40a0-8127-de5a08988a8a
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: dda6a05337e9a9778135fc7d833a38369540b3e0
-ms.sourcegitcommit: 44a2293ff17c50381a59053303311d7db8b25249
+ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50379990"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "64518184"
 ---
-# <a name="step-1---prepare-the-host-and-the-corp-domain"></a>1. lépés – A gazdagép és a CORP tartomány előkészítése
+# <a name="step-1---prepare-the-host-and-the-corp-domain"></a>1\. lépés – A gazdagép és a CORP tartomány előkészítése
 
 > [!div class="step-by-step"]
 > [2. lépés »](step-2-prepare-priv-domain-controller.md)
@@ -72,7 +72,7 @@ Ebben a szakaszban be fogja állítani az Active Directory tartományi szolgált
 
 ### <a name="create-a-group"></a>Csoport létrehozása
 
-Hozzon létre egy csoportot az Active Directory naplózási céljaira, feltéve, hogy még nincs ilyen csoport. A csoport nevének a NetBIOS-tartománynévnek kell lennie, melyet három dollárjel követ, például: *CONTOSO$$$*.
+Hozzon létre egy csoportot az Active Directory naplózási céljaira, feltéve, hogy még nincs ilyen csoport. A csoport nevének a NetBIOS-tartománynévnek kell lennie, melyet három dollárjel követ, például: *CONTOSO$$$* .
 
 Minden tartományban jelentkezzen be egy tartományvezérlőre tartományi rendszergazdaként, és hajtsa végre az alábbi lépéseket:
 

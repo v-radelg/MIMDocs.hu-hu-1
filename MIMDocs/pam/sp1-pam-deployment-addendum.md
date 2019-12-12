@@ -12,15 +12,15 @@ ms.assetid: 4b524ae7-6610-40a0-8127-de5a08988a8a
 ms.reviewer: ''
 ms.suite: ems
 ms.openlocfilehash: 814386272bba0c3fa2cb73bc93dc842ac46e86fb
-ms.sourcegitcommit: 44a2293ff17c50381a59053303311d7db8b25249
+ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50379464"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "64518169"
 ---
 # <a name="pam-deployment-scripts-addendum"></a>PAM üzembehelyezési szkriptek, kiegészítés:
 
-## <a name="addendum-1-setting-up-the-priv-domain"></a>1. kiegészítés: A PRIV-tartomány beállítása
+## <a name="addendum-1-setting-up-the-priv-domain"></a>1\. kiegészítés: A PRIV-tartomány beállítása
 
 Miután kicsomagolta a tömörített fájlt az $env:SYSTEMDRIVE\PAM mappába, a PAMDeploymentConfig.xml fájl szerkesztésével adja meg a PRIV-erdő adatait. Frissítse a DNSName, a NetbiosName, a tartományvezérlő-név, az Adatbázis/napló elérési útja és a Sysvol elérési útja értéket. Frissítse továbbá a DomainMode és a ForestMode értéket. Amennyiben a Windows Server Technical Preview 5-ös verzióját teszteli, a DomainMode és a ForestMode értéket állítsa WinThreshold értékre.
 
@@ -38,7 +38,7 @@ A befejezést követően a tartományvezérlő automatikusan újraindul. A címt
   * A jelszó legalább egy NAGYBETŰS karaktert tartalmaz
   * A jelszó legalább egy számjegyet vagy speciális karaktert tartalmaz
 
-## <a name="addendum-2-setting-up-the-corp-domain"></a>2. kiegészítés: A CORP-tartomány beállítása
+## <a name="addendum-2-setting-up-the-corp-domain"></a>2\. kiegészítés: A CORP-tartomány beállítása
 
 Ha induláskor PAM rendszer áll rendelkezésre, és szeretne telepíteni egy tesztkörnyezetet, a szkript lehetővé teszi egy CORP-tartomány konfigurálását is. Miután kicsomagolta a tömörített fájlt az $env:SYSTEMDRIVE\PAM mappába, a PAMDeploymentConfig.xml fájlt kiegészítve adja meg a CORP-erdő adatait. Frissítse a DNSName, a NetbiosName, a tartományvezérlő-név, az Adatbázis/napló elérési útja és a Sysvol elérési útja értéket. A működési szint legalább Windows Server 2012 R2 rendszerű kell legyen.
 
@@ -50,7 +50,7 @@ Ha induláskor PAM rendszer áll rendelkezésre, és szeretne telepíteni egy te
 
 A befejezést követően a tartományvezérlő automatikusan újraindul.
 
-## <a name="addendum-3-setting-up-a-corp-client-to-do-the-validation"></a>3. kiegészítés: CORP-ügyfél beállítása az érvényesítés végrehajtására
+## <a name="addendum-3-setting-up-a-corp-client-to-do-the-validation"></a>3\. kiegészítés: CORP-ügyfél beállítása az érvényesítés végrehajtására
 
 A konfigurációs fájlban a ClientBinaryLocation arra a helyre kell mutasson, ahol a setup.exe található.
 Jelentkezzen be az ügyfélre helyi rendszergazdaként, és futtassa a következő parancsokat egy emelt szintű PowerShell-ablakban:
@@ -68,6 +68,6 @@ Ha a gép nincs csatlakoztatva a tartományhoz, a rendszer kéri a rendszergazda
 
 Folytassa a fentebb ismertetett 8. lépéssel.
 
-## <a name="addendum-4-if-something-goes-wrong"></a>4. kiegészítés: Ha valami probléma merül fel
+## <a name="addendum-4-if-something-goes-wrong"></a>4\. kiegészítés: Ha valami probléma merül fel
 
 A szkriptek naplói mind az %AppData%\MIMPAMInstall helyen vannak tárolva. Tömörítse a mappát egy Zip-fájlba, és küldje el e-mailben a [mim2016@microsoft.com](mailto:mim2016@microsoft.com) címre a művelet és a hiba részleteivel együtt.

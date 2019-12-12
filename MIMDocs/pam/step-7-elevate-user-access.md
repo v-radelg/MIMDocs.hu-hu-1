@@ -9,13 +9,13 @@ ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: 5325fce2-ae35-45b0-9c1a-ad8b592fcd07
 ms.openlocfilehash: d00eaa284f1d54a1cbe2e0f8b936bbc41c19caea
-ms.sourcegitcommit: 44a2293ff17c50381a59053303311d7db8b25249
+ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50379619"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "64517857"
 ---
-# <a name="step-7--elevate-a-users-access"></a>7. lépés – Felhasználó jogosultságszintjének emelése
+# <a name="step-7--elevate-a-users-access"></a>7\. lépés – Felhasználó jogosultságszintjének emelése
 
 > [!div class="step-by-step"]
 > [« 6. lépés](step-6-transition-group-to-pam.md)
@@ -36,10 +36,10 @@ Emelt szintű jogosultságok nélkül Ilona nem férhet hozzá a CORP erdőben t
 ## <a name="request-privileged-access-from-mim"></a>Kérjen emelt szintű hozzáférést a MIM-ből.
 
 > [!NOTE]
-> Javasoljuk, hogy a munkaállomás egy emelt szintű workstation(PAW) kell-e.  További információ: [PAW](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/privileged-access-workstations).
+> Javasoljuk, hogy a munkaállomás legyen Kiemelt munkaállomás (PAW).  További információ: [Paw](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/privileged-access-workstations).
 
-1. A PRIVWKSTN bejelentkezési, PRIV\priv.jen.
-2. Kattintson a **Start**, **futtatása**, és adja meg **PowerShell.exe**.
+1. PRIVWKSTN, bejelentkezés PRIV\priv.jen.
+2. Kattintson a **Start**gombra, majd a **Futtatás**parancsra, és írja be a **PowerShell. exe**parancsot.
 3. Írja be a következő parancsot:
 
     ```cmd
@@ -90,7 +90,7 @@ Aktiválja a szerepkört a PAM-mintaportálon keresztüli emelt szintű hozzáf�
     ```
 
 3. Amikor a rendszer kéri, írja be a PRIV.Ilona fiók jelszavát. Megnyílik egy új böngészőablak.
-4. Navigáljon a http://pamsrv.priv.contoso.local:8090 , és győződjön meg arról, hogy látható-e a mintaportálról származó weblap e.
+4. Navigáljon a http://pamsrv.priv.contoso.local:8090 ra, és győződjön meg arról, hogy a minta portál weblapja látható.
 5. Az Internet Explorerben válassza az **Eszközök** > **Internetbeállítások** elemet, és kattintson a **Biztonság** fülre.
 6. Kattintson a **Helyi intranet zóna** > **Helyek** > **Speciális** elemre, majd adja hozzá a webhelyet a zónához.
 7. Zárja be az **Internetbeállítások** párbeszédpanelt.

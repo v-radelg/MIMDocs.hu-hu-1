@@ -11,12 +11,13 @@ ms.prod: microsoft-identity-manager
 ms.assetid: cf3796f7-bc68-4cf7-b887-c5b14e855297
 ms.reviewer: mwahl
 ms.suite: ems
+experiment_id: kgremban_images
 ms.openlocfilehash: 40ed05c1f77cace74b86dc3a5675855993d4bc56
-ms.sourcegitcommit: 44a2293ff17c50381a59053303311d7db8b25249
+ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50379888"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "64518359"
 ---
 # <a name="privileged-access-management-for-active-directory-domain-services"></a>Privileged Access Management az Active Directory Domain Serviceshez
 
@@ -72,7 +73,7 @@ A PAM a következő előnyöket nyújtja:
 
 - **A jogosultságok izolálása/hatókörének kezelése**: A felhasználók nem rendelkeznek magas szintű jogosultságokkal olyan fiókokban, amelyeket hétköznapi feladatokra (például az e-mailjeik elolvasására vagy internetböngészésre) használnak. A felhasználóknak kérniük kell a magas szintű jogosultságokat. A kérések jóváhagyása és elutasítása a PAM-rendszergazda által definiált MIM-szabályzatok alapján történik. Mindaddig nem vehető igénybe rendszerjogosultságú hozzáférés, amíg nem engedélyezik a kérést.
 
-- **Jogosultságemelés (step-up) és hitelesítésiszint-emelés (proof-up)**: Ezek új hitelesítési és engedélyezési kérések, amelyek a külön rendszergazdai fiókok életciklusának kezelését segítik. A felhasználó kérheti egy rendszergazdai fiók jogosultságainak megemelését. A kérés a MIM munkafolyamatain halad végig.
+- **Jogosultságemelés (step-up) és hitelesítésiszint-emelés (proof-up)** : Ezek új hitelesítési és engedélyezési kérések, amelyek a külön rendszergazdai fiókok életciklusának kezelését segítik. A felhasználó kérheti egy rendszergazdai fiók jogosultságainak megemelését. A kérés a MIM munkafolyamatain halad végig.
 
 - **További naplózás**: A MIN beépített munkafolyamatain kívül a PAM további naplózási műveleteket végez. Ezek azonosítják a kérést, az engedélyezését, illetve a jóváhagyás után esetleg bekövetkező eseményeket.
 

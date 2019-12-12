@@ -12,13 +12,13 @@ ms.assetid: 7b689eff-3a10-4f51-97b2-cb1b4827b63c
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: 0473ea9e01a44aeb4acbebe01e6e6f989c8581d0
-ms.sourcegitcommit: 44a2293ff17c50381a59053303311d7db8b25249
+ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50379311"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "64517822"
 ---
-# <a name="step-6--transition-a-group-to-privileged-access-management"></a>6. lépés – Csoport áthelyezése a Privileged Access Management szolgáltatásba
+# <a name="step-6--transition-a-group-to-privileged-access-management"></a>6\. lépés – Csoport áthelyezése a Privileged Access Management szolgáltatásba
 
 > [!div class="step-by-step"]
 > [« 5. lépés ](step-5-establish-trust-between-priv-corp-forests.md)
@@ -65,10 +65,10 @@ A parancsmagokat minden csoportban, illetve a csoport minden tagjánál egyszer 
 
     Összehasonlításul, a **New-PAMGroup** parancs paraméterei a következők:
 
-     -   A CORP erdő neve NetBIOS képernyő  
-     -   Ebből a tartományból másolása a csoport neve  
-     -   A CORP erdő tartományi tartományvezérlő NetBIOS-név  
-     -   A CORP erdőben lévő tartományi rendszergazda felhasználó hitelesítő adatai  
+     -   A CORP erdő tartományneve a NetBIOS-formában  
+     -   Az adott tartományból másolandó csoport neve  
+     -   A CORP Forest tartományvezérlő NetBIOS-neve  
+     -   A CORP erdőben található tartományi rendszergazda felhasználó hitelesítő adatai  
 
 5. (Nem kötelező.) Törölje Ilona fiókját a **CONTOSO CorpAdmins** csoportból a CORPDC gépen, ha még szerepel benne.  Erre csak azért van szükség, mert ezen keresztül mutatjuk be, hogyan lehet engedélyeket társítani a PRIV erdőben létrehozott fiókokhoz.
 

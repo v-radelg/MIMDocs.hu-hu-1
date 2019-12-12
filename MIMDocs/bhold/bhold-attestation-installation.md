@@ -1,6 +1,6 @@
 ---
-title: A BHOLD attestation telepítése |} A Microsoft Docs
-description: BHOLD igazolási modul lehetővé teszi a felülvizsgálók kijelölni, és hajtsa végre az értékelések
+title: BHOLD-igazolás telepítése | Microsoft Docs
+description: A BHOLD igazolási modulja lehetővé teszi a felülvizsgálók kijelölését és a felülvizsgálatok elvégzését
 keywords: ''
 author: billmath
 ms.author: billmath
@@ -10,46 +10,46 @@ ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: ''
 ms.openlocfilehash: e4c3a6248585d55fddbbca3153f33734d7c5c429
-ms.sourcegitcommit: 7de35aaca3a21192e4696fdfd57d4dac2a7b9f90
+ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49358108"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "64519168"
 ---
-# <a name="bhold-attestation-installation"></a>A BHOLD attestation telepítése
+# <a name="bhold-attestation-installation"></a>BHOLD-igazolás telepítése
 
-A BHOLD igazolási modul teszi lehetővé teszik a felülvizsgálók kijelölni, és végezze el a felhasználók és az alkalmazásonkénti engedélyeket és a fiókok közötti kapcsolatokat ismétlődő felülvizsgálatai.
+A BHOLD igazolási modulja lehetővé teszi a felülvizsgálók kijelölését és a felhasználók és az alkalmazáson belüli engedélyek és fiókok közötti kapcsolatok ismétlődő felülvizsgálatának elvégzését.
 
-## <a name="bhold-attestation-installation-requirements"></a>A BHOLD igazolási telepítési követelményei
+## <a name="bhold-attestation-installation-requirements"></a>BHOLD-igazolás telepítési követelményei
 
-A BHOLD igazolási modul a telepítés előtt telepítenie kell a BHOLD Core-modul a kiszolgálón, amelyen a BHOLD igazolási modul telepítését tervezi. A BHOLD Core modul telepítésével kapcsolatos információkért lásd: [BHOLD Core telepítése](https://technet.microsoft.com/library/jj134095(v=ws.10).aspx). A BHOLD igazolási modul névjegyek küld e-mail-üzenetek a felhasználók számára, mert a környezet egy Simple Mail Transfer Protocol (SMTP) levelezési kiszolgáló, mint a Microsoft Exchange Server kell rendelkeznie.
+Az BHOLD igazolási modul telepítése előtt telepítenie kell a BHOLD Core modult arra a kiszolgálóra, amelyre telepíteni kívánja a BHOLD igazolási modulját. Az BHOLD Core modul telepítésével kapcsolatos információkért lásd: [BHOLD Core telepítés](https://technet.microsoft.com/library/jj134095(v=ws.10).aspx). Mivel a BHOLD-igazolási modul névjegyei e-mail-üzeneteket küldenek a felhasználóknak, a környezetnek rendelkeznie kell egy Simple Mail Transfer Protocol (SMTP) levelezési kiszolgálóval, például a Microsoft Exchange Serverrel.
 
 > [!IMPORTANT]
-> A BHOLD Reporting és BHOLD igazolási telepítésekor, telepítenie kell a BHOLD Reporting BHOLD igazolási telepítése előtt.
+> Ha a BHOLD-jelentéskészítési és a BHOLD-igazolást is telepíti, a BHOLD-igazolás telepítése előtt telepítenie kell a BHOLD-jelentéskészítést.
 
 ## <a name="before-you-begin"></a>Előkészületek
 
-A BHOLD igazolási modul telepítése előtt kell a BHOLD igazolási telepítővarázslója a telepítés befejezéséhez szükséges információk megadására. A következő munkalap segítségével fel ezt az információt, hogy készen áll a szükséges megadni.
+Mielőtt megkezdené a BHOLD igazolási modul telepítését, elő kell készítenie, hogy a BHOLD-igazolási telepítővarázsló által a telepítés befejezéséhez szükséges információk meglegyenek. A következő munkalapon rögzítheti ezeket az adatokat, így készen áll arra, hogy szükség esetén megadja azt.
 
 | **Elem**                                    | **Leírás**                                                                                                                                                                                                           | **Érték**                                                                                                                                                                                                                                                                                                            |
 |---------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Tartomány/gépen biztonsági szolgáltató használata** | Kiválasztott, itt adhatja meg, hogy az Active Directory Domain Services biztonsági fog férhet hozzá a BHOLD Core.                                                                                                                | Jelölje be a jelölőnégyzetet. **Fontos:** a telepítés sikertelen lesz, ha a jelölőnégyzet nincs bejelölve.                                                                                                                                                                                                                   |
-| **Tartomány**                                  | Megadja azt a tartományt, amely tartalmazza a szolgáltatásfiókhoz, amelyet a BHOLD Core telepítése során létrehozott. További információkért lásd: [BHOLD Core telepítése](https://technet.microsoft.com/library/jj134095(v=ws.10).aspx). | A tartomány nevét a varázsló által automatikusan történik. Módosítsa a nevét, csak akkor, ha annak értéke helytelen. **Fontos:** adja meg a tartomány nevét (rövid) NetBIOS-neve, nem a teljesen minősített tartománynevét (FQDN) használatával. Például ha a tartomány teljes Tartománynevét a fabrikam.com, adja meg a tartomány nevét, a FABRIKAM. |
-| **Felhasználó**                                    | Megadja a BHOLD Core szolgáltatásfiók-felhasználó bejelentkezési nevét.                                                                                                                                                          | Írás a felhasználói fiók nevét itt:                                                                                                                                                                                                                                                                                    |
-| **Jelszó**                                | A szolgáltatás felhasználói fiók jelszava.                                                                                                                                                                       | Írás a jelszót kell megadnia: **fontos:** mindenképp Ez a jelszó egy rejtett, biztonságos helyen.                                                                                                                                                                                                                  |
+| **Biztonsági szolgáltató használata tartományon vagy gépen** | Ha be van jelölve, akkor a Active Directory tartományi szolgáltatások biztonság szabályozza a BHOLD mag elérését.                                                                                                                | Jelölje be a jelölőnégyzetet. **Fontos:** Ha ez a jelölőnégyzet nincs bejelölve, a telepítés sikertelen lesz.                                                                                                                                                                                                                   |
+| **Tartomány**                                  | A BHOLD Core telepítésekor létrehozott szolgáltatásfiókot tartalmazó tartományt adja meg. További információ: [BHOLD Core telepítés](https://technet.microsoft.com/library/jj134095(v=ws.10).aspx). | A tartomány nevét a varázsló automatikusan megadja. A név csak akkor módosítható, ha helytelen. **Fontos:** A tartománynevet a NetBIOS (rövid) név használatával adja meg, ne a teljes tartománynevet (FQDN). Ha például a tartomány teljes tartományneve fabrikam.com, adja meg a tartománynevet FABRIKAM néven. |
+| **Felhasználó**                                    | Megadja a BHOLD Core szolgáltatás felhasználói fiókjának bejelentkezési nevét.                                                                                                                                                          | Írja be a felhasználói fiók nevét:                                                                                                                                                                                                                                                                                    |
+| **Jelszó**                                | Megadja a szolgáltatás felhasználói fiókjának jelszavát.                                                                                                                                                                       | Írja be a jelszót itt: **Fontos:** ügyeljen arra, hogy a jelszót rejtett, biztonságos helyen tárolja.                                                                                                                                                                                                                  |
 
-## <a name="bhold-attestation-installation"></a>A BHOLD Attestation telepítése
+## <a name="bhold-attestation-installation"></a>BHOLD-igazolás telepítése
 
-BHOLD igazolási-modul telepítéséhez, jelentkezzen be a tartományi rendszergazdák csoport tagjaként, töltse le a következő fájl, és futtassa rendszergazdaként a kiszolgálón, melyet a BHOLD igazolási modul telepítése:
+A BHOLD-igazolási modul telepítéséhez jelentkezzen be a Tartománygazdák csoport tagjaként, töltse le a következő fájlt, és futtassa rendszergazdaként azon a kiszolgálón, amelyen telepíteni kívánja az BHOLD igazolási modulját:
 
-- BholdAttestation<em>\<verzió\></em>\_Release.msi
+- A BholdAttestation<em>\<verziója\></em>\_Release. msi
 
-Cserélje le *\<verzió\>* a BHOLD igazolási kiadás, amely telepíti a verziószámával.
+Cserélje le *\<version\>* a telepítendő BHOLD-igazolási kiadás verziószámára.
 
-A program rendszergazdaként futtatni, kattintson jobb gombbal a fájlra, és kattintson a **Futtatás rendszergazdaként**.
+A programfájl rendszergazdaként való futtatásához kattintson a jobb gombbal a fájlra, majd kattintson a **Futtatás rendszergazdaként**parancsra.
 
 ## <a name="next-steps"></a>További lépések
 
-- [A BHOLD telepítési útmutató](bhold-installation-guide.md)
+- [BHOLD telepítési útmutató](bhold-installation-guide.md)
 - [BHOLD fejlesztői leírás](../reference/mim2016-bhold-developer-reference.md)
 - [A BHOLD korábbi verziói](../reference/version-bhold-history.md)

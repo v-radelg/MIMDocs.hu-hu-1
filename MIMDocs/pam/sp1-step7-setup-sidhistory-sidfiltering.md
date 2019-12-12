@@ -1,5 +1,5 @@
 ---
-title: '7. lépés: SID-előzmények/SID-szűrés beállítása'
+title: '7\. lépés: SID-előzmények/SID-szűrés beállítása'
 description: Ez a Privileged Identity Manager parancsfájlokkal történő konfigurálásának 7. lépése. Ehhez a lépéshez a SID-előzmények/SID-szűrés beállítása tartozik.
 keywords: ''
 author: billmath
@@ -12,13 +12,13 @@ ms.assetid: 4b524ae7-6610-40a0-8127-de5a08988a8a
 ms.reviewer: ''
 ms.suite: ems
 ms.openlocfilehash: f85dd4eff32d5207948ec332bf2e9850b14a86fe
-ms.sourcegitcommit: 44a2293ff17c50381a59053303311d7db8b25249
+ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50379328"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "64518285"
 ---
-# <a name="step-7-set-up-sid-historysid-filtering"></a>7. lépés: SID-előzmények/SID-szűrés beállítása
+# <a name="step-7-set-up-sid-historysid-filtering"></a>7\. lépés: SID-előzmények/SID-szűrés beállítása
 
 > [!div class="step-by-step"]
 > [« 6. lépés](sp1-step6-setup-pam-trust.md)

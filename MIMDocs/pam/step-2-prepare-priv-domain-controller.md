@@ -12,13 +12,13 @@ ms.assetid: 0e9993a0-b8ae-40e2-8228-040256adb7e2
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: 0364b0d14d08ab3af32010675e0ba80d39404342
-ms.sourcegitcommit: 44a2293ff17c50381a59053303311d7db8b25249
+ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50380051"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "64518084"
 ---
-# <a name="step-2---prepare-the-first-priv-domain-controller"></a>2. lépés: A PRIV tartományvezérlő előkészítése
+# <a name="step-2---prepare-the-first-priv-domain-controller"></a>2\. lépés: A PRIV tartományvezérlő előkészítése
 
 > [!div class="step-by-step"]
 > [« 1. lépés](step-1-prepare-corp-domain.md)
@@ -260,7 +260,7 @@ Végezze el a következő lépéseket a PRIVDC számítógépen tartományi rend
     - **Az összes gyermekobjektum törlése**
     - **Az összes tulajdonság olvasása**
     - **Az összes tulajdonság írása**
-    - **SID-előzmények áttelepítése** kattintson **tovább** majd **Befejezés**.
+    - **SID-előzmények migrálása** Kattintson a **tovább** , majd a **Befejezés**gombra.
 
 11. Kattintson ismét a jobb gombbal a **priv.contoso.local** tartományra, és válassza a **Vezérlés delegálása** parancsot.  
 12. A Kijelölt felhasználók és csoportok lapon kattintson a **Hozzáadás** gombra.  
@@ -291,7 +291,7 @@ Ha még nem rendelkezik munkaállomással, amely a PRIV tartományhoz fog tartoz
 
 Egy új virtuális gépen, amelyen még nincs telepített szoftver, telepítse a Windows 8.1 Enterprise vagy a Windows 10 Enterprise verziót. Ez lesz a *„PRIVWKSTN”* számítógép.
 
-1. A telepítéshez használja az expressz beállításokat.
+1. A telepítéshez használja a gyorsbeállításokat.
 
 2. Vegye figyelembe, hogy előfordulhat, hogy a telepítés nem fog tudni csatlakozni az internethez. Kattintson a **Helyi fiók létrehozása** elemre. Adjon meg más felhasználónevet, ne használja a „Rendszergazda” vagy az „Ilona” nevet.
 

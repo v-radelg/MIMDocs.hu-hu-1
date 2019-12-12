@@ -12,15 +12,15 @@ ms.assetid: 66060045-d0be-4874-914b-5926fd924ede
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: 8ff9edce6da865418e300095ff0827853a35d4eb
-ms.sourcegitcommit: 7de35aaca3a21192e4696fdfd57d4dac2a7b9f90
+ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49358346"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "64517220"
 ---
-# <a name="mim-certificate-manager-windows-store-application-deployment"></a>MIM Tanúsítványkezelő Windows tárolására az alkalmazás központi telepítése
+# <a name="mim-certificate-manager-windows-store-application-deployment"></a>A Rendszerfelügyeleti webszolgáltatások Tanúsítványkezelője Windows áruházbeli alkalmazás telepítése
 
-Miután a MIM 2016 és a Tanúsítványkezelő üzembe helyezéséig, telepítheti a MIM Tanúsítványkezelő Windows áruházbeli alkalmazás. A windows áruházbeli alkalmazás lehetővé teszi, hogy a felhasználók saját fizikai intelligens kártyák, a virtuális intelligens kártyák és a szoftvertanúsítványok kezeléséhez. A MIM Tanúsítványkezelő alkalmazás telepítési lépései:
+Miután megtörtént a felügyeleti webszolgáltatások 2016 és a Tanúsítványkezelő üzembe helyezése, telepítheti a Rendszerfelügyeleti webszolgáltatások tanúsítványkezelő Windows áruházbeli alkalmazását. A Windows áruházbeli alkalmazással a felhasználók kezelhetik a fizikai intelligens kártyákat, a virtuális intelligens kártyákat és a szoftveres tanúsítványokat. A MIM Tanúsítványkezelő alkalmazás telepítési lépései:
 
 1. Tanúsítványsablon létrehozása.
 
@@ -34,11 +34,11 @@ Miután a MIM 2016 és a Tanúsítványkezelő üzembe helyezéséig, telepíthe
 
 A Tanúsítványkezelő alkalmazáshoz a szokásos módon hozhat létre tanúsítványsablont, azzal a különbséggel, hogy meg kell győződnie arról, hogy a tanúsítványsablon 3-as vagy magasabb verziójú.
 
-1. Jelentkezzen be az Active Directory Tanúsítványszolgáltatások (a tanúsítvány-kiszolgáló) futtató kiszolgáló.
+1. Jelentkezzen be az AD CS-t futtató kiszolgálóra (a tanúsítvány-kiszolgálóra).
 
 2. Indítsa el az MMC-t.
 
-3. Kattintson a **fájl &gt; hozzáadása beépülő modul**.
+3. Kattintson a **fájl &gt; beépülő modul hozzáadása/eltávolítása**elemre.
 
 4. Az Elérhető beépülő modulok listában kattintson a **Tanúsítványsablonok** lehetőségre, majd a **Hozzáadás** gombra.
 
@@ -46,10 +46,10 @@ A Tanúsítványkezelő alkalmazáshoz a szokásos módon hozhat létre tanúsí
 
 6. Kattintson a jobb gombbal a **Bejelentkezés intelligens kártyával** sablonra, majd kattintson a **Sablon duplikálása** parancsra.
 
-7. A Kompatibilitás lapon a hitelesítésszolgáltató területen válassza ki a Windows Server 2008. A tanúsítvány kedvezményezettje területen válassza ki a Windows 8.1 vagy Windows Server 2012 R2. A sablon verziójának értéke az első alkalommal hoz létre, és a tanúsítvány mentéséhez. Ha nem hozott létre a tanúsítványsablon ezzel a módszerrel nincs semmilyen módon nem lehet módosítani a megfelelő verzióra.
+7. A kompatibilitás lapon a hitelesítésszolgáltató területen válassza a Windows Server 2008 lehetőséget. A tanúsítvány címzettje területen válassza a Windows 8.1/Windows Server 2012 R2 lehetőséget. A sablon verziószáma a tanúsítványsablon első létrehozásakor és mentésekor van beállítva. Ha így nem hozta létre a tanúsítványsablont, a megfelelő verzióra nem lehet módosítani.
 
    > [!NOTE]
-   >  Ez a lépés elengedhetetlen, mivel lehetővé teszi, hogy rendelkezik-e verzió 3 (vagy magasabb) tanúsítványsablont. Csak 3-as verziójú sablonokat a Tanúsítványkezelő alkalmazással együttműködve.
+   >  Ez a lépés kritikus fontosságú, mivel gondoskodik arról, hogy 3 (vagy magasabb) verziójú tanúsítványsablont biztosítson. Csak a 3. verziójú sablonok működnek a Tanúsítványkezelő alkalmazással.
 
 8. Az **Általános** lap **Megjelenített név** mezőjébe írja be az alkalmazás kezelőfelületén megjeleníteni kívánt nevet; például: **Bejelentkezés virtuális intelligens kártyával**.
 
@@ -78,7 +78,7 @@ Amikor létrehozza a profilsablont, állítsa be a virtuális intelligens kárty
 
 1.  Rendszergazdai jogosultsággal jelentkezzen be a Tanúsítványkezelő portálra.
 
-2.  Lépjen a felügyeleti &gt; profilsablonok kezelése. Győződjön meg arról, hogy a jelölőnégyzet be van jelölve a **MIM CM Sample intelligens kártyás bejelentkezési profilsablon** majd kattintson a másolás, egy kijelölt profilsablon.
+2.  Nyissa meg a felügyeleti &gt; profil sablonok kezelése lehetőséget. Győződjön meg arról, hogy a jelölőnégyzet be van jelölve a **MIM cm minta intelligens kártya bejelentkezési profil sablonja** mellett, majd kattintson a kiválasztott profil másolása sablonra.
 
 3.  Írja be a profilsablon nevét, majd kattintson az **OK** gombra.
 
@@ -96,11 +96,11 @@ Amikor létrehozza a profilsablont, állítsa be a virtuális intelligens kárty
 
 10. A bal oldali panelen kattintson a **Renew Policy (Házirend megújítása) &gt; Change general settings (Általános beállítások módosítása)** parancsra. Válassza a **Reuse card on renew** (Kártya újrafelhasználása megújításkor) elemet, majd kattintson az **OK** gombra.
 
-11. Le kell tiltania az adatgyűjtő elemeket minden házirend esetén kattintson a házirendre a bal oldali ablaktáblán. Szeretne melletti jelölőnégyzetet a **Sample data item** kattintson **törli az adatgyűjtő elemeket** majd **OK**.
+11. Minden házirendhez le kell tiltania az adatgyűjtési elemeket, ha a bal oldali ablaktáblán a szabályzatra kattint. Ezután jelölje be a **mintaadatok elem** melletti jelölőnégyzetet, majd kattintson az **adatgyűjtési elemek törlése** elemre, majd **az OK**gombra.
 
 ## <a name="prepare-the-cm-app-for-deployment"></a>A Tanúsítványkezelő alkalmazás üzembe helyezésének előkészítése
 
-1. A parancssorban futtassa a következő parancsot, hogy az kicsomagolja az alkalmazás. A parancs a tartalom kibontása egy új "appx" nevű almappába, és a egy másolatot létrehozni, hogy az eredeti fájl módosítása nem.
+1. A parancssorban futtassa a következő parancsot az alkalmazás kicsomagolásához. A parancs kibontja a tartalmat egy új, Appx nevű almappába, és létrehoz egy másolatot, hogy ne módosítsa az eredeti fájlt.
 
     ```cmd
     makeappx unpack /l /p <app package name>.appx /d ./appx
@@ -116,7 +116,7 @@ Amikor létrehozza a profilsablont, állítsa be a virtuális intelligens kárty
    |                     |                                                                                                                                                                                                          |
    |---------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
    |      MIMCM URL      |                                              A Tanúsítványkezelő konfigurálására szolgáló portál teljes tartományneve, Például: https://mimcmServerAddress/certificatemanagement                                              |
-   |      ADFS URL       | Ha AD FS-t fog használni, adja meg az AD FS URL-címét, Például: <https://adfsServerSame/adfs> </br> Ha AD FS nem használ, konfigurálja ezt a beállítást egy üres karakterlánc.  Ha például  ```<ADFS URL=""/>``` |
+   |      ADFS URL       | Ha AD FS-t fog használni, adja meg az AD FS URL-címét, Például: <https://adfsServerSame/adfs> </br> Ha az ADFS nincs használatban, konfigurálja ezt a beállítást egy üres karakterlánccal.  Például ```<ADFS URL=""/>``` |
    |     PrivacyUrl      |                                         Megadhatja egy olyan weblap URL-címét, amely ismerteti, hogy mit tesz a tanúsítványigényléshez gyűjtött felhasználói adatokkal.                                          |
    |     SupportMail     |                                                                           Megadhat egy e-mail címet támogatási problémák esetére.                                                                           |
    | LobComplianceEnable (LOB-megfelelőség engedélyezése) |                                                                     True (igaz) vagy false (hamis) értéket állíthat be. Az alapértelmezett érték true (igaz).                                                                      |
@@ -124,7 +124,7 @@ Amikor létrehozza a profilsablont, állítsa be a virtuális intelligens kárty
    |      NonAdmin (Nem rendszergazda)       |           True (igaz) vagy false (hamis) értéket állíthat be. Az alapértelmezett érték false (hamis). Csak akkor módosítsa, ha a számítógépükön rendszergazdai jogosultsággal nem rendelkező felhasználók számára is lehetővé szeretné tenni a tanúsítványok igénylését és megújítását.            |
 
    > [!IMPORTANT]
-   > Az AD FS URL-cím értéket kell adni. Ha nem ad meg értéket a Modern alkalmazások fogja meg az első használati hiba.
+   > Meg kell adni egy értéket az ADFS URL-címéhez. Ha nincs megadva érték, a modern alkalmazás az első használat során hibát jelez.
 4. Mentse a fájlt, és zárja be a szerkesztőt.
 
 5. A csomag aláírásával létrejön egy aláírásfájl, ezért az eredeti, AppxSignature.p7x nevű aláírásfájlt törölni kell.
@@ -256,16 +256,16 @@ Amikor létrehozza a profilsablont, állítsa be a virtuális intelligens kárty
 
     - A serverFQDN (kiszolgáló teljes tartományneve) az MIMCM-kiszolgáló teljes számítógépneve önmagában.
 
-    - Segítség a **ConfigureMIimCMClientAndRelyingParty.ps1** parancsfájlok futtatásával: </br> 
+    - A **ConfigureMIimCMClientAndRelyingParty. ps1** parancsfájllal kapcsolatos segítségért futtassa a következőt: </br> 
       ```Powershell
       get-help  -detailed ConfigureMimCMClientAndRelyingParty.ps1
       ```
 
-## <a name="deploy-the-app"></a>Az alkalmazás üzembe helyezése
+## <a name="deploy-the-app"></a>Az alkalmazás központi telepítése
 
 A Tanúsítványkezelő alkalmazás telepítésekor a Letöltőközpontból töltse le a MIMDMModernApp_&lt;verziószám&gt;_AnyCPU_Test.zip fájlt, és bontsa ki a teljes tartalmát. A telepítő az .appx fájl. Az alkalmazás a Windows áruházbeli alkalmazásoknál megszokott módszerekkel telepíthető, például [System Center Configuration Managerrel](https://technet.microsoft.com/library/dn613840.aspx) vagy [Intune-nal](https://technet.microsoft.com/library/dn613839.aspx) is közvetlen telepítéssel – a felhasználóknak tehát a Vállalati portálon kell elérniük azt, vagy leküldéssel is telepíthető közvetlenül a számítógépükre.
 
 ## <a name="next-steps"></a>További lépések
 
-- [Konfigurációsprofil-sablonok](https://technet.microsoft.com/library/cc708656)
+- [Profil sablonok konfigurálása](https://technet.microsoft.com/library/cc708656)
 - [Intelligenskártya-alkalmazások kezelése](https://technet.microsoft.com/library/cc708681)

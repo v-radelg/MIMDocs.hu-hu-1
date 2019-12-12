@@ -8,10 +8,10 @@ ms.date: 10/29/2018
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.openlocfilehash: 90ef2ab63be3914d1d48c7319821177e7e62f9e0
-ms.sourcegitcommit: 65e11fd639464ed383219ef61632decb69859065
+ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/01/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "68701298"
 ---
 # <a name="mim-sp1-4414360--service-dynamic-logging"></a>Dinamikus naplózás a MIM SP1-es (4.4.1436.0-s) verziójában
@@ -31,7 +31,7 @@ A dinamikus naplózás szintjeit [itt](https://msdn.microsoft.com/library/ms7330
 - Critical (Kritikus) = az alapértelmezett szintű szolgáltatás csak a kritikus eseményeket naplózza
 - A 8. sorba (dynamicLogging mode="true" loggingLevel="Critical") írja be a kívánt naplózási szint értékét
 
-Dinamikus naplózási konfiguráció a 266. sorban: Microsoft. ResourceManagement. Service. exe. config
+A dinamikus naplózási konfiguráció a 266. sor: Microsoft. ResourceManagement. Service. exe. config fájlban található.
 
 ![A különféle elérhető naplózási területeket mutató kiemelt szakaszok](media/mim-service-dynamic-logging/screen02.png)
 
@@ -49,7 +49,7 @@ A nyomkövetés megtekintéséhez használhatja a [Service Trace Viewer eszközt
 
  ![A Service Trace Viewer képernyőképe](media/mim-service-dynamic-logging/screen04.png)
 
-# <a name="updates-build-45xx-or-greater"></a>Frissítések Build 4.5. x. x vagy újabb
+# <a name="updates-build-45xx-or-greater"></a>Frissítések: build 4.5. x. x vagy újabb
 
 A Build 4.5. x. x verzióban módosítottuk a naplózási szolgáltatást az alapértelmezett naplózási szint megadásához: **"figyelmeztetés"** . A szolgáltatás két fájlban ír üzeneteket (a "00" és a "01" indexeket a bővítmény előtt adja hozzá). A fájlok a "C:\Program Files\Microsoft Forefront Identity Manager\2010\service mappában" könyvtárban találhatók. Ha a fájl túllépi a maximális méretet, a szolgáltatás elkezd írni egy másik fájlban. Ha egy másik fájl létezik, a rendszer felülírja. A fájl alapértelmezett maximális mérete 1 GB. Az alapértelmezett maximális méret módosításához hozzá kell adni a **"maxOutputFileSizeKB"** paramétert, amelynek értéke a maximális fájlméret a figyelőben (lásd az alábbi példát) és a újraindítása szolgáltatást. A szolgáltatás elindításakor a rendszer hozzáfűzi a naplókat a legutóbbi fájlban (ha túllépte a lemezterületet, felülírja a legrégebbi fájlt). 
 

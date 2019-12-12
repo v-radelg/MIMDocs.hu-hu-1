@@ -11,10 +11,10 @@ ms.prod: microsoft-identity-manager
 ms.assetid: b0b39631-66df-4c5f-80c9-a1774346f816
 ms.suite: ems
 ms.openlocfilehash: 6f861c5b1984de70a91edcac89276402f289e355
-ms.sourcegitcommit: 65e11fd639464ed383219ef61632decb69859065
+ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/01/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "68701483"
 ---
 # <a name="microsoft-identity-manager-data-handling"></a>Az adatkezelés Microsoft Identity Manager 
@@ -34,7 +34,7 @@ Az alábbiakban néhány forgatókönyv szerint az ügyfeleknek meg kell fontoln
 Az aktuális webszolgáltatási környezet megismerése érdekében a következő eszköz használatával dokumentálhatja a webalkalmazási környezetét, vagy elhalaszthatja a megvalósítási terv dokumentumait.
 - [Webkiszolgáló-dokumentáló – lehetővé teszi az aktuális konfiguráció exportálását](https://github.com/Microsoft/MIMConfigDocumenter)
 
-## <a name="searching-for-and-identifying-personal-data"></a>Személyes adatkeresés és-azonosítás
+## <a name="searching-for-and-identifying-personal-data"></a>Személyes adatok keresése és azonosítása
 A munkaterületen belüli keresés a konfigurációtól és a beállítástól függ. A legtöbb környezet összekapcsolódik, de az érthetőség érdekében magas szintű összetevővel szakítottuk ki őket.
 
 ### <a name="synchronization-service"></a>Synchronization Service
@@ -46,8 +46,8 @@ Ha nem biztos abban, hogy a szolgáltatói forrás nyomon követheti ezt a felha
 - Felhasználói objektumok adatai felülvizsgálatának vagy keresésének elvégzése
     - A szinkronizálási szolgáltatás ügyfelének megnyitása
         - A metaverse Designer használatával megtekintheti az attribútumok folyamatának importálását és elsőbbségét.
-![MIM-Privacy-compliance_1. PNG](media/mim-privacy-compliance/mim-privacy-compliance_1.PNG)
-        - A metaverse Search használatával bármely objektumra és attribútumra rákereshet a MIM-Privacy-compliance_2. png ![adatbázison belül.](media/mim-privacy-compliance/mim-privacy-compliance_2.PNG)
+![a-adatvédelemre compliance_1. PNG](media/mim-privacy-compliance/mim-privacy-compliance_1.PNG)
+        - A metaverse Search segítségével bármely objektumra és attribútumra rákereshet az adatbázison belül ![a rendszer-adatvédelmi compliance_2. PNG](media/mim-privacy-compliance/mim-privacy-compliance_2.PNG)
  
 Az objektum megkeresése után az objektumra kattintva megnyílik a felhasználói profil oldal. Az objektum részletes adatai az objektumra, annak attribútumaira, utolsó módosítására és forrására, valamint a kapcsolódó csatlakoztatott adatforrásokra vonatkozó részletes információkat tartalmazzák az alábbi felügyeleti ügynök konfigurációs példából származtatva.
 
@@ -129,7 +129,7 @@ A felhasználók közvetlenül frissíthetők a BHOLD Core felhasználói felül
 
 A Tanúsítványkezelő szolgáltatásban a felhasználók az Active Directoryból is tükröződnek. Ha frissíteni szeretné a használati Active Directory az objektum adatainak módosításához.
 
-## <a name="deleting-personal-data"></a>Személyes adatok törléséről
+## <a name="deleting-personal-data"></a>Személyes adatok törlése
 
 >[!Note] 
 > Ez a cikk útmutatást nyújt a személyes adatok Microsoft Identity Managerból való törlésének módjairól, és felhasználható a GDPR tartozó kötelezettségek támogatásához is. A GDPR-ral kapcsolatos általános információt a [Service Trust Portal GDPR szakaszában](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted) talál.
@@ -145,7 +145,7 @@ A szinkronizációs szolgáltatás az adatkezelés számos módja, vagy az üzle
 
 ### <a name="service-and-portal--pam"></a>Szolgáltatás és portál/PAM
 
-Javasoljuk, hogy a Service &-portálon tartsa meg az alapértelmezett 30 nap rendszererőforrás-megőrzési konfigurációt. Ez azt jelzi, hogy a szolgáltatás Mikor törlődik, nem csak az adatok kérelmezését, hanem minden olyan objektumot, amelyet törölni kell a rendszerből. A folyamat elvégzése után a rendszer törli az objektumhoz csatolt összes adatkapcsolatot, amely tartalmazza az összes SSPR regisztrációs adattal. Ez a művelet az objektum törlési konfigurációját játssza le. Az objektumok GUID azonosítóját egyetlen táblázat tárolja. Ha csökkenteni szeretné a tábla teljes méretét a Build 4.4.1459, akkor a folyamathoz hozzáadott egy FIM_DeleteExpiredSystemObjectsJob nevű folyamatot, amely [itt](https://support.microsoft.com/en-us/help/4012498/hotfix-rollup-package-build-4-4-1459-0-is-available-for-microsoft-iden)található.
+Javasoljuk, hogy a Service &-portálon tartsa meg az alapértelmezett 30 nap rendszererőforrás-megőrzési konfigurációt. Ez azt jelzi, hogy a szolgáltatás Mikor törlődik, nem csak az adatok kérelmezését, hanem minden olyan objektumot, amelyet törölni kell a rendszerből. A folyamat elvégzése után a rendszer törli az objektumhoz csatolt összes adatkapcsolatot, amely tartalmazza az összes SSPR regisztrációs adattal. Ez a művelet az objektum törlési konfigurációját játssza le. Az objektumok GUID azonosítóját egyetlen táblázat tárolja. A Build 4.4.1459 lévő tábla teljes méretének csökkentése érdekében a folyamathoz egy FIM_DeleteExpiredSystemObjectsJob részleteket tartalmazó folyamatot vettünk fel, amely [itt](https://support.microsoft.com/en-us/help/4012498/hotfix-rollup-package-build-4-4-1459-0-is-available-for-microsoft-iden)található.
 
 ![srrc – adatvédelem – megfelelőség – adatvédelmi nyilatkozat. PNG](media/mim-privacy-compliance/mim-privacy-compliance-srrc.PNG)
 
@@ -155,7 +155,7 @@ Javasoljuk, hogy a Service &-portálon tartsa meg az alapértelmezett 30 nap ren
 A szinkronizálási szolgáltatáshoz kapcsolódó legtöbb rendszer bhold úgy is konfigurálható, hogy a forrás objektum, például a HR eltávolítása után törölje a törlést. Ez a felügyeleti ügynökön van konfigurálva. és az objektum-törlési szabályok vezérlik a szinkronizálási szolgáltatás funkciói című témakörben leírtak szerint.
 
 Egy másik lehetőség, hogy a felhasználói objektumot közvetlenül a BHOLD Core felhasználói felületről távolítsa el. A telepítéstől függően ez megfelelően működhet, de vegye figyelembe, hogy a kiépítési logika újból létrehozhatja ezt a felhasználót, ha nem törölte a forrást.
-![bholdr – adatvédelem – megfelelőség – adatvédelmi nyilatkozat. PNG](media/mim-privacy-compliance/mim-privacy-compliance-bholdr.PNG)
+![bholdr – adatvédelem – megfelelőség – adatvédelmi nyilatkozat. PNG-](media/mim-privacy-compliance/mim-privacy-compliance-bholdr.PNG)
 
 
 ### <a name="certificate-management"></a>Tanúsítványkezelés
@@ -173,11 +173,11 @@ Ha le szeretné tiltani az adatgyűjtést a korábbi verzióban, futtassa a mód
 
 ![alapszintű adatvédelem – megfelelőség – CEIP. PNG](media/mim-privacy-compliance/mim-privacy-compliance-ceip.PNG)
 
-vagy szerkessze a beállításjegyzéket, és állítsa az értéket 0-ra: Összetevő CEIP HKLM\SOFTWARE\Microsoft\Forefront-identitás Manager\2010
+vagy szerkessze a beállításjegyzéket, és állítsa az értéket 0: (összetevő) CEIP HKLM\SOFTWARE\Microsoft\Forefront Identity Manager\2010
 
 ![ceip2 – adatvédelem – megfelelőség – adatvédelmi nyilatkozat. PNG](media/mim-privacy-compliance/mim-privacy-compliance-ceip2.PNG)
 
-## <a name="next-steps"></a>További lépések 
+## <a name="next-steps"></a>Következő lépések 
 - [Az SQL-hez kapcsolódó adatvédelmi útmutató](https://docs.microsoft.com/sql/relational-databases/security/microsoft-sql-and-the-gdpr-requirements?view=sql-server-2017)
 - [A szolgáltatási megbízhatósági portál GDPR szakasza](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted)
-- [FIM 2010 archívum: A Forefront Identity Manager 2010-es implementációja](https://social.technet.microsoft.com/wiki/contents/articles/35789.fim-2010-archive-ramp-up-implementing-forefront-identity-manager-2010.aspx)
+- [FIM 2010 archívum: üzembe helyezés a Forefront Identity Manager 2010](https://social.technet.microsoft.com/wiki/contents/articles/35789.fim-2010-archive-ramp-up-implementing-forefront-identity-manager-2010.aspx)

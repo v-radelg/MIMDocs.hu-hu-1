@@ -13,13 +13,13 @@ ROBOTS: noindex,nofollow
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: e306748e982eb2eb123246bc7f309465823eaf35
-ms.sourcegitcommit: 44a2293ff17c50381a59053303311d7db8b25249
+ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50379905"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "64518217"
 ---
-# <a name="step-3--prepare-a-pam-server"></a>3. lépés – PAM-kiszolgáló előkészítése
+# <a name="step-3--prepare-a-pam-server"></a>3\. lépés – PAM-kiszolgáló előkészítése
 
 > [!div class="step-by-step"]
 > [« 2. lépés](step-2-prepare-priv-domain-controller.md)
@@ -104,7 +104,7 @@ Ha a PowerShellt szeretné használni:
 Ha szövegszerkesztőt, például a Jegyzettömböt szeretné használni:
 
 1. Nyissa meg a **C:\Windows\System32\inetsrv\config\applicationHost.config** fájlt.
-2. Görgessen le a fájl 82. soráig. Az **overrideModeDefault** címke értékének a következőnek kell lennie: **<section name="windowsAuthentication" overrideModeDefault="Deny" />**.  
+2. Görgessen le a fájl 82. soráig. Az **overrideModeDefault** címke értékének a következőnek kell lennie: **<section name="windowsAuthentication" overrideModeDefault="Deny" />** .  
 3. Módosítsa az **overrideModeDefault** értékét az *Allow* értékre.  
 4. Mentse a fájlt, és indítsa újra az IIS-t az `iisreset /START` PowerShell-paranccsal.
 
@@ -204,7 +204,7 @@ Most hozzon létre egy SharePoint-webhelycsoportot az imént készített webalka
 ## <a name="set-the-website-as-the-local-intranet"></a>A webhely beállítása helyi intranetként
 
 1. Indítsa el az Internet Explorert, és nyisson meg egy új böngészőlapot
-2. Navigáljon a http://pamsrv.priv.contoso.local:82/ , és jelentkezzen be PRIV\MIMAdmin felhasználóként.  Ekkor megjelenik egy üres SharePoint-webhely, „MIM Portal” néven.  
+2. Navigáljon http://pamsrv.priv.contoso.local:82/, és jelentkezzen be PRIV\MIMAdmin.  Ekkor megjelenik egy üres SharePoint-webhely, „MIM Portal” néven.  
 3. Az Internet Explorerben nyissa meg az **Internetbeállításokat**, lépjen a **Biztonság** lapra, válassza a **Helyi intranet** zónát, majd kattintson a `http://pamsrv.priv.contoso.local:82/` URL-címre.
 
 Ha a bejelentkezés sikertelen, előfordulhat, hogy a [2. lépésben](step-2-prepare-priv-domain-controller.md) korábban létrehozott Kerberos SPN-eket frissíteni kell.

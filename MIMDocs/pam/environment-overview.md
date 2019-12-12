@@ -12,11 +12,11 @@ ms.assetid: 479db14c-1bfb-4d7c-a344-cd718a01f328
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: 6f4b6e224b6b50bf2190688a994f35159d273713
-ms.sourcegitcommit: 44a2293ff17c50381a59053303311d7db8b25249
+ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50379498"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "64518534"
 ---
 # <a name="environment-overview"></a>A környezet áttekintése
 
@@ -24,14 +24,14 @@ A Privileged Access Management olyan virtuális gépekkel (VM) működik, amelye
 
 ![PAM-kiszolgálók: kapcsolatok és támogatott platformok – diagram](media/pam-test-lab-architecture.png)
 
-Szüksége lesz egy legalább három virtuális gép.  Ha még nem rendelkezik AD-tartomány, a PAM kezelni, egy további virtuális Gépre egy CORP tartományvezérlőként frissítenie.  Ha szeretné konfigurálni a PRIV szoftvert magas rendelkezésre állású, két további virtuális gépeket kell.
+Legalább három virtuális gép szükséges.  Ha még nem rendelkezik a PAM által felügyelt AD-tartománnyal, egy további virtuális gépre van szüksége, amely CORP-tartományvezérlőként működik.  Ha magas rendelkezésre álláshoz szeretné konfigurálni a PRIV-szoftvert, két további virtuális gépre van szüksége.
 
-A a virtuális gépek lemezképeit tároló meghajtókon legalább 120 GB szabad lemezterület szükséges.  Ha magas rendelkezésre állású üzemelő példányt tervez létrehozni, győződjön meg róla, hogy a lemezalrendszer megfelel-e az SQL megosztott tárhelyre vonatkozó követelményeknek.  A megosztott tárolás történhet Windows Server feladatátvételi fürtszolgáltatási fürtlemezeken, tárolóhálózaton (SAN) lévő lemezeken vagy SMB-kiszolgálón található fájlmegosztások formájában.
+A virtuális gépek lemezképeit tároló meghajtókon legalább 120 GB szabad lemezterület szükséges.  Ha magas rendelkezésre állású üzemelő példányt tervez létrehozni, győződjön meg róla, hogy a lemezalrendszer megfelel-e az SQL megosztott tárhelyre vonatkozó követelményeknek.  A megosztott tárolás történhet Windows Server feladatátvételi fürtszolgáltatási fürtlemezeken, tárolóhálózaton (SAN) lévő lemezeken vagy SMB-kiszolgálón található fájlmegosztások formájában.
 
 > [!IMPORTANT]
-> Storage a megerősített környezetben kell kijelölnie. A megerősített környezeten kívüli egyéb munkaterhelésekkel való megosztása a tároló nem ajánlott, mivel ez veszélyeztetheti a megerősített környezet sértetlenségét.
+> A tárterületet a megerősített környezetnek kell dedikáltnak lennie. A tárterület a megerősített környezeten kívüli egyéb munkaterhelésekkel való megosztása nem ajánlott, mivel ez veszélyeztetheti a megerősített környezet integritását.
 
 ## <a name="next-steps"></a>További lépések
 
-- [Privileged Access Management az Active Directory Domain Services](privileged-identity-management-for-active-directory-domain-services.md) PAM és a működésének áttekintése.
-- [A PAM-összetevők megismerése](principles-of-operation.md) PAM-összetevők különböző áttekintése.
+- A [Active Directory tartományi szolgáltatások Privileged Access Management](privileged-identity-management-for-active-directory-domain-services.md) a PAM áttekintése és működése.
+- [A PAM összetevőinek megismerése](principles-of-operation.md) a PAM különböző összetevőinek áttekintése.

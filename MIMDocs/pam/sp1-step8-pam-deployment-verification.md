@@ -1,5 +1,5 @@
 ---
-title: '8. lépés: A PAM üzembe helyezésének ellenőrzése'
+title: '8\. lépés: A PAM üzembe helyezésének ellenőrzése'
 description: A PAM parancsfájlokkal történő üzembe helyezéséhez szükséges csomag ellenőrzési parancsfájlokat is tartalmaz, amelyekkel végrehajtható egy PAM-forgatókönyv, így ellenőrizhető, hogy a PAM-környezet a vártnak megfelelően működik-e.
 keywords: ''
 author: billmath
@@ -12,11 +12,11 @@ ms.assetid: 4b524ae7-6610-40a0-8127-de5a08988a8a
 ms.reviewer: ''
 ms.suite: ems
 ms.openlocfilehash: d6b0327b39a76799b2943565dd0c3e00f55f745f
-ms.sourcegitcommit: 44a2293ff17c50381a59053303311d7db8b25249
+ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50379956"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "64518117"
 ---
 # <a name="step-8-pam-deployment-verification"></a>Nyolcadik lépés: A PAM üzembe helyezésének ellenőrzése
 
@@ -64,7 +64,7 @@ Harmadik lépés:
 
 Ebben a lépésben meg kell adnia a CORPAdmin hitelesítő adatait. Amint megadta, a rendszer felveszi a szükséges felhasználókat az „Asztal távoli felhasználók” és a „Rendszerfelügyeleti felhasználók” csoportba.
 A CORP-ügyfélen a következő parancs használatával nyissa meg a PowerShellt az érvényesítés alatt álló PRIV-felhasználóként. </br></br>
-**Runas/u:<PRIV domain>\PRIV.pamRequestor powershell.exe**  </br></br>
+**Runas/u:<PRIV domain>\PRIV.pamRequestor PowerShell. exe**  </br></br>
 A PowerShell ablakban írja be a következőt:
 
 1. cd $env:SYSTEMDRIVE\PAM

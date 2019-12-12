@@ -1,5 +1,5 @@
 ---
-title: '3. lépés: Az SQL konfigurálása'
+title: '3\. lépés: Az SQL konfigurálása'
 description: Ez a cikk a Privileged Identity Manager parancsfájlokkal történő konfigurálást ismertető sorozat 3. tagja, amely az SQL Server konfigurálásának lépéseit írja le.
 keywords: ''
 author: billmath
@@ -12,13 +12,13 @@ ms.assetid: 4b524ae7-6610-40a0-8127-de5a08988a8a
 ms.reviewer: ''
 ms.suite: ems
 ms.openlocfilehash: 69f86c5366f7b662f3a11fa4ac8d44159421f909
-ms.sourcegitcommit: 44a2293ff17c50381a59053303311d7db8b25249
+ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50379397"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "64518154"
 ---
-# <a name="step-3-configuring-sql"></a>3. lépés: Az SQL konfigurálása
+# <a name="step-3-configuring-sql"></a>3\. lépés: Az SQL konfigurálása
 
 > [!div class="step-by-step"]
 > [« 2. lépés](sp1-step2-configuring-corp-domain.md)

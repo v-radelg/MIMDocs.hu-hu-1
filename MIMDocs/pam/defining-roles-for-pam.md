@@ -12,11 +12,11 @@ ms.assetid: 1a368e8e-68e1-4f40-a279-916e605581bc
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: 38a9fc174c037e5d7c3ea17b46dcf9f6ea924822
-ms.sourcegitcommit: 44a2293ff17c50381a59053303311d7db8b25249
+ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50380017"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "64518596"
 ---
 # <a name="define-roles-for-privileged-access-management"></a>Szerepkörök definiálása a Privileged Access Management megoldáshoz
 
@@ -24,11 +24,11 @@ A Privileged Access Management megoldással felhasználókat rendelhet a rendsze
 
 A rendszerjogosultságú hozzáférés felügyeletének hatókörébe tartozó szerepkörök definiálásának egyszerű megközelítése szerint az összes információt összegyűjtheti egy táblázatban. Állítsa össze a szerepkörök listáját, és az oszlopokban tüntesse fel a cégirányítási követelményeket és az engedélyeket.
 
-A cégirányítási követelmények a meglévő identitási és hozzáférési szabályzatoktól vagy megfelelőségi követelmények változhat. Az egyes szerepköröket azonosító paraméterek a következők lehetnek:
+Az irányítási követelmények a meglévő identitási és hozzáférési szabályzatok, illetve a megfelelőségi követelmények függvényében változhatnak. Az egyes szerepkörök azonosítására szolgáló paraméterek a következők lehetnek:
 
 - A szerepkör tulajdonosa.
-- A jelölt felhasználók, akik az adott szerepkör
-- A hitelesítési, jóváhagyási vagy értesítési vezérlők, amelyek a szerepkör használatához társítva kell lennie.
+- Azok a jelölt felhasználók, akik ebben a szerepkörben lehetnek
+- A szerepkör használatához társítani kívánt hitelesítési, jóváhagyási vagy értesítési vezérlők.
 
 A szerepkörengedélyek a felügyelt alkalmazásoktól függnek. Ebben a cikkben az Active Directory szerepel példaként, és az engedélyek két kategóriába vannak sorolva:
 
@@ -42,9 +42,9 @@ Kezdje a PAM használatával felügyelni kívánt szerepkörök meghatározásá
 
 A megfelelő szerepkörök meghatározásához vegye figyelembe a felügyelet hatókörébe eső egyes alkalmazásokat:
 
-- Az alkalmazás a [tier 0, 1. rétegbeli vagy 2. szintű](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material)?
+- Az alkalmazás a 0. szinten [, az 1. vagy a 2](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material). szinten található?
 - Melyik jogosultságok vannak hatással az alkalmazás titkosítására, integritására vagy rendelkezésre állására?
-- Rendelkezik az alkalmazás függőségeit a rendszer más összetevőitől? Ha például rendelkezik az adatbázisok, hálózatkezelés, biztonsági infrastruktúra, virtualizálási vagy üzemeltetési platform függőségek?
+- Az alkalmazás függőségekkel rendelkezik a rendszer más összetevőin? Vannak például függőségek az adatbázisok, a hálózatkezelés, a biztonsági infrastruktúra, a virtualizáció vagy a üzemeltetési platform esetében?
 
 Határozza meg, hogyan csoportosíthatók az alkalmazásra vonatkozó szempontok. Egyértelműen körülhatárolt szerepkörökre van szüksége, amelyek megfelelő engedélyeket biztosítanak az általános felügyeleti feladatok elvégzéséhez az alkalmazáson belül.
 
@@ -84,15 +84,15 @@ A létrehozandó szerepkörök meghatározása után kezdje el kitölteni a táb
 
 ## <a name="select-an-access-method"></a>Hozzáférési módszer választása
 
-Több szerepkör lehet a rendszerjogosultságú hozzáférések felügyeleti rendszerében ugyanazokkal az engedélyekkel hozzájuk rendelve. Ez akkor fordulhat elő, ha a felhasználói különböző közösségekre különböző hozzáférés-irányítási követelmények vonatkoznak. Például egy szervezet különböző szabályzatokat alkalmazhat a teljes munkaidős dolgozóira és egy másik vállalat kiszervezett informatikai dolgozóira.
+A privilegizált hozzáférés-vezérlési rendszer több szerepkört is tartalmazhat, és ezekhez ugyanazok az engedélyek vannak rendelve. Ez akkor fordulhat elő, ha a felhasználók különböző tagjai eltérő hozzáférési irányítási követelményekkel rendelkeznek. Például egy szervezet különböző szabályzatokat alkalmazhat a teljes munkaidős dolgozóira és egy másik vállalat kiszervezett informatikai dolgozóira.
 
-Bizonyos esetekben a felhasználó véglegesen hozzárendelhető egy szerepkörhöz. Ebben az esetben, nem kell kérelem vagy szerepkör-hozzárendelés aktiválása. Példák a tartós hozzárendelés helyzeteire:
+Bizonyos esetekben előfordulhat, hogy egy felhasználó véglegesen hozzá van rendelve egy szerepkörhöz. Ebben az esetben nincs szükség a szerepkör-hozzárendelés igénylésére vagy aktiválására. Példák a tartós hozzárendelés helyzeteire:
 
 - Felügyelt szolgáltatásfiók egy meglévő erdőben.
 
-- A meglévő erdőben, a PAM-on kívül felügyelt hitelesítő adatot a felhasználói fiók. Ez lehet egy "vészhelyzeti" fiók. A vészhelyzeti fiók sikerült szerepkörre van szüksége például a "tartomány / tartományvezérlő karbantartása" például a megbízhatóság és a tartományvezérlő állapotával kapcsolatos problémák megoldásához. Vészhelyzeti fiók, akkor lesz a fizikai védelemmel ellátott jelszóval állandó jelleggel hozzárendelt szerepkör)
+- Egy felhasználói fiók a meglévő erdőben a PAM-on kívül felügyelt hitelesítő adatokkal. Ez lehet egy "break Glass" fiók. A break Glass fióknak olyan szerepkörre lehet szüksége, mint például a "tartomány/tartományvezérlő karbantartása" a megbízhatósági és a TARTOMÁNYVEZÉRLŐi állapottal kapcsolatos problémák megoldásához. A break Glass-fiók esetében a szerepkört tartósan fizikailag biztonságos jelszóval rendeli hozzá a rendszer.
 
-- Egy felhasználói fiók a felügyeleti erdőben, amely jelszóval hitelesíti magát. Ez lehet egy állandó, 24 x 7 rendszergazdai engedélyekre van szüksége, és a egy eszközről, amely nem támogatja az erős hitelesítés bejelentkezik felhasználó.
+- Egy felhasználói fiók a felügyeleti erdőben, amely jelszóval hitelesíti magát. Ez lehet egy olyan felhasználó, akinek állandó nonstop rendszergazdai engedélyekre van szüksége, és olyan eszközről jelentkezik be, amely nem támogatja az erős hitelesítést.
 
 - Felhasználói fiók a felügyeleti erdőben, intelligens kártyával vagy virtuális intelligens kártyával (például egy fiók kapcsolat nélküli intelligens kártyával, amely ritkán végzett karbantartási feladatokhoz szükséges).
 
@@ -100,7 +100,7 @@ A hitelesítő adataik ellopása vagy illetéktelen használata miatt aggódó s
 
 ## <a name="delegate-active-directory-permissions"></a>Az Active Directory engedélyeinek delegálása
 
-A Windows Server az új tartományok létrehozásakor automatikusan létrehozza az alapértelmezett csoportokat, például a „Tartományi rendszergazdák” csoportot. Ezek a csoportok leegyszerűsítik a kezdeti lépéseket, és alkalmasak lehetnek a kisebb szervezetek számára. A nagyobb vállalatok, illetve a további elkülönítési rendszergazdai jogosultságokat kell üres ezeket a csoportokat és lecserélte azokat a csoportokat, amelyek részletes engedélyeket biztosítanak.
+A Windows Server az új tartományok létrehozásakor automatikusan létrehozza az alapértelmezett csoportokat, például a „Tartományi rendszergazdák” csoportot. Ezek a csoportok leegyszerűsítik a kezdeti lépéseket, és alkalmasak lehetnek a kisebb szervezetek számára. A nagyobb szervezeteknek vagy a rendszergazdai jogosultságok nagyobb elkülönítését igénylőnek kell lenniük, és azokat a csoportokkal kell helyettesíteni, amelyek részletes engedélyeket biztosítanak.
 
 A Tartományi rendszergazdák csoport egyik korlátozása, hogy nem lehetnek külső tartományhoz tartozó tagjai. További korlátozása, hogy három külön funkció számára ad engedélyeket:
 
@@ -108,15 +108,15 @@ A Tartományi rendszergazdák csoport egyik korlátozása, hogy nem lehetnek kü
 - Az Active Directoryban tárolt adatok kezelése
 - A tartományhoz csatlakoztatott számítógépekre való távoli bejelentkezés engedélyezése
 
-Alapértelmezett csoportok, például a tartományi rendszergazdák, helyett hozzon létre új biztonsági csoportokat, amelyek csak a szükséges engedélyeket biztosítanak. A MIM használatával dinamikusan adjon meg rendszergazdai fiókokat ezeket csoporttagsággal rendelkező majd kell.
+Az alapértelmezett csoportok, például a Tartománygazdák helyett hozzon létre olyan új biztonsági csoportokat, amelyek csak a szükséges engedélyeket biztosítják. Ezután a többkiszolgálós fiók használatával dinamikusan biztosíthatja a rendszergazdai fiókok használatát a csoporttagságok között.
 
 ### <a name="service-management-permissions"></a>A szolgáltatásfelügyelet engedélyei
 
 A következő táblázat példákat mutat be az engedélyekre, amelyeket meg kell adni a szerepkörökben az AD felügyeletéhez.
 
-| Szerepkör | Leírás |
+| Szerepkör | Description |
 | ---- | ---- |
-| Tartomány/tartományvezérlő karbantartása | Tagság a TARTOMÁNY\Rendszergazdák csoportban, lehetővé teszi, hogy a tartományvezérlő operációs rendszerének hibaelhárítását és. Műveletek, például egy új tartományvezérlő előléptetése egy létező tartományba, abban az erdőben és az AD szerepköreinek delegálását.
+| Tartomány/tartományvezérlő karbantartása | A Domain\Administrators csoport tagjai a tartományvezérlő operációs rendszerének hibaelhárítását és módosítását teszik lehetővé. Olyan műveletek, mint az új tartományvezérlő előléptetése egy meglévő tartományba az erdőben és az AD szerepkör-delegálásban.
 |Virtuális tartományvezérlők kezelése | A tartományvezérlő (DC) virtuális gépek (VM) kezelése virtualizálási felügyeleti szoftver használatával. Ez a jogosultság az összes virtuális gép teljes vezérlésével adható meg a felügyeleti eszközben vagy a Szerepköralapú hozzáférés-vezérlés (RBAC) funkcióban. |
 | Séma kiterjesztése | A séma kezelése, beleértve az új objektumdefiníciók hozzáadását, a sémaobjektumok engedélyeinek módosítását, valamint a séma objektumtípusokra vonatkozó alapértelmezett engedélyeinek módosítását. |
 | Active Directory adatbázisának biztonsági mentése | Biztonsági másolat készítése az Active Directory teljes adatbázisáról, beleértve a tartományvezérlő és a tartomány összes titkos kulcsát. |
@@ -128,9 +128,9 @@ A következő táblázat példákat mutat be az engedélyekre, amelyeket meg kel
 
 ### <a name="data-management-permissions"></a>Adatkezelési engedélyek
 
-Az alábbi táblázat példákat engedélyeket kell adni a szerepkörökben felügyelete vagy használata az AD-ben tárolt adatokat.
+A következő táblázat példákat mutat be olyan engedélyekre, amelyek az AD-ben tárolt adatokat kezelő vagy használó szerepkörökbe tartoznak.
 
-| Szerepkör | Leírás |
+| Szerepkör | Description |
 | ---- | ---- |
 | Első rétegbeli rendszergazdai szervezeti egység módosítása                 | Első rétegbe tartozó rendszergazdai objektumokat tartalmazó szervezeti egységek módosítása az Active Directory-ban |
 | Második rétegbeli rendszergazdai szervezeti objektum módosítása                 | Második rétegbe tartozó rendszergazdai objektumokat tartalmazó szervezeti egységek módosítása az Active Directory-ban |
@@ -144,7 +144,7 @@ Az alábbi táblázat példákat engedélyeket kell adni a szerepkörökben fel�
 
 ## <a name="example-role-definitions"></a>A szerepkör-definíciókat bemutató példák
 
-A kiválasztott szerepkör-definíciók a réteg a felügyelt kiszolgálók rétegétől függ. Ez a felügyelt alkalmazásoktól is függ. Alkalmazások, például az Exchange-hez vagy harmadik féltől származó vállalati termékek, mint például az SAP gyakran saját szerepkör-definíciókat tartalmaznak a delegált felügyelethez állapotba kerül.
+A szerepkör-definíciók kiválasztása a felügyelt kiszolgálók szintjétől függ. Ez a felügyelt alkalmazások közül is függ. Az olyan alkalmazások, mint például az Exchange vagy a harmadik féltől származó vállalati termékek, például az SAP, gyakran saját szerepkör-definíciókat vezetnek be a delegált felügyelethez.
 
 A következő szakaszok példákat mutatnak be a jellemző vállalati forgatókönyvekre.
 
@@ -207,5 +207,5 @@ A nem rendszergazda jogosultságú felhasználók és számítógépek felügyel
 
 ## <a name="next-steps"></a>További lépések
 
-- [Referenciaanyag az emelt szintű hozzáférés biztonságossá tétele](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material)
+- [A Kiemelt hozzáférési segédanyagok biztonságossá tétele](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material)
 - [Aktiválás az Azure MFA használatával](use-azure-mfa-for-activation.md)

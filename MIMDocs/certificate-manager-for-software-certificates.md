@@ -12,11 +12,11 @@ ms.assetid: fed5ada9-d80f-4825-aad7-4172ac5d71d3
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: e9454643f425a6bd306c2828479129312d5a5d4f
-ms.sourcegitcommit: 7de35aaca3a21192e4696fdfd57d4dac2a7b9f90
+ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49358365"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "64516639"
 ---
 # <a name="create-software-certificates-with-certificate-manager"></a>Szoftvertanúsítványok létrehozása a Tanúsítványkezelővel
 A szoftvertanúsítványok regisztrálásához és megújításához nem kell rendszergazdának lennie, és virtuális intelligens kártyára sincs szükség. A rendszer valamikor egy tanúsítványművelet engedélyezésére fogja kérni. Ez normális.

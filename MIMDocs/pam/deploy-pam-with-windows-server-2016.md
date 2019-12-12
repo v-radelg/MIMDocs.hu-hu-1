@@ -10,16 +10,16 @@ ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: ''
 ms.openlocfilehash: 347eda5872792872a9bb30357c45835303f92e01
-ms.sourcegitcommit: 44a2293ff17c50381a59053303311d7db8b25249
+ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50379750"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "64518520"
 ---
 # <a name="deploy-mim-pam-with-windows-server-2016"></a>A MIM PAM telepítése a Windows Server 2016-tal
 
 
-Ez a konfiguráció lehetővé teszi, hogy a MIM 2016 SP1 kihasználja a Windows Server 2016 által a „PRIV” erdő tartományvezérlőjeként nyújtott funkciókat.  A konfigurálás után a felhasználók Kerberos-jegye időkorlátossá válik a szerepkör-aktiválásban megmaradt időre. 
+Ez a konfiguráció lehetővé teszi, hogy a MIM 2016 SP1 kihasználja a Windows Server 2016 által a „PRIV” erdő tartományvezérlőjeként nyújtott funkciókat.  Ha ez a forgatókönyv be van állítva, a felhasználó Kerberos-jegye idő után a szerepkör-aktiválások hátralévő idejére korlátozódik. 
 
 > [!Note]
 > A Windows Server 2016 Technical Preview 5 előtti technikai előzetesek nem használhatók ezzel az MIM-kiadással.

@@ -1,5 +1,5 @@
 ---
-title: '4. lépés: A SharePoint konfigurálása'
+title: '4\. lépés: A SharePoint konfigurálása'
 description: Ez a PAM parancsfájlokkal történő konfigurálásának 4. lépése. Ebben a lépésben történik a SharePoint konfigurálása, hogy az használható legyen az üzembe helyezendő PAM részeként.
 keywords: ''
 author: billmath
@@ -12,13 +12,13 @@ ms.assetid: 4b524ae7-6610-40a0-8127-de5a08988a8a
 ms.reviewer: ''
 ms.suite: ems
 ms.openlocfilehash: 422c4c973d76f5b91fb2463e237ead1984153484
-ms.sourcegitcommit: 44a2293ff17c50381a59053303311d7db8b25249
+ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50379430"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "64518095"
 ---
-# <a name="step-4-configuring-sharepoint"></a>4. lépés: A SharePoint konfigurálása
+# <a name="step-4-configuring-sharepoint"></a>4\. lépés: A SharePoint konfigurálása
 
 > [!div class="step-by-step"]
 > [« 3. lépés](sp1-step3-installing-configuring-sql.md)
@@ -46,7 +46,7 @@ A telepítést követően megnyílik a SharePoint-konfiguráció grafikus felhas
 
 1. A **Kapcsolódás a kiszolgálófarmhoz** lapon váltson az **Új kiszolgálófarm létrehozása** elemre.
 2. A konfigurációs adatbázis adatbázis-kiszolgálójaként adja meg az **SQLServer** kiszolgálót, a SharePoint által használható adatbázisfiókként pedig a **SharePoint ServiceAccount** fiókot.
-3. Adjon meg egy jelszót a farm biztonsági hozzáférési kódjaként **(ez később nem lesz használatban)**.
+3. Adjon meg egy jelszót a farm biztonsági hozzáférési kódjaként **(ez később nem lesz használatban)** .
 4. Fogadja el a SharePoint konfiguráló varázslójának többi alapértelmezett beállítását, és hozzon létre egy egykiszolgálós farmot.
 
 A részletek a [3. lépés: A PAM-kiszolgáló előkészítése](/microsoft-identity-manager/pam/step-3-prepare-pam-server) **A SharePoint konfigurálása** című szakaszában találhatóak. Ha végzett vele, futtassa ismét a „.\PAMDeployment.ps1” szkriptet, és válassza a 4-es elemet (SharePoint beállítása) a lépés befejezéséhez.

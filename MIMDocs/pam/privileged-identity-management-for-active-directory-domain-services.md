@@ -11,12 +11,14 @@ ms.prod: microsoft-identity-manager
 ms.assetid: cf3796f7-bc68-4cf7-b887-c5b14e855297
 ms.reviewer: mwahl
 ms.suite: ems
+experimental: true
+experiment_id: kgremban_images
 ms.openlocfilehash: 3855842f0339e2611c75761484de9c059eec6fa0
-ms.sourcegitcommit: 44a2293ff17c50381a59053303311d7db8b25249
+ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50380034"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "64518790"
 ---
 # <a name="privileged-access-management-for-active-directory-domain-services"></a>Privileged Access Management az Active Directory Domain Serviceshez
 
@@ -32,23 +34,23 @@ A Privileged Access Management két célt ér el:
 
 ## <a name="what-problems-does-pam-help-solve"></a>Milyen problémákat segít a PAM megoldani?
 
-Napjaink vállalatai számára komoly aggályokat vet fel az Active Directory-környezeten belüli erőforrások elérése. Különösen aggasztóak azok:
+Napjaink vállalatai számára komoly aggályokat vet fel az Active Directory-környezeten belüli erőforrások elérése. Különösen aggasztó:
 
 - Biztonsági rések.
-- Jogosultságok eszkalálást.
-- [Pass-the-hash](https://technet.microsoft.com/dn785092.aspx).
-- Pass-the-ticket típusú.
-- a célzott adathalász.
-- Kerberos-biztonsági.
+- Illetéktelen jogosultságok eszkalációja.
+- [Pass-The-hash](https://technet.microsoft.com/dn785092.aspx).
+- Pass-The-Ticket.
+- célzott adathalászat.
+- Kerberos-kompromisszumok.
 - Egyéb támadások.
 
 Napjainkban a támadók nagyon könnyen megszerezhetik a tartományi rendszergazdák fiókjának hitelesítő adatait, az ilyen támadásokat azonban nagyon nehéz felderíteni, ha már bekövetkeztek. A PAM célja, hogy a rosszindulatú felhasználók kisebb eséllyel szerezhessenek hozzáférést, Ön pedig nagyobb mértékben kontrollálhassa és felügyelhesse környezetét.
 
-A PAM megnehezíti a támadók számára, hogy behatoljanak a hálózatokra, és rendszerjogosultságú fiókot használjanak. A PAM további védelemmel óvja a rendszerjogosultságú csoportokat, amelyek szabályozzák a hozzáférést sok, a tartományhoz csatlakoztatott számítógéphez és rajtuk futó alkalmazáshoz. Bővíti ezenkívül további figyelési láthatóságot és további részletes szabályozza. Ez lehetővé teszi a szervezetek számára, hogy kik a rendszerjogosultságú rendszergazdáik, és Mit csinálnak. A PAM révén a szervezetek jobban tájékozódhatnak arról, hogy milyen műveletekre kerül sor a környezetükben a rendszergazdai fiókok használatával.
+A PAM megnehezíti a támadók számára, hogy behatoljanak a hálózatokra, és rendszerjogosultságú fiókot használjanak. A PAM további védelemmel óvja a rendszerjogosultságú csoportokat, amelyek szabályozzák a hozzáférést sok, a tartományhoz csatlakoztatott számítógéphez és rajtuk futó alkalmazáshoz. További monitorozást, nagyobb láthatóságot és részletesebb szabályozást is biztosít. Ez lehetővé teszi a szervezetek számára, hogy meglássák, kik a Kiemelt rendszergazdák, és mit csinálnak. A PAM révén a szervezetek jobban tájékozódhatnak arról, hogy milyen műveletekre kerül sor a környezetükben a rendszergazdai fiókok használatával.
 
 ## <a name="setting-up-pam"></a>A PAM beállítása
 
-A PAM a szükséges időben (just-in-time) történő felügyelet elvére épül, amely összefügg az [éppen elég felügyelettel (just enough administration, JEA)](http://channel9.msdn.com/Events/TechEd/NorthAmerica/2014/DCIM-B362). A JEA egy Windows PowerShell-eszközkészlet, amely meghatározza a magas jogosultságszintet igénylő tevékenységek elvégzésére szolgáló parancsok sorozatát. A végpont fontos, ahol a rendszergazdák szerezhetnek parancsok futtatásához. A JEA-ban egy rendszergazda dönti el, hogy milyen jogosultságra van szükségük a felhasználóknak ahhoz, hogy elvégezzenek egy feladatot. Minden alkalommal, amikor egy jogosult felhasználónak el kell végeznie ezt a feladatot, aktiválják ezt az engedélyt. Meghatározott idő elteltével az engedélyek lejárnak, hogy egy rosszindulatú felhasználó el ne lophassa a hozzáférési jogosultságot.
+A PAM a szükséges időben (just-in-time) történő felügyelet elvére épül, amely összefügg az [éppen elég felügyelettel (just enough administration, JEA)](http://channel9.msdn.com/Events/TechEd/NorthAmerica/2014/DCIM-B362). A JEA egy Windows PowerShell-eszközkészlet, amely a Kiemelt tevékenységek végrehajtásához használható parancsokat határoz meg. Ez egy olyan végpont, amelyben a rendszergazdák engedélyt kaphatnak a parancsok futtatására. A JEA-ban egy rendszergazda dönti el, hogy milyen jogosultságra van szükségük a felhasználóknak ahhoz, hogy elvégezzenek egy feladatot. Minden alkalommal, amikor egy jogosult felhasználónak el kell végeznie ezt a feladatot, aktiválják ezt az engedélyt. Meghatározott idő elteltével az engedélyek lejárnak, hogy egy rosszindulatú felhasználó el ne lophassa a hozzáférési jogosultságot.
 
 A PAM üzembe helyezése és működtetése négy lépésből áll.
 
@@ -77,7 +79,7 @@ A PAM a következő előnyöket nyújtja:
 
 - **A jogosultságok izolálása/hatókörének kezelése**: A felhasználók nem rendelkeznek magas szintű jogosultságokkal olyan fiókokban, amelyeket hétköznapi feladatokra (például az e-mailjeik elolvasására vagy internetböngészésre) használnak. A felhasználóknak kérniük kell a magas szintű jogosultságokat. A kérések jóváhagyása és elutasítása a PAM-rendszergazda által definiált MIM-szabályzatok alapján történik. Mindaddig nem vehető igénybe rendszerjogosultságú hozzáférés, amíg nem engedélyezik a kérést.
 
-- **Jogosultságemelés (step-up) és hitelesítésiszint-emelés (proof-up)**: Ezek új hitelesítési és engedélyezési kérések, amelyek a külön rendszergazdai fiókok életciklusának kezelését segítik. A felhasználó kérheti egy rendszergazdai fiók jogosultságainak megemelését. A kérés a MIM munkafolyamatain halad végig.
+- **Jogosultságemelés (step-up) és hitelesítésiszint-emelés (proof-up)** : Ezek új hitelesítési és engedélyezési kérések, amelyek a külön rendszergazdai fiókok életciklusának kezelését segítik. A felhasználó kérheti egy rendszergazdai fiók jogosultságainak megemelését. A kérés a MIM munkafolyamatain halad végig.
 
 - **További naplózás**: A MIN beépített munkafolyamatain kívül a PAM további naplózási műveleteket végez. Ezek azonosítják a kérést, az engedélyezését, illetve a jóváhagyás után esetleg bekövetkező eseményeket.
 
@@ -108,5 +110,5 @@ Ez a munkafolyamat kifejezetten az ilyen rendszergazdai fiókok számára kész�
 
 ## <a name="next-steps"></a>További lépések
 
-- [Pass-the-Hash (PtH) támadások és más hitelesítő adatokkal visszaéljenek: 1. és 2 verzió csökkentése](https://www.microsoft.com/download/details.aspx?id=36036)
-- [Emelt szintű hozzáférések felügyeletének parancsmagjai](https://docs.microsoft.com/powershell/identitymanager/mimpam/vlatest/mimpam)
+- [A pass-The-hash (PtH) támadások és egyéb hitelesítő adatok ellopása, 1. és 2. verzió](https://www.microsoft.com/download/details.aspx?id=36036)
+- [Privileged Access Management-parancsmagok](https://docs.microsoft.com/powershell/identitymanager/mimpam/vlatest/mimpam)

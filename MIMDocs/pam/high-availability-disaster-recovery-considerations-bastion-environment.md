@@ -12,11 +12,11 @@ ms.assetid: 03e521cd-cbf0-49f8-9797-dbc284c63018
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: 0d0d55d4007ab88df4c2f3b5a30ca0fdedea9fe2
-ms.sourcegitcommit: 44a2293ff17c50381a59053303311d7db8b25249
+ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50379973"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "64518666"
 ---
 # <a name="high-availability-and-disaster-recovery-considerations-for-the-bastion-environment"></a>A magas rendelkezésre állással és a vészhelyreállítással kapcsolatos szempontok a megerősített környezet esetében
 
@@ -38,7 +38,7 @@ A felsorolt szempontok hatóköre befolyásolja a telepítési és az üzemeltet
 | --------------------------- | --------------------- | -------------- |
 | Megbízhatósági kapcsolat kialakítása         | Alacsony | Várjon, amíg helyre nem áll a megerősített környezet. |
 | Felhasználók és csoportok kockázatcsökkentése   | Alacsony | Várjon, amíg helyre nem áll a megerősített környezet. |
-| MIM felügyelete          | Alacsony | Várjon, amíg helyre nem áll a megerősített környezet. |
+| A MIM felügyelete          | Alacsony | Várjon, amíg helyre nem áll a megerősített környezet. |
 | Rendszerjogosultságú szerepkör aktiválása  | Közepes | Használjon intelligens kártyára mentett dedikált fiókokat a felhasználóknak a felügyeleti csoportokhoz való hozzáadásához. |
 | Erőforrás-kezelés         | Magas | Használjon intelligens kártyára mentett dedikált fiókokat a felhasználóknak a felügyeleti csoportokhoz való hozzáadásához. |
 | A meglévő erdőben található felhasználók és csoportok figyelése | Alacsony | Várjon, amíg helyre nem áll a megerősített környezet. |
@@ -150,7 +150,7 @@ Egyes szervezetek olyan megoldást alkalmaznak, amelyben a megerősített körny
 
 - A meglévő tartományokra irányuló támadások elleni védekezésképpen a megerősített környezet felügyeletét el kell különíteni a meglévő tartomány rendszergazdai fiókjaitól.
 - A megerősített környezet TCP/IP-kapcsolatot igényel a meglévő tartományban lévő tartományvezérlőkhöz.  A portok listája a [Tűzfal beállítása tartományokhoz és bizalmi kapcsolatokhoz](https://support.microsoft.com/kb/179442) című cikkben található.
-- Az Active Directory tartományi szolgáltatások virtualizált telepítése meghatározott funkciókat igényel a virtualizációs platformról [A virtualizált tartományvezérlő központi telepítése és konfigurálása](https://technet.microsoft.com/library/jj574223.aspx) című cikkben leírtak szerint.
+- Az Active Directory Domain Services virtualizált telepítése meghatározott funkciókat igényel a virtualizációs platformról [A virtualizált tartományvezérlő központi telepítése és konfigurálása](https://technet.microsoft.com/library/jj574223.aspx) című cikkben leírtak szerint.
 - Az SQL Servernek a MIM szolgáltatáshoz történő magas rendelkezésre állású telepítése egy speciális tárolási konfigurációt igényel, amelynek leírása az [SQL Server database storage](#sql-server-database-storage) (Az SQL Server adatbázistára) című cikkben olvasható.  Jelenleg nem minden üzemeltetési szolgáltató kínálatában szerepel a Windows Servernek az SQL Server feladatátvevő fürtjeihez alkalmas lemezkonfigurációkkal valóüzemeltetése.
 
 ## <a name="deployment-preparation-and-recovery-procedures"></a>A telepítés és a helyreállítási eljárások elkészítése
@@ -190,7 +190,7 @@ Célszerű ellenőrizni a megerősített környezethez csatlakoztatott számít�
 
 ### <a name="sql-server-database-storage"></a>Az SQL Server adatbázistára
 
-A magas rendelkezésre állású telepítéshez SQL Server feladatátvevő fürtök szükségesek, és az SQL Server feladatátvevő fürt példányainak az összes csomópont között megosztott tárolót kell használniuk az adatbázis és a naplók tárolásához. A megosztott tárolás történhet Windows Server feladatátvételi fürtszolgáltatási fürtlemezeken, tárolóhálózaton (SAN) lévő lemezeken vagy SMB-kiszolgálón található fájlmegosztások formájában.  Fontos, hogy ezeket a megerősített környezetben kell kijelölnie; a tárhelynek a megerősített környezeten kívüli egyéb munkaterhelésekkel való megosztása nem ajánlott, mivel ez veszélyeztetheti a megerősített környezet sértetlenségét.
+A magas rendelkezésre állású telepítéshez SQL Server feladatátvevő fürtök szükségesek, és az SQL Server feladatátvevő fürt példányainak az összes csomópont között megosztott tárolót kell használniuk az adatbázis és a naplók tárolásához. A megosztott tárolás történhet Windows Server feladatátvételi fürtszolgáltatási fürtlemezeken, tárolóhálózaton (SAN) lévő lemezeken vagy SMB-kiszolgálón található fájlmegosztások formájában.  Fontos, hogy ezeket a megerősített környezetben kell kijelölnie; a tárhely megosztása a megerősített környezeten kívüli egyéb munkaterhelésekkel nem ajánlott, mivel ez veszélyeztetheti a megerősített környezet sértetlenségét.
 
 ### <a name="sql-server"></a>SQL-kiszolgáló
 

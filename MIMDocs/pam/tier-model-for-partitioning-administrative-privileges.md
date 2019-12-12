@@ -12,11 +12,11 @@ ms.assetid: c6e3cd02-1e32-4194-a8ed-3a0b3d022a43
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: 8e7b7217714f0ef74c1d959eb51dac07018d6e77
-ms.sourcegitcommit: 44a2293ff17c50381a59053303311d7db8b25249
+ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50379723"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "64517845"
 ---
 # <a name="tier-model-for-partitioning-administrative-privileges"></a>A rendszergazdai jogosultságok felosztásának rétegmodellje
 
@@ -24,7 +24,7 @@ Ebben a cikkben egy olyan biztonsági modellel ismerkedhet meg, amely a jogok ki
 
 ## <a name="elevation-of-privilege-in-active-directory-forests"></a>A jogok kiterjesztése az Active Directory-erdőkben
 
-A Windows Server Active Directory- (AD-) erdőkhöz állandó rendszergazdai jogosultságokkal rendelkező felhasználók, szolgáltatások és alkalmazások fiókjai komoly kockázatot jelentenek a szervezet céljaira és üzleti tevékenységeire nézve. Ezek a fiókok gyakran válnak a támadók, mert ha sérül a biztonságuk, a támadó jogosultsága csatlakozni más kiszolgálóihoz vagy alkalmazásaihoz a tartományban.
+A Windows Server Active Directory- (AD-) erdőkhöz állandó rendszergazdai jogosultságokkal rendelkező felhasználók, szolgáltatások és alkalmazások fiókjai komoly kockázatot jelentenek a szervezet céljaira és üzleti tevékenységeire nézve. Ezeket a fiókokat gyakran a támadók célozzák meg, mert ha vannak ilyenek, a támadó jogosult a tartományban lévő más kiszolgálókhoz vagy alkalmazásokhoz való kapcsolódásra.
 
 A rétegmodell annak alapján választja szét egymástól a rendszergazdákat, hogy milyen erőforrásokat kezelnek. A felhasználói munkaállomások felett irányítással rendelkező rendszergazdák elkülönülnek azoktól, akik alkalmazásokat vagy vállalati identitásokat kezelnek. A modellel kapcsolatos további tudnivalók a [Securing privileged access reference material](http://aka.ms/tiermodel) (A rendszerjogosultságú hozzáférés biztonságossá tételének referenciaanyagai) című témakörben olvashatók.
 
@@ -38,7 +38,7 @@ A rendszergazdai fiókokhoz tartozó hitelesítő adatok ellopásának kockázat
 
 A következő lépés a bejelentkezési korlátozások megvalósítása, illetve a rétegmodell követelményeit kielégítő folyamatok és műveletek feltételeinek megteremtése. Ideális esetben a hitelesítő adatokhoz való hozzáférést is le kell csökkenteni az egyes rétegeken belül az adott szerepkörhöz szükséges legalacsonyabb jogosultsági szintre.
 
-Bejelentkezési korlátozásokat kell érvényesíteni annak érdekében, hogy a kiemelt jogosultságokkal rendelkező fiókok ne férjenek hozzá a kevésbé biztonságos erőforrásokhoz. Például:
+Bejelentkezési korlátozásokat kell érvényesíteni annak érdekében, hogy a kiemelt jogosultságokkal rendelkező fiókok ne férjenek hozzá a kevésbé biztonságos erőforrásokhoz. Példa:
 
 - A tartományi rendszergazdák (0. szint) nem tudnak bejelentkezni a vállalati kiszolgálókra (1. szint) és a normál felhasználói munkaállomásokra (2. szint).
 - A kiszolgálói rendszergazdák (1. szint) nem tudnak bejelentkezni a normál felhasználói munkaállomásokra (2. szint).
@@ -60,4 +60,4 @@ A bejelentkezési korlátozásokat a következőkkel lehet érvényesíteni:
 ## <a name="next-steps"></a>További lépések
 
 - A következő, a [Megerősített környezet tervezése](planning-bastion-environment.md) című cikkben a Microsoft Identity Manager rendszergazdai fiókjainak létrehozásához szükséges dedikált felügyeleti erdőinek létrehozásáról olvashat.
-- [Végrehajtását kísérelte meg hozzáféréssel rendelkező munkaállomások](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/privileged-access-workstations) dedikált operációs rendszert biztosítanak a védett internetes támadások és fenyegetési vektoroknak a bizalmas feladatokhoz.
+- A [jogosultsági szinttel rendelkező hozzáférési munkaállomások](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/privileged-access-workstations) dedikált operációs rendszert biztosítanak az internetes támadásokkal és a fenyegetésekkel kapcsolatos vektorok által védett bizalmas feladatokhoz.

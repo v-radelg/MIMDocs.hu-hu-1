@@ -12,11 +12,11 @@ ms.assetid: bfabc562-a2f0-4cff-ac31-36927f41e102
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: 4d66c566912f186bce175dde9f16346942afd72e
-ms.sourcegitcommit: 7de35aaca3a21192e4696fdfd57d4dac2a7b9f90
+ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49358216"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "64516651"
 ---
 # <a name="enroll-smart-cards-for-non-administrators"></a>Intelligens kártyák regisztrálása nem rendszergazdák számára
 Ha a felhasználó nem helyi rendszergazda, akkor alapesetben nem jogosult intelligens kártyát regisztrálni a saját számítógépén. A következő folyamat bemutatja, miként lehet áthidalni ezt a korlátozást.
@@ -37,7 +37,7 @@ Ha a felhasználó nem helyi rendszergazda, akkor alapesetben nem jogosult intel
 
 2.  **Módosítsa a konfigurációs fájlt**
 
-    Nevezze át a fájlt nevű `CustomDataExample.xml custom.data`. A Tanúsítványkezelő alkalmazás ezt a fájlnevet fogja keresni.
+    Nevezze át a CustomDataExample.xml fájlt custom.data névre. A Tanúsítványkezelő alkalmazás ezt a fájlnevet fogja keresni.
 
     A custom.data fájl szerkesztésével módosítsa a következőket:
 
@@ -49,7 +49,7 @@ Ha a felhasználó nem helyi rendszergazda, akkor alapesetben nem jogosult intel
 
     4.  Szerkessze az AppxManifest.xml nevű fájlt.
 
-    5.  Az &lt;Identity&gt; (Identitás) elemnél módosítsa a Publisher (Kiállító) attribútum értékét úgy, hogy az megegyezzen az aláíró tanúsítványban feltüntetett tulajdonossal; például: „CN=ABCD”.
+    5.  A &lt;Identity&gt; elemnél módosítsa a közzétevő attribútum értékét az aláíró tanúsítvány tárgyára, például: "CN = ABCD"
 
         A tulajdonos ugyanaz legyen, mint az alkalmazás aláírásához használt aláíró tanúsítvány tulajdonosa.
 
