@@ -1,6 +1,6 @@
 ---
-title: FIM vagy MIM BHOLD integration telepítése |} A Microsoft Docs
-description: A BHOLD integration modul hozzá önkiszolgáló szerepkörkezelés MIM és a FIM
+title: BHOLD FIM/a webszolgáltatások integrációjának telepítése | Microsoft Docs
+description: BHOLD integrációs modul – önkiszolgáló szerepkör-kezelés hozzáadása a következőhöz és a FIM-hez
 keywords: ''
 author: billmath
 ms.author: billmath
@@ -10,215 +10,215 @@ ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: ''
 ms.openlocfilehash: 317c9ae4c940a509b6ac328cd5bb7cd7baa4dde9
-ms.sourcegitcommit: 7de35aaca3a21192e4696fdfd57d4dac2a7b9f90
+ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49358805"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "64516026"
 ---
-# <a name="bhold-fimmim-integration-installation"></a>A BHOLD FIM vagy MIM-integráció telepítése
+# <a name="bhold-fimmim-integration-installation"></a>BHOLD FIM/a webalkalmazás-integráció telepítése
 
-A BHOLD FIM integrációs modul ad önkiszolgáló szerepkörök kezeléséhez a Microsoft Identity Manager, teszi a felhasználók számára a további szerepkörök kérés és a kényszerítése, akik hajthatja végre ezeket a szerepköröket. A BHOLD FIM integrációs modul kiterjeszti a FIM-portál megkönnyíti a FIM általános Adminisztráció részeként felhasználói szerepkörök kezelése. Ez a témakör ismerteti, hogyan kell konfigurálnia a hálózati infrastruktúra telepítése és használata a BHOLD FIM integrációs modul teszi lehetővé. Azt is bemutatja, hogyan telepítheti a BHOLD FIM integrációs modul és a konfigurációt, amely a BHOLD FIM integrációs modul telepítése után szükség van.
+A BHOLD FIM integrációs modulja hozzáadja az önkiszolgáló szerepkör-kezelést a Microsoft Identity Managerhez, így a felhasználók további szerepköröket igényelhetnek, és kikényszerítik, hogy kik hajtják végre ezeket a szerepköröket. A BHOLD FIM integrációs modulja kibővíti a FIM-portált, így a teljes FIM-felügyelet részeként könnyedén kezelheti a felhasználói szerepköröket. Ez a témakör azt ismerteti, hogyan kell konfigurálnia a hálózati infrastruktúrát, hogy lehetővé tegye a BHOLD FIM integrációs modul telepítését és használatát. Azt is ismerteti, hogyan telepítheti a BHOLD FIM integrációs modulját és konfigurációját, amely a BHOLD FIM integrációs modul telepítése után szükséges.
 
-## <a name="bhold-fim-integration-installation-requirements"></a>BHOLD FIM integrációs telepítési követelményei
+## <a name="bhold-fim-integration-installation-requirements"></a>A BHOLD FIM-integráció telepítési követelményei
 
-A BHOLD FIM integrációs modul kiterjeszti a FIM-portál és a FIM szolgáltatás, hogy a felhasználók szerepkörökhöz a FIM-portálon kezelheti. Ezért elengedhetetlen, hogy a BHOLD Core modul és a szükséges FIM szolgáltatást telepíteni és konfigurálni a BHOLD FIM integrációs modul telepítése előtt.
-A szoftver-összetevő, amely megtalálható a számítógépen kell lennie, a BHOLD FIM integrációs modul telepítése előtt a következők:
+A BHOLD FIM integrációs modulja kiterjeszti a FIM-portált és a FIM szolgáltatást, így a felhasználók a FIM Portalon kezelhetik a szerepköreiket. Ezért fontos, hogy a BHOLD FIM integrációs modul telepítése előtt telepítse és konfigurálja a BHOLD Core modult és a szükséges FIM-funkciókat.
+A BHOLD FIM integrációs moduljának telepítése előtt a következő szoftver-összetevőknek kell szerepelniük a számítógépen:
 
-- A Microsoft Identity Manager 2016 portált és a szolgáltatás
-- A Microsoft Silverlight 3 vagy újabb
-- Az Internet information Services és az ASP.NET keretrendszerrel
-- A Microsoft Silverlight-eszközök
+- Microsoft Identity Manager 2016-portál és-szolgáltatás
+- Microsoft Silverlight 3 vagy újabb
+- Internet Information Services és ASP.NET
+- Microsoft Silverlight-eszközök
 
-Emellett a BHOLD Core és az Access Management-összekötő modulok már telepíteni kell a környezetben a kiszolgálón, és a FIM-egy vagy több BHOLD felügyeleti ügynököt kell konfigurálni. A BHOLD Core modul konfigurálásával kapcsolatos további információkért lásd: [BHOLD Core telepítése](https://technet.microsoft.com/library/jj134095(v=ws.10).aspx). Telepítésével és az Access Management-összekötő modullal kapcsolatos további információkért lásd: [Access Management Connector telepítése](https://technet.microsoft.com/library/jj874042(v=ws.10).aspx) és [tesztlabor-Útmutató: a BHOLD Access Management-összekötő](https://technet.microsoft.com/library/jj853085(v=ws.10).aspx).
+Emellett a BHOLD Core-és hozzáférés-kezelési összekötő moduljainak már telepítve kell lennie a környezetben található kiszolgálón, és a FIM-t egy vagy több BHOLD-felügyeleti ügynökkel kell konfigurálni. Az BHOLD Core modul telepítésével és konfigurálásával kapcsolatos információkért lásd: [BHOLD Core telepítés](https://technet.microsoft.com/library/jj134095(v=ws.10).aspx). További információ a hozzáférés-kezelési összekötő modul telepítéséről és használatáról: az [Access Management Connector telepítése](https://technet.microsoft.com/library/jj874042(v=ws.10).aspx) és a [tesztelési labor útmutatója: A BHOLD hozzáférés-kezelési összekötő](https://technet.microsoft.com/library/jj853085(v=ws.10).aspx).
 
 > [!IMPORTANT]
-> A FIM szolgáltatás adatbázis nevét a FIMService kell lennie. BHOLD FIM integrációs telepítése sikertelen lesz, ha a FIM nem lett telepítve a FIM szolgáltatás alapértelmezett adatbázisnév.
+> A FIM szolgáltatás-adatbázis nevének FIMService kell lennie. A BHOLD FIM-integráció telepítése sikertelen lesz, ha a FIM nincs telepítve az alapértelmezett FIM szolgáltatás-adatbázis nevével.
 
 ## <a name="before-you-begin"></a>Előkészületek
 
-A BHOLD FIM integrációs modul telepítése előtt létre kell hoznia egy BHOLD könyvtárat a C: meghajtó (C:\BHOLD) gyökérkönyvtárában.
+Mielőtt megkezdené a BHOLD FIM integrációs modul telepítését, létre kell hoznia egy BHOLD könyvtárat a C: lemezmeghajtó (C:\BHOLD) gyökérkönyvtárában.
 
-Emellett meg kell, amely a BHOLD FIM integrációs telepítővarázslója a telepítés befejezéséhez szükséges információk megadására. A következő munkalap segítségével fel ezt az információt, hogy készen áll a szükséges megadni.
+Emellett elő kell készítenie azokat az információkat, amelyeket a BHOLD FIM Integration telepítővarázsló a telepítés befejezéséhez szükséges. A következő munkalapon rögzítheti ezeket az adatokat, így készen áll arra, hogy szükség esetén megadja azt.
 
-### <a name="bholdfim-account-settings"></a>BHOLDFim fiókbeállításokat
+### <a name="bholdfim-account-settings"></a>BHOLDFim-fiók beállításai
 
 | **Elem**                            | **Leírás**                                                                                                                                                                                                               | **Érték**                                                                                                                                                                                                                                                                                                            |
 |-------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **A tartomány biztonsági szolgáltató használata** | Kiválasztott, itt adhatja meg, hogy az Active Directory Domain Services biztonsági fog férhet hozzá a BHOLD Core.                                                                                                                    | Jelölje be a jelölőnégyzetet. **Fontos:** a telepítés sikertelen lesz, ha a jelölőnégyzet nincs bejelölve.                                                                                                                                                                                                                   |
-| **Tartomány**                          | Megadja a tartomány tartalmazó a **szolgáltatásfiók** BHOLD Core telepítése során létrehozott. További információkért lásd: [BHOLD Core telepítése](https://technet.microsoft.com/library/jj134095(v=ws.10).aspx). | A tartomány nevét a varázsló által automatikusan történik. Módosítsa a nevét, csak akkor, ha annak értéke helytelen. **Fontos:** adja meg a tartomány nevét (rövid) NetBIOS-neve, nem a teljesen minősített tartománynevét (FQDN) használatával. Például ha a tartomány teljes Tartománynevét a fabrikam.com, adja meg a tartomány nevét, a FABRIKAM. |
-| **Felhasználónév**                        | Megadja a BHOLD Core szolgáltatásfiók-felhasználó bejelentkezési nevét.                                                                                                                                                              | Írás a felhasználói fiók nevét itt:                                                                                                                                                                                                                                                                                    |
-| **Jelszó**                        | A szolgáltatás felhasználói fiók jelszava.                                                                                                                                                                           | Írás a jelszót kell megadnia: **fontos:** mindenképp Ez a jelszó egy rejtett, biztonságos helyen.                                                                                                                                                                                                                  |
+| **Biztonsági szolgáltató használata a tartományban** | Ha be van jelölve, akkor a Active Directory tartományi szolgáltatások biztonság szabályozza a BHOLD mag elérését.                                                                                                                    | Jelölje be a jelölőnégyzetet. **Fontos:** Ha ez a jelölőnégyzet nincs bejelölve, a telepítés sikertelen lesz.                                                                                                                                                                                                                   |
+| **Tartomány**                          | A BHOLD Core telepítésekor létrehozott **szolgáltatásfiókot** tartalmazó tartományt adja meg. További információ: [BHOLD Core telepítés](https://technet.microsoft.com/library/jj134095(v=ws.10).aspx). | A tartomány nevét a varázsló automatikusan megadja. A név csak akkor módosítható, ha helytelen. **Fontos:** A tartománynevet a NetBIOS (rövid) név használatával adja meg, ne a teljes tartománynevet (FQDN). Ha például a tartomány teljes tartományneve fabrikam.com, adja meg a tartománynevet FABRIKAM néven. |
+| **Felhasználónév**                        | Megadja a BHOLD Core szolgáltatás felhasználói fiókjának bejelentkezési nevét.                                                                                                                                                              | Írja be a felhasználói fiók nevét:                                                                                                                                                                                                                                                                                    |
+| **Jelszó**                        | Megadja a szolgáltatás felhasználói fiókjának jelszavát.                                                                                                                                                                           | Írja be a jelszót itt: **Fontos:** Ügyeljen arra, hogy a jelszót rejtett, biztonságos helyen tárolja.                                                                                                                                                                                                                  |
 
 ### <a name="fim-service-settings"></a>FIM szolgáltatás beállításai
 
 | **Elem**            | **Leírás**                                                                                                                                                                                                                               | **Érték**                                                                                           |
 |---------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
-| **Felhasználó**            | A bejelentkezési név annak a fióknak rendszergazdai jogosultságokkal rendelkező határozza FIM. A Microsoft határozottan javasolja, hogy nem használja a gyökér szintű felhasználó a BHOLD Core (alapértelmezés szerint a BHOLD Core telepítéséhez használt fiók) tartozó fiókot. | Írás a felhasználói fiók nevét itt:                                                                   |
-| **Jelszó**        | A FIM rendszergazdai felhasználói fiók jelszava.                                                                                                                                                                                 | Írás a jelszót kell megadnia: **fontos:** mindenképp Ez a jelszó egy rejtett, biztonságos helyen. |
-| **FIM-adatbázisba**    | A neve, a FIM szolgáltatás adatbázisához.                                                                                                                                                                                               | FIMService                                                                                          |
-| **Webhely IP-Port** | Itt adhatja meg a nevét vagy IP-címe a FIM-portál kiszolgálóján és a webhelyének portja.                                                                                                                                                               | Írás a kiszolgáló nevét vagy a cím és port itt:                                                     |
+| **Felhasználó**            | Megadja egy olyan fiók bejelentkezési nevét, amely rendszergazdai jogosultságokkal rendelkezik a FIM-hez. A Microsoft nyomatékosan javasolja, hogy ne használja a root felhasználóhoz társított fiókot a BHOLD Core-ban (alapértelmezés szerint az BHOLD Core telepítéséhez használt fiók). | Írja be a felhasználói fiók nevét:                                                                   |
+| **Jelszó**        | Megadja a FIM-rendszergazda felhasználói fiók jelszavát.                                                                                                                                                                                 | Írja be a jelszót itt: **Fontos:** Ügyeljen arra, hogy a jelszót rejtett, biztonságos helyen tárolja. |
+| **FIM-adatbázis**    | Megadja a FIM szolgáltatás adatbázisának nevét.                                                                                                                                                                                               | FIMService                                                                                          |
+| **Webhely IP-címe/port** | Megadja a FIM-portál kiszolgálójának nevét vagy IP-címét, valamint a webhely portját.                                                                                                                                                               | Itt írhatja be a kiszolgáló nevét vagy a portot:                                                     |
 
-### <a name="bhold-core-connection"></a>A BHOLD Core kapcsolat
+### <a name="bhold-core-connection"></a>BHOLD Core-kapcsolatok
 
 | **Elem**               | **Leírás**                                                                                                                                                                                                                                                                                                                                                                               | **Érték**                                                                                           |
 |------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
-| **Tartomány**             | A megadott fiók tartományának neve **felhasználói**, az alábbi. A tartomány NetBIOS (rövid) formátumban adja meg.                                                                                                                                                                                                                                                                   | A felhasználó domain Fióknév itt írni?                                                            |
-| **Felhasználó**               | A fiókja bejelentkezési neve **egy felügyelő olyan BHOLD felhasználói** összes felhasználók és szerepkörök és a hivatkozásra, és felhasználói szerepkörök leválasztása engedéllyel rendelkezik. A Microsoft határozottan javasolja, hogy nem használja a gyökér szintű felhasználó a BHOLD Core (alapértelmezés szerint a BHOLD Core telepítéséhez használt fiók) tartozó fiókot. Ezt a fiókot kell ugyanazt a fiókot, amellyel csatlakozhat a FIM | Írás a felhasználói fiók nevét itt:                                                                   |
-| **Jelszó**           | A megadott felhasználói fiók jelszavát adja **felhasználói**.                                                                                                                                                                                                                                                                                                                             | Írás a jelszót kell megadnia: **fontos:** mindenképp Ez a jelszó egy rejtett, biztonságos helyen. |
-| **IP/gép címe** | Megadja a BHOLD Core-webhely kiszolgálójának IP-címét. Ne használja a kiszolgáló nevét.                                                                                                                                                                                                                                                                                                        | Írási itt az IP-cím:                                                                          |
-| **Portszám**        | A BHOLD Core webhely-portszám meghatározására.                                                                                                                                                                                                                                                                                                                                          | Írja be ide a portszámot:                                                                         |
+| **Tartomány**             | Megadja a **felhasználó**által megadott fiók tartományának nevét. A tartományt a NetBIOS (rövid) formátumban kell megadni.                                                                                                                                                                                                                                                                   | Itt írhatja a felhasználói fiók tartománynevét?                                                            |
+| **Felhasználó**               | Meghatározza **egy BHOLD-felhasználó** fiókjának bejelentkezési nevét, amely az összes felhasználó és szerepkör felettese, és jogosult a felhasználói szerepkörök összekapcsolására és leválasztására. A Microsoft nyomatékosan javasolja, hogy ne használja a root felhasználóhoz társított fiókot a BHOLD Core-ban (alapértelmezés szerint az BHOLD Core telepítéséhez használt fiók). Ez a fiók lehet ugyanaz a fiók, amelyet a FIM-hez való kapcsolódáshoz használ. | Írja be a felhasználói fiók nevét:                                                                   |
+| **Jelszó**           | Megadja a **felhasználó**által megadott felhasználói fiók jelszavát.                                                                                                                                                                                                                                                                                                                             | Írja be a jelszót itt: **Fontos:** Ügyeljen arra, hogy a jelszót rejtett, biztonságos helyen tárolja. |
+| **IP-cím/számítógép címe** | Megadja az BHOLD Core webhely kiszolgálójának IP-címét. A kiszolgáló nevét ne használja.                                                                                                                                                                                                                                                                                                        | Írja be az IP-címet itt:                                                                          |
+| **Portszám**        | A BHOLD Core webhely portszámát adja meg.                                                                                                                                                                                                                                                                                                                                          | Írja be ide a portszámot:                                                                         |
 
 ## <a name="bhold-fim-integration-setup"></a>BHOLD FIM-integráció beállítása
 
-A BHOLD FIM integrációs modul telepítése, jelentkezzen be a tartományi rendszergazdák csoport tagjaként, töltse le a következő fájlt, és futtassa rendszergazdaként a kiszolgálón, melyet a BHOLD FIM integrációs modul telepítése:
+A BHOLD FIM integrációs moduljának telepítéséhez jelentkezzen be a Tartománygazdák csoport tagjaként, töltse le a következő fájlt, és futtassa rendszergazdaként azon a kiszolgálón, amelyre telepíteni kívánja a BHOLD FIM integrációs modulját:
 
-- BholdFIMIntegration<em>\<verzió\></em>\_Release.msi
+- A BholdFIMIntegration<em>\<verziója\></em>\_Release. msi
 
-Cserélje le *\<verzió\>* a BHOLD FIM integrációs kiadás, amely telepíti a verziószámával.
+Cserélje le *\<version\>* a TELEPÍTENDŐ BHOLD FIM integrációs kiadás verziószámára.
 
-A program rendszergazdaként futtatni, kattintson jobb gombbal a fájlra, és kattintson a **Futtatás rendszergazdaként**.
+A programfájl rendszergazdaként való futtatásához kattintson a jobb gombbal a fájlra, majd kattintson a **Futtatás rendszergazdaként**parancsra.
 
-![msi fut](media/bhold-integration-installation/cmd.png)
+![MSI futtatása](media/bhold-integration-installation/cmd.png)
 
 ## <a name="post-installation-tasks"></a>Telepítés utáni feladatok
 
-Miután telepítette a BHOLD FIM-integráció, konfigurálnia kell a Microsoft SharePoint a BHOLD szolgáltatási fiók a webhely-tulajdonosa engedélyt. Is ha a FIM-portál Secure Sockets Layer (SSL) biztonság használatára van konfigurálva, módosítania kell a címek szerepel a FIM-portálon BHOLD oldalak hivatkozásokat tartalmazó fájlok.
+Miután telepítette a BHOLD FIM-integrációt, konfigurálnia kell a Microsoft SharePointot, hogy megadja a BHOLD-szolgáltatásfiók tulajdonosi engedélyeit. Továbbá, ha a FIM-portál SSL (SSL) biztonság használatára van konfigurálva, módosítania kell a FIM Portalhoz hozzáadott BHOLD-lapokra mutató hivatkozásokat tartalmazó fájlokat.
 
 ### <a name="configuring-sharepoint"></a>A SharePoint konfigurálása
 
-A megfelelő működéshez BHOLD FIM-integráció a BHOLD service fiókot igényel a helyhez tartozó jogosultságokkal rendelkeznek a Microsoft SharePoint.
+Ahhoz, hogy megfelelően működjön, a BHOLD FIM-integráció megköveteli, hogy a BHOLD-szolgáltatásfiók a Microsoft SharePointban a hely-tag engedélyekkel rendelkezzen.
 
-### <a name="to-grant-site-member-permissions-to-the-bhold-service-account"></a>A BHOLD szolgáltatásfiók helyhez tartozó engedélyek megadása
+### <a name="to-grant-site-member-permissions-to-the-bhold-service-account"></a>Hely – tag engedélyek megadása a BHOLD-szolgáltatásfiók számára
 
-1.  Jelentkezzen be rendszergazdai jogosultságokkal a BHOLD FIM integrációs futtató kiszolgálón.
+1.  Jelentkezzen be a BHOLD FIM-integrációt futtató kiszolgálóra rendszergazdai jogosultságokkal.
 
-2.  Kattintson a **Start**, és kattintson a **Internet Exporer**.
+2.  Kattintson a **Start**gombra, majd az **internetes Exporer**elemre.
 
-3.  A címsorba írja be a <https://localhost> SharePoint SSL-biztonság használatára van konfigurálva, ellenkező esetben írja be <http://localhost>.
+3.  A címsorba írja be <https://localhost>, ha a SharePoint az SSL-biztonság használatára van konfigurálva, máskülönben írja be a <http://localhost>.
 
-4.  A bal oldalon, a **csoportwebhely** kattintson **személyek és csoportok**.
+4.  A **csapat helye** lap bal oldalán kattintson a **személyek és csoportok**elemre.
 
-5.  Alatt **csoportok** kattintson **hely csapattagok**, és a középső ablaktáblán eszköztáron kattintson **új**, és kattintson a **felhasználó hozzáadása**.
+5.  A **csoportok** területen kattintson a **csapattagok**elemre, majd a középső ablaktábla eszköztárán kattintson az **új**, majd a **felhasználók hozzáadása**elemre.
 
-6.  Az a **felhasználó hozzáadása: csoportwebhely** lap **felhasználók/csoportok**, írja be a BHOLDApplicationGroup, majd kattintson a Névellenőrzés gomb alatt a **felhasználók/csoportok** mezőbe. A csoport nevét kell feloldhatónak lennie közé tartozik a tartomány nevét.
+6.  A **felhasználók hozzáadása: A csoportwebhely** lap **felhasználók/csoportok**területén írja be a BHOLDApplicationGroup nevet, majd kattintson a Névellenőrzés gombra a **felhasználók/csoportok** mezőben. A csoport nevét fel kell oldani, hogy tartalmazza a tartománynevet.
 
-7.  Kattintson a **felhasználók engedélyt közvetlenül**válassza **teljes hozzáférés – teljes körű vezérléssel rendelkezik**, és kattintson a **OK**.
+7.  Kattintson a **felhasználók engedélyeinek közvetlen megadása**lehetőségre, válassza a **teljes hozzáférés lehetőséget – teljes hozzáférés**lehetőséggel, majd kattintson **az OK**gombra.
 
-8.  Győződjön meg arról, hogy BHOLDApplicationGroup szerepel-e az **engedélyek: csoportwebhely**, majd zárja be az Internet Explorerben.
+8.  Ellenőrizze, hogy a BHOLDApplicationGroup szerepel-e **engedélyekben: A csoportwebhely**, majd az Internet Explorer bezárásával.
 
-![msi fut](media/bhold-integration-installation/sharepoint.png)
+![MSI futtatása](media/bhold-integration-installation/sharepoint.png)
 
-### <a name="configuring-bhold-to-support-ssl"></a>A BHOLD támogatása az SSL konfigurálása
+### <a name="configuring-bhold-to-support-ssl"></a>A BHOLD konfigurálása az SSL támogatásához
 
-Az FIM-portál SSL-biztonság használatára van konfigurálva, ha módosítania kell a FIM-kiszolgálón lévő fájlok, hogy a BHOLD hivatkozásokat nyílik meg. A fájlok találhatók, a következő mappában: ```C:\Program Files\Common Files\Microsoft Shared\Web Server Extensions\12\TEMPLATE\LAYOUTS\BHOLD```.
+Ha a FIM-portál SSL-biztonság használatára van konfigurálva, akkor módosítania kell a fájlokat a FIM-kiszolgálón, hogy a BHOLD-lapokra mutató hivatkozások meg legyenek nyitva. A fájlok a következő mappában találhatók: ```C:\Program Files\Common Files\Microsoft Shared\Web Server Extensions\12\TEMPLATE\LAYOUTS\BHOLD```.
 
-Az alábbi táblázat a fájlok és a karakterláncokat kell szerkeszteni, eredeti és módosított változata.
+A következő táblázat a szerkeszteni kívánt karakterláncok fájljait és eredeti és módosított verzióit sorolja fel.
 
-| **Fájl**                  | **Eredeti karakterláncot**                                                                                                                   | **Módosított karakterlánc**                                                                                                                                |
+| **Fájl**                  | **Eredeti sztring**                                                                                                                   | **Módosított karakterlánc**                                                                                                                                |
 |---------------------------|---------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
-| Analytics.aspx            |   http://<BHOLD_Server>/bhold/Analytics/index_fim.HTML | https://<BHOLD_Server_FQDN>/bhold/Analytics/index_fim.HTML       |
-| AttestationCampaigns.aspx |    http://<BHOLD_Server>/bhold/Attestation/Campaigns.aspx?hideMenu=1 | https://<BHOLD_Server_FQDN>/bhold/Attestation/Campaigns.aspx?hideMenu=1 | 
-| AttestationMain.aspx      |  http://<BHOLD_Server>/bhold/Attestation/Dashboard.aspx?hideMenu=1        | https://<BHOLD_Server_FQDN>/bhold/Attestation/Dashboard.aspx?hideMenu=1 |
-| Reporting.aspx            | http://<BHOLD_Server>/bhold/Reporting/index_fim.HTML |  https://<BHOLD_Server_FQDN>/bhold/Reporting/index_fim.HTML |
-| Selfservice.aspx          | RoleExchangePoint = http: / /\<*FIM_Server*\>: \< *FIM_Port*\>/BHOLD/RoleExchangePoint/BHOLDRoleExchangePoint.svc, Átviteli átviteli = | RoleExchangePoint = https: / /\<*FIM_Server_FQDN*\>: \< *FIM_SSL_Port\>*\>/BHOLD/RoleExchangePoint / BHOLDRoleExchangePoint.svc,TransportMode=Transport |
+| Analitika. aspx            |   http://< BHOLD_Server >/bhold/Analytics/index_fim. html | https://< BHOLD_Server_FQDN >/bhold/Analytics/index_fim. html       |
+| AttestationCampaigns. aspx |    http://< BHOLD_Server >/bhold/Attestation/Campaigns.aspx? hideMenu = 1 | https://< BHOLD_Server_FQDN >/bhold/Attestation/Campaigns.aspx? hideMenu = 1 | 
+| AttestationMain. aspx      |  http://< BHOLD_Server >/bhold/Attestation/Dashboard.aspx? hideMenu = 1        | https://< BHOLD_Server_FQDN >/bhold/Attestation/Dashboard.aspx? hideMenu = 1 |
+| Jelentéskészítés. aspx            | http://< BHOLD_Server >/bhold/Reporting/index_fim. html |  https://< BHOLD_Server_FQDN >/bhold/Reporting/index_fim. html |
+| Selfservice. aspx          | RoleExchangePoint = http://\<*FIM_Server*\>: \<*FIM_Port*\>/BHOLD/RoleExchangePoint/BHOLDRoleExchangePoint. SVC, TransportMode = Transport | RoleExchangePoint = https://\<*FIM_Server_FQDN*\>: \<*FIM_SSL_Port\>* \>/BHOLD/RoleExchangePoint/BHOLDRoleExchangePoint. SVC, TransportMode = Transport |
 
 Ahol:
 
--   *\<BHOLD_Server\>*  a BHOLD-kiszolgáló nevét adja meg a fájl az eredeti verzió-beli formában
+-   *\<BHOLD_Server\>* a fájl eredeti verziójában található BHOLD-kiszolgáló nevét adja meg.
 
--   *\<MIM_Server\>*  a FIM-kiszolgáló nevét adja meg a fájl az eredeti verzió-beli formában
+-   *\<MIM_Server\>* a fájl eredeti verziójában található FIM-kiszolgáló nevét adja meg.
 
--   *\<BHOLD_Server_FQDN\>*  megadja a BHOLD-kiszolgáló teljesen minősített tartománynevét (FQDN)
+-   *\<BHOLD_Server_FQDN\>* megadja a BHOLD-kiszolgáló teljes tartománynevét (FQDN).
 
--   *\<MIM_Port\>*  határozza meg a port számát, a FIM-kiszolgáló található az a fájl eredeti verzióját
+-   *\<MIM_Port\>* a fájl eredeti verziójában található FIM-kiszolgáló portszámát adja meg.
 
--   *\<MIM_Server_FQDN\>*  a FIM-kiszolgáló teljes Tartománynevét adja meg
+-   *\<MIM_Server_FQDN\>* a FIM-kiszolgáló teljes tartománynevét adja meg.
 
--   *\<MIM_SSL_Port\>*  adja meg egy másik portot használja az SSL-lel a FIM-kiszolgálón
+-   *\<MIM_SSL_Port\>* egy másik portot ad meg, amely SSL-lel használható a FIM-kiszolgálón
 
-### <a name="enable-approval-workflows-in-bhold-core"></a>A BHOLD Core jóváhagyási munkafolyamatokat engedélyezése
+### <a name="enable-approval-workflows-in-bhold-core"></a>Jóváhagyási munkafolyamatok engedélyezése a BHOLD Core-ban
 
-Amikor a FIM és a BHOLD integrálva van az önkiszolgáló működésre, a jóváhagyási munkafolyamatokat a FIM szolgáltatásban futnak. Ez hasonlít a FIM-portálon, például amikor egy felhasználó csatlakozhat egy terjesztési lista kérést küld a kérelmekkel munkafolyamat modelljére. BHOLD szerepkör munkafolyamatok és egyéb azonban a FIM szolgáltatásban futtatott munkafolyamatok közötti fő különbségek vannak. A BHOLD, esetén adja meg, hogy mely felhasználók jóvá kell hagynia szerepkör munkafolyamat-paraméterek származnak BHOLD ahelyett, hogy a munkafolyamat-meghatározások a FIM szolgáltatás adatbázisban tárolja. Ezek a paraméterek számára a FIM szolgáltatás által biztosított BHOLD az első kérést, és a egy munkafolyamat kommunikál az eredményeket a BHOLD Core.
+Ha a FIM és a BHOLD integrálva van az önkiszolgáló szolgáltatásba, a jóváhagyásokhoz tartozó munkafolyamatok a FIM szolgáltatásban futnak. Ez hasonló a FIM-portálon alapuló kérések munkafolyamat-modelljéhez, például amikor egy felhasználó kérelmet küld egy terjesztési listához való csatlakozásra. A BHOLD szerepkör-munkafolyamatok és a FIM szolgáltatásban üzemeltetett egyéb munkafolyamatok között fontos különbségek vannak. A BHOLD esetében a munkafolyamat-paraméterek határozzák meg, hogy mely felhasználóknak kell jóváhagyni egy szerepkör-kérést a BHOLD-ből, nem pedig a FIM szolgáltatás adatbázisának munkafolyamat-definíciójában. Ezeket a paramétereket a FIM szolgáltatás BHOLD az első kérelem elvégzése után, a műveleti munkafolyamat pedig visszaküldi az eredményeket a BHOLD Core-nak.
 
-A BHOLD önkiszolgáló kérelmek jóváhagyó három módszerrel lehetőséget választja:
+A BHOLD a következő három módszer egyikével választ ki egy önkiszolgáló kérelem jóváhagyóját:
 
--   **Vonalkezelő jóváhagyójaként: egy szervezeti egység (OrgUnit) szerepkör-alapú kijelölés** Ha egy szerepkör, amely a jóváhagyó vagy Mozgólépcső roletype nevű attribútummal rendelkezik, és az adott szerepkör keretén belül egy OrgUnit egy vagy több felhasználó van csatolva, kér adott OrgUnit felhasználóit jóvá kell hagynia a felhasználók, amely kapcsolódik a szerepkört a jóváhagyó vagy Mozgólépcső roletype egyikét.
+-   **Line Manager mint jóváhagyó: szervezeti egység (OrgUnit) szerepkörön alapuló kiválasztása** Ha egy szerepkör egy roletype nevű attribútummal rendelkezik, amely jóváhagyóként vagy Mozgólépcsőként van beállítva, és ha az adott szerepkör egy vagy több felhasználóhoz van társítva egy OrgUnit környezetben, a OrgUnit lévő felhasználóktól érkező kéréseket jóvá kell hagyni a jóváhagyó vagy a mozgólépcső roletype.
 
--   **Vonalkezelő jóváhagyójaként: egy OrgUnit kijelölés Attribútumalapú** minden OrgUnit rendelkezhet egy vagy több attribútum által megadott felhasználók, akik a szerepkör-hozzárendeléseit a OrgUnit többi felhasználójával jóváhagyhatja az aliasokat. Ezek az attribútumok lesznek elnevezve approver1 approver2 és így tovább. Amikor egy felhasználó a OrgUnit a szerepkör-hozzárendelés, BHOLD a kérelmet (FIM) irányítja a felhasználókat a OrgUnit jóváhagyó attribútum által megadott. Ha egy OrgUnit rendelkezik ezen attribútumok beállítása, BHOLD ellenőrzi a legfelső szintű OrgUnit OrgUnits szülő.
+-   **Line Manager mint jóváhagyó: attribútum-alapú kijelölés egy OrgUnit** Minden OrgUnit rendelkezhet egy vagy több olyan attribútummal, amely meghatározza azokat a felhasználókat, akik a OrgUnit más felhasználói számára is jóváhagyják a szerepkör-hozzárendeléseket. Ezek az attribútumok neve approver1, approver2 stb. Ha a OrgUnit egyik felhasználója szerepkör-hozzárendelést kér, a BHOLD a kérést (FIM-n keresztül) átirányítja a OrgUnit-jóváhagyó attribútumai által megadott felhasználókra. Ha egy OrgUnit nem rendelkezik ezekkel az attribútumokkal, a BHOLD ellenőrzi a szülő OrgUnits a gyökér OrgUnit.
 
--   **Správce rolí jóváhagyójaként: Attribútumalapú kiválasztása a szerepkörhöz** szerepkör rendelkezhet egy vagy több attribútum (is elnevezett approver1, és így tovább), amely meghatározza az aliasokat, felhasználók, akik hagyhatja jóvá a szerepkör-hozzárendelés. Amikor egy felhasználó ezen jóváhagyó attribútummal rendelkező szerepkör hozzárendelését, BHOLD irányítja a kérést a felhasználók által az attribútumok meghatározott.
+-   **Szerepkör-kezelő mint jóváhagyó: attribútum-alapú kijelölés egy szerepkörhöz** Egy szerepkörhöz tartozhat egy vagy több attribútum (más néven approver1 stb.), amelyek meghatározzák a szerepkör hozzárendelését jóváhagyó felhasználók aliasneveit. Amikor egy felhasználó hozzárendel egy olyan szerepkört, amely ezen jóváhagyó attribútumokat beállította, a BHOLD a kérést az attribútumok által megadott felhasználóknak irányítja.
 
-Önkiszolgáló szerepkörrel kérelmek jóváhagyó nem adott meg az alábbi módszerek egyikét, ha alapértelmezés szerint a BHOLD automatikusan hozzárendeli a szerepkört jóváhagyás kérése nélkül. Ebből kifolyólag után azonnal telepíti a BHOLD FIM-integráció, konfigurálnia kell a legfelső szintű OrgUnit az aliasszal egy jóváhagyó, például a rendszergazdai fiók. Ez megakadályozza, hogy egy felhasználó véletlenül engedély megadása a szerepkör egy átfogóbb jóváhagyási szabályzata előtt.
+Ha az önkiszolgáló szerepkör-kérelemhez tartozó jóváhagyót nem az egyik módszer adja meg, a BHOLD alapértelmezés szerint automatikusan hozzárendeli a szerepkört a jóváhagyás megkövetelése nélkül. Emiatt a BHOLD FIM-integráció telepítése után azonnal konfigurálnia kell a legfelső szintű OrgUnit egy jóváhagyó aliasával, például a root fiókkal. Ez megakadályozza, hogy a felhasználó akaratlanul is megkapja a szerepkört, mielőtt átfogóbb jóváhagyási házirendet lehetne megvalósítani.
 
-#### <a name="to-configure-an-approver-for-the-root-orgunit"></a>A legfelső szintű OrgUnit jóváhagyó konfigurálása
+#### <a name="to-configure-an-approver-for-the-root-orgunit"></a>A legfelső szintű OrgUnit jóváhagyójának konfigurálása
 
 1.  Jelentkezzen be a BHOLD Core kiszolgálóra rendszergazdaként.
 
-2.  Kattintson a **Start**, és kattintson a **az Internet Explorer**.
+2.  Kattintson a **Start**gombra, majd az **Internet Explorer**elemre.
 
-3.  Az Internet Explorer címsorába írja be a <http://localhost:5151/bhold/core>, és nyomja le az Enter billentyűt.
+3.  Az Internet Explorer címsorában írja be a <http://localhost:5151/bhold/core>értéket, majd nyomja le az ENTER billentyűt.
 
-4.  A BHOLD Core kezdőlapja, alatt **attribútum def**, kattintson a **attribútum típusú**.
+4.  Az BHOLD alapoldalán, a **def attribútum**alatt kattintson az **attribútumok típusai**elemre.
 
-5.  Az a **attribútum típusa** kattintson **Hozzáadás**.
+5.  Az **attribútum típusa** lapon kattintson a **Hozzáadás**gombra.
 
-6.  Az a **hozzáadása attribútum típusa lap**, a **identitás**, approver1, írja be a **adattípus** listában, kattintson **alfanumerikus**, a **Maximális hossz**, 255, írja be **értékekből álló listát**, kattintson a **nem**, a **angol**, írja be a jóváhagyó 1, kattintson a **OK**, és kattintson a **kész**.
+6.  Az **attribútum típusának hozzáadása oldalon**az **identitás**mezőbe írja be a approver1, az **adattípus** listában kattintson az **alfanumerikus**elemre, a **maximális hossz**mezőbe írja be a 255 értéket, az **értékek listájában**kattintson a **nem**, **angol**nyelven, írja be a jóváhagyó 1, kattintson **az OK**gombra, majd kattintson a **kész**gombra.
 
-7.  A bal oldali panelen a **attribútum def** kattintson **attribútum típusú csoportok**.
+7.  A bal oldali ablaktáblán, az **attribútum felbontása** területen kattintson az **attribútum típusa készletek**elemre.
 
-8.  Az a **attribútum típusú csoportok** kattintson **Hozzáadás**.
+8.  Az **attribútum típusú készletek** lapon kattintson a **Hozzáadás**gombra.
 
-9.  Az a **attribútumkészletet típus hozzáadása** lap **leírás**, írja be a OrgUnit attribútumok, és kattintson **OK**.
+9.  Az **attribútum típusának hozzáadása** lapon a **Leírás**mezőbe írja be a OrgUnit attribútumokat, majd kattintson **az OK**gombra.
 
-10. Az a **OrgUnit attribútumok** lapon, bontsa ki a **attribútum típusú**, és kattintson a **módosítás**.
+10. A **OrgUnit attribútumai** lapon bontsa ki az **attribútumok típusai**elemet, majd kattintson a **módosítás**gombra.
 
-11. Az a **attribútum típusa** listában, kattintson **approver1**, kattintson a **Hozzáadás**, és kattintson a **kész**.
+11. Az **attribútum típusa** listában kattintson a **approver1**elemre, kattintson a **Hozzáadás**, majd a **kész**gombra.
 
-12. A bal oldali ablaktáblán kattintson a **objektumtípusok**.
+12. A bal oldali ablaktáblán kattintson az **Objektumtípusok**elemre.
 
-13. Az a **objektumtípusok** kattintson **OrgUnit**.
+13. Az **Objektumtípusok** lapon kattintson a **OrgUnit**elemre.
 
-14. Az a **objektum típusa/OrgUnit** lapon, bontsa ki a **attribútum típusú csoportok**, és kattintson a **módosítás**.
+14. Az **objektumtípus/OrgUnit** lapon bontsa ki az **attribútum típusa készletek**elemet, majd kattintson a **módosítás**gombra.
 
-15. Az a **attribútum típusának beállítása/OrgUnit hivatkozás** lap **sorrend**, 10, írja be a **attribútum típusa beállított** listában, kattintson **OrgUnit attribútumok**, Kattintson a **Hozzáadás**, és kattintson a **kész**.
+15. Az **attribútum típusának beállítása/OrgUnit** lapon a **sorrend**mezőbe írja be a 10 értéket, az **attribútum típusa készlet** listában kattintson a **OrgUnit attribútumai**elemre, majd a **Hozzáadás**, végül pedig a **kész**gombra.
 
-16. A bal oldali panelen a **modell**, kattintson a **szervezeti egységek**.
+16. A bal oldali ablaktábla **modell**területén kattintson a **szervezeti egységek**elemre.
 
-17. Az a **szervezeti egységek** kattintson **legfelső szintű**.
+17. A **szervezeti egységek** lapon kattintson a **gyökér**elemre.
 
-18. Az a **szervezeti egység/root** kattintson **módosítás**.
+18. A **szervezeti egység/gyökér** lapon kattintson a **módosítás**lehetőségre.
 
-19. Az a **módosítása szervezeti egység attribútumok/root** lap **jóváhagyó**, írja be a tartomány és a felhasználó nevét, a felhasználó, aki jóvá fogja hagyni a szerepkör-hozzárendelési kérelmek, a következő formátumban  *\<tartomány\>*\\*\<felhasználói\>*, ahol *\<tartomány\>* van a (Rövid) NetBIOS-tartománynév és *\<felhasználói\>* a felhasználó bejelentkezési neve.
+19. A **szervezeti egység attribútumainak/gyökerének módosítása** lapon a **jóváhagyó**mezőben adja meg a szerepkör-hozzárendelési kérelmeket jóváhagyó felhasználó tartományát és felhasználónevét *\<tartomány\>* \\ *\<felhasználói\>* , ahol *\<tartomány\>* a NetBIOS (rövid) tartománynév, és *\<felhasználói\>* a felhasználó bejelentkezési neve.
 20. Kattintson az **OK** gombra.
 
 > [!IMPORTANT]
-> A tartomány és a felhasználó nevének egyeznie kell az alapértelmezett alias a felhasználó a BHOLD Core adatbázisban.
+> A tartománynak és a felhasználónévnek meg kell egyeznie egy felhasználó alapértelmezett aliasával a BHOLD Core adatbázisban.
 
-Alternatív megoldásként adja meg a szervezeti egységek hagyhatja jóvá javasolt szerepkörök hagyhatja jóvá a BHOLD Core adatbázisban is megadhat. Ehhez a approver1 attribútum létrehozása, adja hozzá, hogy egy attribútum indexben az szerepkör objektumtípushoz társított és majd a adja meg a jóváhagyó, minden egyes javasolt szerepkör módosítása.
+A szervezeti egységekhez tartozó jóváhagyó megadása helyett megadhat egy jóváhagyót a javasolt szerepkörökhöz a BHOLD Core adatbázisban. Ehhez hozza létre a approver1 attribútumot, adja hozzá a szerepkör videótartalmakban társított attribútumhoz, majd módosítsa az egyes javasolt szerepköröket a jóváhagyó megadásához.
 
-Munkafolyamat nagyobb biztonság, mellett a jóváhagyók, akkor ki kell jelölnie további jóváhagyást módok és a felhasználók létrehozása és feltöltése a következő attribútumok OrgUnits és szerepkörök:
+A jobb munkafolyamatok biztonságának biztosítása érdekében a jóváhagyók mellett további jóváhagyási módokat és felhasználókat kell kijelölnie a következő attribútumok létrehozásával és feltöltésével a OrgUnits és a szerepkörökhöz:
 
-- Mozgólépcső<em>\<n\></em>
+- mozgólépcső<em>\<n\></em>
 
 - tulajdonos<em>\<n\></em>
 
 - securityOfficer<em>\<n\></em>
 
-- értesítési<em>\<n\></em>
+- értesítés<em>\<n\></em>
 
-ahol *\<n\>* azt jelzi, hogy egy nem kötelező numerikus utótagból több, azonos típusú attribútumainak megadásához.
+ahol a *\<n\>* egy opcionális numerikus utótagot jelöl, amely több azonos típusú attribútumot biztosít.
 
-### <a name="verify-approval-workflows-configured-in-the-fim-service"></a>Ellenőrizze a jóváhagyási munkafolyamatokat a FIM szolgáltatás konfigurálása
+### <a name="verify-approval-workflows-configured-in-the-fim-service"></a>A FIM szolgáltatásban konfigurált jóváhagyási munkafolyamatok ellenőrzése
 
-BHOLD FIM Integration telepítése hoz létre, csoportok, a munkafolyamat-definíciókhoz és a felügyeleti házirendszabályok (MPR-EK) a FIM szolgáltatáshoz. Ha testreszabta volna a FIM környezet módosítása a Rendszergazdák csoportok vagy felhasználók, akik kéréseiket a készletek, győződjön meg róla, hogy az MPR-EK hivatkoznak-e a megfelelő felhasználói csoportokat.
+A BHOLD FIM integrációs telepítése készletek, munkafolyamat-definíciók és felügyeleti házirend-szabályok (MPR) létrehozását hozza létre a FIM szolgáltatáshoz. Ha testreszabta a FIM üzemelő példányát, hogy megváltoztassa a rendszergazdák vagy a kérelmeket kérő felhasználók készleteit, győződjön meg arról, hogy a MPR a megfelelő felhasználói készletekre hivatkozik.
 
 > [!NOTE]
-> A FIM-portál felhasználók használhatják az önkiszolgáló funkciók BHOLD által biztosított, mielőtt a felhasználói fiókok szinkronizálni kell a FIM szinkronizálási szolgáltatás a BHOLD-adatbázisba. Különösen kell lennie a BHOLD Core és az összes felhasználója számára önkiszolgáló kérheti, vagy egy jóváhagyó vagy önkiszolgáló kérelmek Mozgólépcső van megadva a FIM szolgáltatás adatbázisához egy felhasználórekordban tárolja.
+> Mielőtt a FIM Portal felhasználói használhatják a BHOLD által biztosított önkiszolgáló funkciókat, a felhasználói fiókokat szinkronizálni kell a BHOLD-adatbázisba a FIM synchronization Service-ben. Különösen a BHOLD Core adatbázisban és a FIM szolgáltatás adatbázisában kell lennie egy felhasználói rekordnak minden olyan felhasználó számára, aki önkiszolgáló kérést készít, vagy jóváhagyóként vagy mozgólépcsőként van megadva önkiszolgáló kérésekhez.
 
 ## <a name="next-steps"></a>További lépések
 
-- FIM-portál és más FIM szolgáltatások telepítésével kapcsolatos információkért lásd: [tervezés és architektúra](https://technet.microsoft.com/library/ee808044.aspx) a Microsoft Forefront technikai könyvtárban.
-- [A BHOLD telepítési útmutató](bhold-installation-guide.md)
+- További információ a FIM-portál és az egyéb FIM-funkciók telepítéséről: [tervezés és architektúra](https://technet.microsoft.com/library/ee808044.aspx) a Microsoft Forefront Technical Library-ben.
+- [BHOLD telepítési útmutató](bhold-installation-guide.md)
 - [BHOLD fejlesztői leírás](../reference/mim2016-bhold-developer-reference.md)
 - [A BHOLD korábbi verziói](../reference/version-bhold-history.md)
