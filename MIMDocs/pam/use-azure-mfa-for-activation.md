@@ -10,16 +10,18 @@ ms.date: 07/06/2018
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: 5134a112-f73f-41d0-a5a5-a89f285e1f73
-ms.openlocfilehash: 72dd1d3cf34e28567fa672b747a04347b150797e
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: 6c3a2d87037a818a9a8784b0d4a7b86227fcaef4
+ms.sourcegitcommit: 28a20aaa1f08b428cc1ae0eae43ae47de4d9d22a
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67690786"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684057"
 ---
 # <a name="using-azure-mfa-for-activation"></a>Aktiválás az Azure MFA használatával
 > [!IMPORTANT]
-> Az Azure Multi-Factor Authentication szoftverfejlesztői készlet elavult felmondásának bejelentése miatt. Az Azure MFA SDK a meglévő ügyfelek számára a 2018. november 14-én érvényes. Az új ügyfelek és a jelenlegi ügyfelek többé nem tölthetik le az SDK-t a klasszikus Azure portálon keresztül. A letöltéshez el kell érnie az Azure ügyfélszolgálatát, hogy megkapja a generált MFA szolgáltatás hitelesítő adatait tartalmazó csomagot. <br> A Microsoft fejlesztői csapata a többtényezős hitelesítésen dolgozik a MFA Server SDK integrálásával.  Ez egy közelgő gyorsjavítás részét képezi, amely a bejelentések [korábbi verzióiban](../reference/version-history.md) található. 
+> Az Azure Multi-Factor Authentication szoftverfejlesztői készlet elavult felmondásának bejelentése miatt az Azure MFA SDK a meglévő ügyfelek számára a 2018. november 14-én esedékes kivonulási időpontig lesz támogatott. Az új ügyfelek és a jelenlegi ügyfelek többé nem tölthetik le az Azure MFA SDK-t a klasszikus Azure portálon keresztül. További információ az Azure MFA-kiszolgáló használatáról: az [Azure MFA-kiszolgáló használata a PAM-ban vagy a SSPR-ben](../working-with-mfaserver-for-mim.md).
+
+
 
 
 A PAM-szerepkörök konfigurálásakor kiválaszthatja, hogyan szeretné engedélyekkel felruházni azokat a felhasználókat, akik a szerepkör aktiválását kérik. A PAM-engedélyezés a következő választási lehetőségeket nyújtja:
@@ -46,7 +48,7 @@ Ebben a szakaszban az Azure MFA-szolgáltatót Microsoft Azure Active Directoryb
 
 1.  Nyisson meg egy webböngészőt, és jelentkezzen be a [klasszikus Azure portálra](https://manage.windowsazure.com) Azure előfizetés-adminisztrátorként.
 
-2.  A bal alsó sarokban kattintson az **Új** gombra.
+2.  A bal alsó sarokban kattintson a **New** (Új) gombra.
 
 3.  Válassza az **App Services > Active Directory > Multi-Factor Auth Provider > Quick Create** (Alkalmazásszolgáltatások > Active Directory > Többtényezős hitelesítési szolgáltató > Gyorslétrehozás) lehetőséget.
 
@@ -54,7 +56,11 @@ Ebben a szakaszban az Azure MFA-szolgáltatót Microsoft Azure Active Directoryb
 
 ## <a name="downloading-the-azure-mfa-service-credentials"></a>Az Azure MFA szolgáltatás hitelesítő adatainak letöltése
 
-A következő lépésben létre fog hozni egy fájlt, amely tartalmazza a PAM-nek az Azure MFA-hoz való kapcsolódásához szükséges hitelesítési anyagokat.
+> [!IMPORTANT]
+> Az Azure MFA SDK már nem érhető el. További információ az Azure MFA-kiszolgáló használatáról: az [Azure MFA-kiszolgáló használata a PAM-ban vagy a SSPR](../working-with-mfaserver-for-mim.md) .
+
+
+Korábban létrehoz egy fájlt, amely tartalmazza a PAM hitelesítési anyagát, hogy kapcsolatba lépjen az Azure MFA-val.
 
 1. Nyisson meg egy webböngészőt, és jelentkezzen be a [klasszikus Azure portálra](https://manage.windowsazure.com) Azure előfizetés-adminisztrátorként.
 
@@ -140,7 +146,7 @@ A sikertelen telefonhívások okára (101-es esemény) vonatkozó további infor
 
 1.  Nyisson meg egy webböngészőt, és jelentkezzen be a [klasszikus Azure portálra](https://manage.windowsazure.com) globális Azure AD-rendszergazdaként.
 
-2.  Az Azure-portál menüjében válassza az **Active Directory** lehetőséget, majd lépjen a **Multi-Factor Auth Providers** (Többtényezős hitelesítési szolgáltatók) lapra.
+2.  Az Azure-Portal menüjében válassza az **Active Directory** lehetőséget, majd lépjen a **Multi-Factor Auth Providers** (Többtényezős hitelesítési szolgáltatók) lapra.
 
 3.  Kattintson a PAM-hoz használni kívánt Azure MFA-szolgáltatóra, majd kattintson a **Manage** (Kezelés) gombra.
 

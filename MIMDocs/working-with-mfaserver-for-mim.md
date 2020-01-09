@@ -1,6 +1,6 @@
 ---
-title: A PAM-vagy SSPR-forgatókönyvek aktiválása az Azure Multi-Factor Authentication-kiszolgáló SDK-val | Microsoft Docs
-description: Állítsa be az Azure Multi-Factor Authentication-kiszolgáló SDK-t második biztonsági rétegként, amikor a felhasználók Privileged Access Management és az önkiszolgáló jelszó-visszaállítási szolgáltatásban aktiválják a szerepköröket.
+title: A PAM-vagy SSPR-forgatókönyvek aktiválása az Azure Multi-Factor Authentication-kiszolgáló használatával | Microsoft Docs
+description: Állítsa be az Azure Multi-Factor Authentication-kiszolgálót második biztonsági rétegként, amikor a felhasználók Privileged Access Management és az önkiszolgáló jelszó-visszaállítási szolgáltatásban aktiválják a szerepköröket.
 keywords: ''
 author: billmath
 ms.author: billmath
@@ -9,20 +9,20 @@ ms.date: 10/29/2018
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: 94a74f1c-2192-4748-9a25-62a526295338
-ms.openlocfilehash: 69b7f8f4b94f9f94b2aef6afd9573ad8173e148e
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: 39ebec3002f488077cfda28a5780b0c78c19f363
+ms.sourcegitcommit: 28a20aaa1f08b428cc1ae0eae43ae47de4d9d22a
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "64517718"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684091"
 ---
 # <a name="use-azure-multi-factor-authentication-server-to-activate-pam-or-sspr"></a>Az Azure Multi-Factor Authentication-kiszolgáló használata a PAM vagy a SSPR aktiválásához
-A következő dokumentum azt ismerteti, hogyan állíthatja be az Azure MFA-kiszolgálót második biztonsági rétegként, amikor a felhasználók a jogosultságok hozzáférés-kezelési vagy önkiszolgáló jelszó-visszaállítási szolgáltatásában aktiválják a szerepköröket.
+A következő dokumentum azt ismerteti, hogyan állíthatja be az Azure MFA-kiszolgálót második biztonsági rétegként, amikor a felhasználók szerepköröket aktiválnak Privileged Access Management vagy az önkiszolgáló jelszó-visszaállítás során.
 
 > [!IMPORTANT]
-> Az Azure Multi-Factor Authentication szoftverfejlesztői készlet elavult felmondásának bejelentése miatt. Az Azure MFA SDK a meglévő ügyfelek számára a 2018. november 14-én érvényes. Az új ügyfelek és a jelenlegi ügyfelek többé nem tölthetik le az SDK-t a klasszikus Azure portálon keresztül. A letöltéshez el kell érnie az Azure ügyfélszolgálatát, hogy megkapja a generált MFA szolgáltatás hitelesítő adatait tartalmazó csomagot. <br> A Microsoft fejlesztői csapata az Azure Multi-Factor Authentication-kiszolgáló SDK integrálásával dolgozik a MFA változásain.
+> Az Azure Multi-Factor Authentication szoftverfejlesztői készlet elavult felmondásának bejelentése miatt az Azure MFA SDK a meglévő ügyfelek számára a 2018. november 14-én esedékes kivonulási időpontig lesz támogatott. Az új ügyfelek és a jelenlegi ügyfelek többé nem tölthetik le az SDK-t a klasszikus Azure portálon keresztül. A letöltéshez el kell érnie az Azure ügyfélszolgálatát, hogy megkapja a generált MFA szolgáltatás hitelesítő adatait tartalmazó csomagot.
 
-Az alábbi cikk felvázolja a konfiguráció frissítését és a lépéseket, amelyek lehetővé teszik az Azure MFA SDK-ból az Azure Multi-Factor Authentication-kiszolgáló SDK-ra való egyszerű váltást, ha a kiadásra kerül, mivel ez egy közelgő gyorsjavításban szerepel, lásd a bejelentések [korábbi verzióit](./reference/version-history.md) . 
+Az alábbi cikk azokat a konfigurációs frissítést és lépéseket ismerteti, amelyek lehetővé teszik az Azure MFA SDK-ból az Azure-Multi-Factor Authentication-kiszolgálóre való áttérést.
 
 ## <a name="prerequisites"></a>Előfeltételek
 
@@ -47,7 +47,7 @@ Jelentkezzen be a [Azure Portalba](https://portal.azure.com/) , és töltse le a
 Használja az **aktiválási hitelesítő adatok létrehozása a használati** hivatkozás létrehozásához az aktiválási hitelesítő adatok létrehozásához. Miután létrehozott egy mentést a későbbi használatra.
 
 ### <a name="step-3-install-the-azure-multi-factor-authentication-server"></a>3\. lépés: az Azure Multi-Factor Authentication-kiszolgáló telepítése
-Miután letöltötte a kiszolgálót, [telepítse](https://docs.microsoft.com/en-us/azure/active-directory/authentication/howto-mfaserver-deploy#install-and-configure-the-mfa-server) azt.  Az aktiválási hitelesítő adatokra lesz szükség. 
+Miután letöltötte a kiszolgálót, [telepítse](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfaserver-deploy#install-and-configure-the-mfa-server) azt.  Az aktiválási hitelesítő adatokra lesz szükség. 
 
 ### <a name="step-4-create-your-iis-web-application-that-will-host-the-sdk"></a>4\. lépés: az SDK-t futtató IIS-Webalkalmazás létrehozása
 1. Nyissa meg az IIS-kezelőt ![Working with-mfaserver-for-mim_iis. PNG-](media/working-with-mfaserver-for-mim/working-with-mfaserver-for-mim_iis.PNG)
@@ -87,9 +87,9 @@ Miután letöltötte a kiszolgálót, [telepítse](https://docs.microsoft.com/en
 > Ha vissza szeretné állítani a beállítást, cserélje le a MfaSettings. xml fájlt a biztonságimásolat-fájlra a 2. lépésben
 
 
-## <a name="next-steps"></a>Következő lépések
+## <a name="see-also"></a>További információ
 
--    [Első lépések az Azure Multi-Factor Authentication-kiszolgálóval](https://docs.microsoft.com/en-us/azure/active-directory/authentication/howto-mfaserver-deploy)
+-    [Első lépések az Azure Multi-Factor Authentication-kiszolgálóval](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfaserver-deploy)
 - [Mi az Azure Multi-Factor Authentication](https://docs.microsoft.com/azure/multi-factor-authentication/multi-factor-authentication)
 - [Az egyéni Multi-Factor Authentication API használata a PAM vagy a SSPR aktiválásához](Working-with-custommfaserver-for-mim.md)
 - [A rendszerfrissítési csomag verziószáma](./reference/version-history.md)
