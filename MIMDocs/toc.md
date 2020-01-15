@@ -92,7 +92,6 @@
 ### [Exportálási teljesítmény-útmutató](https://technet.microsoft.com/library/hh322883)
 ## Jelentéskészítés
 ### [Jelentéskészítés – egyéni jelentések és bővíthetőség](https://technet.microsoft.com/library/jj133861)
-## [A Microsoft identitásszoftverei: Nyilvános megjelenések és buildszámok](https://blogs.technet.microsoft.com/iamsupport/idmbuildversions/)
 # [Hivatkozás](./reference/microsoft-identity-manager-2016-developer-reference.md)
 ## Fejlesztői leírás
 ### [MIM 2016 fejlesztői leírás](./reference/microsoft-identity-manager-2016-developer-reference.md)
