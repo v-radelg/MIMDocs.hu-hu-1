@@ -9,12 +9,12 @@ ms.date: 2/28/2018
 ms.topic: reference
 ms.prod: microsoft-identity-manager
 ms.assetid: ''
-ms.openlocfilehash: fcf9ec8387761b6f154a95d6100ef54a12d4caf8
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: dd023e2152693f56dd9a86dc66d9c1a8ef4ec64e
+ms.sourcegitcommit: 1ca298d61f6020623f1936f86346b47ec5105d44
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "64518928"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76256580"
 ---
 # <a name="deprecated-features"></a>Elavult funkciók
 
@@ -27,7 +27,7 @@ Ez a cikk a Microsoft Identity Manager 2016 SP1 elavult funkcióit ismerteti. Ha
 
 ## <a name="bhold"></a>BHOLD 
 
-A Microsoft nem javasolja, hogy az ügyfelek új központi telepítéseket indítsanak a Microsoft BHOLD Suite-összetevőkből. A BHOLD meglévő telepítései továbbra is támogatottak lesznek. Az Azure AD olyan [hozzáférési felülvizsgálatokat](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-azure-ad-controls-access-reviews-overview) biztosít, amelyek lecserélik a BHOLD-igazolási kampány egyes funkcióit.
+A Microsoft nem javasolja, hogy az ügyfelek új központi telepítéseket indítsanak a Microsoft BHOLD Suite-összetevőkből. A BHOLD meglévő telepítései továbbra is támogatottak lesznek. Az Azure AD olyan [hozzáférési felülvizsgálatokat](https://docs.microsoft.com/azure/active-directory/active-directory-azure-ad-controls-access-reviews-overview) biztosít, amelyek lecserélik a BHOLD-igazolási kampány egyes funkcióit.
 
 ## <a name="certificate-management"></a>Tanúsítványkezelés 
 
@@ -47,7 +47,7 @@ A Microsoft nem javasolja, hogy az ügyfelek új központi telepítéseket indí
 | **Kategória**                | **Elavult funkció**              | **Helyettesítés és Megjegyzés**           |
 |-----------------------------|-------------------------------------|----------------------------------------------|
 | Programozott konfiguráció | Webszolgáltatás konfigurációs felülete | A FIM szinkronizálási szolgáltatás a FIM szolgáltatáson keresztül történő konfigurálásának lehetősége a következő verzióban lesz eltávolítva.                                                          |
-| Felügyeleti ügynökök           | Beépített MAs                        | A következő MAs el lett távolítva a 2016-es webszolgáltatásban: </br> 1. * * MA a FIM-tanúsítványok kezeléséhez </br>2. * * MA Lotus-megjegyzésekhez</br> 3. * * MA az SAP R/3 esetében </br> A Lotus Notes és az SAP R/3 MAs új verziókkal lett lecserélve. További információ: a [legújabb Connector-verziók kiadási előzményei & Letöltés](https://docs.microsoft.com/en-us/azure/active-directory/connect/active-directory-aadconnectsync-connector-version-history)                                                                                                                                                                                                                                              |
+| Felügyeleti ügynökök           | Beépített MAs                        | A következő MAs el lett távolítva a 2016-es webszolgáltatásban: </br> 1. * * MA a FIM-tanúsítványok kezeléséhez </br>2. * * MA Lotus-megjegyzésekhez</br> 3. * * MA az SAP R/3 esetében </br> A Lotus Notes és az SAP R/3 MAs új verziókkal lett lecserélve. További információ: a [legújabb Connector-verziók kiadási előzményei & Letöltés](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnectsync-connector-version-history)                                                                                                                                                                                                                                              |
 | Felügyeleti ügynökök           | ECMA1                               | Az ECMA1/XMA bővíthetőségi keretrendszert a ECMA 2,0 váltotta fel. A meglévő ECMA1-felügyeleti ügynökök ECMA 2.0-összekötővel történő frissítése kötelező.                                                                                                                                          |
 | Felügyeleti ügynökök           | A folyamaton kívüli összekötők futtatása      | Ez a szolgáltatás nem lesz lecserélve. A szinkronizációs szolgáltatás mindig ugyanabban a folyamatban hívja meg az összekötőt. Az összekötő feladata a másik folyamat elindítása és kezelése. |
 | Felügyeleti ügynökök           | Partíció megjelenítendő nevének konfigurálása    | Ez a szolgáltatás nem lesz lecserélve. Ez a beállítás csak a partíciók alternatív nevének megadására szolgál a WMI-felületeken.                                                                                                                                                                       |

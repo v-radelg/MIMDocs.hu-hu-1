@@ -9,12 +9,12 @@ ms.date: 10/02/2018
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: 94a74f1c-2192-4748-9a25-62a526295338
-ms.openlocfilehash: 139c58510117ad422529a4ff0facd23040023713
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: ba70cd299f2ebec31555bb40b935a6b54779d198
+ms.sourcegitcommit: 1ca298d61f6020623f1936f86346b47ec5105d44
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "64520939"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76256631"
 ---
 <a name="azure-ad-business-to-business-b2b-collaboration-with-microsoft-identity-managermim-2016-sp1-with-azure-application-proxy"></a>Azure AD-beli vállalatközi (B2B) együttműködés a Microsoft Identity Manager (platform) 2016 SP1 és az Azure Application proxy használatával
 ============================================================================================================================
@@ -31,8 +31,6 @@ Néhány feltételezés a B2B és az Azure AD Application Proxy:
 -   Már követte a [Graph-összekötő](microsoft-identity-manager-2016-connector-graph.md)letöltésére és telepítésére vonatkozó cikk utasításait.
 
 -   A felhasználók és csoportok Azure AD-be való szinkronizálásához Azure AD Connect konfigurálva.
-
--   Azure AD Connect konfigurálva van az Office-csoportok szinkronizálására az alkalmazás [helyi AD DS](http://robsgroupsblog.com/blog/how-to-write-back-an-office-group-in-azure-active-directory-to-a-mail-enabled-security-group-in-an-on-premises-active-directory) való visszavezérléséhez
 
 -   Már beállított alkalmazásproxy-összekötőket és összekötő-csoportokat, ha nem, akkor látogasson el [ide](https://docs.microsoft.com/azure/active-directory/active-directory-application-proxy-enable#install-and-register-a-connector) a telepítéshez és konfiguráláshoz
 
@@ -63,7 +61,7 @@ Alapértelmezés szerint a Azure AD Connect azt feltételezi, hogy Active Direct
 Ezért az Azure AD-ből származó, a AD DS által bevitt felhasználókat úgy kell tárolni, hogy az Azure AD ne kísérelje meg a felhasználók Azure AD-beli szinkronizálását.
 Ennek egyik módja egy új szervezeti egység létrehozása AD DSban, és a Azure AD Connect konfigurálása a szervezeti egység kizárásához.  
 
-További információ a [Azure ad Connect Sync: szűrés konfigurálása](https://docs.microsoft.com/en-us/azure/active-directory/connect/active-directory-aadconnectsync-configure-filtering)című témakörben található. 
+További információ a [Azure ad Connect Sync: szűrés konfigurálása](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnectsync-configure-filtering)című témakörben található. 
  
 
 ## <a name="create-the-azure-ad-application"></a>Az Azure AD-alkalmazás létrehozása 
@@ -318,4 +316,4 @@ Az összes konfigurálása után a B2B felhasználói bejelentkezés és az alka
 
 [Helyszíni alkalmazások biztonságos távoli elérése](https://docs.microsoft.com/azure/active-directory/active-directory-application-proxy-get-started)
 
-[Microsoft Graph Microsoft Identity Manager-összekötő letöltése](http://go.microsoft.com/fwlink/?LinkId=717495)
+[Microsoft Graph Microsoft Identity Manager-összekötő letöltése](https://go.microsoft.com/fwlink/?LinkId=717495)

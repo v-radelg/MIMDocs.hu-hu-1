@@ -9,12 +9,12 @@ manager: mtillman
 ms.date: 09/04/2018
 ms.topic: article
 ms.prod: microsoft-identity-manager
-ms.openlocfilehash: 7fb111520f94541672fc56d0fd2ee95bfcd3a49e
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: 9ce531fb3f6f9c831ecdb716f006f947611871e6
+ms.sourcegitcommit: 1ca298d61f6020623f1936f86346b47ec5105d44
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67690746"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76256597"
 ---
 # <a name="use-a-custom-multi-factor-authentication-provider-via-an-api-during-pam-role-activation-or-in-sspr"></a>Egyéni Multi-Factor Authentication-szolgáltató használata egy API-n keresztül a PAM szerepkör aktiválása vagy a SSPR
 
@@ -22,7 +22,7 @@ Az prémium szintű Azure AD vagy az Azure MFA ügyfelei az Azure MFA-t két, a 
 
 A felhasználók két további lehetőség közül választhatnak:
 
- - Egyéni egyszeri jelszavas kézbesítési szolgáltató használata, amely csak a SSPR-forgatókönyvben alkalmazható, és az [önkiszolgáló jelszó-visszaállítás az OTP SMS Gate](https://docs.microsoft.com/en-us/previous-versions/mim/hh824692(v=ws.10)) szolgáltatással való konfigurálásának útmutatójában szerepel.
+ - Egyéni egyszeri jelszavas kézbesítési szolgáltató használata, amely csak a SSPR-forgatókönyvben alkalmazható, és az [önkiszolgáló jelszó-visszaállítás az OTP SMS Gate](https://docs.microsoft.com/previous-versions/mim/hh824692(v=ws.10)) szolgáltatással való konfigurálásának útmutatójában szerepel.
  - Használjon egyéni multi-Factor Authentication telefonos szolgáltatót. Ez a jelen cikkben ismertetett SSPR és PAM-forgatókönyvekben is alkalmazható.
 
 Ez a cikk azt ismerteti, hogyan használható a többtényezős hitelesítés egy egyéni multi-Factor Authentication-szolgáltatóval egy API-n keresztül, valamint egy, az ügyfél által fejlesztett integrációs SDK használatával.  
@@ -32,7 +32,7 @@ Ez a cikk azt ismerteti, hogyan használható a többtényezős hitelesítés eg
 Ha egyéni Multi-Factor Authentication szolgáltatói API-t kíván használni a felhasználói felülettel, a következőkre lesz szüksége:
 
 - Telefonszám az összes jelölt felhasználó esetén
-- [4.5.202.0](https://www.microsoft.com/download/details.aspx?id=57278) -gyorsjavítás vagy újabb – a bejelentések [előzményeinek](reference/version-history.md) megtekintése
+- 4\.5.202.0-gyorsjavítás vagy újabb – a bejelentések [előzményeinek](reference/version-history.md) megtekintése
 - SSPR vagy PAM-hoz konfigurált webkiszolgáló-szolgáltatás
 
 ## <a name="approach-using-custom-multi-factor-authentication-code"></a>Megközelítés egyéni multi-Factor Authentication-kód használatával
@@ -156,6 +156,6 @@ A szolgáltatás újraindítása után a SSPR és/vagy a PAM használatával ér
 
 ## <a name="next-steps"></a>Következő lépések
 
-- [Első lépések az Azure Multi-Factor Authentication-kiszolgálóval](https://docs.microsoft.com/en-us/azure/active-directory/authentication/howto-mfaserver-deploy)
+- [Első lépések az Azure Multi-Factor Authentication-kiszolgálóval](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfaserver-deploy)
 - [Mi az Azure Multi-Factor Authentication](https://docs.microsoft.com/azure/multi-factor-authentication/multi-factor-authentication)
 - [A rendszerfrissítési csomag verziószáma](./reference/version-history.md)

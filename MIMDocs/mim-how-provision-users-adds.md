@@ -9,12 +9,12 @@ ms.date: 08/18/2017
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: ''
-ms.openlocfilehash: 5e259df617c5a95fcd54f49c9cbb70f9cd0c36a4
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: 77f1eb5d8355472c7aee7bc9f389ca8b24ab76a9
+ms.sourcegitcommit: 1ca298d61f6020623f1936f86346b47ec5105d44
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "64519933"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76256614"
 ---
 # <a name="how-do-i-provision-users-to-ad-ds"></a>Felhasználók kiépítése az AD DS-ben
 
@@ -27,7 +27,7 @@ Ez az útmutató a felhasználók a Microsoft® Identity Manager (MIM) 2016 szol
 ## <a name="before-you-begin"></a>Előkészületek
 
 
-Ez a szakasz a dokumentum hatókörével kapcsolatos információkat tartalmaz. A gyakorlati útmutatók általában olyan olvasóknak szólnak, akik már rendelkeznek alapvető ismertekkel az objektumok a MIM szolgáltatással való, [Az első lépéseket ismertető útmutatókban](http://go.microsoft.com/FWLink/p/?LinkId=190486) foglaltak szerinti szinkronizálásáról.
+Ez a szakasz a dokumentum hatókörével kapcsolatos információkat tartalmaz. A gyakorlati útmutatók általában olyan olvasóknak szólnak, akik már rendelkeznek alapvető ismertekkel az objektumok a MIM szolgáltatással való, [Az első lépéseket ismertető útmutatókban](https://go.microsoft.com/FWLink/p/?LinkId=190486) foglaltak szerinti szinkronizálásáról.
 
 ### <a name="audience"></a>Közönség
 
@@ -39,9 +39,9 @@ Jelen útmutató olyan informatikai (IT) szakembereknek szól, akik már rendelk
 
 A dokumentumban feltételezzük, hogy rendelkezik a MIM egy futó példányával, és hogy rendelkezik tapasztalattal az alábbi dokumentumokban felvázolt egyszerű szinkronizálási forgatókönyvek konfigurálásában:
 
--   [Bevezetés a bejövő szinkronizálásba](http://go.microsoft.com/FWLink/p/?LinkId=189652)
+-   [Bevezetés a bejövő szinkronizálásba](https://go.microsoft.com/FWLink/p/?LinkId=189652)
 
--   [Bevezetés a kimenő szinkronizálásba](http://go.microsoft.com/FWLink/p/?LinkId=189653)
+-   [Bevezetés a kimenő szinkronizálásba](https://go.microsoft.com/FWLink/p/?LinkId=189653)
 
 A dokumentumban ismertetett tartalom a bevezető dokumentumok kiegészítésére szolgál.
 
@@ -62,7 +62,7 @@ Az időtartamra vonatkozó becslés feltételezi, hogy a tesztkörnyezet konfigu
 ### <a name="getting-support"></a>Támogatás igénybevétele
 
 
-Ha kérdése merülne fel a dokumentum tartalmával kapcsolatban, vagy valamilyen általános visszajelzést szeretne megtárgyalni, bármikor közzétehet üzenetet a [Forefront Identity Manager 2010 fórumán](http://go.microsoft.com/FWLink/p/?LinkId=189654).
+Ha kérdése merülne fel a dokumentum tartalmával kapcsolatban, vagy valamilyen általános visszajelzést szeretne megtárgyalni, bármikor közzétehet üzenetet a [Forefront Identity Manager 2010 fórumán](https://go.microsoft.com/FWLink/p/?LinkId=189654).
 
 ## <a name="scenario-description"></a>Forgatókönyv leírása
 
@@ -88,7 +88,7 @@ A következő ábra a szükséges környezetet vázolja fel.
 Az összes összetevőt futtathatja egyetlen számítógépen is.
 
 > [!NOTE]
-> A MIM beállításáról további információt a [FIM telepítési útmutatójában](http://go.microsoft.com/FWLink/p/?LinkId=165845) találhat.
+> A MIM beállításáról további információt a [FIM telepítési útmutatójában](https://go.microsoft.com/FWLink/p/?LinkId=165845) találhat.
 
 ## <a name="scenario-components-list"></a>A forgatókönyv összetevőinek listája
 
@@ -124,7 +124,7 @@ Ebben a szakaszban azokra a MIM-környezeten kívüli erőforrásokra vonatkozó
 ### <a name="step-1-create-the-ou"></a>1\. lépés: A szervezeti egység létrehozása
 
 
-A szervezeti egységre a kiépített mintafelhasználó tárolójaként van szükség. A szervezeti egységek létrehozásáról további információt a [Create a New Organizational Unit](http://go.microsoft.com/FWLink/p/?LinkId=189655) (Új szervezeti egység létrehozása) című témakörben találhat.
+A szervezeti egységre a kiépített mintafelhasználó tárolójaként van szükség. A szervezeti egységek létrehozásáról további információt a [Create a New Organizational Unit](https://go.microsoft.com/FWLink/p/?LinkId=189655) (Új szervezeti egység létrehozása) című témakörben találhat.
 
 Hozzon létre egy szervezeti egységet az AD DS-ben MIMObjects néven.
 
@@ -136,7 +136,7 @@ Az útmutatóban ismertetett forgatókönyv esetében két Active Directory-beli
 
 - **FIMMA** – A FIM szolgáltatás kezelőügynöke használja.
 
-Mindkét esetben elegendő normál felhasználói fiókot létrehozni. A két fiókra vonatkozó konkrét követelményekről további információt a dokumentum későbbi részében talál. A felhasználók létrehozásáról további információt a [Create a New User Account](http://go.microsoft.com/FWLink/p/?LinkId=189656) (Új felhasználói fiók létrehozása) című témakörben talál.
+Mindkét esetben elegendő normál felhasználói fiókot létrehozni. A két fiókra vonatkozó konkrét követelményekről további információt a dokumentum későbbi részében talál. A felhasználók létrehozásáról további információt a [Create a New User Account](https://go.microsoft.com/FWLink/p/?LinkId=189656) (Új felhasználói fiók létrehozása) című témakörben talál.
 
 
 ## <a name="configuring-the-fim-synchronization-service"></a>A FIM szinkronizálási szolgáltatás konfigurálása
@@ -154,7 +154,7 @@ Az útmutatóban ismertetett forgatókönyvhöz két kezelőügynököt kell lé
 
 ### <a name="step-3-create-the-fabrikam-adma-management-agent"></a>3\. lépés: A Fabrikam ADMA kezelőügynök létrehozása
 
-Kezelőügynökök az AD DS-hez való konfigurálásakor azt a fiókot kell megadnia, amelyet a kezelőügynök az AD DS-sel való adatcsere során használ majd. Ehhez normál felhasználói fiókot célszerű használni. Ha azonban adatokat szeretne importálni az AD DS-ről, a fióknak rendelkeznie kell jogosultsággal ahhoz, hogy módosításokat kérhessen le a DirSync vezérlőből. Ha azt szeretné, hogy a kezelőügynök adatokat exportáljon az AD DS-be, a fiók számára elegendő jogosultságot kell biztosítania a célként megadott szervezeti egységben. A témakörről további tudnivalókat a [Configuring the ADMA Account](http://go.microsoft.com/FWLink/p/?LinkId=189657) (Az ADMA-fiók konfigurálása) című témakörben találhat.
+Kezelőügynökök az AD DS-hez való konfigurálásakor azt a fiókot kell megadnia, amelyet a kezelőügynök az AD DS-sel való adatcsere során használ majd. Ehhez normál felhasználói fiókot célszerű használni. Ha azonban adatokat szeretne importálni az AD DS-ről, a fióknak rendelkeznie kell jogosultsággal ahhoz, hogy módosításokat kérhessen le a DirSync vezérlőből. Ha azt szeretné, hogy a kezelőügynök adatokat exportáljon az AD DS-be, a fiók számára elegendő jogosultságot kell biztosítania a célként megadott szervezeti egységben. A témakörről további tudnivalókat a [Configuring the ADMA Account](https://go.microsoft.com/FWLink/p/?LinkId=189657) (Az ADMA-fiók konfigurálása) című témakörben találhat.
 
 Ha felhasználót szeretne létrehozni az AD DS-ben, továbbítania kell az objektum megkülönböztető nevét. Továbbá célszerű továbbítani a kereszt- és az utónevet, illetve a megjelenített nevet is annak biztosítása érdekében, hogy az objektumok észlelhetőek legyenek.
 
@@ -163,7 +163,7 @@ Az AD DS-ben továbbra is gyakori, hogy a felhasználók a sAMAccountName attrib
 > [!Note]
 > Győződjön meg arról, hogy az unicodePwd attribútumként megadott érték megfelel a célként megadott AD DS jelszóházirendjeinek.
 
-Amikor jelszót állít be AD DS-fiókok számára, létre kell hoznia egy engedélyezett fiókként beállított fiókot is. Ezt a userAccountControl attribútum beállításával végezheti el. A userAccountControl attribútumról további információt a [Using FIM to Enable or Disable Accounts in Active Directory](http://go.microsoft.com/FWLink/p/?LinkId=189658) (A FIM használata a fiókok az Active Directoryban való engedélyezéséhez vagy letiltásához) című témakörben találhat.
+Amikor jelszót állít be AD DS-fiókok számára, létre kell hoznia egy engedélyezett fiókként beállított fiókot is. Ezt a userAccountControl attribútum beállításával végezheti el. A userAccountControl attribútumról további információt a [Using FIM to Enable or Disable Accounts in Active Directory](https://go.microsoft.com/FWLink/p/?LinkId=189658) (A FIM használata a fiókok az Active Directoryban való engedélyezéséhez vagy letiltásához) című témakörben találhat.
 
 Az alábbi táblázatban azok a forgatókönyvre jellemző legfontosabb beállítások szerepelnek, amelyek konfigurálását el kell végeznie.
 
@@ -187,7 +187,7 @@ További információ a Súgó következő témaköreiben olvasható:
 
 A FIM szolgáltatás kezelőügynökének konfigurálásákor azt a fiókot kell megadnia, amelyet a kezelőügynök a FIM szolgáltatással való adatcsere során használ majd.
 
-Ehhez normál felhasználói fiókot célszerű használni. A fióknak azonosnak kell lennie azzal a fiókkal, amelyet a MIM telepítése során adott meg. A beállítás során megadott FIMMA-fiók nevének meghatározásához használt szkriptről, illetve annak ellenőrzéséről, hogy a fiók még érvényes-e, további információt a Using Windows PowerShell to Do a [FIM MA Account Configuration Quick Test](http://go.microsoft.com/FWLink/p/?LinkId=189659) (A Windows PowerShell használata a FIM MA-fiók konfigurációs gyorstesztjének elvégzéséhez) című témakörben találhat.
+Ehhez normál felhasználói fiókot célszerű használni. A fióknak azonosnak kell lennie azzal a fiókkal, amelyet a MIM telepítése során adott meg. A beállítás során megadott FIMMA-fiók nevének meghatározásához használt szkriptről, illetve annak ellenőrzéséről, hogy a fiók még érvényes-e, további információt a Using Windows PowerShell to Do a [FIM MA Account Configuration Quick Test](https://go.microsoft.com/FWLink/p/?LinkId=189659) (A Windows PowerShell használata a FIM MA-fiók konfigurációs gyorstesztjének elvégzéséhez) című témakörben találhat.
 
 Az alábbi táblázatban azok a forgatókönyvre jellemző legfontosabb beállítások szerepelnek, amelyek konfigurálását el kell végeznie. Hozza létre a kezelőügynököt az alábbi táblázatban szereplő információk alapján.  
 
@@ -231,7 +231,7 @@ Hozza létre az egyes kezelőügynökökhöz tartozó futtatási profilokat a fe
 > 
 > 
 > [!Important]
->  Ellenőrizze, hogy a kiépítés engedélyezett-e a környezetben. Ezt a szkript futtatásával végezheti el a Windows PowerShell használatával a kiépítés engedélyezéséhez (http://go.microsoft.com/FWLink/p/?LinkId=189660).
+>  Ellenőrizze, hogy a kiépítés engedélyezett-e a környezetben. Ezt a szkript futtatásával végezheti el a Windows PowerShell használatával a kiépítés engedélyezéséhez (https://go.microsoft.com/FWLink/p/?LinkId=189660).
 
 
 ## <a name="configuring-the-fim-service"></a>A FIM szolgáltatás konfigurálása
@@ -243,7 +243,7 @@ Az útmutatóban felvázolt forgatókönyvhöz az alábbi ábrán látható mód
 
 A kiépítési szabályzat célja, hogy csoportokat vonjon be az AD-felhasználó kimenő szinkronizálási szabályának hatókörébe. Azáltal, hogy bevonja az erőforrást a szinkronizálási szabály hatókörébe, engedélyezi a szinkronizáló vezérlő számára, hogy a konfigurációjának megfelelően építse ki az erőforrást az AD DS-ben.
 
-A FIM szolgáltatás konfigurálásához navigáljon a Windows Internet Explorer® http://localhost/identitymanagement. A kiépítési szabályzat létrehozásához a MIM-portál oldalán lépjen az Adminisztráció terület kapcsolódó oldalaira. A konfiguráció ellenőrzéséhez futtassa a [Using Windows PowerShell to document your provisioning policy configuration](http://go.microsoft.com/FWLink/p/?LinkId=189661) (A Windows PowerShell használata a kiépítési szabályzat konfigurálásának dokumentálására) című oldalon található szkriptet.
+A FIM szolgáltatás konfigurálásához navigáljon a Windows Internet Explorer® http://localhost/identitymanagement. A kiépítési szabályzat létrehozásához a MIM-portál oldalán lépjen az Adminisztráció terület kapcsolódó oldalaira. A konfiguráció ellenőrzéséhez futtassa a [Using Windows PowerShell to document your provisioning policy configuration](https://go.microsoft.com/FWLink/p/?LinkId=189661) (A Windows PowerShell használata a kiépítési szabályzat konfigurálásának dokumentálására) című oldalon található szkriptet.
 
 ### <a name="step-6-create-the-synchronization-rule"></a>6\. lépés: A szinkronizálási szabály létrehozása
 
@@ -384,7 +384,7 @@ Ezen szakasz célja a tényleges konfiguráció tesztelése. A konfiguráció te
 ### <a name="step-10-create-a-sample-user-in-mim"></a>10. lépés: Mintafelhasználó létrehozása a MIM szolgáltatásban
 
 
-Az alábbi táblázatban a mintafelhasználó tulajdonságai szerepelnek. Hozzon létre egy mintafelhasználót az alábbi táblázatban leírtaknak megfelelően.
+Az alábbi táblázatban a mintafelhasználó tulajdonságai szerepelnek. Hozzon létre egy minta felhasználót az alábbi táblázatban szereplő adatértékek szerint.
 
 | Attribútum                              | Érték                                                          |
 |----------------------------------------|----------------------------------------------------------------|
@@ -417,7 +417,7 @@ Annak ellenőrzéséhez, hogy a felhasználó az Összes alvállalkozó készlet
 
 Annak ellenőrzéséhez, hogy a felhasználó a szinkronizálási szabály hatókörében van-e, nyissa meg a felhasználó tulajdonságlapját, és tekintse át a kiépítési lapon a várt szabályok listázása attribútumot. A várt szabályok listája attribútumnak fel kell sorolnia az AD-felhasználót
 
-kimenő szinkronizálási szabálynak. Az alábbi képernyőfelvételen az Expected Rules List (Elvárt szabályok listája) attribútumra látható egy példa.
+kimenő szinkronizálási szabálynak. Az alábbi képernyőfelvételen a várt szabályok listája attribútum látható.
 
 ![A szinkronizálási szabály állapota](media/how-provision-users-adds/image023.jpg)
 
@@ -459,7 +459,7 @@ A fenti feladatok elvégzéséhez futtassa a következő futtatási profilokat.
 | Fabrikam FIMMA   | 1. exportálás <br/> 2. különbözeti importálás       |
 
 
-A FIM szolgáltatás adatbázisából való importálás után a Britta Simon és a ExpectedRuleEntry objektum, amely a Britta-t az AD-felhasználó kimenő szinkronizálási szabályához csatolja, a fabrikam FIMMA-összekötő területének megfelelően történik. Ha áttekinti a Britta tulajdonságait az összekötő területén, a FIM-portálon konfigurált attribútumérték mellett érvényes hivatkozást is talál a várt szabálykészlet objektumra. A következő képernyőfelvételen erre láthat példát.
+A FIM szolgáltatás adatbázisából való importálás után a Britta Simon és a ExpectedRuleEntry objektum, amely a Britta-t az AD-felhasználó kimenő szinkronizálási szabályához csatolja, a fabrikam FIMMA-összekötő területének megfelelően történik. Ha áttekinti a Britta tulajdonságait az összekötő területén, a FIM-portálon konfigurált attribútumérték mellett érvényes hivatkozást is talál a várt szabálykészlet objektumra. Az alábbi képernyőképen egy példa látható.
 
 ![Összekötőtér-objektum tulajdonságai](media/how-provision-users-adds/image025.jpg)
 
@@ -481,7 +481,7 @@ A Fabrikam FIMMA által végrehajtott ezt követő exportálás során a Britta 
 
 ![Alkalmazott szinkronizálási szabály](media/how-provision-users-adds/image028.jpg)
 
-Mivel új objektum lett kiépítve az ADMA összekötőterében, ezen a kezelőügynökön egyetlen függő exportálás-hozzáadási elemnek kell lennie. Egy erre a célra létrehozott szkripttel egyetlen jelentett függő exportálás-hozzáadás jeleníthető meg a Fabrikam ADMA-n. A szkript használatáról további információt a [Using Windows PowerShell to Display the Export State of a Management Agent](http://go.microsoft.com/FWLink/p/?LinkId=189664) (A Windows PowerShell használata a kezelőügynökök exportálási állapotának megjelenítéséhez) című témakörben találhat.
+Mivel új objektum lett kiépítve az ADMA összekötőterében, ezen a kezelőügynökön egyetlen függő exportálás-hozzáadási elemnek kell lennie. 
 
 ![A kezelőügynök függőben lévő exportálásai](media/how-provision-users-adds/image029.jpg)
 
@@ -507,10 +507,10 @@ Jelen dokumentum célja, hogy megismertesse Önnel a felhasználók a MIM-ben, a
 A konfiguráció tesztelésekor igen nagy a valószínűsége annak, hogy törölnie kell az új tesztobjektumokat, majd újra létre kell hoznia őket. Feltöltött ExpectedRulesList attribútummal
 
 rendelkező objektumok esetében ez árva ERE-objektumokat eredményezhet.
-Arról, hogyan távolíthatja el ezeket az objektumokat a tesztkörnyezetből, az [A Method to Remove Orphaned ExpectedRuleEntry Objects from Your Environment](http://go.microsoft.com/FWLink/p/?LinkId=189667) (Módszer az árva ExpectedRuleEntry objektumok környezetből való eltávolításához) című témakörben találhat további információt.
+Arról, hogyan távolíthatja el ezeket az objektumokat a tesztkörnyezetből, az [A Method to Remove Orphaned ExpectedRuleEntry Objects from Your Environment](https://go.microsoft.com/FWLink/p/?LinkId=189667) (Módszer az árva ExpectedRuleEntry objektumok környezetből való eltávolításához) című témakörben találhat további információt.
 
 Az AD DS-t szinkronizálási célként tartalmazó tipikus szinkronizálási forgatókönyvekben a MIM nem mérvadó az objektumok összes attribútuma esetében. Ha például a FIM segítségével kezel felhasználói objektumokat az AD DS-ben, legalább a domain és az objectSID attribútumot az AD DS kezelőügynökének kell biztosítania.
-Az adott felhasználó FIM-portálra való bejelentkezésének engedélyezéséhez a fióknévre, a tartományra és az objectSID attribútumra van szükség. Ha az AD DS-ből szeretné feltölteni ezeket az attribútumokat, egy további bejövő szinkronizálási szabály szükséges az AD DS-összekötőtérhez. Ha az attribútumértékek több forrásával kezel objektumokat, gondoskodni kell az attribútumfolyamok sorrendjének megfelelő konfigurálásáról. Ha az attribútumfolyamok sorrendje nem a megfelelő módon van konfigurálva, a szinkronizáló vezérlő letiltja az attribútumértékek feltöltését. Az attribútumfolyamok sorrendjéről további információt az [About Attribute Flow Precedence](http://go.microsoft.com/FWLink/p/?LinkId=189675) (Az attribútumfolyamok sorrendjének ismertetése) című témakörben találhat.
+Az adott felhasználó FIM-portálra való bejelentkezésének engedélyezéséhez a fióknévre, a tartományra és az objectSID attribútumra van szükség. Ha az AD DS-ből szeretné feltölteni ezeket az attribútumokat, egy további bejövő szinkronizálási szabály szükséges az AD DS-összekötőtérhez. Ha az attribútumértékek több forrásával kezel objektumokat, gondoskodni kell az attribútumfolyamok sorrendjének megfelelő konfigurálásáról. Ha az attribútumfolyamok sorrendje nem a megfelelő módon van konfigurálva, a szinkronizáló vezérlő letiltja az attribútumértékek feltöltését. Az attribútumfolyamok sorrendjéről további információt az [About Attribute Flow Precedence](https://go.microsoft.com/FWLink/p/?LinkId=189675) (Az attribútumfolyamok sorrendjének ismertetése) című témakörben találhat.
 
 <a name="see-also"></a>Lásd még
 =========
@@ -518,20 +518,18 @@ Az adott felhasználó FIM-portálra való bejelentkezésének engedélyezéséh
 <a name="other-resources"></a>Egyéb források
 ---------------
 
-[Using FIM to Enable or Disable Accounts in Active Directory](http://go.microsoft.com/FWLink/p/?LinkId=189670) (A FIM használata a fiókok az Active Directoryban való engedélyezéséhez vagy letiltásához)
+[Using FIM to Enable or Disable Accounts in Active Directory](https://go.microsoft.com/FWLink/p/?LinkId=189670) (A FIM használata a fiókok az Active Directoryban való engedélyezéséhez vagy letiltásához)
 
-[About Reference Attributes](http://go.microsoft.com/FWLink/p/?LinkId=189671) (A hivatkozási attribútumok ismertetése)
+[A hivatkozási attribútumok feldolgozásának ismertetése](https://go.microsoft.com/FWLink/p/?LinkId=189671)
 
-[How Can I Manage My FIM MA Account](http://go.microsoft.com/FWLink/p/?LinkId=189672) (Saját FIM MA-fiók kezelése)
+[A FIM MA-fiók kezelése](https://go.microsoft.com/FWLink/p/?LinkId=189672)
 
-[Detecting Nonauthoritative Accounts – Part 1: Envisioning](http://go.microsoft.com/FWLink/p/?LinkId=189673) (A nem mérvadó fiókok észlelése – 1. rész: Alapvető tervezés)
+[Nem mérvadó fiókok észlelése – 1. rész: tervezés](https://go.microsoft.com/FWLink/p/?LinkId=189673)
 
-[The Poor Man’s Version of a Connector Detection Mechanism](http://go.microsoft.com/FWLink/p/?LinkId=189674) (Az összekötő-észlelési mechanizmus egyszerű változata)
+[Összekötők észlelése](https://go.microsoft.com/FWLink/p/?LinkId=189674)
 
-[Configuring the ADMA Account](http://go.microsoft.com/FWLink/p/?LinkId=189657) (Az ADMA-fiók konfigurálása)
+[Az ADMA-fiók konfigurálása](https://go.microsoft.com/FWLink/p/?LinkId=189657)
 
-[A Method to Remove Orphaned ExpectedRuleEntry Objects from Your Environment](http://go.microsoft.com/FWLink/p/?LinkId=189667) (Módszer az árva ExpectedRuleEntry objektumok környezetből való eltávolítására)
+[About Attribute Flow Precedence](https://go.microsoft.com/FWLink/p/?LinkId=189675) (Az attribútumfolyamok sorrendjének ismertetése)
 
-[About Attribute Flow Precedence](http://go.microsoft.com/FWLink/p/?LinkId=189675) (Az attribútumfolyamok sorrendjének ismertetése)
-
-[About Exports](http://go.microsoft.com/FWLink/p/?LinkId=189676) (Az exportálások ismertetése)
+[Az export ismertetése](https://social.technet.microsoft.com/wiki/contents/articles/1861.understanding-exports-in-ilm-2007.aspx)
