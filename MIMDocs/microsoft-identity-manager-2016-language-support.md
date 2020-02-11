@@ -48,7 +48,7 @@ A Microsoft fakiszolgálói szolgáltatás és a portál nyelvi csomagja a köve
 |       magyar       |          hu-HU           |      hu      |
 |        Olasz        |          informatikai           |      it      |
 |       Japán        |          ja-JP           |      ja      |
-|        koreai         |          ko-KR           |      ko      |
+|        Koreai         |          ko-KR           |      ko      |
 |      litván       |          lt-LT           |      lt      |
 |        lett        |          lv-LV           |      lv      |
 |       norvég       |          NB-nem           |    NB-nem     |
@@ -98,7 +98,7 @@ A Microsoft Certificate Management modern alkalmazás a következő 33 nyelveket
 |magyar|hu-HU|hu|
 |Olasz|informatikai|it|
 |Japán|ja-JP|ja|
-|koreai|ko-KR|ko|
+|Koreai|ko-KR|ko|
 |norvég|NB-nem|NB-nem|
 |Lengyel|pl-PL|pl|
 |portugál (Portugália)|PT-PT|pt|
