@@ -11,12 +11,12 @@ ms.prod: microsoft-identity-manager
 ms.assetid: 50345fda-56d7-4b6e-a861-f49ff90a8376
 ms.reviewer: markwahl-msft
 ms.suite: ems
-ms.openlocfilehash: a74f4074d9a0cf8378fd4972b7f51f723bd2f1c6
-ms.sourcegitcommit: 80cdfd782cc6e2a4c4698decd54342f0e1460f5f
+ms.openlocfilehash: be5dc1e8615f56d3157a78891e80897e446eafab
+ms.sourcegitcommit: 32c7a46b2f8ed3f2f9ebc6f79a4ecb0019fe62e0
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75756273"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77527922"
 ---
 # <a name="configure-a-domain-for-group-managed-service-accounts-gmsa-scenario"></a>Tartományon belüli felügyelt szolgáltatásfiókok (gMSA-) forgatókönyv konfigurálása
 
@@ -28,7 +28,7 @@ ms.locfileid: "75756273"
 
 A Microsoft Identity Manager (MIM) az Ön Active Directory- (AD-) tartományával együtt is használható. Az AD-nek már telepítve kell lennie, és győződjön meg arról is, hogy a környezetében rendelkezik egy tartományvezérlővel egy felügyelhető tartományhoz.  Ez a cikk azt ismerteti, hogyan állítható be csoportosan felügyelt szolgáltatásfiókok az adott tartományban a felügyeleti webszolgáltatások használatához.
 
-## <a name="overview"></a>Overview
+## <a name="overview"></a>Házirend
 
 A csoportosan felügyelt szolgáltatásfiókok szükségtelenné teszik a szolgáltatásfiók jelszavának rendszeres módosítását. A (z) 2016 SP2 kiadásával a következő, a telepítési folyamat során használandó gMSA-fiókokkal rendelkezhet:
 
@@ -61,7 +61,7 @@ A MIM-telepítés minden összetevőjének saját identitással kell rendelkezni
 
 
 > [!NOTE]
-> Ez az útmutató egy Contoso nevű fiktív vállalat neveit és értékeit használja szemléltetésként. Ezeket helyettesítse a saját neveivel és értékeivel. Példa:
+> Ez az útmutató egy Contoso nevű fiktív vállalat neveit és értékeit használja szemléltetésként. Ezeket helyettesítse a saját neveivel és értékeivel. Például:
 > - Tartományvezérlő neve – **DC**
 > - Tartománynév – **contoso**
 > - **Mimservice** -kiszolgáló neve
@@ -109,7 +109,7 @@ A MIM-telepítés minden összetevőjének saját identitással kell rendelkezni
 4.  Állítson be egyszerű szolgáltatásneveket (SPN), amivel lehetővé válik a Kerberos hitelesítés használata a szolgáltatásfiókokhoz.
 
     ```PowerShell
-    Set-ADServiceAccount -Identity svcMIMAppPool -ServicePrincipalNames @{Add="http/mim.contoso.com"}
+    setspn -S http/mim.contoso.com contoso\svcMIMAppPool
     ```
 
 5.  Ügyeljen arra, hogy regisztrálja a következő DNS "A" rekordokat a megfelelő névfeloldáshoz (feltéve, hogy a rendszer ugyanazon a gépen fogja üzemeltetni a webhelyeket, valamint a rendszerállapot-portált, a jelszó-visszaállítási és a jelszó-regisztrálási
