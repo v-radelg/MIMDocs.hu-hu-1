@@ -19,7 +19,7 @@ ms.openlocfilehash: 12f245624e644b12825239e378a26752f7a86846
 
 ---
 
-# A MIM 2016 kibocsátási megjegyzései
+# A MIM 2016 kibocsátási megjegyzései<!--test-->
 Egyelőre nincsenek kibocsátási megjegyzések.
 
 
