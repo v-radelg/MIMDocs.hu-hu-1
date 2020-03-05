@@ -2,21 +2,21 @@
 title: A Microsoft Identity Manager szolgáltatás és -portál telepítése | Microsoft Docs
 description: Itt olvashatók a Microsoft Identity Manager 2016 rendszerhez tartozó MIM szolgáltatás és -portál telepítési és konfigurálási lépései.
 keywords: ''
-author: billmath
-ms.author: billmath
-manager: mtillman
+author: EugeneSergeev
+ms.author: esergeev
+manager: aashiman
 ms.date: 10/18/2019
 ms.topic: conceptual
 ms.prod: microsoft-identity-manager
 ms.assetid: b0b39631-66df-4c5f-80c9-a1774346f816
 ms.reviewer: markwahl-msft
 ms.suite: ems
-ms.openlocfilehash: 1f7aa8e257ef4fd1d97ee602a4e0f3f878d8c1b6
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: 4604c17d3e58c57f9819aaa036dc12a669aed55d
+ms.sourcegitcommit: d98a76d933d4d7ecb02c72c30d57abe3e7f5d015
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73568074"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78289499"
 ---
 # <a name="install-mim-2016-mim-service-and-portal"></a>A MIM 2016 telepítése: A MIM szolgáltatás és -portál
 
@@ -25,7 +25,7 @@ ms.locfileid: "73568074"
 > [Adatbázisok szinkronizálása »](install-mim-sync-ad-service.md)
  
 > [!NOTE]
-> Ez az útmutató egy Contoso nevű fiktív vállalat neveit és értékeit használja szemléltetésként. Ezeket helyettesítse a saját neveivel és értékeivel. Példa:
+> Ez az útmutató egy Contoso nevű fiktív vállalat neveit és értékeit használja szemléltetésként. Ezeket helyettesítse a saját neveivel és értékeivel. Például:
 > - Tartományvezérlő neve – **mimservername**
 > - Tartománynév – **contoso**
 > - Jelszó – <strong>Pass@word1</strong>
@@ -51,6 +51,11 @@ Ha a legutóbbi lépésben nem telepítette a MIM telepítőcsomagját, akkor a 
     ![Kép: A MIM-adatbázis kapcsolatának konfigurálása](media/install-mim-service-portal/MIM_Install10.png)
 
 7. A **levelezési kiszolgáló kapcsolatainak konfigurálása**területen adja meg az Exchange-kiszolgáló nevét **levelezési kiszolgálóként** , vagy használhatja a **O365-postaládát**. Ha nincs levelezőkiszolgáló konfigurálva, akkor a **localhost** nevet adja meg, és törölje a felső két négyzet jelölését. Kattintson a **Tovább**gombra.
+    >[!NOTE]
+    >Felügyeleti csomag 2016 SP2 és újabb verziók: Ha csoportosan felügyelt szolgáltatásfiókok vannak használatban, jelölje be **a másik felhasználó használata az Exchange-hez** jelölőnégyzetet, akkor is, ha nem tervezi az Exchange használatát.
+    
+    >[!NOTE]
+    >Ha az **Exchange Online használata** lehetőség van kiválasztva, hogy a fakiszolgálói szolgáltatás engedélyezze a HKLM\SYSTEM\CurrentControlSet\Services\FIMService-hez tartozó engedélyezési válaszokat, a telepítés után a PollExchangeEnabled 1. számú beállításkulcs értékét 1-re kell állítania.
 
     ![Kép: A levelezőkiszolgálóval való kapcsolat beállítása](media/install-mim-service-portal/MIM_Install11.png)
 

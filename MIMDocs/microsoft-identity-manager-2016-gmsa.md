@@ -1,26 +1,26 @@
 ---
 title: A gMSA-specifikus szolgáltatások átalakítása a következőre | Microsoft Docs
 description: A gMSA konfigurálásának alapvető lépéseit ismertető témakör.
-author: billmath
-ms.author: billmath
-manager: mtillman
+author: EugeneSergeev
+ms.author: esergeev
+manager: aashiman
 ms.date: 06/27/2018
 ms.topic: article
 ms.prod: microsoft-identity-manager
-ms.openlocfilehash: 96d375d82a71a21f0be444d628f387c4e1ffdd09
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: 49216a2d2077dd1be83f17719e996a20abb61cf8
+ms.sourcegitcommit: d98a76d933d4d7ecb02c72c30d57abe3e7f5d015
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "64520566"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78289515"
 ---
 # <a name="conversion-of-mim-specific-services-to-gmsa"></a>GMSA-specifikus szolgáltatások átalakítása
 
 Ez az útmutató végigvezeti a támogatott szolgáltatások gMSA konfigurálásához szükséges alapvető lépéseken. A gMSA konvertálásának folyamata egyszerű, ha előre konfigurálja a környezetet.
 
-Gyorsjavítás szükséges: \<hivatkozás a legújabb TUDÁSBÁZISra\>
+Gyorsjavítás szükséges: [4.5.26.0 vagy újabb](https://docs.microsoft.com/microsoft-identity-manager/reference/version-history)
 
-Támogatott
+Támogatott:
 
 -   Webkiszolgálói szinkronizációs szolgáltatás (FIMSynchronizationService)
 -   FIMService-szolgáltatás
@@ -36,7 +36,7 @@ Nem támogatott:
 -   Microsoft Tanúsítványkezelő
 -   BHOLD
 
-<a name="general-information"></a>Általános információk 
+<a name="general-information"></a>Általános információ 
 --------------------
 
 A telepítés és a megértés befejezéséhez szükséges olvasás
@@ -163,7 +163,9 @@ Első lépés a Windows-tartományvezérlőn
 4.  Futtassa a fakiszolgáló emelt szintű MSI-szolgáltatását, és válassza a módosítás lehetőséget.
 
 5.  A "fő kiszolgáló kapcsolatainak konfigurálása" lapon jelölje be a "másik fiók használata az Exchange-hez (felügyelt fiókok esetében)" jelölőnégyzetet. Itt lehetősége lesz használni a régi fiókot, amely rendelkezik postaládával vagy Felhőbeli postaláda használatával.
-
+    >[!NOTE]
+    >Ha az **Exchange Online használata** lehetőség van kiválasztva, hogy a fakiszolgálói szolgáltatás engedélyezze a HKLM\SYSTEM\CurrentControlSet\Services\FIMService-hez tartozó engedélyezési válaszokat, a telepítés után a PollExchangeEnabled 1. számú beállításkulcs értékét 1-re kell állítania.
+    
 ![](media/0cd8ce521ed7945c43bef6100f8eb222.png)
 
 6.  A "címtárszolgáltatás-szolgáltatásfiók konfigurálása" lapon írja be a következőt: \$ szimbólum a végén. Írja be a szolgáltatás E-mail fiókjának jelszavát is. A szolgáltatásfiók jelszavát le kell tiltani.
