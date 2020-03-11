@@ -5,16 +5,16 @@ keywords: ''
 author: billmath
 ms.author: billmath
 ms.reviewer: fimguy
-manager: mtillman
+manager: daveba
 ms.date: 09/04/2018
 ms.topic: article
 ms.prod: microsoft-identity-manager
-ms.openlocfilehash: 9ce531fb3f6f9c831ecdb716f006f947611871e6
-ms.sourcegitcommit: 1ca298d61f6020623f1936f86346b47ec5105d44
+ms.openlocfilehash: b157b2a8716d20ce3b472d5655d393e64f2baa6b
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76256597"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79044361"
 ---
 # <a name="use-a-custom-multi-factor-authentication-provider-via-an-api-during-pam-role-activation-or-in-sspr"></a>Egyéni Multi-Factor Authentication-szolgáltató használata egy API-n keresztül a PAM szerepkör aktiválása vagy a SSPR
 
@@ -154,8 +154,8 @@ A szolgáltatás újraindítása után a SSPR és/vagy a PAM használatával ér
 > Ha vissza szeretné állítani a beállítást, cserélje le a MfaSettings. xml fájlt a biztonságimásolat-fájlra a 3. lépésben
 
 
-## <a name="next-steps"></a>Következő lépések
+## <a name="next-steps"></a>További lépések
 
-- [Első lépések az Azure Multi-Factor Authentication-kiszolgálóval](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfaserver-deploy)
+- [Első lépések az Azure Multi-Factor Authentication-kiszolgáló](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfaserver-deploy)
 - [Mi az Azure Multi-Factor Authentication](https://docs.microsoft.com/azure/multi-factor-authentication/multi-factor-authentication)
 - [A rendszerfrissítési csomag verziószáma](./reference/version-history.md)

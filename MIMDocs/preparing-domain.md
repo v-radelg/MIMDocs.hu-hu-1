@@ -4,19 +4,19 @@ description: Active Directory-tartományvezérlő létrehozása a MIM 2016 telep
 keywords: ''
 author: billmath
 ms.author: billmath
-manager: mtillman
+manager: daveba
 ms.date: 10/26/2017
 ms.topic: conceptual
 ms.prod: microsoft-identity-manager
 ms.assetid: 50345fda-56d7-4b6e-a861-f49ff90a8376
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 4d1e555de6c926c65b76d01c341becb383b8930b
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: 70ac40d38af06e6be98e00caf1dc73630b62334e
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73329344"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79043477"
 ---
 # <a name="set-up-a-domain"></a>Tartomány beállítása
 
@@ -32,7 +32,7 @@ Ez a cikk részletesen ismerteti a lépéseket, amelyekkel előkészítheti a ta
 A MIM-telepítés minden összetevőjének saját identitással kell rendelkeznie a tartományban. Ez vonatkozik az olyan MIM-összetevőkre is, mint a Service, a Sync, a SharePoint és az SQL.
 
 > [!NOTE]
-> Ez az útmutató egy Contoso nevű fiktív vállalat neveit és értékeit használja szemléltetésként. Ezeket helyettesítse a saját neveivel és értékeivel. Példa:
+> Ez az útmutató egy Contoso nevű fiktív vállalat neveit és értékeit használja szemléltetésként. Ezeket helyettesítse a saját neveivel és értékeivel. Például:
 > - Tartományvezérlő neve – **corpdc**
 > - Tartománynév – **contoso**
 > - **Corpservice** -kiszolgáló neve

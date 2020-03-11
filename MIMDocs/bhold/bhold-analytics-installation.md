@@ -4,17 +4,17 @@ description: A BHOLD Analytics-modul az adathozzáférés szabályon alapuló te
 keywords: ''
 author: billmath
 ms.author: billmath
-manager: mtillman
+manager: daveba
 ms.date: 09/07/2017
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: ''
-ms.openlocfilehash: ec7069156aa033b33a139ae83e26abcdea7b482a
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: 7d26abb58fa976d40638b9512d5684d86f483378
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "64516874"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79041930"
 ---
 # <a name="bhold-analytics-installation"></a>BHOLD Analytics telepítése
 
@@ -45,7 +45,7 @@ Cserélje le *\<version\>* a telepítendő BHOLD Analytics-kiadás verziószám�
 
 A programfájl rendszergazdaként való futtatásához kattintson a jobb gombbal a fájlra, majd kattintson a **Futtatás rendszergazdaként**parancsra.
 
-# <a name="next-steps"></a>További lépések
+## <a name="next-steps"></a>További lépések
 
 - [BHOLD Core-telepítés](https://technet.microsoft.com/library/jj134095(v=ws.10).aspx)
 - [BHOLD telepítési útmutató](bhold-installation-guide.md)

@@ -4,17 +4,17 @@ description: BHOLD integrációs modul – önkiszolgáló szerepkör-kezelés h
 keywords: ''
 author: billmath
 ms.author: billmath
-manager: mtillman
+manager: daveba
 ms.date: 09/12/2017
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: ''
-ms.openlocfilehash: 317c9ae4c940a509b6ac328cd5bb7cd7baa4dde9
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: 3005e06606ec4b3b6854003213c712770376b35d
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "64516026"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79042202"
 ---
 # <a name="bhold-fimmim-integration-installation"></a>BHOLD FIM/a webalkalmazás-integráció telepítése
 
@@ -30,7 +30,7 @@ A BHOLD FIM integrációs moduljának telepítése előtt a következő szoftver
 - Internet Information Services és ASP.NET
 - Microsoft Silverlight-eszközök
 
-Emellett a BHOLD Core-és hozzáférés-kezelési összekötő moduljainak már telepítve kell lennie a környezetben található kiszolgálón, és a FIM-t egy vagy több BHOLD-felügyeleti ügynökkel kell konfigurálni. Az BHOLD Core modul telepítésével és konfigurálásával kapcsolatos információkért lásd: [BHOLD Core telepítés](https://technet.microsoft.com/library/jj134095(v=ws.10).aspx). További információ a hozzáférés-kezelési összekötő modul telepítéséről és használatáról: az [Access Management Connector telepítése](https://technet.microsoft.com/library/jj874042(v=ws.10).aspx) és a [tesztelési labor útmutatója: A BHOLD hozzáférés-kezelési összekötő](https://technet.microsoft.com/library/jj853085(v=ws.10).aspx).
+Emellett a BHOLD Core-és hozzáférés-kezelési összekötő moduljainak már telepítve kell lennie a környezetben található kiszolgálón, és a FIM-t egy vagy több BHOLD-felügyeleti ügynökkel kell konfigurálni. Az BHOLD Core modul telepítésével és konfigurálásával kapcsolatos információkért lásd: [BHOLD Core telepítés](https://technet.microsoft.com/library/jj134095(v=ws.10).aspx). További információ a hozzáférés-kezelési összekötő modul telepítéséről és használatáról: a [hozzáférés-vezérlési összekötő telepítése](https://technet.microsoft.com/library/jj874042(v=ws.10).aspx) és a [tesztelési labor útmutatója: BHOLD Access Management Connector](https://technet.microsoft.com/library/jj853085(v=ws.10).aspx).
 
 > [!IMPORTANT]
 > A FIM szolgáltatás-adatbázis nevének FIMService kell lennie. A BHOLD FIM-integráció telepítése sikertelen lesz, ha a FIM nincs telepítve az alapértelmezett FIM szolgáltatás-adatbázis nevével.
@@ -48,14 +48,14 @@ Emellett elő kell készítenie azokat az információkat, amelyeket a BHOLD FIM
 | **Biztonsági szolgáltató használata a tartományban** | Ha be van jelölve, akkor a Active Directory tartományi szolgáltatások biztonság szabályozza a BHOLD mag elérését.                                                                                                                    | Jelölje be a jelölőnégyzetet. **Fontos:** Ha ez a jelölőnégyzet nincs bejelölve, a telepítés sikertelen lesz.                                                                                                                                                                                                                   |
 | **Tartomány**                          | A BHOLD Core telepítésekor létrehozott **szolgáltatásfiókot** tartalmazó tartományt adja meg. További információ: [BHOLD Core telepítés](https://technet.microsoft.com/library/jj134095(v=ws.10).aspx). | A tartomány nevét a varázsló automatikusan megadja. A név csak akkor módosítható, ha helytelen. **Fontos:** A tartománynevet a NetBIOS (rövid) név használatával adja meg, ne a teljes tartománynevet (FQDN). Ha például a tartomány teljes tartományneve fabrikam.com, adja meg a tartománynevet FABRIKAM néven. |
 | **Felhasználónév**                        | Megadja a BHOLD Core szolgáltatás felhasználói fiókjának bejelentkezési nevét.                                                                                                                                                              | Írja be a felhasználói fiók nevét:                                                                                                                                                                                                                                                                                    |
-| **Jelszó**                        | Megadja a szolgáltatás felhasználói fiókjának jelszavát.                                                                                                                                                                           | Írja be a jelszót itt: **Fontos:** Ügyeljen arra, hogy a jelszót rejtett, biztonságos helyen tárolja.                                                                                                                                                                                                                  |
+| **Jelszó**                        | Megadja a szolgáltatás felhasználói fiókjának jelszavát.                                                                                                                                                                           | Írja be a jelszót itt: **Fontos:** ügyeljen arra, hogy a jelszót rejtett, biztonságos helyen tárolja.                                                                                                                                                                                                                  |
 
 ### <a name="fim-service-settings"></a>FIM szolgáltatás beállításai
 
 | **Elem**            | **Leírás**                                                                                                                                                                                                                               | **Érték**                                                                                           |
 |---------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
 | **Felhasználó**            | Megadja egy olyan fiók bejelentkezési nevét, amely rendszergazdai jogosultságokkal rendelkezik a FIM-hez. A Microsoft nyomatékosan javasolja, hogy ne használja a root felhasználóhoz társított fiókot a BHOLD Core-ban (alapértelmezés szerint az BHOLD Core telepítéséhez használt fiók). | Írja be a felhasználói fiók nevét:                                                                   |
-| **Jelszó**        | Megadja a FIM-rendszergazda felhasználói fiók jelszavát.                                                                                                                                                                                 | Írja be a jelszót itt: **Fontos:** Ügyeljen arra, hogy a jelszót rejtett, biztonságos helyen tárolja. |
+| **Jelszó**        | Megadja a FIM-rendszergazda felhasználói fiók jelszavát.                                                                                                                                                                                 | Írja be a jelszót itt: **Fontos:** ügyeljen arra, hogy a jelszót rejtett, biztonságos helyen tárolja. |
 | **FIM-adatbázis**    | Megadja a FIM szolgáltatás adatbázisának nevét.                                                                                                                                                                                               | FIMService                                                                                          |
 | **Webhely IP-címe/port** | Megadja a FIM-portál kiszolgálójának nevét vagy IP-címét, valamint a webhely portját.                                                                                                                                                               | Itt írhatja be a kiszolgáló nevét vagy a portot:                                                     |
 
@@ -65,7 +65,7 @@ Emellett elő kell készítenie azokat az információkat, amelyeket a BHOLD FIM
 |------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
 | **Tartomány**             | Megadja a **felhasználó**által megadott fiók tartományának nevét. A tartományt a NetBIOS (rövid) formátumban kell megadni.                                                                                                                                                                                                                                                                   | Itt írhatja a felhasználói fiók tartománynevét?                                                            |
 | **Felhasználó**               | Meghatározza **egy BHOLD-felhasználó** fiókjának bejelentkezési nevét, amely az összes felhasználó és szerepkör felettese, és jogosult a felhasználói szerepkörök összekapcsolására és leválasztására. A Microsoft nyomatékosan javasolja, hogy ne használja a root felhasználóhoz társított fiókot a BHOLD Core-ban (alapértelmezés szerint az BHOLD Core telepítéséhez használt fiók). Ez a fiók lehet ugyanaz a fiók, amelyet a FIM-hez való kapcsolódáshoz használ. | Írja be a felhasználói fiók nevét:                                                                   |
-| **Jelszó**           | Megadja a **felhasználó**által megadott felhasználói fiók jelszavát.                                                                                                                                                                                                                                                                                                                             | Írja be a jelszót itt: **Fontos:** Ügyeljen arra, hogy a jelszót rejtett, biztonságos helyen tárolja. |
+| **Jelszó**           | Megadja a **felhasználó**által megadott felhasználói fiók jelszavát.                                                                                                                                                                                                                                                                                                                             | Írja be a jelszót itt: **Fontos:** ügyeljen arra, hogy a jelszót rejtett, biztonságos helyen tárolja. |
 | **IP-cím/számítógép címe** | Megadja az BHOLD Core webhely kiszolgálójának IP-címét. A kiszolgáló nevét ne használja.                                                                                                                                                                                                                                                                                                        | Írja be az IP-címet itt:                                                                          |
 | **Portszám**        | A BHOLD Core webhely portszámát adja meg.                                                                                                                                                                                                                                                                                                                                          | Írja be ide a portszámot:                                                                         |
 
@@ -101,11 +101,11 @@ Ahhoz, hogy megfelelően működjön, a BHOLD FIM-integráció megköveteli, hog
 
 5.  A **csoportok** területen kattintson a **csapattagok**elemre, majd a középső ablaktábla eszköztárán kattintson az **új**, majd a **felhasználók hozzáadása**elemre.
 
-6.  A **felhasználók hozzáadása: A csoportwebhely** lap **felhasználók/csoportok**területén írja be a BHOLDApplicationGroup nevet, majd kattintson a Névellenőrzés gombra a **felhasználók/csoportok** mezőben. A csoport nevét fel kell oldani, hogy tartalmazza a tartománynevet.
+6.  A felhasználók **hozzáadása: csoportwebhely** oldal **felhasználók/csoportok**területén írja be a BHOLDApplicationGroup nevet, majd kattintson a Névellenőrzés gombra a **felhasználók/csoportok** mezőben. A csoport nevét fel kell oldani, hogy tartalmazza a tartománynevet.
 
 7.  Kattintson a **felhasználók engedélyeinek közvetlen megadása**lehetőségre, válassza a **teljes hozzáférés lehetőséget – teljes hozzáférés**lehetőséggel, majd kattintson **az OK**gombra.
 
-8.  Ellenőrizze, hogy a BHOLDApplicationGroup szerepel-e **engedélyekben: A csoportwebhely**, majd az Internet Explorer bezárásával.
+8.  Ellenőrizze, hogy a BHOLDApplicationGroup szerepel-e az **engedélyek: csoportwebhely**területen, majd kattintson az Internet Explorer elemre.
 
 ![MSI futtatása](media/bhold-integration-installation/sharepoint.png)
 

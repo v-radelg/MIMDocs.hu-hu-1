@@ -4,7 +4,7 @@ description: További információk a Privileged Access Managementről, valamint
 keywords: ''
 author: billmath
 ms.author: billmath
-manager: mtillman
+manager: daveba
 ms.date: 08/30/2017
 ms.topic: article
 ms.prod: microsoft-identity-manager
@@ -13,12 +13,12 @@ ms.reviewer: mwahl
 ms.suite: ems
 experimental: true
 experiment_id: kgremban_images
-ms.openlocfilehash: 3855842f0339e2611c75761484de9c059eec6fa0
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: 1d00b232d8c7b09fea72e033a51dd590992291c3
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "64518790"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79043902"
 ---
 # <a name="privileged-access-management-for-active-directory-domain-services"></a>Privileged Access Management az Active Directory Domain Serviceshez
 
@@ -50,7 +50,7 @@ A PAM megnehezíti a támadók számára, hogy behatoljanak a hálózatokra, és
 
 ## <a name="setting-up-pam"></a>A PAM beállítása
 
-A PAM a szükséges időben (just-in-time) történő felügyelet elvére épül, amely összefügg az [éppen elég felügyelettel (just enough administration, JEA)](http://channel9.msdn.com/Events/TechEd/NorthAmerica/2014/DCIM-B362). A JEA egy Windows PowerShell-eszközkészlet, amely a Kiemelt tevékenységek végrehajtásához használható parancsokat határoz meg. Ez egy olyan végpont, amelyben a rendszergazdák engedélyt kaphatnak a parancsok futtatására. A JEA-ban egy rendszergazda dönti el, hogy milyen jogosultságra van szükségük a felhasználóknak ahhoz, hogy elvégezzenek egy feladatot. Minden alkalommal, amikor egy jogosult felhasználónak el kell végeznie ezt a feladatot, aktiválják ezt az engedélyt. Meghatározott idő elteltével az engedélyek lejárnak, hogy egy rosszindulatú felhasználó el ne lophassa a hozzáférési jogosultságot.
+A PAM a szükséges időben (just-in-time) történő felügyelet elvére épül, amely összefügg az [éppen elég felügyelettel (just enough administration, JEA)](https://channel9.msdn.com/Events/TechEd/NorthAmerica/2014/DCIM-B362). A JEA egy Windows PowerShell-eszközkészlet, amely a Kiemelt tevékenységek végrehajtásához használható parancsokat határoz meg. Ez egy olyan végpont, amelyben a rendszergazdák engedélyt kaphatnak a parancsok futtatására. A JEA-ban egy rendszergazda dönti el, hogy milyen jogosultságra van szükségük a felhasználóknak ahhoz, hogy elvégezzenek egy feladatot. Minden alkalommal, amikor egy jogosult felhasználónak el kell végeznie ezt a feladatot, aktiválják ezt az engedélyt. Meghatározott idő elteltével az engedélyek lejárnak, hogy egy rosszindulatú felhasználó el ne lophassa a hozzáférési jogosultságot.
 
 A PAM üzembe helyezése és működtetése négy lépésből áll.
 

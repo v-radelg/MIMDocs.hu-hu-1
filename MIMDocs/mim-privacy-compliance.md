@@ -4,18 +4,18 @@ description: Ismerje meg Microsoft Identity Manager az adatkezelést, hogy inden
 keywords: ''
 author: billmath
 ms.author: billmath
-manager: mtillman
+manager: daveba
 ms.date: 12/02/2018
 ms.topic: conceptual
 ms.prod: microsoft-identity-manager
 ms.assetid: b0b39631-66df-4c5f-80c9-a1774346f816
 ms.suite: ems
-ms.openlocfilehash: 6f861c5b1984de70a91edcac89276402f289e355
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: e95cf26b62e582eaa3c07c40e551bc5930d3b1b0
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68701483"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79044106"
 ---
 # <a name="microsoft-identity-manager-data-handling"></a>Az adatkezelés Microsoft Identity Manager 
 
@@ -34,7 +34,7 @@ Az alábbiakban néhány forgatókönyv szerint az ügyfeleknek meg kell fontoln
 Az aktuális webszolgáltatási környezet megismerése érdekében a következő eszköz használatával dokumentálhatja a webalkalmazási környezetét, vagy elhalaszthatja a megvalósítási terv dokumentumait.
 - [Webkiszolgáló-dokumentáló – lehetővé teszi az aktuális konfiguráció exportálását](https://github.com/Microsoft/MIMConfigDocumenter)
 
-## <a name="searching-for-and-identifying-personal-data"></a>Személyes adatok keresése és azonosítása
+## <a name="searching-for-and-identifying-personal-data"></a>Személyes adatkeresés és-azonosítás
 A munkaterületen belüli keresés a konfigurációtól és a beállítástól függ. A legtöbb környezet összekapcsolódik, de az érthetőség érdekében magas szintű összetevővel szakítottuk ki őket.
 
 ### <a name="synchronization-service"></a>Synchronization Service
@@ -129,7 +129,7 @@ A felhasználók közvetlenül frissíthetők a BHOLD Core felhasználói felül
 
 A Tanúsítványkezelő szolgáltatásban a felhasználók az Active Directoryból is tükröződnek. Ha frissíteni szeretné a használati Active Directory az objektum adatainak módosításához.
 
-## <a name="deleting-personal-data"></a>Személyes adatok törlése
+## <a name="deleting-personal-data"></a>Személyes adatok törléséről
 
 >[!Note] 
 > Ez a cikk útmutatást nyújt a személyes adatok Microsoft Identity Managerból való törlésének módjairól, és felhasználható a GDPR tartozó kötelezettségek támogatásához is. A GDPR-ral kapcsolatos általános információt a [Service Trust Portal GDPR szakaszában](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted) talál.
@@ -177,7 +177,7 @@ vagy szerkessze a beállításjegyzéket, és állítsa az értéket 0: (összet
 
 ![ceip2 – adatvédelem – megfelelőség – adatvédelmi nyilatkozat. PNG](media/mim-privacy-compliance/mim-privacy-compliance-ceip2.PNG)
 
-## <a name="next-steps"></a>Következő lépések 
+## <a name="next-steps"></a>További lépések 
 - [Az SQL-hez kapcsolódó adatvédelmi útmutató](https://docs.microsoft.com/sql/relational-databases/security/microsoft-sql-and-the-gdpr-requirements?view=sql-server-2017)
 - [A szolgáltatási megbízhatósági portál GDPR szakasza](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted)
 - [FIM 2010 archívum: üzembe helyezés a Forefront Identity Manager 2010](https://social.technet.microsoft.com/wiki/contents/articles/35789.fim-2010-archive-ramp-up-implementing-forefront-identity-manager-2010.aspx)

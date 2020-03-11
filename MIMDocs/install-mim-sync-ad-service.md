@@ -4,19 +4,19 @@ description: Az Active Directory és a MIM-adatbázisok szinkronizálása kezel�
 keywords: ''
 author: billmath
 ms.author: billmath
-manager: mtillman
+manager: daveba
 ms.date: 10/12/2017
 ms.topic: conceptual
 ms.prod: microsoft-identity-manager
 ms.assetid: 5e532b67-64a6-4af6-a806-980a6c11a82d
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 1627bae6aecdfc3d57261485de04a78feb264013
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: 81cf34959ccdea5ad9eb463f85a25d26bc1d8ede
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73329324"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79042423"
 ---
 # <a name="install-mim-2016-synchronize-active-directory-and-mim-service"></a>A MIM 2016 telepítése: Az Active Directory és a MIM szolgáltatás szinkronizálása
 
@@ -24,7 +24,7 @@ ms.locfileid: "73329324"
 > [« MIM szolgáltatás és -portál](install-mim-service-portal.md)
 > 
 > [!NOTE]
-> Ez az útmutató egy Contoso nevű fiktív vállalat neveit és értékeit használja szemléltetésként. Ezeket helyettesítse a saját neveivel és értékeivel. Példa:
+> Ez az útmutató egy Contoso nevű fiktív vállalat neveit és értékeit használja szemléltetésként. Ezeket helyettesítse a saját neveivel és értékeivel. Például:
 > - Tartományvezérlő neve – **mimservername**
 > - Tartománynév – **contoso**
 > - Jelszó – <strong>Pass@word1</strong>
@@ -113,7 +113,7 @@ A MIM-kezelőügynök konfigurálásához meg kell adnia egy felhasználói fió
     |-|-|-|
     | AccountName | Exportálás | accountName |
     | DisplayName | Exportálás | displayName |
-    | Tartomány | Exportálás | domain |
+    | Domain | Exportálás | domain |
     | E-mail | Exportálás | Levelezés |
     | EmployeeID | Exportálás | employeeID |
     | EmployeeType | Exportálás | employeeType |
@@ -139,10 +139,10 @@ A MIM-kezelőügynök konfigurálásához meg kell adnia egy felhasználói fió
     |-|-|-|
     | AccountName | Exportálás | accountName |
     | DisplayName | Exportálás | displayName |
-    | Tartomány | Exportálás | domain |
+    | Domain | Exportálás | domain |
     | E-mail | Exportálás | Levelezés |
     | MailNickName | Exportálás | mailNickName |
-    | Tag | Exportálás | member |
+    | Tag | Exportálás | tag |
     | ObjectSID | Exportálás | objectSid |
     | Hatókör | Exportálás | hatókör |
     | Típus | Exportálás | típus |
@@ -152,7 +152,7 @@ A MIM-kezelőügynök konfigurálásához meg kell adnia egy felhasználói fió
     | DisplayedOwner | Importálás | displayedOwner |
     | DisplayName | Importálás | displayName |
     | MailNickName | Importálás | mailNickName |
-    | Tag | Importálás | member |
+    | Tag | Importálás | tag |
     | Hatókör | Importálás | hatókör |
     | Típus | Importálás | típus |
 
@@ -203,7 +203,7 @@ Az Active Directory-kezelőügynök összekötőként szolgál az AD tartományi
     -   groupType
     -   managedBy
     -   manager
-    -   member
+    -   tag
     -   objectSid
     -   sAMAccountName
     -   sAMAccountType
@@ -232,11 +232,11 @@ Az alábbi táblázatban az ADMA összekötőhöz létrehozandó öt futtatási 
 
 | Név | Típus |
 | ---- | ---- |
-| 1. profil | Teljes importálás (csak előkészítés) |
-| 2. profil | Teljes szinkronizálás |
-| 3. profil | Különbözeti importálás (csak előkészítés) |
-| 4. profil | Különbözeti szinkronizálás |
-| 5. profil | Exportálás |
+| 1\. profil | Teljes importálás (csak előkészítés) |
+| 2\. profil | Teljes szinkronizálás |
+| 3\. profil | Különbözeti importálás (csak előkészítés) |
+| 4\. profil | Különbözeti szinkronizálás |
+| 5\. profil | Exportálás |
 
 Futtatási profilok létrehozása az ADMA összekötőhöz:
 
@@ -264,11 +264,11 @@ Az alábbi táblázatban a MIMMA összekötőhöz tartozó öt kapcsolódó futt
 
 | Név | Típus |
 | -------- | -------- |
-| 1. profil | Teljes importálás (csak előkészítés) |
-| 2. profil | Teljes szinkronizálás |
-| 3. profil | Különbözeti importálás (csak előkészítés) |
-| 4. profil | Különbözeti szinkronizálás |
-| 5. profil | Exportálás |
+| 1\. profil | Teljes importálás (csak előkészítés) |
+| 2\. profil | Teljes szinkronizálás |
+| 3\. profil | Különbözeti importálás (csak előkészítés) |
+| 4\. profil | Különbözeti szinkronizálás |
+| 5\. profil | Exportálás |
 
 Futtatási profilok létrehozása a MIMMA összekötőhöz:
 
@@ -323,14 +323,14 @@ Az AD felhasználókra vonatkozó bejövő szinkronizálási szabályának létr
 
     | Folyamatszabály | Forrás | Cél |
     |-|-|-|
-    |1. szabály|samAccountName|accountName|
-    |2. szabály|displayName|displayName|
-    |3. szabály|EmployeeType|employeeType|
-    |4. szabály|givenName|firstName|
-    |5. szabály|sn|lastName|
-    |6. szabály|Manager|manager|
-    |7. szabály|objectSID|ObjectSID|
-    |8. szabály|"Contoso"|domain|
+    |1\. szabály|samAccountName|accountName|
+    |2\. szabály|displayName|displayName|
+    |3\. szabály|EmployeeType|employeeType|
+    |4\. szabály|givenName|firstName|
+    |5\. szabály|sn|lastName|
+    |6\. szabály|Manager|manager|
+    |7\. szabály|objectSID|ObjectSID|
+    |8\. szabály|"Contoso"|domain|
 
     A táblázatban minden egyes sorhoz kapcsolódóan végezze el a következő lépéseket:
 

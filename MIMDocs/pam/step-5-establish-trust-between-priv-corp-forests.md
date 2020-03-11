@@ -4,19 +4,19 @@ description: Megbízhatósági kapcsolat létrehozása a PRIV és CORP erdők k�
 keywords: ''
 author: billmath
 ms.author: billmath
-manager: mtillman
+manager: daveba
 ms.date: 11/29/2017
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: eef248c4-b3b6-4b28-9dd0-ae2f0b552425
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 04195febdb721291e9dcf72f5bbda04923075596
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: 0cf952c93c0a7b95fd41939efc767e9e8c20be5e
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "64518266"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79043647"
 ---
 # <a name="step-5--establish-trust-between-priv-and-corp-forests"></a>5\. lépés – A CORP és a PRIV erdő közötti megbízhatósági kapcsolat létrehozása
 
@@ -40,7 +40,7 @@ A megbízható kapcsolat kialakítása előtt minden tartományvezérlőn be kel
     ```
     Győződjön meg róla, hogy a kimenet a PRIV tartományhoz tartozó, megfelelő IP-című névkiszolgáló-bejegyzést jelöli.
 
-3.  Ha a tartományvezérlő nem tudja átirányítani a PRIV tartományt, a **Start** > **Alkalmazáseszközök** > **DNS** menüben található **DNS-kezelő** funkcióval konfigurálja, hogy a DNS átirányítsa a PRIV tartományt a PRIVDC IP-címére. Ha ez egy felső szintű tartomány (mint a contoso.local), bontsa ki az ehhez a tartományvezérlőhöz és annak tartományához tartozó csomópontokat, például a **CORPDC** > **Címkeresési zónák** > **contoso.local** csomópontot, és ellenőrizze, hogy a **priv** nevű kulcs megtalálható-e a Névkiszolgáló (NS) típusok között.
+3.  Ha a tartományvezérlő nem tudja átirányítani a PRIV tartományt, a **Start**Alkalmazáseszközök > DNS >  menüben található **DNS-kezelő** funkcióval konfigurálja, hogy a DNS átirányítsa a PRIV tartományt a PRIVDC IP-címére. Ha ez egy felső szintű tartomány (mint a contoso.local), bontsa ki az ehhez a tartományvezérlőhöz és annak tartományához tartozó csomópontokat, például a **CORPDC** > **Címkeresési zónák** > **contoso.local** csomópontot, és ellenőrizze, hogy a **priv** nevű kulcs megtalálható-e a Névkiszolgáló (NS) típusok között.
 
     ![a priv kulcsot tartalmazó fájlstruktúra – képernyőkép](./media/PAM_GS_DNS_Manager.png)
 
@@ -71,7 +71,7 @@ A PAMSRV kiszolgálón hozzon létre egy egyirányú megbízhatósági kapcsolat
 A PRIV rendszergazdákon és a figyelőszolgáltatáson keresztül minden meglévő erdő számára olvasási hozzáférést biztosíthat az Active Directoryhoz.
 
 1. Jelentkezzen be a meglévő CORP erdő tartományvezérlőjébe (CORPDC) az erdő legfelső szintű tartományának rendszergazdájaként (Contoso\Rendszergazda).  
-2. Jelenítse meg az **Active Directory - felhasználók és számítógépek** ablakot.  
+2. Indítsa el az **Active Directory - felhasználók és számítógépek** beépülő modult.  
 3. Kattintson a jobb gombbal a **contoso.local** tartományra, és válassza a **Vezérlés delegálása** parancsot.  
 4. A Kijelölt felhasználók és csoportok lapon kattintson a **Hozzáadás** gombra.  
 5. A Felhasználók, számítógépek vagy csoportok kiválasztása ablakban kattintson a **Helyek** elemre, és váltson át a *priv.contoso.local* helyre.  Az objektum nevéhez írja be a *Tartományi rendszergazdák* értéket, és kattintson a **Névellenőrzés** gombra. Amikor megjelenik egy előugró ablak, írja be a *priv\rendszergazda* felhasználónevet és a jelszavát.  
@@ -80,14 +80,14 @@ A PRIV rendszergazdákon és a figyelőszolgáltatáson keresztül minden meglé
 8. Zárja be az Active Directory – felhasználók és számítógépek beépülő modult.
 
 9. Indítson el egy PowerShell-ablakot.
-10. Használja a `netdom` parancsot a SID-előzmények engedélyezéséhez, illetve a SID-szűrés letiltásához. Írja be ezt a parancsot:
+10. Használja a `netdom` parancsot a SID-előzmények engedélyezéséhez, illetve a SID-szűrés letiltásához. Írja be:
     ```cmd
     netdom trust contoso.local /quarantine:no /domain priv.contoso.local
     netdom trust /enablesidhistory:yes /domain priv.contoso.local
     ```
     Vagy **A biztonsági azonosítók előzményeinek engedélyezése ebben a megbízhatósági kapcsolatban** vagy **A biztonsági azonosítók előzményei már engedélyezettek ebben a megbízhatósági kapcsolatban** kimenetet kell kapnia.
 
-    A kimenetnek **A biztonsági azonosítók szűrése nem engedélyezett ebben a megbízhatósági kapcsolatban** szöveget is tartalmaznia kell. További információkért tekintse meg a [Disable SID filter quarantining](http://technet.microsoft.com/library/cc772816.aspx) (A SID-szűrők általi karanténba helyezés letiltása) című témakört.
+    A kimenetnek **A biztonsági azonosítók szűrése nem engedélyezett ebben a megbízhatósági kapcsolatban** szöveget is tartalmaznia kell. További információkért tekintse meg a [Disable SID filter quarantining](https://technet.microsoft.com/library/cc772816.aspx) (A SID-szűrők általi karanténba helyezés letiltása) című témakört.
 
 ## <a name="start-the-monitoring-and-component-services"></a>A figyelőszolgáltatás és a komponensszolgáltatás elindítása
 

@@ -4,17 +4,17 @@ description: A Microsoft Identity Manager 2016 tanúsítványkezelő telepítés
 keywords: ''
 author: billmath
 ms.author: billmath
-manager: mtillman
+manager: daveba
 ms.date: 09/19/2017
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: ''
-ms.openlocfilehash: 9a9e00f7dca118627a5140967a104d13273cbc26
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: 35fe08363b6964bf6d264ab1e60cd9751aa7b6aa
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67690803"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79043035"
 ---
 # <a name="deploying-microsoft-identity-manager-certificate-manager-2016-mim-cm"></a>A Microsoft Identity Manager Certificate Manager 2016 (MIM CM) üzembe helyezése
 
@@ -118,15 +118,15 @@ Felhasználók
 | CM-kezelő                 | CMManager1 – 2        |
 | Előfizető felhasználója            | CMUser1 – 2           |
 
-Csoportok
+Csoportok:
 
 | **Szerepkör**               | **Csoport**         |
 |------------------------|-------------------|
-| CM ügyfélszolgálati tagok    | mimcm – segélyszolgálat    |
+| CM ügyfélszolgálati tagok    | MIMCM – segélyszolgálat    |
 | CM-kezelő tagjai     | MIMCM-Managers    |
 | CM előfizetők tagjai | MIMCM – előfizetők |
 
-PowerShell Ügynök fiókjai:
+PowerShell: ügynök fiókjai:
 
 ```powershell
 import-module activedirectory
@@ -196,11 +196,11 @@ A MIM CM által használt szolgáltatásfiókok közül háromnak szüksége van
 
 A tanúsítványokat igénylő szolgáltatásfiókok a következők:
 
-- MIMCMAgent: Ennek a fióknak felhasználói tanúsítványra van szüksége
+- MIMCMAgent: ennek a fióknak felhasználói tanúsítványra van szüksége
 
-- MIMCMEnrollAgent: Ennek a fióknak szüksége van egy regisztrációs ügynök tanúsítványára
+- MIMCMEnrollAgent: a fióknak szüksége van egy regisztrációs ügynök tanúsítványára
 
-- MIMCMKRAgent: Ennek a fióknak szüksége van egy **kulcs-helyreállítási ügynök** tanúsítványára
+- MIMCMKRAgent: ennek a fióknak szüksége van egy **kulcs-helyreállítási ügynök** tanúsítványára
 
 Vannak olyan sablonok, amelyek már szerepelnek az AD-ben, de létre kell hozniuk a saját verzióit, hogy működjenek a MIM CM. Ahogy az eredeti alapsablonokkal kell módosítania.
 
@@ -212,7 +212,7 @@ A fenti fiókok mindhárom fiókja magasabb szintű jogokkal fog rendelkezni a s
 
 2. A **hitelesítésszolgáltató** konzol konzolfáján bontsa ki a **contoso-CorpCA**csomópontot, majd kattintson a **Tanúsítványsablonok**elemre.
 
-3. Kattintson a jobb gombbal a **Tanúsítványsablonok**elemre, majd kattintson a **kezelés**parancsra.
+3. Kattintson a jobb gombbal a **Tanúsítványsablonok** elemre, majd kattintson a **Kezelés** parancsra.
 
 4. A **Tanúsítványsablonok konzol** **részleteket** tartalmazó ablaktábláján válassza ki, majd kattintson a jobb gombbal a **felhasználó**elemre, majd kattintson a **sablon megkettőzése**elemre.
 
@@ -233,7 +233,7 @@ A fenti fiókok mindhárom fiókja magasabb szintű jogokkal fog rendelkezni a s
 
 10. Győződjön meg arról, hogy az **alkalmazás-házirendek** lehetőség van kiválasztva a **bővítmények** **lap bővítmények** lapján, majd kattintson a **Szerkesztés**elemre.
 
-11. Az **alkalmazás-házirendek bővítmény szerkesztése** párbeszédpanelen válassza a **titkosított fájlrendszer** és a **biztonságos e-mail alkalmazás-** szabályzatok lehetőséget. Kattintson az **Eltávolítás**elemre, majd **az OK**gombra.
+11. Az **alkalmazás-házirendek bővítmény szerkesztése** párbeszédpanelen válassza a **titkosított fájlrendszer** és a **biztonságos e-mail alkalmazás-** szabályzatok lehetőséget. Kattintson az **Eltávolítás** és az **OK** gombra.
 
 12. A **Biztonság** lapon hajtsa végre a következő lépéseket:
 
@@ -380,7 +380,7 @@ Erősen ajánlott az SSL megkövetelése a MIM CM portálon. Ha nem a varázsló
 
 2. Nyissa meg **az IIS-kezelőt** , és navigáljon a **tanúsítványkezelőhöz**
 
-3. A szolgáltatások nézetben kattintson duplán az SSL-beállítások elemre.
+3. A Szolgáltatások nézetben kattintson duplán az SSL-beállítások lehetőségre.
 
 4. Az SSL-beállítások lapon jelölje be az **SSL megkövetelése**jelölőnégyzetet.
 
@@ -455,13 +455,13 @@ Mielőtt bejelentkezne a CORPCM, adja hozzá a MIMINSTALL-t a **Tartománygazdá
 
 9. Az **ügynökök – FIM cm** multi-füles párbeszédpanelen az egyes lapokon írja be a következő adatokat:
 
-   - Felhasználónév: **Frissítés**
+   - Felhasználónév: **frissítés**
 
-   - Jelszó: **Pass\@word1**
+   - Password (jelszó): **Pass\@word1**
 
    - Jelszó megerősítése: **Pass\@word1**
 
-   - Meglévő felhasználó használata: **Engedélyezve**
+   - Meglévő felhasználó használata: **engedélyezve**
 
      >[!NOTE]
      >Ezeket a fiókokat korábban hoztuk létre. Győződjön meg arról, hogy a 8. lépésben szereplő eljárások megismétlődnek mind a hat ügynök-fiók lapjain.
@@ -474,7 +474,7 @@ Mielőtt bejelentkezne a CORPCM, adja hozzá a MIMINSTALL-t a **Tartománygazdá
 
 12. A **kiszolgálói tanúsítványok beállítása** lapon engedélyezze a következő tanúsítványsablont:
 
-    - A helyreállítási ügynök kulcs-helyreállítási megbízottjának tanúsítványához használt tanúsítványsablon: **MIMCMKeyRecoveryAgent**.
+    - A helyreállítási ügynök kulcs-helyreállítási megbízottjának tanúsítványához használandó tanúsítványsablon: **MIMCMKeyRecoveryAgent**.
 
     - A FIM CM-ügynök tanúsítványához használni kívánt tanúsítványsablon: **MIMCMSigning**.
 
@@ -552,15 +552,15 @@ Ebben a lépésben telepíti és konfigurálja a FIM CM HITELESÍTÉSSZOLGÁLTAT
 
 14. A konzolfán bontsa ki a **Biztonság**csomópontot, majd kattintson a **bejelentkezések**elemre.
 
-15. Kattintson a jobb gombbal **bejelentkezések**, és kattintson a **új bejelentkezés**.
+15. Kattintson a jobb gombbal a **bejelentkezések**elemre, majd kattintson az **új bejelentkezés**lehetőségre.
 
 16. Az **általános** lap **bejelentkezési név** mezőjébe írja be a **contoso\\CORPCA\$** nevet. Válassza a **Windows-hitelesítés**lehetőséget. Az alapértelmezett adatbázis a **FIMCertificateManagement**.
 
-17. A bal oldali ablaktáblán válassza a **felhasználó leképezése**elemet. A jobb oldali ablaktáblán kattintson a **FIMCertificateManagement**melletti **Térkép** oszlopban található jelölőnégyzetre. A **adatbázis-szerepkör tagsága a következőhöz: FIMCertificateManagement** listában engedélyezze a **clmApp** szerepkört.
+17. A bal oldali ablaktáblán válassza a **felhasználó leképezése**elemet. A jobb oldali ablaktáblán kattintson a **FIMCertificateManagement**melletti **Térkép** oszlopban található jelölőnégyzetre. Az **adatbázis-szerepkör tagsága: FIMCertificateManagement** listán engedélyezze a **clmApp** szerepkört.
 
 18. Kattintson az **OK** gombra.
 
-19. Bezárás **Microsoft SQL Server Management Studio**.
+19. **Microsoft SQL Server Management Studio**bezárásához.
 
 ### <a name="install-the-fim-cm-ca-modules-on-the-certification-authority"></a>Az FIM CM HITELESÍTÉSSZOLGÁLTATÓI moduljainak telepítése a hitelesítésszolgáltatóra
 
@@ -625,7 +625,7 @@ Ebben a lépésben telepíti és konfigurálja a FIM CM HITELESÍTÉSSZOLGÁLTAT
 
 3. A **részleteket** tartalmazó ablaktáblán kattintson duplán arra a tanúsítványra, amelynél a **contoso\\MIMCMAgent** szerepel a **kérelmező neve** oszlopban, majd a **Tanúsítványsablon** oszlopban a **FIM cm aláírásával** .
 
-4. A **részletek** lapon válassza ki az **ujjlenyomat** mezőt.
+4. A **Részletek** lapon válassza ki az **Ujjlenyomat** mezőt.
 
 5. Jelölje ki az ujjlenyomatot, majd nyomja le a CTRL + C billentyűkombinációt.
 
@@ -668,7 +668,7 @@ Ebben a lépésben telepíti és konfigurálja a FIM CM HITELESÍTÉSSZOLGÁLTAT
     - A **tanúsítvány** párbeszédpanelen kattintson az **OK**gombra.
 
         >[!Note]
-        >Ha az **OK** gomb nincs engedélyezve, akkor véletlenül egy rejtett karaktert is tartalmazott az ujjlenyomat-karakterláncban, amikor az ujjlenyomatot a clmAgent-tanúsítványból másolta. A 4. **feladattól kezdődő összes lépés ismétlése: Másolja a MIMCMAgent-tanúsítvány ujjlenyomatát a Windows vágólapra** ebben a gyakorlatban.
+        >Ha az **OK** gomb nincs engedélyezve, akkor véletlenül egy rejtett karaktert is tartalmazott az ujjlenyomat-karakterláncban, amikor az ujjlenyomatot a clmAgent-tanúsítványból másolta. Ismételje meg az összes lépést a **4. feladattól kezdődően: másolja a MIMCMAgent-tanúsítvány ujjlenyomatát a Windows vágólapra** ebben a gyakorlatban.
 
 4. A **konfiguráció tulajdonságai** párbeszédpanelen ellenőrizze, hogy az ujjlenyomat megjelenik-e az **érvényes aláíró tanúsítványok** listában, majd kattintson az **OK**gombra.
 
@@ -688,7 +688,7 @@ Ebben a lépésben telepíti és konfigurálja a FIM CM HITELESÍTÉSSZOLGÁLTAT
 
 **Az üzembe helyezés utolsó lépéseként** meg szeretnénk győződni arról, hogy a contoso\\MIMCM-kezelői telepíthetnek és létrehozhatnak sablonokat, és a rendszer konfigurálását a séma és a Tartománygazdák nélkül is konfigurálhatja. A következő szkript a dsacls használatával fogja ACL-ként használni a Tanúsítványsablonok engedélyeit. Olyan fiókkal futtassa, amely teljes körű jogosultsággal rendelkezik a biztonsági olvasási és írási engedélyek módosításához az erdőben lévő összes meglévő tanúsítványsablon számára.
 
-Első lépések: **A szolgáltatási kapcsolódási pont és a célcsoport engedélyeinek konfigurálása & a profil-sablonok felügyeletének delegálása**
+Első lépések: **a szolgáltatási kapcsolódási pont és a célcsoport engedélyeinek konfigurálása & a profil-sablonok felügyeletének delegálása**
 
 1. Konfigurálja az engedélyeket a szolgáltatáskapcsolódási pont (SCP) számára.
 
@@ -725,7 +725,7 @@ Első lépések: **A szolgáltatási kapcsolódási pont és a célcsoport enged
 
 2. A konzolfán kattintson a jobb gombbal a **contoso.com**elemre, majd kattintson a **Tulajdonságok**elemre.
 
-3. A **Biztonság** lapon kattintson a **speciális**elemre.
+3. A **Biztonság** fülön kattintson a **Speciális** lehetőségre.
 
 4. A **contoso speciális biztonsági beállításai** párbeszédpanelen kattintson a **Hozzáadás**gombra.
 
@@ -783,7 +783,7 @@ Első lépések: **A szolgáltatási kapcsolódási pont és a célcsoport enged
 
 2. A konzolfán kattintson a jobb gombbal a **contoso.com**elemre, majd kattintson a **Tulajdonságok**elemre.
 
-3. A **Biztonság** lapon kattintson a **speciális**elemre.
+3. A **Biztonság** fülön kattintson a **Speciális** lehetőségre.
 
 4. A **contoso speciális biztonsági beállításai** párbeszédpanelen kattintson a **Hozzáadás**gombra.
 
@@ -885,7 +885,7 @@ Engedélyek definiálása az OID-tárolón:
 
 8. Zárjunk be **Active Directory helyeket és szolgáltatásokat**.
 
-**parancsfájlok: Engedélyek az OID-hez, profil sablon & tanúsítványsablonok tárolóhoz**
+**Parancsfájlok: engedélyek az OID-hez, profil sablon & tanúsítványsablonok tárolója**
 
 ![diagram](media/mim-cm-deploy/image021.png)
 
@@ -911,7 +911,7 @@ $acl.AddAccessRule($ace)
 }
 ```
 
-**parancsfájlok: Engedélyek delegálása a meglévő tanúsítványsablonok számára.**  
+**Parancsfájlok: engedélyek delegálása a meglévő tanúsítványsablonok számára.**  
 
 ![diagram](media/mim-cm-deploy/image039.png)
 

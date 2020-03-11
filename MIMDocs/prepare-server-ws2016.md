@@ -4,19 +4,19 @@ description: A Windows Server 2016-es vagy 2019 2016-es VERZIÓjának előkész�
 keywords: ''
 author: billmath
 ms.author: billmath
-manager: mtillman
+manager: daveba
 ms.date: 10/18/2019
 ms.topic: conceptual
 ms.prod: microsoft-identity-manager
 ms.assetid: 51507d0a-2aeb-4cfd-a642-7c71e666d6cd
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: c6d5d5081f0e932b9c60d8f2025b54e47dc352d5
-ms.sourcegitcommit: d98a76d933d4d7ecb02c72c30d57abe3e7f5d015
+ms.openlocfilehash: cf8261c4e6f6529fd82760206b62b689a75d0acb
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78853550"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79044148"
 ---
 # <a name="set-up-an-identity-management-server-windows-server-2016-or-2019"></a>Identitáskezelés-felügyeleti kiszolgáló beállítása: Windows Server 2016 vagy 2019
 

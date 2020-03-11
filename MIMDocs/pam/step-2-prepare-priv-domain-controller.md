@@ -4,19 +4,19 @@ description: A PRIV tartományvezérlő előkészítése, amely olyan megerősí
 keywords: ''
 author: billmath
 ms.author: billmath
-manager: mtillman
+manager: daveba
 ms.date: 09/14/2017
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: 0e9993a0-b8ae-40e2-8228-040256adb7e2
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 0364b0d14d08ab3af32010675e0ba80d39404342
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: 97b425fc4444b241ddce99e7d5e3abf564daf245
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "64518084"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79043698"
 ---
 # <a name="step-2---prepare-the-first-priv-domain-controller"></a>2\. lépés: A PRIV tartományvezérlő előkészítése
 
@@ -34,7 +34,7 @@ Ebben a szakaszban egy virtuális gépet fog beállítani egy új erdő tartomá
 
 Egy „PRIVDC” számítógép létrehozásához telepítse a Windows Server 2012 R2 rendszert egy másik új virtuális gépre, amelyen nincs telepített szoftver.
 
-1. Válassza a Windows Server egyéni (nem frissítő) telepítését. A telepítéskor válassza a **Windows Server 2012 R2 Standard (kiszolgáló grafikus felhasználói felülettel) x64** kiadást. _Ne válassza az_ **Adatközpont vagy Server Core** lehetőséget.
+1. Válassza a Windows Server egyéni (nem frissítő) telepítését. A telepítésekor a **Windows Server 2012 R2 standard (kiszolgáló grafikus felhasználói felülettel) x64-** et kell megadnia. ne _válassza_ **az adatközpont vagy a Server Core**lehetőséget.
 
 2. Olvassa el és fogadja el a licencfeltételeket.
 
@@ -46,7 +46,7 @@ Egy „PRIVDC” számítógép létrehozásához telepítse a Windows Server 20
 
 ### <a name="add-roles"></a>Szerepkörök hozzáadása
 
-Vegye fel az Active Directory tartományi szolgáltatásokat (AD DS) és a DNS-kiszolgálói szerepkört.
+Vegye fel az Active Directory Domain Services (AD DS) és a DNS-kiszolgálói szerepkört.
 
 1. Indítsa el a PowerShellt rendszergazdaként.
 
@@ -169,7 +169,7 @@ Be kell állítania a naplózást ahhoz, hogy létre lehessen hozni a PAM konfig
 
 3. Lépjen az **Erdő: priv.contoso.local** > **Tartományok** > **priv.contoso.local** > **Tartományvezérlők** > **Alapértelmezett tartományvezérlői házirend** elemhez. Megjelenik egy figyelmeztető üzenet.
 
-4. Kattintson a jobb gombbal az **Alapértelmezett tartományvezérlői házirend** elemre, majd válassza a **Szerkesztés** lehetőséget.
+4. Kattintson a jobb gombbal az **Alapértelmezett tartományvezérlői házirend** elemre, és válassza a **Szerkesztés** parancsot.
 
 5. A Csoportházirendkezelés-szerkesztő konzolfáján jelölje ki a **Számítógép konfigurációja** > **Házirendek** > **Windows-beállítások** > **Biztonsági beállítások** > **Helyi házirend** > **Naplózási házirend** elemet.
 
@@ -237,13 +237,13 @@ A PRIVDC számítógépen a PowerShell használatával konfigurálja a DNS-név�
    ```
 
 > [!NOTE]
-> A dokumentumban található következő lépések bemutatják, hogyan telepítheti a MIM 2016 kiszolgálói összetevőit egyetlen számítógépre. Ha a magas rendelkezésre állás érdekében további kiszolgáló hozzáadását tervezi, akkor a Kerberos további konfigurálására lesz szükség a [FIM 2010: A Kerberos-hitelesítés beállítása](http://social.technet.microsoft.com/wiki/contents/articles/3385.fim-2010-kerberos-authentication-setup.aspx) című témakörben leírtak szerint.
+> A dokumentumban található következő lépések bemutatják, hogyan telepítheti a MIM 2016 kiszolgálói összetevőit egyetlen számítógépre. Ha a magas rendelkezésre állás érdekében további kiszolgáló hozzáadását tervezi, akkor a Kerberos további konfigurálására lesz szükség a [FIM 2010: A Kerberos-hitelesítés beállítása](https://social.technet.microsoft.com/wiki/contents/articles/3385.fim-2010-kerberos-authentication-setup.aspx) című témakörben leírtak szerint.
 
 ### <a name="configure-delegation-to-give-mim-service-accounts-access"></a>Delegálás konfigurálása a MIM szolgáltatásfiókok hozzáférésének megadásához
 
 Végezze el a következő lépéseket a PRIVDC számítógépen tartományi rendszergazdaként.
 
-1. Jelenítse meg az **Active Directory - felhasználók és számítógépek** ablakot.
+1. Indítsa el az **Active Directory - felhasználók és számítógépek** beépülő modult.
 2. Kattintson a jobb gombbal a **priv.contoso.local** tartományra, és válassza a **Vezérlés delegálása** parancsot.
 3. A Kijelölt felhasználók és csoportok lapon kattintson a **Hozzáadás** gombra.
 4. A Felhasználók, számítógépek vagy csoportok kiválasztása ablakban írja be a *mimcomponent; mimmonitor; mimservice* nevet, és kattintson a **Névellenőrzés** gombra. Miután a nevek alatt megjelent az aláhúzás, kattintson az **OK**, majd a **Tovább** gombra.
@@ -291,7 +291,7 @@ Ha még nem rendelkezik munkaállomással, amely a PRIV tartományhoz fog tartoz
 
 Egy új virtuális gépen, amelyen még nincs telepített szoftver, telepítse a Windows 8.1 Enterprise vagy a Windows 10 Enterprise verziót. Ez lesz a *„PRIVWKSTN”* számítógép.
 
-1. A telepítéshez használja a gyorsbeállításokat.
+1. A telepítéshez használja az expressz beállításokat.
 
 2. Vegye figyelembe, hogy előfordulhat, hogy a telepítés nem fog tudni csatlakozni az internethez. Kattintson a **Helyi fiók létrehozása** elemre. Adjon meg más felhasználónevet, ne használja a „Rendszergazda” vagy az „Ilona” nevet.
 

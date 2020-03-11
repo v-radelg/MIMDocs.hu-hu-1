@@ -4,17 +4,17 @@ description: ''
 keywords: ''
 author: billmath
 ms.author: billmath
-manager: mtillman
+manager: daveba
 ms.date: 08/01/2017
 ms.topic: reference
 ms.prod: microsoft-identity-manager
 ms.assetid: ''
-ms.openlocfilehash: 45b46ed10f7eda506fe1fc1af94c4be06a1a37b9
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: b28c9623e3a05168adafc19c43634d686dc7e8e2
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "64516585"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79042406"
 ---
 # <a name="microsoft-identity-manager-2016-password-management"></a>Microsoft Identity Manager 2016 – Jelszókezelés
 
@@ -148,9 +148,9 @@ Ideális esetben valahányszor egy felhasználó jelszót módosít, a módosít
 
 Egyes, súlyosabb meghibásodások esetén akárhány újrapróbálkozás esetén sem valószínű, hogy sikerül a művelet. Ilyenkor a rendszer naplózza a hibát, és leállítja a folyamatot. A következő eseményeknél nincs újrapróbálkozás:
 
-| Esemény | Súlyosság    | Description                                                                                                                                                            |
+| Esemény | Severity    | Leírás                                                                                                                                                            |
 |-------|-------------|-----------|
-| 6919  | Információk | A jelszó-szinkronizálás beállításának műveletét a rendszer nem hajtotta végre, mert az időbélyegző elavult.                                                                      |
+| 6919  | Adatok | A jelszó-szinkronizálás beállításának műveletét a rendszer nem hajtotta végre, mert az időbélyegző elavult.                                                                      |
 | 6921  | Hiba       | A jelszó-szinkronizálás beállításának művelete nincs feldolgozva, mert a céloldali kezelőügynökön nincs engedélyezve a jelszókezelés.                                |
 | 6922  | Hiba       | A jelszó-szinkronizálás beállításának művelete nincs feldolgozva, mert a céloldali kezelőügynökön nincs konfigurálva a jelszókezelés.                             |
 | 6923  | Figyelmeztetés     | A jelszó-szinkronizálás beállításának művelete nincs feldolgozva, mert a céloldali összekötőtér objektuma nem található a csatlakoztatott címtárban.                  |

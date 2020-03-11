@@ -4,19 +4,19 @@ description: A Privileged Access Management sikeres üzembe helyezéséhez szük
 keywords: ''
 author: billmath
 ms.author: billmath
-manager: mtillman
+manager: daveba
 ms.date: 09/06/2017
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: 82a9085c-9667-4b3b-8079-657eab1d1e58
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 4838e9e8a495866902a78e713bb3b226eaf9def1
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: 79f9eeabdd9ac9206c4232217c7cbcdf870c3a3a
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "64518835"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79043987"
 ---
 # <a name="hardware-and-software-requirements"></a>Hardver- és szoftverkövetelmények
 
@@ -54,7 +54,7 @@ Ha Ön nem rendelkezik Windows-, SQL Server- vagy Windows Server-licenccel, let�
 
 ### <a name="microsoft-download-center"></a>Microsoft letöltőközpont
 
-- [SQL Server](https://www.microsoft.com/download/details.aspx?id=29066)  
+- [SQL-kiszolgáló](https://www.microsoft.com/download/details.aspx?id=29066)  
 - [A SharePoint Foundation 2013 SP1 és előfeltételei](https://www.microsoft.com/download/details.aspx?id=42039)
 
 ## <a name="hardware-requirements"></a>Hardverkövetelmények

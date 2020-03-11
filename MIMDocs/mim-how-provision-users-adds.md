@@ -4,17 +4,17 @@ description: A felhasználók az AD DS-ben, a Microsoft Identity Manager 2016 ha
 keywords: ''
 author: billmath
 ms.author: billmath
-manager: mtillman
+manager: daveba
 ms.date: 08/18/2017
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: ''
-ms.openlocfilehash: 77f1eb5d8355472c7aee7bc9f389ca8b24ab76a9
-ms.sourcegitcommit: 1ca298d61f6020623f1936f86346b47ec5105d44
+ms.openlocfilehash: 149339a6e1029f01378a518a98029c1d588de6f9
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76256614"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79044174"
 ---
 # <a name="how-do-i-provision-users-to-ad-ds"></a>Felhasználók kiépítése az AD DS-ben
 
@@ -24,12 +24,12 @@ Az egyik alapvető követelmény az identitáskezelési rendszerekkel szemben, h
 
 Ez az útmutató a felhasználók a Microsoft® Identity Manager (MIM) 2016 szolgáltatásról az Active Directory® Domain Services (AD DS) szolgáltatásba való kiépítési folyamatának főbb építőelemeiről nyújt áttekintést, és ismerteti, hogyan ellenőrizhető, hogy a forgatókönyv az elvárásoknak megfelelően működik-e. Az útmutató továbbá javaslatokkal szolgál az Active Directory-felhasználók a MIM 2016 használatával történő kezelésével kapcsolatban, valamint további információforrásokat is tartalmaz.
 
-## <a name="before-you-begin"></a>Előkészületek
+## <a name="before-you-begin"></a>A telepítés megkezdése előtt
 
 
 Ez a szakasz a dokumentum hatókörével kapcsolatos információkat tartalmaz. A gyakorlati útmutatók általában olyan olvasóknak szólnak, akik már rendelkeznek alapvető ismertekkel az objektumok a MIM szolgáltatással való, [Az első lépéseket ismertető útmutatókban](https://go.microsoft.com/FWLink/p/?LinkId=190486) foglaltak szerinti szinkronizálásáról.
 
-### <a name="audience"></a>Közönség
+### <a name="audience"></a>Célközönség
 
 
 Jelen útmutató olyan informatikai (IT) szakembereknek szól, akik már rendelkeznek alapvető ismeretekkel a MIM szinkronizálási folyamatának működéséről, és akik gyakorlati tapasztalatokra szeretnének szert tenni, valamint a konkrét forgatókönyvekkel kapcsolatos további fogalmi információkhoz szeretnének jutni.
@@ -252,7 +252,7 @@ Az alábbi táblázatokban a Fabrikam számára szükséges kiépítési szinkro
 | A szinkronizálási szabály konfigurációja                                                                         |                                                                             |                                                           
 |------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------|-----------------------------------------------------------|
 | Név                                                                                                       | Az Active Directory-felhasználóra vonatkozó kimenő szinkronizálási szabály                         |                                                          
-| Description                                                                                               |                                                                             |                                                           
+| Leírás                                                                                               |                                                                             |                                                           
 | Prioritás                                                                                                | 2                                                                           |                                                           
 | Adatfolyam iránya   | Kimenő             |       
 | Függőség       |         |                                         
@@ -303,7 +303,7 @@ Az AD-kiépítési munkafolyamat célja a Fabrikam kiépítési szinkronizálás
 | Munkafolyamat-konfiguráció               |                                                                 |
 |--------------------------------------|-----------------------------------------------------------------|
 | Név                                 | Az Active Directory-felhasználó kiépítési munkafolyamata                     |
-| Description                          |                                                                 |
+| Leírás                          |                                                                 |
 | Munkafolyamat típusa                        | Művelet                                                          |
 | Futtatás szabályzatfrissítéskor                 | Hamis                                                           |
 
@@ -322,7 +322,7 @@ A szükséges MPR Set Transition (Készletváltás) típusú, és akkor aktivál
 | MPR-konfiguráció                    |                                                             |
 |--------------------------------------|-------------------------------------------------------------|
 | Név                                 | AD-felhasználó kiépítésére vonatkozó felügyeletiházirend-szabály                 |
-| Description                          |                                                             |
+| Leírás                          |                                                             |
 | Típus                                 | Set Transition (Készletváltás)                                              |
 | Engedélyeket biztosít                   | Hamis                                                       |
 | Letiltva                             | Hamis                                                       |
@@ -392,7 +392,7 @@ Az alábbi táblázatban a mintafelhasználó tulajdonságai szerepelnek. Hozzon
 | Vezetéknév                              | Simon                                                          |
 | Megjelenített név                           | Britta Simon                                                   |
 | Fióknév                           | BSimon                                                         |
-| Tartomány                                 | Fabrikam                                                       |
+| Domain                                 | Fabrikam                                                       |
 | Alkalmazott típusa                          | Alvállalkozó                                                     |
 
 
@@ -499,8 +499,8 @@ A mintafelhasználó AD DS-ben való kiépítésének sikerességét a FIMObject
 
 ![annak ellenőrzése, hogy a felhasználó a FIMObjects szervezeti egységben található-e](media/how-provision-users-adds/image033.jpg)
 
-<a name="summary"></a>Összefoglalás
-=======
+## <a name="summary"></a>Összefoglalás
+
 
 Jelen dokumentum célja, hogy megismertesse Önnel a felhasználók a MIM-ben, az AD DS segítségével való szinkronizálásához szükséges építőelemeket. A kezdeti tesztelés során először az adott feladat végrehajtásához szükséges minimális attribútumokkal kell kezdenie, majd további attribútumokat kell hozzáadnia a forgatókönyvhöz, amennyiben az általános lépések az várt módon működnek. A bonyolultság minimális szinten tartása egyszerűbbé teszi a hibák elhárításának folyamatát.
 
@@ -512,11 +512,7 @@ Arról, hogyan távolíthatja el ezeket az objektumokat a tesztkörnyezetből, a
 Az AD DS-t szinkronizálási célként tartalmazó tipikus szinkronizálási forgatókönyvekben a MIM nem mérvadó az objektumok összes attribútuma esetében. Ha például a FIM segítségével kezel felhasználói objektumokat az AD DS-ben, legalább a domain és az objectSID attribútumot az AD DS kezelőügynökének kell biztosítania.
 Az adott felhasználó FIM-portálra való bejelentkezésének engedélyezéséhez a fióknévre, a tartományra és az objectSID attribútumra van szükség. Ha az AD DS-ből szeretné feltölteni ezeket az attribútumokat, egy további bejövő szinkronizálási szabály szükséges az AD DS-összekötőtérhez. Ha az attribútumértékek több forrásával kezel objektumokat, gondoskodni kell az attribútumfolyamok sorrendjének megfelelő konfigurálásáról. Ha az attribútumfolyamok sorrendje nem a megfelelő módon van konfigurálva, a szinkronizáló vezérlő letiltja az attribútumértékek feltöltését. Az attribútumfolyamok sorrendjéről további információt az [About Attribute Flow Precedence](https://go.microsoft.com/FWLink/p/?LinkId=189675) (Az attribútumfolyamok sorrendjének ismertetése) című témakörben találhat.
 
-<a name="see-also"></a>Lásd még
-=========
-
-<a name="other-resources"></a>Egyéb források
----------------
+## <a name="next-steps"></a>További lépések
 
 [Using FIM to Enable or Disable Accounts in Active Directory](https://go.microsoft.com/FWLink/p/?LinkId=189670) (A FIM használata a fiókok az Active Directoryban való engedélyezéséhez vagy letiltásához)
 

@@ -4,19 +4,19 @@ description: Ez a cikk a licencelési Microsoft Identity Manager (2016), valamin
 keywords: ''
 author: markwahl-msft
 ms.author: mwahl
-manager: femila
+manager: daveba
 ms.date: 10/18/2019
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: ''
 ms.reviewer: billmath
 ms.suite: ems
-ms.openlocfilehash: e0bfd868345b8e7dcc6a02e745d3ccbf632a6c58
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: 62a6b936dc30b8593c8758a6158244d0f6dbbc4f
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73329288"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79043018"
 ---
 # <a name="microsoft-identity-manager-2016-licensing-and-downloads"></a>Microsoft Identity Manager 2016 licencelés és letöltések
 
@@ -30,7 +30,7 @@ A Microsoft Identity Manager 2016 licenc felhasználónként történik.  A lice
 
 A Microsoft Identity Manager 2016 prémium szintű Azure Active Directory (P1 és P2) része, amely Enterprise Mobility + Security részét képezi.
 
-Prémium szintű Azure AD egy [Microsoft-nagyvállalati szerződés](https://www.microsoft.com/licensing/licensing-programs/enterprise.aspx), a [nyílt Mennyiségi licencprogram](https://www.microsoft.com/licensing/licensing-programs/open-license.aspx)és a [Cloud Solution Providers](https://go.microsoft.com/fwlink/?LinkId=614968&clcid=0x409) program segítségével érhető el. Az Azure- és Office 365-előfizetők a Prémium P1 és P2 szintű Azure Active Directory szolgáltatást is megvásárolhatják az interneten.  További információk: [Azure Active Directory díjszabása](https://azure.microsoft.com/pricing/details/active-directory/).
+Prémium szintű Azure AD egy [Microsoft-nagyvállalati szerződés](https://www.microsoft.com/licensing/licensing-programs/enterprise.aspx), a [nyílt Mennyiségi licencprogram](https://www.microsoft.com/licensing/licensing-programs/open-license.aspx)és a [Cloud Solution Providers](https://go.microsoft.com/fwlink/?LinkId=614968&clcid=0x409) program segítségével érhető el. Az Azure és az Office 365-előfizetők prémium szintű Azure Active Directory P1 és P2 online is vásárolhatnak.  További információk: [Azure Active Directory díjszabása](https://azure.microsoft.com/pricing/details/active-directory/).
 
 ### <a name="mim-cals"></a>Web-ügyféllicencek
 
@@ -51,12 +51,12 @@ Ha új telepítést indít, le kell töltenie az adott forgatókönyvhöz kapcso
 |----------|-----------|---------------------   |-------------------|----------|--------------|
 |Szinkronizálás| Szinkronizálási szolgáltatás (beleértve az AD-összekötőt) | Igen | `Synchronization Service` | |
 | Szinkronizálás | PCNS | Nem | `Password Change Notification Service` |  A tartományvezérlőkön való telepítéshez |
-| Szinkronizálás | Összekötők az LDAP, az SQL, a Web Services, a PowerShell, a Lotus Domino, a Graph | Nem | N.a. | Terjesztés a letöltőközpont használatával |
+| Szinkronizálás | Összekötők az LDAP, az SQL, a Web Services, a PowerShell, a Lotus Domino, a Graph | Nem | – | Terjesztés a letöltőközpont használatával |
 | az emelt szintű hozzáférések felügyeletével | MIM szolgáltatás | Igen | `Service and Portal` | |
 | Önkiszolgáló | A fakiszolgálói portál | Igen | `Service and Portal` | |
 | Önkiszolgáló | Beépülő modulok és bővítmények | Nem | `Add-ins and extensions` | A végfelhasználói számítógépekre történő telepítéshez |
 | Önkiszolgáló | SCSM-jelentéskészítés | Nem | `Data Warehouse Support Scripts` | |
-| Önkiszolgáló | Hibrid jelentéskészítő ügynök | Nem | N.a. | Terjesztés a letöltőközpont használatával |
+| Önkiszolgáló | Hibrid jelentéskészítő ügynök | Nem | – | Terjesztés a letöltőközpont használatával |
 | Önkiszolgáló | Nyelvi csomagok | Nem | `LANGUAGE Packs` | |
 | Tanúsítványkezelés | CM | Igen | `Certificate Management` | |
 | Tanúsítványkezelés | CM tömeges ügyfél | Nem | `CM Bulk Client` | |
@@ -88,7 +88,7 @@ Annak megállapításához, hogy mely frissítési fájlok szükségesek, ez a t
 | Önkiszolgáló | A fakiszolgálói portál | `Service and Portal` | `MIMService_x64*msp` |
 | Önkiszolgáló | Beépülő modulok és bővítmények | `Add-ins and extensions` | `MIMAddinsExtensions*msp` |
 | Önkiszolgáló | Nyelvi csomagok | `LANGUAGE Packs` | `LANGUAGE Packs.zip` |
-| Hozzáférés-kezelés (BHOLD) | BHOLD | `BHOLD` | `AccessManagementConnector.msi` és `BHOLD*.msi` esetén |
+| Hozzáférés-kezelés (BHOLD) | BHOLD | `BHOLD` | `AccessManagementConnector.msi`, `BHOLD*.msi` |
 | Tanúsítványkezelés | CM |  `Certificate Management` | `MIMCM*.msp` |
 | Tanúsítványkezelés | CM tömeges ügyfél |  `CM Bulk Client` |`MIMCMBulkClient*msp` |
 | Tanúsítványkezelés | CM-ügyfél | `CM Client` |`MIMCMClient*msp` |

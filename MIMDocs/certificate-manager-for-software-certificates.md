@@ -4,19 +4,19 @@ description: Megtudhatja, hogyan hozhat létre és újíthat meg szoftvertanús�
 keywords: ''
 author: billmath
 ms.author: billmath
-manager: mtillman
+manager: daveba
 ms.date: 10/12/2017
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: fed5ada9-d80f-4825-aad7-4172ac5d71d3
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: e9454643f425a6bd306c2828479129312d5a5d4f
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: b8a1b55ed836f46c184941ccf6ec25ef63ad4c30
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "64516639"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79042100"
 ---
 # <a name="create-software-certificates-with-certificate-manager"></a>Szoftvertanúsítványok létrehozása a Tanúsítványkezelővel
 A szoftvertanúsítványok regisztrálásához és megújításához nem kell rendszergazdának lennie, és virtuális intelligens kártyára sincs szükség. A rendszer valamikor egy tanúsítványművelet engedélyezésére fogja kérni. Ez normális.
@@ -93,4 +93,4 @@ A szoftvertanúsítványok regisztrálásához és megújításához nem kell re
 
 10. Ha szeretné újra kiadni az archivált tanúsítványokat, jelölje be a **Reissue archived certificates** (Archivált tanúsítványok újrakiadása) elemtől balra lévő négyzeteket, majd kattintson az **OK** gombra.
 
-11. A Virtual Smart Card Tanúsítványkezelő használata esetén le kell tiltania az adatgyűjtő elemeket, az összetevő ugyanis aktív adatgyűjtés mellett nem működik. Tiltsa le az adatgyűjtő elemeket minden házirendnél. Ehhez kattintson a házirendre a bal oldali panelen, törölje a **Sample data item** (Mintaadatelem) melletti négyzet jelölését, majd kattintson a **Delete data collection items** (Adatgyűjtési elemek törlése) parancsra. Ezután kattintson az **OK** gombra.
+11. A Virtual Smart Card Tanúsítványkezelő használata esetén le kell tiltania az adatgyűjtő elemeket, az összetevő ugyanis aktív adatgyűjtés mellett nem működik. Tiltsa le az adatgyűjtő elemeket minden házirendnél. Ehhez kattintson a házirendre a bal oldali panelen, törölje a **Sample data item** (Mintaadatelem) melletti négyzet jelölését, majd kattintson a **Delete data collection items** (Adatgyűjtési elemek törlése) parancsra. Ezután kattintson az **OK**gombra.

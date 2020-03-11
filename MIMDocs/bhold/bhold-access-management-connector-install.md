@@ -4,17 +4,17 @@ description: Az BHOLD-összekötő modul támogatja az adatkezdeti és folyamato
 keywords: ''
 author: billmath
 ms.author: billmath
-manager: mtillman
+manager: daveba
 ms.date: 09/07/2017
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: ''
-ms.openlocfilehash: 60886a84c6105e94a2cd3d42f17b86b2d69c8c0a
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: ae9cc0bb4c63089c6733c06b7b035b2b9566fdd0
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "64516064"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79041863"
 ---
 # <a name="access-management-connector-installation"></a>Hozzáférés-kezelési összekötő telepítése
 
@@ -22,7 +22,7 @@ A BHOLD Suite hozzáférés-vezérlési összekötő modulja az adatok kezdeti �
 
 ## <a name="access-management-connector-software-requirements"></a>Hozzáférés-kezelési összekötő szoftverre vonatkozó követelmények
 
-A hozzáférés-kezelési összekötő modul telepítése előtt telepítenie kell a Microsoft .NET Framework 4 alkalmazást. A .NET-keretrendszer 4-es és a telepítési utasításokkal kapcsolatos további információkért tekintse meg a [Microsoft .net kezdőlapját](http://www.microsoft.com/net).
+A hozzáférés-kezelési összekötő modul telepítése előtt telepítenie kell a Microsoft .NET Framework 4 alkalmazást. A .NET-keretrendszer 4-es és a telepítési utasításokkal kapcsolatos további információkért tekintse meg a [Microsoft .net kezdőlapját](https://www.microsoft.com/net).
 Telepítenie kell a hozzáférés-vezérlési összekötőt egy olyan számítógépre, amelyen a (z) rendszer a famodul FIM synchronization szolgáltatását futtatja
 
 ## <a name="access-management-connector-setup"></a>Hozzáférés-kezelési összekötő beállítása

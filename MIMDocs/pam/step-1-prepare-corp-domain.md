@@ -4,19 +4,19 @@ description: CORP tartomány előkészítése létező vagy új identitásokkal 
 keywords: ''
 author: billmath
 ms.author: billmath
-manager: mtillman
+manager: daveba
 ms.date: 09/13/2017
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: 4b524ae7-6610-40a0-8127-de5a08988a8a
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: dda6a05337e9a9778135fc7d833a38369540b3e0
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: c21228dad923d80ab63c255c1184b7de04a0ff3d
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "64518184"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79043732"
 ---
 # <a name="step-1---prepare-the-host-and-the-corp-domain"></a>1\. lépés – A gazdagép és a CORP tartomány előkészítése
 
@@ -47,7 +47,7 @@ Telepítse a Windows Server 2012 R2 vagy a Windows Server 2016 Technical Preview
 
 ### <a name="add-roles-to-establish-a-domain-controller"></a>Szerepkörök beállítása tartományvezérlő létrehozásához
 
-Ebben a szakaszban be fogja állítani az Active Directory tartományi szolgáltatások (AD DS), a DNS-kiszolgáló, illetve a (Fájl- és adattárolási szolgáltatások szerepkör részét képező) Fájlkiszolgáló szerepkört, majd ezt a kiszolgálót egy új, contoso.local nevű erdő tartományvezérlőjévé lépteti elő.
+Ebben a szakaszban be fogja állítani az Active Directory Domain Services (AD DS), a DNS-kiszolgáló, illetve a (Fájl- és adattárolási szolgáltatások szerepkör részét képező) Fájlkiszolgáló szerepkört, majd ezt a kiszolgálót egy új, contoso.local nevű erdő tartományvezérlőjévé lépteti elő.
 
 > [!NOTE]  
 > Ha már van olyan tartománya, amelyet CORP tartományként szeretne használni, és ez a tartomány a Windows Server 2012 R2 vagy későbbi verziót használja tartományvezérlőként, ugorjon a [További felhasználók és csoportok létrehozása bemutatóhoz](#create-additional-users-and-groups-for-demonstration-purposes) című részhez.
@@ -127,13 +127,13 @@ Minden tartományban jelentkezzen be egy tartományvezérlőre tartományi rends
 
 2. Keresse meg az ehhez a tartományhoz tartozó tartományvezérlői szabályzatot.  Ha létrehozott egy új tartományt a contoso.local erdőben, lépjen az **Erdő: contoso.local** > **Tartományok** > **contoso.local** > **Tartományvezérlők** > **Alapértelmezett tartományvezérlői házirend** lehetőségre. Ekkor megjelenik egy tájékoztató üzenet.
 
-3. Kattintson a jobb gombbal az **Alapértelmezett tartományvezérlői házirend** elemre, majd válassza a **Szerkesztés** lehetőséget. Ekkor megjelenik egy új ablak.
+3. Kattintson a jobb gombbal az **Alapértelmezett tartományvezérlői házirend** elemre, és válassza a **Szerkesztés** parancsot. Ekkor megjelenik egy új ablak.
 
 4. A Csoportházirendkezelés-szerkesztő ablakában, az Alapértelmezett tartományvezérlői házirend konzolfáján keresse meg a **Számítógép konfigurációja** > **Házirendek** > **A Windows beállításai** > **Biztonsági beállítások** > **Helyi házirend** > **Naplórend** elemet.
 
-5. A részletek ablaktábláján kattintson a jobb gombbal a **Fiókkezelés naplózása** elemre, és válassza a **Tulajdonságok** parancsot. Válassza ki **A következő házirend-beállítások megadása** lehetőséget, jelölje be a **Sikeres** és a **Sikertelen** beállítást, majd kattintson az **Alkalmaz** és az **OK** gombra.
+5. A részletek ablaktábláján kattintson a jobb gombbal a **Fiókkezelés naplózása** elemre, és válassza a **Tulajdonságok** parancsot. Válassza ki **A következő házirend-beállítások megadása** lehetőséget, jelölje be a **Siker** jelölőnégyzetet, jelölje be a **Hiba** jelölőnégyzetet, és kattintson az **Alkalmaz**, majd az **OK** gombra.
 
-6. A részletek ablaktáblájában kattintson a jobb gombbal a **Címtárszolgáltatás-hozzáférés naplózása** elemre, és válassza a **Tulajdonságok** parancsot. Válassza ki **A következő házirend-beállítások megadása** lehetőséget, jelölje be a **Sikeres** és a **Sikertelen** beállítást, majd kattintson az **Alkalmaz** és az **OK** gombra.
+6. A részletek ablaktáblájában kattintson a jobb gombbal a **Címtárszolgáltatás-hozzáférés naplózása** elemre, és válassza a **Tulajdonságok** parancsot. Válassza ki **A következő házirend-beállítások megadása** lehetőséget, jelölje be a **Siker** jelölőnégyzetet, jelölje be a **Hiba** jelölőnégyzetet, és kattintson az **Alkalmaz**, majd az **OK** gombra.
 
 7. Zárja be a Csoportházirendkezelés-szerkesztő ablakát és a Csoportházirend kezelése ablakot.
 
@@ -159,7 +159,7 @@ Ebben a szakaszban konfigurálni fogja az SID-előzmények áttelepítéséhez s
    Restart-Computer
    ```
 
-Ez újraindítja a tartományvezérlőt, a CORPDC gépet. Ezzel a beállításjegyzék-beállítással kapcsolatban bővebben lásd: [How to troubleshoot inter-forest sIDHistory migration with ADMTv2 ](http://support.microsoft.com/kb/322970) (A SID-előzmények erdők között, ADMTv2-vel végzett áttelepítésekor jelentkező hibák elhárítása).
+Ez újraindítja a tartományvezérlőt, a CORPDC gépet. Ezzel a beállításjegyzék-beállítással kapcsolatban bővebben lásd: [How to troubleshoot inter-forest sIDHistory migration with ADMTv2 ](https://support.microsoft.com/kb/322970) (A SID-előzmények erdők között, ADMTv2-vel végzett áttelepítésekor jelentkező hibák elhárítása).
 
 ## <a name="prepare-a-corp-workstation-and-resource"></a>CORP-munkaállomás és -erőforrás előkészítése
 
@@ -172,7 +172,7 @@ Ha még nincs csatlakoztatva munkaállomás a tartományhoz, készítse elő a s
 
 Egy új virtuális gépre, amelyre még nincs telepítve szoftver, telepítse a Windows 8.1 Enterprise vagy a Windows 10 Enterprise verziót. Ez lesz a *CORPWKSTN* számítógép.
 
-1. A telepítéshez használja a gyorsbeállításokat.
+1. A telepítéshez használja az expressz beállításokat.
 
 2. Vegye figyelembe, hogy előfordulhat, hogy a telepítés nem fog tudni csatlakozni az internethez. Válassza a **Helyi fiók létrehozása** lehetőséget. Adjon meg más felhasználónevet, ne használja a „Rendszergazda” vagy az „Ilona” nevet.
 

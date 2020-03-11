@@ -4,25 +4,25 @@ description: ''
 keywords: ''
 author: billmath
 ms.author: billmath
-manager: mtillman
+manager: daveba
 ms.date: 09/13/2017
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: bfc7cb64-60c7-4e35-b36a-bbe73b99444b
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: f8fd71d2244760d3a6561c6f55bf676e6f42561a
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: 3b99bd6d8f10c993d65e026bab23deeb65c547e9
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "64518870"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79043953"
 ---
 # <a name="planning-a-bastion-environment"></a>Megerősített környezet tervezése
 
 A dedikált felügyeleti erdővel rendelkező megerősített környezetnek az Active Directory-hoz való hozzáadása lehetővé teszi a szervezetek számára a rendszergazdai fiókok, a munkaállomások és a csoportok egyszerű kezelését olyan környezetben, amely erősebb biztonsági rendszabályokat alkalmaz, mint a meglévő éles környezetük.
 
-Ez az architektúra lehetővé teszi számos olyan rendszabály használatát, amely nem vagy nem könnyen konfigurálható az egy erdőt tartalmazó architektúrában. Ez magában foglalja olyan fiókok létesítését rendszerjogosultsággal nem rendelkező, normál felhasználóként a felügyeleti erdőben, amelyek magas szintű jogosultságokkal rendelkeznek az éles környezetben, ami lehetővé teszi a cégirányítási követelmények nagyobb mértékű technikai érvényesítését. Emellett ezzel az architektúrával az adott bizalmi kapcsolatok szelektív hitelesítési képessége révén a bejelentkezések (és a hitelesítő adatok felfedése) az erre jogosult gazdagépekre korlátozható. Ha a teljes újraépítés költségei és összetettsége nélkül szeretnénk fokozni az üzemi erdő biztonságát, a felügyeleti erdő megfelelő környezetet biztosíthat az üzemi környezet biztonságának erősítéséhez.
+Ez az architektúra lehetővé teszi számos olyan rendszabály használatát, amely nem vagy nem könnyen konfigurálható az egy erdőt tartalmazó architektúrában. Ez magában foglalja olyan fiókok létesítését rendszerjogosultsággal nem rendelkező, normál felhasználóként a felügyeleti erdőben, amelyek magas szintű jogosultságokkal rendelkeznek az éles környezetben, ami lehetővé teszi a cégirányítási követelmények nagyobb mértékű technikai érvényesítését. Ez az architektúra emellett lehetővé teszi a szelektív hitelesítési funkció, a megbízhatóság használatát is a bejelentkezések (és a hitelesítő adatok veszélyeztetettségének) korlátozására, hogy csak az erre jogosult gazdagépek jelentkezhessenek be. Olyan esetekben, ahol nagyobb szintű megbízhatóságra van szükség az éles környezetben működő erdő számára az ezzel járó költségek és teljes átalakítás nélkül, egy felügyeleti erdő olyan környezetet tud előállítani, amely megnöveli az éles környezet megbízhatósági szintjét.
 
 A dedikált felügyeleti erdő mellett további technikák is használhatók. Ezek közé tartozik annak korlátozása, hogy hol jelennek meg a rendszergazdai hitelesítő adatok, az adott erdőben található felhasználók szerepkör-jogosultságainak korlátozása, valamint annak biztosítása, hogy a felügyeleti feladatok végrehajtása ne a szokásos felhasználói tevékenységekhez (például a levelezéshez és a webböngészéshez) használt gazdagépeken történjen.
 
@@ -40,9 +40,9 @@ A rendszergazdai jogosultságok felosztásának [rétegmodellje](tier-model-for-
 
 ### <a name="restricted-trust"></a>Korlátozott megbízhatóság
 
-Az éles környezet *CORP* erdőjének megbízhatónak kell tekintenie a felügyeleti *PRIV* erdőt, de ez megfordítva már nem érvényes. Ez lehet tartományi vagy erdőszintű bizalmi kapcsolat. A felügyeleti erdő tartományának nem kell megbízhatónak tekintenie a felügyelt tartományokat és erdőket az Active Directory felügyeletéhez, bár előfordulhat, hogy egyes alkalmazások kétirányú megbízhatósági kapcsolatot, biztonsági ellenőrzést és tesztelést igényelnek.
+Az éles környezet *CORP* erdőjének megbízhatónak kell tekintenie a felügyeleti *PRIV* erdőt, de ez megfordítva már nem érvényes. Ez lehet tartományi megbízhatóság vagy erdőszintű megbízhatóság. A felügyeleti erdő tartományának nem kell megbízhatónak tekintenie a felügyelt tartományokat és erdőket az Active Directory felügyeletéhez, bár előfordulhat, hogy egyes alkalmazások kétirányú megbízhatósági kapcsolatot, biztonsági ellenőrzést és tesztelést igényelnek.
 
-Szelektív hitelesítés használatával kell biztosítani, hogy a felügyeleti erdőben lévő fiókok csak a megfelelő gazdagépeket használják az éles környezetben. A tartományvezérlők karbantartásához és a jogosultságoknak az Active Directoryban történő delegálásához ez általában a tartományvezérlők „Bejelentkezés engedélyezett” jogosultságának megadását igényli a felügyeleti erdőben lévő 0. rétegbeli rendszergazdai fiókok számra. További információt a [Configuring Selective Authentication Settings (A szelektív hitelesítés beállításainak konfigurálása)](http://technet.microsoft.com/library/cc816580.aspx) című cikkben talál.
+Szelektív hitelesítés használatával kell biztosítani, hogy a felügyeleti erdőben lévő fiókok csak a megfelelő gazdagépeket használják az éles környezetben. A tartományvezérlők karbantartásához és a jogosultságoknak az Active Directoryban történő delegálásához ez általában a tartományvezérlők „Bejelentkezés engedélyezett” jogosultságának megadását igényli a felügyeleti erdőben lévő 0. rétegbeli rendszergazdai fiókok számra. További információt a [Configuring Selective Authentication Settings (A szelektív hitelesítés beállításainak konfigurálása)](https://technet.microsoft.com/library/cc816580.aspx) című cikkben talál.
 
 ## <a name="maintain-logical-separation"></a>Logikai elkülönítés alkalmazása
 
@@ -50,7 +50,7 @@ A következő irányelveket kell követni a megerősített környezet rendszerei
 
 - A Windows-kiszolgálók esetében nem ajánlott a tartományhoz való csatlakoztatás, illetve meglévő környezetekben található szoftverek felhasználása vagy beállítások terjesztése.
 
-- A megerősített környezetnek saját Active Directory tartományi szolgáltatásokat kell tartalmaznia, valamint Kerberost, LDAP-ot, DNS-t, időt és időszolgáltatásokat kell biztosítania.
+- A megerősített környezetnek saját Active Directory Domain Servicest kell tartalmaznia, valamint Kerberost, LDAP-ot, DNS-t, időt és időszolgáltatásokat kell biztosítania.
 
 - A MIM esetében nem ajánlott SQL-adatbázisfarm használata a meglévő környezetben. Az SQL Servert a megerősített környezetben található dedikált kiszolgálókra kell telepíteni.
 
@@ -64,7 +64,7 @@ A következő irányelveket kell követni a megerősített környezet rendszerei
 
 Mivel az alkalmazások felügyelete átkerül a megerősített környezetbe, vegye figyelembe, hogyan lehet biztosítani a rendelkezésre állást ezen alkalmazások követelményeinek megfelelően. Ennek technikái a következők:
 
-- Telepítsen Active Directory tartományi szolgáltatásokat több számítógépen a megerősített környezetben. Legalább két kiszolgáló szükséges a folyamatos hitelesítés biztosításához akkor is, ha az egyik kiszolgáló ütemezett karbantartás miatt átmenetileg indul újra. További számítógépekre lehet szükség a nagyobb terheléshez vagy a több földrajzi régióban elhelyezkedő erőforrások és a rendszergazdák kezeléséhez.
+- Telepítse az Active Directory Domain Servicest több számítógépen a megerősített környezetben. Legalább két kiszolgáló szükséges a folyamatos hitelesítés biztosításához akkor is, ha az egyik kiszolgáló ütemezett karbantartás miatt átmenetileg indul újra. További számítógépekre lehet szükség a nagyobb terheléshez vagy a több földrajzi régióban elhelyezkedő erőforrások és a rendszergazdák kezeléséhez.
 
 - Készítsen elő vészhelyzeti fiókokat a meglévő erdőben és a dedikált felügyeleti erdőben, amelyeket vészhelyzetben lehet használni.
 
@@ -76,11 +76,11 @@ Mivel az alkalmazások felügyelete átkerül a megerősített környezetbe, veg
 
 A felügyeleti erdőt a legkevesebb szükséges jogosultsággal kell konfigurálni az Active Directory felügyeleti követelményeinek megfelelően.
 
-- A felügyeleti erdőben található, az üzemi környezet felügyeletére szolgáló fiókok ne kapjanak rendszergazdai jogosultságokat a felügyeleti erdőhöz, illetve a benne található tartományokhoz vagy munkaállomásokhoz.
+- A felügyeleti erdőnek az éles környezet felügyeletéhez használt fiókjai számára ne adjon rendszergazdai jogosultságokat a felügyeleti erdőhöz, annak tartományaihoz, illetve az abban lévő munkaállomásokhoz.
 
-- A felügyeleti erdőre vonatkozó rendszergazdai jogosultságokat tartsa szigorú ellenőrzés alatt egy offline folyamattal, amivel csökkenthető annak veszélye, hogy egy támadó vagy egy kártevő szándékú belső felhasználó törli a felügyeleti naplókat. Mindez továbbá segít biztosítani, hogy az üzemi rendszergazdai fiókkal rendelkező személyek ne lazíthassanak a fiókjukra vonatkozó korlátozásokon, növelve ezzel a szervezetet fenyegető kockázatokat.
+- A felügyeleti erdőre vonatkozó rendszergazdai jogosultságokat tartsa szigorú ellenőrzés alatt egy offline folyamattal, amivel csökkenthető annak veszélye, hogy egy támadó vagy egy kártevő szándékú belső felhasználó törli a felügyeleti naplókat. Ez hozzájárul annak biztosításához is, hogy az éles környezet rendszergazdai fiókjaival rendelkező munkatársak ne tudják megengedőbbre állítani a fiókjuk korlátozását, és ne növeljék a szervezetre jelentett veszélyeket.
 
-- A felügyeleti erdőben a Microsoft Security Compliance Manager (SCM) szerint kell konfigurálni a tartományra vonatkozó beállításokat, a hitelesítési protokollok erős konfigurációját is beleértve.
+- A felügyeleti erdőnek követnie kell a Microsoft Security Compliance Manager (SCM) konfigurációit a tartományra vonatkozóan, beleértve a hitelesítési protokoll erős konfigurációit.
 
 A megerősített környezet létrehozásakor a Microsoft Identity Manager telepítése előtt határozza meg és hozza létre azokat a fiókokat, amelyeket a felügyelethez fognak használni ebben a környezetben. Ide tartoznak a következők:
 
@@ -96,7 +96,7 @@ A felügyeleti erdőhöz csatlakoztatott összes gazdagépre, beleértve a tarto
 
 - A felügyeleti tevékenységek végrehajtásához szükséges alkalmazásokat előzetesen telepíteni kell a munkaállomásokra, hogy az azokat használó fiókokat ne kelljen felvenni a helyi rendszergazdák csoportjába az alkalmazások telepítéséhez. A tartományvezérlő karbantartása általában az RDP és a Távoli kiszolgálófelügyelet eszközei használatával hajtható végre.
 
-- A felügyeleti erdők gazdagépén automatikusan telepíteni kell a biztonsági frissítéseket. Bár ezzel a tartományvezérlő karbantartási műveleteinek megszakítását kockáztatjuk, egyúttal jelentősen csökkentjük az el nem hárított biztonsági rések kockázatát.
+- A felügyeleti erdő gazdagépeit automatikusan frissíteni kell a biztonsági frissítésekkel. Bár ez azzal a veszéllyel járhat, hogy megszakadnak a tartományvezérlő karbantartási műveletei, mégis jelentős mértékben csökkenti a nem javított biztonsági rések kockázatait.
 
 ### <a name="identify-administrative-hosts"></a>A felügyeleti gazdagépek azonosítása
 
@@ -180,15 +180,15 @@ A tartományvezérlő naplózásra vonatkozó csoportházirend-beállításainak
 
     ![Alapértelmezett tartományvezérlői házirend – képernyőkép](media/pam-group-policy-management.jpg)
 
-5. Kattintson a jobb gombbal az **Alapértelmezett tartományvezérlői házirend** elemre, majd válassza a **Szerkesztés** lehetőséget. Megjelenik egy új ablak.
+5. Kattintson a jobb gombbal az **Alapértelmezett tartományvezérlői házirend** elemre, és válassza a **Szerkesztés** parancsot. Megjelenik egy új ablak.
 
 6. A Csoportházirendkezelés-szerkesztő ablakában, az Alapértelmezett tartományvezérlői házirend konzolfáján keresse meg a **Számítógép konfigurációja** > **Házirendek** > **A Windows beállításai** > **Biztonsági beállítások** > **Helyi házirend** > **Naplórend** elemet.
 
     ![Csoportházirendkezelés-szerkesztő – képernyőkép](media/pam-group-policy-management-editor.jpg)
 
-5. A részletek ablaktábláján kattintson a jobb gombbal a **Fiókkezelés naplózása** elemre, és válassza a **Tulajdonságok** parancsot. Válassza ki **A következő házirend-beállítások megadása** lehetőséget, jelölje be a **Sikeres** és a **Sikertelen** beállítást, majd kattintson az **Alkalmaz** és az **OK** gombra.
+5. A részletek ablaktábláján kattintson a jobb gombbal a **Fiókkezelés naplózása** elemre, és válassza a **Tulajdonságok** parancsot. Válassza ki **A következő házirend-beállítások megadása** lehetőséget, jelölje be a **Siker** jelölőnégyzetet, jelölje be a **Hiba** jelölőnégyzetet, és kattintson az **Alkalmaz**, majd az **OK** gombra.
 
-6. A részletek ablaktáblájában kattintson a jobb gombbal a **Címtárszolgáltatás-hozzáférés naplózása** elemre, és válassza a **Tulajdonságok** parancsot. Válassza ki **A következő házirend-beállítások megadása** lehetőséget, jelölje be a **Sikeres** és a **Sikertelen** beállítást, majd kattintson az **Alkalmaz** és az **OK** gombra.
+6. A részletek ablaktáblájában kattintson a jobb gombbal a **Címtárszolgáltatás-hozzáférés naplózása** elemre, és válassza a **Tulajdonságok** parancsot. Válassza ki **A következő házirend-beállítások megadása** lehetőséget, jelölje be a **Siker** jelölőnégyzetet, jelölje be a **Hiba** jelölőnégyzetet, és kattintson az **Alkalmaz**, majd az **OK** gombra.
 
     ![Sikeres és sikertelen házirend-beállítások – képernyőkép](media/pam-group-policy-management-editor2.jpg)
 

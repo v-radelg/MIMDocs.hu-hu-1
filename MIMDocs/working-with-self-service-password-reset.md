@@ -4,17 +4,17 @@ description: Ismerje meg, hogy milyen újdonságokat kínál a MIM 2016 önkiszo
 keywords: ''
 author: billmath
 ms.author: billmath
-manager: mtillman
+manager: daveba
 ms.date: 05/11/2019
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: 94a74f1c-2192-4748-9a25-62a526295338
-ms.openlocfilehash: 90452391170114270765e9a7fe08e98eea0747e4
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: 41aba931111d6ef46e60dfed173362e59c411dfe
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67690699"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79044276"
 ---
 # <a name="self-service-password-reset-deployment-options"></a>Önkiszolgáló jelszó-visszaállítás üzembe helyezési lehetőségei
 
@@ -25,7 +25,7 @@ A [prémium szintű Azure Active Directory licenccel rendelkező](https://docs.m
 - Opcionálisan a [felhasználók előzetes regisztrációja](/azure/active-directory/authentication/howto-sspr-authenticationdata).
 - Végül az [Azure ad önkiszolgáló jelszó-visszaállítási szolgáltatásának alaphelyzetbe állítása a végfelhasználók](/azure/active-directory/authentication/howto-sspr-deployment)számára.
 
-Az önkiszolgáló jelszó-visszaállításhoz korábban üzembe helyezett Forefront Identity Manager (FIM) és a prémium szintű Azure Active Directory licenccel rendelkező meglévő ügyfelek esetében javasoljuk, hogy az Azure AD önkiszolgáló jelszó-visszaállításra való áttérést tervezi.  A végfelhasználókat az Azure AD önkiszolgáló jelszó-visszaállítási funkciójának átállításával anélkül változtathatja meg, hogy újra regisztrálja őket, ha [szinkronizálja vagy beállítja a PowerShell felhasználó másodlagos e-mail-címét vagy mobiltelefonszámát](/azure/active-directory/authentication/howto-sspr-authenticationdata). Miután a felhasználók regisztrálva lettek az Azure AD önkiszolgáló jelszó-visszaállításra, a rendszer leszerelheti a FIM jelszó-visszaállítási portált.
+Az önkiszolgáló jelszó-visszaállításhoz korábban üzembe helyezett Forefront Identity Manager (FIM) és a prémium szintű Azure Active Directory licenccel rendelkező meglévő ügyfelek esetében javasoljuk, hogy az Azure AD önkiszolgáló jelszó-visszaállításra való áttérést tervezi.  A végfelhasználókat az Azure AD önkiszolgáló jelszó-visszaállítási funkciójának átállításával anélkül változtathatja meg, hogy újra regisztrálja őket, ha [szinkronizálja vagy beállítja a PowerShell felhasználó másodlagos e-mail-címét vagy mobiltelefonszámát](/azure/active-directory/authentication/howto-sspr-authenticationdata). Miután a felhasználók regisztrálva vannak az Azure AD önkiszolgáló jelszó-visszaállítás, a FIM jelszó-visszaállítási portál leszerelhetők.
 
 Az Azure AD önkiszolgáló jelszó-visszaállítást a felhasználók számára még nem központilag használó ügyfelek esetében a (z) az önkiszolgáló jelszó-visszaállítási portálokat is tartalmazza.  A FIM-hez képest a 2016 a következő változásokat tartalmazza:
 

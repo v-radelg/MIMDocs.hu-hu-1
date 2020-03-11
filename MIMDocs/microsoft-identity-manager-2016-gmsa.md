@@ -1,219 +1,202 @@
 ---
-title: A gMSA-specifikus szolgáltatások átalakítása a következőre | Microsoft Docs
-description: A gMSA konfigurálásának alapvető lépéseit ismertető témakör.
+title: Microsoft Identity Manager-specifikus szolgáltatások átalakítása gMSA | Microsoft Docs
+description: Ez a cikk a csoportosan felügyelt szolgáltatásfiók (gMSA) konfigurálásának előfeltételeit és alapvető lépéseit ismerteti.
 author: EugeneSergeev
 ms.author: esergeev
-manager: aashiman
-ms.date: 06/27/2018
+manager: daveba
+ms.date: 03/10/2020
 ms.topic: article
 ms.prod: microsoft-identity-manager
-ms.openlocfilehash: 49216a2d2077dd1be83f17719e996a20abb61cf8
-ms.sourcegitcommit: d98a76d933d4d7ecb02c72c30d57abe3e7f5d015
+ms.openlocfilehash: 4586b9998a9526a867ffe7ace9489fe56fff146c
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78289515"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79044208"
 ---
-# <a name="conversion-of-mim-specific-services-to-gmsa"></a>GMSA-specifikus szolgáltatások átalakítása
+# <a name="convert-microsoft-identity-manager-specific-services-to-use-group-managed-service-accounts"></a>Microsoft Identity Manager-specifikus szolgáltatások átalakítása csoportosan felügyelt szolgáltatásfiókok használatára
 
-Ez az útmutató végigvezeti a támogatott szolgáltatások gMSA konfigurálásához szükséges alapvető lépéseken. A gMSA konvertálásának folyamata egyszerű, ha előre konfigurálja a környezetet.
+Ez a cikk a támogatott Microsoft Identity Manager szolgáltatások csoportosan felügyelt szolgáltatásfiókok (gMSA) használatára való konfigurálásának útmutatója. Miután előre konfigurálta a környezetet, a gMSA-re való áttérés folyamata egyszerű.
 
-Gyorsjavítás szükséges: [4.5.26.0 vagy újabb](https://docs.microsoft.com/microsoft-identity-manager/reference/version-history)
+## <a name="prerequisites"></a>Előfeltételek
 
-Támogatott:
+- Töltse le és telepítse a következő szükséges gyorsjavítást: [Microsoft Identity Manager 4.5.26.0 vagy újabb](https://docs.microsoft.com/microsoft-identity-manager/reference/version-history).
 
--   Webkiszolgálói szinkronizációs szolgáltatás (FIMSynchronizationService)
--   FIMService-szolgáltatás
--   A regisztrációs adatbázis jelszava regisztrációja
--   A rendszerállapot-visszaállítás jelszava
--   PAM-figyelési szolgáltatás (PamMonitoringService)
--   PAM-összetevő szolgáltatás (PrivilegeManagementComponentService)
+    Támogatott szolgáltatások:
 
-Nem támogatott:
+    -   Microsoft Identity Manager szinkronizációs szolgáltatás (FIMSynchronizationService)
+    -   Microsoft Identity Manager szolgáltatás (FIMService)
+    -   Microsoft Identity Manager jelszó-regisztráció
+    -   Új jelszó kérése Microsoft Identity Manager
+    -   Privileged Access Management (PAM) figyelési szolgáltatás (PamMonitoringService)
+    -   PAM-összetevő szolgáltatás (PrivilegeManagementComponentService)
 
--   A webszolgáltatási portál nem támogatott, mert a SharePoint-környezet része, és Farm módban kell telepítenie, és az [automatikus jelszó-módosítást a SharePoint Server-ben kell konfigurálnia](https://docs.microsoft.com/sharepoint/administration/configure-automatic-password-change) .
--   Minden felügyeleti ügynök
--   Microsoft Tanúsítványkezelő
--   BHOLD
+    Nem támogatott szolgáltatások:
 
-<a name="general-information"></a>Általános információ 
---------------------
+    -   A Microsoft Identity Manager portál nem támogatott. A szolgáltatás része a SharePoint-környezetnek, és telepítenie kell azt Farm módban, és [konfigurálnia kell az automatikus jelszavas változást a SharePoint-kiszolgálón](https://docs.microsoft.com/sharepoint/administration/configure-automatic-password-change).
+    -   Az összes felügyeleti ügynök a Microsoft Identity Manager Service Management agent kivételével
+    -   Microsoft Tanúsítványkezelő
+    -   BHOLD
 
-A telepítés és a megértés befejezéséhez szükséges olvasás
+- A környezet beállításával kapcsolatos háttér-és általános tudnivalókat lásd: 
 
--   [Csoportosan felügyelt szolgáltatásfiókok – áttekintés](https://docs.microsoft.com/windows-server/security/group-managed-service-accounts/group-managed-service-accounts-overview)
+    -   [Csoportosan felügyelt szolgáltatásfiókok – áttekintés](https://docs.microsoft.com/windows-server/security/group-managed-service-accounts/group-managed-service-accounts-overview)  
+    -   [Új – ADServiceAccount](https://docs.microsoft.com/powershell/module/addsadministration/new-adserviceaccount?view=win10-ps)  
 
--   <https://docs.microsoft.com/powershell/module/addsadministration/new-adserviceaccount?view=win10-ps>
+- Mielőtt elkezdené, [hozza létre a központi terjesztési szolgáltatások legfelső szintű kulcsát](https://technet.microsoft.com/library/jj128430(v=ws.11).aspx) a Windows-tartományvezérlőn. Vegye figyelembe a következő információkat:  
 
--   <https://technet.microsoft.com/library/jj128430(v=ws.11).aspx>
+    - A Key Distribution Services-(KDS-) szolgáltatás a legfelső szintű kulcsokat használja a tartományvezérlőkön található jelszavak és egyéb információk létrehozásához.
+    - Csak egyszer hozzon létre egy legfelső szintű kulcsot tartományon, ha szükséges.  
+    - `Add-KDSRootKey –EffectiveImmediately`belefoglalása. "– EffectiveImmediately" azt jelenti, hogy akár 10 órát is igénybe vehet, hogy a legfelső szintű kulcsot replikálja az összes tartományvezérlőre. A két tartományvezérlőre való replikálás körülbelül 1 órát is igénybe vehet. 
+    ![a "– EffectiveImmediately" karakterláncot](media/7fbdf01a847ea0e330feeaf062e30668.png)
 
-Első lépés a Windows-tartományvezérlőn
+## <a name="actions-to-run-on-the-active-directory-domain-controller"></a>A Active Directory-tartomány vezérlőn futtatandó műveletek
 
-1.  Szükség esetén hozza létre a Key Distribution Services (KDS) legfelső szintű kulcsát (csak egyszer egy tartományon). A legfelső szintű kulcsot a KDS szolgáltatás használja a DCs-ben (más információkkal együtt) a jelszavak létrehozásához.
+1.  Hozzon létre egy *MIMSync_Servers*nevű csoportot, és adja hozzá az összes szinkronizációs kiszolgálót.
 
-    -   Add-KDSRootKey – EffectiveImmediately
+    ![MIMSync_Servers csoport létrehozása](media/a4dc3f6c0cb1f715ba690744f54dce5c.png)
 
-    -   "– EffectiveImmediately": várjon akár \~10 órát, vagy az összes TARTOMÁNYVEZÉRLŐre replikálni kell. Két tartományvezérlő esetében körülbelül 1 óra volt.
+1.  Jelentkezzen be a Windows PowerShellbe *tartományi rendszergazdaként* egy olyan fiókkal, amely már csatlakoztatva van a tartományhoz, majd futtassa a következő parancsot: 
 
-![](media/7fbdf01a847ea0e330feeaf062e30668.png)
+    `New-ADServiceAccount -Name MIMSyncGMSAsvc -DNSHostName MIMSyncGMSAsvc.contoso.com -PrincipalsAllowedToRetrieveManagedPassword "MIMSync_Servers"`
 
-## <a name="synchronization-service"></a>Synchronization Service
------------------------
+    ![A parancs a PowerShellben](media/f6deb0664553e01bcc6b746314a11388.png)
 
-1.  Hozzon létre egy "MIMSync_Servers" nevű csoportot, és vegye fel az összes szinkronizációs kiszolgálót ebbe a csoportba.
+    - A szinkronizálási gMSA részleteinek megtekintése:  
+     ![A szinkronizálás gMSA részletei](media/c80b0a7ed11588b3fb93e6977b384be4.png)
 
-![](media/a4dc3f6c0cb1f715ba690744f54dce5c.png)
+    - Ha a jelszó-módosítási értesítési szolgáltatást (PCN) futtatja, frissítse a delegálást a következő parancs futtatásával:
 
-2.  A Windows PowerShellben futtassa az alábbi parancsot tartományi rendszergazdaként a tartományhoz már csatlakoztatott számítógépfiók használatával.
+        `Set-ADServiceAccount -Identity MIMSyncGMSAsvc -ServicePrincipalNames
+        @{Add="PCNSCLNT/mimsync.contoso.com"}`
 
-    -   New-ADServiceAccount-Name MIMSyncGMSAsvc-DNSHostName MIMSyncGMSAsvc.contoso.com-PrincipalsAllowedToRetrieveManagedPassword "MIMSync_Servers"
+## <a name="actions-to-run-on-the-microsoft-identity-manager-synchronization-server"></a>A Microsoft Identity Manager szinkronizálási kiszolgálón futtatandó műveletek
 
-![](media/f6deb0664553e01bcc6b746314a11388.png)
+1. Synchronization Service Manager a titkosítási kulcs biztonsági mentését. A rendszer a módosítási mód telepítését fogja kérni. Tegye a következőket:
 
--   A szinkronizálási GSMA részleteinek beolvasása:
+    a. Keresse meg a szinkronizálási szolgáltatás kulcskezelő eszközét azon a kiszolgálón, amelyen a Synchronization Service Manager telepítve van. Az **exportálási kulcs készletének** alapértelmezés szerint már ki van választva.
 
-![](media/c80b0a7ed11588b3fb93e6977b384be4.png)
+    b. Válassza a **Tovább** elemet. 
+    
+    c. A parancssorba írja be és ellenőrizze a Microsoft Identity Manager vagy a Forefront Identity Manager (FIM) szinkronizálási szolgáltatás fiókjának adatait:
 
--   Ha a PCN szolgáltatást futtatja, akkor frissítenie kell a delegálást.
+    -   **Fiók neve**: a kezdeti telepítés során használt szinkronizációs szolgáltatás fiókjának neve.  
+    -   **Password (jelszó**): a szinkronizálási szolgáltatás fiókjának jelszava.  
+    -   **Tartomány**: a szinkronizálási szolgáltatásfiók részét képező tartomány.
 
-    -   Set-ADServiceAccount-Identity MIMSyncGMSAsvc-ServicePrincipalNames \@{add = "PCNSCLNT/mimsync. contoso. com"}
+    d. Válassza a **Tovább** elemet.
 
-3. A szinkronizálási szolgáltatásokban a következő lépésekkel készítsen biztonsági másolatot a titkosítási kulcsról, mivel azt a rendszer a módosítási mód telepítésekor kéri
+    Ha sikeresen megadta a fiók adatait, lehetősége van módosítani a biztonsági másolat titkosítási kulcsának célhelyét vagy a fájl exportálási helyét. Alapértelmezés szerint az exportfájl helye a *C:\Windows\system32\miiskeys-1.bin*.
 
-    -   Azon a kiszolgálón, amelyen a szinkronizálási szolgáltatás telepítve van, keresse meg a szinkronizálási szolgáltatás kulcskezelő eszközét.
+1. Telepítse a Microsoft Identity Manager SP1 csomagot, amely a mennyiségi licencelési szolgáltatási központban vagy az MSDN letöltési webhelyén található. A telepítés befejezése után mentse a kulcskészlet *miiskeys. bin*fájlját.
 
-    -   Alapértelmezés szerint az **exportálási kulcs készlete** már ki van választva.
+   ![A Microsoft Identity Manager szinkronizációs szolgáltatás telepítési folyamatának ablaka](media/ef5f16085ec1b2b1637fa3d577a95dbf.png)
 
-    -   Kattintson a **Next (tovább** ) gombra
+1. Telepítse a [gyorsjavítás 4.5.2.6.0](https://docs.microsoft.com/microsoft-identity-manager/reference/version-history) vagy újabb verzióját.
 
-    -   Ekkor a rendszer felszólítja, hogy adja meg a meglévő szinkronizálási fiók adatait
+1. A javítás telepítése után állítsa le a FIM szinkronizációs szolgáltatást a következő módon:
 
-    -   A FIM Sync-fiók adatainak megadása és ellenőrzése
+   a. A vezérlőpulton válassza a **programok és szolgáltatások** > **Microsoft Identity Manager**lehetőséget.  
+   b. A **szinkronizálási szolgáltatás** lapon válassza a **módosítás** > **tovább**lehetőséget.  
+   c. A **karbantartási beállítások** ablakban válassza a **Konfigurálás**lehetőséget.
 
-        -   Fióknév: a kezdeti telepítés során használt szinkronizálási szolgáltatásfiók fiókneve
+   ![A karbantartási beállítások ablak](media/dc98c011bec13a33b229a0e792b78404.png)
 
-        -   A szinkronizálási szolgáltatás fiókjának jelszava – jelszó
+   d. A **Microsoft Identity Manager szinkronizálási szolgáltatás konfigurálása** ablakban törölje az alapértelmezett értéket a **szolgáltatásfiók** mezőben, majd írja be a **MIMSyncGMSA $** értéket. Ügyeljen arra, hogy tartalmazza a Dollar Sign ($) szimbólumot, ahogy az az alábbi képen is látható. Hagyja üresen a **jelszó** mezőt.
 
-        -   Az a tartomány, amelyhez a szinkronizációs szolgáltatás fiókja kívül esik
+   ![A Microsoft Identity Manager szinkronizálási szolgáltatás konfigurálása ablak](media/38df9369bf13e1c3066a49ed20e09041.png)
 
-    -   Kattintson a **Next (tovább** ) gombra
+   e. Válassza a **tovább** > **következő** > **telepítés**lehetőséget.  
+   f. Állítsa vissza a kulcskészlet elemet a korábban mentett *miiskeys. bin* fájlból.
 
-    -   Ha helytelenül adta meg a hibát, a következő hibaüzenet jelenik meg:
+   ![A kulcskészlet-konfiguráció visszaállításának lehetősége](media/44cd474323584feb6d8b48b80cfceb9b.png)
 
-    -   Most, hogy sikeresen megadta a fiók adatait, megjelenik egy lehetőség, amellyel megváltoztathatja a biztonsági másolat titkosítási kulcsának célját (exportfájl helye).
+   ![A felügyeleti ügynökök listája Synchronization Service Manager](media/03e7762f34750365e963f0b90e43717c.png)
 
-        -   Alapértelmezés szerint az exportálási fájl helye a **C:\\Windows\\system32**\\miiskeys-1. bin.
-
-4. Telepítse a Microsoft Identity Manager SP1 szinkronizációs szolgáltatást Build 4.4.1302.0. a mennyiségi licencelési letöltőközpontban vagy az MSDN letöltési webhelyén található. A telepítés befejezését követően mentse a kulcskészlet miiskeys. bin fájl mentését.
-
-![](media/ef5f16085ec1b2b1637fa3d577a95dbf.png)
-
-
-5. Telepítse a legújabb [gyorsjavítást 4.5. x. x](https://docs.microsoft.com/microsoft-identity-manager/reference/version-history) vagy újabb verzióra.
-
-- Miután a javította a FIM szinkronizációs szolgáltatást.
-- Vezérlőpult Programok és szolgáltatások Microsoft Identity Manager
-- Szinkronizálási szolgáltatás módosítása –\> Next-\> konfigurálás –\> következő
-
-![](media/dc98c011bec13a33b229a0e792b78404.png)
-
--  Fiók nevének törlése
--  Írja be a következőt a **MIMSyncGMSA** neve \$ szimbólummal
-- képernyőkép. Hagyja üresen a jelszót.
-
-![](media/38df9369bf13e1c3066a49ed20e09041.png)
-
-- Következő –\> következő\> telepítése
-- Állítsa vissza a kulcskészlet elemet a mentett. bin fájlból.
-
-![](media/44cd474323584feb6d8b48b80cfceb9b.png)
-
-![](media/03e7762f34750365e963f0b90e43717c.png)
-> [!NOTE]
-> A rendszer a fiókhoz tartozó SQL-engedélyekkel hozza létre a bejelentkezést, ezért engedélyeznie kell a felhasználó számára a módosítási mód engedélyezését a fiók-és dbo hozzáadásához a szinkronizációs szolgáltatás adatbázisában.
-
-## <a name="mim-service"></a>MIM szolgáltatás
------------
+## <a name="microsoft-identity-manager-service"></a>Microsoft Identity Manager szolgáltatás
 
 >[!IMPORTANT]
->A következő folyamatot kell használni, amikor először konvertálja a gMSA-fiókokkal kapcsolatos, a fakiszolgálói szolgáltatáshoz kapcsolódó fiókokat. A függelékben szereplő PowerShell-parancsmagok csak a kezdeti konfiguráció befejezése után módosíthatók a fiókadatok módosításához. *
+>Ha Microsoft Identity Manager szolgáltatással kapcsolatos fiókokat gMSA-fiókokra konvertál, kövesse az ebben a szakaszban leírt utasításokat.
 
-1.  Csoportosan felügyelt fiókok létrehozása a SSPR-hez, a PAM REST API-hoz, a PAM-figyelési szolgáltatáshoz, a PAM összetevő-szolgáltatáshoz, a SSPR-visszaállítási portálhoz.
+1. Hozzon létre csoportosan felügyelt fiókokat Microsoft Identity Manager szolgáltatáshoz, a PAM REST API-hoz, PAM-figyelési szolgáltatáshoz, PAM összetevő-szolgáltatáshoz, az önkiszolgáló jelszó-visszaállítási (SSPR) regisztrációs portálhoz és a SSPR-visszaállítási portálhoz
 
-    -   Győződjön meg róla, hogy frissíti a gMSA delegálást és az SPN-t
-        -   Set-ADServiceAccount-Identity \<fiók\>-ServicePrincipalNames \@{add = "\<SPN\>"}
-        -   Delegálás
-            -   Set-ADServiceAccount-Identity \<gsmaaccount\>-TrustedForDelegation \$igaz
-        -   Korlátozott delegálás
-            -   \$delspns = ' http/', ' http/. contoso. com '
-            -   New-ADServiceAccount-Name \<gsmaaccount\>-DNSHostName \<gsmaaccount\>. contoso.com-PrincipalsAllowedToRetrieveManagedPassword \<csoport\>-ServicePrincipalNames \$SPN-OtherAttributes \@{"msDS-AllowedToDelegateTo" =\$delspns}
+    -   A gMSA-delegálás és az egyszerű szolgáltatásnév (SPN) frissítése:
 
-2.  Fiók hozzáadása a modulhoz szinkronizálási csoportokban. A SSPR szükséges.
+        - `Set-ADServiceAccount -Identity \<account\> -ServicePrincipalNames
+            @{Add="\<SPN\>"}`
+    -   Delegálás
 
-![](media/0201f0281325c80eb70f91cbf0ac4d5b.jpg)
+        - `Set-ADServiceAccount -Identity \<gmsaaccount\>
+                -TrustedForDelegation $true`
+    -   Korlátozott delegálás:
+        -   `$delspns = 'http/mim', 'http/mim.contoso.com'`
+        -   `New-ADServiceAccount -Name \<gmsaaccount\> -DNSHostName
+                \<gmsaaccount\>.contoso.com
+                -PrincipalsAllowedToRetrieveManagedPassword \<group\>
+                -ServicePrincipalNames $spns -OtherAttributes
+                @{'msDS-AllowedToDelegateTo'=$delspns }`
 
-3.  **Megjegyzés:**  Ismert probléma, hogy a felügyelt fiókot használó szolgáltatások a kiszolgáló újraindítása után a Microsoft Key Distribution Service miatt nem indulnak el a Windows újraindítása után. A szolgáltatás nem indítható el, és a Windows nem indítható újra. A probléma legalább a Windows Server 2012 R2 rendszeren reprodukálható. A probléma megoldásához futtassa a parancsot. 
+1. Vegyen fel egy fiókot a Microsoft Identity Manager szolgáltatáshoz a szinkronizálási csoportokban. Ez a lépés szükséges a SSPR.
 
--   **SC triggerinfo kdssvc Start/Networkon**
+    ![A felhasználók és számítógépek Active Directory ablak](media/0201f0281325c80eb70f91cbf0ac4d5b.jpg)
 
-    a Microsoft Key Distribution Service elindítása a hálózat bekapcsolásakor (jellemzően a rendszerindítási ciklus korai szakaszában).
+    > [!NOTE]  
+    > A Windows Server 2012 R2 egyik ismert hibája, hogy a felügyelt fiókot használó szolgáltatások lefagynak a kiszolgáló újraindítása után, mivel a Microsoft Key Distribution Service nincs elindítva a Windows újraindítása után. A probléma megoldásához futtassa a következő parancsot: 
+    >
+    > `sc triggerinfo kdssvc start/networkon`
+    >
+    > A parancs elindítja a Microsoft Key Distribution Service szolgáltatást, amikor a hálózat be van kapcsolva (jellemzően a rendszerindítási ciklus korai szakaszában).
+    >
+    > Hasonló probléma esetén tekintse meg a következőt [: AD FS Windows 2012 R2: a adfssrv lefagy a kiinduló módban](https://social.technet.microsoft.com/Forums/en-US/a290c5c0-3112-409f-8cb0-ff23e083e5d1/ad-fs-windows-2012-r2-adfssrv-hangs-in-starting-mode?forum=winserverDS).
 
-    Lásd a hasonló problémákkal kapcsolatos vitát: <https://social.technet.microsoft.com/Forums/a290c5c0-3112-409f-8cb0-ff23e083e5d1/ad-fs-windows-2012-r2-adfssrv-hangs-in-starting-mode?forum=winserverDS>
+1.  Futtassa a Microsoft Identity Manager-szolgáltatás emelt szintű MSI-fájlját, és kattintson a **módosítás**gombra.
 
-4.  Futtassa a fakiszolgáló emelt szintű MSI-szolgáltatását, és válassza a módosítás lehetőséget.
+1.  A **levelezési kiszolgáló kapcsolatainak konfigurálása** ablakban jelölje be a **másik felhasználó használata Exchange-hez (felügyelt fiókok esetén)** jelölőnégyzetet. Lehetősége van az aktuális Exchange-fiók vagy a Felhőbeli postaláda használatára.
 
-5.  A "fő kiszolgáló kapcsolatainak konfigurálása" lapon jelölje be a "másik fiók használata az Exchange-hez (felügyelt fiókok esetében)" jelölőnégyzetet. Itt lehetősége lesz használni a régi fiókot, amely rendelkezik postaládával vagy Felhőbeli postaláda használatával.
     >[!NOTE]
-    >Ha az **Exchange Online használata** lehetőség van kiválasztva, hogy a fakiszolgálói szolgáltatás engedélyezze a HKLM\SYSTEM\CurrentControlSet\Services\FIMService-hez tartozó engedélyezési válaszokat, a telepítés után a PollExchangeEnabled 1. számú beállításkulcs értékét 1-re kell állítania.
+    >Ha bejelöli **az Exchange Online használata** lehetőséget, hogy Microsoft Identity Manager szolgáltatás feldolgozza a Microsoft Identity Manager Outlook-bővítmény jóváhagyási válaszait, a telepítés után állítsa a *PollExchangeEnabled* **HKLM\SYSTEM\CurrentControlSet\Services\FIMService** értéket **1-re** .
     
-![](media/0cd8ce521ed7945c43bef6100f8eb222.png)
+    ![A "levelezési kiszolgáló kapcsolatainak konfigurálása" ablak](media/0cd8ce521ed7945c43bef6100f8eb222.png)
 
-6.  A "címtárszolgáltatás-szolgáltatásfiók konfigurálása" lapon írja be a következőt: \$ szimbólum a végén. Írja be a szolgáltatás E-mail fiókjának jelszavát is. A szolgáltatásfiók jelszavát le kell tiltani.
+1.  A címtárszolgáltatás-szolgáltatásfiók **konfigurálása** ablak **szolgáltatásfiók neve** mezőjébe írja be a nevet. Ügyeljen arra, hogy tartalmazza a Dollar Sign ($) szimbólumot. Adja meg a jelszót is a **szolgáltatás E-mail fiókjának jelszava** mezőben. A **szolgáltatásfiók jelszava** mezője nem érhető el.
 
-![](media/db0d543df6e1b0174a47135617c23fcb.png)
+    ![A "webszolgáltatási szolgáltatásfiók konfigurálása" ablak](media/db0d543df6e1b0174a47135617c23fcb.png)
 
-7.  Ahogy a LogonUser függvény nem működik a felügyelt fiókoknál, a következő oldal figyelmeztetést jelenít meg: "Ellenőrizze, hogy a szolgáltatásfiók biztonságos-e a jelenlegi konfigurációjában".
+    Mivel a LogonUser függvény nem működik a felügyelt fiókoknál, a következő oldalon a figyelmeztetés jelenik meg: "Ellenőrizze, hogy a szolgáltatásfiók biztonságos-e a jelenlegi konfigurációjában."
 
-![CID: image007. png\@01D36EB 7.562 E6CF0](media/d350bc13751b2d0a884620db072ed019.png)
+    ![Fiók biztonsági figyelmeztetési ablaka](media/d350bc13751b2d0a884620db072ed019.png)
 
-8.  A "Privileged Access Management REST API konfigurálása" lapon írja be az alkalmazáskészlet-fiók nevét \$ szimbólummal a végén, és hagyja üresen a jelszó mezőt.
+1.  A **Privileged Access Management REST API konfigurálása** ablakban az **alkalmazáskészlet fiókjának neve** mezőbe írja be a fiók nevét. Ügyeljen arra, hogy tartalmazza a Dollar Sign ($) szimbólumot. Hagyja üresen az **alkalmazáskészlet fiókjának jelszava** mezőt.
 
-![](media/88db2f6f291fff8bcdd0da5d538aafc6.png)
+    ![A Privileged Access Management REST API konfigurálása ablak](media/88db2f6f291fff8bcdd0da5d538aafc6.png)
 
-9.  A "PAM-összetevő szolgáltatás konfigurálása" lapon írja be a következőt: szolgáltatásfiók neve \$ szimbólummal a végén, és hagyja üresen a jelszó mezőt.
+1.  A **PAM összetevő-szolgáltatás konfigurálása** ablak **szolgáltatásfiók neve** mezőjébe írja be a fiók nevét. Ügyeljen arra, hogy tartalmazza a Dollar Sign ($) szimbólumot. Hagyja üresen a **szolgáltatásfiók jelszava** mezőt.
 
-![](media/93cfbcefb4d17635dd35c5ead690fd1e.png)
+    ![A PAM összetevő-szolgáltatás konfigurálása ablak](media/93cfbcefb4d17635dd35c5ead690fd1e.png)
 
-![CID: image010. png\@01D36EB8. A295A3F0](media/9d2b52f6faed10601e7e2166a339fb47.png)
+    ![A fiók biztonsági figyelmeztetési ablaka](media/9d2b52f6faed10601e7e2166a339fb47.png)
 
-10.  A "Privileged Access Management figyelési szolgáltatás konfigurálása" lapon írja be a következőt: szolgáltatásfiók neve \$ szimbólummal a végén, és hagyja üresen a jelszó mezőt.
+1.  A **Privileged Access Management figyelési szolgáltatás konfigurálása** ablak **szolgáltatásfiók neve** mezőjébe írja be a szolgáltatásfiók nevét. Ügyeljen arra, hogy tartalmazza a Dollar Sign ($) szimbólumot. Hagyja üresen a **szolgáltatásfiók jelszava** mezőt.
 
-![](media/d1e824248edf12a77fc9ffb011475164.png)
+    ![A Privileged Access Management figyelési szolgáltatásának konfigurálása ablak](media/d1e824248edf12a77fc9ffb011475164.png)
 
-11.  A "helyi jelszó-regisztrációs portál konfigurálása" lapon írja be a fiók nevét \$ szimbólummal a végén, és hagyja üresen a jelszó mezőt.
+1.  A fiók neve mezőbe írja be a fiók nevét a **rendszerfiók** **jelszavas regisztrációs portáljának konfigurálása** ablakban. Ügyeljen arra, hogy tartalmazza a Dollar Sign ($) szimbólumot. Hagyja üresen a **jelszó** mezőt.
 
-![](media/601e935cdfda298b61ae753a2a152996.png)
+    ![A rendszerjelszó-regisztrációs portál konfigurálása ablak](media/601e935cdfda298b61ae753a2a152996.png)
 
-12.  A "jelszó-visszaállítási portál konfigurálása" lapon írja be a fiók nevét \$ szimbólummal a végén, és hagyja üresen a jelszó mezőt.
+1.  A webalkalmazási **jelszó-visszaállítási portál konfigurálása** ablak **fiók neve** mezőjébe írja be a fiók nevét. Ügyeljen arra, hogy tartalmazza a Dollar Sign ($) szimbólumot. Hagyja üresen a **jelszó** mezőt.
 
-![](media/10c8cfa8ff2b6d703d14bd0b7ddc6949.png)
+    ![A webhelyre vonatkozó jelszó-visszaállítási portál konfigurálása ablak](media/10c8cfa8ff2b6d703d14bd0b7ddc6949.png)
 
-13.  Fejezze be a telepítést.
+1.  Fejezze be a telepítést.
 
-Megjegyezés:
+    > [!NOTE]
+    > A telepítés során két új kulcs jön létre a beállításjegyzékbeli elérési úton **HKEY_LOCAL_MACHINE \Software\microsoft\forefront Identity manager\2010\service mappában** a titkosított Exchange-jelszó tárolásához. Az egyik bejegyzés a *ExchangeOnline*, a másik pedig a *ExchangeOnPremise*. Az egyik bejegyzésnél az **adatoszlop** értékének üresnek kell lennie.
 
--  A telepítés után két új kulcs jön létre a beállításjegyzékben útvonal alapján
-    - "HKEY_LOCAL_MACHINE\\szoftver\\Microsoft\\Forefront Identity
-    - Manager\\2010\\szolgáltatás "titkosított Exchange-jelszó tárolásához. Egyet a következőhöz:
-    - Exchange Online és egy másik a helyszíni Exchange-hez (az egyiknek a következőnek kell lennie:
-    - üres).
+    > ![A Rendszerleíróadatbázis-szerkesztő](media/73e2b8a3c149a4ec6bacb4db2c749946.jpg)
 
-![CID: image014. jpg\@01D36F 53.303 D5190](media/73e2b8a3c149a4ec6bacb4db2c749946.jpg)
+Ha módosítani szeretné a jelszót a tárolt fiókokon a módosítási mód futtatása nélkül, [töltse le ezt a PowerShell-parancsfájlt](microsoft-identity-manager-2016-gmsascript.md).
 
-- A jelszó frissítéséhez egy parancsfájl [letöltését](microsoft-identity-manager-2016-gmsascript.md) adta meg, így az ügyfélnek nem kell módosítania a módosítási módot
+Az Exchange-jelszó titkosításához a telepítő egy további szolgáltatást hoz létre, és a felügyelt fiókban futtatja azt. A telepítés során az **alkalmazás** eseménynaplójában a következő üzenetek lesznek hozzáadva:
 
-- Az Exchange-jelszó titkosításához a telepítő további szolgáltatást hoz létre, és
-    - a felügyelt fiók alatt futtatja. A következő üzenetek lesznek hozzáadva a következőhöz:
-    - Alkalmazás-eseménynapló a telepítés során.
-
-![CID: image016. jpg\@01D36F 53.303 D5190](media/95b315454705cd4d939b55ac5ad910f5.jpg)
+![A Eseménynapló ablak](media/95b315454705cd4d939b55ac5ad910f5.jpg)

@@ -4,19 +4,19 @@ description: Az útmutató azokat a tényezőket ismerteti, amelyeket célszerű
 keywords: ''
 author: billmath
 ms.author: billmath
-manager: mtillman
+manager: daveba
 ms.date: 10/12/2017
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: 3ac5b990-1678-4996-996d-cbd84b8426b4
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: b14066543c036eb4ec8a350843743b87902a13a1
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: 15eb35d01ed5c5c6e125c45f238bb2f7a7c564d7
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73636985"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79042117"
 ---
 # <a name="capacity-planning-guide"></a>Kapacitástervezési útmutató
 
@@ -37,23 +37,23 @@ Számos tényező befolyásolhatja a Microsoft Identity Manager üzemelő péld�
 
 A következő táblázat ismerteti a 2016-es üzemelő példány kapacitását és teljesítményét befolyásoló fő tényezőket:
 
-| Tervezési tényező | Szempontok |
+| Tervezési tényező | Megfontolások |
 | ------------- | -------------- |
 | Topológia | A MIM-szolgáltatások eloszlása a hálózaton található számítógépek között. |
 | Hardver | A fizikai hardver (fizikai vagy virtuális) minden egyes virtuális merevlemez-összetevőhöz, beleértve a CPU-t, a memóriát, a hálózati adaptert és a merevlemez-konfigurációt. |
 | A MIM házirend-konfigurációs objektumai | A MIM házirend-konfigurációs objektumainak száma és típusa – ide tartoznak a halmazok, a felügyeleti házirend-szabályok és a munkafolyamatok. |
 | Méretezés | A felhasználók, csoportok, számított csoportok és egyéni objektumtípusok, amelyeket a 2016-es felügyeleti webalkalmazás kezel. Vegye figyelembe a dinamikus csoportok összetettségét is, és vegye ezt számításba a csoportok beágyazásakor. |
-| Terhelés | A használat gyakorisága, Olyan műveletek, mint az új csoport vagy felhasználó létrehozása, a jelszó alaphelyzetbe állítása vagy a portálon végzett látogatások percenként vagy órában. Vegye figyelembe, hogy a terhelés egy adott óra, nap, hét vagy év alatt változhat. Az összetevőtől függően tervezhet a csúcsterheléssel vagy az átlagos terheléssel is. |
+| Betöltés | A használat gyakorisága, Olyan műveletek, mint az új csoport vagy felhasználó létrehozása, a jelszó alaphelyzetbe állítása vagy a portálon végzett látogatások percenként vagy órában. Vegye figyelembe, hogy a terhelés egy adott óra, nap, hét vagy év alatt változhat. Az összetevőtől függően tervezhet a csúcsterheléssel vagy az átlagos terheléssel is. |
 
 ## <a name="hosting-microsoft-identity-manager-components"></a>A Microsoft Identity Manager összetevőinek üzemeltetése
 
 A Microsoft Identity Manager összetevőinek nem kell ugyanazon a számítógépen lenniük. Ezen összetevők, valamint a futtatásukra szolgáló fizikai vagy virtuális gépek számbavétele a kapacitástervezés fontos mozzanata.
 
-A hardveres tényezők befolyásolhatják a MIM-környezet teljesítményét. Példa:
+A hardveres tényezők befolyásolhatják a MIM-környezet teljesítményét. Például:
 
 - Milyen fizikai lemezkonfigurációt használ a MIM 2016-szolgáltatás SQL-adatbázisát futtató számítógép? A lemezkonfigurációt alkotó forgórészek száma, illetve a napló- és adatfájlok elosztása jelentős mértékben befolyásolhatja a rendszer teljesítményét.
 
-Mindezek mellett gondolja át a konfigurációt érintő külső tényezőket is. Példa:
+Mindezek mellett gondolja át a konfigurációt érintő külső tényezőket is. Például:
 
 - Ha tárolóhálózatot használ a MIM 2016-szolgáltatás adatbázis-konfigurációjához: milyen egyéb alkalmazások használják még a tárolóhálózatot? Ha ezek az alkalmazások „versenyeznek” a tárolóhálózat megosztott lemezerőforrásaiért, az hatással lehet az adatbázis teljesítményére.
 

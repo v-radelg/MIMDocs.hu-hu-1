@@ -3,16 +3,16 @@ title: Dinamikus naplózás a MIM szolgáltatásban | Microsoft Docs
 description: A MIM szolgáltatás dinamikus naplózásának engedélyezése a felügyeleti szolgáltatás újraindítása nélkül
 author: billmath
 ms.author: billmath
-manager: mtillman
+manager: daveba
 ms.date: 10/29/2018
 ms.topic: article
 ms.prod: microsoft-identity-manager
-ms.openlocfilehash: 90ef2ab63be3914d1d48c7319821177e7e62f9e0
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: 69ebe774ddea0176fb26ef74b8f4352e4bb5d039
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68701298"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79042168"
 ---
 # <a name="mim-sp1-4414360--service-dynamic-logging"></a>Dinamikus naplózás a MIM SP1-es (4.4.1436.0-s) verziójában
 
@@ -49,7 +49,7 @@ A nyomkövetés megtekintéséhez használhatja a [Service Trace Viewer eszközt
 
  ![A Service Trace Viewer képernyőképe](media/mim-service-dynamic-logging/screen04.png)
 
-# <a name="updates-build-45xx-or-greater"></a>Frissítések: build 4.5. x. x vagy újabb
+## <a name="updates-build-45xx-or-greater"></a>Frissítések: build 4.5. x. x vagy újabb
 
 A Build 4.5. x. x verzióban módosítottuk a naplózási szolgáltatást az alapértelmezett naplózási szint megadásához: **"figyelmeztetés"** . A szolgáltatás két fájlban ír üzeneteket (a "00" és a "01" indexeket a bővítmény előtt adja hozzá). A fájlok a "C:\Program Files\Microsoft Forefront Identity Manager\2010\service mappában" könyvtárban találhatók. Ha a fájl túllépi a maximális méretet, a szolgáltatás elkezd írni egy másik fájlban. Ha egy másik fájl létezik, a rendszer felülírja. A fájl alapértelmezett maximális mérete 1 GB. Az alapértelmezett maximális méret módosításához hozzá kell adni a **"maxOutputFileSizeKB"** paramétert, amelynek értéke a maximális fájlméret a figyelőben (lásd az alábbi példát) és a újraindítása szolgáltatást. A szolgáltatás elindításakor a rendszer hozzáfűzi a naplókat a legutóbbi fájlban (ha túllépte a lemezterületet, felülírja a legrégebbi fájlt). 
 

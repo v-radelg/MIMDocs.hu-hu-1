@@ -4,19 +4,19 @@ description: Határozza meg, mely rendszerjogosultságú szerepköröket kell ke
 keywords: ''
 author: billmath
 ms.author: billmath
-manager: mtillman
+manager: daveba
 ms.date: 08/31/2017
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: 1a368e8e-68e1-4f40-a279-916e605581bc
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 38a9fc174c037e5d7c3ea17b46dcf9f6ea924822
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: f05769a7d1db38ecde200e18e45c6ca29a75b756
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "64518596"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79044038"
 ---
 # <a name="define-roles-for-privileged-access-management"></a>Szerepkörök definiálása a Privileged Access Management megoldáshoz
 
@@ -114,7 +114,7 @@ Az alapértelmezett csoportok, például a Tartománygazdák helyett hozzon lét
 
 A következő táblázat példákat mutat be az engedélyekre, amelyeket meg kell adni a szerepkörökben az AD felügyeletéhez.
 
-| Szerepkör | Description |
+| Szerepkör | Leírás |
 | ---- | ---- |
 | Tartomány/tartományvezérlő karbantartása | A Domain\Administrators csoport tagjai a tartományvezérlő operációs rendszerének hibaelhárítását és módosítását teszik lehetővé. Olyan műveletek, mint az új tartományvezérlő előléptetése egy meglévő tartományba az erdőben és az AD szerepkör-delegálásban.
 |Virtuális tartományvezérlők kezelése | A tartományvezérlő (DC) virtuális gépek (VM) kezelése virtualizálási felügyeleti szoftver használatával. Ez a jogosultság az összes virtuális gép teljes vezérlésével adható meg a felügyeleti eszközben vagy a Szerepköralapú hozzáférés-vezérlés (RBAC) funkcióban. |
@@ -130,7 +130,7 @@ A következő táblázat példákat mutat be az engedélyekre, amelyeket meg kel
 
 A következő táblázat példákat mutat be olyan engedélyekre, amelyek az AD-ben tárolt adatokat kezelő vagy használó szerepkörökbe tartoznak.
 
-| Szerepkör | Description |
+| Szerepkör | Leírás |
 | ---- | ---- |
 | Első rétegbeli rendszergazdai szervezeti egység módosítása                 | Első rétegbe tartozó rendszergazdai objektumokat tartalmazó szervezeti egységek módosítása az Active Directory-ban |
 | Második rétegbeli rendszergazdai szervezeti objektum módosítása                 | Második rétegbe tartozó rendszergazdai objektumokat tartalmazó szervezeti egységek módosítása az Active Directory-ban |

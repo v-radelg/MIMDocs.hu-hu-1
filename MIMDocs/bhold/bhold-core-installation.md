@@ -4,17 +4,17 @@ description: A BHOLD Suite telepítési alapdokumentuma
 keywords: ''
 author: billmath
 ms.author: billmath
-manager: mtillman
+manager: daveba
 ms.date: 09/07/2017
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: ''
-ms.openlocfilehash: e4b18d3caa866767524c56ce184e787a190e9390
-ms.sourcegitcommit: 8ba50298cef65e8cc90402282e88410fad86b4d9
+ms.openlocfilehash: c4dfb4184292ba1b5da8c4e3e176d53e6a885ed8
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/18/2019
-ms.locfileid: "75187322"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79042270"
 ---
 # <a name="bhold-core-installation"></a>BHOLD Core-telepítés
 
@@ -33,7 +33,7 @@ A BHOLD Core modul a Microsoft BHOLD Suite alapjait képezi. A Microsoft BHOLD S
 |**Összetevő** |**Minimális** | **Ajánlott** |
 |Processzor | 64 bites processzor | Többmagos 64 bites processzor |
 | Memória |3 GB | 6 GB vagy több |
-|Tárolás| 30 GB elérhető |A központi telepítés méretétől függ |
+|Tárterület| 30 GB elérhető |A központi telepítés méretétől függ |
 |Hálózati adapter| 100Mbps az SQL és a Forefront Identity Manager (FIM) kiszolgálóval való kapcsolódáshoz | 1Gbps az SQL-és FIM-kiszolgálóhoz való kapcsolódáshoz|
 
 Ezek a javaslatok a tipikus implementáción alapulnak, és nem veszik figyelembe a kiszolgálón futó egyéb alkalmazásokat. Előfordulhat, hogy az adott környezettől függően nagyobb teljesítményű összetevőket kell használnia.
@@ -70,7 +70,7 @@ A BHOLD Core modulnak képesnek kell lennie arra, hogy egy erre a célra kijelö
 
 3.  Az **új objektum – csoport** párbeszédpanelen a **csoport neve**mezőbe írja be a csoport nevét (BHOLD default: BHOLDApplicationGroup), majd kattintson az **OK**gombra.
 
-4.  Kattintson a jobb gombbal a **felhasználók**elemre, mutasson az **új**elemre, majd kattintson a **felhasználó**elemre.
+4.  Kattintson a jobb gombbal a **Felhasználók** elemre, mutasson az **Új** pontra, majd kattintson a **Felhasználó** lehetőségre.
 
 5.  A **teljes név**mezőbe írjon be egy nevet, amely segítséget nyújt a fiók azonosításában, például BHOLD Core-szolgáltatásfiók.
 
@@ -110,7 +110,7 @@ Mielőtt megkezdené a BHOLD Core modul telepítését, elő kell készítenie, 
 | **Beépített biztonság használata**                    | Megadja, hogy a rendszer a Windows-hitelesítést használja az adatbázis eléréséhez.                                                                                                                                                                                                     | Jelölje be a jelölőnégyzetet, ha Windows-hitelesítést használ a SQL Serverhoz való kapcsolódáshoz. Törölje a jelölőnégyzet jelölését, ha SQL Server hitelesítést használ. Ha SQL Server hitelesítést használ, az adatbázist létre kell hozni az BHOLD Core telepítőjének futtatása előtt. **Megjegyzés:** Windows-hitelesítés használata esetén olyan fiókkal kell bejelentkeznie, amely a sysadmin kiszolgálói szerepkörrel rendelkezik az adatbázis-kiszolgálón. |
 | **Adatbázis-felhasználó** és **adatbázis jelszava** | A sysadmin kiszolgálói szerepkörrel rendelkező felhasználó felhasználónevét és jelszavát adja meg az adatbázis-kiszolgálón. Ezeket az értékeket csak akkor kell megadni, ha SQL Server hitelesítés van használatban.                                                                                               | Írja be a SQL Server felhasználónevet: írja be ide a SQL Server felhasználói jelszavát: **Megjegyzés:** ügyeljen arra, hogy a jelszót rejtett, biztonságos helyen tárolja.                                                                                                                                                                                                                                                  |
 | **Adatbázis-kiszolgáló** és **adatbázis neve**   | Megadja az adatbázis-kiszolgáló NetBIOS-nevét és az adatbázis nevét (alapértelmezett: B1), amelyet a BHOLD Core telepítő fog létrehozni. Ha nem az alapértelmezett adatbázis-kiszolgálói példányt használja, akkor az adatbázis-kiszolgáló példányát az űrlapon *\<server\>* \\ *\<példány\>* . | Írja be a kiszolgáló (vagy a kiszolgáló és a példány) nevét itt: írja be az adatbázis nevét:                                                                                                                                                                                                                                                                                                                   |
-| **Az adatbázis-felhasználó korlátozásai**    | Elavult.                                                                                                                                                                                                                                                                 | Ne módosítsa az alapértelmezett értéket                                                                                                                                                                                                                                                                                                                                                                       |
+| **Az adatbázis-felhasználó korlátozásai**    | Elavult tartalom.                                                                                                                                                                                                                                                                 | Ne módosítsa az alapértelmezett értéket                                                                                                                                                                                                                                                                                                                                                                       |
 |                                                |                                                                                                                                                                                                                                                                           |                                                                                                                                                                                                                                                                                                                                                                                                       |
 |                                                |                                                                                                                                                                                                                                                                           |                                                                                                                                                                                                                                                                                                                                                                                                       |
 
@@ -171,7 +171,7 @@ Ha a BHOLD webhelyhez való kapcsolódáshoz használt hálózatnév nem ugyanaz
 > [!IMPORTANT]
 > Ha a BHOLD Core modul ugyanazon a számítógépen van telepítve, mint a FIM-portál, akkor létre kell hoznia egy DNS-erőforrásrekordot (CNAME vagy A) a BHOLD Core-t futtató kiszolgálók és a FIM-portált futtató kiszolgáló különböző állomásneve alapján. Egy adott szolgáltatástípus/kiszolgáló-alias pár esetében csak egy egyszerű szolgáltatásnevet lehet létrehozni, így a BHOLD Core és a FIM Portal számára külön SPN-ket kell megadni, mivel általában különböző fiókokban futnak. A Setspn parancs hibát jelez, ha egy SPN már meg van határozva egy másik fiókban.
 
-A művelet végrehajtásához legalább a **Tartománygazdák**vagy ezzel egyenértékű csoport tagjának kell lennie.
+A művelet végrehajtásához a **Tartományi rendszergazdák** csoport vagy ezzel egyenértékű csoport tagjának kell lennie.
 
 #### <a name="to-establish-the-spn-of-the-bhold-website"></a>A BHOLD webhely egyszerű szolgáltatásnév létrehozása
 
@@ -196,7 +196,7 @@ Annak ellenőrzéséhez, hogy a BHOLD Core modul telepítése sikeres volt-e, ny
 | **Az ABA futtatása közötti napok**     | Két számjegyből álló egész számra van állítva, hogy meghatározza a két attribútum-alapú hitelesítés (ABA) közötti intervallumot (napokban). Ha például azt szeretné megadni, hogy az ABA-futtatások két nappal elválasztva legyenek, írja be a 02 értéket.                                                                                                                     |
 | **Az ABA futtatásának kezdő órája**    | Egy kétjegyű egész számra van állítva, amely megadja, hogy a nap melyik órájában történik az attribútum-alapú engedélyezési Futtatás. Például annak megadásához, hogy az ABA-Futtatás a 11:00 órakor történik. (23:00), írja be a következőt: 23.                                                                                                             |
 | **Rendszerszintű**       | Állítsa N értékre, ha nem szeretné, hogy a rendszer-és BHOLD. Az alapértelmezett érték Y.                                                                                                                                                                                                                             |
-| **Logging**                  | Állítsa N értékre, ha nem szeretné, hogy a módosítások naplózva legyenek. Az alapértelmezett érték Y.                                                                                                                                                                                                                                            |
+| **Naplózás**                  | Állítsa N értékre, ha nem szeretné, hogy a módosítások naplózva legyenek. Az alapértelmezett érték Y.                                                                                                                                                                                                                                            |
 | **SystemQueue feldolgozása**   | Állítsa N értékre, ha nem szeretné, hogy a rendszervárólista feldolgozása megtörténjen. Ne módosítsa ezt az értéket, kivéve, ha a termék támogatása erre utasította.                                                                                                                                                                                           |
 
 A művelet végrehajtásához a Tartománygazdák csoport tagjaként kell bejelentkeznie.

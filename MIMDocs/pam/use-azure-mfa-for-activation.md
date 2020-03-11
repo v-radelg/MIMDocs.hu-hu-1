@@ -5,17 +5,17 @@ keywords: ''
 author: billmath
 ms.author: billmath
 ms.reviewer: fimguy
-manager: mtillman
+manager: daveba
 ms.date: 07/06/2018
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: 5134a112-f73f-41d0-a5a5-a89f285e1f73
-ms.openlocfilehash: 6c3a2d87037a818a9a8784b0d4a7b86227fcaef4
-ms.sourcegitcommit: 28a20aaa1f08b428cc1ae0eae43ae47de4d9d22a
+ms.openlocfilehash: 512a1887329f9ec5c93fd69f0ce0b22495ba009c
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684057"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79043545"
 ---
 # <a name="using-azure-mfa-for-activation"></a>Aktiválás az Azure MFA használatával
 > [!IMPORTANT]
@@ -48,7 +48,7 @@ Ebben a szakaszban az Azure MFA-szolgáltatót Microsoft Azure Active Directoryb
 
 1.  Nyisson meg egy webböngészőt, és jelentkezzen be a [klasszikus Azure portálra](https://manage.windowsazure.com) Azure előfizetés-adminisztrátorként.
 
-2.  A bal alsó sarokban kattintson a **New** (Új) gombra.
+2.  A bal alsó sarokban kattintson az **Új** gombra.
 
 3.  Válassza az **App Services > Active Directory > Multi-Factor Auth Provider > Quick Create** (Alkalmazásszolgáltatások > Active Directory > Többtényezős hitelesítési szolgáltató > Gyorslétrehozás) lehetőséget.
 
@@ -136,17 +136,17 @@ Egy adott szerepkör esetében az „-MFAEnabled 0” paraméternek a `Set-PAMRo
 
 A következő események a Privileged Access Management eseménynaplójában jelenhetnek meg:
 
-| ID  | Súlyosság | Létrehozója | Description |
+| ID  | Severity | Létrehozója | Leírás |
 |-----|----------|--------------|-------------|
 | 101 | Hiba       | MIM szolgáltatás            | A felhasználó nem végezte el az Azure MFA hitelesítést (például nem vette fel a telefont) |
-| 103 | Információk | MIM szolgáltatás            | A felhasználó aktiválás közben hajtotta végre az Azure MFA hitelesítést                       |
+| 103 | Adatok | MIM szolgáltatás            | A felhasználó aktiválás közben hajtotta végre az Azure MFA hitelesítést                       |
 | 825 | Figyelmeztetés     | A PAM figyelőszolgáltatása | A telefonszám megváltozott                                |
 
 A sikertelen telefonhívások okára (101-es esemény) vonatkozó további információkért megtekinthet vagy letölthet egy Azure MFA-jelentést is.
 
 1.  Nyisson meg egy webböngészőt, és jelentkezzen be a [klasszikus Azure portálra](https://manage.windowsazure.com) globális Azure AD-rendszergazdaként.
 
-2.  Az Azure-Portal menüjében válassza az **Active Directory** lehetőséget, majd lépjen a **Multi-Factor Auth Providers** (Többtényezős hitelesítési szolgáltatók) lapra.
+2.  Az Azure-portál menüjében válassza az **Active Directory** lehetőséget, majd lépjen a **Multi-Factor Auth Providers** (Többtényezős hitelesítési szolgáltatók) lapra.
 
 3.  Kattintson a PAM-hoz használni kívánt Azure MFA-szolgáltatóra, majd kattintson a **Manage** (Kezelés) gombra.
 
@@ -156,7 +156,7 @@ A sikertelen telefonhívások okára (101-es esemény) vonatkozó további infor
 
 6.  A jelentést a létrehozását követően megtekintheti a portálon, illetve, ha az MFA-jelentés túl hosszú, letöltheti CSV-fájlként. Az **AUTH TYPE** oszlopban található **SDK**-értékek jelölik azokat a sorokat, amelyek a PAM-aktivációs kérésekhez kapcsolódnak: ezek a MIM-től vagy más helyszíni szoftvertől származó események. A **USERNAME** mező a MIM szolgáltatás adatbázisában található felhasználóobjektum GUID-azonosítója. Ha egy hívás sikertelen volt, az **AUTHD** oszlop értéke **No** lesz, a **CALL RESULT** oszlop pedig tartalmazza a hiba okát, és annak részleteit.
 
-## <a name="next-steps"></a>Következő lépések
+## <a name="next-steps"></a>További lépések
 
 - [Mi az Azure Multi-Factor Authentication](https://docs.microsoft.com/azure/multi-factor-authentication/multi-factor-authentication)
 - [Hozzon létre ingyenes Azure-fiókot még ma](https://azure.microsoft.com/free/)

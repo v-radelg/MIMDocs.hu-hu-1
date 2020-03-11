@@ -4,19 +4,19 @@ description: 'Telepítse a SQL Server 2016-es vagy a 2017-es verzióját a köve
 keywords: ''
 author: billmath
 ms.author: billmath
-manager: mtillman
+manager: daveba
 ms.date: 04/26/2018
 ms.topic: conceptual
 ms.prod: microsoft-identity-manager
 ms.assetid: 297df3b3-192e-4ed9-82ed-c95eb5297c84
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 4be699f123bf7d48b709ee8b8e91e2222cd492e2
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: 2ca9131a6c4f38ed559618d662848b74e1bffe66
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73568024"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79043494"
 ---
 # <a name="set-up-an-identity-management-server-sql-server-2016-or-2017"></a>Identitáskezelés-felügyeleti kiszolgáló beállítása: SQL Server 2016 vagy 2017
 
@@ -28,7 +28,7 @@ ms.locfileid: "73568024"
 > Az SQL Server 2017 telepítési eljárása nem tér el az SQL Server 2016 telepítési eljárásának.
 
 > [!NOTE]
-> Ez az útmutató egy Contoso nevű fiktív vállalat neveit és értékeit használja szemléltetésként. Ezeket helyettesítse a saját neveivel és értékeivel. Példa:
+> Ez az útmutató egy Contoso nevű fiktív vállalat neveit és értékeit használja szemléltetésként. Ezeket helyettesítse a saját neveivel és értékeivel. Például:
 > - Tartományvezérlő neve – **corpdc**
 > - Tartománynév – **contoso**
 > - **Corpservice** -kiszolgáló neve

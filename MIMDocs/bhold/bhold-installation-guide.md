@@ -4,17 +4,17 @@ description: A BHOLD SP1 telepítési dokumentációja
 keywords: ''
 author: billmath
 ms.author: billmath
-manager: mtillman
+manager: daveba
 ms.date: 09/11/2017
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: ''
-ms.openlocfilehash: 05eb2afc0ddbf6104e27a5c24e121a55bd805292
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: fb3cf6e5b00c1bd0c01d86aff474dc2ff28c2815
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68238905"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79042253"
 ---
 # <a name="microsoft-bhold-suite-sp1-60-installation-guide"></a>Microsoft BHOLD Suite SP1 (6,0) – telepítési útmutató
 
@@ -40,7 +40,7 @@ Ez a dokumentum azt ismerteti, hogyan tervezze meg az BHOLD üzemelő példány�
 
 Ez a dokumentum azt feltételezi, hogy a szoftverek kiszolgáló számítógépekre történő telepítésének alapvető ismerete. Azt is feltételezi, hogy a Active Directory® tartományi szolgáltatások, a Microsoft Identity Manager SP1 (FIM) és a Microsoft SQL Server 2012 adatbázis-szoftver alapvető ismeretekkel rendelkezik. A jelen dokumentáció hatókörén kívül a függő technológiák (például a AD DS és a FIM) beállításának és konfigurálásának leírása. További információ a Microsoft BHOLD-modulok által végrehajtott függvényekről: [a Microsoft BHOLD Suite fogalmi útmutatója](https://technet.microsoft.com/library/jj134102(v=ws.10).aspx).
 
-## <a name="audience"></a>Közönség
+## <a name="audience"></a>Célközönség
 
 Ez a dokumentum az informatikai tervezők, rendszerfejlesztők, technológiai döntéshozók, tanácsadók, infrastruktúra-tervezők és informatikai szakemberek számára készült, akik a Microsoft BHOLD Suite üzembe helyezését tervezik.
 
@@ -93,7 +93,7 @@ Az SQL Server ajánlott eljárásaival kapcsolatos további információkért l�
 ### <a name="trusted-certificates-list-update"></a>Megbízható tanúsítványok listájának frissítése
 
 A Windows konfigurálható úgy, hogy a szolgáltatás elindítása előtt érvényesítse a tanúsítványláncot. Ilyen rendszerek esetén a szolgáltatás nem indítható el, ha a szolgáltatás végrehajtható kódját olyan tanúsítvánnyal írták alá, amely nem szerepel a kiszolgáló megbízható tanúsítványok listájában (TCL). A Microsoft BHOLD Suite SP1 szoftver kódja a Microsoft Root Certificate Authority 2010 tanúsítvánnyal rendelkező kód-aláíró tanúsítványlánc használatával van aláírva.
-A Windows konfigurálható úgy, hogy a Microsoft legfelső szintű tanúsítványait internetes kapcsolaton keresztül kérje le. A leválasztott rendszereken azonban a Windows Server csak azokat a tanúsítványokat tartalmazza, amelyek a rendszerindító programban voltak elérhetők a Windows megjelenése előtt. A Windows Server 2010 előtti kiadásaiban ezek a tanúsítványok nem tartalmazzák a BHOLD Suite SP1-kód aláírási láncának ellenőrzéséhez szükséges főtanúsítványt. Ha egy vagy több Microsoft BHOLD Suite SP1-modult szeretne telepíteni egy olyan rendszeren, amely nem rendelkezik naprakész TCL, le kell töltenie és telepítenie kell a legfelső szintű frissítési csomagot, vagy az Csoportházirend használatával telepítenie kell a legfelső szintű frissítési csomagot a BHOLD Suite SP1 telepítése előtt. modul. További információ: a [Windows Root Certificate program tagjai](http://support.microsoft.com/kb/931125).
+A Windows konfigurálható úgy, hogy a Microsoft legfelső szintű tanúsítványait internetes kapcsolaton keresztül kérje le. A leválasztott rendszereken azonban a Windows Server csak azokat a tanúsítványokat tartalmazza, amelyek a rendszerindító programban voltak elérhetők a Windows megjelenése előtt. A Windows Server 2010 előtti kiadásaiban ezek a tanúsítványok nem tartalmazzák a BHOLD Suite SP1-kód aláírási láncának ellenőrzéséhez szükséges főtanúsítványt. Ha egy vagy több Microsoft BHOLD Suite SP1-modult szeretne telepíteni egy olyan rendszeren, amely nem rendelkezik naprakész TCL, le kell töltenie és telepítenie kell a legfelső szintű frissítési csomagot, vagy az Csoportházirend használatával telepítenie kell a legfelső szintű frissítési csomagot a BHOLD Suite SP1 telepítése előtt. modul. További információ: a [Windows Root Certificate program tagjai](https://support.microsoft.com/kb/931125).
 
 ### <a name="installing-bhold-suite-sp1-on-windows-server-20122016-required-step"></a>A BHOLD Suite SP1 telepítése a Windows Server 2012/2016 szükséges lépésével 
 

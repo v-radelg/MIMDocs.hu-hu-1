@@ -4,17 +4,17 @@ description: ''
 keywords: ''
 author: billmath
 ms.author: billmath
-manager: mtillman
+manager: daveba
 ms.date: 01/05/2018
 ms.topic: reference
 ms.prod: microsoft-identity-manager
 ms.assetid: ''
-ms.openlocfilehash: 8987bc53af37b32b95b00c3df67d9581d4e47120
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: 72b77034d5591d0bc2ab420f185acee719fe8324
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "64518779"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79043001"
 ---
 # <a name="microsoft-identity-manager-2016-best-practices"></a>Microsoft Identity Manager 2016 – Gyakorlati tanácsok
 
@@ -356,9 +356,9 @@ Az SSL implementálásához:
 
 28. Kattintson a Tevékenység, majd a Másodlagos címek leképezése elemre.
 
-29. Kattintson a http://servername parancsra.
+29. Kattintson a http://servernamelehetőségre.
 
-30. Módosítsa http://servername a https://servername ra, majd kattintson az OK gombra.
+30. Módosítsa http://servername a https://servernamera, majd kattintson az OK gombra.
 
 31. Kattintson a Start gombra, majd a Futtatás parancsra, írja be az iisreset parancsot, majd kattintson az OK gombra.
 
@@ -550,7 +550,7 @@ Bár a Személy és Csoport erőforrástípusok nem alapvető erőforrástípuso
 
 -   DeletedTime
 
--   Description
+-   Leírás
 
 -   DetectedRulesList • DisplayName
 

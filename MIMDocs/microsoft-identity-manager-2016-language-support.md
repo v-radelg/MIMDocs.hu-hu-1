@@ -4,17 +4,17 @@ description: A Microsoft Identity Manager 2016 SP1 által támogatott nyelvek li
 keywords: ''
 author: billmath
 ms.author: billmath
-manager: mtillman
+manager: daveba
 ms.date: 05/23/2018
 ms.topic: conceptual
 ms.prod: microsoft-identity-manager
 ms.assetid: 50345fda-56d7-4b6e-a861-f49ff90a8376
-ms.openlocfilehash: 5704e978734bea13f1a362aeb203810f3864205a
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: 2caf9f06067c229d585019f912a7ff4e00fad3e6
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68701475"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79044123"
 ---
 # <a name="supported-languages"></a>Támogatott nyelvek
 
@@ -30,86 +30,86 @@ A Microsoft fakiszolgálói szolgáltatás és a portál nyelvi csomagja a köve
 > [!IMPORTANT]
 > A SSPR-bővítmény és-portál szövege honosítva lesz, de a kérdések nem lesznek további munka nélkül. Létre kell hoznia AuthN-munkafolyamatokat (és a hozzájuk kapcsolódó készleteket és MPR) az egyes nyelveken a célhelyre irányuló kérdések megcélzásához.
 
-|       Nyelv        | FIM (4.3. x. x)/MIM (4.4. xx) | Webszolgáltatási alapszolgáltatás (4.5. x. x) |
+|       Nyelv        | FIM(4.3.x.x)/MIM(4.4.xx) | MIM(4.5.x.x) |
 |-----------------------|--------------------------|--------------|
-|       bolgár       |          BG – BG           |      BG      |
+|       bolgár       |          bg-BG           |      BG      |
 | kínai (egyszerűsített)  |          zh-CN           |   zh-Hans    |
-|   Kínai (Tajvan)    |          zh – TW           |   zh-Hant    |
-|       horvát        |          HR – HR           |      hr      |
-|         Cseh         |          CS-CZ           |      cs      |
-|        dán         |          da-DK           |      da      |
-|         Holland         |          nl-NL           |      nl      |
+|   kínai (tajvani)    |          zh-TW           |   zh-Hant    |
+|       horvát        |          hr-HR           |      HR      |
+|         Cseh         |          cs-CZ           |      CS      |
+|        Dán         |          da-DK           |      da      |
+|         holland         |          NL-NL           |      nl      |
 |       észt        |          et-EE           |      et      |
-|        Francia         |          fr – FR           |      fr      |
-|        finn        |          Fi-FI           |      fi      |
+|        Francia         |          FR-FR           |      fr      |
+|        Finn        |          fi-FI           |      Fi      |
 |        Német         |          de-DE           |      de      |
-|         görög         |          el-GR           |      el      |
-|         hindi         |          Hi-IN           |      hi      |
-|       magyar       |          hu-HU           |      hu      |
-|        Olasz        |          informatikai           |      it      |
-|       Japán        |          ja-JP           |      ja      |
-|        Koreai         |          ko-KR           |      ko      |
+|         Görög         |          el-GR           |      el      |
+|         hindi         |          Üdvözöljük – India           |      szia      |
+|       Magyar       |          hu-HU           |      hu      |
+|        Olasz        |          it-IT           |      Ez      |
+|       Japán        |          ja-JP           |      Japán      |
+|        Koreai         |          ko-KR           |      Ko      |
 |      litván       |          lt-LT           |      lt      |
 |        lett        |          lv-LV           |      lv      |
-|       norvég       |          NB-nem           |    NB-nem     |
+|       Norvég       |          nb-NO           |    nb-NO     |
 |        Lengyel         |          pl-PL           |      pl      |
 | portugál (Portugália) |          PT-PT           |      pt      |
-|  Portugál (brazíliai)  |          PT-BR           |    PT-BR     |
+|  Portugál (brazíliai)  |          pt-BR           |    pt-BR     |
 |        Orosz        |          ru-RU           |      ru      |
-|       román        |          RO-RO           |      ro      |
-|        Spanyol        |          es-ES           |      Igen      |
-|        szlovák         |          sk-SK           |      sk      |
-|        Svéd        |          SV-SE           |      sv      |
-|       szlovén       |          SL-SI           |      SL      |
-|   Szerb – Szerbia    |  SR-Latn-CS (depricated)  |  SR-Latn-RS  |
-|         thai          |          th-TH           |      adik      |
-|        török        |          TR-TR           |      TR      |
+|       román        |          ro-RO           |      ro      |
+|        Spanyol        |          es-ES           |      es      |
+|        szlovák         |          SK-SK           |      sk      |
+|        Svéd        |          SV-SE           |      Sv      |
+|       szlovén       |          sl SI           |      SL      |
+|   Szerb – Szerbia    |  sr-latn-CS(Depricated)  |  sr-Latn-RS  |
+|         thai          |          cs-EDIK           |      adik      |
+|        Török        |          tr-TR           |      TR      |
 |       ukrán       |          Egyesült Királyság – UA           |      uk      |
 
 ## <a name="certificate-management"></a>Tanúsítványkezelés 
 A Microsoft Certificate Management a következő 9 nyelvet támogatja. 
 
-|Nyelv|FIM (4.3. x. x)/MIM (4.4. xx)|Új webszolgáltatás (4.5. x. x)
+|Nyelv|FIM(4.3.x.x)/MIM(4.4.xx)|Új webszolgáltatás (4.5. x. x)
 |-----|-----|-----|-----|
 |kínai (egyszerűsített)|zh-CN|zh-Hans|
-|Kínai (Tajvan)|zh – TW|zh-Hant|
-|Holland|nl-NL|nl|
-|Francia|fr – FR|fr|
+|kínai (tajvani)|zh-TW|zh-Hant|
+|holland|NL-NL|nl|
+|Francia|FR-FR|fr|
 |Német|de-DE|de|
-|Olasz|informatikai|it|
-|Japán|ja-JP|ja|
+|Olasz|it-IT|Ez|
+|Japán|ja-JP|Japán|
 |portugál (Portugália)|PT-PT|PT-PT|
-|Spanyol|es-ES|Igen|
+|Spanyol|es-ES|es|
 
 ## <a name="certificate-management-modern-application"></a>Tanúsítványkezelő modern alkalmazás  
 A Microsoft Certificate Management modern alkalmazás a következő 33 nyelveket támogatja. 
 
 |Nyelv | [1.0.225.104](https://www.microsoft.com/en-us/download/details.aspx?id=54954) | |
 |-----|-----|-----|-----|
-|Holland|nl-NL|nl|
+|holland|NL-NL|nl|
 |kínai (egyszerűsített)|zh-CN|zh-Hans|
-|Kínai (Tajvan)|zh – TW|zh-Hant|
-|Cseh|CS-CZ|cs|
-|dán|da-DK|da|
-|Francia|fr – FR|fr|
-|finn|Fi-FI|fi|
+|kínai (tajvani)|zh-TW|zh-Hant|
+|Cseh|cs-CZ|CS|
+|Dán|da-DK|da|
+|Francia|FR-FR|fr|
+|Finn|fi-FI|Fi|
 |Német|de-DE|de|
-|görög|el-GR|el|
-|magyar|hu-HU|hu|
-|Olasz|informatikai|it|
-|Japán|ja-JP|ja|
-|Koreai|ko-KR|ko|
-|norvég|NB-nem|NB-nem|
+|Görög|el-GR|el|
+|Magyar|hu-HU|hu|
+|Olasz|it-IT|Ez|
+|Japán|ja-JP|Japán|
+|Koreai|ko-KR|Ko|
+|Norvég|nb-NO|nb-NO|
 |Lengyel|pl-PL|pl|
 |portugál (Portugália)|PT-PT|pt|
-|Portugál (brazíliai)|PT-BR|PT-BR|
+|Portugál (brazíliai)|pt-BR|pt-BR|
 |Orosz|ru-RU|ru|
-|román|RO-RO|ro|
-|Spanyol|es-ES|Igen|
-|Svéd|SV-SE|sv|
-|török|TR-TR|TR|
+|román|ro-RO|ro|
+|Spanyol|es-ES|es|
+|Svéd|SV-SE|Sv|
+|Török|tr-TR|TR|
 
 ## <a name="next-steps"></a>További lépések
 
 - [Első üzembe helyezés](microsoft-identity-manager-deploy.md)
-- [Verzióelőzmények](reference/version-history.md)
+- [Korábbi verziók](reference/version-history.md)

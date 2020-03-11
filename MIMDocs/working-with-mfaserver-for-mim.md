@@ -4,17 +4,17 @@ description: Állítsa be az Azure Multi-Factor Authentication-kiszolgálót má
 keywords: ''
 author: billmath
 ms.author: billmath
-manager: mtillman
+manager: daveba
 ms.date: 10/29/2018
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: 94a74f1c-2192-4748-9a25-62a526295338
-ms.openlocfilehash: 39ebec3002f488077cfda28a5780b0c78c19f363
-ms.sourcegitcommit: 28a20aaa1f08b428cc1ae0eae43ae47de4d9d22a
+ms.openlocfilehash: 1dd87db01a5c1100c8206d82bedf96a8a5e702ad
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684091"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79044310"
 ---
 # <a name="use-azure-multi-factor-authentication-server-to-activate-pam-or-sspr"></a>Az Azure Multi-Factor Authentication-kiszolgáló használata a PAM vagy a SSPR aktiválásához
 A következő dokumentum azt ismerteti, hogyan állíthatja be az Azure MFA-kiszolgálót második biztonsági rétegként, amikor a felhasználók szerepköröket aktiválnak Privileged Access Management vagy az önkiszolgáló jelszó-visszaállítás során.
@@ -89,7 +89,7 @@ Miután letöltötte a kiszolgálót, [telepítse](https://docs.microsoft.com/az
 
 ## <a name="see-also"></a>További információ
 
--    [Első lépések az Azure Multi-Factor Authentication-kiszolgálóval](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfaserver-deploy)
+-    [Első lépések az Azure Multi-Factor Authentication-kiszolgáló](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfaserver-deploy)
 - [Mi az Azure Multi-Factor Authentication](https://docs.microsoft.com/azure/multi-factor-authentication/multi-factor-authentication)
 - [Az egyéni Multi-Factor Authentication API használata a PAM vagy a SSPR aktiválásához](Working-with-custommfaserver-for-mim.md)
 - [A rendszerfrissítési csomag verziószáma](./reference/version-history.md)

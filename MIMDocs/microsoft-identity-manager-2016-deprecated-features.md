@@ -4,17 +4,17 @@ description: 'Ez a cikk a következő dokumentumok elavult funkcióit dokumentá
 keywords: ''
 author: billmath
 ms.author: billmath
-manager: mtillman
+manager: daveba
 ms.date: 2/28/2018
 ms.topic: reference
 ms.prod: microsoft-identity-manager
 ms.assetid: ''
-ms.openlocfilehash: dd023e2152693f56dd9a86dc66d9c1a8ef4ec64e
-ms.sourcegitcommit: 1ca298d61f6020623f1936f86346b47ec5105d44
+ms.openlocfilehash: 009d0e99e2da445d4df35dc9de81b297a65fe2a3
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76256580"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79044225"
 ---
 # <a name="deprecated-features"></a>Elavult funkciók
 
@@ -59,7 +59,7 @@ A Microsoft nem javasolja, hogy az ügyfelek új központi telepítéseket indí
 
 | **Kategória**                | **Elavult funkció**              | **Helyettesítés és Megjegyzés**           |
 |--------|-------|---|    
-| Attribútumsorrend | Többszörös fölény/egyenlő elsőbbség                       | Az egyenlő prioritás el lesz távolítva. Ehhez a szolgáltatáshoz nem tartozik helyettesítés. Ehelyett manuális prioritást kell beállítania. Továbbra is használhatja ezt a funkciót, ha a környezetében telepítve van egy FIM Service Management-ügynök. Ez a felügyeleti ügynök nem biztosít manuális elsőbbséget a deklaratív kiépítés nem precedens nélküli exportálásának elkerüléséhez. |
+| Attribútum prioritása | Többszörös fölény/egyenlő elsőbbség                       | Az egyenlő prioritás el lesz távolítva. Ehhez a szolgáltatáshoz nem tartozik helyettesítés. Ehelyett manuális prioritást kell beállítania. Továbbra is használhatja ezt a funkciót, ha a környezetében telepítve van egy FIM Service Management-ügynök. Ez a felügyeleti ügynök nem biztosít manuális elsőbbséget a deklaratív kiépítés nem precedens nélküli exportálásának elkerüléséhez. |
 | Csatlakozási szabályok           | Csatlakozás "any" típusú objektumhoz                             | Ez a szolgáltatás nem lesz lecserélve. Minden csatlakozási szabálynak explicit módon meg kell határoznia azt a metaverse-objektumtípust, amelyhez csatlakozni próbálnak.       |
 | Attribútumok folyamatai      | A "null értékek engedélyezése" jelölőnégyzet kihagyása az exportált értékeknél            | Ez a szolgáltatás nem lesz lecserélve. A "nullák engedélyezése" mindig ki lesz választva. Győződjön meg arról, hogy a jelenlegi környezetben a "nullák engedélyezése" lehetőség van kiválasztva.  |
 | Attribútumok folyamatai      | "Attribútumok felidézése"                            | Ez a szolgáltatás nem lesz lecserélve. A rendszer mindig visszahívja az attribútumokat, ami az ajánlott eljárás.  |

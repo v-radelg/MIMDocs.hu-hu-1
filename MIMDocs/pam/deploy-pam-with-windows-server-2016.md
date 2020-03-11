@@ -4,17 +4,17 @@ description: A cikk tájékoztatást nyújt arról, hogy miképpen telepíthető
 keywords: ''
 author: billmath
 ms.author: billmath
-manager: mtillman
+manager: daveba
 ms.date: 08/18/2017
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: ''
-ms.openlocfilehash: 347eda5872792872a9bb30357c45835303f92e01
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: 521b96c3ef9cae5a5f9151ddf125cfb534ae0332
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "64518520"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79044021"
 ---
 # <a name="deploy-mim-pam-with-windows-server-2016"></a>A MIM PAM telepítése a Windows Server 2016-tal
 
@@ -50,7 +50,7 @@ Végezze el a telepítést az [Útmutató az első lépésekhez](privileged-iden
 
   - A „Naplózás konfigurálása” (8. tétel) és a „Beállításjegyzék-beállítások konfigurálása” (10. tétel) című részben ismertetett módosítások **ajánlottak, de nem szükségesek**, ha a CORP és a PRIV tartományvezérlője is Windows Server 2016 tartományműködési szintű.
 
-- Ha a Windows Server 2012 R2-t használja a CORPDC tartományvezérlő operációs rendszereként, akkor telepítenie kell a 2919442-es és a 2919355-es gyorsjavítást, [valamint a 3155495-es frissítést](http://support.microsoft.com/kb/3156418) a CORPDC számítógépre.
+- Ha a Windows Server 2012 R2-t használja a CORPDC tartományvezérlő operációs rendszereként, akkor telepítenie kell a 2919442-es és a 2919355-es gyorsjavítást, [valamint a 3155495-es frissítést](https://support.microsoft.com/kb/3156418) a CORPDC számítógépre.
 
 - Kövesse a [2. lépés – A PRIV tartományvezérlő előkészítése](step-2-prepare-priv-domain-controller.md) című szakasz útmutatását, de a következő módosításokkal:
 

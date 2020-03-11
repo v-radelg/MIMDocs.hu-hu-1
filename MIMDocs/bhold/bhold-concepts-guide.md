@@ -4,17 +4,17 @@ description: Első lépések a MIM 2016 összetevői kapcsán – a Synchronizat
 keywords: ''
 author: billmath
 ms.author: billmath
-manager: mtillman
+manager: daveba
 ms.date: 09/14/2017
 ms.topic: conceptual
 ms.assetid: ''
 ms.prod: microsoft-identity-manager
-ms.openlocfilehash: 3749b74fd867601ee05f8e45d273ad2de9144b5b
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: f120709e517d82d4f94e72f4d0a44361f5552a1c
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68701424"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79042304"
 ---
 # <a name="microsoft-bhold-suite-concepts-guide"></a>A Microsoft BHOLD Suite fogalmi útmutatója
 
@@ -25,9 +25,9 @@ A Microsoft BHOLD Suite szerepkör-alapú hozzáférés-vezérlés hozzáadásá
 Ez az útmutató segít megérteni, hogyan működik együtt a BHOLD Suite, és hogyan fedi le a következő témákat:
 
 - Szerepköralapú hozzáférés-vezérlés
-- Igazolási
+- Igazolás
 - Elemzés
-- Jelentés
+- Jelentéskészítés
 - Hozzáférés-kezelési összekötő
 - Webalkalmazás-integráció
 
@@ -48,7 +48,7 @@ A RBAC további előnyei a feladatok elkülönítésének (SoD) meghatározása 
 A BHOLD Suite segítségével megadhatja és rendszerezheti a szervezeten belüli szerepköröket, leképezheti a felhasználókat a szerepkörökre, és leképezheti a megfelelő engedélyeket a szerepkörökhöz. Ezt a struktúrát szerepkör-modellnek nevezzük, amely öt típusú objektumot tartalmaz és kapcsol össze: 
 
 - Szervezeti egységek
-- Users
+- Felhasználók
 - Szerepkörök
 - Engedélyek
 - Alkalmazások
@@ -74,7 +74,7 @@ Ebben a példában az egyes értékesítési hozzárendelések két szervezeti e
 
 A OrgUnits a BHOLD Suite-ban a BHOLD Core webportál vagy a BHOLD Model Generator használatával hozhatók létre.
 
-#### <a name="users"></a>Users
+#### <a name="users"></a>Felhasználók
 
 Ahogy fent említettük, minden felhasználónak legalább egy szervezeti egységhez (OrgUnit) kell tartoznia. Mivel a szervezeti egységek a felhasználók szerepkörrel való társításának fő mechanizmusa, az adott felhasználó többsége több OrgUnits tartozik, így egyszerűbbé válik a szerepkörök hozzárendelése a felhasználóhoz. Bizonyos esetekben azonban szükséges lehet egy szerepkört hozzárendelni egy felhasználóhoz a felhasználóhoz tartozó összes OrgUnits. Ennek következtében a felhasználók közvetlenül is hozzárendelhetők egy szerepkörhöz, valamint olyan szerepkörök beszerzéséhez a OrgUnits, amelyekhez a felhasználó tartozik.
 
@@ -186,7 +186,7 @@ Fontos megjegyezni, hogy az ABA-szabályok tesztelésének eredményei a kardin�
 
 A BHOLD-ben lévő attribútumok rendszere nagyon bővíthető. Az ilyen objektumokhoz a felhasználók, szervezeti egységek (szervezeti egységek) és szerepkörök használatával adhat meg új attribútum-típusokat. Az attribútumok meghatározhatók úgy, hogy egész számok, logikai (igen/nem), alfanumerikus, dátum, idő és e-mail-címek legyenek. Az attribútumok meghatározhatók egyetlen értékként vagy értéklistaként.
 
-## <a name="attestation"></a>Igazolási
+## <a name="attestation"></a>Igazolás
 
 A BHOLD Suite olyan eszközöket biztosít, amelyekkel ellenőrizheti, hogy az egyes felhasználók megfelelő engedélyekkel rendelkeznek-e az üzleti feladatok elvégzéséhez. A rendszergazda a BHOLD igazolási modul által biztosított portál használatával megtervezheti az igazolási folyamat kezelését.
 
@@ -214,7 +214,7 @@ A BHOLD Analytics-portál lehetővé teszi olyan szabályrendszerek összeállí
 
 Egy szabály a következő elemek egyikét tesztelheti:
 
-- Users
+- Felhasználók
 - Szervezeti egységek
 - Szerepkörök
 - Engedélyek
@@ -233,7 +233,7 @@ Mindegyik szűrő egy típusból, egy operátorból (amely típustól függ), eg
 |   |   |   |   |   |
 |---|---|---|---|---|
 |**Írja be:**   | Száma   |
-| **Kulcs**  | Users  |
+| **Kulcs**  | Felhasználók  |
 | **Üzemeltető**  | >  |
 | **Érték:** | 10 |
 
@@ -242,7 +242,7 @@ A szabályok szűrői három típusból állnak, és a típusuk alapján meghat�
 - Attribútum
   - < és >
   - = és! =
-  - **Contains** (Tartalmazza)
+  - **Tartalmaz**
   - **Nem tartalmazza**
 - Száma
   - < és >
@@ -261,7 +261,7 @@ Ha például azt szeretné, hogy a feladatok elkülönítésének (SoD) szabály
 |   |  |
 |---|--|
 |Név:| Fizetési SoD-teszt|
-|Elem| Users|
+|Elem| Felhasználók|
 |Részhalmaz szűrője:| Engedéllyel kapcsolatos kérelem fizetése|
 |Szabály szűrője: | Nem lehet engedélyt jóváhagyni|
 
@@ -277,7 +277,7 @@ Ha például az üzleti szabályzat megköveteli, hogy a vezetők vagy a fizeté
 |  |  |
 |--|--|
 |Név: | Fizetési SoD-teszt módosítása|
-|Elem | Users |
+|Elem | Felhasználók |
 |Részhalmaz szűrője: | Szerepkör-kezelő|
 | Szabály szűrői: |A kifizetés módosítására vonatkozó engedéllyel kell rendelkeznie </br> Jóvá kell hagynia a fizetési engedélyt|
 
@@ -288,7 +288,7 @@ A többi operátortól eltérően a **kizárólag** a és a **kizárólag az ös
 |  |  |
 |--|--|
 |Név: | Jóváhagyási teszt áttekintése|
-|Elem | Users|
+|Elem | Felhasználók|
 | Részhalmaz szűrője: | Szerepkör-kezelő
 |Szabály szűrője: | Kizárólag engedélyekkel rendelkező engedélyek jóváhagyása|
 
@@ -298,7 +298,7 @@ Amint azt korábban említettük, a szabályokat egy szabályrendszert egyesíth
 
 Megadhat olyan globális szűrőket is, amelyek engedélyezve vannak, és minden tesztelt szabályra érvényesek. Ha gyakran kell kizárnia a rekordok egy részhalmazát a különböző szabályrendszerek lévő szabályok tesztelésekor, megadhatja azokat a globális szűrőket, amelyeket igény szerint engedélyezhet vagy letilthat.
 
-## <a name="reporting"></a>Jelentés
+## <a name="reporting"></a>Jelentéskészítés
 
 Az BHOLD jelentéskészítő modul lehetővé teszi, hogy különböző jelentéseken keresztül megtekinthesse a szerepkör-modell információit. Az BHOLD jelentéskészítő modul a beépített jelentések széles körét biztosítja, valamint egy varázslót is tartalmaz, amely az alapszintű és a speciális egyéni jelentések létrehozásához használható. A jelentések futtatásakor azonnal megjelenítheti az eredményeket, vagy mentheti az eredményeket egy Microsoft Excel (. xlsx) fájlban. Ha a fájlt a Microsoft Excel 2000, a Microsoft Excel 2002 vagy a Microsoft Excel 2003 használatával szeretné megtekinteni, letöltheti és telepítheti a Word-, Excel-és PowerPoint-fájlformátumokhoz készült Microsoft Office kompatibilitási csomagot.
 
@@ -308,12 +308,12 @@ A BHOLD jelentéskészítési modulja elsősorban olyan jelentések előállít�
 A beépített jelentések a következő kategóriákba tartoznak:
 
 - Administration
-- Igazolási
+- Igazolás
 - Vezérlők
 - Befelé Access Control
 - Naplózás
 - Modell
-- Statisztika
+- statisztikák
 - Munkafolyamat
 
 Jelentéseket hozhat létre, és felveheti ezeket a kategóriákat, vagy megadhatja saját kategóriáit is, amelyekben egyéni és beépített jelentéseket helyezhet el.

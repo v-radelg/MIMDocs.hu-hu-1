@@ -4,25 +4,25 @@ description: Információk a Privileged Access Management konfigurálásáról m
 keywords: ''
 author: billmath
 ms.author: billmath
-manager: mtillman
+manager: daveba
 ms.date: 09/13/2017
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: 03e521cd-cbf0-49f8-9797-dbc284c63018
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 0d0d55d4007ab88df4c2f3b5a30ca0fdedea9fe2
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: 67ce70e6bc0603a991731cf1e5fb95751f5016c6
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "64518666"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79043970"
 ---
 # <a name="high-availability-and-disaster-recovery-considerations-for-the-bastion-environment"></a>A magas rendelkezésre állással és a vészhelyreállítással kapcsolatos szempontok a megerősített környezet esetében
 
-Ez a cikk a magas rendelkezésre állással és a vészhelyreállítással kapcsolatos szempontokat ismerteti az Active Directory tartományi szolgáltatásoknak (AD DS) és a Microsoft Identity Manager 2016 (MIM) verziónak a Privileged Access Management (PAM) megoldáshoz történő telepítése esetében.
+Ez a cikk a magas rendelkezésre állással és a vészhelyreállítással kapcsolatos szempontokat ismerteti az Active Directory Domain Services (AD DS) és a Microsoft Identity Manager 2016 (MIM) Privileged Access Management (PAM) megoldáshoz történő telepítése esetében.
 
-A vállalatok a magas rendelkezésre állásra és a vészhelyreállításra összepontosítanak a Windows Server, az SQL Server és az Active Directory munkaterheléseivel kapcsolatban. Fontos azonban a Privileged Access Management megoldás megerősített környezetének megbízható rendelkezésre állása is. A megerősített környezet a szervezet informatikai infrastruktúrájának kritikus fontosságú része, mivel a felhasználók az ehhez tartozó összetevőket használják a rendszergazdai szerepkörükhöz kapcsolódó tevékenységek végrehajtásakor. Ha részletes tájékoztatásra van szüksége a magas rendelkezésre állás általános szempontjaival kapcsolatban, töltse le [Microsoft High Availability Overview](http://download.microsoft.com/download/3/B/5/3B51A025-7522-4686-AA16-8AE2E536034D/Microsoft%20High%20Availability%20Strategy%20White%20Paper.doc) (A Microsoft magas rendelkezésre állása – áttekintés) című tanulmányt.
+A vállalatok a magas rendelkezésre állásra és a vészhelyreállításra összepontosítanak a Windows Server, az SQL Server és az Active Directory munkaterheléseivel kapcsolatban. Fontos azonban a Privileged Access Management megoldás megerősített környezetének megbízható rendelkezésre állása is. A megerősített környezet a szervezet informatikai infrastruktúrájának kritikus fontosságú része, mivel a felhasználók az ehhez tartozó összetevőket használják a rendszergazdai szerepkörükhöz kapcsolódó tevékenységek végrehajtásakor. Ha részletes tájékoztatásra van szüksége a magas rendelkezésre állás általános szempontjaival kapcsolatban, töltse le [Microsoft High Availability Overview](https://download.microsoft.com/download/3/B/5/3B51A025-7522-4686-AA16-8AE2E536034D/Microsoft%20High%20Availability%20Strategy%20White%20Paper.doc) (A Microsoft magas rendelkezésre állása – áttekintés) című tanulmányt.
 
 ## <a name="high-availability-and-disaster-recovery-scenarios"></a>Magas rendelkezésre állási és vészhelyreállítási forgatókönyvek
 
@@ -150,7 +150,7 @@ Egyes szervezetek olyan megoldást alkalmaznak, amelyben a megerősített körny
 
 - A meglévő tartományokra irányuló támadások elleni védekezésképpen a megerősített környezet felügyeletét el kell különíteni a meglévő tartomány rendszergazdai fiókjaitól.
 - A megerősített környezet TCP/IP-kapcsolatot igényel a meglévő tartományban lévő tartományvezérlőkhöz.  A portok listája a [Tűzfal beállítása tartományokhoz és bizalmi kapcsolatokhoz](https://support.microsoft.com/kb/179442) című cikkben található.
-- Az Active Directory Domain Services virtualizált telepítése meghatározott funkciókat igényel a virtualizációs platformról [A virtualizált tartományvezérlő központi telepítése és konfigurálása](https://technet.microsoft.com/library/jj574223.aspx) című cikkben leírtak szerint.
+- Az Active Directory tartományi szolgáltatások virtualizált telepítése meghatározott funkciókat igényel a virtualizációs platformról [A virtualizált tartományvezérlő központi telepítése és konfigurálása](https://technet.microsoft.com/library/jj574223.aspx) című cikkben leírtak szerint.
 - Az SQL Servernek a MIM szolgáltatáshoz történő magas rendelkezésre állású telepítése egy speciális tárolási konfigurációt igényel, amelynek leírása az [SQL Server database storage](#sql-server-database-storage) (Az SQL Server adatbázistára) című cikkben olvasható.  Jelenleg nem minden üzemeltetési szolgáltató kínálatában szerepel a Windows Servernek az SQL Server feladatátvevő fürtjeihez alkalmas lemezkonfigurációkkal valóüzemeltetése.
 
 ## <a name="deployment-preparation-and-recovery-procedures"></a>A telepítés és a helyreállítási eljárások elkészítése
@@ -192,7 +192,7 @@ Célszerű ellenőrizni a megerősített környezethez csatlakoztatott számít�
 
 A magas rendelkezésre állású telepítéshez SQL Server feladatátvevő fürtök szükségesek, és az SQL Server feladatátvevő fürt példányainak az összes csomópont között megosztott tárolót kell használniuk az adatbázis és a naplók tárolásához. A megosztott tárolás történhet Windows Server feladatátvételi fürtszolgáltatási fürtlemezeken, tárolóhálózaton (SAN) lévő lemezeken vagy SMB-kiszolgálón található fájlmegosztások formájában.  Fontos, hogy ezeket a megerősített környezetben kell kijelölnie; a tárhely megosztása a megerősített környezeten kívüli egyéb munkaterhelésekkel nem ajánlott, mivel ez veszélyeztetheti a megerősített környezet sértetlenségét.
 
-### <a name="sql-server"></a>SQL-kiszolgáló
+### <a name="sql-server"></a>SQL Server
 
 A MIM szolgáltatás az SQL Server telepítését igényli a megerősített környezetben.   A magas rendelkezésre álláshoz az SQL telepíthető feladatátvevőfürt-példány (FCI) használatával. A különálló példányoktól eltérően az FCI-kben az SQL Server magas rendelkezésre állását az FCI-ben jelen lévő redundáns csomópontok biztosítják. Hiba vagy tervezett frissítés esetén az erőforráscsoport tulajdonjogát átveszi a Windows Server feladatátvevő fürt egy másik csomópontja.
 
@@ -214,14 +214,14 @@ A MIM szolgáltatás az aktiválási kérelmek feldolgozásához szükséges.  A
 
 #### <a name="preparation"></a>Előkészítés
 A MIM szolgáltatást több, a PRIV tartományhoz csatlakozó kiszolgálóra célszerű telepíteni.
-A magas rendelkezésre állással kapcsolatos tudnivalókért olvassa el a Windows Server dokumentációjában található következő cikkeket: [A Feladatátvételi fürtszolgáltatás hardverkövetelményei és tárolási beállításai](https://technet.microsoft.com/library/jj612869.aspx) és [Creating a Windows Server 2012 Failover Cluster](http://blogs.msdn.com/b/clustering/archive/2012/05/01/10299698.aspx) (Windows Server 2012 feladatátvevő fürt létrehozása).
+A magas rendelkezésre állással kapcsolatos tudnivalókért olvassa el a Windows Server dokumentációjában található következő cikkeket: [A Feladatátvételi fürtszolgáltatás hardverkövetelményei és tárolási beállításai](https://technet.microsoft.com/library/jj612869.aspx) és [Creating a Windows Server 2012 Failover Cluster](https://blogs.msdn.com/b/clustering/archive/2012/05/01/10299698.aspx) (Windows Server 2012 feladatátvevő fürt létrehozása).
 
 Éles környezetben, több kiszolgálóra végrehajtott telepítés esetén a hálózati terheléselosztás (NLB) segítségével osztható el a feldolgozási terhelés.  Érdemes csak egy aliast (például A vagy CNAME) használnia, hogy a felhasználó csak egy általános nevet lásson.
 
 >[!IMPORTANT]
 > Ha használ terheléselosztási technológiát, de az nem a Windows Server 2012 R2 által tartalmazott NLB szolgáltatás, akkor győződjön meg arról, hogy az Ön által használt megoldás az adott munkamenetet ugyanarra a kiszolgálóra irányítja át, és nem egy véletlenszerűen választott kiszolgálóra.
 
-A MIM többkiszolgálós telepítése esetén mindegyik MIM szolgáltatáshoz tartozik egy külső állomásnév, egy szolgáltatásnév és egy szolgáltatáspartíció neve.  A szolgáltatásnév alapértelmezett értéke a számítógép neve, a külső állomásnév és a szolgáltatáspartíció nevének alapértelmezett értéke pedig a MIM szolgáltatás telepítésekor adható meg a MIM szolgáltatás kiszolgálójának címét kérő képernyőn. Ezeket a neveket a %ProgramFiles%\Microsoft Forefront Identity Manager\Service\Microsoft.ResourceManagementService.exe.config fájl tárolja a `resourceManagementService` konfigurációs csomópont `externalHostName`, `serviceName` és `servicePartitionName` attribútumaként.  
+A MIM többkiszolgálós telepítése esetén mindegyik MIM szolgáltatáshoz tartozik egy külső állomásnév, egy szolgáltatásnév és egy szolgáltatáspartíció neve.  A szolgáltatásnév alapértelmezett értéke a számítógép neve, a külső állomásnév és a szolgáltatáspartíció nevének alapértelmezett értéke pedig a MIM szolgáltatás telepítésekor adható meg a MIM szolgáltatás kiszolgálójának címét kérő képernyőn. Ezeket a neveket a %ProgramFiles%\Microsoft Forefront Identity Manager\Service\Microsoft.ResourceManagementService.exe.config fájl tárolja a `externalHostName` konfigurációs csomópont `serviceName`, `servicePartitionName` és `resourceManagementService` attribútumaként.  
 
 Amikor a MIM szolgáltatás kérelmet kap, a szolgáltatáspartíció neve az adott kérelem attribútumaként lesz tárolva.   Ezt követően csak a MIM szolgáltatás azonos szolgáltatáspartíció-nevű más telepítései használhatják az adott kérelmet.  Ha a PAM forgatókönyve manuális jóváhagyásokat vagy más hosszú élettartamú kérelemfeldolgozást tartalmaz, akkor ügyeljen arra, hogy mindegyik MIM szolgáltatáshoz azonos `servicePartitionName` attribútum tartozzon a konfigurációs fájlban.
 
