@@ -11,12 +11,12 @@ ms.prod: microsoft-identity-manager
 ms.assetid: c01487f2-3de6-4fc4-8c3a-7d62f7c2496c
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 7fb65eec7a42da94c4f27a30e59c09739279e882
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.openlocfilehash: 6597a7b364c1b7fa023e78bef917163ea2c19dac
+ms.sourcegitcommit: 87f94edf26fdb7f2c65c06c22cd0bc80d2f20450
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "79043528"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80374301"
 ---
 # <a name="set-up-an-identity-management-server-sharepoint"></a>Identitáskezelési kiszolgáló beállítása: SharePoint
 
@@ -132,7 +132,7 @@ A SharePoint és a MIM együttműködésének konfigurálásához kövesse a **S
    Get-SPTimerJob hourly-all-sptimerservice-health-analysis-job | disable-SPTimerJob
    ```
 
-4. Nyisson meg egy új webböngésző lapot az Identity Management-kiszolgálón, navigáljon http://mim.contoso.com/, és jelentkezzen be *contoso\miminstall*.  Ekkor megjelenik egy üres SharePoint-webhely, *MIM Portal* néven.
+4. Nyisson meg egy új webböngésző lapot az Identity Management-kiszolgálón, navigáljon `http://mim.contoso.com/`, és jelentkezzen be *contoso\miminstall*.  Ekkor megjelenik egy üres SharePoint-webhely, *MIM Portal* néven.
 
     ![A http://mim.contoso.com/ rendszerképben található webalkalmazás-portál](media/prepare-server-sharepoint/MIM_DeploySP1new.png)
 
