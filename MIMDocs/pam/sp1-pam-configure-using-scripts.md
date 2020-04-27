@@ -12,10 +12,10 @@ ms.assetid: 4b524ae7-6610-40a0-8127-de5a08988a8a
 ms.reviewer: ''
 ms.suite: ems
 ms.openlocfilehash: 102754fc88af32cb9abed40716ba9168a041d58e
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79043885"
 ---
 # <a name="configure-pam-using-scripts"></a>A PAM konfigurálása szkriptek használatával
@@ -43,9 +43,9 @@ lépések:
 
 Mielőtt folytatná a PAMDeploymentConfig. xml fájl frissítését, és helyezze a frissített példányt az összes gépre.
 
-### <a name="setup"></a>Beállítás
+### <a name="setup"></a>Telepítés
 
-|Machine   | Futtatás más nevében   |Parancsok   |
+|Gép   | Futtatás más nevében   |Parancsok   |
 |---|---|---|
 |  PRIVDC |PRIV tartományi rendszergazda   | .\PAMDeployment.ps1 Az 1. menüelem kiválasztása (PRIV-erdő konfigurálása)   |
 |   |   |  A fenti lépés egy SIDs.txt fájlt hoz létre. A fájlt a CORPDC-ben található $envDrive:PAM mappába kell másolni a következő lépés végrehajtása előtt. |
@@ -55,9 +55,9 @@ Mielőtt folytatná a PAMDeploymentConfig. xml fájl frissítését, és helyezz
 | PAMServer  | Helyi rendszergazda (MIM-rendszergazda a tartomány csatlakoztatása után)  | .\PAMDeployment.ps1 Az 5. menüelem kiválasztása (MIM PAM beállítása)   |
 |  PAMServer |MIMAdmin   | .\PAMDeployment.ps1 A 6. menüelem kiválasztása (PAM bizalmi kapcsolat beállítása) .\PAMDeployment.ps1 A 6. menüelem kiválasztása (PAM bizalmi kapcsolat beállítása) |
 
-### <a name="validation"></a>Érvényesítés
+### <a name="validation"></a>Ellenőrzés
 
-|  Machine | Futtatás más nevében   | Parancsok   |
+|  Gép | Futtatás más nevében   | Parancsok   |
 |---|---|---|
 | CORPClient  | CORP-felhasználó (helyi rendszergazda)  |   .\PAMDeployment.ps1 A 7. menüelem kiválasztása (MIM PAM-ügyfél beállítása)  |
 | CORPDC  | CORP tartományi rendszergazda   | Import-module .\PAMValidation.psm1 ; Create-PAMValidationCORPDCConfig   |

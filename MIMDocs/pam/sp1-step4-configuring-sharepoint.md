@@ -1,5 +1,5 @@
 ---
-title: '4\. lépés: A SharePoint konfigurálása'
+title: '4. lépés: A SharePoint konfigurálása'
 description: Ez a PAM parancsfájlokkal történő konfigurálásának 4. lépése. Ebben a lépésben történik a SharePoint konfigurálása, hogy az használható legyen az üzembe helyezendő PAM részeként.
 keywords: ''
 author: billmath
@@ -12,17 +12,17 @@ ms.assetid: 4b524ae7-6610-40a0-8127-de5a08988a8a
 ms.reviewer: ''
 ms.suite: ems
 ms.openlocfilehash: 17776b882b6a3f67313e2e41b424cbdaf22b6a44
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79043800"
 ---
-# <a name="step-4-configuring-sharepoint"></a>4\. lépés: A SharePoint konfigurálása
+# <a name="step-4-configuring-sharepoint"></a>4. lépés: A SharePoint konfigurálása
 
 > [!div class="step-by-step"]
-> [« 3. lépés](sp1-step3-installing-configuring-sql.md)
-> [5. lépés »](sp1-step5-configuring-pam.md)
+> [«3](sp1-step3-installing-configuring-sql.md)
+> . lépés[5. lépés»](sp1-step5-configuring-pam.md)
 
 A SharePoint a SharePoint Foundation 2013-as verziója kell legyen az SP1 szervizcsomaggal.
 
@@ -41,16 +41,16 @@ Munkacsoport-kiszolgálók esetén
 4. A 4. menüelem kiválasztása (SharePoint beállítása)
 
 A SharePoint telepítése során a gép több alkalommal is újraindul. Minden alkalommal, amikor a SharePoint-telepítőt újra kell futtatni, győződjön meg róla, hogy a MIMAdmin-fiókkal jelentkezik be.
-Ha a SharePoint telepítését végző gép nem rendelkezik internetkapcsolattal az előfeltételek letöltéséhez, azok külön is letölthetőek, és egy helyi mappába helyezhetőek. **A helyi mappa elérési útját frissíteni kell a PAMConfiguration.xml fájl <PrerequisitesBinaryLocation/> szakaszában.** A fájlok letöltésére használható hivatkozásokért lásd az 5. kiegészítést.
+Ha a SharePoint telepítését végző gép nem rendelkezik internetkapcsolattal az előfeltételek letöltéséhez, azok külön is letölthetőek, és egy helyi mappába helyezhetőek. **A helyi mappa elérési útját frissíteni kell a PAMConfiguration. XML fájljában <PrerequisitesBinaryLocation/>.** A fájlok letöltésére használható hivatkozásokért lásd az 5. kiegészítést.
 A telepítést követően megnyílik a SharePoint-konfiguráció grafikus felhasználói felülete, amely végigvezeti a SharePoint telepítésének befejezéséhez szükséges lépéseken. Válassza a Teljes kiszolgáló beállítást, és haladjon végig a felhasználói felület többi részén. A telepítést követően a rendszer megkéri a Konfiguráló varázsló futtatására. Végezze el az alábbiakban ismertetett lépéseket.
 
 1. A **Kapcsolódás a kiszolgálófarmhoz** lapon váltson az **Új kiszolgálófarm létrehozása** elemre.
 2. A konfigurációs adatbázis adatbázis-kiszolgálójaként adja meg az **SQLServer** kiszolgálót, a SharePoint által használható adatbázisfiókként pedig a **SharePoint ServiceAccount** fiókot.
-3. Adjon meg egy jelszót a farm biztonsági hozzáférési kódjaként **(ez később nem lesz használatban)** .
+3. Adjon meg egy jelszót a farm biztonsági hozzáférési kódjaként **(ez később nem lesz használatban)**.
 4. Fogadja el a SharePoint konfiguráló varázslójának többi alapértelmezett beállítását, és hozzon létre egy egykiszolgálós farmot.
 
-A részletek a **3. lépés: A PAM-kiszolgáló előkészítése**[A SharePoint konfigurálása](/microsoft-identity-manager/pam/step-3-prepare-pam-server) című szakaszában találhatóak. Ha végzett vele, futtassa ismét a „.\PAMDeployment.ps1” szkriptet, és válassza a 4-es elemet (SharePoint beállítása) a lépés befejezéséhez.
+A részletek a [3. lépés: A PAM-kiszolgáló előkészítése](/microsoft-identity-manager/pam/step-3-prepare-pam-server)**A SharePoint konfigurálása** című szakaszában találhatóak. Ha végzett vele, futtassa ismét a „.\PAMDeployment.ps1” szkriptet, és válassza a 4-es elemet (SharePoint beállítása) a lépés befejezéséhez.
 
 > [!div class="step-by-step"]
-> [« 3. lépés](sp1-step3-installing-configuring-sql.md)
-> [5. lépés »](sp1-step5-configuring-pam.md)
+> [«3](sp1-step3-installing-configuring-sql.md)
+> . lépés[5. lépés»](sp1-step5-configuring-pam.md)

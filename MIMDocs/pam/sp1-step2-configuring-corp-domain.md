@@ -1,5 +1,5 @@
 ---
-title: '2\. lépés: A CORP-tartomány konfigurálása'
+title: '2. lépés: A CORP-tartomány konfigurálása'
 description: Ez a cikk a CORP-tartomány konfigurálásának második lépését ismerteti, amelyhez hozzátartozik egy parancsfájl futtatása is a SIDs.txt fájlnak a CORPDC-re másolása után
 keywords: ''
 author: billmath
@@ -12,17 +12,17 @@ ms.assetid: 4b524ae7-6610-40a0-8127-de5a08988a8a
 ms.reviewer: ''
 ms.suite: ems
 ms.openlocfilehash: 1215e0be4d978e879ebc09ecdd99223fb3667a85
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79043834"
 ---
-# <a name="step-2-configuring-the-corp-domain"></a>2\. lépés: A CORP-tartomány konfigurálása
+# <a name="step-2-configuring-the-corp-domain"></a>2. lépés: A CORP-tartomány konfigurálása
 
 > [!div class="step-by-step"]
-> [« 1. lépés](sp1-step1-configuring-priv-domain.md)
-> [3. lépés »](sp1-step3-installing-configuring-sql.md)
+> [«1](sp1-step1-configuring-priv-domain.md)
+> . lépés[3. lépés»](sp1-step3-installing-configuring-sql.md)
 
 A SIDs.txt a CORPDC tartományvezérlőre másolása után **nem szükséges a PRIVOnly-környezetekhez**
 
@@ -33,5 +33,5 @@ A SIDs.txt a CORPDC tartományvezérlőre másolása után **nem szükséges a P
 5. A 2. menüelem kiválasztása (CORP-erdő konfigurálása)
 
 > [!div class="step-by-step"]
-> [« 1. lépés](sp1-step1-configuring-priv-domain.md)
-> [3. lépés »](sp1-step3-installing-configuring-sql.md)
+> [«1](sp1-step1-configuring-priv-domain.md)
+> . lépés[3. lépés»](sp1-step3-installing-configuring-sql.md)

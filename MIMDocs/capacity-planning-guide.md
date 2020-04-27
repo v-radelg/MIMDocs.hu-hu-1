@@ -12,10 +12,10 @@ ms.assetid: 3ac5b990-1678-4996-996d-cbd84b8426b4
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: 15eb35d01ed5c5c6e125c45f238bb2f7a7c564d7
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79042117"
 ---
 # <a name="capacity-planning-guide"></a>Kapacitástervezési útmutató
@@ -26,7 +26,7 @@ A MIM használatának megkezdése előtt a jelen útmutató és a tesztkörnyeze
 
 Ha még nem ismeri a MIM 2016 szoftvert és összetevőit, a folytatás előtt ismerje meg közelebbről a [Microsoft Identity Manager 2016-ot](microsoft-identity-manager-2016.md).
 
-## <a name="overview"></a>Házirend
+## <a name="overview"></a>Áttekintés
 
 Számos tényező befolyásolhatja a Microsoft Identity Manager üzemelő példányának általános kapacitását és teljesítményét:
 
@@ -37,7 +37,7 @@ Számos tényező befolyásolhatja a Microsoft Identity Manager üzemelő péld�
 
 A következő táblázat ismerteti a 2016-es üzemelő példány kapacitását és teljesítményét befolyásoló fő tényezőket:
 
-| Tervezési tényező | Megfontolások |
+| Tervezési tényező | Megfontolandó szempontok |
 | ------------- | -------------- |
 | Topológia | A MIM-szolgáltatások eloszlása a hálózaton található számítógépek között. |
 | Hardver | A fizikai hardver (fizikai vagy virtuális) minden egyes virtuális merevlemez-összetevőhöz, beleértve a CPU-t, a memóriát, a hálózati adaptert és a merevlemez-konfigurációt. |
@@ -89,7 +89,7 @@ A MPR, a készletek, a munkafolyamatok és a szinkronizálási szabályok egy k�
 
 A MIM házirend-konfigurációjában emellett a környezet kiépítési tevékenységeivel kapcsolatos döntések is érvényre jutnak. Gondolja át a következőket:
 
-- Fog-e idegen biztonsági rendszerbiztonsági tagokat létesíteni, több Active Directory tartományi szolgáltatásokbeli (AD DS-) erdőben? Ha igen, azzal több munkafolyamatot és kérést idéz elő, ami növeli a rendszer terhelését.
+- Fog-e idegen biztonsági rendszerbiztonsági tagokat létesíteni, több Active Directory Domain Services-beli (AD DS-) erdőben? Ha igen, azzal több munkafolyamatot és kérést idéz elő, ami növeli a rendszer terhelését.
 
 - Fog-e kód nélküli kiépítést alkalmazni? Ha igen, az hatással lesz a várható szabálybejegyzések, illetve a kapcsolódó kérések és munkafolyamatok mennyiségére is a rendszerben.
 

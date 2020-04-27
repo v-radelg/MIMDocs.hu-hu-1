@@ -10,10 +10,10 @@ ms.topic: reference
 ms.prod: microsoft-identity-manager
 ms.assetid: ''
 ms.openlocfilehash: 72b77034d5591d0bc2ab420f185acee719fe8324
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79043001"
 ---
 # <a name="microsoft-identity-manager-2016-best-practices"></a>Microsoft Identity Manager 2016 – Gyakorlati tanácsok
@@ -40,7 +40,7 @@ Ne támaszkodjon az automatikus növekedés használatára. Ehelyett kezelje man
 
 ### <a name="to-presize-sql-data-and-log-files"></a>Az adat- és naplófájlok előzetes méretezéséhez:
 
-1.  Indítsa el az SQL Server Management Studio eszközt.
+1.  Indítsa el az SQL Server Management Studiót.
 
 2.  Nyissa meg az adatbázishoz tartozó FIMService-t, kattintson jobb gombbal a FIMService-re, majd kattintson a Properties (Tulajdonságok) parancsra.
 
@@ -174,12 +174,12 @@ Ez a szakasz egy sor lépésből áll, amelyekkel növelheti a kezdeti adatterhe
 > [!IMPORTANT]
 > Győződjön meg arról, hogy alkalmazta a jelen útmutató SQL-telepítéssel foglalkozó szakaszában tárgyalt ajánlott eljárásokat. 
 
-### <a name="step-1-configure-the-sql-server-for-initial-data-load"></a>1\. lépés: Az SQL Server konfigurálása a kezdeti adatbetöltéshez
+### <a name="step-1-configure-the-sql-server-for-initial-data-load"></a>1. lépés: Az SQL Server konfigurálása a kezdeti adatbetöltéshez
 Az adatmennyiség kezdeti betöltése hosszadalmas folyamat lehet. Ha úgy tervezi, hogy kezdetben nagy mennyiségű adatot tölt be, lerövidítheti az adatbázis feltöltéséhez szükséges időt azáltal, hogy ideiglenesen kikapcsolja a teljes szöveges keresést, és újra bekapcsolja azt a felügyeleti csomag 2016 felügyeleti ügynökének (FIM MA) exportálása után.
 
 A teljes szöveges keresés átmeneti kikapcsolásához:
 
-1.  Indítsa el az SQL Server Management Studio eszközt.
+1.  Indítsa el az SQL Server Management Studiót.
 
 2.  Válassza a New Query (Új lekérdezés) lehetőséget.
 
@@ -193,11 +193,11 @@ ALTER FULLTEXT INDEX ON [fim].[ObjectValueXml] SET CHANGE_TRACKING = MANUAL
 > [!IMPORTANT]
 > Ezen eljárások elmulasztása magas lemezterület-használatot eredményezhet, és előfordulhat, hogy elfogy a szabad lemezterület. További információt ebben a témakörben a [Recovery Model Overview](http://go.microsoft.com/fwlink/?LinkID=185370) (A helyreállítási modell áttekintése) című részben találhat. A [FIM biztonsági mentési és visszaállítási útmutatója](http://go.microsoft.com/fwlink/?LinkID=165864) további információkat tartalmaz (angol nyelven).
 
-### <a name="step-2-apply-the-minimum-necessary-mim-configuration-during-the-load-process"></a>2\. lépés: A minimálisan szükséges MIM-konfiguráció alkalmazása a betöltési folyamat során
+### <a name="step-2-apply-the-minimum-necessary-mim-configuration-during-the-load-process"></a>2. lépés: A minimálisan szükséges MIM-konfiguráció alkalmazása a betöltési folyamat során
 
 A kezdeti betöltése során csak a FIM-konfigurációhoz a felügyeletiházirend-szabályokhoz (MPR-ek) és a készletdefiníciókhoz minimálisan szükséges konfigurációt kell alkalmazni. Az adatok betöltése után hozza létre az adott környezethez szükséges további készleteket. A szabályzatoknak a betöltött adatokra való visszamenőleges alkalmazásához használja a munkafolyamatok Run On Policy Update (Futtatás szabályzatfrissítéskor) beállítását.
 
-### <a name="step-3-configure-and-populate-the-fim-service-with-external-identity-data"></a>3\. lépés: A FIM szolgáltatás konfigurálása és feltöltése külső azonosító adatokkal
+### <a name="step-3-configure-and-populate-the-fim-service-with-external-identity-data"></a>3. lépés: A FIM szolgáltatás konfigurálása és feltöltése külső azonosító adatokkal
 
 Ekkor kövesse a következő témakörben ismertetett eljárásokat: Hogyan lehet szinkronizálni a felhasználókat a Active Directory tartományi szolgáltatásokról a FIM-útmutatóba a rendszer a Active Directory felhasználókkal való konfigurálásához és szinkronizálásához. Ha szinkronizálni szeretné a csoport adatait, az adott folyamat eljárásai a [Hogyan szinkronizálhatók a csoportok Active Directory tartományi szolgáltatásokról a FIM](https://technet.microsoft.com/library/ff686936(v=ws.10).aspx) -útmutatóra.
 
@@ -214,15 +214,15 @@ Minden az inicializálási ciklus részét képező forrás-kezelőügynök eset
 
 4.  Különbözeti importálás az összes érintett cél-kezelőügynökön szakaszos exportálási műveletekkel.
 
-### <a name="step-4-apply-your-full-mim-configuration"></a>4\. lépés: A teljes MIM-konfiguráció alkalmazása
+### <a name="step-4-apply-your-full-mim-configuration"></a>4. lépés: A teljes MIM-konfiguráció alkalmazása
 
 A kezdeti adatbetöltés befejezése után alkalmaznia kell a teljes MIM-konfigurációt az adott környezethez.
 
 Az alkalmazási helyzettől függően ebbe beletartozik a további készletek, MPR-ek és munkafolyamatok létrehozása. Az esetleges minden meglévő rendszerbeli objektumra visszamenőlegesen alkalmazandó szabályzatok esetén használja a Run On Policy Update (Futtatás szabályzatfrissítéskor) beállítást a munkafolyamatok esetén ezen szabályzatoknak a betöltött adatokra való visszamenőleges alkalmazásához.
 
-### <a name="step-5-reconfigure-sql-to-previous-settings"></a>5\. lépés: Az SQL újrakonfigurálása az előző beállításokra
+### <a name="step-5-reconfigure-sql-to-previous-settings"></a>5. lépés: Az SQL újrakonfigurálása az előző beállításokra
 
-Ne felejtse el módosítani az SQL-beállításokat a normál beállításokra. Ez a következő teendőket foglalja magában:
+Ne felejtse el módosítani az SQL-beállításokat a normál beállításokra. Az érintett műveletek közé tartoznak az alábbiak:
 
 -   A teljes szöveges keresés bekapcsolása
 
@@ -314,7 +314,7 @@ Az SSL implementálásához:
 
 7.  Mentse tetszőleges helyre a fájlt. A későbbi lépésekben szüksége lesz a hely elérésére.
 
-8.  Nyissa meg a https://servername/certsrv címet. A „kiszolgálónév” részt cserélje le a tanúsítványokat kiállító kiszolgáló nevére.
+8.  Nyissa meg a következő címet: https://servername/certsrv. A „kiszolgálónév” részt cserélje le a tanúsítványokat kiállító kiszolgáló nevére.
 
 9.  Kattintson az Új tanúsítvány kérése lehetőségre.
 
@@ -356,13 +356,13 @@ Az SSL implementálásához:
 
 28. Kattintson a Tevékenység, majd a Másodlagos címek leképezése elemre.
 
-29. Kattintson a http://servernamelehetőségre.
+29. Kattintson a http://servername gombra.
 
-30. Módosítsa http://servername a https://servernamera, majd kattintson az OK gombra.
+30. Váltson http://servername a https://servernameértékre, majd kattintson az OK gombra.
 
 31. Kattintson a Start gombra, majd a Futtatás parancsra, írja be az iisreset parancsot, majd kattintson az OK gombra.
 
-## <a name="performance"></a>Performance (Teljesítmény)
+## <a name="performance"></a>Teljesítmény
 
 Az optimális teljesítménykonfigurációhoz:
 
@@ -472,7 +472,7 @@ Ha el kívánja távolítani a jogosultságokat, de csak az aktuális tagokat ha
 
 3.  Törölje az átmeneti készlet szűrőjét, vagy módosítsa oly módon, hogy a készlet üres legyen. Mivel a készlet már nem kötődik TMPR-hez, nem kerül sor megszüntetési munkafolyamat alkalmazására.
 
-### <a name="sets"></a>Készletek
+### <a name="sets"></a>Halmazok
 
 A készletekre vonatkozó gyakorlati tanácsok alkalmazásakor vegye figyelembe a kezelhetőség optimalizálása és a jövőbeli egyszerű felügyelet szempontjait. Az itt szereplő ajánlások alkalmazása előtt megfelelő tesztelést kell végezni a várható éles üzemelési körülmények között, hogy meg lehessen határozni a megfelelő egyensúlyt a teljesítmény és a kezelhetőség között.
 
@@ -494,11 +494,11 @@ A negatív feltételek azon tagsági feltételek, amelyek a következő operáto
 
 A többértékű referenciaattribútumokon alapuló feltételek használata kerülendő, mert ezen készletek nagy száma befolyásolhatja a tagsági feltételben használt attribútumon végzett műveletek teljesítményét.
 
-### <a name="password-reset"></a>Jelszó-visszaállítás
+### <a name="password-reset"></a>Új jelszó kérése
 
 #### <a name="kiosk-like-computers-that-are-used-for-password-reset-should-set-local-security-to-clear-the-virtual-memory-pagefile"></a>A jelszó-visszaállításhoz használt kioszkmódban üzemelő számítógépeknél a helyi biztonságot a virtuális memória lapozófájljának törlésére kell beállítani
 
-Ha a rendszerállapot-kezelő jelszavas alaphelyzetbe állítást egy olyan munkaállomáson helyezi üzembe, amely egy kioszknak szánt munkaállomás, javasoljuk, hogy kapcsolja be a virtuális memória lapozófájljának kiürítése helyi biztonsági házirend beállítását, hogy a folyamat memóriájából származó bizalmas adatok ne legyenek elérhetők jogosulatlan felhasználók.
+Ha a rendszerállapot-kezelő jelszavas alaphelyzetbe állítást egy olyan munkaállomáson helyezi üzembe, amely a rendszerindításra alkalmas, javasoljuk, hogy kapcsolja be a virtuális memória lapozófájljának kiürítése helyi biztonsági házirend beállítását, és győződjön meg arról, hogy a folyamat memóriájából származó bizalmas adatok nem érhetők el jogosulatlan felhasználók
 
 #### <a name="users-should-always-register-for-a-password-reset-on-a-computer-that-they-are-logged-on-to"></a>A felhasználóknak mindig azon a számítógépen kell regisztrálniuk a jelszó-visszaállításra, amelyen bejelentkeztek
 

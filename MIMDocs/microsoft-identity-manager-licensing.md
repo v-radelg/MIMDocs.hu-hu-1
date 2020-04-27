@@ -12,10 +12,10 @@ ms.assetid: ''
 ms.reviewer: billmath
 ms.suite: ems
 ms.openlocfilehash: 62a6b936dc30b8593c8758a6158244d0f6dbbc4f
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79043018"
 ---
 # <a name="microsoft-identity-manager-2016-licensing-and-downloads"></a>Microsoft Identity Manager 2016 licencelés és letöltések
@@ -51,12 +51,12 @@ Ha új telepítést indít, le kell töltenie az adott forgatókönyvhöz kapcso
 |----------|-----------|---------------------   |-------------------|----------|--------------|
 |Szinkronizálás| Szinkronizálási szolgáltatás (beleértve az AD-összekötőt) | Igen | `Synchronization Service` | |
 | Szinkronizálás | PCNS | Nem | `Password Change Notification Service` |  A tartományvezérlőkön való telepítéshez |
-| Szinkronizálás | Összekötők az LDAP, az SQL, a Web Services, a PowerShell, a Lotus Domino, a Graph | Nem | – | Terjesztés a letöltőközpont használatával |
+| Szinkronizálás | Összekötők az LDAP, az SQL, a Web Services, a PowerShell, a Lotus Domino, a Graph | Nem | N/A | Terjesztés a letöltőközpont használatával |
 | az emelt szintű hozzáférések felügyeletével | MIM szolgáltatás | Igen | `Service and Portal` | |
 | Önkiszolgáló | A fakiszolgálói portál | Igen | `Service and Portal` | |
 | Önkiszolgáló | Beépülő modulok és bővítmények | Nem | `Add-ins and extensions` | A végfelhasználói számítógépekre történő telepítéshez |
 | Önkiszolgáló | SCSM-jelentéskészítés | Nem | `Data Warehouse Support Scripts` | |
-| Önkiszolgáló | Hibrid jelentéskészítő ügynök | Nem | – | Terjesztés a letöltőközpont használatával |
+| Önkiszolgáló | Hibrid jelentéskészítő ügynök | Nem | N/A | Terjesztés a letöltőközpont használatával |
 | Önkiszolgáló | Nyelvi csomagok | Nem | `LANGUAGE Packs` | |
 | Tanúsítványkezelés | CM | Igen | `Certificate Management` | |
 | Tanúsítványkezelés | CM tömeges ügyfél | Nem | `CM Bulk Client` | |

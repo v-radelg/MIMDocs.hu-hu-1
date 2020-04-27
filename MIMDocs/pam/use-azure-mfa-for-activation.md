@@ -11,10 +11,10 @@ ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: 5134a112-f73f-41d0-a5a5-a89f285e1f73
 ms.openlocfilehash: 512a1887329f9ec5c93fd69f0ce0b22495ba009c
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79043545"
 ---
 # <a name="using-azure-mfa-for-activation"></a>Aktiválás az Azure MFA használatával
@@ -44,11 +44,11 @@ Ahhoz, hogy az Azure MFA-t a webszolgáltatással együtt használhassa, a köve
 
 ## <a name="creating-an-azure-mfa-provider"></a>Azure MFA-szolgáltató létrehozása
 
-Ebben a szakaszban az Azure MFA-szolgáltatót Microsoft Azure Active Directoryban állíthatja be.  Ha már használja az Azure MFA-t, vagy önálló vagy prémium szintű Azure Active Directory van konfigurálva, ugorjon a következő szakaszra.
+Ebben a szakaszban az Azure MFA-szolgáltatót Microsoft Azure Active Directoryban állíthatja be.Ha már használja az Azure MFA-t – akár önállóan, akár az Azure Active Directory Premiummal konfigurálva – ugorjon a következő bekezdéshez.
 
 1.  Nyisson meg egy webböngészőt, és jelentkezzen be a [klasszikus Azure portálra](https://manage.windowsazure.com) Azure előfizetés-adminisztrátorként.
 
-2.  A bal alsó sarokban kattintson az **Új** gombra.
+2.  A bal alsó sarokban kattintson a **New** (Új) gombra.
 
 3.  Válassza az **App Services > Active Directory > Multi-Factor Auth Provider > Quick Create** (Alkalmazásszolgáltatások > Active Directory > Többtényezős hitelesítési szolgáltató > Gyorslétrehozás) lehetőséget.
 
@@ -68,11 +68,11 @@ Korábban létrehoz egy fájlt, amely tartalmazza a PAM hitelesítési anyagát,
 
 3.  Kattintson a PAM-hoz használni kívánt Azure MFA-szolgáltatóra, majd kattintson a **Manage** (Kezelés) gombra.
 
-4.  Az új ablakban a **Configure** (Konfigurálás) felirat alatti bal oldali panelen kattintson a **Settings** (Beállítások) lehetőségre.
+4.  Az új ablak bal oldali paneljének **Konfigurálás**területén kattintson a **Beállítások**elemre.
 
 5.  Az **Azure Multi-Factor Authentication** ablakban kattintson az **SDK** elemre a **Downloads** (Letöltések) területen.
 
-6.  Kattintson a **Download** (Letöltés) hivatkozásra az **SDK for ASP.net 2.0 C\#** nevű fájl ZIP oszlopában.
+6.  Kattintson a **Download (Letöltés** ) hivatkozásra az **ASP.net\#2,0 C nyelvi SDK**-val rendelkező fájl zip oszlopában.
 
 ![A Multi-Factor Authentication SDK letöltése – képernyőkép](media/PAM-Azure-MFA-Activation-Image-1.png)
 
@@ -87,11 +87,11 @@ Korábban létrehoz egy fájlt, amely tartalmazza a PAM hitelesítési anyagát,
 
 2.  Hozzon létre egy új mappát abban a könyvtárban, ahová a MIM szolgáltatás telepítve van, például: ```C:\Program Files\Microsoft Forefront Identity Manager\2010\Service\MfaCerts```.
 
-3.  A Windows Intéző használatával navigáljon az előző szakaszban letöltött ZIP-fájl ```pf\certs``` mappájába. Másolja a fájlt ```cert\_key.p12``` az új könyvtárba.
+3.  A Windows Intéző használatával navigáljon az ```pf\certs``` előző szakaszban letöltött zip-fájl mappájába. Másolja a fájlt ```cert\_key.p12``` az új könyvtárba.
 
-4.  A Windows Intéző segítségével navigáljon a ZIP ```pf``` mappájába, és nyissa meg a ```pf\_auth.cs``` fájlt egy szövegszerkesztőben, például a WordPadben.
+4.  A Windows Intéző segítségével navigáljon a ```pf``` zip mappájába, és nyissa meg a ```pf\_auth.cs``` fájlt egy szövegszerkesztőben, például a WordPadben.
 
-5. Keresse meg a következő három paramétert: ```LICENSE\_KEY```, ```GROUP\_KEY```, ```CERT\_PASSWORD```.
+5. Keresse meg a következő három ```LICENSE\_KEY```paramétert:, ```GROUP\_KEY```, ```CERT\_PASSWORD```.
 
 ![Értékek másolása a pf\_auth.cs fájlból – képernyőkép](media/PAM-Azure-MFA-Activation-Image-2.png)
 
@@ -99,11 +99,11 @@ Korábban létrehoz egy fájlt, amely tartalmazza a PAM hitelesítési anyagát,
 
 7. A pf\_auth.cs fájlból másolja a LICENSE\_KEY, GROUP\_KEY és a CERT\_PASSWORD paraméter értékét az MfaSettings.xml fájl megfelelő XML-elemeibe.
 
-8. A **<CertFilePath>** XML-elemben adja meg a korábban kibontott cert\_key.p12 fájl teljes elérési útját.
+8. Az **<CertFilePath>** XML-elemben adja meg a korábban kibontott CERT\_Key. P12 fájl teljes elérési útját.
 
 9. A **<username>** elemben adjon meg egy tetszőleges felhasználónevet.
 
-10. A **<DefaultCountryCode>** elemben adja meg a felhasználók felhívásához szükséges országhívószámot, az Amerikai Egyesült Államok és Kanada esetében például az 1-et. Erre a számra abban az esetben van szükség, ha a felhasználók országkód nélkül megadott telefonszámmal vannak regisztrálva. Ha a felhasználó telefonszáma a vállalat számára beállított országhívószámtól különböző előhívószámmal hívható, az adott országkódnak szerepelnie kell a regisztrált telefonszámban.
+10. A **<DefaultCountryCode>** elemben adja meg az országkódot a felhasználók tárcsázásához, például: 1 a Egyesült Államok és Kanada számára. Erre a számra abban az esetben van szükség, ha a felhasználók országkód nélkül megadott telefonszámmal vannak regisztrálva. Ha a felhasználó telefonszáma a vállalat számára beállított országhívószámtól különböző előhívószámmal hívható, az adott országkódnak szerepelnie kell a regisztrált telefonszámban.
 
 11. Mentse és írja felül az **MfaSettings.xml** fájlt a MIM szolgáltatás mappában (```C:\Program Files\Microsoft Forefront Identity Manager\2010\\Service```).
 
@@ -124,7 +124,7 @@ Set-PAMUser (Get-PAMUser -SourceDisplayName Jen) -SourcePhoneNumber 12135551212
 
 ## <a name="configure-pam-roles-for-azure-mfa"></a>PAM-szerepkörök konfigurálása az Azure MFA számára
 
-Ha már az adott PAM-szerepkörre jelölt összes felhasználó telefonszáma tárolva van a MIM szolgáltatás adatbázisában, a szerepkör konfigurálható az Azure MFA hitelesítés megkövetelésére. Ez a `New-PAMRole` vagy a `Set-PAMRole` paranccsal tehető meg. Például
+Ha már az adott PAM-szerepkörre jelölt összes felhasználó telefonszáma tárolva van a MIM szolgáltatás adatbázisában, a szerepkör konfigurálható az Azure MFA hitelesítés megkövetelésére. Ez a `New-PAMRole` vagy a `Set-PAMRole` paranccsal tehető meg. Például:
 
 ```PowerShell
 Set-PAMRole (Get-PAMRole -DisplayName "R") -MFAEnabled 1
@@ -136,17 +136,17 @@ Egy adott szerepkör esetében az „-MFAEnabled 0” paraméternek a `Set-PAMRo
 
 A következő események a Privileged Access Management eseménynaplójában jelenhetnek meg:
 
-| ID  | Severity | Létrehozója | Leírás |
+| ID (Azonosító)  | Severity | Létrehozója | Leírás |
 |-----|----------|--------------|-------------|
 | 101 | Hiba       | MIM szolgáltatás            | A felhasználó nem végezte el az Azure MFA hitelesítést (például nem vette fel a telefont) |
-| 103 | Adatok | MIM szolgáltatás            | A felhasználó aktiválás közben hajtotta végre az Azure MFA hitelesítést                       |
+| 103 | Információ | MIM szolgáltatás            | A felhasználó aktiválás közben hajtotta végre az Azure MFA hitelesítést                       |
 | 825 | Figyelmeztetés     | A PAM figyelőszolgáltatása | A telefonszám megváltozott                                |
 
 A sikertelen telefonhívások okára (101-es esemény) vonatkozó további információkért megtekinthet vagy letölthet egy Azure MFA-jelentést is.
 
 1.  Nyisson meg egy webböngészőt, és jelentkezzen be a [klasszikus Azure portálra](https://manage.windowsazure.com) globális Azure AD-rendszergazdaként.
 
-2.  Az Azure-portál menüjében válassza az **Active Directory** lehetőséget, majd lépjen a **Multi-Factor Auth Providers** (Többtényezős hitelesítési szolgáltatók) lapra.
+2.  Az Azure-Portal menüjében válassza az **Active Directory** lehetőséget, majd lépjen a **Multi-Factor Auth Providers** (Többtényezős hitelesítési szolgáltatók) lapra.
 
 3.  Kattintson a PAM-hoz használni kívánt Azure MFA-szolgáltatóra, majd kattintson a **Manage** (Kezelés) gombra.
 
@@ -156,7 +156,7 @@ A sikertelen telefonhívások okára (101-es esemény) vonatkozó további infor
 
 6.  A jelentést a létrehozását követően megtekintheti a portálon, illetve, ha az MFA-jelentés túl hosszú, letöltheti CSV-fájlként. Az **AUTH TYPE** oszlopban található **SDK**-értékek jelölik azokat a sorokat, amelyek a PAM-aktivációs kérésekhez kapcsolódnak: ezek a MIM-től vagy más helyszíni szoftvertől származó események. A **USERNAME** mező a MIM szolgáltatás adatbázisában található felhasználóobjektum GUID-azonosítója. Ha egy hívás sikertelen volt, az **AUTHD** oszlop értéke **No** lesz, a **CALL RESULT** oszlop pedig tartalmazza a hiba okát, és annak részleteit.
 
-## <a name="next-steps"></a>További lépések
+## <a name="next-steps"></a>Következő lépések
 
 - [Mi az Azure Multi-Factor Authentication](https://docs.microsoft.com/azure/multi-factor-authentication/multi-factor-authentication)
 - [Hozzon létre ingyenes Azure-fiókot még ma](https://azure.microsoft.com/free/)

@@ -12,10 +12,10 @@ ms.assetid: 66060045-d0be-4874-914b-5926fd924ede
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: 2adf1152aaf874d0ff0d93079fb4bfbfcf731b60
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79044293"
 ---
 # <a name="mim-certificate-manager-windows-store-application-deployment"></a>A Rendszerfelügyeleti webszolgáltatások Tanúsítványkezelője Windows áruházbeli alkalmazás telepítése
@@ -38,7 +38,7 @@ A Tanúsítványkezelő alkalmazáshoz a szokásos módon hozhat létre tanúsí
 
 2. Indítsa el az MMC-t.
 
-3. Kattintson a **fájl &gt; beépülő modul hozzáadása/eltávolítása**elemre.
+3. Kattintson **a &gt; fájl beépülő modul hozzáadása/eltávolítása**elemre.
 
 4. Az Elérhető beépülő modulok listában kattintson a **Tanúsítványsablonok** lehetőségre, majd a **Hozzáadás** gombra.
 
@@ -64,9 +64,9 @@ A Tanúsítványkezelő alkalmazáshoz a szokásos módon hozhat létre tanúsí
 
 12. A módosítások véglegesítéséhez és az új sablon létrehozásához kattintson az **OK** gombra. Az új sablonnak ekkor meg kell jelennie a tanúsítványsablonok listájában.
 
-13. A Hitelesítésszolgáltató beépülő modul MMC-konzolra való felvételéhez válassza a **Fájl** menü **Beépülő modul hozzáadása/eltávolítása** elemét. Amikor a rendszer arra kéri, hogy válassza ki a kezelni kívánt számítógépet, válassza a **Helyi számítógép** lehetőséget.
+13. A Hitelesítésszolgáltató beépülő modul MMC-konzolra való felvételéhez válassza a **Fájl** menü **Beépülő modul hozzáadása/eltávolítása** elemét. Ha a rendszer megkérdezi, hogy melyik számítógépet szeretné felügyelni, válassza a **helyi számítógép**lehetőséget.
 
-14. Az MMC bal oldali panelén bontsa ki a **Hitelesítésszolgáltató (helyi)** csomópontot, majd a hitelesítésszolgáltatók listájában bontsa ki a saját hitelesítésszolgáltató csomópontját.
+14. Az MMC bal oldali ablaktábláján bontsa ki a **hitelesítésszolgáltató (helyi)** csomópontot, majd a hitelesítésszolgáltatók listájában bontsa ki a hitelesítésszolgáltatót.
 
 15. Kattintson jobb gombbal a **Tanúsítványsablonok** elemre, majd az **Új &gt; Kiállítandó tanúsítványsablon** lehetőségre.
 
@@ -78,7 +78,7 @@ Amikor létrehozza a profilsablont, állítsa be a virtuális intelligens kárty
 
 1.  Rendszergazdai jogosultsággal jelentkezzen be a Tanúsítványkezelő portálra.
 
-2.  Nyissa meg a felügyeleti &gt; profil sablonok kezelése lehetőséget. Győződjön meg arról, hogy a jelölőnégyzet be van jelölve a **MIM cm minta intelligens kártya bejelentkezési profil sablonja** mellett, majd kattintson a kiválasztott profil másolása sablonra.
+2.  Nyissa meg &gt; az adminisztráció Manage Profile sablonokat. Győződjön meg arról, hogy a jelölőnégyzet be van jelölve a **MIM cm minta intelligens kártya bejelentkezési profil sablonja** mellett, majd kattintson a kiválasztott profil másolása sablonra.
 
 3.  Írja be a profilsablon nevét, majd kattintson az **OK** gombra.
 
@@ -116,7 +116,7 @@ Amikor létrehozza a profilsablont, állítsa be a virtuális intelligens kárty
    |                     |                                                                                                                                                                                                          |
    |---------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
    |      MIMCM URL      |                                              A Tanúsítványkezelő konfigurálására szolgáló portál teljes tartományneve, Például: https://mimcmServerAddress/certificatemanagement                                              |
-   |      ADFS URL       | Ha AD FS-t fog használni, adja meg az AD FS URL-címét, Például: <https://adfsServerSame/adfs> </br> Ha az ADFS nincs használatban, konfigurálja ezt a beállítást egy üres karakterlánccal.  Például ```<ADFS URL=""/>``` |
+   |      ADFS URL       | Ha AD FS-t fog használni, adja meg az AD FS URL-címét, Például: <https://adfsServerSame/adfs> </br> Ha az ADFS nincs használatban, konfigurálja ezt a beállítást egy üres karakterlánccal.  Például:```<ADFS URL=""/>``` |
    |     PrivacyUrl      |                                         Megadhatja egy olyan weblap URL-címét, amely ismerteti, hogy mit tesz a tanúsítványigényléshez gyűjtött felhasználói adatokkal.                                          |
    |     SupportMail     |                                                                           Megadhat egy e-mail címet támogatási problémák esetére.                                                                           |
    | LobComplianceEnable (LOB-megfelelőség engedélyezése) |                                                                     True (igaz) vagy false (hamis) értéket állíthat be. Az alapértelmezett érték true (igaz).                                                                      |
@@ -261,7 +261,7 @@ Amikor létrehozza a profilsablont, állítsa be a virtuális intelligens kárty
       get-help  -detailed ConfigureMimCMClientAndRelyingParty.ps1
       ```
 
-## <a name="deploy-the-app"></a>Az alkalmazás központi telepítése
+## <a name="deploy-the-app"></a>Az alkalmazás üzembe helyezése
 
 A Tanúsítványkezelő alkalmazás telepítésekor a Letöltőközpontból töltse le a MIMDMModernApp_&lt;verziószám&gt;_AnyCPU_Test.zip fájlt, és bontsa ki a teljes tartalmát. A telepítő az .appx fájl. Az alkalmazás a Windows áruházbeli alkalmazásoknál megszokott módszerekkel telepíthető, például [System Center Configuration Managerrel](https://technet.microsoft.com/library/dn613840.aspx) vagy [Intune-nal](https://technet.microsoft.com/library/dn613839.aspx) is közvetlen telepítéssel – a felhasználóknak tehát a Vállalati portálon kell elérniük azt, vagy leküldéssel is telepíthető közvetlenül a számítógépükre.
 

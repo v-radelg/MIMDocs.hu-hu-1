@@ -10,10 +10,10 @@ ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: 94a74f1c-2192-4748-9a25-62a526295338
 ms.openlocfilehash: 0d5f970168934f3fcc4c721aad0a439e2babcfe7
-ms.sourcegitcommit: c214bb0b1373b65b1c9c215379fd820ab0c13f0f
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/14/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79381505"
 ---
 <a name="azure-ad-business-to-business-b2b-collaboration-with-microsoft-identity-managermim-2016-sp1-with-azure-application-proxy"></a>Azure AD-beli vállalatközi (B2B) együttműködés a Microsoft Identity Manager (platform) 2016 SP1 és az Azure Application proxy használatával
@@ -36,7 +36,7 @@ Néhány feltételezés a B2B és az Azure AD Application Proxy:
 
 -   Már közzétett egy vagy több alkalmazást, amely a Windows integrált hitelesítésére vagy az egyes AD-fiókokra támaszkodik Azure AD alkalmazás proxyn keresztül
 
--   Meghívott vagy meghív egy vagy több vendéget, amelyek egy vagy több, az Azure AD-ban létrehozott felhasználót eredményeztek <https://docs.microsoft.com/azure/active-directory/active-directory-b2b-self-service-portal>
+-   Meghívott vagy meghív egy vagy több vendéget, amelyek egy vagy több, az Azure AD-ben létrehozott felhasználót eredményeztek<https://docs.microsoft.com/azure/active-directory/active-directory-b2b-self-service-portal>
 
 
 
@@ -44,7 +44,7 @@ Néhány feltételezés a B2B és az Azure AD Application Proxy:
 
 Ez az útmutató a következő forgatókönyvre épül:
 
-A contoso Pharmaceuticals az R & D osztályának részeként együttműködik a Trey Research Inc.-vel. A Trey Research alkalmazottainak hozzá kell férniük a contoso Pharmaceuticals által biztosított Research Reporting alkalmazáshoz.
+A contoso Pharmaceuticals az R&D osztályának részeként együttműködik a Trey Research Inc.-vel. A Trey Research alkalmazottainak hozzá kell férniük a contoso Pharmaceuticals által biztosított Research Reporting alkalmazáshoz.
 
 -   A contoso Pharmaceuticals a saját bérlőn vannak, hogy egyéni tartományt konfiguráljanak.
 
@@ -68,7 +68,7 @@ További információ a [Azure ad Connect Sync: szűrés konfigurálása](https:
 
 
 Megjegyzés: a weblapon való létrehozása előtt szinkronizálja a Graph-összekötő felügyeleti ügynökét, győződjön meg arról, hogy áttekintette a [gráf-összekötő](microsoft-identity-manager-2016-connector-graph.md)üzembe helyezésére vonatkozó útmutatót, és létrehozott egy alkalmazást az ügyfél-azonosítóval és a titkos kulccsal.
-Győződjön meg arról, hogy az alkalmazás jogosult a következő engedélyek legalább egyikére: `User.Read.All`, `User.ReadWrite.All`, `Directory.Read.All` vagy `Directory.ReadWrite.All`. 
+Győződjön meg arról, hogy az alkalmazás jogosult a következő engedélyek legalább egyikére `User.Read.All`: `User.ReadWrite.All`, `Directory.Read.All` , `Directory.ReadWrite.All`vagy. 
 
 ## <a name="create-the-new-management-agent"></a>Az új felügyeleti ügynök létrehozása
 
@@ -78,7 +78,7 @@ Válassza a **Graph (Microsoft)** lehetőséget, és adjon neki egy leíró neve
 
 ![](media/microsoft-identity-manager-2016-graph-b2b-scenario/d95c6b2cc7951b607388cbd25920d7d0.png)
 
-### <a name="connectivity"></a>Kapcsolat
+### <a name="connectivity"></a>Kapcsolatok
 
 A kapcsolat lapon meg kell adnia a Graph API verziót. A gyártásra kész posta a **V 1,0**, a nem éles üzemben lévő **béta**.
 
@@ -108,7 +108,7 @@ Az Objektumtípusok lapon válassza ki az importálni kívánt objektumtípusoka
 
 #### <a name="select-attributes"></a>Attribútumok kiválasztása
 
-Az attribútumok kiválasztása képernyőn válassza ki azokat az attribútumokat az Azure AD-ből, amelyekre szükség lesz a B2B-felhasználók felügyeletéhez az AD-ben. Az "ID" attribútum megadása kötelező.  A konfiguráció későbbi részében `userPrincipalName` és `userType` attribútumokat fogja használni a rendszer.  Egyéb attribútumok nem kötelezőek, beleértve a következőket is
+Az attribútumok kiválasztása képernyőn válassza ki azokat az attribútumokat az Azure AD-ből, amelyekre szükség lesz a B2B-felhasználók felügyeletéhez az AD-ben. Az "ID" attribútum megadása kötelező.  Az attribútumok `userPrincipalName` `userType` később lesznek használva a konfigurációban.  Egyéb attribútumok nem kötelezőek, beleértve a következőket is
 
 -   `displayName`
 
@@ -130,9 +130,9 @@ A horgony konfigurálása képernyőn a horgony attribútum konfigurálása köt
 
 ![](media/microsoft-identity-manager-2016-graph-b2b-scenario/9377ab7b760221517a431384689c8c76.png)
 
-#### <a name="configure-connector-filter"></a>Összekötő-szűrő konfigurálása
+#### <a name="configure-connector-filter"></a>Összekötőszűrő konfigurálása
 
-Az összekötő-szűrő beállítása lapon a rendszer lehetővé teszi az objektumok szűrését az attribútumok szűrője alapján. Ebben a példában a B2B esetében a cél az, hogy a felhasználók csak a `Guest`t egyenlő `userType` attribútum értékével legyenek felhasználva, nem pedig a userType, amely egyenlő `member`.
+Az összekötő-szűrő beállítása lapon a rendszer lehetővé teszi az objektumok szűrését az attribútumok szűrője alapján. Ebben a forgatókönyvben a B2B esetében a cél az, hogy csak olyan `userType` attribútumot használjon a felhasználók számára `Guest`, amely egyenlő, és nem a userType egyenlő értéket használó felhasználók számára `member`.
 
 ![](media/microsoft-identity-manager-2016-graph-b2b-scenario/d90691fce652ba41c7a98c9a863ee710.png)
 
@@ -142,7 +142,7 @@ Ez az útmutató feltételezi, hogy egy szinkronizálási szabályt fog létreho
 
 ![](media/microsoft-identity-manager-2016-graph-b2b-scenario/34896440ae6ad404e824eb35d8629986.png)
 
-#### <a name="configure-attribute-flow"></a>Az attribútum folyamatának konfigurálása
+#### <a name="configure-attribute-flow"></a>Attribútumfolyam konfigurálása
 
 Ez az útmutató feltételezi, hogy egy szinkronizálási szabályt fog létrehozni.  A kivetítés nem szükséges az attribútum folyamatának definiálásához a webalkalmazás-szinkronizálásban, mivel azt a később létrehozott szinkronizálási szabály kezeli. Hagyja meg az alapértelmezett értéket, majd kattintson az OK gombra.
 
@@ -195,7 +195,7 @@ az alábbi lépésekben megkezdjük a B2B vendég fiók és az attribútum folya
 
 A következő lépésekhez minimális konfiguráció hozzáadására van szükség a FIM MA és az AD MA szolgáltatáshoz.
 
-További részletekért tekintse meg a konfigurációs <https://technet.microsoft.com/library/ff686263(v=ws.10).aspx> – hogyan lehet felhasználókat kiépíteni a AD DS
+További részletek itt találhatók a konfigurációhoz <https://technet.microsoft.com/library/ff686263(v=ws.10).aspx> – hogyan lehet kiépíteni a felhasználókat a AD DS
 
 ### <a name="synchronization-rule-import-guest-user-to-mv-to-synchronization-service-metaverse-from-azure-active-directorybr"></a>Szinkronizálási szabály: a vendég felhasználó importálása a MV-be a Azure Active Directory-ből származó metaverse szolgáltatásba<br>
 
@@ -209,24 +209,24 @@ A kapcsolati feltételek lépésben válassza az "erőforrás létrehozása a FI
 
 ![](media/microsoft-identity-manager-2016-graph-b2b-scenario/0ac7f4d0fd55f4bffd9e6508b494aa74.png)
 
-Konfigurálja a következő bejövő attribútum-adatfolyamati szabályokat.  Ügyeljen arra, hogy feltöltse a `accountName`, `userPrincipalName` és `uid` attribútumokat, mivel ezek a forgatókönyv későbbi részében lesznek felhasználva:
+Konfigurálja a következő bejövő attribútum-adatfolyamati szabályokat.  Ügyeljen arra, hogy feltöltse `accountName`a `userPrincipalName` ( `uid` z) és attribútumokat, mivel ezek a forgatókönyv későbbi részében lesznek felhasználva:
 
 | **Csak kezdeti folyamat** | **Használat létezési tesztként** | **Flow (forrásoldali érték ⇒ FIM-attribútum)**                          |
 |-----------------------|---------------------------|-----------------------------------------------------------------------|
-|                       |                           | [displayName⇒displayName](javascript:void(0);)                        |
-|                       |                           | [Balra (azonosító, 20) ⇒accountName](javascript:void(0);)                        |
-|                       |                           | [id⇒uid](javascript:void(0);)                                         |
-|                       |                           | [userType⇒employeeType](javascript:void(0);)                          |
-|                       |                           | [givenName⇒givenName](javascript:void(0);)                            |
-|                       |                           | [surname⇒sn](javascript:void(0);)                                     |
-|                       |                           | [userPrincipalName⇒userPrincipalName](javascript:void(0);)            |
-|                       |                           | [id⇒cn](javascript:void(0);)                                          |
-|                       |                           | [mail⇒mail](javascript:void(0);)                                      |
-|                       |                           | [mobilePhone⇒mobilePhone](javascript:void(0);)                        |
+|                       |                           | [displayName ⇒ displayName] (JavaScript: Void (0);)                        |
+|                       |                           | [Left (azonosító, 20) ⇒ accountName] (JavaScript: Void (0);)                        |
+|                       |                           | [azonosító ⇒ UID] (JavaScript: Void (0);)                                         |
+|                       |                           | [userType ⇒ employeeType] (JavaScript: Void (0);)                          |
+|                       |                           | [givenName ⇒ givenName] (JavaScript: Void (0);)                            |
+|                       |                           | [vezetéknév ⇒ SN] (JavaScript: Void (0);)                                     |
+|                       |                           | [userPrincipalName ⇒ userPrincipalName] (JavaScript: Void (0);)            |
+|                       |                           | [azonosító ⇒ CN] (JavaScript: Void (0);)                                          |
+|                       |                           | [mail ⇒-mail] (JavaScript: Void (0);)                                      |
+|                       |                           | [mobiltelefon ⇒ mobiltelefon] (JavaScript: Void (0);)                        |
 
 ### <a name="synchronization-rule-create-guest-user-account-to-active-directory"></a>Szinkronizálási szabály: Vendég felhasználói fiók létrehozása Active Directory 
 
-Ez a szinkronizálási szabály a felhasználót Active Directory hozza létre.  Győződjön meg arról, hogy a `dn` folyamatának a szervezeti egységben kell megadnia a felhasználót, amely ki lett zárva Azure AD Connectból.  Frissítse a `unicodePwd` folyamatát is, hogy megfeleljen az AD-jelszóra vonatkozó házirendnek – a felhasználónak nem kell tudnia a jelszót.  Figyelje meg, hogy `userAccountControl` `262656` értéke a jelzők `SMARTCARD_REQUIRED` és `NORMAL_ACCOUNT`.
+Ez a szinkronizálási szabály a felhasználót Active Directory hozza létre.  Győződjön meg arról, hogy `dn` a folyamatnak meg kell adnia a felhasználót a szervezeti egységben, amely ki lett zárva a Azure ad Connectból.  `unicodePwd` Azt is megteheti, hogy az ad-jelszóra vonatkozó házirendnek való megfelelés érdekében frissíti a folyamatot. a felhasználónak nem kell tudnia a jelszót.  Figyelje `262656` meg `userAccountControl` , hogy a jelölők kódolása `SMARTCARD_REQUIRED` és `NORMAL_ACCOUNT`a jelző értéke.
 
 ![](media/microsoft-identity-manager-2016-graph-b2b-scenario/3463e11aeb9fb566685e775d4e1b825c.png)
 
@@ -238,20 +238,20 @@ Folyamat szabályai:
 
 | **Csak kezdeti folyamat** | **Használat létezési tesztként** | **Flow (FIM Value ⇒ cél attribútum)**                          |
 |-----------------------|---------------------------|-----------------------------------------------------------------------|
-|                       |                           | [accountName⇒sAMAccountName](javascript:void(0);)                     |
-|                       |                           | [givenName⇒givenName](javascript:void(0);)                            |
-|                       |                           | [mail⇒mail](javascript:void(0);)                                      |
-|                       |                           | [sn⇒sn](javascript:void(0);)                                          |
-|                       |                           | [userPrincipalName⇒userPrincipalName](javascript:void(0);)            |
-| **Y**                 |                           | ["CN ="+ uid +", OU = B2BGuest, DC = contoso, DC = com" ⇒dn](javascript:void(0);) |
-| **Y**                 |                           | [RandomNum (0,999) + userPrincipalName⇒unicodePwd](javascript:void(0);)  |
-| **Y**                 |                           | [262656⇒userAccountControl](javascript:void(0);)                      |
+|                       |                           | [accountName ⇒ sAMAccountName] (JavaScript: Void (0);)                     |
+|                       |                           | [givenName ⇒ givenName] (JavaScript: Void (0);)                            |
+|                       |                           | [mail ⇒-mail] (JavaScript: Void (0);)                                      |
+|                       |                           | [SN ⇒ SN] (JavaScript: Void (0);)                                          |
+|                       |                           | [userPrincipalName ⇒ userPrincipalName] (JavaScript: Void (0);)            |
+| **I**                 |                           | ["CN =" + UID + ", OU = B2BGuest, DC = contoso, DC = com" ⇒ DN] (JavaScript: Void (0);) |
+| **I**                 |                           | [RandomNum (0999) + userPrincipalName ⇒ unicodePwd] (JavaScript: Void (0);)  |
+| **I**                 |                           | [262656 ⇒ userAccountControl] (JavaScript: Void (0);)                      |
 
 ### <a name="optional-synchronization-rule-import-b2b-guest-user-objects-sid-to-allow-for-login-to-mim"></a>Választható szinkronizálási szabály: B2B vendég felhasználói objektumok biztonsági azonosítójának importálása, amely lehetővé teszi a bejelentkezést a rendszerbe 
 
-Ez a bejövő szinkronizálási szabály a felhasználó SID-attribútumát Active Directory vissza a webhelyre, így a felhasználó hozzáférhet a webszolgáltatási portálhoz.  A webalkalmazás-portál használatához a felhasználónak rendelkeznie kell az attribútumokkal `samAccountName`, `domain` és `objectSid` a fakiszolgálói szolgáltatás adatbázisában.
+Ez a bejövő szinkronizálási szabály a felhasználó SID-attribútumát Active Directory vissza a webhelyre, így a felhasználó hozzáférhet a webszolgáltatási portálhoz.  A webalkalmazás-portál használatához a felhasználónak rendelkeznie kell `samAccountName`az `domain` attribútumokkal, és `objectSid` fel kell töltenie őket a fakiszolgálói szolgáltatás adatbázisába.
 
-Konfigurálja a forrás külső rendszerét `ADMA`ként, mivel a `objectSid` attribútum automatikusan be lesz állítva az AD által, amikor a felhasználó létrehozza a felhasználót.
+Konfigurálja a forrásként szolgáló külső rendszerrendszert `ADMA`, `objectSid` mivel az ad automatikusan megadja az attribútumot, amikor a felhasználói felület létrehoz egy felhasználót.
  
 Vegye figyelembe, hogy ha úgy konfigurálja a felhasználókat, hogy a fakiszolgálói szolgáltatásban jöjjenek létre, győződjön meg arról, hogy a felhasználók nem tartoznak az alkalmazottak SSPR-kezelési házirendjének szabályaihoz tartozó készletek hatókörébe.  Előfordulhat, hogy módosítania kell a set definíciókat, hogy kizárják a B2B-folyamat által létrehozott felhasználókat. 
 
@@ -267,9 +267,9 @@ Vegye figyelembe, hogy ha úgy konfigurálja a felhasználókat, hogy a fakiszol
 
 | **Csak kezdeti folyamat** | **Használat létezési tesztként** | **Flow (forrásoldali érték ⇒ FIM-attribútum)**                          |
 |-----------------------|---------------------------|-----------------------------------------------------------------------|
-|                       |                           | [sAMAccountName⇒accountName](javascript:void(0);)                     |
-|                       |                           | [A "CONTOSO" ⇒domain](javascript:void(0);)                            |
-|                       |                           | [objectSid⇒objectSid](javascript:void(0);)                                      |
+|                       |                           | [sAMAccountName ⇒ accountName] (JavaScript: Void (0);)                     |
+|                       |                           | ["CONTOSO" ⇒ tartomány] (JavaScript: Void (0);)                            |
+|                       |                           | [objectSid ⇒ objectSid] (JavaScript: Void (0);)                                      |
 
 
 ## <a name="run-the-synchronization-rules"></a>A szinkronizálási szabályok futtatása
@@ -280,7 +280,7 @@ Ezután meghívja a felhasználót, majd futtassa a felügyeleti ügynök szinkr
 
 -   Teljes Importálás és szinkronizálás a `ADMA` felügyeleti ügynökön.  Ezzel biztosítható, hogy a webActive Directory konzisztensek legyenek.  Ezen a ponton a vendégek még nem lesznek függőben lévő exportálások.
 
--   Teljes Importálás és szinkronizálás a B2B Graph felügyeleti ügynökön.  Így a vendég felhasználói a metaverse-ben jelennek meg.  Ezen a ponton egy vagy több fiók `ADMA`exportálásra vár.  Ha nincsenek függőben lévő exportálások, ellenőrizze, hogy a vendég felhasználókat importálták-e az összekötő területére, és hogy a szabályok az AD-fiókok számára lettek-e megadva.
+-   Teljes Importálás és szinkronizálás a B2B Graph felügyeleti ügynökön.  Így a vendég felhasználói a metaverse-ben jelennek meg.  Ezen a ponton egy vagy több fiók exportálásra vár `ADMA`.  Ha nincsenek függőben lévő exportálások, ellenőrizze, hogy a vendég felhasználókat importálták-e az összekötő területére, és hogy a szabályok az AD-fiókok számára lettek-e megadva.
 
 -   Exportálás, különbözeti Importálás és szinkronizálás a `ADMA` felügyeleti ügynökön.  Ha az Exportálás sikertelen volt, ellenőrizze a szabály konfigurációját, és állapítsa meg, hogy van-e hiányzó séma-követelmény. 
 
@@ -307,13 +307,13 @@ Az összes konfigurálása után a B2B felhasználói bejelentkezés és az alka
 
 ![](media/microsoft-identity-manager-2016-graph-b2b-scenario/e1a9d7b8c87021de4e43a3501826fa81.png)
 
-<a name="next-steps"></a>További lépések
+<a name="next-steps"></a>Következő lépések
 ----------
 
 [Felhasználók kiépítése az Active Directory tartományi szolgáltatásokban](https://technet.microsoft.com/library/ff686263(v=ws.10).aspx)
 
 [FIM 2010-funkciók dokumentációja](https://technet.microsoft.com/library/ff800820(v=ws.10).aspx)
 
-[Biztonságos távoli hozzáférés biztosítása a helyszíni alkalmazások számára](https://docs.microsoft.com/azure/active-directory/active-directory-application-proxy-get-started)
+[Helyszíni alkalmazások biztonságos távoli elérése](https://docs.microsoft.com/azure/active-directory/active-directory-application-proxy-get-started)
 
 [Microsoft Graph Microsoft Identity Manager-összekötő letöltése](https://go.microsoft.com/fwlink/?LinkId=717495)

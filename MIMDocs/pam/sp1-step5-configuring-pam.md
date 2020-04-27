@@ -1,5 +1,5 @@
 ---
-title: '5\. lépés: PAM telepítése/konfigurálása'
+title: '5. lépés: PAM telepítése/konfigurálása'
 description: Ez a Privileged Identity Manager parancsfájlokkal történő konfigurálásának 5. lépése, amely a PAM kiszolgáló üzembe helyezését részletezi.
 keywords: ''
 author: billmath
@@ -12,17 +12,17 @@ ms.assetid: 4b524ae7-6610-40a0-8127-de5a08988a8a
 ms.reviewer: ''
 ms.suite: ems
 ms.openlocfilehash: 58a70336af4f79d87d6175aa99dc79fc81aa62dd
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79043783"
 ---
-# <a name="step-5-installingconfiguring-pam"></a>5\. lépés: PAM telepítése/konfigurálása
+# <a name="step-5-installingconfiguring-pam"></a>5. lépés: PAM telepítése/konfigurálása
 
 > [!div class="step-by-step"]
-> [« 4. lépés](sp1-step4-configuring-sharepoint.md)
-> [6. lépés »](sp1-step6-setup-pam-trust.md)
+> [«4](sp1-step4-configuring-sharepoint.md)
+> . lépés[6. lépés»](sp1-step6-setup-pam-trust.md)
 
 Tartományhoz csatlakoztatott PAMServer esetén jelentkezzen be MIMAdminként, más esetben helyi rendszergazdaként.
 1. A PowerShell futtatása rendszergazdaként
@@ -44,5 +44,5 @@ Miután a PAMServer újraindult, jelentkezzen be a gépre a MIMAdmin-fiókkal.
    A telepítés befejezése után a gép újraindul.
 
 > [!div class="step-by-step"]
-> [« 4. lépés](sp1-step4-configuring-sharepoint.md)
-> [6. lépés »](sp1-step6-setup-pam-trust.md)
+> [«4](sp1-step4-configuring-sharepoint.md)
+> . lépés[6. lépés»](sp1-step6-setup-pam-trust.md)

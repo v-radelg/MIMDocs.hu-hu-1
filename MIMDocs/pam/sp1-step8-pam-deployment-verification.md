@@ -1,5 +1,5 @@
 ---
-title: '8\. lépés: A PAM üzembe helyezésének ellenőrzése'
+title: '8. lépés: A PAM üzembe helyezésének ellenőrzése'
 description: A PAM parancsfájlokkal történő üzembe helyezéséhez szükséges csomag ellenőrzési parancsfájlokat is tartalmaz, amelyekkel végrehajtható egy PAM-forgatókönyv, így ellenőrizhető, hogy a PAM-környezet a vártnak megfelelően működik-e.
 keywords: ''
 author: billmath
@@ -12,17 +12,17 @@ ms.assetid: 4b524ae7-6610-40a0-8127-de5a08988a8a
 ms.reviewer: ''
 ms.suite: ems
 ms.openlocfilehash: 41c1ff575bafb4c892d0657234554387680b75f1
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79043749"
 ---
-# <a name="step-8-pam-deployment-verification"></a>Nyolcadik lépés: A PAM üzembe helyezésének ellenőrzése
+# <a name="step-8-pam-deployment-verification"></a>8. lépés: A PAM üzembe helyezésének ellenőrzése
 
 > [!div class="step-by-step"]
-> [« 7. lépés](sp1-step7-setup-sidhistory-sidfiltering.md)
-> [Kiegészítés »](sp1-pam-deployment-addendum.md)
+> [«7](sp1-step7-setup-sidhistory-sidfiltering.md)
+> . lépés[kiegészítés»](sp1-pam-deployment-addendum.md)
 
 Az üzembehelyezési csomag tartalmazza az ellenőrzési szkripteket is, amelyekkel végrehajtható egy PAM-forgatókönyv, így ellenőrizhető, hogy a PAM-környezet a vártnak megfelelően működik-e.
 Az üzembe helyezés ellenőrzéséhez módosítsa a PAMDeploymentConfig.xml <PamValidation/> elnevezésű szakaszát.
@@ -33,7 +33,7 @@ Az üzembe helyezés ellenőrzéséhez módosítsa a PAMDeploymentConfig.xml <Pa
 Az ügyfélgép nevét frissíteni kell a PAMDeploymentConfig.xml <PAMValidationClient/> címkéjével. A(z) <PAMValidation/> csomópontban lévő többi adatot csak akkor kell szerkeszteni, ha ütköznek a meglévő felhasználókkal/csoportokkal, mivel ez az érvényesítés megkísérli létrehozni őket.
 Alkalmazza a következő lépéseket az érvényesítés végrehajtásához:
 
-Első lépés:
+1. lépés:
 
 1. Bejelentkezés a CORPDC tartományvezérlőre CORP-tartományi rendszergazdaként
 2. A PowerShell futtatása rendszergazdaként
@@ -43,7 +43,7 @@ Első lépés:
 
 Ezzel létrehozza az érvényesítéshez szükséges csoportokat és felhasználókat.
 
-Második lépés:
+2. lépés:
 
 1. Bejelentkezés a PAM-kiszolgálóra MIMAdmin jogosultsággal
 2. A PowerShell futtatása rendszergazdaként
@@ -53,7 +53,7 @@ Második lépés:
 
 Ez a lépés áttelepíti a felhasználókat és csoportokat a PAM-környezetbe.
 
-Harmadik lépés:
+3. lépés:
 
 1. Bejelentkezés a CORP-ügyfélre helyi rendszergazdaként
 2. A PowerShell futtatása rendszergazdaként
@@ -77,5 +77,5 @@ A PowerShell ablakban írja be a következőt:
   A szkript az alapértelmezett értéket (11 perc) használja a kérések elévülésére.
 
 > [!div class="step-by-step"]
-> [« 7. lépés](sp1-step7-setup-sidhistory-sidfiltering.md)
-> [Kiegészítés »](sp1-pam-deployment-addendum.md)
+> [«7](sp1-step7-setup-sidhistory-sidfiltering.md)
+> . lépés[kiegészítés»](sp1-pam-deployment-addendum.md)

@@ -12,16 +12,16 @@ ms.assetid: 4b524ae7-6610-40a0-8127-de5a08988a8a
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: c21228dad923d80ab63c255c1184b7de04a0ff3d
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79043732"
 ---
-# <a name="step-1---prepare-the-host-and-the-corp-domain"></a>1\. lépés – A gazdagép és a CORP tartomány előkészítése
+# <a name="step-1---prepare-the-host-and-the-corp-domain"></a>1. lépés – A gazdagép és a CORP tartomány előkészítése
 
 > [!div class="step-by-step"]
-> [2. lépés »](step-2-prepare-priv-domain-controller.md)
+> [2. lépés»](step-2-prepare-priv-domain-controller.md)
 
 Ebben a lépésben előkészíti a gazdagépet a megerősített környezet számára. Ha szükséges, létrehoz egy tartományvezérlőt és egy tag munkaállomást egy új tartományban és erdőben (a *CORP* erdőben) olyan identitásokkal, amelyeket a megerősített környezet kezel. A CORP erdő egy kezelendő erőforrásokat tartalmazó, meglévő erdőt szimulál. Ez a dokumentum egy védendő erőforrást, egy fájlmegosztást használ példaként.
 
@@ -39,7 +39,7 @@ Telepítse a Windows Server 2012 R2 vagy a Windows Server 2016 Technical Preview
 
 2. Olvassa el és fogadja el a licencfeltételeket.
 
-3. Mivel a lemez üres, válassza az **Egyéni: A Windows telepítése a korábbi adatok megőrzése nélkül** beállítást, és használja a nem inicializált lemezterületet.
+3. Mivel a lemez üres, válassza az **Egyéni: csak a Windows telepítése** lehetőséget, és használja a nem inicializált lemezterületet.
 
 4. Rendszergazdaként jelentkezzen be az új számítógépre. Nyissa meg a Vezérlőpultot. Adja a számítógépnek a *CORPDC* nevet, és a virtuális hálózaton rendeljen hozzá egy statikus IP-címet. Indítsa újra a kiszolgálót.
 
@@ -47,7 +47,7 @@ Telepítse a Windows Server 2012 R2 vagy a Windows Server 2016 Technical Preview
 
 ### <a name="add-roles-to-establish-a-domain-controller"></a>Szerepkörök beállítása tartományvezérlő létrehozásához
 
-Ebben a szakaszban be fogja állítani az Active Directory Domain Services (AD DS), a DNS-kiszolgáló, illetve a (Fájl- és adattárolási szolgáltatások szerepkör részét képező) Fájlkiszolgáló szerepkört, majd ezt a kiszolgálót egy új, contoso.local nevű erdő tartományvezérlőjévé lépteti elő.
+Ebben a szakaszban be fogja állítani az Active Directory tartományi szolgáltatások (AD DS), a DNS-kiszolgáló, illetve a (Fájl- és adattárolási szolgáltatások szerepkör részét képező) Fájlkiszolgáló szerepkört, majd ezt a kiszolgálót egy új, contoso.local nevű erdő tartományvezérlőjévé lépteti elő.
 
 > [!NOTE]  
 > Ha már van olyan tartománya, amelyet CORP tartományként szeretne használni, és ez a tartomány a Windows Server 2012 R2 vagy későbbi verziót használja tartományvezérlőként, ugorjon a [További felhasználók és csoportok létrehozása bemutatóhoz](#create-additional-users-and-groups-for-demonstration-purposes) című részhez.
@@ -72,7 +72,7 @@ Ebben a szakaszban be fogja állítani az Active Directory Domain Services (AD D
 
 ### <a name="create-a-group"></a>Csoport létrehozása
 
-Hozzon létre egy csoportot az Active Directory naplózási céljaira, feltéve, hogy még nincs ilyen csoport. A csoport nevének a NetBIOS-tartománynévnek kell lennie, melyet három dollárjel követ, például: *CONTOSO$$$* .
+Hozzon létre egy csoportot az Active Directory naplózási céljaira, feltéve, hogy még nincs ilyen csoport. A csoport nevének a NetBIOS-tartománynévnek kell lennie, melyet három dollárjel követ, például: *CONTOSO$$$*.
 
 Minden tartományban jelentkezzen be egy tartományvezérlőre tartományi rendszergazdaként, és hajtsa végre az alábbi lépéseket:
 
@@ -123,17 +123,17 @@ A meglévő erdőkben be kell állítania a naplózást ahhoz, hogy létre lehes
 
 Minden tartományban jelentkezzen be egy tartományvezérlőre tartományi rendszergazdaként, és hajtsa végre az alábbi lépéseket:
 
-1. Nyissa meg **Start** > **Felügyeleti eszközök** (vagy Windows Server 2016 esetén a **Windows felügyeleti eszközök**) lehetőséget, és indítsa el **Csoportházirend kezelése** konzolt.
+1. Nyissa **meg a** > **felügyeleti eszközök** (vagy a Windows Server 2016, **Windows felügyeleti eszközök**) eszközt, és indítsa el **csoportházirend felügyeletet**.
 
-2. Keresse meg az ehhez a tartományhoz tartozó tartományvezérlői szabályzatot.  Ha létrehozott egy új tartományt a contoso.local erdőben, lépjen az **Erdő: contoso.local** > **Tartományok** > **contoso.local** > **Tartományvezérlők** > **Alapértelmezett tartományvezérlői házirend** lehetőségre. Ekkor megjelenik egy tájékoztató üzenet.
+2. Keresse meg az ehhez a tartományhoz tartozó tartományvezérlői szabályzatot.  Ha új tartományt hozott létre a contoso. local számára, navigáljon az **erdő: contoso. local** > **tartományok** > **contoso. local** > **tartományvezérlők** > **Alapértelmezett tartományvezérlői házirend**elemre. Ekkor megjelenik egy tájékoztató üzenet.
 
-3. Kattintson a jobb gombbal az **Alapértelmezett tartományvezérlői házirend** elemre, és válassza a **Szerkesztés** parancsot. Ekkor megjelenik egy új ablak.
+3. Kattintson a jobb gombbal az **Alapértelmezett tartományvezérlői házirend** elemre, majd válassza a **Szerkesztés** lehetőséget. Ekkor megjelenik egy új ablak.
 
-4. A Csoportházirendkezelés-szerkesztő ablakában, az Alapértelmezett tartományvezérlői házirend konzolfáján keresse meg a **Számítógép konfigurációja** > **Házirendek** > **A Windows beállításai** > **Biztonsági beállítások** > **Helyi házirend** > **Naplórend** elemet.
+4. A csoportházirend-felügyeleti szerkesztő ablak Alapértelmezett tartományvezérlői házirend fájában navigáljon a **számítógép-konfigurációs** > **házirendek** > **Windows-beállítások** > **biztonsági beállítások** > **helyi házirendek** > **naplózási házirend**elemre.
 
-5. A részletek ablaktábláján kattintson a jobb gombbal a **Fiókkezelés naplózása** elemre, és válassza a **Tulajdonságok** parancsot. Válassza ki **A következő házirend-beállítások megadása** lehetőséget, jelölje be a **Siker** jelölőnégyzetet, jelölje be a **Hiba** jelölőnégyzetet, és kattintson az **Alkalmaz**, majd az **OK** gombra.
+5. A részletek ablaktábláján kattintson a jobb gombbal a **Fiókkezelés naplózása** elemre, és válassza a **Tulajdonságok** parancsot. Válassza ki **A következő házirend-beállítások megadása** lehetőséget, jelölje be a **Sikeres** és a **Sikertelen** beállítást, majd kattintson az **Alkalmaz** és az **OK** gombra.
 
-6. A részletek ablaktáblájában kattintson a jobb gombbal a **Címtárszolgáltatás-hozzáférés naplózása** elemre, és válassza a **Tulajdonságok** parancsot. Válassza ki **A következő házirend-beállítások megadása** lehetőséget, jelölje be a **Siker** jelölőnégyzetet, jelölje be a **Hiba** jelölőnégyzetet, és kattintson az **Alkalmaz**, majd az **OK** gombra.
+6. A részletek ablaktáblájában kattintson a jobb gombbal a **Címtárszolgáltatás-hozzáférés naplózása** elemre, és válassza a **Tulajdonságok** parancsot. Válassza ki **A következő házirend-beállítások megadása** lehetőséget, jelölje be a **Sikeres** és a **Sikertelen** beállítást, majd kattintson az **Alkalmaz** és az **OK** gombra.
 
 7. Zárja be a Csoportházirendkezelés-szerkesztő ablakát és a Csoportházirend kezelése ablakot.
 
@@ -172,7 +172,7 @@ Ha még nincs csatlakoztatva munkaállomás a tartományhoz, készítse elő a s
 
 Egy új virtuális gépre, amelyre még nincs telepítve szoftver, telepítse a Windows 8.1 Enterprise vagy a Windows 10 Enterprise verziót. Ez lesz a *CORPWKSTN* számítógép.
 
-1. A telepítéshez használja az expressz beállításokat.
+1. A telepítéshez használja a gyorsbeállításokat.
 
 2. Vegye figyelembe, hogy előfordulhat, hogy a telepítés nem fog tudni csatlakozni az internethez. Válassza a **Helyi fiók létrehozása** lehetőséget. Adjon meg más felhasználónevet, ne használja a „Rendszergazda” vagy az „Ilona” nevet.
 
@@ -209,4 +209,4 @@ A PAM és a biztonságicsoport-alapú hozzáférés-vezérlés bemutatásához s
 A következő lépésben a PRIV tartományvezérlő előkészítésével foglalkozunk.
 
 > [!div class="step-by-step"]
-> [2. lépés »](step-2-prepare-priv-domain-controller.md)
+> [2. lépés»](step-2-prepare-priv-domain-controller.md)

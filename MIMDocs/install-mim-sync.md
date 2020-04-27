@@ -12,17 +12,17 @@ ms.assetid: 2585e9c5-ce34-46c7-bdcf-8c08773901dc
 ms.reviewer: markwahl-msft
 ms.suite: ems
 ms.openlocfilehash: 8e4371c8d3caac06f7200d8439b30b7aa978a336
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79042457"
 ---
 # <a name="install-mim-2016-mim-synchronization-service"></a>A MIM 2016 telepítése: A MIM Synchronization Service
 
 > [!div class="step-by-step"]
-> [« Exchange Server](prepare-server-exchange.md)
-> [MIM szolgáltatás és -portál »](install-mim-service-portal.md)
+> [«Exchange Server fakiszolgálói](prepare-server-exchange.md)
+> [szolgáltatás és-portál»](install-mim-service-portal.md)
  
 > [!NOTE]
 > Ez az útmutató egy Contoso nevű fiktív vállalat neveit és értékeit használja szemléltetésként. Ezeket helyettesítse a saját neveivel és értékeivel. Például:
@@ -31,7 +31,7 @@ ms.locfileid: "79042457"
 > - **Corpservice** -kiszolgáló neve
 > - **Corpsync** -szinkronizálási kiszolgáló neve
 > - SQL Server neve – **corpsql**
-> - Jelszó – <strong>Pass@word1</strong>
+> - Jelszó<strong>Pass@word1</strong>
 
 A Microsoft Identity Manager 2016 összetevőinek telepítéséhez először készítse elő a telepítési csomagot.
 
@@ -59,7 +59,7 @@ A Microsoft Identity Manager 2016 összetevőinek telepítéséhez először ké
 
    1.  A SQL Server a következő helyen található: **corpsql.contoso.com**nevű **távoli gép** .
 
-   2.  A SQL Server példány: **az alapértelmezett példány**
+   2.  The SQL Server instance is (SQL Server-példány): **The default instance** (Az alapértelmezett példány)
 
    ![Kép: Csatlakozás adatbázishoz](media/install-mim-sync/MIM_Install3.png)
 
@@ -69,12 +69,12 @@ A Microsoft Identity Manager 2016 összetevőinek telepítéséhez először ké
 
    1. Service account (Szolgáltatásfiók): *MIMSync*
 
-   2. Jelszó: <em>Pass@word1</em>
+   2. Jelszó<em>Pass@word1</em>
 
    3. Service Account Domain or local computer name (Szolgáltatásfiók tartománya vagy helyi számítógép neve): *contoso*
 
     >[!NOTE]
-    >Felügyeleti csomag 2016 SP2 és újabb verziók: csoportosan felügyelt szolgáltatásfiókok esetén győződjön meg arról, hogy a **$** karakter a szolgáltatásfiók neve végén található, például MIMSync $, és hagyja üresen a jelszó mezőt.
+    >MIMSync 2016 SP2 és újabb verziók: csoportosan felügyelt szolgáltatásfiókok esetén győződjön **$** meg arról, hogy a karakter a szolgáltatásfiók neve (például a $) végén található, és hagyja üresen a jelszó mezőt.
 
     ![Kép: Szolgáltatásfiók](media/install-mim-sync/MIM_Install4.png)
 
@@ -109,5 +109,5 @@ A Microsoft Identity Manager 2016 összetevőinek telepítéséhez először ké
     5. A csoporttagsági változások életbelépéséhez ki kell jelentkeznie, majd újra be kell jelentkeznie. A kijelentkezéshez kattintson a **Yes** (Igen) gombra.
 
 > [!div class="step-by-step"]  
-> [« Exchange Server](prepare-server-exchange.md)
-> [MIM szolgáltatás és -portál »](install-mim-service-portal.md)
+> [«Exchange Server fakiszolgálói](prepare-server-exchange.md)
+> [szolgáltatás és-portál»](install-mim-service-portal.md)

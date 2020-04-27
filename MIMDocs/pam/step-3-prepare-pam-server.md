@@ -13,17 +13,17 @@ ROBOTS: noindex,nofollow
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: 7a0a0437e767f793150d875bcaf31213a7fdf627
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79043664"
 ---
-# <a name="step-3--prepare-a-pam-server"></a>3\. lépés – PAM-kiszolgáló előkészítése
+# <a name="step-3--prepare-a-pam-server"></a>3. lépés – PAM-kiszolgáló előkészítése
 
 > [!div class="step-by-step"]
-> [« 2. lépés](step-2-prepare-priv-domain-controller.md)
-> [4. lépés »](step-4-install-mim-components-on-pam-server.md)
+> [«2](step-2-prepare-priv-domain-controller.md)
+> . lépés[4. lépés»](step-4-install-mim-components-on-pam-server.md)
 
 ## <a name="install-windows-server-2012-r2"></a>A Windows Server 2012 R2 telepítése
 
@@ -66,19 +66,19 @@ Vegye fel a Webkiszolgáló (IIS) és az Alkalmazáskiszolgáló szerepkört, a 
 
 A kiszolgálói biztonsági házirendben engedélyezze az újonnan létrehozott fiókok szolgáltatásként történő futtatását.
 
-1.  Indítsa el a **Helyi biztonsági házirend** programot.   
-2.  Keresse meg a **Helyi házirend** > **Felhasználói jogok kiosztása** csomópontot.  
-3.  A Részletek panelen kattintson a jobb gombbal a **Bejelentkezés szolgáltatásként** lehetőségre, majd válassza a **Tulajdonságok** pontot.  
+1.  Indítsa el a **helyi biztonsági házirend** programot.   
+2.  Navigáljon a **helyi házirendek** > **felhasználói jogok kiosztása**elemre.  
+3.  A részletek ablaktábláján kattintson a jobb gombbal a **Bejelentkezés szolgáltatásként** lehetőségre, majd válassza a **Tulajdonságok** pontot.  
 4.  Kattintson a **Felhasználó vagy csoport hozzáadása** elemre, és a Felhasználó- és csoportnevek területen írja be a *priv\mimmonitor; priv\MIMService; priv\SharePoint; priv\mimcomponent; priv\SqlServer* karakterláncot. Kattintson a **Névellenőrzés**, majd az **OK** gombra.  
 
 5.  A Tulajdonságok ablak bezárásához kattintson az **OK** gombra.
-6.  A részletek ablaktábláján kattintson a jobb gombbal **A számítógép hálózati elérésének megtagadása** elemre, majd a **Tulajdonságok** pontra.  
+6.  A részletező panelen jobb gombbal kattintson **A számítógép hálózati elérésének megtagadása** elemre, majd a **Tulajdonságok** pontra.  
 7.  Kattintson a **Felhasználó vagy csoport hozzáadása** elemre, és a Felhasználó- és csoportnevek területen írja be a *priv\mimmonitor; priv\MIMService; priv\mimcomponent* karakterláncot, majd kattintson az **OK** gombra.  
-8.  A Tulajdonságok ablak bezárásához kattintson az **OK** gombra.
+8.  A Tulajdonságok ablak bezárásához kattintson **az OK** gombra.
 
-9. A részletek ablaktábláján kattintson a jobb gombbal a **Helyi bejelentkezés megtagadása** elemre, majd a **Tulajdonságok** pontra.  
+9. A Részletek panelen kattintson a jobb gombbal a **Helyi bejelentkezés megtagadása** elemre, majd a **Tulajdonságok** pontra.  
 10. Kattintson a **Felhasználó vagy csoport hozzáadása** elemre, és a Felhasználó- és csoportnevek területen írja be a *priv\mimmonitor; priv\MIMService; priv\mimcomponent* karakterláncot, majd kattintson az **OK** gombra.  
-11. A Tulajdonságok ablak bezárásához kattintson az **OK** gombra.  
+11. A Tulajdonságok ablak bezárásához kattintson **az OK** gombra.  
 12. Zárja be a Helyi biztonsági házirend ablakot.  
 
 13. Nyissa meg a Vezérlőpultot, és váltson a **Felhasználói fiókok** területre.
@@ -104,7 +104,7 @@ Ha a PowerShellt szeretné használni:
 Ha szövegszerkesztőt, például a Jegyzettömböt szeretné használni:
 
 1. Nyissa meg a **C:\Windows\System32\inetsrv\config\applicationHost.config** fájlt.
-2. Görgessen le a fájl 82. soráig. Az **overrideModeDefault** címke értékének a következőnek kell lennie: **<section name="windowsAuthentication" overrideModeDefault="Deny" />** .  
+2. Görgessen le a fájl 82. soráig. Az **overrideModeDefault** címke értékének a következőnek kell lennie: **<section name="windowsAuthentication" overrideModeDefault="Deny" />**.  
 3. Módosítsa az **overrideModeDefault** értékét az *Allow* értékre.  
 4. Mentse a fájlt, és indítsa újra az IIS-t az `iisreset /START` PowerShell-paranccsal.
 
@@ -115,7 +115,7 @@ Ha az SQL Server még nincs jelen a megerősített környezetben, telepítse az 
 1. Győződjön meg róla, hogy MIMAdmin néven van bejelentkezve.
 2. Kattintson jobb gombbal a PowerShellre, és válassza a **Futtatás rendszergazdaként** elemet.
 3. Keresse meg azt a könyvtárat, amelyben az SQL Server telepítője található.  
-4. Írja be a következő parancsot:  
+4. Írja be a következő parancsot.  
     ```
     .\setup.exe /Q /IACCEPTSQLSERVERLICENSETERMS /ACTION=install /FEATURES=SQL,SSMS /INSTANCENAME=MSSQLSERVER /SQLSVCACCOUNT="PRIV\SqlServer" /SQLSVCPASSWORD="Pass@word1" /AGTSVCSTARTUPTYPE=Automatic /AGTSVCACCOUNT="NT AUTHORITY\Network Service" /SQLSYSADMINACCOUNTS="PRIV\MIMAdmin"
     ```
@@ -136,14 +136,14 @@ A SharePoint előfeltételeinek telepítését követően telepítse a SharePoin
 1.  Kattintson jobb gombbal a PowerShellre, és válassza a **Futtatás rendszergazdaként** elemet.  
 2.  Váltson arra a könyvtárra, amelybe a SharePointot kicsomagolta.  
 3.  Írja be a `.\setup.exe` parancsot.  
-4.  Válassza a **teljes kiszolgáló** típust.  
+4.  Válassza ki a **teljes kiszolgáló** típusát.  
 5.  A telepítés befejezése után futtassa a varázslót.  
 
 ### <a name="configure-sharepoint"></a>A SharePoint konfigurálása
 
 A SharePoint konfigurálásához futtassa a SharePoint termékek konfigurálása varázslót.
 
-1.  A Csatlakozás kiszolgálófarmhoz lapon adja meg, hogy **új kiszolgálófarmot szeretne kialakítani**.  
+1.  A kapcsolódás kiszolgálófarmhoz lapon váltson **új kiszolgálófarm létrehozására**.  
 2.  A **PAMSRV** kiszolgálót jelölje ki adatbázis-kiszolgálóként a konfigurációs adatbázishoz, a SharePoint által használandó adatbázis-hozzáférési fiókként pedig a **PRIV\SharePoint** fiókot állítsa be.  
 3.  Adja meg a farm biztonsági jelszavát (az útmutató során ezt a jelszót nem használjuk többet).  
 4.  Egyelőre fogadja el a SharePoint konfigurációs varázslójának többi alapértelmezett beállítását egy egykiszolgálós farm létrehozásához.    
@@ -204,7 +204,7 @@ Most hozzon létre egy SharePoint-webhelycsoportot az imént készített webalka
 ## <a name="set-the-website-as-the-local-intranet"></a>A webhely beállítása helyi intranetként
 
 1. Indítsa el az Internet Explorert, és nyisson meg egy új böngészőlapot
-2. Navigáljon http://pamsrv.priv.contoso.local:82/, és jelentkezzen be PRIV\MIMAdmin.  Ekkor megjelenik egy üres SharePoint-webhely, „MIM Portal” néven.  
+2. Navigáljon http://pamsrv.priv.contoso.local:82/ , és jelentkezzen be PRIV\MIMAdmin.  Ekkor megjelenik egy üres SharePoint-webhely, „MIM Portal” néven.  
 3. Az Internet Explorerben nyissa meg az **Internetbeállításokat**, lépjen a **Biztonság** lapra, válassza a **Helyi intranet** zónát, majd kattintson a `http://pamsrv.priv.contoso.local:82/` URL-címre.
 
 Ha a bejelentkezés sikertelen, előfordulhat, hogy a [2. lépésben](step-2-prepare-priv-domain-controller.md) korábban létrehozott Kerberos SPN-eket frissíteni kell.
@@ -216,5 +216,5 @@ A **Szolgáltatások** eszköz segítségével (mely a Felügyeleti eszközök k
 A 4. lépésben hozzákezdhet a MIM-összetevőknek a PAM-kiszolgálóra való telepítéséhez.
 
 > [!div class="step-by-step"]
-> [« 2. lépés](step-2-prepare-priv-domain-controller.md)
-> [4. lépés »](step-4-install-mim-components-on-pam-server.md)
+> [«2](step-2-prepare-priv-domain-controller.md)
+> . lépés[4. lépés»](step-4-install-mim-components-on-pam-server.md)

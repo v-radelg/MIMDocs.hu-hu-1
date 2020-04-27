@@ -8,10 +8,10 @@ ms.date: 10/29/2018
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.openlocfilehash: 69ebe774ddea0176fb26ef74b8f4352e4bb5d039
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79042168"
 ---
 # <a name="mim-sp1-4414360--service-dynamic-logging"></a>Dinamikus naplózás a MIM SP1-es (4.4.1436.0-s) verziójában
@@ -51,13 +51,13 @@ A nyomkövetés megtekintéséhez használhatja a [Service Trace Viewer eszközt
 
 ## <a name="updates-build-45xx-or-greater"></a>Frissítések: build 4.5. x. x vagy újabb
 
-A Build 4.5. x. x verzióban módosítottuk a naplózási szolgáltatást az alapértelmezett naplózási szint megadásához: **"figyelmeztetés"** . A szolgáltatás két fájlban ír üzeneteket (a "00" és a "01" indexeket a bővítmény előtt adja hozzá). A fájlok a "C:\Program Files\Microsoft Forefront Identity Manager\2010\service mappában" könyvtárban találhatók. Ha a fájl túllépi a maximális méretet, a szolgáltatás elkezd írni egy másik fájlban. Ha egy másik fájl létezik, a rendszer felülírja. A fájl alapértelmezett maximális mérete 1 GB. Az alapértelmezett maximális méret módosításához hozzá kell adni a **"maxOutputFileSizeKB"** paramétert, amelynek értéke a maximális fájlméret a figyelőben (lásd az alábbi példát) és a újraindítása szolgáltatást. A szolgáltatás elindításakor a rendszer hozzáfűzi a naplókat a legutóbbi fájlban (ha túllépte a lemezterületet, felülírja a legrégebbi fájlt). 
+A Build 4.5. x. x verzióban módosítottuk a naplózási szolgáltatást az alapértelmezett naplózási szint megadásához: **"figyelmeztetés"**. A szolgáltatás két fájlban ír üzeneteket (a "00" és a "01" indexeket a bővítmény előtt adja hozzá). A fájlok a "C:\Program Files\Microsoft Forefront Identity Manager\2010\service mappában" könyvtárban találhatók. Ha a fájl túllépi a maximális méretet, a szolgáltatás elkezd írni egy másik fájlban. Ha egy másik fájl létezik, a rendszer felülírja. A fájl alapértelmezett maximális mérete 1 GB. Az alapértelmezett maximális méret módosításához hozzá kell adni a **"maxOutputFileSizeKB"** paramétert, amelynek értéke a maximális fájlméret a figyelőben (lásd az alábbi példát) és a újraindítása szolgáltatást. A szolgáltatás elindításakor a rendszer hozzáfűzi a naplókat a legutóbbi fájlban (ha túllépte a lemezterületet, felülírja a legrégebbi fájlt). 
 
 > [!NOTE] 
-> Mivel a szolgáltatás az üzenet megírása előtt megtekinti a fájl méretét, a fájl mérete nagyobb lehet, mint egy üzenet méretének maximális mérete. Alapértelmezés szerint a naplók mérete körülbelül 6 GB lehet (három > figyelő, amelynek két fájlja egy GB méretű).
+> Mivel a szolgáltatás az üzenet megírása előtt megtekinti a fájl méretét, a fájl mérete nagyobb lehet, mint egy üzenet méretének maximális mérete. Alapértelmezés szerint a naplók mérete körülbelül 6 GB lehet (három >figyelő, amelynek két fájlja egy GB méretű).
 
 > [!NOTE] 
-> A szolgáltatásfiók engedélyekkel kell rendelkeznie a "C:\Program Files\Microsoft Forefront Identity Manager\2010\service mappában" > Directory > való íráshoz. Ha a szolgáltatásfiók nem rendelkezik ilyen jogosultságokkal, a rendszer nem hozza létre a > fájlokat.
+> A szolgáltatásfiók engedélyekkel kell rendelkeznie a "C:\Program Files\Microsoft Forefront Identity Manager\2010\service mappában" >Directory > való íráshoz. Ha a szolgáltatásfiók nem rendelkezik ilyen jogosultságokkal, a rendszer nem hozza létre a >fájlokat.
 
 Példa a maximális fájlméret 200 MB-ra (200 * 1024 KB) való beállítására a svclog-fájlokhoz és az 100 MB * (100 * 1024 KB) txt-fájlokhoz
 

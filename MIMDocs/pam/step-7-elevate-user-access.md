@@ -9,13 +9,13 @@ ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: 5325fce2-ae35-45b0-9c1a-ad8b592fcd07
 ms.openlocfilehash: 05e05966bf90700885e67ba16f10ab0d7864cf10
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79043613"
 ---
-# <a name="step-7--elevate-a-users-access"></a>7\. lépés – Felhasználó jogosultságszintjének emelése
+# <a name="step-7--elevate-a-users-access"></a>7. lépés – Felhasználó jogosultságszintjének emelése
 
 > [!div class="step-by-step"]
 > [« 6. lépés](step-6-transition-group-to-pam.md)
@@ -40,7 +40,7 @@ Emelt szintű jogosultságok nélkül Ilona nem férhet hozzá a CORP erdőben t
 
 1. PRIVWKSTN, bejelentkezés PRIV\priv.jen.
 2. Kattintson a **Start**gombra, majd a **Futtatás**parancsra, és írja be a **PowerShell. exe**parancsot.
-3. Írja be a következő parancsot:
+3. Írja be a következő parancsot.
 
     ```cmd
     runas /user:Priv.Jen@priv.contoso.local powershell
@@ -90,9 +90,9 @@ Aktiválja a szerepkört a PAM-mintaportálon keresztüli emelt szintű hozzáf�
     ```
 
 3. Amikor a rendszer kéri, írja be a PRIV.Ilona fiók jelszavát. Megnyílik egy új böngészőablak.
-4. Navigáljon a http://pamsrv.priv.contoso.local:8090ra, és győződjön meg arról, hogy a minta portál weblapja látható.
-5. Az Internet Explorerben válassza az **Eszközök** > **Internetbeállítások** elemet, és kattintson a **Biztonság** fülre.
-6. Kattintson a **Helyi intranet zóna** > **Helyek** > **Speciális** elemre, majd adja hozzá a webhelyet a zónához.
+4. Navigáljon http://pamsrv.priv.contoso.local:8090 a oldalra, és ellenőrizze, hogy látható-e egy weblap a mintául szolgáló portálról.
+5. Az Internet Explorerben válassza az **eszközök** > **Internetbeállítások lehetőséget** , majd kattintson a **Biztonság** fülre.
+6. Kattintson a **helyi intranet zóna** > **helyek** > **speciális** lehetőségre, majd adja hozzá a webhelyet a zónához.
 7. Zárja be az **Internetbeállítások** párbeszédpanelt.
 8. A bal oldali lapon kattintson az **Aktiválás** elemre. Válassza ki a **PAM-szerepkör** lehetőséget, majd kattintson az **Aktiválás** elemre.
 

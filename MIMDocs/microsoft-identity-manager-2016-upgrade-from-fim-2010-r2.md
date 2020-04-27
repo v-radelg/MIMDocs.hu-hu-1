@@ -12,10 +12,10 @@ ms.assetid: 9471ccc1-bafe-46ee-b169-1464262380e1
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: 7df1a4ca7a33aa2a00ac0b2c3ef24056c9720b5b
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79043239"
 ---
 # <a name="upgrade-from-forefront-identity-manager-2010-r2"></a>Frissítés a Forefront Identity Manager 2010 R2-ről
@@ -101,7 +101,7 @@ Ez az útmutató feltételezi, hogy az alábbiak már be vannak állítva:
 
     ![Kép: Egyéni telepítés](media/MIM-UpgSP4.png)
 
-    1.  **MIM Service (MIM szolgáltatás)** : kötelezően telepítendő legalább egy kiszolgálón, és SQL Server adatbázis-kiszolgálót is igényel ugyanazon vagy másik számítógépen.
+    1.  **MIM Service (MIM szolgáltatás)**: kötelezően telepítendő legalább egy kiszolgálón, és SQL Server adatbázis-kiszolgálót is igényel ugyanazon vagy másik számítógépen.
 
     2.  **MIM Portal (MIM-portál):** kötelezően telepítendő legalább egy kiszolgálón; előfeltétele a SharePoint 2013 Foundation telepítése.
 
@@ -133,13 +133,13 @@ Ez az útmutató feltételezi, hogy az alábbiak már be vannak állítva:
 
     ![Kép: A MIM szolgáltatás és -portál szinkronizálásának konfigurálása](media/MIM-UpgSP10.png)
 
-13. A MIM-portál telepítésekor adja meg a MIM szolgáltatás kiszolgálójának címét. Kattintson a **Tovább**gombra.
+13. A MIM-portál telepítésekor adja meg a MIM szolgáltatás kiszolgálójának címét. Kattintson a **Tovább** gombra.
 
-14. A MIM-portál telepítésekor adja meg annak a SharePoint-webhelycsoportnak az URL-címét, amelyben a FIM-portál jelenleg üzemel. Kattintson a **Tovább**gombra.
+14. A MIM-portál telepítésekor adja meg annak a SharePoint-webhelycsoportnak az URL-címét, amelyben a FIM-portál jelenleg üzemel. Kattintson a **Tovább** gombra.
 
 ## <a name="install-the-mim-password-registration-portal"></a>A MIM jelszó-regisztrálási portál telepítése
 
-1. A MIM jelszó-regisztrálási portál telepítésekor adja meg a kért URL-t a jelszó-regisztrációs portálhoz. Kattintson a **Tovább**gombra.
+1. A MIM jelszó-regisztrálási portál telepítésekor adja meg a kért URL-t a jelszó-regisztrációs portálhoz. Kattintson a **Tovább** gombra.
 
 2. Állítsa be, hogy az ügyfelek és a végfelhasználók használhassák a szolgáltatást és a portált.
 
@@ -147,7 +147,7 @@ Ez az útmutató feltételezi, hogy az alábbiak már be vannak állítva:
 
     2.  Adja meg, hogy **hozzáférést ad-e a hitelesített felhasználóknak a MIM-portál webhelyéhez**.
 
-    3.  Kattintson a **Tovább**gombra.
+    3.  Kattintson a **Tovább** gombra.
 
 3. Adja meg a hozzáféréshez szükséges adatokat és hitelesítő adatokat a MIM jelszó-regisztrálási portálhoz.
 
@@ -159,7 +159,7 @@ Ez az útmutató feltételezi, hogy az alábbiak már be vannak állítva:
 
     3.  Jelölje be az **Open port in firewall** (Port nyitása a tűzfalon) négyzetet.
 
-    4.  Kattintson a **Tovább**gombra.
+    4.  Kattintson a **Tovább** gombra.
 
 4. A MIM jelszó-regisztrálási portál következő konfigurációs képernyőjén:
 
@@ -179,7 +179,7 @@ Ez az útmutató feltételezi, hogy az alábbiak már be vannak állítva:
 
     3.  Jelölje be az **Open port in firewall** (Port nyitása a tűzfalon) négyzetet.
 
-    4.  Kattintson a **Tovább**gombra.
+    4.  Kattintson a **Tovább** gombra.
 
 2. A MIM jelszó-változtatási portál következő konfigurációs képernyőjén:
 

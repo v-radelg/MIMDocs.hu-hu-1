@@ -12,10 +12,10 @@ ms.assetid: fed5ada9-d80f-4825-aad7-4172ac5d71d3
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: b8a1b55ed836f46c184941ccf6ec25ef63ad4c30
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79042100"
 ---
 # <a name="create-software-certificates-with-certificate-manager"></a>Szoftvertanúsítványok létrehozása a Tanúsítványkezelővel
@@ -27,7 +27,7 @@ A szoftvertanúsítványok regisztrálásához és megújításához nem kell re
 
 2.  Kattintson a **Fájl**, majd a **Beépülő modul hozzáadása/eltávolítása** parancsra.
 
-3.  Az Elérhető beépülő modulok listában kattintson a **Tanúsítványsablonok** lehetőségre, majd a **Hozzáadás** gombra.
+3.  Az elérhető beépülő modulok listában kattintson a **Tanúsítványsablonok**elemre, majd a **Hozzáadás**gombra.
 
 4.  Ekkor az MMC-ben a Konzolgyökér területen megjelenik a **Tanúsítványsablonok** lehetőség. A rendelkezésre álló tanúsítványsablonok megtekintéséhez kattintson rá duplán.
 
@@ -63,7 +63,7 @@ A szoftvertanúsítványok regisztrálásához és megújításához nem kell re
 
     6.  A módosítások véglegesítéséhez és az új sablon létrehozásához kattintson az **OK** gombra. Az új sablonnak ekkor meg kell jelennie a tanúsítványsablonok listájában.
 
-    7.  A Hitelesítésszolgáltató beépülő modul MMC-konzolra való felvételéhez válassza a **Fájl** menü **Beépülő modul hozzáadása/eltávolítása** elemét. Amikor a rendszer arra kéri, hogy válassza ki a kezelni kívánt számítógépet, válassza a **Helyi számítógép** lehetőséget.
+    7.  A Hitelesítésszolgáltató beépülő modul MMC-konzolra való felvételéhez válassza a **Fájl** menü **Beépülő modul hozzáadása/eltávolítása** elemét. Ha a rendszer megkérdezi, hogy melyik számítógépet szeretné felügyelni, válassza a **helyi számítógép**lehetőséget.
 
     8.  Az MMC bal oldali panelén bontsa ki a **Hitelesítésszolgáltató (helyi)** csomópontot, majd a hitelesítésszolgáltatók listájában bontsa ki a saját hitelesítésszolgáltatóját.
 
@@ -75,7 +75,7 @@ A szoftvertanúsítványok regisztrálásához és megújításához nem kell re
 
 1.  Rendszergazdai jogosultsággal jelentkezzen be a Tanúsítványkezelő portálra.
 
-2.  Lépjen az **Administration (Felügyelet) &gt; Manage Profile Templates (Profilsablonok kezelése)** területre, és győződjön meg arról, hogy a **MIM CM Sample Smart Card Logon Profile Template** (MIM Tanúsítványkezelő intelligens kártyás bejelentkezési profilsablon – minta) melletti négyzet be van jelölve, majd kattintson a **Copy a selected profile template** (Kijelölt profilsablon másolása) lehetőségre.
+2.  Nyissa meg az **Adminisztráció &gt; kezelése profil sablonokat** , és győződjön meg arról, hogy a jelölőnégyzet be van jelölve **MIM cm minta intelligens kártya bejelentkezési profil sablon** , majd kattintson a **Másolás a kiválasztott profil sablonra**elemre.
 
 3.  Írja be a profilsablon nevét, majd kattintson az **OK** gombra.
 
@@ -93,4 +93,4 @@ A szoftvertanúsítványok regisztrálásához és megújításához nem kell re
 
 10. Ha szeretné újra kiadni az archivált tanúsítványokat, jelölje be a **Reissue archived certificates** (Archivált tanúsítványok újrakiadása) elemtől balra lévő négyzeteket, majd kattintson az **OK** gombra.
 
-11. A Virtual Smart Card Tanúsítványkezelő használata esetén le kell tiltania az adatgyűjtő elemeket, az összetevő ugyanis aktív adatgyűjtés mellett nem működik. Tiltsa le az adatgyűjtő elemeket minden házirendnél. Ehhez kattintson a házirendre a bal oldali panelen, törölje a **Sample data item** (Mintaadatelem) melletti négyzet jelölését, majd kattintson a **Delete data collection items** (Adatgyűjtési elemek törlése) parancsra. Ezután kattintson az **OK**gombra.
+11. A Virtual Smart Card Tanúsítványkezelő használata esetén le kell tiltania az adatgyűjtő elemeket, az összetevő ugyanis aktív adatgyűjtés mellett nem működik. Tiltsa le az adatgyűjtő elemeket minden házirendnél. Ehhez kattintson a házirendre a bal oldali panelen, törölje a **Sample data item** (Mintaadatelem) melletti négyzet jelölését, majd kattintson a **Delete data collection items** (Adatgyűjtési elemek törlése) parancsra. Ezt követően kattintson az **OK** gombra.

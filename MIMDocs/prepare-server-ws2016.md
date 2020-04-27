@@ -12,17 +12,17 @@ ms.assetid: 51507d0a-2aeb-4cfd-a642-7c71e666d6cd
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: cf8261c4e6f6529fd82760206b62b689a75d0acb
-ms.sourcegitcommit: c214bb0b1373b65b1c9c215379fd820ab0c13f0f
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/14/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79382312"
 ---
 # <a name="set-up-an-identity-management-server-windows-server-2016-or-2019"></a>Identitáskezelés-felügyeleti kiszolgáló beállítása: Windows Server 2016 vagy 2019
 
 > [!div class="step-by-step"]
-> [«Tartomány előkészítése](preparing-domain.md)
-> [SQL Server»](prepare-server-sql2016.md)
+> [«Tartomány](preparing-domain.md)
+> előkészítése[SQL Server»](prepare-server-sql2016.md)
 > 
 
 > [!NOTE]
@@ -36,7 +36,7 @@ ms.locfileid: "79382312"
 > - **Corpservice** -kiszolgáló neve
 > - **Corpsync** -szinkronizálási kiszolgáló neve
 > - SQL Server neve – **corpsql**
-> - Jelszó – <strong>Pass@word1</strong>
+> - Jelszó<strong>Pass@word1</strong>
 
 ## <a name="join-windows-server-2016-to-your-domain"></a>A Windows Server 2016 csatlakoztatása a tartományhoz
 
@@ -84,7 +84,7 @@ A kiszolgálói biztonsági házirendben engedélyezze az újonnan létrehozott 
 
     ![Kép: Helyi biztonsági házirend](media/MIM-DeployWS3.png)
 
-4. Kattintson a **felhasználó vagy csoport hozzáadása**elemre, majd a szövegmezőbe írja be a következőt a szerepkör `contoso\MIMSync; contoso\MIMMA; contoso\MIMService; contoso\SharePoint; contoso\SqlServer; contoso\MIMSSPR`alapján **, kattintson a**Névellenőrzés elemre, majd az **OK**gombra.
+4. Kattintson a **felhasználó vagy csoport hozzáadása**elemre, majd a szövegmezőbe írja be a `contoso\MIMSync; contoso\MIMMA; contoso\MIMService; contoso\SharePoint; contoso\SqlServer; contoso\MIMSSPR`következőt a szerepkör alapján **: kattintson a Névellenőrzés elemre**, majd az **OK**gombra.
 
 5. Kattintson az **OK** gombra a **Bejelentkezés szolgáltatásként – tulajdonságok** ablak bezárásához.
 
@@ -106,7 +106,7 @@ A kiszolgálói biztonsági házirendben engedélyezze az újonnan létrehozott 
 
 A 2016 SP2 összetevőinek telepítése előtt győződjön meg arról, hogy az összes szoftverre vonatkozó előfeltételt telepíti:
 
-13. A [Visual C++ 2013 újraterjeszthető csomagjainak](https://www.microsoft.com/download/details.aspx?id=40784)telepítése.
+13. Telepítse a [Visual C++ 2013 újraterjeszthető csomagjait](https://www.microsoft.com/download/details.aspx?id=40784).
 
 14. Telepítse a .NET-keretrendszer 4,6-es telepítését.
 
@@ -129,5 +129,5 @@ A 2016 SP2 összetevőinek telepítése előtt győződjön meg arról, hogy az 
     ```
 
 > [!div class="step-by-step"]  
-> [«Tartomány előkészítése](preparing-domain.md)
-> [SQL Server»](prepare-server-sql2016.md)
+> [«Tartomány](preparing-domain.md)
+> előkészítése[SQL Server»](prepare-server-sql2016.md)

@@ -12,17 +12,17 @@ ms.assetid: eef248c4-b3b6-4b28-9dd0-ae2f0b552425
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: 0cf952c93c0a7b95fd41939efc767e9e8c20be5e
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79043647"
 ---
-# <a name="step-5--establish-trust-between-priv-and-corp-forests"></a>5\. lépés – A CORP és a PRIV erdő közötti megbízhatósági kapcsolat létrehozása
+# <a name="step-5--establish-trust-between-priv-and-corp-forests"></a>5. lépés – A CORP és a PRIV erdő közötti megbízhatósági kapcsolat létrehozása
 
 > [!div class="step-by-step"]
-> [« 4. lépés](step-4-install-mim-components-on-pam-server.md)
-> [6. lépés »](step-6-transition-group-to-pam.md)
+> [«4](step-4-install-mim-components-on-pam-server.md)
+> . lépés[6. lépés»](step-6-transition-group-to-pam.md)
 
 Minden CORP tartománynál, így például a contoso.local tartomány esetében is, a PRIV és a CONTOSO tartományvezérlők között megbízhatósági kapcsolatnak kell fennállnia. Ez teszi lehetővé, hogy a PRIV tartomány felhasználói hozzáférhessenek a CORP tartományban lévő erőforrásokhoz.
 
@@ -40,7 +40,7 @@ A megbízható kapcsolat kialakítása előtt minden tartományvezérlőn be kel
     ```
     Győződjön meg róla, hogy a kimenet a PRIV tartományhoz tartozó, megfelelő IP-című névkiszolgáló-bejegyzést jelöli.
 
-3.  Ha a tartományvezérlő nem tudja átirányítani a PRIV tartományt, a **Start**Alkalmazáseszközök > DNS >  menüben található **DNS-kezelő** funkcióval konfigurálja, hogy a DNS átirányítsa a PRIV tartományt a PRIVDC IP-címére. Ha ez egy felső szintű tartomány (mint a contoso.local), bontsa ki az ehhez a tartományvezérlőhöz és annak tartományához tartozó csomópontokat, például a **CORPDC** > **Címkeresési zónák** > **contoso.local** csomópontot, és ellenőrizze, hogy a **priv** nevű kulcs megtalálható-e a Névkiszolgáló (NS) típusok között.
+3.  Ha a tartományvezérlő nem tudja átirányítani a PRIV tartományt, a **Start** > **Alkalmazáseszközök** > **DNS** menüben található **DNS-kezelő** funkcióval konfigurálja, hogy a DNS átirányítsa a PRIV tartományt a PRIVDC IP-címére. Ha ez egy kiváló tartomány (például contoso. local), bontsa ki az ehhez a tartományvezérlőhöz és a tartományhoz tartozó csomópontokat, például a **CORPDC** > a**contoso. local****keresési zónákat** > , és győződjön meg arról, hogy a **priv** nevű kulcs neve kiszolgáló (NS) típusú.
 
     ![a priv kulcsot tartalmazó fájlstruktúra – képernyőkép](./media/PAM_GS_DNS_Manager.png)
 
@@ -71,16 +71,16 @@ A PAMSRV kiszolgálón hozzon létre egy egyirányú megbízhatósági kapcsolat
 A PRIV rendszergazdákon és a figyelőszolgáltatáson keresztül minden meglévő erdő számára olvasási hozzáférést biztosíthat az Active Directoryhoz.
 
 1. Jelentkezzen be a meglévő CORP erdő tartományvezérlőjébe (CORPDC) az erdő legfelső szintű tartományának rendszergazdájaként (Contoso\Rendszergazda).  
-2. Indítsa el az **Active Directory - felhasználók és számítógépek** beépülő modult.  
+2. Jelenítse meg az **Active Directory - felhasználók és számítógépek** ablakot.  
 3. Kattintson a jobb gombbal a **contoso.local** tartományra, és válassza a **Vezérlés delegálása** parancsot.  
 4. A Kijelölt felhasználók és csoportok lapon kattintson a **Hozzáadás** gombra.  
 5. A Felhasználók, számítógépek vagy csoportok kiválasztása ablakban kattintson a **Helyek** elemre, és váltson át a *priv.contoso.local* helyre.  Az objektum nevéhez írja be a *Tartományi rendszergazdák* értéket, és kattintson a **Névellenőrzés** gombra. Amikor megjelenik egy előugró ablak, írja be a *priv\rendszergazda* felhasználónevet és a jelszavát.  
-6. A Tartományi rendszergazdák név után írja be a „ *; MIMMonitor*” értéket. Amikor megjelenik az aláhúzás a **Tartományi rendszergazdák** és a **MIMMonitor** név alatt, kattintson az **OK**, majd a **Tovább** gombra.  
+6. A Tartományi rendszergazdák név után írja be a „*; MIMMonitor*” értéket. Amikor megjelenik az aláhúzás a **Tartományi rendszergazdák** és a **MIMMonitor** név alatt, kattintson az **OK**, majd a **Tovább** gombra.  
 7. A gyakori feladatok listáján jelölje ki **Az összes felhasználói információ olvasása** elemet, és kattintson a **Tovább**, majd a **Befejezés** gombra.  
 8. Zárja be az Active Directory – felhasználók és számítógépek beépülő modult.
 
 9. Indítson el egy PowerShell-ablakot.
-10. Használja a `netdom` parancsot a SID-előzmények engedélyezéséhez, illetve a SID-szűrés letiltásához. Írja be:
+10. Használja a `netdom` parancsot a SID-előzmények engedélyezéséhez, illetve a SID-szűrés letiltásához. Típus:
     ```cmd
     netdom trust contoso.local /quarantine:no /domain priv.contoso.local
     netdom trust /enablesidhistory:yes /domain priv.contoso.local
@@ -105,5 +105,5 @@ A PRIV rendszergazdákon és a figyelőszolgáltatáson keresztül minden meglé
 A következő lépésben a csoportoknak a PAM szolgáltatásba való áthelyezésével ismerkedhet meg.
 
 > [!div class="step-by-step"]
-> [« 4. lépés](step-4-install-mim-components-on-pam-server.md)
-> [6. lépés »](step-6-transition-group-to-pam.md)
+> [«4](step-4-install-mim-components-on-pam-server.md)
+> . lépés[6. lépés»](step-6-transition-group-to-pam.md)

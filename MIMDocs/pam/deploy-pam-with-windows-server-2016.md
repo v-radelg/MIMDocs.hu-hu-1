@@ -10,16 +10,16 @@ ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: ''
 ms.openlocfilehash: 521b96c3ef9cae5a5f9151ddf125cfb534ae0332
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79044021"
 ---
 # <a name="deploy-mim-pam-with-windows-server-2016"></a>A MIM PAM telepítése a Windows Server 2016-tal
 
 
-Ez a konfiguráció lehetővé teszi, hogy a MIM 2016 SP1 kihasználja a Windows Server 2016 által a „PRIV” erdő tartományvezérlőjeként nyújtott funkciókat.  Ha ez a forgatókönyv be van állítva, a felhasználó Kerberos-jegye idő után a szerepkör-aktiválások hátralévő idejére korlátozódik. 
+Ez a konfiguráció lehetővé teszi, hogy a MIM 2016 SP1 kihasználja a Windows Server 2016 által a „PRIV” erdő tartományvezérlőjeként nyújtott funkciókat. A konfigurálás után a felhasználók Kerberos-jegye időkorlátossá válik a szerepkör-aktiválásban megmaradt időre. 
 
 > [!Note]
 > A Windows Server 2016 Technical Preview 5 előtti technikai előzetesek nem használhatók ezzel az MIM-kiadással.
@@ -83,7 +83,7 @@ Végezze el a telepítést az [Útmutató az első lépésekhez](privileged-iden
 
     d. Kattintson a jobb gombbal „CN=Shadow Principal Configuration” csomópontra, majd a Tulajdonságok parancsra. Amikor megjelenik a tulajdonságok párbeszédpanelje, váltson a Biztonság lapra.
 
-    e. Kattintson a Hozzáadás lehetőségre. Adja meg a „MIMService” fiókokat, valamint minden olyan további rendszergazdát, akik később használni fogják a New-PAMGroup parancsot további PAM-csoportok létrehozására. Mindegyik felhasználónál vegye fel a megengedettek listájába az „Írás”, „Az összes gyermekobjektum létrehozása” és „Az összes gyermekobjektum törlése” engedélyt. Vegye fel az engedélyeket.
+    e. Kattintson az Add (Hozzáadás) parancsra. Adja meg a „MIMService” fiókokat, valamint minden olyan további rendszergazdát, akik később használni fogják a New-PAMGroup parancsot további PAM-csoportok létrehozására. Mindegyik felhasználónál vegye fel a megengedettek listájába az „Írás”, „Az összes gyermekobjektum létrehozása” és „Az összes gyermekobjektum törlése” engedélyt. Vegye fel az engedélyeket.
 
     f. Váltson a speciális biztonsági beállításokra. Kattintson a Szerkesztés gombra a MIMService elérését engedélyező soron. Módosítsa az „Érvényes erre” beállítást az „Ez az objektum és a gyermekobjektumok” értékre. Frissítse az engedély beállítását, és zárja be a Biztonság párbeszédpanelt.
 

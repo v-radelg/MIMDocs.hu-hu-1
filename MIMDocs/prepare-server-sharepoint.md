@@ -12,10 +12,10 @@ ms.assetid: c01487f2-3de6-4fc4-8c3a-7d62f7c2496c
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: 6597a7b364c1b7fa023e78bef917163ea2c19dac
-ms.sourcegitcommit: 87f94edf26fdb7f2c65c06c22cd0bc80d2f20450
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "80374301"
 ---
 # <a name="set-up-an-identity-management-server-sharepoint"></a>Identitáskezelési kiszolgáló beállítása: SharePoint
@@ -35,7 +35,7 @@ ms.locfileid: "80374301"
 > - **Corpservice** -kiszolgáló neve
 > - **Corpsync** -szinkronizálási kiszolgáló neve
 > - SQL Server neve – **corpsql**
-> - Jelszó – <strong>Pass@word1</strong>
+> - Jelszó<strong>Pass@word1</strong>
 
 
 ## <a name="install-sharepoint-2016"></a>A **SharePoint 2016** telepítése
@@ -49,7 +49,7 @@ A SharePoint 2016 telepítéséhez kövesse az alábbi lépéseket. A telepíté
 
     -   Váltson arra a könyvtárra, amelybe a SharePointot kicsomagolta.
 
-    -   Írja be a következő parancsot:
+    -   Írja be a következő parancsot.
     ```
     .\prerequisiteinstaller.exe
     ```
@@ -132,9 +132,9 @@ A SharePoint és a MIM együttműködésének konfigurálásához kövesse a **S
    Get-SPTimerJob hourly-all-sptimerservice-health-analysis-job | disable-SPTimerJob
    ```
 
-4. Nyisson meg egy új webböngésző lapot az Identity Management-kiszolgálón, navigáljon `http://mim.contoso.com/`, és jelentkezzen be *contoso\miminstall*.  Ekkor megjelenik egy üres SharePoint-webhely, *MIM Portal* néven.
+4. Nyisson meg egy új webböngésző lapot az Identity Management-kiszolgálón, `http://mim.contoso.com/` és jelentkezzen be *contoso\miminstall*néven.  Ekkor megjelenik egy üres SharePoint-webhely, *MIM Portal* néven.
 
-    ![A http://mim.contoso.com/ rendszerképben található webalkalmazás-portál](media/prepare-server-sharepoint/MIM_DeploySP1new.png)
+    ![A webalkalmazási portál a http://mim.contoso.com/ rendszerképen](media/prepare-server-sharepoint/MIM_DeploySP1new.png)
 
 5. Másolja az URL-t, majd az Internet Explorerben nyissa meg az **Internetbeállításokat**, lépjen a **Biztonság** lapra, válassza a **Helyi intranet** zónát, majd kattintson a **Helyek** gombra.
 

@@ -12,17 +12,17 @@ ms.assetid: 0e9993a0-b8ae-40e2-8228-040256adb7e2
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: 97b425fc4444b241ddce99e7d5e3abf564daf245
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79043698"
 ---
-# <a name="step-2---prepare-the-first-priv-domain-controller"></a>2\. lépés: A PRIV tartományvezérlő előkészítése
+# <a name="step-2---prepare-the-first-priv-domain-controller"></a>2. lépés: A PRIV tartományvezérlő előkészítése
 
 > [!div class="step-by-step"]
-> [« 1. lépés](step-1-prepare-corp-domain.md)
-> [3. lépés »](step-3-prepare-pam-server.md)
+> [«1](step-1-prepare-corp-domain.md)
+> . lépés[3. lépés»](step-3-prepare-pam-server.md)
 
 Ebben a lépésben egy új tartományt fog létrehozni, amely megerősített környezetet biztosít a rendszergazdai hitelesítéshez.  Ebben az erdőben szükség lesz legalább egy tartományvezérlőre és legalább egy tagkiszolgálóra. A tagkiszolgálót a következő lépésben fogja konfigurálni.
 
@@ -34,11 +34,11 @@ Ebben a szakaszban egy virtuális gépet fog beállítani egy új erdő tartomá
 
 Egy „PRIVDC” számítógép létrehozásához telepítse a Windows Server 2012 R2 rendszert egy másik új virtuális gépre, amelyen nincs telepített szoftver.
 
-1. Válassza a Windows Server egyéni (nem frissítő) telepítését. A telepítésekor a **Windows Server 2012 R2 standard (kiszolgáló grafikus felhasználói felülettel) x64-** et kell megadnia. ne _válassza_ **az adatközpont vagy a Server Core**lehetőséget.
+1. Válassza a Windows Server egyéni (nem frissítő) telepítését. A telepítéskor válassza a **Windows Server 2012 R2 Standard (kiszolgáló grafikus felhasználói felülettel) x64** kiadást. _Ne válassza az_ **Adatközpont vagy Server Core** lehetőséget.
 
 2. Olvassa el és fogadja el a licencfeltételeket.
 
-3. Mivel a lemez üres, válassza az **Egyéni: A Windows telepítése a korábbi adatok megőrzése nélkül** beállítást, és használja a nem inicializált lemezterületet.
+3. Mivel a lemez üres, válassza az **Egyéni: csak a Windows telepítése** lehetőséget, és használja a nem inicializált lemezterületet.
 
 4. A megfelelő verziójú operációs rendszer telepítése után jelentkezzen be az új rendszergazdaként az új számítógépre. A Vezérlőpulton adja a *PRIVDC* nevet a számítógépnek, adjon neki statikus IP-címet a virtuális hálózatban, és konfigurálja a DNS-kiszolgálót úgy, hogy az legyen előző lépésben telepített tartományvezérlő. Ehhez a kiszolgáló újraindítása szükséges.
 
@@ -46,7 +46,7 @@ Egy „PRIVDC” számítógép létrehozásához telepítse a Windows Server 20
 
 ### <a name="add-roles"></a>Szerepkörök hozzáadása
 
-Vegye fel az Active Directory Domain Services (AD DS) és a DNS-kiszolgálói szerepkört.
+Vegye fel az Active Directory tartományi szolgáltatásokat (AD DS) és a DNS-kiszolgálói szerepkört.
 
 1. Indítsa el a PowerShellt rendszergazdaként.
 
@@ -165,25 +165,25 @@ Be kell állítania a naplózást ahhoz, hogy létre lehessen hozni a PAM konfig
 
 1. Győződjön meg arról, hogy tartományi rendszergazdaként van bejelentkezve (PRIV\\Rendszergazda).
 
-2. Válassza a **Start** > **Felügyeleti eszközök** > **Csoportházirend-kezelés** lehetőséget.
+2. **Nyissa meg a** > **felügyeleti eszközök** > **csoportházirend felügyelet**menüpontot.
 
-3. Lépjen az **Erdő: priv.contoso.local** > **Tartományok** > **priv.contoso.local** > **Tartományvezérlők** > **Alapértelmezett tartományvezérlői házirend** elemhez. Megjelenik egy figyelmeztető üzenet.
+3. Navigáljon **az erdőhöz: priv. contoso. local** > **Domains** > **priv. contoso. local** > **tartományvezérlők** > **Alapértelmezett tartományvezérlői házirend**. Megjelenik egy figyelmeztető üzenet.
 
-4. Kattintson a jobb gombbal az **Alapértelmezett tartományvezérlői házirend** elemre, és válassza a **Szerkesztés** parancsot.
+4. Kattintson a jobb gombbal az **Alapértelmezett tartományvezérlői házirend** elemre, majd válassza a **Szerkesztés** lehetőséget.
 
-5. A Csoportházirendkezelés-szerkesztő konzolfáján jelölje ki a **Számítógép konfigurációja** > **Házirendek** > **Windows-beállítások** > **Biztonsági beállítások** > **Helyi házirend** > **Naplózási házirend** elemet.
+5. A csoportházirend-felügyeleti szerkesztő konzolfán navigáljon a számítógép- **konfigurációs** > **házirendek** > **Windows-beállítások** > **biztonsági beállítások** > **helyi házirendek** > **naplózási házirend**elemre.
 
 6. A Részletek ablaktáblán kattintson a jobb gombbal a **Fiókkezelés naplózása** elemre, és válassza a **Tulajdonságok** parancsot. Kattintson **A következő házirend-beállítások megadása** elemre, jelölje be a **Siker** jelölőnégyzetet, jelölje be a **Hiba** jelölőnégyzetet, és kattintson az **Alkalmaz**, majd az **OK** gombra.
 
 7. A Részletek ablaktáblán kattintson a jobb gombbal a **Címtárszolgáltatás-hozzáférés naplózása** elemre, és válassza a **Tulajdonságok** parancsot. Kattintson **A következő házirend-beállítások megadása** elemre, jelölje be a **Siker** jelölőnégyzetet, jelölje be a **Hiba** jelölőnégyzetet, és kattintson az **Alkalmaz**, majd az **OK** gombra.
 
-8. Lépjen a **Számítógép konfigurációja** > **Házirendek** > **Windows-beállítások** > **Biztonsági beállítások** > **Fiókházirendek** > **Kerberos-irányelv** elemhez.
+8. Navigáljon **a számítógép konfigurációja** > **házirendek** > **Windows-beállítások** > **biztonsági beállítások** > **fiók házirendek** > **Kerberos-házirend**elemre.
 
 9. A Részletek ablaktáblában kattintson a jobb gombbal a **Felhasználói jegy maximális élettartama** elemre, és válassza a **Tulajdonságok** parancsot. Kattintson **A következő házirend-beállítások megadása** elemre, az órák számát állítsa *1*-re, és kattintson az **Alkalmaz**, majd az **OK** gombra. Vegye figyelembe, hogy az ablakban található egyéb beállítások is megváltoznak.
 
 10. A Csoportházirend kezelése ablakban válassza az **Alapértelmezett tartományházirend** elemet, kattintson rá a jobb gombbal, és válassza a **Szerkesztés** parancsot.
 
-11. Bontsa ki a **Számítógép konfigurációja** > **Házirendek** > **Windows-beállítások** > **Biztonsági beállítások** > **Helyi házirendek** elemet, és válassza a **felhasználói jogok kiosztása** lehetőséget.
+11. Bontsa ki a **számítógép-konfigurációs** > **házirendek** > **Windows-beállítások** > **biztonsági beállítások** > **helyi házirendek** elemet, és válassza a **felhasználói jogok kiosztása**lehetőséget
 
 12. A Részletek ablaktáblában kattintson a jobb gombbal a **Kötegelt munka bejelentkezésének megtagadása** elemre, és válassza a **Tulajdonságok** parancsot.
 
@@ -243,15 +243,15 @@ A PRIVDC számítógépen a PowerShell használatával konfigurálja a DNS-név�
 
 Végezze el a következő lépéseket a PRIVDC számítógépen tartományi rendszergazdaként.
 
-1. Indítsa el az **Active Directory - felhasználók és számítógépek** beépülő modult.
+1. Jelenítse meg az **Active Directory - felhasználók és számítógépek** ablakot.
 2. Kattintson a jobb gombbal a **priv.contoso.local** tartományra, és válassza a **Vezérlés delegálása** parancsot.
 3. A Kijelölt felhasználók és csoportok lapon kattintson a **Hozzáadás** gombra.
-4. A Felhasználók, számítógépek vagy csoportok kiválasztása ablakban írja be a *mimcomponent; mimmonitor; mimservice* nevet, és kattintson a **Névellenőrzés** gombra. Miután a nevek alatt megjelent az aláhúzás, kattintson az **OK**, majd a **Tovább** gombra.
+4. A Felhasználók, számítógépek vagy csoportok kiválasztása ablakban írja be a *mimcomponent; mimmonitor; mimservice* nevet, és kattintson a **Névellenőrzés** gombra. A nevek aláhúzását követően kattintson **az OK** , majd a **tovább**gombra.
 5. A gyakori feladatok listáján jelölje ki a **Felhasználói fiókok létrehozása, törlése és kezelése** és az **Egy csoport tagságának módosítása** elemet, és kattintson a **Tovább**, majd a **Befejezés** gombra.
 
 6. Kattintson ismét a jobb gombbal a **priv.contoso.local** tartományra, és válassza a **Vezérlés delegálása** parancsot.
 7. A Kijelölt felhasználók és csoportok lapon kattintson a **Hozzáadás** gombra.  
-8. A Felhasználók, számítógépek vagy csoportok kiválasztása ablakban adja meg a *MIMAdmin* nevet, és kattintson a **Névellenőrzés** gombra. Miután a nevek alatt megjelent az aláhúzás, kattintson az **OK**, majd a **Tovább** gombra.
+8. A Felhasználók, számítógépek vagy csoportok kiválasztása ablakban adja meg a *MIMAdmin* nevet, és kattintson a **Névellenőrzés** gombra. A nevek aláhúzását követően kattintson **az OK** , majd a **tovább**gombra.
 9. Válassza az **Egyéni feladat** lehetőséget, és alkalmazza az **Ez a mappa** elemre az **Általános engedélyek** beállítás megadásával.
 10. Az engedélyek listájában válassza a következőket:
     - **Olvasás**
@@ -291,7 +291,7 @@ Ha még nem rendelkezik munkaállomással, amely a PRIV tartományhoz fog tartoz
 
 Egy új virtuális gépen, amelyen még nincs telepített szoftver, telepítse a Windows 8.1 Enterprise vagy a Windows 10 Enterprise verziót. Ez lesz a *„PRIVWKSTN”* számítógép.
 
-1. A telepítéshez használja az expressz beállításokat.
+1. A telepítéshez használja a gyorsbeállításokat.
 
 2. Vegye figyelembe, hogy előfordulhat, hogy a telepítés nem fog tudni csatlakozni az internethez. Kattintson a **Helyi fiók létrehozása** elemre. Adjon meg más felhasználónevet, ne használja a „Rendszergazda” vagy az „Ilona” nevet.
 
@@ -304,5 +304,5 @@ A további részleteket [az emelt szintű hozzáféréssel rendelkező munkaáll
 A következő lépésben egy PAM-kiszolgáló előkészítésével foglalkozunk.
 
 > [!div class="step-by-step"]
-> [« 1. lépés](step-1-prepare-corp-domain.md)
-> [3. lépés »](step-3-prepare-pam-server.md)
+> [«1](step-1-prepare-corp-domain.md)
+> . lépés[3. lépés»](step-3-prepare-pam-server.md)

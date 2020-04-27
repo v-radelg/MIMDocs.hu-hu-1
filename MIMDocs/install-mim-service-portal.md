@@ -12,23 +12,23 @@ ms.assetid: b0b39631-66df-4c5f-80c9-a1774346f816
 ms.reviewer: markwahl-msft
 ms.suite: ems
 ms.openlocfilehash: e381bb418ce8215dafc369bf33782483a6e4de3e
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79042440"
 ---
 # <a name="install-mim-2016-mim-service-and-portal"></a>A MIM 2016 telepítése: A MIM szolgáltatás és -portál
 
 > [!div class="step-by-step"]
-> [« MIM Synchronization Service](install-mim-sync.md)
-> [Adatbázisok szinkronizálása »](install-mim-sync-ad-service.md)
+> [«A webszolgáltatások szinkronizálási szolgáltatása](install-mim-sync.md)
+> az[adatbázisok szinkronizálása»](install-mim-sync-ad-service.md)
  
 > [!NOTE]
 > Ez az útmutató egy Contoso nevű fiktív vállalat neveit és értékeit használja szemléltetésként. Ezeket helyettesítse a saját neveivel és értékeivel. Például:
 > - Tartományvezérlő neve – **mimservername**
 > - Tartománynév – **contoso**
-> - Jelszó – <strong>Pass@word1</strong>
+> - Jelszó<strong>Pass@word1</strong>
 > - Szolgáltatásfiók neve – **MIMService**
 
 Ha a legutóbbi lépésben nem telepítette a MIM telepítőcsomagját, akkor a folytatás előtt lépjen vissza és telepítse a Microsoft Identity Manager 2016 összetevőit.
@@ -50,7 +50,7 @@ Ha a legutóbbi lépésben nem telepítette a MIM telepítőcsomagját, akkor a 
 
     ![Kép: A MIM-adatbázis kapcsolatának konfigurálása](media/install-mim-service-portal/MIM_Install10.png)
 
-7. A **levelezési kiszolgáló kapcsolatainak konfigurálása**területen adja meg az Exchange-kiszolgáló nevét **levelezési kiszolgálóként** , vagy használhatja a **O365-postaládát**. Ha nincs levelezőkiszolgáló konfigurálva, akkor a **localhost** nevet adja meg, és törölje a felső két négyzet jelölését. Kattintson a **Tovább**gombra.
+7. A **levelezési kiszolgáló kapcsolatainak konfigurálása**területen adja meg az Exchange-kiszolgáló nevét **levelezési kiszolgálóként** , vagy használhatja a **O365-postaládát**. Ha nincs levelezőkiszolgáló konfigurálva, akkor a **localhost** nevet adja meg, és törölje a felső két négyzet jelölését. Kattintson a **Tovább** gombra.
     >[!NOTE]
     >Felügyeleti csomag 2016 SP2 és újabb verziók: Ha csoportosan felügyelt szolgáltatásfiókok vannak használatban, jelölje be **a másik felhasználó használata az Exchange-hez** jelölőnégyzetet, akkor is, ha nem tervezi az Exchange használatát.
     
@@ -63,7 +63,7 @@ Ha a legutóbbi lépésben nem telepítette a MIM telepítőcsomagját, akkor a 
 
 9. A Service Account Name mezőben adja meg a használni kívánt szolgáltatásfiók nevét – például *MIMService* –, a Service Account Password mezőben a szolgáltatásfiók jelszavát – például <em>Pass@word1</em>, a Service Account Domain mezőben a szolgáltatásfiók tartományát – például *contoso*, a Service Email Account mezőben pedig az e-mail fiókot, például *contoso*.
     >[!NOTE]
-    >MIMService 2016 SP2 és újabb verziók: Ha csoportosan felügyelt szolgáltatásfiókot használ, gondoskodnia kell arról, hogy a **$** karakter a szolgáltatásfiók neve végén legyen, például: $, és hagyja üresen a szolgáltatásfiók jelszava mezőt.
+    >MIMService 2016 SP2 és újabb verziók: Ha csoportosan felügyelt szolgáltatásfiókok használatát végzi, gondoskodnia kell róla, hogy **$** a karakter a szolgáltatásfiók neve végén legyen, például a $ értékre, és hagyja üresen a szolgáltatásfiók jelszava mezőt.
 
     ![Kép: A MIM szolgáltatás fiókjának konfigurálása](media/install-mim-service-portal/MIM_Install12.png)
 
@@ -71,17 +71,17 @@ Ha a legutóbbi lépésben nem telepítette a MIM telepítőcsomagját, akkor a 
 
 11. Fogadja el az alapértelmezett értékeket a szinkronizációs kiszolgáló helyéhez, és a *contoso\MIMMA*.
     >[!NOTE]
-    >GMSA 2016 SP2 és újabb verziók: Ha a felügyeleti pont szinkronizálása szolgáltatás csoportosan felügyelt szolgáltatásfiókot kíván használni a-ben, és engedélyezni szeretné a "-szinkronizálási fiók használata" funkciót, akkor a következőt adja meg, mint a (z) *contoso\MIMSync $* .
+    >GMSA 2016 SP2 és újabb verziók: Ha a felügyeleti pont szinkronizálása szolgáltatás csoportosan felügyelt szolgáltatásfiókot kíván használni a-ben, és engedélyezni szeretné a "-szinkronizálási fiók használata" funkciót, akkor a következőt adja meg, mint a (z) *contoso\MIMSync $*.
 
     ![Kép: A MIM szolgáltatás és -portál konfigurálása](media/install-mim-service-portal/MIM_Install13.png)
 
 12. A MIM portálhoz tartozó MIM-szolgáltatás kiszolgálójának címeként adja meg a *CORPIDM* nevet (az adott számítógép nevét).
 
-13. A SharePoint-webhelycsoport URL-címének megadása `http://mim.contoso.com`.
+13. A `http://mim.contoso.com` SharePoint-webhelycsoport URL-címének megadása.
 
-14. Az 80-as jelszó-regisztrálási URL-porton `http://passwordregistration.contoso.com` megadásakor a rendszer a 443-es SSL-tanúsítvány után javasolja a frissítését.
+14. A `http://passwordregistration.contoso.com` jelszó-regisztrálási URL-cím 80-as portját kell megadni, amely később a 443-es SSL-tanúsítvány frissítését javasolja.
 
-15. Az 80-as jelszó-visszaállítási URL-porton `http://passwordreset.contoso.com`t kell megadni, amely a 443-es SSL-tanúsítványsal később frissül.
+15. A `http://passwordreset.contoso.com` jelszó-visszaállítási URL-cím 80-as portjának megadása, a frissítés későbbi frissítése a 443-es SSL-tanúsítvány használatával.
 
 16. Jelölje be a tűzfalon az 5725-ös és 5726-os portok megnyitására szolgáló négyzetet, valamint azt, amelyik az összes hitelesített felhasználónak hozzáférést biztosít a MIM-portálhoz.
 
@@ -99,7 +99,7 @@ Ha a legutóbbi lépésben nem telepítette a MIM telepítőcsomagját, akkor a 
 
 ## <a name="configure-mim-password-reset-portal"></a>A MIM jelszó-változtatási portál konfigurálása
 
-1. Állítsa be a szolgáltatásfiók nevét a SSPR-regisztrációhoz a *contoso\mimsspr fióknevet* és annak jelszavára, hogy <em>Pass@word1</em>.
+1. Állítsa be a szolgáltatásfiók nevét a SSPR-regisztrációhoz a *contoso\mimsspr fióknevet* és a <em>Pass@word1</em>jelszavához.
 
 2. Adja meg az *PasswordReset.contoso.com* -t a rendszerállapot-jelszó-visszaállítási portál állomásneveként, és állítsa a portot **80**-re. Jelölje be az **Open port in firewall** (Port nyitása a tűzfalon) négyzetet.
 
@@ -115,7 +115,7 @@ Ha végzett a telepítés előtti teendőkkel, kattintson az **Install** (Telep�
 
 A telepítést követően győződjön meg arról, hogy a MIM-portál aktív.
 
-1. Indítsa el az Internet Explorert, és kapcsolódjon a *http://mim.contoso.com/identitymanagement* -beli webalkalmazási portálhoz. Vegye figyelembe, hogy az oldal első látogatásakor előfordulhat, hogy rövid idő múlva.
+1. Indítsa el az Internet Explorert, és kapcsolódjon a *http://mim.contoso.com/identitymanagement*webalkalmazás-portálhoz. Vegye figyelembe, hogy az oldal első látogatásakor előfordulhat, hogy rövid idő múlva.
     - Ha szükséges, hitelesítse magát *contoso\miminstall* az Internet Explorerben.
 
 2. Az Internet Explorerben nyissa meg az **Internetbeállításokat**, lépjen a **Biztonság** lapra, és ha még nem szerepel ott, vegye fel a webhelyet a **Helyi intranet** zónába.  Zárja be az **Internetbeállítások** párbeszédpanelt.
@@ -124,7 +124,7 @@ A telepítést követően győződjön meg arról, hogy a MIM-portál aktív.
 
     1.  Az Internet Explorerben a **MIM-portálon** kattintson a **Management Policy Rules** (Felügyeleti házirendszabályok) elemre.
 
-    2.  Keresse meg a **User management: Users can read attributes of their own** (Felhasználók felügyelete: A felhasználók olvashatják a saját attribútumaikat) felügyeleti házirendszabályt.
+    2.  A felügyeleti házirend szabályának keresése, **felhasználói kezelés: a felhasználók saját maguk is olvashatják a saját attribútumaikat**.
 
     3.  Jelölje ki ezt a felügyeleti házirendszabályt, majd törölje a **Policy is disabled** (A házirend le van tiltva) négyzet jelölését.
 
@@ -147,11 +147,11 @@ A telepítést követően győződjön meg arról, hogy a MIM-portál aktív.
 
     6.  Győződjön meg arról, hogy a listában szerepel egy contoso.local nevű aktív hálózat, tartományi hálózatként.
 
-    7.  Zárja be a **Vezérlőpultot**.
+    7.  A **Vezérlőpult ablakának**bezárásához.
 
 > [!NOTE]
 > Nem kötelező: Ezek után igény szerint telepítheti a MIM beépülő moduljait és bővítményeit.
  
 > [!div class="step-by-step"]  
-> [« MIM Synchronization Service](install-mim-sync.md)
-> [Adatbázisok szinkronizálása »](install-mim-sync-ad-service.md)
+> [«A webszolgáltatások szinkronizálási szolgáltatása](install-mim-sync.md)
+> az[adatbázisok szinkronizálása»](install-mim-sync-ad-service.md)

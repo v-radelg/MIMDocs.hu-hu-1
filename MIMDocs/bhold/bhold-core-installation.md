@@ -10,10 +10,10 @@ ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: ''
 ms.openlocfilehash: c4dfb4184292ba1b5da8c4e3e176d53e6a885ed8
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79042270"
 ---
 # <a name="bhold-core-installation"></a>BHOLD Core-telepítés
@@ -32,8 +32,8 @@ A BHOLD Core modul a Microsoft BHOLD Suite alapjait képezi. A Microsoft BHOLD S
 |----------|--------|----------|
 |**Összetevő** |**Minimális** | **Ajánlott** |
 |Processzor | 64 bites processzor | Többmagos 64 bites processzor |
-| Memória |3 GB | 6 GB vagy több |
-|Tárterület| 30 GB elérhető |A központi telepítés méretétől függ |
+| Memory (Memória) |3 GB | 6 GB vagy több |
+|Storage| 30 GB elérhető |A központi telepítés méretétől függ |
 |Hálózati adapter| 100Mbps az SQL és a Forefront Identity Manager (FIM) kiszolgálóval való kapcsolódáshoz | 1Gbps az SQL-és FIM-kiszolgálóhoz való kapcsolódáshoz|
 
 Ezek a javaslatok a tipikus implementáción alapulnak, és nem veszik figyelembe a kiszolgálón futó egyéb alkalmazásokat. Előfordulhat, hogy az adott környezettől függően nagyobb teljesítményű összetevőket kell használnia.
@@ -70,7 +70,7 @@ A BHOLD Core modulnak képesnek kell lennie arra, hogy egy erre a célra kijelö
 
 3.  Az **új objektum – csoport** párbeszédpanelen a **csoport neve**mezőbe írja be a csoport nevét (BHOLD default: BHOLDApplicationGroup), majd kattintson az **OK**gombra.
 
-4.  Kattintson a jobb gombbal a **Felhasználók** elemre, mutasson az **Új** pontra, majd kattintson a **Felhasználó** lehetőségre.
+4.  Kattintson a jobb gombbal a **felhasználók**elemre, mutasson az **új**elemre, majd kattintson a **felhasználó**elemre.
 
 5.  A **teljes név**mezőbe írjon be egy nevet, amely segítséget nyújt a fiók azonosításában, például BHOLD Core-szolgáltatásfiók.
 
@@ -97,11 +97,11 @@ Mielőtt megkezdené a BHOLD Core modul telepítését, elő kell készítenie, 
 | **Elem**                                    | **Leírás**                                                                                                                                                                                                                                                                                             | **Érték**                                                                                                                                                          |
 |---------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Biztonsági szolgáltató használata tartományon vagy gépen** | Ha be van jelölve, akkor a Active Directory tartományi szolgáltatások biztonság szabályozza a BHOLD mag elérését.                                                                                                                                                                                                  | Jelölje be a jelölőnégyzetet. **Fontos:** Ha ez a jelölőnégyzet nincs bejelölve, a telepítés sikertelen lesz.                                                                 |
-| **Tartomány**                                  | Megadja a BHOLD-kiszolgálót, a szolgáltatásfiókot és az erőforráscsoportot tartalmazó tartományt. **Fontos:** A tartománynevet a NetBIOS (rövid) név használatával adja meg, ne a teljes tartománynevet (FQDN). Ha például a tartomány teljes tartományneve fabrikam.com, a tartománynevet a CONTOSO nevet adja meg. | Írja be a tartománynevet itt:                                                                                                                                        |
+| **Tartományi**                                  | Megadja a BHOLD-kiszolgálót, a szolgáltatásfiókot és az erőforráscsoportot tartalmazó tartományt. **Fontos:** A tartománynevet a NetBIOS (rövid) név használatával adja meg, ne a teljes tartománynevet (FQDN). Ha például a tartomány teljes tartományneve fabrikam.com, a tartománynevet a CONTOSO nevet adja meg. | Írja be a tartománynevet itt:                                                                                                                                        |
 | **Alkalmazáscsoport**                       | Megadja a korábban a [szükséges felhasználó és csoport](https://technet.microsoft.com/library/jj134095(v=ws.10).aspx#rug)által létrehozott biztonsági csoport nevét.                                                                                                                                  | Írja be a csoport nevét:                                                                                                                                         |
 | **Szolgáltatás felhasználója**                            | Annak a szolgáltatás-felhasználói fióknak a bejelentkezési nevét adja meg, amelyet korábban a [szükséges felhasználóhoz és csoporthoz](https://technet.microsoft.com/library/jj134095(v=ws.10).aspx#rug)hozott létre.                                                                                                                      | Írja be a felhasználói fiók nevét:                                                                                                                                  |
 | **Jelszó**                                | Megadja a BHOLD Core szolgáltatás felhasználói fiókjának jelszavát.                                                                                                                                                                                                                                              | Írja be a jelszót itt: **Fontos:** ügyeljen arra, hogy a jelszót rejtett, biztonságos helyen tárolja.                                                                |
-| **Webhely IP-címe/port**                         | Az intranetes kiszolgálón létrehozandó webhely IP-címét és portszámát adja meg. Csak akkor módosítsa az alapértelmezett értéket (\*), ha nem ugyanazt az IP-címet fogja használni, mint az alapértelmezett webhely. A portszámot csak akkor módosítsa egy elérhető portra, ha az alapértelmezett port (5151) már használatban van.             | Ha az alapértelmezett webhely nem alapértelmezett IP-címet használ, írja ide: Ha az alapértelmezett portszám már használatban van, írja be a BHOLD webhely portszámát itt: |
+| **Webhely IP-címe/port**                         | Az intranetes kiszolgálón létrehozandó webhely IP-címét és portszámát adja meg. Csak akkor módosítsa az alapértelmezett\*értéket (), ha nem ugyanazt az IP-címet fogja használni, mint az alapértelmezett webhely. A portszámot csak akkor módosítsa egy elérhető portra, ha az alapértelmezett port (5151) már használatban van.             | Ha az alapértelmezett webhely nem alapértelmezett IP-címet használ, írja ide: Ha az alapértelmezett portszám már használatban van, írja be a BHOLD webhely portszámát itt: |
 
 ### <a name="database-settings"></a>Adatbázis-beállítások
 
@@ -109,8 +109,8 @@ Mielőtt megkezdené a BHOLD Core modul telepítését, elő kell készítenie, 
 |------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Beépített biztonság használata**                    | Megadja, hogy a rendszer a Windows-hitelesítést használja az adatbázis eléréséhez.                                                                                                                                                                                                     | Jelölje be a jelölőnégyzetet, ha Windows-hitelesítést használ a SQL Serverhoz való kapcsolódáshoz. Törölje a jelölőnégyzet jelölését, ha SQL Server hitelesítést használ. Ha SQL Server hitelesítést használ, az adatbázist létre kell hozni az BHOLD Core telepítőjének futtatása előtt. **Megjegyzés:** Windows-hitelesítés használata esetén olyan fiókkal kell bejelentkeznie, amely a sysadmin kiszolgálói szerepkörrel rendelkezik az adatbázis-kiszolgálón. |
 | **Adatbázis-felhasználó** és **adatbázis jelszava** | A sysadmin kiszolgálói szerepkörrel rendelkező felhasználó felhasználónevét és jelszavát adja meg az adatbázis-kiszolgálón. Ezeket az értékeket csak akkor kell megadni, ha SQL Server hitelesítés van használatban.                                                                                               | Írja be a SQL Server felhasználónevet: írja be ide a SQL Server felhasználói jelszavát: **Megjegyzés:** ügyeljen arra, hogy a jelszót rejtett, biztonságos helyen tárolja.                                                                                                                                                                                                                                                  |
-| **Adatbázis-kiszolgáló** és **adatbázis neve**   | Megadja az adatbázis-kiszolgáló NetBIOS-nevét és az adatbázis nevét (alapértelmezett: B1), amelyet a BHOLD Core telepítő fog létrehozni. Ha nem az alapértelmezett adatbázis-kiszolgálói példányt használja, akkor az adatbázis-kiszolgáló példányát az űrlapon *\<server\>* \\ *\<példány\>* . | Írja be a kiszolgáló (vagy a kiszolgáló és a példány) nevét itt: írja be az adatbázis nevét:                                                                                                                                                                                                                                                                                                                   |
-| **Az adatbázis-felhasználó korlátozásai**    | Elavult tartalom.                                                                                                                                                                                                                                                                 | Ne módosítsa az alapértelmezett értéket                                                                                                                                                                                                                                                                                                                                                                       |
+| **Adatbázis-kiszolgáló** és **adatbázis neve**   | Megadja az adatbázis-kiszolgáló NetBIOS-nevét és az adatbázis nevét (alapértelmezett: B1), amelyet a BHOLD Core telepítő fog létrehozni. Ha nem az alapértelmezett adatbázis-kiszolgáló példányt használja, akkor az adatbázis-kiszolgáló példányát kell megadnia a Form * \<\>Server*\\*\<-példányban\>*. | Írja be a kiszolgáló (vagy a kiszolgáló és a példány) nevét itt: írja be az adatbázis nevét:                                                                                                                                                                                                                                                                                                                   |
+| **Az adatbázis-felhasználó korlátozásai**    | Elavult.                                                                                                                                                                                                                                                                 | Ne módosítsa az alapértelmezett értéket                                                                                                                                                                                                                                                                                                                                                                       |
 |                                                |                                                                                                                                                                                                                                                                           |                                                                                                                                                                                                                                                                                                                                                                                                       |
 |                                                |                                                                                                                                                                                                                                                                           |                                                                                                                                                                                                                                                                                                                                                                                                       |
 
@@ -118,9 +118,9 @@ Mielőtt megkezdené a BHOLD Core modul telepítését, elő kell készítenie, 
 
 Az BHOLD Core modul telepítéséhez jelentkezzen be a Tartománygazdák csoport tagjaként, töltse le a következő fájlt, és futtassa rendszergazdaként azon a kiszolgálón, amelyre telepíteni kívánja a BHOLD Core modult: 
 
-- A BholdCore *\<verziója\>* \_Release. msi
+- BholdCore * \<verzió\>*\_. msi
 
-Cserélje le *\<version\>* a telepítendő BHOLD-kiadás verziószámára.
+Cserélje * \<le\> a verziót* a telepítendő BHOLD Core verzió verziószámára.
 
 A programfájl rendszergazdaként való futtatásához kattintson a jobb gombbal a fájlra, majd kattintson a **Futtatás rendszergazdaként**parancsra.
 
@@ -171,17 +171,17 @@ Ha a BHOLD webhelyhez való kapcsolódáshoz használt hálózatnév nem ugyanaz
 > [!IMPORTANT]
 > Ha a BHOLD Core modul ugyanazon a számítógépen van telepítve, mint a FIM-portál, akkor létre kell hoznia egy DNS-erőforrásrekordot (CNAME vagy A) a BHOLD Core-t futtató kiszolgálók és a FIM-portált futtató kiszolgáló különböző állomásneve alapján. Egy adott szolgáltatástípus/kiszolgáló-alias pár esetében csak egy egyszerű szolgáltatásnevet lehet létrehozni, így a BHOLD Core és a FIM Portal számára külön SPN-ket kell megadni, mivel általában különböző fiókokban futnak. A Setspn parancs hibát jelez, ha egy SPN már meg van határozva egy másik fiókban.
 
-A művelet végrehajtásához a **Tartományi rendszergazdák** csoport vagy ezzel egyenértékű csoport tagjának kell lennie.
+A művelet végrehajtásához legalább a **Tartománygazdák**vagy ezzel egyenértékű csoport tagjának kell lennie.
 
 #### <a name="to-establish-the-spn-of-the-bhold-website"></a>A BHOLD webhely egyszerű szolgáltatásnév létrehozása
 
 1.  A Active Directory tartományi szolgáltatások tartományvezérlőn kattintson a **Start**gombra, kattintson a **minden program**, majd a **kellékek**elemre, kattintson a jobb gombbal a **parancssor**elemre, majd kattintson a **Futtatás rendszergazdaként**parancsra.
 
-2.  Írja be a parancssorba a következő parancsot, majd nyomja le az ENTER billentyűt: Setspn – S HTTP/ *\<networkalias\> \<tartomány\>* \\ *\<accountname\>* ahol:
+2.  A parancssorba írja be a következő parancsot, majd nyomja le az ENTER billentyűt: Setspn – S http/ * \<\> \<networkalias tartomány\> * * \<\> * \\ accountname, ahol:
 
-    -   *\<networkalias\>* az a címe, amelyet az ügyfelek a BHOLD webhelyhez való kapcsolódáshoz használnak
+    -   *a networkalias\> az a címe, amelyet az ügyfelek a BHOLD webhelyhez való kapcsolódáshoz használnak \<*
 
-    -   *\<tartomány\>* \\ *\<ACCOUNTNAME\>* a BHOLD Core telepítésekor létrehozott BHOLD Core-szolgáltatásfiók tartománya és felhasználóneve.
+    -   *\<a\>tartomány*\\accountname a BHOLD Core telepítésekor létrehozott BHOLD Core-szolgáltatásfiók tartománya és felhasználóneve.*\<\> *
 
 3.  Ismételje meg az előző lépést mindazon neveknél, amelyeket az ügyfelek a BHOLD webhelyhez való kapcsolódáshoz használnak, például CNAME aliasok, a teljes tartománynevet tartalmazó nevek vagy a NetBIOS (rövid) tartománynevet tartalmazó nevek.
 
@@ -205,7 +205,7 @@ A művelet végrehajtásához a Tartománygazdák csoport tagjaként kell bejele
 
 1.  Kattintson a **Start**gombra, kattintson a **minden program**elemre, majd az **Internet Explorer**elemre.
 
-2.  A címe mezőbe írja be a (z) *\<server\>* nevet a BHOLD-webhely kiszolgálójának, és a *\<port\>* a webhelyhez kötött portszám.
+2.  A címe mezőbe írja be a következőt * \<:\> * , ahol a kiszolgáló a BHOLD neve, a * \<port\> * pedig a webhelyhez kötött portszám.
 
 3.  Kattintson a **Kezdőlap**, majd az **értékek**, végül pedig a **módosítás**lehetőségre.
 

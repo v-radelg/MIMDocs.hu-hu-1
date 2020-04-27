@@ -12,10 +12,10 @@ ms.assetid: 735dc357-dfba-4f68-a5b3-d66d6c018803
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: 7f2d78b487e3c20fbd656aad37b67a6382b67df0
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79044327"
 ---
 # <a name="topology-considerations"></a>Topológiai szempontok
@@ -64,6 +64,6 @@ A hagyományos többrétegű topológiához hasonlóan a MIM-portál teljesítm�
 
 A MIM Synchronization Service és a MIM szolgáltatás adatbázisainak üzemeltetésére szolgáló SQL Servert futtató számítógépek drámai módon befolyásolják a MIM-környezet általános teljesítményét. Ennek megfelelően az adatbázisok teljesítményének optimalizálásához kövesse az SQL Server dokumentációjában foglalt javaslatokat. További tudnivalókért lásd a következő dokumentumokat:
 
-## <a name="see-also"></a>További információ
+## <a name="see-also"></a>Lásd még
 
 - A [Forefront Identity Manager (FIM) 2010 kapacitás-tervezési útmutatója](https://www.microsoft.com/en-us/download/details.aspx?id=7437) részletesebben ismerteti a tesztelési buildek és a teljesítmény tesztelésének eredményét.

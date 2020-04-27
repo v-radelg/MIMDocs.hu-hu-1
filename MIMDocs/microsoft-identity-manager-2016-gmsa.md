@@ -8,10 +8,10 @@ ms.date: 03/10/2020
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.openlocfilehash: 4586b9998a9526a867ffe7ace9489fe56fff146c
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79044208"
 ---
 # <a name="convert-microsoft-identity-manager-specific-services-to-use-group-managed-service-accounts"></a>Microsoft Identity Manager-specifikus szolgáltatások átalakítása csoportosan felügyelt szolgáltatásfiókok használatára
@@ -47,8 +47,8 @@ Ez a cikk a támogatott Microsoft Identity Manager szolgáltatások csoportosan 
 
     - A Key Distribution Services-(KDS-) szolgáltatás a legfelső szintű kulcsokat használja a tartományvezérlőkön található jelszavak és egyéb információk létrehozásához.
     - Csak egyszer hozzon létre egy legfelső szintű kulcsot tartományon, ha szükséges.  
-    - `Add-KDSRootKey –EffectiveImmediately`belefoglalása. "– EffectiveImmediately" azt jelenti, hogy akár 10 órát is igénybe vehet, hogy a legfelső szintű kulcsot replikálja az összes tartományvezérlőre. A két tartományvezérlőre való replikálás körülbelül 1 órát is igénybe vehet. 
-    ![a "– EffectiveImmediately" karakterláncot](media/7fbdf01a847ea0e330feeaf062e30668.png)
+    - Belefoglalás `Add-KDSRootKey –EffectiveImmediately`. "– EffectiveImmediately" azt jelenti, hogy akár 10 órát is igénybe vehet, hogy a legfelső szintű kulcsot replikálja az összes tartományvezérlőre. A két tartományvezérlőre való replikálás körülbelül 1 órát is igénybe vehet. 
+    ![A "– EffectiveImmediately" karakterlánc](media/7fbdf01a847ea0e330feeaf062e30668.png)
 
 ## <a name="actions-to-run-on-the-active-directory-domain-controller"></a>A Active Directory-tartomány vezérlőn futtatandó műveletek
 
@@ -74,9 +74,9 @@ Ez a cikk a támogatott Microsoft Identity Manager szolgáltatások csoportosan 
 
 1. Synchronization Service Manager a titkosítási kulcs biztonsági mentését. A rendszer a módosítási mód telepítését fogja kérni. Tegye a következőket:
 
-    a. Keresse meg a szinkronizálási szolgáltatás kulcskezelő eszközét azon a kiszolgálón, amelyen a Synchronization Service Manager telepítve van. Az **exportálási kulcs készletének** alapértelmezés szerint már ki van választva.
+    a. Keresse meg a szinkronizálási szolgáltatás kulcskezelő eszközét azon a kiszolgálón, amelyen a Synchronization Service Manager telepítve van. Az **exportálási kulcs készlete** alapértelmezés szerint már ki van választva.
 
-    b. Válassza a **Tovább** elemet. 
+    b. Kattintson a **Tovább** gombra. 
     
     c. A parancssorba írja be és ellenőrizze a Microsoft Identity Manager vagy a Forefront Identity Manager (FIM) szinkronizálási szolgáltatás fiókjának adatait:
 
@@ -84,7 +84,7 @@ Ez a cikk a támogatott Microsoft Identity Manager szolgáltatások csoportosan 
     -   **Password (jelszó**): a szinkronizálási szolgáltatás fiókjának jelszava.  
     -   **Tartomány**: a szinkronizálási szolgáltatásfiók részét képező tartomány.
 
-    d. Válassza a **Tovább** elemet.
+    d. Kattintson a **Tovább** gombra.
 
     Ha sikeresen megadta a fiók adatait, lehetősége van módosítani a biztonsági másolat titkosítási kulcsának célhelyét vagy a fájl exportálási helyét. Alapértelmezés szerint az exportfájl helye a *C:\Windows\system32\miiskeys-1.bin*.
 
@@ -96,7 +96,7 @@ Ez a cikk a támogatott Microsoft Identity Manager szolgáltatások csoportosan 
 
 1. A javítás telepítése után állítsa le a FIM szinkronizációs szolgáltatást a következő módon:
 
-   a. A vezérlőpulton válassza a **programok és szolgáltatások** > **Microsoft Identity Manager**lehetőséget.  
+   a. A vezérlőpulton válassza a **programok és szolgáltatások** > **Microsoft Identity Manager**elemet.  
    b. A **szinkronizálási szolgáltatás** lapon válassza a **módosítás** > **tovább**lehetőséget.  
    c. A **karbantartási beállítások** ablakban válassza a **Konfigurálás**lehetőséget.
 
@@ -106,7 +106,7 @@ Ez a cikk a támogatott Microsoft Identity Manager szolgáltatások csoportosan 
 
    ![A Microsoft Identity Manager szinkronizálási szolgáltatás konfigurálása ablak](media/38df9369bf13e1c3066a49ed20e09041.png)
 
-   e. Válassza a **tovább** > **következő** > **telepítés**lehetőséget.  
+   e. Válassza a **következő** > **Next** > **telepítés**lehetőséget.  
    f. Állítsa vissza a kulcskészlet elemet a korábban mentett *miiskeys. bin* fájlból.
 
    ![A kulcskészlet-konfiguráció visszaállításának lehetősége](media/44cd474323584feb6d8b48b80cfceb9b.png)

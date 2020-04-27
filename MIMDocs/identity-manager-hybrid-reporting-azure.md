@@ -11,10 +11,10 @@ ms.prod: microsoft-identity-manager
 ms.assetid: 7320f014-8b60-4866-92de-cfbd3e6edc48
 ms.suite: ems
 ms.openlocfilehash: 6f4f2aea998fc5682d1fb21d77e4d4f1c582d770
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79042151"
 ---
 # <a name="hybrid-identity-management-audit-reporting-in-azure-active-directory"></a>Hibrid Identitáskezelés naplózási jelentéskészítése Azure Active Directory
@@ -41,9 +41,9 @@ A hibrid jelentéskészítés a következő folyamattal rendelkezik:
 5. A Azure Portal lekéri a naplózási jelentési adatait, és megjeleníti azt az Azure audit jelentési ablakában.
 
 ## <a name="next-steps"></a>További lépések
-További információk az alábbiakról:
-- [A hibrid jelentéskészítés használata az Identity Managerben](working-with-identity-manager-hybrid-reporting.md)
-- [Tevékenység-jelentések naplózása a Azure Active Directory portálon](https://docs.microsoft.com/azure/active-directory/active-directory-reporting-activity-audit-logs)
+További információk:
+- [A hibrid jelentéskészítés kezelése az Identity Managerben](working-with-identity-manager-hybrid-reporting.md)
+- [Naplózott tevékenységekre vonatkozó jelentések az Azure Active Directory portálon](https://docs.microsoft.com/azure/active-directory/active-directory-reporting-activity-audit-logs)
 - [Jelentéskészítési adatmegőrzési szabályzatok](https://docs.microsoft.com/azure/active-directory/active-directory-reporting-retention)
 - [Microsoft Azure log Integration (SIEM)](https://docs.microsoft.com/azure/security/security-azure-log-integration-overview)
 - [Azure Active Directory jelentési API](https://docs.microsoft.com/azure/active-directory/active-directory-reporting-api-getting-started)

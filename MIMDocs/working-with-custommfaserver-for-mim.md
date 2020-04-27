@@ -10,10 +10,10 @@ ms.date: 09/04/2018
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.openlocfilehash: b157b2a8716d20ce3b472d5655d393e64f2baa6b
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79044361"
 ---
 # <a name="use-a-custom-multi-factor-authentication-provider-via-an-api-during-pam-role-activation-or-in-sspr"></a>Egyéni Multi-Factor Authentication-szolgáltató használata egy API-n keresztül a PAM szerepkör aktiválása vagy a SSPR
@@ -32,26 +32,26 @@ Ez a cikk azt ismerteti, hogyan használható a többtényezős hitelesítés eg
 Ha egyéni Multi-Factor Authentication szolgáltatói API-t kíván használni a felhasználói felülettel, a következőkre lesz szüksége:
 
 - Telefonszám az összes jelölt felhasználó esetén
-- 4\.5.202.0-gyorsjavítás vagy újabb – a bejelentések [előzményeinek](reference/version-history.md) megtekintése
+- 4.5.202.0-gyorsjavítás vagy újabb – a bejelentések [előzményeinek](reference/version-history.md) megtekintése
 - SSPR vagy PAM-hoz konfigurált webkiszolgáló-szolgáltatás
 
 ## <a name="approach-using-custom-multi-factor-authentication-code"></a>Megközelítés egyéni multi-Factor Authentication-kód használatával
 
-### <a name="step-1-ensure-mim-service-is-at-version-452020-or-later"></a>1\. lépés: Győződjön meg arról, hogy a 4.5.202.0 vagy újabb verzióban van
+### <a name="step-1-ensure-mim-service-is-at-version-452020-or-later"></a>1. lépés: Győződjön meg arról, hogy a 4.5.202.0 vagy újabb verzióban van
 
 Töltse le és telepítse a [4.5.202.0](https://www.microsoft.com/download/details.aspx?id=57278) vagy újabb verziót.
 
-### <a name="step-2-create-a-dll-which-implements-the-iphoneserviceprovider-interface"></a>2\. lépés: hozzon létre egy DLL-t, amely megvalósítja a IPhoneServiceProvider felületet
+### <a name="step-2-create-a-dll-which-implements-the-iphoneserviceprovider-interface"></a>2. lépés: hozzon létre egy DLL-t, amely megvalósítja a IPhoneServiceProvider felületet
 
 A DLL-nek tartalmaznia kell egy osztályt, amely három módszert valósít meg:
 
-- `InitiateCall`: a rendszerkiszolgáló szolgáltatás ezt a metódust fogja meghívni. A szolgáltatás paraméterként továbbítja a telefonszámot és a kérelem AZONOSÍTÓját.  A metódusnak `Pending`, `Success` vagy `Failed``PhoneCallStatus` értéket kell visszaadnia.
-- `GetCallStatus`: Ha `initiateCall` visszaadott egy korábbi hívást `Pending`, a rendszerkiszolgálói szolgáltatás ezt a metódust fogja meghívni. Ez a metódus `Pending`, `Success` vagy `Failed``PhoneCallStatus` értékét is visszaadja.
-- `GetFailureMessage`: Ha `InitiateCall` vagy `GetCallStatus` előző meghívása `Failed`, a rendszerkiszolgálói szolgáltatás ezt a metódust fogja meghívni. Ez a metódus egy diagnosztikai üzenetet ad vissza.
+- `InitiateCall`: A rendszerkiszolgálói szolgáltatás ezt a metódust fogja meghívni. A szolgáltatás paraméterként továbbítja a telefonszámot és a kérelem AZONOSÍTÓját.  A metódusnak a `PhoneCallStatus` `Success` vagy `Failed`a értékét `Pending`kell visszaadnia.
+- `GetCallStatus`: Ha egy korábbi `initiateCall` visszahívást `Pending`ad vissza, a rendszer meghívja ezt a metódust. Ez a metódus a `PhoneCallStatus` `Success` vagy `Failed`a `Pending`értékét is megadja.
+- `GetFailureMessage`: Ha az előző hívás vagy `InitiateCall` `GetCallStatus` a visszaadott `Failed`érték, a rendszer meghívja ezt a metódust. Ez a metódus egy diagnosztikai üzenetet ad vissza.
 
-Ezeknek a módszereknek a megvalósításának a szál biztonságosnek kell lennie, továbbá a `GetCallStatus` és `GetFailureMessage` megvalósításának nem feltételezhető, hogy ugyanazt a szálat fogja meghívni, mint a `InitiateCall`korábbi hívása.
+Ezeknek a módszereknek a megvalósításának a szál biztonságosnek kell lennie, továbbá a `GetCallStatus` és `GetFailureMessage` a megvalósításának nem szabad azt feltételezni, hogy ugyanazt a szálat fogja meghívni `InitiateCall`, mint a korábbi hívása.
 
-Tárolja a DLL-t a `C:\Program Files\Microsoft Forefront Identity Manager\2010\Service\` könyvtárban.
+Tárolja a DLL-fájlt `C:\Program Files\Microsoft Forefront Identity Manager\2010\Service\` a könyvtárban.
 
 A Visual Studio 2010-es vagy újabb verziójával összeállítható mintakód.
 
@@ -135,9 +135,9 @@ namespace CustomPhoneGate
     }
 }
 ```
-### <a name="step-3-backup-the-mfasettingsxml-located-in-the-cprogram-filesmicrosoft-forefront-identity-manager2010service"></a>3\. lépés: a "C:\Program Files\Microsoft Forefront Identity Manager\2010\service mappában" mappában található MfaSettings. xml fájl biztonsági mentése
+### <a name="step-3-backup-the-mfasettingsxml-located-in-the-cprogram-filesmicrosoft-forefront-identity-manager2010service"></a>3. lépés: a "C:\Program Files\Microsoft Forefront Identity Manager\2010\service mappában" mappában található MfaSettings. xml fájl biztonsági mentése
 
-### <a name="step-4-edit-the-mfasettingsxml-file"></a>4\. lépés: a MfaSettings. xml fájl szerkesztése
+### <a name="step-4-edit-the-mfasettingsxml-file"></a>4. lépés: a MfaSettings. xml fájl szerkesztése
 
 Frissítse vagy törölje a következő sorokat:
 
@@ -146,7 +146,7 @@ Frissítse vagy törölje a következő sorokat:
 - Frissítse vagy adja hozzá a következő sorokat a MfaSettings. xml fájlhoz az egyéni telefonos szolgáltatóval <br>
 `<CustomPhoneProvider>C:\Program Files\Microsoft Forefront Identity Manager\2010\Service\CustomPhoneGate.dll</CustomPhoneProvider>`
 
-### <a name="step-5-restart-mim-service"></a>5\. lépés: a rendszerindítási szolgáltatás újraindítása
+### <a name="step-5-restart-mim-service"></a>5. lépés: a rendszerindítási szolgáltatás újraindítása
 
 A szolgáltatás újraindítása után a SSPR és/vagy a PAM használatával érvényesítheti az egyéni identitás-szolgáltató funkcióit.
 
@@ -154,8 +154,8 @@ A szolgáltatás újraindítása után a SSPR és/vagy a PAM használatával ér
 > Ha vissza szeretné állítani a beállítást, cserélje le a MfaSettings. xml fájlt a biztonságimásolat-fájlra a 3. lépésben
 
 
-## <a name="next-steps"></a>További lépések
+## <a name="next-steps"></a>Következő lépések
 
-- [Első lépések az Azure Multi-Factor Authentication-kiszolgáló](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfaserver-deploy)
+- [Azure Multi-Factor Authentication-kiszolgáló – első lépések](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfaserver-deploy)
 - [Mi az Azure Multi-Factor Authentication](https://docs.microsoft.com/azure/multi-factor-authentication/multi-factor-authentication)
 - [A rendszerfrissítési csomag verziószáma](./reference/version-history.md)

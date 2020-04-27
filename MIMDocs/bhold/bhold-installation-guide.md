@@ -10,10 +10,10 @@ ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: ''
 ms.openlocfilehash: fb3cf6e5b00c1bd0c01d86aff474dc2ff28c2815
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79042253"
 ---
 # <a name="microsoft-bhold-suite-sp1-60-installation-guide"></a>Microsoft BHOLD Suite SP1 (6,0) – telepítési útmutató
@@ -93,13 +93,13 @@ Az SQL Server ajánlott eljárásaival kapcsolatos további információkért l�
 ### <a name="trusted-certificates-list-update"></a>Megbízható tanúsítványok listájának frissítése
 
 A Windows konfigurálható úgy, hogy a szolgáltatás elindítása előtt érvényesítse a tanúsítványláncot. Ilyen rendszerek esetén a szolgáltatás nem indítható el, ha a szolgáltatás végrehajtható kódját olyan tanúsítvánnyal írták alá, amely nem szerepel a kiszolgáló megbízható tanúsítványok listájában (TCL). A Microsoft BHOLD Suite SP1 szoftver kódja a Microsoft Root Certificate Authority 2010 tanúsítvánnyal rendelkező kód-aláíró tanúsítványlánc használatával van aláírva.
-A Windows konfigurálható úgy, hogy a Microsoft legfelső szintű tanúsítványait internetes kapcsolaton keresztül kérje le. A leválasztott rendszereken azonban a Windows Server csak azokat a tanúsítványokat tartalmazza, amelyek a rendszerindító programban voltak elérhetők a Windows megjelenése előtt. A Windows Server 2010 előtti kiadásaiban ezek a tanúsítványok nem tartalmazzák a BHOLD Suite SP1-kód aláírási láncának ellenőrzéséhez szükséges főtanúsítványt. Ha egy vagy több Microsoft BHOLD Suite SP1-modult szeretne telepíteni egy olyan rendszeren, amely nem rendelkezik naprakész TCL, le kell töltenie és telepítenie kell a legfelső szintű frissítési csomagot, vagy az Csoportházirend használatával telepítenie kell a legfelső szintű frissítési csomagot a BHOLD Suite SP1 telepítése előtt. modul. További információ: a [Windows Root Certificate program tagjai](https://support.microsoft.com/kb/931125).
+A Windows konfigurálható úgy, hogy a Microsoft legfelső szintű tanúsítványait internetes kapcsolaton keresztül kérje le. A leválasztott rendszereken azonban a Windows Server csak azokat a tanúsítványokat tartalmazza, amelyek a rendszerindító programban voltak elérhetők a Windows megjelenése előtt. A Windows Server 2010 előtti kiadásaiban ezek a tanúsítványok nem tartalmazzák a BHOLD Suite SP1-kód aláírási láncának ellenőrzéséhez szükséges főtanúsítványt. Ha egy vagy több Microsoft BHOLD Suite SP1-modult szeretne telepíteni egy olyan rendszeren, amely nem rendelkezik naprakész TCL, le kell töltenie és telepítenie kell a legfelső szintű frissítési csomagot, vagy az Csoportházirend használatával telepítenie kell a legfelső szintű frissítési csomagot, mielőtt telepítené a BHOLD Suite SP1-modult. További információ: a [Windows Root Certificate program tagjai](https://support.microsoft.com/kb/931125).
 
 ### <a name="installing-bhold-suite-sp1-on-windows-server-20122016-required-step"></a>A BHOLD Suite SP1 telepítése a Windows Server 2012/2016 szükséges lépésével 
 
 ![IIS telepítése BHOLD](media/bhold-installation-guide/iis-install-bhold.png)
 
-Ha a BHOLD Suite SP1 szervizcsomagot a Windows Server 2012-es vagy 2016-es verziójára telepíti, a BHOLD-weblapok addig nem lesznek elérhetők, amíg nem módosítja a applicationHost. config fájlt ```C:\Windows\System32\inetsrv\config```. A ```<globalModules>``` szakaszban adja hozzá a ```preCondition="bitness64```t a ```<add name="SPNativeRequestModule"``` megkezdő bejegyzéshez, hogy az a következőképpen legyen beolvasva:
+Ha a BHOLD Suite SP1 szervizcsomagot a Windows Server 2012-es vagy 2016-es ```C:\Windows\System32\inetsrv\config```verziójára telepíti, a BHOLD-weblapok addig nem lesznek elérhetők, amíg nem módosítja a applicationHost. config fájlt. A ```<globalModules>``` (z) szakaszban ```preCondition="bitness64``` adja hozzá a szöveget a ```<add name="SPNativeRequestModule"``` következő megkezdéséhez:
 
 ```<add name="SPNativeRequestModule" image="C:\Program Files\Common Files\Microsoft Shared\Web Server Extensions\15\isapi\spnativerequestmodule.dll" preCondition="bitness64"/>```
 

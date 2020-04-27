@@ -12,17 +12,17 @@ ms.assetid: 7b689eff-3a10-4f51-97b2-cb1b4827b63c
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: e88407ceb1c7ac99f1746f453b7e4a7a5d296e5a
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79043630"
 ---
-# <a name="step-6--transition-a-group-to-privileged-access-management"></a>6\. lépés – Csoport áthelyezése a Privileged Access Management szolgáltatásba
+# <a name="step-6--transition-a-group-to-privileged-access-management"></a>6. lépés – Csoport áthelyezése a Privileged Access Management szolgáltatásba
 
 > [!div class="step-by-step"]
-> [« 5. lépés ](step-5-establish-trust-between-priv-corp-forests.md)
-> [7. lépés »](step-7-elevate-user-access.md)
+> [«5 ](step-5-establish-trust-between-priv-corp-forests.md) 
+> . lépés [7. lépés»](step-7-elevate-user-access.md)
 
 A rendszerjogosultságú fiókok a PRIV erdőben PowerShell-parancsmagokkal hozhatók létre. Ezek a parancsmagok a következő feladatokat végzik el:
 
@@ -84,5 +84,5 @@ A parancsmagokat minden csoportban, illetve a csoport minden tagjánál egyszer 
 Ha azt szeretné bemutatni, hogy az erdők közötti hozzáférési jogok vannak érvényben a felhasználók rendszergazdai fiókjai esetében, folytassa a következő lépéssel.
 
 > [!div class="step-by-step"]
-> [« 5. lépés ](step-5-establish-trust-between-priv-corp-forests.md)
-> [7. lépés »](step-7-elevate-user-access.md)
+> [«5 ](step-5-establish-trust-between-priv-corp-forests.md) 
+> . lépés [7. lépés»](step-7-elevate-user-access.md)

@@ -10,10 +10,10 @@ ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: ''
 ms.openlocfilehash: 3005e06606ec4b3b6854003213c712770376b35d
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79042202"
 ---
 # <a name="bhold-fimmim-integration-installation"></a>BHOLD FIM/a webalkalmazás-integráció telepítése
@@ -46,8 +46,8 @@ Emellett elő kell készítenie azokat az információkat, amelyeket a BHOLD FIM
 | **Elem**                            | **Leírás**                                                                                                                                                                                                               | **Érték**                                                                                                                                                                                                                                                                                                            |
 |-------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Biztonsági szolgáltató használata a tartományban** | Ha be van jelölve, akkor a Active Directory tartományi szolgáltatások biztonság szabályozza a BHOLD mag elérését.                                                                                                                    | Jelölje be a jelölőnégyzetet. **Fontos:** Ha ez a jelölőnégyzet nincs bejelölve, a telepítés sikertelen lesz.                                                                                                                                                                                                                   |
-| **Tartomány**                          | A BHOLD Core telepítésekor létrehozott **szolgáltatásfiókot** tartalmazó tartományt adja meg. További információ: [BHOLD Core telepítés](https://technet.microsoft.com/library/jj134095(v=ws.10).aspx). | A tartomány nevét a varázsló automatikusan megadja. A név csak akkor módosítható, ha helytelen. **Fontos:** A tartománynevet a NetBIOS (rövid) név használatával adja meg, ne a teljes tartománynevet (FQDN). Ha például a tartomány teljes tartományneve fabrikam.com, adja meg a tartománynevet FABRIKAM néven. |
-| **Felhasználónév**                        | Megadja a BHOLD Core szolgáltatás felhasználói fiókjának bejelentkezési nevét.                                                                                                                                                              | Írja be a felhasználói fiók nevét:                                                                                                                                                                                                                                                                                    |
+| **Tartományi**                          | A BHOLD Core telepítésekor létrehozott **szolgáltatásfiókot** tartalmazó tartományt adja meg. További információ: [BHOLD Core telepítés](https://technet.microsoft.com/library/jj134095(v=ws.10).aspx). | A tartomány nevét a varázsló automatikusan megadja. A név csak akkor módosítható, ha helytelen. **Fontos:** A tartománynevet a NetBIOS (rövid) név használatával adja meg, ne a teljes tartománynevet (FQDN). Ha például a tartomány teljes tartományneve fabrikam.com, adja meg a tartománynevet FABRIKAM néven. |
+| **Username**                        | Megadja a BHOLD Core szolgáltatás felhasználói fiókjának bejelentkezési nevét.                                                                                                                                                              | Írja be a felhasználói fiók nevét:                                                                                                                                                                                                                                                                                    |
 | **Jelszó**                        | Megadja a szolgáltatás felhasználói fiókjának jelszavát.                                                                                                                                                                           | Írja be a jelszót itt: **Fontos:** ügyeljen arra, hogy a jelszót rejtett, biztonságos helyen tárolja.                                                                                                                                                                                                                  |
 
 ### <a name="fim-service-settings"></a>FIM szolgáltatás beállításai
@@ -63,7 +63,7 @@ Emellett elő kell készítenie azokat az információkat, amelyeket a BHOLD FIM
 
 | **Elem**               | **Leírás**                                                                                                                                                                                                                                                                                                                                                                               | **Érték**                                                                                           |
 |------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
-| **Tartomány**             | Megadja a **felhasználó**által megadott fiók tartományának nevét. A tartományt a NetBIOS (rövid) formátumban kell megadni.                                                                                                                                                                                                                                                                   | Itt írhatja a felhasználói fiók tartománynevét?                                                            |
+| **Tartományi**             | Megadja a **felhasználó**által megadott fiók tartományának nevét. A tartományt a NetBIOS (rövid) formátumban kell megadni.                                                                                                                                                                                                                                                                   | Itt írhatja a felhasználói fiók tartománynevét?                                                            |
 | **Felhasználó**               | Meghatározza **egy BHOLD-felhasználó** fiókjának bejelentkezési nevét, amely az összes felhasználó és szerepkör felettese, és jogosult a felhasználói szerepkörök összekapcsolására és leválasztására. A Microsoft nyomatékosan javasolja, hogy ne használja a root felhasználóhoz társított fiókot a BHOLD Core-ban (alapértelmezés szerint az BHOLD Core telepítéséhez használt fiók). Ez a fiók lehet ugyanaz a fiók, amelyet a FIM-hez való kapcsolódáshoz használ. | Írja be a felhasználói fiók nevét:                                                                   |
 | **Jelszó**           | Megadja a **felhasználó**által megadott felhasználói fiók jelszavát.                                                                                                                                                                                                                                                                                                                             | Írja be a jelszót itt: **Fontos:** ügyeljen arra, hogy a jelszót rejtett, biztonságos helyen tárolja. |
 | **IP-cím/számítógép címe** | Megadja az BHOLD Core webhely kiszolgálójának IP-címét. A kiszolgáló nevét ne használja.                                                                                                                                                                                                                                                                                                        | Írja be az IP-címet itt:                                                                          |
@@ -73,9 +73,9 @@ Emellett elő kell készítenie azokat az információkat, amelyeket a BHOLD FIM
 
 A BHOLD FIM integrációs moduljának telepítéséhez jelentkezzen be a Tartománygazdák csoport tagjaként, töltse le a következő fájlt, és futtassa rendszergazdaként azon a kiszolgálón, amelyre telepíteni kívánja a BHOLD FIM integrációs modulját:
 
-- A BholdFIMIntegration<em>\<verziója\></em>\_Release. msi
+- BholdFIMIntegration<em>\<verzió\></em>\_. msi
 
-Cserélje le *\<version\>* a TELEPÍTENDŐ BHOLD FIM integrációs kiadás verziószámára.
+Cserélje * \<le\> a verziót* a telepítendő BHOLD FIM integrációs kiadás verziószámára.
 
 A programfájl rendszergazdaként való futtatásához kattintson a jobb gombbal a fájlra, majd kattintson a **Futtatás rendszergazdaként**parancsra.
 
@@ -95,7 +95,7 @@ Ahhoz, hogy megfelelően működjön, a BHOLD FIM-integráció megköveteli, hog
 
 2.  Kattintson a **Start**gombra, majd az **internetes Exporer**elemre.
 
-3.  A címsorba írja be <https://localhost>, ha a SharePoint az SSL-biztonság használatára van konfigurálva, máskülönben írja be a <http://localhost>.
+3.  A címsorba írja be <https://localhost> , hogy a SharePoint az SSL-biztonság használatára van-e <http://localhost>konfigurálva, máskülönben írja be a következőt:.
 
 4.  A **csapat helye** lap bal oldalán kattintson a **személyek és csoportok**elemre.
 
@@ -117,25 +117,25 @@ A következő táblázat a szerkeszteni kívánt karakterláncok fájljait és e
 
 | **Fájl**                  | **Eredeti sztring**                                                                                                                   | **Módosított karakterlánc**                                                                                                                                |
 |---------------------------|---------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
-| Analitika. aspx            |   http://< BHOLD_Server >/bhold/Analytics/index_fim. html | https://< BHOLD_Server_FQDN >/bhold/Analytics/index_fim. html       |
-| AttestationCampaigns. aspx |    http://< BHOLD_Server >/bhold/Attestation/Campaigns.aspx? hideMenu = 1 | https://< BHOLD_Server_FQDN >/bhold/Attestation/Campaigns.aspx? hideMenu = 1 | 
-| AttestationMain. aspx      |  http://< BHOLD_Server >/bhold/Attestation/Dashboard.aspx? hideMenu = 1        | https://< BHOLD_Server_FQDN >/bhold/Attestation/Dashboard.aspx? hideMenu = 1 |
-| Jelentéskészítés. aspx            | http://< BHOLD_Server >/bhold/Reporting/index_fim. html |  https://< BHOLD_Server_FQDN >/bhold/Reporting/index_fim. html |
-| Selfservice. aspx          | RoleExchangePoint = http://\<*FIM_Server*\>: \<*FIM_Port*\>/BHOLD/RoleExchangePoint/BHOLDRoleExchangePoint. SVC, TransportMode = Transport | RoleExchangePoint = https://\<*FIM_Server_FQDN*\>: \<*FIM_SSL_Port\>* \>/BHOLD/RoleExchangePoint/BHOLDRoleExchangePoint. SVC, TransportMode = Transport |
+| Analitika. aspx            |   http://<BHOLD_Server>/bhold/Analytics/index_fim.html | https://<BHOLD_Server_FQDN>/bhold/Analytics/index_fim.html       |
+| AttestationCampaigns. aspx |    http://<BHOLD_Server>/bhold/Attestation/Campaigns.aspx? hideMenu = 1 | https://<BHOLD_Server_FQDN>/bhold/Attestation/Campaigns.aspx? hideMenu = 1 | 
+| AttestationMain. aspx      |  http://<BHOLD_Server>/bhold/Attestation/Dashboard.aspx? hideMenu = 1        | https://<BHOLD_Server_FQDN>/bhold/Attestation/Dashboard.aspx? hideMenu = 1 |
+| Jelentéskészítés. aspx            | http://<BHOLD_Server>/bhold/Reporting/index_fim.html |  https://<BHOLD_Server_FQDN>/bhold/Reporting/index_fim.html |
+| Selfservice. aspx          | RoleExchangePoint = http://\<*FIM_Server*\>: \< *FIM_Port*\>/BHOLD/RoleExchangePoint/BHOLDRoleExchangePoint. SVC, TransportMode = Transport | RoleExchangePoint = https://\<*FIM_Server_FQDN*\>: \< *FIM_SSL_Port\>*\>/BHOLD/RoleExchangePoint/BHOLDRoleExchangePoint. SVC, TransportMode = Transport |
 
-Ahol:
+Az elemek magyarázata:
 
--   *\<BHOLD_Server\>* a fájl eredeti verziójában található BHOLD-kiszolgáló nevét adja meg.
+-   BHOLD_Server a fájl eredeti verziójában található BHOLD-kiszolgáló nevét adja meg. * \<\> *
 
--   *\<MIM_Server\>* a fájl eredeti verziójában található FIM-kiszolgáló nevét adja meg.
+-   MIM_Server a fájl eredeti verziójában található FIM-kiszolgáló nevét adja meg * \<\> *
 
--   *\<BHOLD_Server_FQDN\>* megadja a BHOLD-kiszolgáló teljes tartománynevét (FQDN).
+-   BHOLD_Server_FQDN megadja a BHOLD-kiszolgáló teljes tartománynevét (FQDN). * \<\> *
 
--   *\<MIM_Port\>* a fájl eredeti verziójában található FIM-kiszolgáló portszámát adja meg.
+-   MIM_Port a fájl eredeti verziójában található FIM-kiszolgáló portszámát adja meg. * \<\> *
 
--   *\<MIM_Server_FQDN\>* a FIM-kiszolgáló teljes tartománynevét adja meg.
+-   MIM_Server_FQDN a FIM-kiszolgáló teljes tartománynevét adja meg. * \<\> *
 
--   *\<MIM_SSL_Port\>* egy másik portot ad meg, amely SSL-lel használható a FIM-kiszolgálón
+-   MIM_SSL_Port egy másik portot ad meg a FIM-kiszolgálón található SSL használatával * \<\> *
 
 ### <a name="enable-approval-workflows-in-bhold-core"></a>Jóváhagyási munkafolyamatok engedélyezése a BHOLD Core-ban
 
@@ -157,7 +157,7 @@ Ha az önkiszolgáló szerepkör-kérelemhez tartozó jóváhagyót nem az egyik
 
 2.  Kattintson a **Start**gombra, majd az **Internet Explorer**elemre.
 
-3.  Az Internet Explorer címsorában írja be a <http://localhost:5151/bhold/core>értéket, majd nyomja le az ENTER billentyűt.
+3.  Az Internet Explorer címsorában írja be a <http://localhost:5151/bhold/core>következőt:, majd nyomja le az ENTER billentyűt.
 
 4.  Az BHOLD alapoldalán, a **def attribútum**alatt kattintson az **attribútumok típusai**elemre.
 
@@ -189,7 +189,7 @@ Ha az önkiszolgáló szerepkör-kérelemhez tartozó jóváhagyót nem az egyik
 
 18. A **szervezeti egység/gyökér** lapon kattintson a **módosítás**lehetőségre.
 
-19. A **szervezeti egység attribútumainak/gyökerének módosítása** lapon a **jóváhagyó**mezőben adja meg a szerepkör-hozzárendelési kérelmeket jóváhagyó felhasználó tartományát és felhasználónevét *\<tartomány\>* \\ *\<felhasználói\>* , ahol *\<tartomány\>* a NetBIOS (rövid) tartománynév, és *\<felhasználói\>* a felhasználó bejelentkezési neve.
+19. A **szervezeti egység attribútumainak/gyökerének módosítása** lapon a **jóváhagyó**mezőben adja meg annak a felhasználónak a tartományát és felhasználónevét, aki a szerepkör-hozzárendelési kéréseket jóvá fogja hagyni a * \<tartományi\>*\\*\<felhasználó\>* formátumban, ahol * \<a\> tartomány* a NetBIOS (rövid) tartománynév, a * \<felhasználó\> * pedig a felhasználó bejelentkezési neve.
 20. Kattintson az **OK** gombra.
 
 > [!IMPORTANT]
@@ -199,15 +199,15 @@ A szervezeti egységekhez tartozó jóváhagyó megadása helyett megadhat egy j
 
 A jobb munkafolyamatok biztonságának biztosítása érdekében a jóváhagyók mellett további jóváhagyási módokat és felhasználókat kell kijelölnie a következő attribútumok létrehozásával és feltöltésével a OrgUnits és a szerepkörökhöz:
 
-- mozgólépcső<em>\<n\></em>
+- n mozgólépcső<em>\<\></em>
 
-- tulajdonos<em>\<n\></em>
+- <em>\<n tulajdonos\></em>
 
-- securityOfficer<em>\<n\></em>
+- <em>\<n securityOfficer\></em>
 
 - értesítés<em>\<n\></em>
 
-ahol a *\<n\>* egy opcionális numerikus utótagot jelöl, amely több azonos típusú attribútumot biztosít.
+ahol * \<n\> * egy opcionális numerikus utótagot jelöl, amely több azonos típusú attribútumot biztosít.
 
 ### <a name="verify-approval-workflows-configured-in-the-fim-service"></a>A FIM szolgáltatásban konfigurált jóváhagyási munkafolyamatok ellenőrzése
 

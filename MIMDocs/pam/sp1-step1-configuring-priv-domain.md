@@ -1,5 +1,5 @@
 ---
-title: '1\. lépés: A PRIV-tartomány konfigurálása'
+title: '1. lépés: A PRIV-tartomány konfigurálása'
 description: A CORP-tartomány előkészítése a Privileged Identity Manager által szkriptek útján kezelt meglévő vagy új identitásokkal
 keywords: ''
 author: billmath
@@ -12,16 +12,16 @@ ms.assetid: 4b524ae7-6610-40a0-8127-de5a08988a8a
 ms.reviewer: ''
 ms.suite: ems
 ms.openlocfilehash: 4e24ac1b3f3f3d46aa5f67175dc4c4b8778bdb21
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79043851"
 ---
-# <a name="step-1-configuring-the-priv-domain"></a>1\. lépés: A PRIV-tartomány konfigurálása
+# <a name="step-1-configuring-the-priv-domain"></a>1. lépés: A PRIV-tartomány konfigurálása
 
 > [!div class="step-by-step"]
-> [2. lépés »](sp1-step2-configuring-corp-domain.md)
+> [2. lépés»](sp1-step2-configuring-corp-domain.md)
 
 1. Bejelentkezés a PRIVDC tartományvezérlőre rendszergazdaként
    * Amennyiben ez egy csak PRIV környezet, a CORPDC tartományvezérlőre kell bejelentkeznie
@@ -42,4 +42,4 @@ Másolja az $env:SYSTEMDRIVE\PAM helyen létrehozott SIDs.txt fájlt az ugyanily
 A szkript a futását befejezően arra kéri, hogy a módosítások hatályba léptetéséhez indítsa újra a gépet.
 
 > [!div class="step-by-step"]
-> [2. lépés »](sp1-step2-configuring-corp-domain.md)
+> [2. lépés»](sp1-step2-configuring-corp-domain.md)

@@ -10,10 +10,10 @@ ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: 94a74f1c-2192-4748-9a25-62a526295338
 ms.openlocfilehash: 1dd87db01a5c1100c8206d82bedf96a8a5e702ad
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79044310"
 ---
 # <a name="use-azure-multi-factor-authentication-server-to-activate-pam-or-sspr"></a>Az Azure Multi-Factor Authentication-kiszolgáló használata a PAM vagy a SSPR aktiválásához
@@ -39,41 +39,41 @@ Az Azure Multi-Factor Authentication-kiszolgáló a (z)-vel való használatáho
 > [!NOTE] 
 > A konfigurációban telepítenie kell egy érvényes SSL-tanúsítványt az SDK-hoz. 
 
-### <a name="step-1-download-azure-multi-factor-authentication-server-from-the-azure-portal"></a>1\. lépés: az Azure Multi-Factor Authentication-kiszolgáló letöltése az Azure Portalról 
+### <a name="step-1-download-azure-multi-factor-authentication-server-from-the-azure-portal"></a>1. lépés: az Azure Multi-Factor Authentication-kiszolgáló letöltése az Azure Portalról 
 Jelentkezzen be a [Azure Portalba](https://portal.azure.com/) , és töltse le az Azure MFA-kiszolgálót.
-![Working-with-mfaserver-for-mim_downloadmfa](media/working-with-mfaserver-for-mim/working-with-mfaserver-for-mim_downloadmfa.PNG)
+![mfaserver-mim_downloadmfa használata](media/working-with-mfaserver-for-mim/working-with-mfaserver-for-mim_downloadmfa.PNG)
 
-### <a name="step-2-generate-activation-credentials"></a>2\. lépés: aktiválási hitelesítő adatok előállítása
+### <a name="step-2-generate-activation-credentials"></a>2. lépés: aktiválási hitelesítő adatok előállítása
 Használja az **aktiválási hitelesítő adatok létrehozása a használati** hivatkozás létrehozásához az aktiválási hitelesítő adatok létrehozásához. Miután létrehozott egy mentést a későbbi használatra.
 
-### <a name="step-3-install-the-azure-multi-factor-authentication-server"></a>3\. lépés: az Azure Multi-Factor Authentication-kiszolgáló telepítése
+### <a name="step-3-install-the-azure-multi-factor-authentication-server"></a>3. lépés: az Azure Multi-Factor Authentication-kiszolgáló telepítése
 Miután letöltötte a kiszolgálót, [telepítse](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfaserver-deploy#install-and-configure-the-mfa-server) azt.  Az aktiválási hitelesítő adatokra lesz szükség. 
 
-### <a name="step-4-create-your-iis-web-application-that-will-host-the-sdk"></a>4\. lépés: az SDK-t futtató IIS-Webalkalmazás létrehozása
-1. Nyissa meg az IIS-kezelőt ![Working with-mfaserver-for-mim_iis. PNG-](media/working-with-mfaserver-for-mim/working-with-mfaserver-for-mim_iis.PNG)
-2.  Hozzon létre új "MFASDK" nevű webhelyet, csatolja hozzá egy üres könyvtárhoz ![Working-on-mfaserver-for-mim_sdkweb. PNG-](media/working-with-mfaserver-for-mim/working-with-mfaserver-for-mim_sdkweb.PNG)
-3. Nyissa meg Multi-Factor Authentication-konzolt, és kattintson a Web Service SDK ![Working-with-mfaserver-for-mim_sdkinstall elemre. PNG-](media/working-with-mfaserver-for-mim/working-with-mfaserver-for-mim_sdkinstall.PNG)
+### <a name="step-4-create-your-iis-web-application-that-will-host-the-sdk"></a>4. lépés: az SDK-t futtató IIS-Webalkalmazás létrehozása
+1. Nyissa meg ![az IIS-kezelőt a-mfaserver-for-mim_iis. PNG](media/working-with-mfaserver-for-mim/working-with-mfaserver-for-mim_iis.PNG)
+2.  Hozzon létre egy "MFASDK" nevű új webhelyet, csatolja egy üres ![könyvtárhoz, amely a-mfaserver-for-mim_sdkweb használatával működik. PNG](media/working-with-mfaserver-for-mim/working-with-mfaserver-for-mim_sdkweb.PNG)
+3. Nyissa meg Multi-Factor Authentication konzolt, és kattintson a ![Web Service SDK Working-with-mfaserver-for-mim_sdkinstall lehetőségre. PNG](media/working-with-mfaserver-for-mim/working-with-mfaserver-for-mim_sdkinstall.PNG)
 4. Ha a varázslók a konfiguráción keresztül kattintanak, válassza a "MFASDK" és az App Pool elemet.
 
 > [!NOTE] 
-> A varázslónak létre kell hoznia egy felügyeleti csoportot. További információt az Azure > > MFA Azure Multi-Factor Authentication-kiszolgáló dokumentációjában talál.
+> A varázslónak létre kell hoznia egy felügyeleti csoportot. További információ az Azure > > MFA Azure Multi-Factor Authentication-kiszolgáló dokumentációjában található.
 
-5. Ezután importálnia kell a Multi-Factor Authentication-konzolon a "felhasználók" lehetőséget. Kattintson az "Importálás Active Directoryból" b elemre. Navigáljon a szolgáltatásfiók "contoso\mimservice" c néven. Kattintson az "Importálás" és a "Bezárás" ![a Work-with-mfaserver-for-mim_importmimserviceaccount lehetőségre. PNG-](media/working-with-mfaserver-for-mim/working-with-mfaserver-for-mim_importmimserviceaccount.PNG) 
-6. Szerkessze a Multi-Factor Authentication Console ![Working-with-mfaserver-for-mim_enableserviceaccount használatával történő engedélyezéshez szükséges rendszerfiók-szolgáltatásfiókot. PNG-](media/working-with-mfaserver-for-mim/working-with-mfaserver-for-mim_enableserviceaccount.PNG)
-7. Frissítse az IIS-hitelesítést a "MFASDK" webhelyről. Először le fogjuk tiltani a "Névtelen hitelesítés", majd a Windows-hitelesítés engedélyezése "![Working with-mfaserver-for-mim_iisconfig. PNG-](media/working-with-mfaserver-for-mim/working-with-mfaserver-for-mim_iisconfig.PNG)
-8. Utolsó lépés: adja hozzá a (z) "PhoneFactor admins ![" nevű "mfaserver-for-mim_addservicetomfaadmin" nevű felhasználói fiókot a rendszerhez. PNG-](media/working-with-mfaserver-for-mim/working-with-mfaserver-for-mim_addservicetomfaadmin.PNG)
+5. Ezután importálnia kell a Multi-Factor Authentication-konzolon a "felhasználók" lehetőséget. Kattintson az "Importálás Active Directoryból" b elemre. Navigáljon a szolgáltatásfiók "contoso\mimservice" c néven. Kattintson az "Importálás" és a " ![Bezárás" Work-with-mfaserver-for-mim_importmimserviceaccount lehetőségre. PNG](media/working-with-mfaserver-for-mim/working-with-mfaserver-for-mim_importmimserviceaccount.PNG) 
+6. Szerkessze az Multi-Factor Authentication-konzolon ![a-mfaserver-for-mim_enableserviceaccount használatával történő engedélyezéshez szükséges a rendszerfiók-szolgáltatásfiókot. PNG](media/working-with-mfaserver-for-mim/working-with-mfaserver-for-mim_enableserviceaccount.PNG)
+7. Frissítse az IIS-hitelesítést a "MFASDK" webhelyről. Először le fogjuk tiltani a "Névtelen hitelesítés" beállítást, majd engedélyezzük a Windows-hitelesítés használatát " ![Working with-mfaserver-for-mim_iisconfig. PNG](media/working-with-mfaserver-for-mim/working-with-mfaserver-for-mim_iisconfig.PNG)
+8. Utolsó lépés: adja hozzá a "PhoneFactor admins" ![Working with-mfaserver-for-mim_addservicetomfaadmin. PNG](media/working-with-mfaserver-for-mim/working-with-mfaserver-for-mim_addservicetomfaadmin.PNG)
 
 ## <a name="configuring-the-mim-service-for-azure-multi-factor-authentication-server"></a>A fakiszolgálói szolgáltatás konfigurálása az Azure Multi-Factor Authentication-kiszolgáló 
 
-### <a name="step-1-patch-server-to-452020"></a>1\. lépés: a 4.5.202.0-kiszolgáló javítása
+### <a name="step-1-patch-server-to-452020"></a>1. lépés: a 4.5.202.0-kiszolgáló javítása
  
-### <a name="step-2-backup-and-open-the-mfasettingsxml-located-in-the-cprogram-filesmicrosoft-forefront-identity-manager2010service"></a>2\. lépés: a "C:\Program Files\Microsoft Forefront Identity Manager\2010\service mappában" mappában található MfaSettings. xml fájl biztonsági mentése és megnyitása
+### <a name="step-2-backup-and-open-the-mfasettingsxml-located-in-the-cprogram-filesmicrosoft-forefront-identity-manager2010service"></a>2. lépés: a "C:\Program Files\Microsoft Forefront Identity Manager\2010\service mappában" mappában található MfaSettings. xml fájl biztonsági mentése és megnyitása
 
-### <a name="step-3-update-the-following-lines"></a>3\. lépés: a következő sorok frissítése
+### <a name="step-3-update-the-following-lines"></a>3. lépés: a következő sorok frissítése
 1. A következő konfigurációs bejegyzések sorainak eltávolítása/törlése <br>
-< LICENSE_KEY > </LICENSE_KEY ><br>
-< GROUP_KEY > </GROUP_KEY ><br>
-< CERT_PASSWORD > </CERT_PASSWORD ><br>
+<LICENSE_KEY></LICENSE_KEY><br>
+<GROUP_KEY></GROUP_KEY><br>
+<CERT_PASSWORD></CERT_PASSWORD><br>
 <CertFilePath></CertFilePath><br>
 
 2. Frissítse vagy adja hozzá a következő sorokat a MfaSettings. xml fájlhoz. <br>
@@ -87,9 +87,9 @@ Miután letöltötte a kiszolgálót, [telepítse](https://docs.microsoft.com/az
 > Ha vissza szeretné állítani a beállítást, cserélje le a MfaSettings. xml fájlt a biztonságimásolat-fájlra a 2. lépésben
 
 
-## <a name="see-also"></a>További információ
+## <a name="see-also"></a>Lásd még
 
--    [Első lépések az Azure Multi-Factor Authentication-kiszolgáló](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfaserver-deploy)
+-    [Azure Multi-Factor Authentication-kiszolgáló – első lépések](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfaserver-deploy)
 - [Mi az Azure Multi-Factor Authentication](https://docs.microsoft.com/azure/multi-factor-authentication/multi-factor-authentication)
 - [Az egyéni Multi-Factor Authentication API használata a PAM vagy a SSPR aktiválásához](Working-with-custommfaserver-for-mim.md)
 - [A rendszerfrissítési csomag verziószáma](./reference/version-history.md)

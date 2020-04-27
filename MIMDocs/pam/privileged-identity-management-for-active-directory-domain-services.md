@@ -14,13 +14,13 @@ ms.suite: ems
 experimental: true
 experiment_id: kgremban_images
 ms.openlocfilehash: 1d00b232d8c7b09fea72e033a51dd590992291c3
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79043902"
 ---
-# <a name="privileged-access-management-for-active-directory-domain-services"></a>Privileged Access Management az Active Directory Domain Serviceshez
+# <a name="privileged-access-management-for-active-directory-domain-services"></a>Privileged Access Management az Active Directory tartományi szolgáltatásokhoz
 
 A Privileged Access Management (PAM) olyan megoldás, amely segít a szervezeteknek a meglévő Active Directory-környezetükben korlátozni a rendszerjogosultságú hozzáférést.
 
@@ -79,7 +79,7 @@ A PAM a következő előnyöket nyújtja:
 
 - **A jogosultságok izolálása/hatókörének kezelése**: A felhasználók nem rendelkeznek magas szintű jogosultságokkal olyan fiókokban, amelyeket hétköznapi feladatokra (például az e-mailjeik elolvasására vagy internetböngészésre) használnak. A felhasználóknak kérniük kell a magas szintű jogosultságokat. A kérések jóváhagyása és elutasítása a PAM-rendszergazda által definiált MIM-szabályzatok alapján történik. Mindaddig nem vehető igénybe rendszerjogosultságú hozzáférés, amíg nem engedélyezik a kérést.
 
-- **Jogosultságemelés (step-up) és hitelesítésiszint-emelés (proof-up)** : Ezek új hitelesítési és engedélyezési kérések, amelyek a külön rendszergazdai fiókok életciklusának kezelését segítik. A felhasználó kérheti egy rendszergazdai fiók jogosultságainak megemelését. A kérés a MIM munkafolyamatain halad végig.
+- **Jogosultságemelés (step-up) és hitelesítésiszint-emelés (proof-up)**: Ezek új hitelesítési és engedélyezési kérések, amelyek a külön rendszergazdai fiókok életciklusának kezelését segítik. A felhasználó kérheti egy rendszergazdai fiók jogosultságainak megemelését. A kérés a MIM munkafolyamatain halad végig.
 
 - **További naplózás**: A MIN beépített munkafolyamatain kívül a PAM további naplózási műveleteket végez. Ezek azonosítják a kérést, az engedélyezését, illetve a jóváhagyás után esetleg bekövetkező eseményeket.
 
@@ -111,4 +111,4 @@ Ez a munkafolyamat kifejezetten az ilyen rendszergazdai fiókok számára kész�
 ## <a name="next-steps"></a>További lépések
 
 - [A pass-The-hash (PtH) támadások és egyéb hitelesítő adatok ellopása, 1. és 2. verzió](https://www.microsoft.com/download/details.aspx?id=36036)
-- [Privileged Access Management-parancsmagok](https://docs.microsoft.com/powershell/identitymanager/mimpam/vlatest/mimpam)
+- [Emelt szintű hozzáférések felügyeletének parancsmagjai](https://docs.microsoft.com/powershell/identitymanager/mimpam/vlatest/mimpam)

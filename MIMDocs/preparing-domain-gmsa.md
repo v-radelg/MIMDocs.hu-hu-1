@@ -12,10 +12,10 @@ ms.assetid: 50345fda-56d7-4b6e-a861-f49ff90a8376
 ms.reviewer: markwahl-msft
 ms.suite: ems
 ms.openlocfilehash: 32b346dd9cf99b617edfaca953389cba30d6681c
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79043511"
 ---
 # <a name="configure-a-domain-for-group-managed-service-accounts-gmsa-scenario"></a>Tartományon belüli felügyelt szolgáltatásfiókok (gMSA-) forgatókönyv konfigurálása
@@ -28,7 +28,7 @@ ms.locfileid: "79043511"
 
 A Microsoft Identity Manager (MIM) az Ön Active Directory- (AD-) tartományával együtt is használható. Az AD-nek már telepítve kell lennie, és győződjön meg arról is, hogy a környezetében rendelkezik egy tartományvezérlővel egy felügyelhető tartományhoz.  Ez a cikk azt ismerteti, hogyan állítható be csoportosan felügyelt szolgáltatásfiókok az adott tartományban a felügyeleti webszolgáltatások használatához.
 
-## <a name="overview"></a>Házirend
+## <a name="overview"></a>Áttekintés
 
 A csoportosan felügyelt szolgáltatásfiókok szükségtelenné teszik a szolgáltatásfiók jelszavának rendszeres módosítását. A (z) 2016 SP2 kiadásával a következő, a telepítési folyamat során használandó gMSA-fiókokkal rendelkezhet:
 
@@ -53,7 +53,7 @@ A gMSA-ről további információt a következő cikkekben találhat:
 
 -   [Új – ADServiceAccount](https://docs.microsoft.com/powershell/module/addsadministration/new-adserviceaccount?view=win10-ps)
 
--   [A Key Distribution Services KDS létrehozása](https://technet.microsoft.com/library/jj128430(v=ws.11).aspx)
+-   [Kulcsszolgáltató szolgáltatások KDS gyökérkulcsának létrehozása](https://technet.microsoft.com/library/jj128430(v=ws.11).aspx)
 
 ## <a name="create-user-accounts-and-groups"></a>Felhasználói fiókok és csoportok létrehozása
 
@@ -67,7 +67,7 @@ A MIM-telepítés minden összetevőjének saját identitással kell rendelkezni
 > - **Mimservice** -kiszolgáló neve
 > - **Mimsync** -szinkronizálási kiszolgáló neve
 > - SQL Server neve – **SQL**
-> - Jelszó – <strong>Pass@word1</strong>
+> - Jelszó<strong>Pass@word1</strong>
 
 1. Jelentkezzen be a tartományvezérlőbe tartományi rendszergazdaként (*pl.: Contoso\Administrator*).
 
@@ -129,7 +129,7 @@ Ha a tartományhoz már van gyökérszintű kulcs (a **Get-KdsRootKey** használ
     ```PowerShell
     Add-KDSRootKey –EffectiveImmediately
     ```
-    *–* Előfordulhat, hogy a EffectiveImmediately legfeljebb \~10 óráig késlelteti a replikálást, mivel az összes tartományvezérlőre replikálni kell. Ez a késleltetés körülbelül 1 óra volt két tartományvezérlő esetében.
+    *– A EffectiveImmediately* legfeljebb \~10 óra késleltetést igényelhet, mivel az összes tartományvezérlőre replikálni kell. Ez a késleltetés körülbelül 1 óra volt két tartományvezérlő esetében.
 
     ![](media/7fbdf01a847ea0e330feeaf062e30668.png)
 
@@ -144,7 +144,7 @@ Ha a tartományhoz már van gyökérszintű kulcs (a **Get-KdsRootKey** használ
 Győződjön meg arról, hogy az összes olyan számítógép fiókja, amelyeken a rendszerfrissítési szoftver telepítve van, már csatlakoztatva van a tartományhoz.  Ezt követően hajtsa végre ezeket a lépéseket a PowerShellben tartományi rendszergazdaként.
 
 7.  Hozzon létre egy csoportot *MIMSync_Servers* , és adja hozzá az összes összes rendszer-szinkronizálási kiszolgálót ebbe a csoportba.
-    A következő beírásával hozzon létre új AD-csoportot a fakiszolgálói szinkronizációs kiszolgálókhoz. Ezt követően a következő csoportba tartozó felhasználói fiókok hozzáadása Active Directory számítógépfiókok, például *contoso\MIMSync $* .
+    A következő beírásával hozzon létre új AD-csoportot a fakiszolgálói szinkronizációs kiszolgálókhoz. Ezt követően a következő csoportba tartozó felhasználói fiókok hozzáadása Active Directory számítógépfiókok, például *contoso\MIMSync $*.
 
     ```PowerShell
     New-ADGroup –name MIMSync_Servers –GroupCategory Security –GroupScope Global –SamAccountName MIMSync_Servers
@@ -175,7 +175,7 @@ Győződjön meg arról, hogy az összes olyan számítógép fiókja, amelyeken
 
 - A felhasználói fiókhoz tartozó szinkronizálási szolgáltatás csoportosan felügyelt szolgáltatásfiók használata, és ne hozzon létre külön fiókot
 
-    Kihagyhatja a fakiszolgálói szolgáltatás felügyeleti ügynökének létrehozását. Ebben az esetben a fakiszolgálói szinkronizációs szolgáltatás gMSA nevét, például a *contoso\MIMSyncGMSAsvc $* -t kell használnia, nem pedig a következőt: a webszolgáltatási fiók telepítése. A Rendszerfelügyeleti webszolgáltatások kezelése ügynök konfigurációjának későbbi szakaszában engedélyezze a *"MIMSync-fiók használata"* lehetőséget.
+    Kihagyhatja a fakiszolgálói szolgáltatás felügyeleti ügynökének létrehozását. Ebben az esetben a fakiszolgálói szinkronizációs szolgáltatás gMSA nevét, például a *contoso\MIMSyncGMSAsvc $*-t kell használnia, nem pedig a következőt: a webszolgáltatási fiók telepítése. A Rendszerfelügyeleti webszolgáltatások kezelése ügynök konfigurációjának későbbi szakaszában engedélyezze a *"MIMSync-fiók használata"* lehetőséget.
 
     Ne engedélyezze a "bejelentkezés megtagadása a hálózatról" lehetőséget a gMSA-os szinkronizációs szolgáltatáshoz, mert a (z) "hálózati bejelentkezés engedélyezése" engedély szükséges a következőhöz:
 
@@ -197,7 +197,7 @@ Győződjön meg arról, hogy az összes olyan számítógép fiókja, amelyeken
 
 Folytassa a PowerShell használatát tartományi rendszergazdaként.
    
-12. Hozzon létre egy csoportot *MIMService_Servers* és adja hozzá az összes címtárszolgáltatás-szolgáltatást ehhez a csoporthoz.  Írja be a következő PowerShell-t, hogy új AD-csoportot hozzon létre a contoso\MIMPortal-hez, és adja hozzá a fakiszolgálói szolgáltatáshoz Active Directory számítógépfiókot, például: *$* , ebbe a csoportba.
+12. Hozzon létre egy csoportot *MIMService_Servers* és adja hozzá az összes címtárszolgáltatás-szolgáltatást ehhez a csoporthoz.  Írja be a következő PowerShell-t, hogy új AD-csoportot hozzon létre a contoso\MIMPortal-hez, és adja hozzá a fakiszolgálói szolgáltatáshoz Active Directory számítógépfiókot, például: *$*, ebbe a csoportba.
 
     ```PowerShell
     New-ADGroup –name MIMService_Servers –GroupCategory Security –GroupScope Global –SamAccountName MIMService_Servers

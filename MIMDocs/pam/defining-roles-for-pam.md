@@ -12,10 +12,10 @@ ms.assetid: 1a368e8e-68e1-4f40-a279-916e605581bc
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: f05769a7d1db38ecde200e18e45c6ca29a75b756
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79044038"
 ---
 # <a name="define-roles-for-privileged-access-management"></a>Szerepkörök definiálása a Privileged Access Management megoldáshoz
@@ -207,5 +207,5 @@ A nem rendszergazda jogosultságú felhasználók és számítógépek felügyel
 
 ## <a name="next-steps"></a>További lépések
 
-- [A Kiemelt hozzáférési segédanyagok biztonságossá tétele](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material)
+- [Az emelt szintű hozzáférés védelme – referenciaanyag](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material)
 - [Aktiválás az Azure MFA használatával](use-azure-mfa-for-activation.md)

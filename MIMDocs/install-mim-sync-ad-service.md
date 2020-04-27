@@ -12,10 +12,10 @@ ms.assetid: 5e532b67-64a6-4af6-a806-980a6c11a82d
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: 81cf34959ccdea5ad9eb463f85a25d26bc1d8ede
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79042423"
 ---
 # <a name="install-mim-2016-synchronize-active-directory-and-mim-service"></a>A MIM 2016 telepítése: Az Active Directory és a MIM szolgáltatás szinkronizálása
@@ -27,7 +27,7 @@ ms.locfileid: "79042423"
 > Ez az útmutató egy Contoso nevű fiktív vállalat neveit és értékeit használja szemléltetésként. Ezeket helyettesítse a saját neveivel és értékeivel. Például:
 > - Tartományvezérlő neve – **mimservername**
 > - Tartománynév – **contoso**
-> - Jelszó – <strong>Pass@word1</strong>
+> - Jelszó<strong>Pass@word1</strong>
 
 Alapértelmezés szerint a MIM Synchronization Service (MIM Sync) szolgáltatáshoz nincs összekötő konfigurálva.  Az első lépés általában a MIM szolgáltatás adatbázisának feltöltése a meglévő Active Directory-fiókokkal a MIM Sync szolgáltatás használatával. Ehhez a MIM Sync Service alkalmazást kell használni.
 
@@ -45,7 +45,7 @@ A MIM-kezelőügynök konfigurálásához meg kell adnia egy felhasználói fió
 
 2.  A felügyeleti ügynök létrehozása varázsló megnyitásához váltson a **felügyeleti ügynökök** lapra, majd a **műveletek** menüben kattintson a **Létrehozás**parancsra.
 
-3.  A **Create Management Agent** (Kezelőügynök létrehozása) oldalon adja meg a következő beállításokat, majd kattintson a **Next** (Tovább) gombra.
+3.  A **felügyeleti ügynök létrehozása** lapon adja meg a következő beállításokat, majd kattintson a **tovább**gombra.
 
     -   Management agent for (Felügyeleti ügynök a következőhöz): FIM Service management agent (A FIM szolgáltatás felügyeleti ügynöke)
 
@@ -56,7 +56,7 @@ A MIM-kezelőügynök konfigurálásához meg kell adnia egy felhasználói fió
 
     -   Database (Adatbázis): FIMService
 
-    -   Webkiszolgálói szolgáltatás alapcíme: http://localhost:5725
+    -   Webkiszolgálói szolgáltatás alapcíme:http://localhost:5725
 
     -   Authentication mode (Hitelesítési mód): Windows integrated authentication (Integrált Windows-hitelesítés)
 
@@ -74,7 +74,7 @@ A MIM-kezelőügynök konfigurálásához meg kell adnia egy felhasználói fió
 
     -   Csoport
 
-    -   Person
+    -   Személy
 
     -   SynchronizationRule
 
@@ -144,8 +144,8 @@ A MIM-kezelőügynök konfigurálásához meg kell adnia egy felhasználói fió
     | MailNickName | Exportálás | mailNickName |
     | Tag | Exportálás | tag |
     | ObjectSID | Exportálás | objectSid |
-    | Hatókör | Exportálás | hatókör |
-    | Típus | Exportálás | típus |
+    | Hatókör | Exportálás | scope |
+    | Típus | Exportálás | type |
     | MembershipAddWorkflow | Exportálás | membershipAddWorkflow |
     | MembershipLocked | Exportálás | membershipLocked |
     | AccountName | Importálás | accountName |
@@ -153,8 +153,8 @@ A MIM-kezelőügynök konfigurálásához meg kell adnia egy felhasználói fió
     | DisplayName | Importálás | displayName |
     | MailNickName | Importálás | mailNickName |
     | Tag | Importálás | tag |
-    | Hatókör | Importálás | hatókör |
-    | Típus | Importálás | típus |
+    | Hatókör | Importálás | scope |
+    | Típus | Importálás | type |
 
 10.  A **Configure Deprovisioning** (Megszüntetés konfigurálása) lapon kattintson a **Next** (Tovább) gombra.
 
@@ -195,7 +195,7 @@ Az Active Directory-kezelőügynök összekötőként szolgál az AD tartományi
 
 7. A **Select Attributes** (Attribútumok kiválasztása) lapon kattintson a **Show ALL** (Az ÖSSZES megjelenítése) elemre, válassza ki a következő attribútumokat, majd kattintson a **Next** (Tovább) gombra:
 
-    -   company
+    -   cég
     -   displayName
     -   employeeID
     -   employeeType
@@ -217,7 +217,7 @@ Az Active Directory-kezelőügynök összekötőként szolgál az AD tartományi
 
 10. A **Configure Attribute Flow** (Attribútumfolyam konfigurálása) lapon kattintson a **Next** (Tovább) gombra.
 
-11. A **Configure Deprovisioning** (Megszüntetés konfigurálása) lapon kattintson a **Next** (Tovább) gombra.
+11. A megszüntetés **konfigurálása** lapon kattintson a **tovább**gombra.
 
 12. A **Configure Extensions** (Bővítmények konfigurálása) lapon kattintson a **Finish** (Befejezés) gombra.
 
@@ -230,17 +230,17 @@ Hozzon létre futtatási profilokat az ADMA és a MIMMA összekötők számára.
 
 Az alábbi táblázatban az ADMA összekötőhöz létrehozandó öt futtatási profil szerepel:
 
-| Név | Típus |
+| Name (Név) | Típus |
 | ---- | ---- |
-| 1\. profil | Teljes importálás (csak előkészítés) |
-| 2\. profil | Teljes szinkronizálás |
-| 3\. profil | Különbözeti importálás (csak előkészítés) |
-| 4\. profil | Különbözeti szinkronizálás |
-| 5\. profil | Exportálás |
+| 1. profil | Teljes importálás (csak előkészítés) |
+| 2. profil | Teljes szinkronizálás |
+| 3. profil | Különbözeti importálás (csak előkészítés) |
+| 4. profil | Különbözeti szinkronizálás |
+| 5. profil | Exportálás |
 
 Futtatási profilok létrehozása az ADMA összekötőhöz:
 
-1. Indítsa el a Synchronization Service Managert, majd a **Tools** (Eszközök) menüben kattintson a **Management Agents** (Kezelőügynökök) elemre.
+1. Nyissa meg a Synchronization Service Manager és az **eszközök** menüben kattintson a **felügyeleti ügynökök**elemre.
 
 2. A **Management Agents** (Kezelőügynökök) listában válassza az **ADMA** lehetőséget.
 
@@ -262,17 +262,17 @@ Futtatási profilok létrehozása az ADMA összekötőhöz:
 
 Az alábbi táblázatban a MIMMA összekötőhöz tartozó öt kapcsolódó futtatási profil szerepel:
 
-| Név | Típus |
+| Name (Név) | Típus |
 | -------- | -------- |
-| 1\. profil | Teljes importálás (csak előkészítés) |
-| 2\. profil | Teljes szinkronizálás |
-| 3\. profil | Különbözeti importálás (csak előkészítés) |
-| 4\. profil | Különbözeti szinkronizálás |
-| 5\. profil | Exportálás |
+| 1. profil | Teljes importálás (csak előkészítés) |
+| 2. profil | Teljes szinkronizálás |
+| 3. profil | Különbözeti importálás (csak előkészítés) |
+| 4. profil | Különbözeti szinkronizálás |
+| 5. profil | Exportálás |
 
 Futtatási profilok létrehozása a MIMMA összekötőhöz:
 
-1. Indítsa el a Synchronization Service Managert, majd a **Tools** (Eszközök) menüben kattintson a **Management Agents** (Kezelőügynökök) elemre.
+1. Nyissa meg a Synchronization Service Manager és az **eszközök** menüben kattintson a **felügyeleti ügynökök**elemre.
 
 2. A **Management Agents** (Kezelőügynökök) listában válassza a **MIMMA** lehetőséget.
 
@@ -323,14 +323,14 @@ Az AD felhasználókra vonatkozó bejövő szinkronizálási szabályának létr
 
     | Folyamatszabály | Forrás | Cél |
     |-|-|-|
-    |1\. szabály|samAccountName|accountName|
-    |2\. szabály|displayName|displayName|
-    |3\. szabály|EmployeeType|employeeType|
-    |4\. szabály|givenName|firstName|
-    |5\. szabály|sn|lastName|
-    |6\. szabály|Manager|manager|
-    |7\. szabály|objectSID|ObjectSID|
-    |8\. szabály|"Contoso"|domain|
+    |1. szabály|samAccountName|accountName|
+    |2. szabály|displayName|displayName|
+    |3. szabály|EmployeeType|employeeType|
+    |4. szabály|givenName|firstName|
+    |5. szabály|sn|lastName|
+    |6. szabály|Manager|manager|
+    |7. szabály|objectSID|ObjectSID|
+    |8. szabály|"Contoso"|domain|
 
     A táblázatban minden egyes sorhoz kapcsolódóan végezze el a következő lépéseket:
 

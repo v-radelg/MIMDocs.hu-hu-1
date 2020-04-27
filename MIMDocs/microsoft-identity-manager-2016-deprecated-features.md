@@ -10,10 +10,10 @@ ms.topic: reference
 ms.prod: microsoft-identity-manager
 ms.assetid: ''
 ms.openlocfilehash: 009d0e99e2da445d4df35dc9de81b297a65fe2a3
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79044225"
 ---
 # <a name="deprecated-features"></a>Elavult funkciók
@@ -33,7 +33,7 @@ A Microsoft nem javasolja, hogy az ügyfelek új központi telepítéseket indí
 
 | **Kategória**                | **Elavult funkció**              | **Helyettesítés és Megjegyzés**           |
 |-----------------------------|-------------------------------------|----------------------------------------------|
-| Felügyeleti ügynökök | \* * FIM-tanúsítványok kezelése | A FIM tanúsítványkezelő ügynök el lett távolítva a 2016-es webszolgáltatásban.                                                             |
+| Felügyeleti ügynökök | * * FIM-tanúsítványok kezelése | A FIM tanúsítványkezelő ügynök el lett távolítva a 2016-es webszolgáltatásban.                                                             |
 
 ## <a name="service-and-portal"></a>Szolgáltatás és portál
 
@@ -59,17 +59,17 @@ A Microsoft nem javasolja, hogy az ügyfelek új központi telepítéseket indí
 
 | **Kategória**                | **Elavult funkció**              | **Helyettesítés és Megjegyzés**           |
 |--------|-------|---|    
-| Attribútum prioritása | Többszörös fölény/egyenlő elsőbbség                       | Az egyenlő prioritás el lesz távolítva. Ehhez a szolgáltatáshoz nem tartozik helyettesítés. Ehelyett manuális prioritást kell beállítania. Továbbra is használhatja ezt a funkciót, ha a környezetében telepítve van egy FIM Service Management-ügynök. Ez a felügyeleti ügynök nem biztosít manuális elsőbbséget a deklaratív kiépítés nem precedens nélküli exportálásának elkerüléséhez. |
+| Attribútumsorrend | Többszörös fölény/egyenlő elsőbbség                       | Az egyenlő prioritás el lesz távolítva. Ehhez a szolgáltatáshoz nem tartozik helyettesítés. Ehelyett manuális prioritást kell beállítania. Továbbra is használhatja ezt a funkciót, ha a környezetében telepítve van egy FIM Service Management-ügynök. Ez a felügyeleti ügynök nem biztosít manuális elsőbbséget a deklaratív kiépítés nem precedens nélküli exportálásának elkerüléséhez. |
 | Csatlakozási szabályok           | Csatlakozás "any" típusú objektumhoz                             | Ez a szolgáltatás nem lesz lecserélve. Minden csatlakozási szabálynak explicit módon meg kell határoznia azt a metaverse-objektumtípust, amelyhez csatlakozni próbálnak.       |
 | Attribútumok folyamatai      | A "null értékek engedélyezése" jelölőnégyzet kihagyása az exportált értékeknél            | Ez a szolgáltatás nem lesz lecserélve. A "nullák engedélyezése" mindig ki lesz választva. Győződjön meg arról, hogy a jelenlegi környezetben a "nullák engedélyezése" lehetőség van kiválasztva.  |
 | Attribútumok folyamatai      | "Attribútumok felidézése"                            | Ez a szolgáltatás nem lesz lecserélve. A rendszer mindig visszahívja az attribútumokat, ami az ajánlott eljárás.  |
 | Szabályok bővítmény      | A metaverse és a ma Rules bővítmény futtatása a folyamaton kívül | Ez a szolgáltatás nem lesz lecserélve. A metaverse és az attribútum flow szabályai ugyanabban a folyamatban futnak, mint a szinkronizálási motor.       |
 | Szabályok bővítmény      | Tranzakció tulajdonságai                                | Ez a szolgáltatás nem lesz lecserélve. Kerülje az adattovábbítást a beérkező, a kiépítés és a kimenő szinkronizálás között a segédprogram osztály használatával.  |
 | Szabályok bővítmény      | ExchangeUtils: Create55\* metódusok                     | Az Exchange 5,5-kiszolgálókhoz létrehozott objektumok létrehozásának módszereit a rendszer eltávolítja.        |
-| Interfész            | Mms_Metaverse                                        | A következő verzióban minden ClmUtils-osztály tagja el lesz távolítva.   |
+| Felület            | Mms_Metaverse                                        | A következő verzióban minden ClmUtils-osztály tagja el lesz távolítva.   |
 
 ## <a name="next-steps"></a>További lépések
-További információk az alábbiakról:
+További információk:
 
 - A Microsoft Identity Manager számos közös vonást mutat elődjével, a Forefront Identity Managerrel. Ha még FIM-et használ, vagy ha további dokumentációra van szüksége, tekintse meg a [FIM 2010 R2 dokumentáció - áttekintés](https://technet.microsoft.com/library/jj133885.aspx) című oldalt.
 - A webszolgáltatások [üzembe helyezésének topológiái szempontjai](topology-considerations.md) Ez a cikk több üzembe helyezési topológiát mutat be.

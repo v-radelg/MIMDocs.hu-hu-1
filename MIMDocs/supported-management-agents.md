@@ -17,10 +17,10 @@ ms.author: esergeev
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: f6e43abea8b58ccff7fa376b266a91cb138f5aa9
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79044385"
 ---
 # <a name="connect-to-your-directories"></a>Csatlakozás a címtárakhoz
@@ -33,7 +33,7 @@ Ez a cikk & azokat az összekötőket ismerteti, amelyek a 2,0-as verzióban tá
 
 ## <a name="supported-connectors-in-mim-2016-sp1"></a>Támogatott összekötők a 2016 SP1 rendszerben
 
-| Név | A csatlakoztatott adatforrás támogatott verziói & technikai hivatkozások |
+| Name (Név) | A csatlakoztatott adatforrás támogatott verziói & technikai hivatkozások |
 | ---- | ----------------------------------------------- |
 | Active Directory tartományi szolgáltatások | Active Directory a Windows Server 2012-2019 |
 | Active Directory Lightweight Directory-szolgáltatások (ADLDS) | Active Directory Lightweight Directory-szolgáltatások (ADLDS) |
@@ -48,16 +48,16 @@ Ez a cikk & azokat az összekötőket ismerteti, amelyek a 2,0-as verzióban tá
 | Oracle (korábban Sun és Netscape) Directory Server kiszolgálók | Sun Directory Server 6.x, 7.x és Oracle 11 |
 | [Windows PowerShell-összekötő](https://msdn.microsoft.com/library/dn640417.aspx) | Windows PowerShell 2.0 vagy újabb |
 | [Microsoft Azure Active Directory-összekötő](https://msdn.microsoft.com/library/dn511001.aspx) | Microsoft Azure Active Directory (új központi telepítések esetén nem ajánlott) |
-| [Általános LDAP-összekötő](https://msdn.microsoft.com/library/dn510997.aspx) | [LDAP v3-kiszolgáló (RFC 4510-kompatibilis)](reference/microsoft-identity-manager-2016-connector-genericldap.md#overview-of-the-generic-ldap-connector) |
+| [Általános LDAP-összekötő](https://msdn.microsoft.com/library/dn510997.aspx) | [LDAP v3-as kiszolgáló (RFC 4510 szabványnak megfelelő)](reference/microsoft-identity-manager-2016-connector-genericldap.md#overview-of-the-generic-ldap-connector) |
 | [Általános SQL-összekötő](reference/microsoft-identity-manager-2016-connector-genericsql.md) | [Az összekötő az összes 64 bites ODBC-illesztővel támogatott](reference/microsoft-identity-manager-2016-connector-genericsql.md#overview-of-the-generic-sql-connector) |
 | [Lotus Domino-összekötő](https://msdn.microsoft.com/library/hh859750.aspx) | Lotus Notes kiadás v 8.5. x, v 9.0. x |
 | [SharePoint Services-összekötő UPA](https://msdn.microsoft.com/library/dn511003.aspx) | SharePoint Server 2013 – 2019 felhasználói profil szolgáltatásalkalmazás (UPA) alkalmazásával |
 | [Web Services-összekötő](https://www.microsoft.com/en-us/download/details.aspx?id=51495) | [SAP ECC 5,0 vagy 6,0; Oracle PeopleSoft 9,1; Oracle inaktív 12,1 és más SOAP és REST API-k](https://docs.microsoft.com/microsoft-identity-manager/reference/microsoft-identity-manager-2016-ma-ws) |
-| [Attribútum-érték pár szöveges fájl](https://technet.microsoft.com/library/cc708644(v=ws.10).aspx) | Attribútum-érték párokból álló szövegfájlok |
+| [Attribútum-érték párokból álló szövegfájl](https://technet.microsoft.com/library/cc708644(v=ws.10).aspx) | Attribútum-érték párokból álló szövegfájlok |
 | [Tagolt szövegfájl](https://technet.microsoft.com/library/cc720612(v=ws.10).aspx) | Tagolt szövegfájlok |
-| [Címtárszolgáltatás-megjelölés nyelve (DSML)](https://technet.microsoft.com/library/cc720660(v=ws.10).aspx) | Directory Services Markup Language (DSML) 2.0 |
+| [Directory Services Mark-up Language (DSML)](https://technet.microsoft.com/library/cc720660(v=ws.10).aspx) | Directory Services Markup Language (DSML) 2.0 |
 | [Rögzített szélességű szövegfájl](https://technet.microsoft.com/library/cc720633(v=ws.10).aspx) | Rögzített szélességű szövegfájlok |
-| [LDAP adatcsere formátuma (LDIF)](https://technet.microsoft.com/library/cc708662(v=ws.10).aspx) | LDAP Data Interchange formátum (LDIF) |
+| [LDAP Data Interchange formátum (LDIF)](https://technet.microsoft.com/library/cc708662(v=ws.10).aspx) | LDAP Data Interchange formátum (LDIF) |
 | [Microsoft Graph-összekötő](microsoft-identity-manager-2016-connector-graph.md) | Microsoft Graph |
 
 ## <a name="related-topics"></a>Kapcsolódó témakörök
