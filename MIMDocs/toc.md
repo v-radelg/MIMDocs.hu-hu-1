@@ -1,4 +1,4 @@
-# [Áttekintés](microsoft-identity-manager-2016.md)
+# [Áttekintés](microsoft-identity-manager-2016.md) <!--test-->
 ## [Mi az a MIM 2016?](microsoft-identity-manager-2016.md)
 ## [A PAM megismerése](./pam/privileged-identity-management-for-active-directory-domain-services.md)
 ## [Hibrid jelentéskészítés az Azure-ban](identity-manager-hybrid-reporting-azure.md)
