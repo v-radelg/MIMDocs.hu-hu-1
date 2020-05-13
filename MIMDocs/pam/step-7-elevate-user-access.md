@@ -8,12 +8,12 @@ ms.date: 01/17/2018
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: 5325fce2-ae35-45b0-9c1a-ad8b592fcd07
-ms.openlocfilehash: 05e05966bf90700885e67ba16f10ab0d7864cf10
-ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
+ms.openlocfilehash: bdb02eed8e22b373c6cfa5028153cad6aee9a536
+ms.sourcegitcommit: 80507a128d2bc28ff3f1b96377c61fa97a4e7529
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79043613"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83279963"
 ---
 # <a name="step-7--elevate-a-users-access"></a>7. lépés – Felhasználó jogosultságszintjének emelése
 
@@ -90,9 +90,9 @@ Aktiválja a szerepkört a PAM-mintaportálon keresztüli emelt szintű hozzáf�
     ```
 
 3. Amikor a rendszer kéri, írja be a PRIV.Ilona fiók jelszavát. Megnyílik egy új böngészőablak.
-4. Navigáljon http://pamsrv.priv.contoso.local:8090 a oldalra, és ellenőrizze, hogy látható-e egy weblap a mintául szolgáló portálról.
-5. Az Internet Explorerben válassza az **eszközök** > **Internetbeállítások lehetőséget** , majd kattintson a **Biztonság** fülre.
-6. Kattintson a **helyi intranet zóna** > **helyek** > **speciális** lehetőségre, majd adja hozzá a webhelyet a zónához.
+4. Navigáljon a `http://pamsrv.priv.contoso.local:8090` oldalra, és ellenőrizze, hogy látható-e egy weblap a mintául szolgáló portálról.
+5. Az Internet Explorerben válassza az **eszközök**  >  **Internetbeállítások lehetőséget** , majd kattintson a **Biztonság** fülre.
+6. Kattintson a **helyi intranet zóna**  >  **helyek**  >  **speciális** lehetőségre, majd adja hozzá a webhelyet a zónához.
 7. Zárja be az **Internetbeállítások** párbeszédpanelt.
 8. A bal oldali lapon kattintson az **Aktiválás** elemre. Válassza ki a **PAM-szerepkör** lehetőséget, majd kattintson az **Aktiválás** elemre.
 

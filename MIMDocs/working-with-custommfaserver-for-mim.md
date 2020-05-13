@@ -9,12 +9,12 @@ manager: daveba
 ms.date: 09/04/2018
 ms.topic: article
 ms.prod: microsoft-identity-manager
-ms.openlocfilehash: b157b2a8716d20ce3b472d5655d393e64f2baa6b
-ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
+ms.openlocfilehash: 284345d79cda8d60d055a642d047e28e63ea20cb
+ms.sourcegitcommit: 80507a128d2bc28ff3f1b96377c61fa97a4e7529
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79044361"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83279946"
 ---
 # <a name="use-a-custom-multi-factor-authentication-provider-via-an-api-during-pam-role-activation-or-in-sspr"></a>Egyéni Multi-Factor Authentication-szolgáltató használata egy API-n keresztül a PAM szerepkör aktiválása vagy a SSPR
 
@@ -39,19 +39,19 @@ Ha egyéni Multi-Factor Authentication szolgáltatói API-t kíván használni a
 
 ### <a name="step-1-ensure-mim-service-is-at-version-452020-or-later"></a>1. lépés: Győződjön meg arról, hogy a 4.5.202.0 vagy újabb verzióban van
 
-Töltse le és telepítse a [4.5.202.0](https://www.microsoft.com/download/details.aspx?id=57278) vagy újabb verziót.
+Töltse le és telepítse a [4.5.202.0](https://support.microsoft.com/help/4346632/hotfix-rollup-package-build-4-5-202-0-is-available-for-microsoft) vagy újabb verziót.
 
 ### <a name="step-2-create-a-dll-which-implements-the-iphoneserviceprovider-interface"></a>2. lépés: hozzon létre egy DLL-t, amely megvalósítja a IPhoneServiceProvider felületet
 
 A DLL-nek tartalmaznia kell egy osztályt, amely három módszert valósít meg:
 
-- `InitiateCall`: A rendszerkiszolgálói szolgáltatás ezt a metódust fogja meghívni. A szolgáltatás paraméterként továbbítja a telefonszámot és a kérelem AZONOSÍTÓját.  A metódusnak a `PhoneCallStatus` `Success` vagy `Failed`a értékét `Pending`kell visszaadnia.
-- `GetCallStatus`: Ha egy korábbi `initiateCall` visszahívást `Pending`ad vissza, a rendszer meghívja ezt a metódust. Ez a metódus a `PhoneCallStatus` `Success` vagy `Failed`a `Pending`értékét is megadja.
-- `GetFailureMessage`: Ha az előző hívás vagy `InitiateCall` `GetCallStatus` a visszaadott `Failed`érték, a rendszer meghívja ezt a metódust. Ez a metódus egy diagnosztikai üzenetet ad vissza.
+- `InitiateCall`: A rendszerkiszolgálói szolgáltatás ezt a metódust fogja meghívni. A szolgáltatás paraméterként továbbítja a telefonszámot és a kérelem AZONOSÍTÓját.  A metódusnak a vagy a értékét kell visszaadnia `PhoneCallStatus` `Pending` `Success` `Failed` .
+- `GetCallStatus`: Ha egy korábbi visszahívást ad `initiateCall` vissza `Pending` , a rendszer meghívja ezt a metódust. Ez a metódus a `PhoneCallStatus` vagy a értékét is megadja `Pending` `Success` `Failed` .
+- `GetFailureMessage`: Ha az előző hívás vagy a `InitiateCall` `GetCallStatus` visszaadott érték `Failed` , a rendszer meghívja ezt a metódust. Ez a metódus egy diagnosztikai üzenetet ad vissza.
 
-Ezeknek a módszereknek a megvalósításának a szál biztonságosnek kell lennie, továbbá a `GetCallStatus` és `GetFailureMessage` a megvalósításának nem szabad azt feltételezni, hogy ugyanazt a szálat fogja meghívni `InitiateCall`, mint a korábbi hívása.
+Ezeknek a módszereknek a megvalósításának a szál biztonságosnek kell lennie, továbbá a és a megvalósításának nem szabad azt `GetCallStatus` `GetFailureMessage` feltételezni, hogy ugyanazt a szálat fogja meghívni, mint a korábbi hívása `InitiateCall` .
 
-Tárolja a DLL-fájlt `C:\Program Files\Microsoft Forefront Identity Manager\2010\Service\` a könyvtárban.
+Tárolja a DLL-fájlt a `C:\Program Files\Microsoft Forefront Identity Manager\2010\Service\` könyvtárban.
 
 A Visual Studio 2010-es vagy újabb verziójával összeállítható mintakód.
 

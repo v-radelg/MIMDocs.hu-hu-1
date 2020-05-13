@@ -11,12 +11,12 @@ ms.prod: microsoft-identity-manager
 ms.assetid: 03e521cd-cbf0-49f8-9797-dbc284c63018
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 67ce70e6bc0603a991731cf1e5fb95751f5016c6
-ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
+ms.openlocfilehash: 2153fdb0559a78bcc82ca6901ee7cb0cabc01f23
+ms.sourcegitcommit: 80507a128d2bc28ff3f1b96377c61fa97a4e7529
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79043970"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83280099"
 ---
 # <a name="high-availability-and-disaster-recovery-considerations-for-the-bastion-environment"></a>A magas rendelkezésre állással és a vészhelyreállítással kapcsolatos szempontok a megerősített környezet esetében
 
@@ -53,7 +53,7 @@ A megbízhatóság létrehozásához az szükséges, hogy a meglévő erdő tart
 
 ### <a name="user-and-group-migration"></a>Felhasználók és csoportok áttelepítése
 
-A megbízhatóság létrehozása után árnyékcsoportok hozhatók létre a megerősített környezetben, valamint felhasználói fiókok ezen csoportok tagjainak és a jóváhagyóknak. Ez lehetővé teszi, hogy ezek a felhasználók aktiválják az emelt szintű szerepköröket, és visszaszerezzék az érvényes csoporttagságukat.
+A megbízhatóság létrehozása után árnyékcsoportok hozhatók létre a megerősített környezetben, valamint felhasználói fiókok ezen csoportok tagjainak és a jóváhagyóknak. Ez lehetővé teszi, hogy ezek a felhasználók aktiválják a Kiemelt szerepköröket, és visszanyerjék a hatékony csoporttagságok körét.
 
 A felhasználók és a csoportok áttelepítéséhez az szükséges, hogy a meglévő erdő tartományvezérlői, valamint a megerősített környezet MIM és AD összetevői online állapotúak legyenek.   Ha a meglévő erdő tartományvezérlői nem érhetők el, akkor nem vehetők fel további felhasználók és csoportok a megerősített környezetbe, de a meglévő felhasználókra és csoportokra ez nincs hatással. Ha az összetevők bármelyikénél kimaradás lép fel az áttelepítés során, a kimaradást okozó probléma megoldása után a rendszergazda ismét megpróbálhatja végrehajtani a műveletet.
 
@@ -77,7 +77,7 @@ Az erőforrás-kezelés megköveteli, hogy az erőforrás tartományának tartom
 
 ### <a name="monitoring-of-users-and-groups-in-the-existing-forest"></a>A meglévő erdőben található felhasználók és csoportok figyelése
 
-A MIM tartalmaz egy PAM-figyelőszolgáltatást is, amely rendszeresen ellenőrzi a felhasználókat és csoportokat a meglévő tartományokban, és megfelelően frissíti a MIM-adatbázist és az AD-t.  Ennek a szolgáltatásnak nem kell online állapotúnak lennie a szerepkörök aktiválásához vagy az erőforrások kezelése során.
+A felügyeleti csomag egy PAM-figyelő szolgáltatást is tartalmaz, amely rendszeresen ellenőrzi a meglévő tartományokban lévő felhasználókat és csoportokat, és ennek megfelelően frissíti a fakiszolgálói adatbázist és az AD-t.  Ennek a szolgáltatásnak nem kell online állapotúnak lennie a szerepkörök aktiválásához vagy az erőforrások kezelése során.
 
 A figyeléshez az szükséges, hogy a meglévő erdő tartományvezérlői, valamint a megerősített környezet MIM és AD összetevői online állapotúak legyenek.  
 
@@ -95,7 +95,7 @@ Az Active Directory Domain Servicest és a megerősített környezetben a MIM sz
 - A felhasználók aktiválási kérelmeinek megadása
 - A felhasználók Kerberos-jegyeinek használhatóvá tétele a meglévő erdőben lévő erőforrások számára
 - A meglévő erdőben lévő tartományok figyelése a MIM használatával
-- E-mailek küldése a MIM használatával a meglévő erdőben található e-mail-kiszolgálón keresztül
+- E-mailek küldése e-mailben a meglévő erdőben található levelezési kiszolgálókon keresztül.
 
 ### <a name="minimal-high-availability-topologies"></a>Minimális magas rendelkezésre állású topológiák
 
@@ -182,7 +182,7 @@ A további tartományvezérlő hozzáadásának műveletét a [Replika Windows S
 
 Ha kimaradás fordul elő, a megszűnése után és a kiszolgálók újraindítása előtt győződjön meg arról, hogy legalább egy tartományvezérlő elérhető a megerősített környezetben.
 
-A tartományon belül az Active Directory elosztja a műveleti főkiszolgáló (FSMO) szerepköreit [How Operations Masters Work](https://technet.microsoft.com/library/cc780487.aspx) (A műveleti főkiszolgálók működése) című cikkben leírtaknak megfelelően.  Ha egy tartományvezérlő sikertelen volt, szükség lehet egy vagy több olyan [tartományvezérlői szerepkör](https://technet.microsoft.com/library/cc786438.aspx) átvitelére, amelyhez az adott tartományvezérlő hozzá volt rendelve.
+A tartományon belül az Active Directory elosztja a műveleti főkiszolgáló (FSMO) szerepköreit [How Operations Masters Work](https://technet.microsoft.com/library/cc780487.aspx) (A műveleti főkiszolgálók működése) című cikkben leírtaknak megfelelően.  Ha egy tartományvezérlő meghiúsult, előfordulhat, hogy át kell helyeznie egy vagy több [tartományvezérlői szerepkört, amelyet a tartományvezérlőhöz rendeltek.
 
 Ha azt állapítja meg, hogy a tartományvezérlő nem állítható vissza az éles környezetbe, ellenőrizze, hogy voltak-e hozzárendelve valamilyen szerepkörök a tartományvezérlőhöz, és szükség végezze el azok újbóli hozzárendelését. Erre vonatkozó útmutatás [View the Current Operations Master Role Holders](https://technet.microsoft.com/library/cc816893.aspx) (Az aktuális műveleti főkiszolgáló szerepköreinek megtekintése) című cikkben és a kapcsolódó cikkekben található.
 
@@ -214,7 +214,7 @@ A MIM szolgáltatás az aktiválási kérelmek feldolgozásához szükséges.  A
 
 #### <a name="preparation"></a>Előkészítés
 A MIM szolgáltatást több, a PRIV tartományhoz csatlakozó kiszolgálóra célszerű telepíteni.
-A magas rendelkezésre állással kapcsolatos tudnivalókért olvassa el a Windows Server dokumentációjában található következő cikkeket: [A Feladatátvételi fürtszolgáltatás hardverkövetelményei és tárolási beállításai](https://technet.microsoft.com/library/jj612869.aspx) és [Creating a Windows Server 2012 Failover Cluster](https://blogs.msdn.com/b/clustering/archive/2012/05/01/10299698.aspx) (Windows Server 2012 feladatátvevő fürt létrehozása).
+A magas rendelkezésre állással kapcsolatos tudnivalókért olvassa el a Windows Server dokumentációjában található következő cikkeket: [A Feladatátvételi fürtszolgáltatás hardverkövetelményei és tárolási beállításai](https://technet.microsoft.com/library/jj612869.aspx) és [Creating a Windows Server 2012 Failover Cluster](https://techcommunity.microsoft.com/t5/failover-clustering/creating-a-windows-server-2012-failover-cluster/ba-p/371763) (Windows Server 2012 feladatátvevő fürt létrehozása).
 
 Éles környezetben, több kiszolgálóra végrehajtott telepítés esetén a hálózati terheléselosztás (NLB) segítségével osztható el a feldolgozási terhelés.  Érdemes csak egy aliast (például A vagy CNAME) használnia, hogy a felhasználó csak egy általános nevet lásson.
 

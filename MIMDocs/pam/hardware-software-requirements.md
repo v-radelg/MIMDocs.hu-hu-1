@@ -11,12 +11,12 @@ ms.prod: microsoft-identity-manager
 ms.assetid: 82a9085c-9667-4b3b-8079-657eab1d1e58
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 79f9eeabdd9ac9206c4232217c7cbcdf870c3a3a
-ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
+ms.openlocfilehash: b54a8eeaaa76db1c1bfe6b234028e0396210ecf7
+ms.sourcegitcommit: 80507a128d2bc28ff3f1b96377c61fa97a4e7529
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79043987"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83280082"
 ---
 # <a name="hardware-and-software-requirements"></a>Hardver- és szoftverkövetelmények
 
@@ -54,7 +54,7 @@ Ha Ön nem rendelkezik Windows-, SQL Server- vagy Windows Server-licenccel, let�
 
 ### <a name="microsoft-download-center"></a>Microsoft letöltőközpontból
 
-- [SQL Server](https://www.microsoft.com/download/details.aspx?id=29066)  
+- [SQL Server](https://www.microsoft.com/sql-server/sql-server-downloads)  
 - [A SharePoint Foundation 2013 SP1 és előfeltételei](https://www.microsoft.com/download/details.aspx?id=42039)
 
 ## <a name="hardware-requirements"></a>Hardverkövetelmények

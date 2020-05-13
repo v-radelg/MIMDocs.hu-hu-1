@@ -12,18 +12,18 @@ ms.assetid: 68ec2145-6faa-485e-b79f-2b0c4ce9eff7
 ROBOTS: noindex,nofollow
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 7a0a0437e767f793150d875bcaf31213a7fdf627
-ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
+ms.openlocfilehash: 3098816d07603384a28db47c0bc60ac92a340e8f
+ms.sourcegitcommit: 80507a128d2bc28ff3f1b96377c61fa97a4e7529
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79043664"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83279980"
 ---
 # <a name="step-3--prepare-a-pam-server"></a>3. lépés – PAM-kiszolgáló előkészítése
 
 > [!div class="step-by-step"]
-> [«2](step-2-prepare-priv-domain-controller.md)
-> . lépés[4. lépés»](step-4-install-mim-components-on-pam-server.md)
+> [«2](step-2-prepare-priv-domain-controller.md) 
+>  . lépés [4. lépés»](step-4-install-mim-components-on-pam-server.md)
 
 ## <a name="install-windows-server-2012-r2"></a>A Windows Server 2012 R2 telepítése
 
@@ -67,7 +67,7 @@ Vegye fel a Webkiszolgáló (IIS) és az Alkalmazáskiszolgáló szerepkört, a 
 A kiszolgálói biztonsági házirendben engedélyezze az újonnan létrehozott fiókok szolgáltatásként történő futtatását.
 
 1.  Indítsa el a **helyi biztonsági házirend** programot.   
-2.  Navigáljon a **helyi házirendek** > **felhasználói jogok kiosztása**elemre.  
+2.  Navigáljon a **helyi házirendek**  >  **felhasználói jogok kiosztása**elemre.  
 3.  A részletek ablaktábláján kattintson a jobb gombbal a **Bejelentkezés szolgáltatásként** lehetőségre, majd válassza a **Tulajdonságok** pontot.  
 4.  Kattintson a **Felhasználó vagy csoport hozzáadása** elemre, és a Felhasználó- és csoportnevek területen írja be a *priv\mimmonitor; priv\MIMService; priv\SharePoint; priv\mimcomponent; priv\SqlServer* karakterláncot. Kattintson a **Névellenőrzés**, majd az **OK** gombra.  
 
@@ -186,7 +186,7 @@ Most hozzon létre egy SharePoint-webhelycsoportot az imént készített webalka
 
     Győződjön meg arról, hogy a **CompatibilityLevel** (Kompatibilitási szint) változónál a *14* érték van megadva. Ha a visszaadott érték *15*, akkor a webhelycsoport nem a 2010-es verzióhoz jött létre. Ebben az esetben törölje, majd hozza létre újra a webhelycsoportot.
 
-2.  Futtassa a következő PowerShell-parancsokat a **SharePoint 2013 felügyeleti rendszerhéjban**. Ez letiltja a SharePoint kiszolgálóoldali Viewstate funkciót és az **Állapotelemzési feladat (Óránként, A Microsoft SharePoint Foundation időzítő szolgáltatása, Minden kiszolgáló)** SharePoint-feladatot.
+2.  Futtassa a következő PowerShell-parancsokat a **SharePoint 2013 felügyeleti rendszerhéjban**. Ez letiltja a SharePoint kiszolgálóoldali ViewState, valamint a SharePoint-feladat **állapotának elemzése feladatot (óránként, a Microsoft SharePoint Foundation időzítő, az összes kiszolgáló)**.
 
     ```PowerShell
     $contentService = [Microsoft.SharePoint.Administration.SPWebService]::ContentService;
@@ -204,7 +204,7 @@ Most hozzon létre egy SharePoint-webhelycsoportot az imént készített webalka
 ## <a name="set-the-website-as-the-local-intranet"></a>A webhely beállítása helyi intranetként
 
 1. Indítsa el az Internet Explorert, és nyisson meg egy új böngészőlapot
-2. Navigáljon http://pamsrv.priv.contoso.local:82/ , és jelentkezzen be PRIV\MIMAdmin.  Ekkor megjelenik egy üres SharePoint-webhely, „MIM Portal” néven.  
+2. Navigáljon, `http://pamsrv.priv.contoso.local:82/` és jelentkezzen be PRIV\MIMAdmin.  Ekkor megjelenik egy üres SharePoint-webhely, „MIM Portal” néven.  
 3. Az Internet Explorerben nyissa meg az **Internetbeállításokat**, lépjen a **Biztonság** lapra, válassza a **Helyi intranet** zónát, majd kattintson a `http://pamsrv.priv.contoso.local:82/` URL-címre.
 
 Ha a bejelentkezés sikertelen, előfordulhat, hogy a [2. lépésben](step-2-prepare-priv-domain-controller.md) korábban létrehozott Kerberos SPN-eket frissíteni kell.
@@ -216,5 +216,5 @@ A **Szolgáltatások** eszköz segítségével (mely a Felügyeleti eszközök k
 A 4. lépésben hozzákezdhet a MIM-összetevőknek a PAM-kiszolgálóra való telepítéséhez.
 
 > [!div class="step-by-step"]
-> [«2](step-2-prepare-priv-domain-controller.md)
-> . lépés[4. lépés»](step-4-install-mim-components-on-pam-server.md)
+> [«2](step-2-prepare-priv-domain-controller.md) 
+>  . lépés [4. lépés»](step-4-install-mim-components-on-pam-server.md)
