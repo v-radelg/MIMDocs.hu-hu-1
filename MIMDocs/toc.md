@@ -2,6 +2,7 @@
 ## [Mi az a MIM 2016?](microsoft-identity-manager-2016.md)
 ## [A PAM megismerése](./pam/privileged-identity-management-for-active-directory-domain-services.md)
 ## [Hibrid jelentéskészítés az Azure-ban](identity-manager-hybrid-reporting-azure.md)
+## [Az Azure AD-támogatás folyamata](support-update-for-azure-active-directory-premium-customers.md)
 # [Tervezés és kialakítás](microsoft-identity-manager-2016-supported-platforms.md)
 ## [Támogatott platformok](microsoft-identity-manager-2016-supported-platforms.md)
 ## [Támogatott nyelvek](microsoft-identity-manager-2016-language-support.md)
