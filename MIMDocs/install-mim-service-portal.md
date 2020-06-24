@@ -18,7 +18,7 @@ ms.contentlocale: hu-HU
 ms.lasthandoff: 05/13/2020
 ms.locfileid: "83279997"
 ---
-# <a name="install-mim-2016-mim-service-and-portal"></a>A MIM 2016 telepítése: A MIM szolgáltatás és -portál
+# <a name="install-mim-2016-mim-service-and-portal"></a>A MIM 2016 telepítése: A MIM szolgáltatás és -portál<!--test-->
 
 > [!div class="step-by-step"]
 > [«Webszolgáltatások szinkronizációs szolgáltatása](install-mim-sync.md) 
