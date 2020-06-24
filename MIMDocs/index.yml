@@ -1,0 +1,53 @@
+### YamlMime:Landing
+title: Microsoft Identity Manager dokumentáció
+summary: A Microsoft Identity Manager 2016 több helyszíni hitelesítési tároló – például az Active Directory, az LDAP, az Oracle és más alkalmazások – az Azure Active Directory-val való zökkenőmentes összeillesztésével köti össze a Microsoft identitás- és hozzáférés-kezelési megoldásait. Ez egységes felületeket biztosít a helyszíni üzletági alkalmazásokhoz és SaaS-megoldásokhoz.
+metadata:
+  title: Microsoft Identity Manager dokumentáció
+  description: A Microsoft Identity Manager használatának ismertetése.
+  ms.topic: landing-page
+  ms.date: 06/09/2020
+  ms.openlocfilehash: 7d8aec6e750d60e6d654de94d99f566f3e55872a
+  ms.sourcegitcommit: aad5dbabd5e42db9ad11d96a2f6fde6173d9ce0a
+  ms.translationtype: MT
+  ms.contentlocale: hu-HU
+  ms.lasthandoff: 06/17/2020
+  ms.locfileid: "84880091"
+landingContent:
+- title: A Microsoft Identity Manager áttekintése
+  linkLists:
+  - linkListType: whats-new
+    links:
+    - text: A Microsoft Identity Manager 2016 Service Pack 1 új frissítései
+      url: reference/version-history.md
+  - linkListType: overview
+    links:
+    - text: A Microsoft Identity Manager ismertetése
+      url: microsoft-identity-manager-2016.md
+  - linkListType: deploy
+    links:
+    - text: A Microsoft Identity Manager 2016 telepítése
+      url: microsoft-identity-manager-deploy.md
+- title: Referencia
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Privileged Access Management REST API-referencia
+      url: /microsoft-identity-manager/reference/privileged-access-management-rest-api-reference
+    - text: Tanúsítványkezelő REST API-referencia
+      url: /microsoft-identity-manager/reference/certificate-management-rest-api-reference
+    - text: Az identitás- és hozzáférés-kezelési támogatási csoport blogja
+      url: https://blogs.technet.microsoft.com/iamsupport/
+- title: Megoldások
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Hozzáférés kezelése nagy méretekben
+      url: /enterprise-mobility-security/solutions/manage-access-at-scale
+- title: Forefront Identity Manager (FIM) életciklus
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Frissítés a Microsoft Identity Manager 2016-ra (a FIM mainstream támogatása befejeződött 10/10/2017)
+      url: microsoft-identity-manager-2016-upgrade-from-fim-2010-r2.md
+    - text: A FIM életciklusával kapcsolatos információk
+      url: https://support.microsoft.com/lifecycle/search?alpha=Microsoft%20Forefront%20Identity%20Manager%202010%20R2%20Service%20Pack%201,Microsoft%20Identity%20Manager%202016,Microsoft%20Forefront%20Identity%20Manager%202010)
