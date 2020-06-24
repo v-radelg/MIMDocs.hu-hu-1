@@ -18,7 +18,7 @@ ms.contentlocale: hu-HU
 ms.lasthandoff: 04/21/2020
 ms.locfileid: "79042117"
 ---
-# <a name="capacity-planning-guide"></a>Kapacitástervezési útmutató
+# <a name="capacity-planning-guide"></a>Kapacitástervezési útmutató<!--test-->
 
 A Microsoft Identity Manager (MIM) segítségével létrehozhatja, frissítheti és eltávolíthatja a szervezetében lévő felhasználói fiókokat. Emellett a segítségével a végfelhasználók kezelhetik a saját fiókjuk önkiszolgáló szolgáltatásait. Ezek a műveletek még egy kis környezetben is gyorsan összeadódhatnak.
 
